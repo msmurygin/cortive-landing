@@ -78,42 +78,69 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .nav-cta:hover{background:var(--brand-light);transform:translateY(-1px);box-shadow:0 4px 20px var(--brand-glow)}
 .nav-cta svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.5}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:64px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;width:800px;height:800px;top:-200px;right:-200px;background:radial-gradient(circle,var(--brand-glow) 0%,transparent 70%);border-radius:50%;pointer-events:none;animation:orb 8s ease-in-out infinite}
-.hero::after{content:'';position:absolute;width:600px;height:600px;bottom:-100px;left:-100px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);border-radius:50%;pointer-events:none;animation:orb 10s ease-in-out infinite reverse}
-@keyframes orb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.05)}}
-.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--brand-dim);border:1px solid rgba(84,88,216,.2);border-radius:100px;font-size:13px;font-weight:500;color:var(--brand-light);margin-bottom:24px;animation:fadeUp .6s ease-out}
-.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+/* HERO — full-bleed cinematic */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:64px 0 0;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,15,.55) 0%,rgba(10,10,15,.35) 40%,rgba(10,10,15,.7) 75%,rgba(10,10,15,.95) 100%)}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(84,88,216,.12) 0%,transparent 60%);z-index:1}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:56px;font-weight:800;line-height:1.08;color:var(--text-0);letter-spacing:-2px;margin-bottom:24px;animation:fadeUp .6s ease-out .1s both;transition:color var(--tr)}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:800px;margin:0 auto;padding:0 24px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;background:rgba(84,88,216,.15);border:1px solid rgba(84,88,216,.25);border-radius:100px;font-size:13px;font-weight:500;color:var(--brand-light);margin-bottom:28px;animation:fadeUp .7s ease-out;backdrop-filter:blur(8px)}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+.hero h1{font-size:64px;font-weight:900;line-height:1.06;color:#fff;letter-spacing:-2.5px;margin-bottom:24px;animation:fadeUp .7s ease-out .15s both;text-shadow:0 2px 40px rgba(0,0,0,.5)}
 .hero h1 .accent{color:var(--brand-light)}.hero h1 .accent-g{color:var(--accent)}
-.hero-sub{font-size:18px;line-height:1.7;color:var(--text-2);max-width:480px;margin-bottom:40px;animation:fadeUp .6s ease-out .2s both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-actions{display:flex;gap:16px;animation:fadeUp .6s ease-out .3s both}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--brand);color:#fff;font-size:15px;font-weight:600;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:all .25s;box-shadow:0 4px 24px var(--brand-glow)}
-.btn-primary:hover{background:var(--brand-light);transform:translateY(-2px);box-shadow:0 8px 32px var(--brand-glow)}
+.hero-sub{font-size:19px;line-height:1.7;color:rgba(255,255,255,.7);max-width:560px;margin:0 auto 44px;animation:fadeUp .7s ease-out .25s both;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.hero-actions{display:flex;gap:16px;justify-content:center;animation:fadeUp .7s ease-out .35s both}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:var(--brand);color:#fff;font-size:16px;font-weight:600;border:none;border-radius:12px;cursor:pointer;text-decoration:none;transition:all .25s;box-shadow:0 4px 32px rgba(84,88,216,.4)}
+.btn-primary:hover{background:var(--brand-light);transform:translateY(-2px);box-shadow:0 8px 40px rgba(84,88,216,.5)}
 .btn-primary svg,.btn-secondary svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.5}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;color:var(--text-1);font-size:15px;font-weight:500;border:1px solid var(--border-2);border-radius:10px;cursor:pointer;text-decoration:none;transition:all .25s}
-.btn-secondary:hover{border-color:var(--brand);color:var(--text-0);background:var(--brand-dim)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.85);font-size:16px;font-weight:500;border:1px solid rgba(255,255,255,.15);border-radius:12px;cursor:pointer;text-decoration:none;transition:all .25s;backdrop-filter:blur(8px)}
+.btn-secondary:hover{border-color:var(--brand);color:#fff;background:rgba(84,88,216,.15)}
+.hero-stats{display:flex;gap:48px;justify-content:center;margin-top:56px;animation:fadeUp .7s ease-out .5s both}
+.hero-stat{text-align:center}
+.hero-stat-value{font-size:40px;font-weight:900;color:#fff;letter-spacing:-2px;line-height:1;text-shadow:0 0 30px rgba(84,88,216,.4)}
+.hero-stat-value .unit{font-size:18px;color:var(--accent);font-weight:700}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:1.5px;margin-top:6px;font-weight:500}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.3);animation:heroFloat 2s ease-in-out infinite}
+@keyframes heroFloat{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.hero-scroll svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.5;fill:none}
+
+/* AI SHOWCASE — image 1 bg */
+.ai-showcase{position:relative;overflow:hidden;padding:0}
+.ai-showcase-bg{position:relative;min-height:600px;display:flex;align-items:center}
+.ai-showcase-bg>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.ai-showcase-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,15,.92) 0%,rgba(10,10,15,.6) 50%,rgba(10,10,15,.3) 100%);z-index:1}
+.ai-showcase-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:480px 1fr;gap:64px;align-items:center}
+.ai-showcase-text{}.ai-showcase-text .section-tag{margin-bottom:16px}
+.ai-showcase-text h2{font-size:40px;font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.15;margin-bottom:16px;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+.ai-showcase-text p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:28px}
+.ai-chat{background:rgba(0,0,0,.5);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.ai-chat-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06)}
+.ai-chat-bar .td{width:8px;height:8px;border-radius:50%}.ai-chat-bar .td.r{background:#ff5f57}.ai-chat-bar .td.y{background:#febc2e}.ai-chat-bar .td.g{background:#28c840}
+.ai-chat-title{margin-left:6px;font-size:11px;color:rgba(255,255,255,.3);font-family:var(--mono)}
+.ai-chat-body{padding:20px;display:flex;flex-direction:column;gap:14px}
+.ai-msg{display:flex;gap:10px;align-items:flex-start;animation:msgIn .5s ease-out both}
+.ai-msg:nth-child(2){animation-delay:.8s}.ai-msg:nth-child(3){animation-delay:1.6s}.ai-msg:nth-child(4){animation-delay:2.4s}.ai-msg:nth-child(5){animation-delay:3.2s}.ai-msg:nth-child(6){animation-delay:4s}
+@keyframes msgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.ai-avatar{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+.ai-avatar.bot{background:rgba(84,88,216,.25);color:var(--brand-light)}
+.ai-avatar.user{background:rgba(0,203,170,.2);color:var(--accent)}
+.ai-bubble{padding:10px 14px;border-radius:10px;font-size:13px;line-height:1.6;max-width:320px}
+.ai-bubble.bot{background:rgba(84,88,216,.1);border:1px solid rgba(84,88,216,.15);color:rgba(255,255,255,.85)}
+.ai-bubble.user{background:rgba(0,203,170,.08);border:1px solid rgba(0,203,170,.12);color:rgba(255,255,255,.8)}
+.ai-bubble .ai-result{margin-top:8px;padding:8px 10px;background:rgba(0,0,0,.3);border-radius:6px;font-family:var(--mono);font-size:11px;color:var(--accent);line-height:1.8}
+.ai-typing{display:flex;gap:4px;padding:8px 14px}
+.ai-typing span{width:6px;height:6px;border-radius:50%;background:rgba(84,88,216,.4);animation:typeDot 1.4s ease-in-out infinite}
+.ai-typing span:nth-child(2){animation-delay:.2s}.ai-typing span:nth-child(3){animation-delay:.4s}
+@keyframes typeDot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
 
 /* Terminal */
-.hero-visual{position:relative;animation:fadeUp .8s ease-out .4s both}
-.terminal{background:var(--terminal-bg);border:1px solid var(--border-2);border-radius:12px;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,.1),0 20px 60px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.03)}
-.terminal-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--terminal-bar);border-bottom:1px solid rgba(255,255,255,.06)}
 .td{width:10px;height:10px;border-radius:50%}.td.r{background:#ff5f57}.td.y{background:#febc2e}.td.g{background:#28c840}
-.terminal-title{margin-left:8px;font-size:12px;color:#5a5a68;font-family:var(--mono)}
-.terminal-body{padding:20px;font-family:var(--mono);font-size:13px;line-height:1.8;color:#c8c8d0}
 .tc{color:#5a5a68}.tp{color:#00CBAA}.tm{color:#f0f0f5}.tf{color:#7678DF}.ts{color:#f1c21b}.to{color:#8e8e9a}.tok{color:#00CBAA}
 .tcur{display:inline-block;width:8px;height:16px;background:var(--brand);animation:blink 1s step-end infinite;vertical-align:text-bottom;margin-left:2px}
 @keyframes blink{50%{opacity:0}}
-.float-card{position:absolute;background:var(--card-bg);border:1px solid var(--border-2);border-radius:10px;padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,.2);animation:floatIn .8s ease-out both;transition:background var(--tr),border-color var(--tr)}
-.float-card.fc-1{top:-20px;right:-30px;animation-delay:.8s}.float-card.fc-2{bottom:40px;left:-40px;animation-delay:1s}
-@keyframes floatIn{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-.fc-label{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.fc-value{font-size:28px;font-weight:800;color:var(--text-0);letter-spacing:-1px;transition:color var(--tr)}
-.fc-value .unit{font-size:14px;color:var(--accent);font-weight:600}
 
 /* Social Proof */
 .social-proof{padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -258,7 +285,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 
 /* Comparison */
 .comparison{padding:120px 0}
-.comp-table{margin-top:64px;background:var(--card-bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:background var(--tr)}
+.comp-table{margin-top:64px;background:var(--card-bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch;transition:background var(--tr)}
 .comp-row{display:grid;grid-template-columns:200px repeat(4,1fr);border-bottom:1px solid var(--border)}
 .comp-row:last-child{border-bottom:none}
 .comp-row.header{background:var(--bg-2);font-weight:600;color:var(--text-0);font-size:14px}
@@ -287,8 +314,8 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .footer-links a:hover{color:var(--text-1)}
 
 /* Responsive */
-@media(max-width:1024px){.hero-content{grid-template-columns:1fr;gap:40px}.hero h1{font-size:42px}.bento{grid-template-columns:repeat(2,1fr)}.bento-card.wide{grid-column:span 2}.bento-card.full{grid-column:span 2}.comp-row{grid-template-columns:160px repeat(4,1fr)}.arch-layers{grid-template-columns:repeat(3,1fr)}.nav-links{display:none}.hiw-layout{grid-template-columns:1fr}.hiw-visual{position:static;margin-top:32px}}
-@media(max-width:768px){.hero h1{font-size:34px;letter-spacing:-1px}.hero-sub{font-size:16px}.hero-actions{flex-direction:column}.hs-grid{grid-template-columns:1fr}.bento{grid-template-columns:1fr}.bento-card.wide{grid-column:span 1}.bento-card.full{grid-column:span 1}.bento-mockups{grid-template-columns:1fr}.hiw-layout{grid-template-columns:1fr}.hiw-visual{position:static;margin-top:32px}.hiw-card{grid-template-columns:40px 1fr;gap:14px}.hiw-steps::before{left:19px}.market-grid{grid-template-columns:repeat(2,1fr)}.section-title{font-size:32px}.comp-row{font-size:11px}.comp-cell{padding:10px 8px}.arch-layers{grid-template-columns:1fr 1fr}.cta-title{font-size:32px}.cta-box{padding:48px 24px}.footer-inner{flex-direction:column;gap:16px}}
+@media(max-width:1024px){.hero h1{font-size:48px}.hero-stats{gap:32px}.bento{grid-template-columns:repeat(2,1fr)}.bento-card.wide{grid-column:span 2}.bento-card.full{grid-column:span 2}.comp-row{grid-template-columns:160px repeat(4,1fr)}.arch-layers{grid-template-columns:repeat(3,1fr)}.nav-links{display:none}.hiw-layout{grid-template-columns:1fr}.hiw-visual{position:static;margin-top:32px}.ai-showcase-inner{grid-template-columns:1fr;gap:40px}.ai-showcase-bg::after{background:linear-gradient(180deg,rgba(10,10,15,.9) 0%,rgba(10,10,15,.75) 50%,rgba(10,10,15,.9) 100%)}}
+@media(max-width:768px){.hero h1{font-size:36px;letter-spacing:-1.5px}.hero-sub{font-size:16px}.hero-actions{flex-direction:column;align-items:center}.hero-stats{flex-direction:row;gap:24px}.hero-stat-value{font-size:28px}.hero-stat-label{font-size:10px}.hs-grid{grid-template-columns:1fr}.bento{grid-template-columns:1fr}.bento-card.wide{grid-column:span 1}.bento-card.full{grid-column:span 1}.bento-mockups{grid-template-columns:1fr}.hiw-layout{grid-template-columns:1fr}.hiw-visual{position:static;margin-top:32px}.hiw-card{grid-template-columns:40px 1fr;gap:14px}.hiw-steps::before{left:19px}.market-grid{grid-template-columns:repeat(2,1fr)}.section-title{font-size:32px}.comp-row{font-size:11px}.comp-cell{padding:10px 8px}.comp-row{min-width:600px}.arch-layers{grid-template-columns:1fr 1fr}.cta-title{font-size:32px}.cta-box{padding:48px 24px}.footer-inner{flex-direction:column;gap:16px}.ai-showcase-inner{padding:60px 24px}.ai-showcase-text h2{font-size:28px}.ai-bubble{max-width:260px}}
 </style>
 </head>
 <body>
@@ -328,8 +355,9 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 </div></nav>
 
 <!-- HERO -->
-<section class="hero"><div class="container"><div class="hero-content">
-  <div>
+<section class="hero">
+  <div class="hero-bg"><img src="hero-2.png" alt="AI-powered smart warehouse"></div>
+  <div class="hero-content">
     <div class="hero-badge"><span class="hero-badge-dot"></span><span data-i18n="hero_badge">AI-Powered WMS</span></div>
     <h1 data-i18n-html="hero_title">The warehouse that <span class="accent">configures</span> <span class="accent-g">itself</span></h1>
     <p class="hero-sub" data-i18n="hero_sub">Other WMS takes 12 months to implement. Cortive does it in a day — because AI configures your warehouse instead of a consultant.</p>
@@ -337,28 +365,14 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
       <a href="#contact" class="btn-primary"><span data-i18n="hero_cta">Start Free Trial</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
       <a href="#how-it-works" class="btn-secondary"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor" stroke="none" opacity=".8"/></svg> <span data-i18n="hero_demo">Watch Demo</span></a>
     </div>
-  </div>
-  <div class="hero-visual">
-    <div class="terminal">
-      <div class="terminal-bar"><span class="td r"></span><span class="td y"></span><span class="td g"></span><span class="terminal-title">cortive-onboarding</span></div>
-      <div class="terminal-body">
-        <div><span class="tc">// AI onboarding session</span></div>
-        <div style="margin-top:8px"><span class="tp">cortive</span> <span class="tf">›</span> <span class="tm">What type of warehouse?</span></div>
-        <div><span class="to">  → 3PL, multi-client, pharma</span></div>
-        <div style="margin-top:8px"><span class="tp">cortive</span> <span class="tf">›</span> <span class="tm">Upload warehouse photo</span></div>
-        <div><span class="to">  → Analyzing layout... 4 zones detected</span></div>
-        <div style="margin-top:8px"><span class="tp">cortive</span> <span class="tf">›</span> <span class="tm">Import products.xlsx</span></div>
-        <div><span class="to">  → 12,847 SKUs mapped to 4 categories</span></div>
-        <div style="margin-top:12px"><span class="tok">✓</span> <span class="tm">Warehouse configured</span></div>
-        <div><span class="tok">✓</span> <span class="tm">Zones, locations, rules — ready</span></div>
-        <div><span class="tok">✓</span> <span class="tm">Go live in <span class="ts">24 hours</span></span></div>
-        <div style="margin-top:8px"><span class="tp">cortive</span> <span class="tf">›</span> <span class="tcur"></span></div>
-      </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-value">1 <span class="unit" data-i18n="fc_day">day</span></div><div class="hero-stat-label" data-i18n="fc_setup">Setup Time</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">0</div><div class="hero-stat-label" data-i18n="stat2_label">Consultants Required</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">90<span class="unit">%</span></div><div class="hero-stat-label" data-i18n="fc_cost">Cost Reduction</div></div>
     </div>
-    <div class="float-card fc-1"><div class="fc-label" data-i18n="fc_setup">Setup Time</div><div class="fc-value">1 <span class="unit" data-i18n="fc_day">day</span></div></div>
-    <div class="float-card fc-2"><div class="fc-label" data-i18n="fc_cost">Cost Reduction</div><div class="fc-value">90<span class="unit">%</span></div></div>
   </div>
-</div></div></section>
+  <div class="hero-scroll"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+</section>
 
 <!-- SOCIAL PROOF -->
 <section class="social-proof"><div class="container"><div class="sp-inner">
@@ -433,6 +447,36 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
     </div>
   </div>
 </div></section>
+
+<!-- AI SHOWCASE -->
+<section class="ai-showcase">
+  <div class="ai-showcase-bg">
+    <img src="hero-1.png" alt="AI brain analyzing warehouse">
+    <div class="ai-showcase-inner">
+      <div class="ai-showcase-text">
+        <div class="section-tag" data-i18n="f1_tag">Key Differentiator</div>
+        <h2 data-i18n-html="f1_title">AI Onboarding — from zero to live in <span class="accent-g">1 day</span></h2>
+        <p data-i18n="f1_desc">No consultants, no months of implementation. Upload a photo, chat about your processes, import Excel. AI generates the complete WMS configuration automatically.</p>
+        <div class="hiw-pills">
+          <span class="hiw-pill"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg> Photo</span>
+          <span class="hiw-pill"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Excel</span>
+          <span class="hiw-pill"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Chat</span>
+        </div>
+      </div>
+      <div class="ai-chat">
+        <div class="ai-chat-bar"><span class="td r"></span><span class="td y"></span><span class="td g"></span><span class="ai-chat-title">cortive ai — onboarding</span></div>
+        <div class="ai-chat-body">
+          <div class="ai-msg"><div class="ai-avatar bot">AI</div><div class="ai-bubble bot">What type of warehouse do you operate?</div></div>
+          <div class="ai-msg"><div class="ai-avatar user">Y</div><div class="ai-bubble user">3PL pharma warehouse, multi-client, cold chain</div></div>
+          <div class="ai-msg"><div class="ai-avatar bot">AI</div><div class="ai-bubble bot">Got it. Upload a photo of your warehouse layout — I'll detect zones and aisles automatically.</div></div>
+          <div class="ai-msg"><div class="ai-avatar user">Y</div><div class="ai-bubble user">📷 warehouse_layout.jpg</div></div>
+          <div class="ai-msg"><div class="ai-avatar bot">AI</div><div class="ai-bubble bot">Analyzed! Here's what I found:<div class="ai-result">✓ 4 zones detected<br>✓ 12 aisles mapped<br>✓ 3 staging areas<br>✓ Cold storage zone identified<br>✓ 156 locations generated</div></div></div>
+          <div class="ai-msg"><div class="ai-avatar bot">AI</div><div class="ai-bubble bot">Your WMS is ready. Review in Metadata Studio?<div class="ai-typing"><span></span><span></span><span></span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FEATURES — bento grid -->
 <section class="features" id="features"><div class="container">
