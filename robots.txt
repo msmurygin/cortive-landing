@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://quark.build/sitemap.xml
