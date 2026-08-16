@@ -42,16 +42,7 @@
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web",
                 "description": "A metadata-driven warehouse management system that configures itself and deploys in days, not years.",
-                "url": "https://quark.build/",
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "Quark Operations EOOD",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressLocality": "Sofia",
-                        "addressCountry": "BG"
-                    }
-                }
+                "url": "https://quark.build/"
             }
         </script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -453,52 +444,50 @@
                         </div>
                         <div>
                             <h3>
-                                Review the diff in the
+                                Review the draft in the
                                 <span class="ital">Studio</span>.
                             </h3>
                             <p>
-                                The agent generates your full configuration as a
-                                <i>draft</i>. You review it visually — every
-                                zone, role, picking rule, validation. Approve,
-                                fork, edit, or reject. No SQL, no source code,
-                                no consultant‑in‑the‑middle.
+                                The agent's configuration arrives as a
+                                <i>draft version</i> of the module — never as a
+                                change to your running system. You open it in
+                                the Studio and inspect it as a graph: business
+                                objects, forms, roles, navigation, rules. Apply
+                                when it's right, discard when it isn't. No SQL,
+                                no source code, no consultant‑in‑the‑middle.
                             </p>
                         </div>
                         <div></div>
                         <div class="visual">
-                            <div class="viz-diff">
-                                <div class="vd-bar">
-                                    <span>diff · draft <b>cs_8421</b></span
-                                    ><span>+ 48 / ~ 12 / − 1</span>
+                            <div class="viz-ver">
+                                <div class="vv-bar">
+                                    <span>version history</span
+                                    ><span><b>sku</b> · 2</span>
                                 </div>
-                                <div class="vd-row add">
-                                    <span class="sg">+</span
-                                    ><span class="k">zone.cold_chain</span
-                                    ><span class="v">FEFO · 2–8°C</span>
+                                <div class="vv-row draft">
+                                    <div class="vv-head">
+                                        <span class="vv-n">v1.1.0</span>
+                                        <span class="vv-s draft">draft</span>
+                                    </div>
+                                    <div class="vv-note">
+                                        Cold chain: lot expiry + FEFO on SKU
+                                    </div>
+                                    <div class="vv-meta">
+                                        created 08:14 · by studio
+                                    </div>
+                                    <div class="vv-btns">
+                                        <u class="ok">Apply</u><u>Discard</u
+                                        ><u>Open</u>
+                                    </div>
                                 </div>
-                                <div class="vd-row add">
-                                    <span class="sg">+</span
-                                    ><span class="k">role.picker_pharma</span
-                                    ><span class="v"
-                                        >rf.scan_lot · qc.flag</span
-                                    >
-                                </div>
-                                <div class="vd-row mod">
-                                    <span class="sg">~</span
-                                    ><span class="k">strategy.replenish</span
-                                    ><span class="v">threshold 20% → 30%</span>
-                                </div>
-                                <div class="vd-row add">
-                                    <span class="sg">+</span
-                                    ><span class="k">integration.erp_in</span
-                                    ><span class="v"
-                                        >webhook · daily 04:00</span
-                                    >
-                                </div>
-                                <div class="vd-row del">
-                                    <span class="sg">−</span
-                                    ><span class="k">rule.legacy_putaway</span
-                                    ><span class="v">requires approval</span>
+                                <div class="vv-row">
+                                    <div class="vv-head">
+                                        <span class="vv-n">v1.0.0</span>
+                                        <span class="vv-s live">active</span>
+                                    </div>
+                                    <div class="vv-meta">
+                                        rollback target · one click
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -531,7 +520,7 @@
                                     of stockout events.
                                     <span class="ts">today · 08:14</span>
                                     <span class="btns"
-                                        ><u class="ok">Approve</u><u>Diff</u
+                                        ><u class="ok">Approve</u><u>Open</u
                                         ><u>Reject</u></span
                                     >
                                 </div>
@@ -544,6 +533,161 @@
                                     <span class="ts">08:15</span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="figure">
+                    <img
+                        src="/assets/shots/web/studio-forms.jpg"
+                        alt="Quark Studio showing the SKU Management module as a graph of fourteen forms, with slots, tabs and extension hooks"
+                        width="1800"
+                        height="1125"
+                        loading="lazy"
+                    />
+                    <figcaption>
+                        <span
+                            ><b>The Studio.</b> One module — SKU Management —
+                            drawn from its own metadata: 14 forms, how they
+                            navigate, and the fields of any one of them.</span
+                        ><span>Fig. 01</span>
+                    </figcaption>
+                </figure>
+
+                <div class="strip">
+                    <div class="strip-head">
+                        <span
+                            ><b>The rest of it</b> — screens, not mockups. Click
+                            any to enlarge.</span
+                        >
+                        <span class="strip-nav">
+                            <button
+                                type="button"
+                                data-strip="prev"
+                                aria-label="Previous screens"
+                            >
+                                ←
+                            </button>
+                            <button
+                                type="button"
+                                data-strip="next"
+                                aria-label="More screens"
+                            >
+                                →
+                            </button>
+                        </span>
+                    </div>
+                    <div class="strip-rail">
+                        <div class="strip-card whole">
+                            <img
+                                src="/assets/shots/web/forklift-scan-ok.jpg"
+                                alt="Forklift terminal accepting a scanned barcode, confirming Grease LG-EP2 400g cartridge"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Scan accepted</b>The item is on the document,
+                                and the terminal says so.
+                            </p>
+                        </div>
+                        <div class="strip-card whole">
+                            <img
+                                src="/assets/shots/web/forklift-error-barcode.jpg"
+                                alt="Forklift terminal rejecting an unknown barcode with a red error banner"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Scan refused</b>Governance, as the operator
+                                actually meets it.
+                            </p>
+                        </div>
+                        <div class="strip-card">
+                            <img
+                                src="/assets/shots/web/putaway-policy.jpg"
+                                alt="Put-away policy editor: a ladder of steps, each with a destination, conditions and placement rules"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Rules</b>Put‑away strategy as a ladder of
+                                steps. First match wins; the fallback is written
+                                down.
+                            </p>
+                        </div>
+                        <div class="strip-card">
+                            <img
+                                src="/assets/shots/web/3d-inspect.jpg"
+                                alt="Three-dimensional warehouse topology with an inspected bin showing its zone, type, aisle, bay, level and size"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Topology</b>Click any bin: zone, type, aisle,
+                                bay, level, dimensions.
+                            </p>
+                        </div>
+                        <div class="strip-card">
+                            <img
+                                src="/assets/shots/web/reports.jpg"
+                                alt="Report library showing sixteen statutory warehouse forms grouped by section"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Documents</b>Sixteen statutory forms —
+                                TORG‑2, M‑4, M‑11, INV‑3 — out of the box.
+                            </p>
+                        </div>
+                        <div class="strip-card">
+                            <img
+                                src="/assets/shots/web/balances-by-location.jpg"
+                                alt="Inventory balances by location with hold reasons for damage, customer return and QC quarantine"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Balances</b>Six views of one stock figure,
+                                with holds and quarantine spelled out.
+                            </p>
+                        </div>
+                        <div class="strip-card">
+                            <img
+                                src="/assets/shots/web/transactions-filtered.jpg"
+                                alt="Transaction log listing deposits and moves, each with the reason it happened"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Movements</b>Every move carries its reason —
+                                put‑away, QC, damage, return.
+                            </p>
+                        </div>
+                        <div class="strip-card">
+                            <img
+                                src="/assets/shots/web/users.jpg"
+                                alt="User record with API access and RF device login toggles and an audit block"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Identity</b>API keys and RF device logins sit
+                                beside human accounts.
+                            </p>
+                        </div>
+                        <div class="strip-card">
+                            <img
+                                src="/assets/shots/web/webrf-main-menu.jpg"
+                                alt="Web RF terminal main menu with inbound, outbound, inventory and picking tiles"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Web terminal</b>The modern handheld, keyboard
+                                first, built for gloves.
+                            </p>
+                        </div>
+                        <div class="strip-card">
+                            <img
+                                src="/assets/shots/web/rf-receiving-menu.jpg"
+                                alt="Character-mode RF terminal receiving menu on a legacy handheld"
+                                loading="lazy"
+                            />
+                            <p>
+                                <b>Legacy terminal</b>And the same functions on
+                                the scanners you already own.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -642,9 +786,9 @@
                         </div>
                         <p class="p-d">
                             No write goes direct to a live system. Every change
-                            passes Draft → Validate → Apply. Diff before
-                            promotion. Rollback as a structural property, not a
-                            recovery procedure.
+                            passes Draft → Validate → Apply as a new version.
+                            The version that was live before it stays. Rollback
+                            as a structural property, not a recovery procedure.
                         </p>
                         <div class="p-meta">
                             draft · validate · apply · fork
@@ -1231,8 +1375,8 @@
                             <div class="li">
                                 <i>✓</i
                                 ><span
-                                    >Every deployment is a reviewable diff — see
-                                    what changed and why</span
+                                    >Every deployment is a named version — who
+                                    applied it, when, and why</span
                                 >
                             </div>
                             <div class="li">
@@ -1266,6 +1410,36 @@
                         </div>
                     </div>
                 </div>
+
+                <figure class="figure">
+                    <img
+                        src="/assets/shots/web/balances-by-serial.jpg"
+                        alt="Inventory balances filtered by serial number, each serial tied to a lot, pallet, location and receipt"
+                        loading="lazy"
+                    />
+                    <figcaption>
+                        <span
+                            ><b>Traceability.</b> Every serial carries its lot,
+                            its pallet, its location and the receipt it arrived
+                            on.</span
+                        ><span>Fig. 02</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="figure">
+                    <img
+                        src="/assets/shots/web/permission-matrix.jpg"
+                        alt="Permission matrix listing 757 resources against six roles with read, write, delete and execute cells"
+                        loading="lazy"
+                    />
+                    <figcaption>
+                        <span
+                            ><b>Permissions.</b> 757 resources — menu items,
+                            forms, API methods, server actions — against every
+                            role, cell by cell.</span
+                        ><span>Fig. 03</span>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
@@ -1309,7 +1483,7 @@
                     <article class="particle p-core p-quark">
                         <div class="p-symbol">Q</div>
                         <div class="p-meta">
-                            <span class="p-tag p-tag-shipped">SHIPPED</span>
+                            <span class="p-tag p-tag-shipped">BUILT</span>
                             <span class="p-cls">CORE</span>
                         </div>
                         <h3 class="p-name">Quark</h3>
@@ -1342,7 +1516,7 @@
                         <div class="p-symbol">φ</div>
                         <div class="p-meta">
                             <span class="p-tag p-tag-shipped"
-                                >SHIPPED · BETA</span
+                                >BUILT · BETA</span
                             >
                             <span class="p-cls">VOICE</span>
                         </div>
@@ -1468,7 +1642,7 @@
                     <article class="particle p-fn">
                         <div class="p-symbol">ν</div>
                         <div class="p-meta">
-                            <span class="p-tag p-tag-shipped">SHIPPED</span
+                            <span class="p-tag p-tag-shipped">BUILT</span
                             ><span class="p-cls">ANALYTICS</span>
                         </div>
                         <h3 class="p-name">Neutrino</h3>
@@ -1481,7 +1655,7 @@
                     <article class="particle p-ops">
                         <div class="p-symbol">ƒ</div>
                         <div class="p-meta">
-                            <span class="p-tag p-tag-shipped">SHIPPED</span
+                            <span class="p-tag p-tag-shipped">BUILT</span
                             ><span class="p-cls">IDENTITY</span>
                         </div>
                         <h3 class="p-name">Fermion</h3>
@@ -1606,7 +1780,7 @@
                         ><b>Telegram · email · webhook · dashboard</b>
                     </div>
                     <div class="row">
-                        <span>Industries shipped</span
+                        <span>Industries</span
                         ><b>Pharma · 3PL · retail · electronics</b>
                     </div>
                     <div class="row">
@@ -1660,22 +1834,13 @@
                         <a href="#audience">Who it's for</a>
                     </div>
                     <div class="col">
-                        <h5>Company</h5>
-                        <a href="#">Careers</a>
-                        <a href="#">Press</a>
-                    </div>
-                    <div class="col">
                         <h5>Legal</h5>
-                        <a href="#">Privacy</a>
-                        <a href="#">Terms</a>
-                        <a href="#">DPA</a>
+                        <a href="/legal/privacy.html">Privacy</a>
+                        <a href="/legal/terms.html">Terms</a>
                     </div>
                 </div>
                 <div class="foot-bottom">
-                    <span
-                        >© 2026 <b>Quark Operations EOOD</b> · Sofia, Bulgaria ·
-                        UIC 207XXXXXX</span
-                    >
+                    <span>© 2026 <b>Quark</b> · Sofia, Bulgaria</span>
                     <span
                         >Made for the era when operators are not always
                         human.</span
@@ -1689,6 +1854,32 @@
             data-cfasync="false"
             src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
         ></script>
+        <div
+            class="lightbox"
+            id="lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Screenshot"
+            hidden
+        >
+            <div class="lb-bar">
+                <span id="lbCount">1 / 1</span>
+                <span class="lb-btns">
+                    <button type="button" data-lb="prev" aria-label="Previous">
+                        ←
+                    </button>
+                    <button type="button" data-lb="next" aria-label="Next">
+                        →
+                    </button>
+                    <button type="button" data-lb="close" aria-label="Close">
+                        Esc
+                    </button>
+                </span>
+            </div>
+            <div class="lb-stage"><img id="lbImg" alt="" /></div>
+            <div class="lb-cap" id="lbCap"></div>
+        </div>
+
         <script src="/assets/main.js" defer></script>
     </body>
 </html>
