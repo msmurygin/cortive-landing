@@ -163,6 +163,23 @@
     let index = 0;
     let opener = null;
 
+    /* A JPEG paints as it downloads. Wrap each shot so the placeholder shows
+       instead, and reveal the image only once the whole file has decoded. */
+    shots.forEach((img) => {
+        const frame = document.createElement("span");
+        frame.className = "shot-frame";
+        img.parentNode.insertBefore(frame, img);
+        frame.appendChild(img);
+
+        const reveal = () => frame.classList.add("is-loaded");
+        if (img.complete && img.naturalWidth) {
+            reveal();
+        } else {
+            img.addEventListener("load", reveal, { once: true });
+            img.addEventListener("error", reveal, { once: true });
+        }
+    });
+
     shots.forEach((img, i) => {
         img.classList.add("zoomable");
         img.tabIndex = 0;
