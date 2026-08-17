@@ -19,6 +19,9 @@ html[data-theme="light"] {
     --quark: #00e0bc;
     --quark-deep: #00b899;
     --signal: #ff5b1a;
+    /* markers sit on cream paper here, so they need their own darker accents */
+    --mark-yes: #00705d;
+    --mark-no: #c2410c;
     --grain-blend: multiply;
     --serif: "Instrument Serif", ui-serif, Georgia, serif;
     --sans: "Geist", "Inter", -apple-system, system-ui, sans-serif;
@@ -37,6 +40,9 @@ html[data-theme="dark"] {
     --quark: #00e0bc;
     --quark-deep: #1ff0c8;
     --signal: #ff8c5a;
+    /* on indigo the bright accents already carry — reuse them */
+    --mark-yes: var(--quark);
+    --mark-no: var(--signal);
     --grain-blend: screen;
     --abs-dark: #3d3d7a; /* deep indigo — brand surface for inverted sections in dark */
     --abs-light: #f5f3ee;
@@ -939,10 +945,11 @@ section.tight {
 }
 .strip-rail {
     display: flex;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 28px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 24px 0 20px;
+    padding: 28px 0 22px;
     scrollbar-width: thin;
     scrollbar-color: var(--line-2) transparent;
 }
@@ -953,26 +960,23 @@ section.tight {
     background: var(--line-2);
 }
 .strip-card {
-    flex: 0 0 clamp(280px, 42vw, 520px);
+    flex: 0 0 auto;
     scroll-snap-align: start;
+    min-width: 260px;
 }
+/* plates hang at one height, each at its own true ratio — no crop, no letterbox */
 .strip-card img {
     display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    object-position: top left;
+    height: clamp(240px, 33vw, 430px);
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    background: #0d0e22;
     border: 1px solid var(--line-2);
 }
-/* terminal shots are taller than the card — show the whole screen, don't crop it */
-.strip-card.whole img {
-    object-fit: contain;
-    object-position: center;
-    background: #0f1028;
-}
 .strip-card p {
-    margin-top: 10px;
+    margin-top: 12px;
+    max-width: 46ch;
     font-family: var(--mono);
     font-size: 11px;
     line-height: 1.55;
@@ -1183,6 +1187,266 @@ section.tight {
         gap: 0;
     }
 }
+/* a refusal never wears the affirmative colour */
+.aud .check .li i.no,
+.cmp-list .li i.no {
+    color: var(--mark-no);
+}
+/* … except inside the inverted card, which is dark in both themes */
+.cmp-col:last-child .cmp-list .li i {
+    color: var(--quark);
+}
+
+/* founder's own voice — set as prose, not as a card */
+.founder {
+    max-width: 68ch;
+    margin-top: 48px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    text-wrap: pretty;
+}
+.founder p + p {
+    margin-top: 20px;
+}
+.founder i {
+    font-family: var(--serif);
+    font-style: italic;
+}
+.founder b {
+    font-weight: 600;
+}
+.founder .sign {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mute);
+}
+
+/* schematic figures — drawn in the page's own ink, not photographed */
+.schematic svg {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+    border: 1px solid var(--line-2);
+    background: var(--paper);
+}
+.sch-box {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1;
+}
+.sch-fill {
+    fill: var(--quark);
+    stroke: var(--ink);
+    stroke-width: 1;
+}
+.sch-line {
+    fill: none;
+    stroke: var(--line-2);
+    stroke-width: 1;
+}
+.sch-line.on {
+    stroke: var(--mark-yes);
+    stroke-width: 1.5;
+}
+.sch-hair {
+    stroke: var(--line);
+    stroke-width: 1;
+}
+.sch-t {
+    fill: var(--ink);
+    font-family: var(--mono);
+    font-size: 11px;
+}
+.sch-t.nm {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+}
+.sch-t.mu {
+    fill: var(--mute);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.sch-t.ac {
+    fill: var(--mark-yes);
+}
+.sch-t.on-fill {
+    fill: #0a0a0a;
+}
+.sch-t.on-fill-mu {
+    fill: rgba(10, 10, 10, 0.6);
+}
+
+/* standfirst — the whole answer in fifteen seconds, for someone who already met us */
+.standfirst {
+    padding: 0;
+    border-bottom: 1px solid var(--ink);
+}
+.sf-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.sf-cell {
+    padding: 32px 28px 34px;
+    border-right: 1px solid var(--line);
+}
+.sf-cell:last-child {
+    border-right: none;
+}
+.sf-k {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mute);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+}
+.sf-v {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+    text-wrap: pretty;
+}
+.sf-v a {
+    color: var(--mark-yes);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+}
+.sf-v a:hover {
+    color: var(--ink);
+}
+@media (max-width: 1024px) {
+    .sf-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .sf-cell:nth-child(2n) {
+        border-right: none;
+    }
+    .sf-cell:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+    }
+}
+@media (max-width: 640px) {
+    .sf-grid {
+        grid-template-columns: 1fr;
+    }
+    .sf-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding: 24px 0 26px;
+    }
+    .sf-cell:last-child {
+        border-bottom: none;
+    }
+}
+
+/* marginal plates — small specimens in the outer column, not holes in the text */
+.mfig {
+    margin: 0;
+    align-self: start;
+}
+.mfig img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line-2);
+    background: #0d0e22;
+}
+.mfig figcaption {
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--mute);
+}
+/* on a phone the margin is gone, so the specimen rejoins the flow rather than vanishing */
+@media (max-width: 1024px) {
+    .mfig {
+        max-width: 420px;
+        margin-top: 24px;
+    }
+}
+
+/* each plate is shot in the theme it will be read in, so neither fights the page.
+   these must out-specify `.figure img`, which also sets display */
+.figure img.shot-light {
+    display: block;
+}
+.figure img.shot-dark {
+    display: none;
+}
+html[data-theme="dark"] .figure img.shot-light {
+    display: none;
+}
+html[data-theme="dark"] .figure img.shot-dark {
+    display: block;
+}
+/* a light plate already sits at the paper's value — it needs no single-ink treatment */
+.figure img.shot-light {
+    filter: none;
+}
+
+/* plates are printed in one ink: near-monochrome at rest, so a dark UI sits on
+   cream paper instead of punching a hole in it. Colour returns on hover, and the
+   viewer always shows the shot as it really is. */
+.figure img,
+.mfig img {
+    filter: grayscale(0.9) sepia(0.08) contrast(0.92) brightness(1.1);
+    transition: filter 0.35s ease;
+}
+.figure:hover img,
+.mfig:hover img,
+.figure img:focus-visible,
+.mfig img:focus-visible {
+    filter: none;
+}
+.lb-stage img {
+    filter: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .figure img,
+    .mfig img {
+        transition: none;
+    }
+}
+
+/* paired plates hang at one height — nothing cropped, portrait shots matted */
+.fig-pair .figure {
+    margin-top: 40px;
+}
+.fig-pair .figure img {
+    height: clamp(260px, 30vw, 420px);
+    object-fit: contain;
+    background: #0d0e22;
+}
+.strip-head a {
+    color: var(--ink);
+    font-weight: 600;
+}
+.strip-head a:hover {
+    color: var(--quark-deep);
+}
+@media (max-width: 720px) {
+    .fig-pair .figure {
+        overflow-x: visible;
+    }
+    .fig-pair .figure img {
+        height: auto;
+        width: 100%;
+    }
+}
 
 .viz-ver {
     padding: 0;
@@ -1235,12 +1499,12 @@ section.tight {
     color: var(--mute);
 }
 .viz-ver .vv-s.live {
-    border-color: var(--quark-deep);
-    color: var(--quark-deep);
+    border-color: var(--mark-yes);
+    color: var(--mark-yes);
 }
 .viz-ver .vv-s.draft {
-    border-color: var(--signal);
-    color: var(--signal);
+    border-color: var(--mark-no);
+    color: var(--mark-no);
 }
 .viz-ver .vv-note {
     margin-top: 6px;
@@ -1266,8 +1530,8 @@ section.tight {
     color: var(--mute);
 }
 .viz-ver .vv-btns u.ok {
-    border-color: var(--quark-deep);
-    color: var(--quark-deep);
+    border-color: var(--mark-yes);
+    color: var(--mark-yes);
 }
 
 /* visual: telegram approve */
@@ -1695,7 +1959,7 @@ html[data-theme="dark"] .viz-tg .bubble.you .ts {
     align-items: start;
 }
 .aud .check .li i {
-    color: var(--quark-deep);
+    color: var(--mark-yes);
     font-style: normal;
     font-family: var(--mono);
     font-size: 12px;

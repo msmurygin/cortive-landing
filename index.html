@@ -51,7 +51,7 @@
             href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="/assets/styles.css?v=1" />
+        <link rel="stylesheet" href="assets/styles.css?v=1" />
         <template id="__bundler_thumbnail">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
                 <rect width="600" height="600" fill="#0a0a0a" />
@@ -147,7 +147,7 @@
                         </svg>
                     </button>
                     <a class="btn" href="#waitlist"
-                        >Join waitlist <span class="arrow">→</span></a
+                        >Start with my warehouse <span class="arrow">→</span></a
                     >
                 </div>
             </div>
@@ -178,14 +178,15 @@
                         </h1>
                         <p class="hero-sub">
                             A warehouse management system that
-                            <b>deploys in days, not years</b>. Because an AI
-                            agent configures it — not a consulting team. Built
-                            on <b>Metadata‑Governable Architecture</b>: a
-                            foundation legacy systems cannot retrofit.
+                            <b>deploys in days, not years</b>. Built for the
+                            warehouse still run out of spreadsheets, and for the
+                            3PL carrying a system nobody left instructions for.
+                            An AI agent configures it — not a consulting team —
+                            because every feature is metadata, not code.
                         </p>
                         <div class="hero-actions">
                             <a class="btn" href="#waitlist"
-                                >Join the waitlist
+                                >See it on your own data
                                 <span class="arrow">→</span></a
                             >
                             <a class="btn btn-ghost" href="#manifesto"
@@ -266,6 +267,44 @@
             </div>
         </div>
 
+        <!-- ═══ STANDFIRST ═══ -->
+        <section class="standfirst">
+            <div class="shell sf-grid">
+                <div class="sf-cell">
+                    <div class="sf-k">What it is</div>
+                    <div class="sf-v">
+                        A warehouse management system whose features live as
+                        metadata instead of code — so it is configured, not
+                        customised.
+                    </div>
+                </div>
+                <div class="sf-cell">
+                    <div class="sf-k">Where it stands</div>
+                    <div class="sf-v">
+                        Built and running: Studio, RF terminals, lots and
+                        serials, statutory forms, voice picking in beta. No
+                        hosted demo yet. No customers yet.
+                    </div>
+                </div>
+                <div class="sf-cell">
+                    <div class="sf-k">Who is behind it</div>
+                    <div class="sf-v">
+                        Maxim Smurygin, in Sofia. Building it alone, looking for
+                        the first warehouse rather than the fiftieth.
+                    </div>
+                </div>
+                <div class="sf-cell">
+                    <div class="sf-k">If we have met</div>
+                    <div class="sf-v">
+                        Write to me directly —
+                        <a href="mailto:hello@quark.build">hello@quark.build</a
+                        >. Otherwise the form at the foot of the page does the
+                        same thing.
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ═══ §01 PROBLEM ═══ -->
         <section id="problem" class="tight">
             <div class="shell">
@@ -298,33 +337,33 @@
                         </div>
                         <div class="cmp-list">
                             <div class="li">
-                                <i>×</i
+                                <i class="no">×</i
                                 ><span
                                     >Hardcoded processes you can't touch</span
                                 >
                             </div>
                             <div class="li">
-                                <i>×</i
+                                <i class="no">×</i
                                 ><span
                                     >New SKU? File a ticket. Wait 3 weeks.</span
                                 >
                             </div>
                             <div class="li">
-                                <i>×</i
+                                <i class="no">×</i
                                 ><span
                                     >Tribal knowledge in consultants'
                                     heads</span
                                 >
                             </div>
                             <div class="li">
-                                <i>×</i
+                                <i class="no">×</i
                                 ><span
                                     >Every change is a customisation
                                     project</span
                                 >
                             </div>
                             <div class="li">
-                                <i>×</i
+                                <i class="no">×</i
                                 ><span
                                     >Cannot be audited. Cannot be rolled
                                     back.</span
@@ -377,6 +416,98 @@
                         </div>
                     </div>
                 </div>
+                <div class="audience" style="margin-top: 56px">
+                    <div class="aud">
+                        <div class="num">Fit — this is you</div>
+                        <h3>
+                            You are running it on
+                            <span class="ital">spreadsheets</span>, or on
+                            something you inherited.
+                        </h3>
+                        <p>
+                            No WMS team, and no appetite for a six-month
+                            project. Either there is no system at all and the
+                            warehouse lives in Excel and in people's heads, or
+                            there is one — written years ago, by someone who has
+                            left, and nobody dares touch it.
+                        </p>
+                        <div class="check">
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >A 3PL adding clients faster than it can
+                                    reconfigure</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >Lots, expiry or serials that Excel cannot
+                                    honestly track</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >Statutory paperwork you currently assemble
+                                    by hand</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >You would rather configure a system than
+                                    commission one</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aud">
+                        <div class="num">Fit — not yet</div>
+                        <h3>
+                            We would rather say so than
+                            <span class="ital">waste your quarter</span>.
+                        </h3>
+                        <p>
+                            Quark is early. There are places where a system with
+                            twenty years of scar tissue is still the right
+                            answer, and we would rather you heard that here than
+                            three months into an evaluation.
+                        </p>
+                        <div class="check">
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >Hundreds of thousands of SKUs across many
+                                    sites</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >Automation on the floor — AS/RS, shuttles,
+                                    sorters</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >A validated GxP environment that must be
+                                    certified before it is touched</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >You need a vendor with a decade of
+                                    references tomorrow morning</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -466,14 +597,15 @@
                                 </div>
                                 <div class="vv-row draft">
                                     <div class="vv-head">
-                                        <span class="vv-n">v1.1.0</span>
-                                        <span class="vv-s draft">draft</span>
+                                        <span class="vv-n">v?</span
+                                        ><span class="vv-s draft">draft</span
+                                        ><span class="vv-s">current</span>
                                     </div>
                                     <div class="vv-note">
                                         Cold chain: lot expiry + FEFO on SKU
                                     </div>
                                     <div class="vv-meta">
-                                        created 08:14 · by studio
+                                        #24 · created 17/08/2026 · by studio
                                     </div>
                                     <div class="vv-btns">
                                         <u class="ok">Apply</u><u>Discard</u
@@ -482,12 +614,16 @@
                                 </div>
                                 <div class="vv-row">
                                     <div class="vv-head">
-                                        <span class="vv-n">v1.0.0</span>
-                                        <span class="vv-s live">active</span>
+                                        <span class="vv-n">v1.0.0</span
+                                        ><span class="vv-s live">active</span>
                                     </div>
                                     <div class="vv-meta">
-                                        rollback target · one click
+                                        #4 · created 13/03/2026 · rollback target
                                     </div>
+                                </div>
+                                <div class="vv-bar">
+                                    <span>14 forms · 16 navs · 7 exts</span
+                                    ><span><b>37</b> binds</span>
                                 </div>
                             </div>
                         </div>
@@ -537,179 +673,67 @@
                     </div>
                 </div>
 
-                <figure class="figure">
-                    <img
-                        src="/assets/shots/web/studio-forms.jpg"
-                        alt="Quark Studio showing the SKU Management module as a graph of fourteen forms, with slots, tabs and extension hooks"
-                        loading="lazy"
-                        width="1800"
-                        height="1008"
-                    />
-                    <figcaption>
-                        <span
-                            ><b>The Studio.</b> One module — SKU Management —
-                            drawn from its own metadata: 14 forms, how they
-                            navigate, and the fields of any one of them.</span
-                        ><span>Fig. 01</span>
-                    </figcaption>
-                </figure>
-
                 <div class="strip">
                     <div class="strip-head">
                         <span
-                            ><b>The rest of it</b> — screens, not mockups. Click
-                            any to enlarge.</span
+                            ><b>Figure</b> — drawn from the system's own
+                            metadata, not photographed.</span
                         >
-                        <span class="strip-nav">
-                            <button
-                                type="button"
-                                data-strip="prev"
-                                aria-label="Previous screens"
-                            >
-                                ←
-                            </button>
-                            <button
-                                type="button"
-                                data-strip="next"
-                                aria-label="More screens"
-                            >
-                                →
-                            </button>
-                        </span>
+                        <span><a href="screens.html">Screens, if you want them →</a></span>
                     </div>
-                    <div class="strip-rail">
-                        <div class="strip-card whole">
-                            <img
-                                src="/assets/shots/web/forklift-scan-ok.jpg"
-                                alt="Forklift terminal accepting a scanned barcode, confirming Grease LG-EP2 400g cartridge"
-                                loading="lazy"
-                                width="1500"
-                                height="1184"
-                            />
-                            <p>
-                                <b>Scan accepted</b>The item is on the document,
-                                and the terminal says so.
-                            </p>
-                        </div>
-                        <div class="strip-card whole">
-                            <img
-                                src="/assets/shots/web/forklift-error-barcode.jpg"
-                                alt="Forklift terminal rejecting an unknown barcode with a red error banner"
-                                loading="lazy"
-                                width="1500"
-                                height="1184"
-                            />
-                            <p>
-                                <b>Scan refused</b>Governance, as the operator
-                                actually meets it.
-                            </p>
-                        </div>
-                        <div class="strip-card">
-                            <img
-                                src="/assets/shots/web/putaway-policy.jpg"
-                                alt="Put-away policy editor: a ladder of steps, each with a destination, conditions and placement rules"
-                                loading="lazy"
-                                width="1400"
-                                height="922"
-                            />
-                            <p>
-                                <b>Rules</b>Put‑away strategy as a ladder of
-                                steps. First match wins; the fallback is written
-                                down.
-                            </p>
-                        </div>
-                        <div class="strip-card">
-                            <img
-                                src="/assets/shots/web/3d-inspect.jpg"
-                                alt="Three-dimensional warehouse topology with an inspected bin showing its zone, type, aisle, bay, level and size"
-                                loading="lazy"
-                                width="1800"
-                                height="1011"
-                            />
-                            <p>
-                                <b>Topology</b>Click any bin: zone, type, aisle,
-                                bay, level, dimensions.
-                            </p>
-                        </div>
-                        <div class="strip-card">
-                            <img
-                                src="/assets/shots/web/reports.jpg"
-                                alt="Report library showing sixteen statutory warehouse forms grouped by section"
-                                loading="lazy"
-                                width="1800"
-                                height="1125"
-                            />
-                            <p>
-                                <b>Documents</b>Sixteen statutory forms —
-                                TORG‑2, M‑4, M‑11, INV‑3 — out of the box.
-                            </p>
-                        </div>
-                        <div class="strip-card">
-                            <img
-                                src="/assets/shots/web/balances-by-location.jpg"
-                                alt="Inventory balances by location with hold reasons for damage, customer return and QC quarantine"
-                                loading="lazy"
-                                width="1800"
-                                height="1012"
-                            />
-                            <p>
-                                <b>Balances</b>Six views of one stock figure,
-                                with holds and quarantine spelled out.
-                            </p>
-                        </div>
-                        <div class="strip-card">
-                            <img
-                                src="/assets/shots/web/transactions-filtered.jpg"
-                                alt="Transaction log listing deposits and moves, each with the reason it happened"
-                                loading="lazy"
-                                width="1800"
-                                height="1010"
-                            />
-                            <p>
-                                <b>Movements</b>Every move carries its reason —
-                                put‑away, QC, damage, return.
-                            </p>
-                        </div>
-                        <div class="strip-card">
-                            <img
-                                src="/assets/shots/web/users.jpg"
-                                alt="User record with API access and RF device login toggles and an audit block"
-                                loading="lazy"
-                                width="1400"
-                                height="784"
-                            />
-                            <p>
-                                <b>Identity</b>API keys and RF device logins sit
-                                beside human accounts.
-                            </p>
-                        </div>
-                        <div class="strip-card">
-                            <img
-                                src="/assets/shots/web/webrf-main-menu.jpg"
-                                alt="Web RF terminal main menu with inbound, outbound, inventory and picking tiles"
-                                loading="lazy"
-                                width="1400"
-                                height="1059"
-                            />
-                            <p>
-                                <b>Web terminal</b>The modern handheld, keyboard
-                                first, built for gloves.
-                            </p>
-                        </div>
-                        <div class="strip-card">
-                            <img
-                                src="/assets/shots/web/rf-receiving-menu.jpg"
-                                alt="Character-mode RF terminal receiving menu on a legacy handheld"
-                                loading="lazy"
-                                width="947"
-                                height="1400"
-                            />
-                            <p>
-                                <b>Legacy terminal</b>And the same functions on
-                                the scanners you already own.
-                            </p>
-                        </div>
-                    </div>
+
+                    <figure class="figure schematic">
+                        <svg
+                            viewBox="0 0 620 250"
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            aria-label="A module node connected to its fourteen forms, each labelled by kind"
+                        >
+                            <text class="sch-t mu" x="16" y="18">
+                                14 forms · 16 navs · 7 exts · 37 binds
+                            </text>
+                            <line class="sch-hair" x1="16" y1="27" x2="604" y2="27" />
+
+                            <rect class="sch-fill" x="16" y="95" width="140" height="70" />
+                            <text class="sch-t nm on-fill" x="30" y="122">sku</text>
+                            <text class="sch-t mu on-fill-mu" x="30" y="140">module</text>
+                            <text class="sch-t on-fill" x="30" y="158">draft · v?</text>
+
+                            <path class="sch-line" d="M156,130 C205,130 205,50 250,50" />
+                            <path class="sch-line on" d="M156,130 C205,130 205,85 250,85" />
+                            <path class="sch-line" d="M156,130 C205,130 205,120 250,120" />
+                            <path class="sch-line" d="M156,130 C205,130 205,155 250,155" />
+                            <path class="sch-line" d="M156,130 C205,130 205,190 250,190" />
+                            <path class="sch-line" d="M156,130 C205,130 205,225 250,225" />
+
+                            <rect class="sch-box" x="250" y="36" width="300" height="28" />
+                            <text class="sch-t" x="264" y="55">sku_list</text>
+                            <text class="sch-t mu" x="536" y="54" text-anchor="end">list</text>
+                            <rect class="sch-box" x="250" y="71" width="300" height="28" />
+                            <text class="sch-t ac" x="264" y="90">sku_card</text>
+                            <text class="sch-t mu" x="536" y="89" text-anchor="end">detail</text>
+                            <rect class="sch-box" x="250" y="106" width="300" height="28" />
+                            <text class="sch-t" x="264" y="125">sku_barcodes</text>
+                            <text class="sch-t mu" x="536" y="124" text-anchor="end">child list</text>
+                            <rect class="sch-box" x="250" y="141" width="300" height="28" />
+                            <text class="sch-t" x="264" y="160">sku_units</text>
+                            <text class="sch-t mu" x="536" y="159" text-anchor="end">child list</text>
+                            <rect class="sch-box" x="250" y="176" width="300" height="28" />
+                            <text class="sch-t" x="264" y="195">sku_lots</text>
+                            <text class="sch-t mu" x="536" y="194" text-anchor="end">tab</text>
+                            <rect class="sch-box" x="250" y="211" width="300" height="28" />
+                            <text class="sch-t" x="264" y="230">… 9 more</text>
+                        </svg>
+                        <figcaption>
+                            <span
+                                ><b>One module, drawn from its own metadata.</b>
+                                SKU Management declares fourteen forms and how
+                                they navigate into one another. Every box and
+                                every line here is a row in a table — which is
+                                the whole claim.</span
+                            ><span>Fig. 01</span>
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -1431,39 +1455,6 @@
                     </div>
                 </div>
 
-                <figure class="figure">
-                    <img
-                        src="/assets/shots/web/balances-by-serial.jpg"
-                        alt="Inventory balances filtered by serial number, each serial tied to a lot, pallet, location and receipt"
-                        loading="lazy"
-                        width="1800"
-                        height="587"
-                    />
-                    <figcaption>
-                        <span
-                            ><b>Traceability.</b> Every serial carries its lot,
-                            its pallet, its location and the receipt it arrived
-                            on.</span
-                        ><span>Fig. 02</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="figure">
-                    <img
-                        src="/assets/shots/web/permission-matrix.jpg"
-                        alt="Permission matrix listing 757 resources against six roles with read, write, delete and execute cells"
-                        loading="lazy"
-                        width="1800"
-                        height="1125"
-                    />
-                    <figcaption>
-                        <span
-                            ><b>Permissions.</b> 757 resources — menu items,
-                            forms, API methods, server actions — against every
-                            role, cell by cell.</span
-                        ><span>Fig. 03</span>
-                    </figcaption>
-                </figure>
             </div>
         </section>
 
@@ -1728,6 +1719,158 @@
             </div>
         </section>
 
+        <!-- ═══ §07 WHO ═══ -->
+        <section
+            id="who"
+            class="tight"
+            style="border-top: 1px solid var(--ink)"
+        >
+            <div class="shell">
+                <div class="sec-head">
+                    <div class="col-idx idx">§ 07 — Who is building this</div>
+                    <h2>
+                        One person.<br />A short list of things
+                        that <span class="ital">already run</span>.
+                    </h2>
+                    <div class="col-desc">
+                        Quark has no customers yet. That is the honest state of
+                        it, and it is also the reason this page exists — we are
+                        looking for the first warehouse, not the fiftieth.
+                    </div>
+                </div>
+
+                <div class="founder">
+                    <p>
+                        I built Quark because I kept watching the same thing
+                        happen: a warehouse that knows exactly how it wants to
+                        work, and a system that will not let it, until somebody
+                        bills six months to change two columns on a form. The
+                        problem was never the consultants. It was an
+                        architecture where every business rule is code, and code
+                        is expensive to touch.
+                    </p>
+                    <p>
+                        So Quark keeps its features in tables instead — forms,
+                        rules, roles, navigation, statutory documents. That one
+                        decision is what makes a day-long deployment possible,
+                        and it is also what lets an AI agent operate the system
+                        without being trusted, because every change it proposes
+                        arrives as a draft that a person applies or discards.
+                    </p>
+                    <p>
+                        It is named after the particle, which Gell-Mann named
+                        after a line in <i>Finnegans Wake</i> — three quarks for
+                        Muster Mark. Mark is my son.
+                    </p>
+                    <div class="sign">Maxim Smurygin · Founder · Sofia, Bulgaria</div>
+                </div>
+
+                <div class="audience" style="margin-top: 56px">
+                    <div class="aud">
+                        <div class="num">Built and running</div>
+                        <h3>What you can see <span class="ital">today</span>.</h3>
+                        <div class="check">
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >Metadata core and Studio — modules as
+                                    graphs, drafts, versions, one-click
+                                    rollback</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >RF terminals, both kinds — modern web
+                                    handheld and character mode on legacy
+                                    scanners</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >Receiving, put-away, picking, counting,
+                                    moves, holds and quarantine</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >Lots, expiry, serials, and sixteen
+                                    statutory forms</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >Permissions across 757 resources,
+                                    role by role</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i>✓</i
+                                ><span
+                                    >Phonon — hands-free voice picking, in
+                                    beta</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aud">
+                        <div class="num">Not built yet</div>
+                        <h3>What we are <span class="ital">not</span> pretending.</h3>
+                        <div class="check">
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >A hosted demo you can open by yourself — it
+                                    runs locally today</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >A catalogue of ready ERP and marketplace
+                                    connectors</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >The roadmap modules — Gluon, Boson, Lepton,
+                                    Hadron and the rest</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >A price list. There is no point setting one
+                                    before the first warehouse</span
+                                >
+                            </div>
+                            <div class="li">
+                                <i class="no">×</i
+                                ><span
+                                    >Certification for validated GxP
+                                    environments</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="founder" style="margin-top: 48px">
+                    <b>On jurisdictions.</b> Statutory forms and languages are
+                    metadata here, not release engineering — which is why
+                    TORG‑2, M‑4, M‑11 and INV‑3 ship in the box, and why a new
+                    country is a configuration rather than a release. If your
+                    paperwork is not in that list yet, adding it is metadata
+                    work, not a roadmap item.
+                </p>
+            </div>
+        </section>
+
         <!-- ═══ §07 CTA ═══ -->
         <section id="cta" class="cta">
             <div class="shell cta-inner">
@@ -1737,7 +1880,7 @@
                         style="color: rgba(255, 255, 255, 0.55)"
                     >
                         <span class="dot"></span
-                        ><span>§ 07 — Early access</span>
+                        ><span>§ 08 — The ask</span>
                     </div>
                     <h2>
                         Be first when<br />Quark ships for<br /><span
@@ -1755,12 +1898,15 @@
                     <div class="wl" id="waitlist">
                         <div class="wl-eyebrow">
                             <span class="dot"></span
-                            ><span>§ Waitlist — early access</span>
+                            ><span>§ Waitlist</span>
                         </div>
-                        <h3>Join the waitlist</h3>
+                        <h3>Be the first warehouse</h3>
                         <p class="wl-sub">
-                            One email. No spam. We'll only be in touch when
-                            there's something real to show you.
+                            Leave your email and we will ask for two things: a
+                            spreadsheet of your SKUs and a photo of your aisles.
+                            We configure a warehouse from them and show you the
+                            result — before you commit to anything, and at no
+                            cost.
                         </p>
                         <form
                             class="wl-form"
@@ -1784,10 +1930,10 @@
                                 <option>Electronics</option>
                                 <option>Other</option>
                             </select>
-                            <button type="submit">Join waitlist</button>
+                            <button type="submit">Start with my warehouse</button>
                         </form>
                         <div class="wl-note">
-                            No spam. One email when we launch for your industry.
+                            One reply, from a person, within two days.
                         </div>
                         <div class="wl-msg" id="waitlistMsg">
                             Thanks — you're on the list. We'll be in touch.
@@ -1804,11 +1950,12 @@
                         ><b>Telegram · email · webhook · dashboard</b>
                     </div>
                     <div class="row">
-                        <span>Industries</span
-                        ><b>Pharma · 3PL · retail · electronics</b>
+                        <span>Built for</span
+                        ><b>Small warehouses · multi-client 3PL</b>
                     </div>
                     <div class="row">
-                        <span>Refund</span><b>If we waste your 30 minutes</b>
+                        <span>Or just write</span
+                        ><b><a href="mailto:hello@quark.build">hello@quark.build</a></b>
                     </div>
                 </aside>
             </div>
@@ -1856,11 +2003,12 @@
                         <a href="#architecture">Architecture</a>
                         <a href="#manifesto">Manifesto</a>
                         <a href="#audience">Who it's for</a>
+                        <a href="#who">Who we are</a>
                     </div>
                     <div class="col">
                         <h5>Legal</h5>
-                        <a href="/legal/privacy.html">Privacy</a>
-                        <a href="/legal/terms.html">Terms</a>
+                        <a href="legal/privacy.html">Privacy</a>
+                        <a href="legal/terms.html">Terms</a>
                     </div>
                 </div>
                 <div class="foot-bottom">
@@ -1874,10 +2022,6 @@
         </footer>
 
         <!-- ═══ JS ═══ -->
-        <script
-            data-cfasync="false"
-            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-        ></script>
         <div
             class="lightbox"
             id="lightbox"
@@ -1904,6 +2048,6 @@
             <div class="lb-cap" id="lbCap"></div>
         </div>
 
-        <script src="/assets/main.js?v=1" defer></script>
+        <script src="assets/main.js?v=1" defer></script>
     </body>
 </html>

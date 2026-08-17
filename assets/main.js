@@ -159,7 +159,10 @@
     const countEl = document.getElementById("lbCount");
 
     /* Every screenshot on the page, in reading order. */
-    const shots = [...document.querySelectorAll(".figure img, .strip-card img")];
+    /* only the plate visible in the current theme belongs in the viewer */
+    const shots = [
+        ...document.querySelectorAll(".figure img, .strip-card img, .mfig img"),
+    ].filter((img) => getComputedStyle(img).display !== "none");
     let index = 0;
     let opener = null;
 
