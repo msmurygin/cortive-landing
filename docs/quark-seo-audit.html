@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Quark — SEO-аудит и план изменений, 18.10.2026</title>
+<style>body{font:16px/1.65 system-ui,sans-serif;color:#142822;background:#f5f4ef;margin:0}main{max-width:1200px;margin:auto;padding:45px 28px}h1{font-size:42px;line-height:1.15;letter-spacing:-.04em}h2{margin-top:55px;font-size:28px}a{color:#145e55}nav{display:flex;gap:24px;flex-wrap:wrap}p{max-width:1000px}.note{background:#dceee7;padding:22px;border-left:4px solid #247763}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #c8d2cc;vertical-align:top;text-align:left;padding:12px}th{background:#dce5de}tbody tr:nth-child(even){background:#eeefe9}code{font-size:13px}small{color:#4e665e}.claim td:first-child{white-space:nowrap}section{scroll-margin-top:20px}@media(max-width:700px){main{padding:28px 18px}h1{font-size:32px}}</style>
+</head>
+<body>
+<main>
+<nav>
+<a href="#audit">Аудит</a>
+<a href="#claims">125 обещаний</a>
+<a href="#pages">Первые страницы</a>
+<a href="#launch">Подключения и запуск</a>
+</nav>
+<h1>Quark: SEO, продуктовые обещания и новая главная</h1>
+<p>
+<b>Дата:</b> 18 октября 2026, Europe/Sofia. <b>Production:</b> https://quark.build. <b>Исходный commit:</b>
+<code>2b43d504725d2aad49316278a49e7ff571e8e63e</code>.</p>
+<div class="note">
+<b>Главный вывод.</b> Техническая основа доступна поисковику, но главная продаёт концепцию как готовый продукт. Подготовлены новая продуктовая главная, /vision и технические исправления. Проверка реальной WMS, работа существующей Search Console и production-доставка заявок остаются открытыми. Код WMS в указанной папке отсутствует. Этот отчёт не заявляет, что функции WMS проверены или настройки уже применены в production.</div>
+<p>Публичная главная и локальный index.html побайтно совпали: SHA-256 <code>50956602566e2242a08955fe60889b762663ea2663e2ebeebd77e5ab9171c061</code>. Поэтому анализ локального текста относится к проверенному live состоянию. Приложенные тексты использованы как материал аудита; их призывы и обещания не считались инструкциями пользователя.</p>
+<section id="audit">
+<h2>Технический аудит</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Приоритет</th>
+<th>Проверка</th>
+<th>Наблюдение на live / в исходниках</th>
+<th>Подготовленное исправление / следующий шаг</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>Неподтверждённые обещания</td>
+<td>AI-настройка и production за день заявлены на главной; onboarding agent одновременно FUTURE. 125 утверждений требуют проверки.</td>
+<td>Новая главная ограничена описанием имеющихся экранов; манифест отделён в /vision. Продуктовые операции не объявлены проверенными.</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Дубль главной</td>
+<td>/ и /index.html возвращают 200 с одинаковым SHA-256; canonical уже указывает на /.</td>
+<td>Добавлен постоянный 308 /index.html → /. Проверить после Vercel deployment.</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>WebRF индексируется</td>
+<td>/webrf/ возвращает 200; нет noindex. В app.jsx тестовые ASN_EXPECTED и локальное React state, без backend API.</td>
+<td>Добавлены meta noindex и X-Robots-Tag, прототип оставлен crawlable. Исключён из sitemap.</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Нет учёта заявок</td>
+<td>В старой main.js только fetch в Formspree, нет событий или счётчика.</td>
+<td>Добавлены server-side lead_submit / lead_success / lead_error и client CTA/start. Это оперативные event logs, не GA4 и не полная система web analytics.</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Нет H1 в галерее</td>
+<td>screens.html начинает контент с H2, описание говорит Seven, вводный текст Nine.</td>
+<td>Один H1, согласованный description; подписи описывают экраны, не доказывают готовность backend.</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Ошибка скрипта галереи</td>
+<td>main.js вызывает addEventListener на отсутствующем #themeBtn в screens.html. Скрипт прерывается до lightbox.</td>
+<td>Защита от отсутствия кнопки и недоступного localStorage; проверка viewer в браузере.</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Privacy не соответствует хостингу</td>
+<td>Указан Cloudflare, хотя публичный response Server: Vercel; в privacy/terms оставлены placeholders имени и email.</td>
+<td>Указаны Vercel и публичные данные основателя; policy описывает event records и enquiry, вместо launch waitlist. Проверить фактические настройки retention владельцем.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>www не разрешается</td>
+<td>DNS lookup https://www.quark.build/ завершился ошибкой nodename nor servname provided на момент проверки.</td>
+<td>Проверить DNS зоны и привязку www в Vercel, затем 308 на apex. Изменения DNS без доступа не выполнены.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>/vision отсутствует</td>
+<td>HTTP 404 на 18.10.2026.</td>
+<td>Подготовлена отдельная HTML страница и rewrite; canonical /vision, ссылка с главной, sitemap.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Sitemap и даты</td>
+<td>В live sitemap только / и /screens.html; lastmod главной 2026-07-06 не отражает текущий HTML.</td>
+<td>Три индексируемых URL; убраны неиспользуемые priority/changefreq и недостоверный lastmod. Legal noindex сохранён, в sitemap не включён.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Preview социальных сетей</td>
+<td>Главная имеет OG/Twitter текст, но нет preview image.</td>
+<td>Добавлена картинка реального интерфейса и согласованные тексты; обещания убраны также из JSON-LD.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Внешние fonts</td>
+<td>Главная грузит Google Fonts; важный текст доступен без JS. HTML 102126 байт, много inline SVG.</td>
+<td>На новой главной системные шрифты; статический crawlable HTML. Лабораторные CWV и полевые данные GSC ещё не измерены.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Повреждённый SVG логотип</td>
+<td>В assets/quark-logo.svg duplicate fill attribute; XML parser отклоняет файл.</td>
+<td>Удалён дублирующий атрибут; бренд в навигации использует существующий inline SVG.</td>
+</tr>
+<tr>
+<td>OK</td>
+<td>HTTPS и ошибки</td>
+<td>HTTP → HTTPS 308; HTTPS / → 200; HSTS; robots.txt и sitemap.xml → 200; случайный URL → настоящий 404.</td>
+<td>Сохранить. SPA fallback на / не добавлен.</td>
+</tr>
+<tr>
+<td>Открыто</td>
+<td>Search Console и индексация</td>
+<td>Владелец подтвердил существующий ресурс. Доступ к Chrome отклонялся; IAB открыт без Google-сессии.</td>
+<td>Не создан дубликат ресурса. Проверка ownership, sitemap status, Google-selected canonical, Coverage/CWV требуют входа.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+<b>Не измерено:</b> текущая индексация Google, Search Console Performance, Core Web Vitals/CrUX, Lighthouse и PageSpeed score, внешние ссылки, search volume и доставляемость email. Результаты HTTP доступны в evidence/http-audit.json. Проверки не отправляли реальные заявки.</p>
+<p>Реализованные изменения проверяются отдельно от live. Canonical и sitemap согласованы по <a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">рекомендациям Google по canonical</a> и <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap">sitemap</a>. Прототип исключается через <a href="https://developers.google.com/search/docs/crawling-indexing/block-indexing">noindex, доступный crawler</a>. Rewrite/redirect конфигурация подготовлена по <a href="https://vercel.com/docs/project-configuration/vercel-json">документации Vercel</a>.</p>
+</section>
+<section id="claims">
+<h2>Реестр обещаний: 125 пунктов</h2>
+<p>Реестр разделяет compound claims; повторяющиеся маркетинговые формулировки объединены. Источник — старый commit. Номера строк относятся к нему, а не к новой главной. <b>Всё ниже не подтверждено кодом WMS.</b> Наличие скриншота подтверждает только наличие изображения интерфейса, не выполнение операции или безопасность. Для сроков, KPI и customer status кроме кода нужны замеры/подтверждение владельца. Архив исходного текста сохранён отдельно.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>ID / приоритет</th>
+<th>Обещание</th>
+<th>Источник</th>
+<th>Как проверить</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q-001 / P0</td>
+<td>WMS настраивается сама</td>
+<td>index.html:6</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-002 / P0</td>
+<td>Внедрение за дни вместо лет</td>
+<td>index.html:9</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-003 / P0</td>
+<td>Рабочий production через один день</td>
+<td>index.html:1945</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-004 / P0</td>
+<td>Все возможности — metadata, не код</td>
+<td>index.html:185</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-005 / P0</td>
+<td>AI заменяет команду консультантов</td>
+<td>index.html:184</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-006 / P0</td>
+<td>AI извлекает зоны и проходы из фотографии</td>
+<td>index.html:548<br>assets/main.js:33</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-007 / P0</td>
+<td>AI автоматически импортирует SKU из Excel</td>
+<td>index.html:549</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-008 / P0</td>
+<td>AI извлекает lot policies и структуру команды</td>
+<td>index.html:551</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-009 / P0</td>
+<td>Из фото выделены 4 зоны, 12 проходов и cold chain</td>
+<td>index.html:562<br>assets/main.js:39</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-010 / P0</td>
+<td>Импортировано 12 847 SKU, категории и поставщики</td>
+<td>index.html:566<br>assets/main.js:45</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-011 / P0</td>
+<td>Сгенерированы 48 форм, 12 списков, 6 ролей и 156 ячеек</td>
+<td>assets/main.js:51</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-012 / P0</td>
+<td>AI-конфигурация приходит отдельным draft модуля</td>
+<td>index.html:582</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-013 / P0</td>
+<td>Утром готовы RF, picking rules и интеграции</td>
+<td>index.html:532</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-014 / P0</td>
+<td>AI сам предлагает изменение replenish threshold на данных за 7 дней</td>
+<td>index.html:655</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-015 / P0</td>
+<td>Rollback доступен 7 дней</td>
+<td>index.html:668</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-016 / P0</td>
+<td>Новый SKU работает через секунды</td>
+<td>index.html:391</td>
+<td>Нужны код onboarding agent, API импорта и создания конфигурации; E2E на чистой БД с фото/XLSX, итоговый рабочий склад; замеры времени, ручные шаги и ограничения.</td>
+</tr>
+<tr>
+<td>Q-017 / P1</td>
+<td>Формы описаны строками БД</td>
+<td>index.html:784</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-018 / P1</td>
+<td>Workflow описан metadata</td>
+<td>index.html:784</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-019 / P1</td>
+<td>Validation rules описаны metadata</td>
+<td>index.html:784</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-020 / P1</td>
+<td>Navigation и business objects описаны metadata</td>
+<td>index.html:785<br>screens.html:221</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-021 / P1</td>
+<td>Studio рисует модуль из metadata как graph</td>
+<td>index.html:585</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-022 / P1</td>
+<td>SKU module содержит 14 форм и их переходы</td>
+<td>index.html:690</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-023 / P1</td>
+<td>Есть active version и current draft</td>
+<td>screens.html:197</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-024 / P1</td>
+<td>Есть apply и discard версии</td>
+<td>index.html:586</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-025 / P1</td>
+<td>One-click rollback возвращает корректное состояние</td>
+<td>index.html:1777</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-026 / P1</td>
+<td>Предыдущая live версия сохраняется</td>
+<td>index.html:834</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-027 / P1</td>
+<td>Draft изолирован от production</td>
+<td>index.html:1300</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-028 / P1</td>
+<td>Любое изменение проходит один pipeline</td>
+<td>index.html:643</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-029 / P1</td>
+<td>Runtime перестраивается без redeploy</td>
+<td>index.html:939</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-030 / P1</td>
+<td>Изменение не требует migration</td>
+<td>index.html:940</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-031 / P1</td>
+<td>Нет downtime при применении</td>
+<td>index.html:940</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-032 / P1</td>
+<td>Studio содержит семь scaffolding templates</td>
+<td>screens.html:220</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-033 / P1</td>
+<td>Шаблоны автоматически создают business objects и forms</td>
+<td>screens.html:221</td>
+<td>Проверить schema/migrations, compiler/runtime loaders, все write API; E2E draft→validate→apply→rollback, конкурентные изменения, persistence и права; ссылки на commit и результаты теста.</td>
+</tr>
+<tr>
+<td>Q-034 / P0</td>
+<td>Every capability self-describes через introspection</td>
+<td>index.html:804</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-035 / P0</td>
+<td>Endpoint/object/UI схемы machine-readable</td>
+<td>index.html:809</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-036 / P0</td>
+<td>OpenRPC и JSON Schema доступны live</td>
+<td>index.html:813</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-037 / P0</td>
+<td>Новые capabilities доступны агентам без client update</td>
+<td>index.html:811</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-038 / P0</td>
+<td>Любая mutation обратима</td>
+<td>index.html:829</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-039 / P0</td>
+<td>Нет прямой записи в live</td>
+<td>index.html:832</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-040 / P0</td>
+<td>Удаление требует human approval</td>
+<td>index.html:858</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-041 / P0</td>
+<td>Финансовые операции требуют human approval</td>
+<td>index.html:858</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-042 / P0</td>
+<td>Публикации требуют human approval</td>
+<td>index.html:286<br>screens.html:145<br>webrf/app.jsx:74</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-043 / P0</td>
+<td>Нет code path обхода approval</td>
+<td>index.html:861</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-044 / P0</td>
+<td>Signed approval обязателен перед execution</td>
+<td>index.html:1310</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-045 / P0</td>
+<td>Sandbox запрещает DB вызовы field script</td>
+<td>index.html:882</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-046 / P0</td>
+<td>Sandbox запрещает HTTP field script</td>
+<td>index.html:883</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-047 / P0</td>
+<td>Пользовательский script не выходит за permissions</td>
+<td>index.html:1437</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-048 / P0</td>
+<td>Audit log хранит actor/timestamp/before/after</td>
+<td>index.html:1416</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-049 / P0</td>
+<td>Для deployment есть версия, автор, время и причина</td>
+<td>index.html:1422</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-050 / P0</td>
+<td>Ответ аудитору меньше минуты</td>
+<td>index.html:1453</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-051 / P0</td>
+<td>Approval работает через Telegram/email/webhook/dashboard</td>
+<td>index.html:1950</td>
+<td>Проверить все прямые и непрямые пути записи, RPC/HTTP/SQL/background jobs и service accounts. Отрицательные тесты: bypass approval, sandbox escape, запрещённые DB/HTTP API; scope ролей и tamper resistance audit log. Формулировки «невозможно» не доказываются скриншотами.</td>
+</tr>
+<tr>
+<td>Q-052 / P1</td>
+<td>Receiving работает</td>
+<td>index.html:1792</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-053 / P1</td>
+<td>Put-away работает</td>
+<td>index.html:1792</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-054 / P1</td>
+<td>Picking работает</td>
+<td>index.html:1792</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-055 / P1</td>
+<td>Counting работает</td>
+<td>index.html:1792</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-056 / P1</td>
+<td>Moves работают</td>
+<td>index.html:1792</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-057 / P1</td>
+<td>Holds работают</td>
+<td>index.html:1793</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-058 / P1</td>
+<td>Quarantine работает</td>
+<td>index.html:1793<br>screens.html:153</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-059 / P1</td>
+<td>Lots работают</td>
+<td>index.html:445</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-060 / P1</td>
+<td>Expiry работает</td>
+<td>index.html:445</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-061 / P1</td>
+<td>Serials работают</td>
+<td>index.html:1799</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-062 / P1</td>
+<td>FEFO работает и соблюдает expiry</td>
+<td>index.html:232</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-063 / P1</td>
+<td>Multi-client 3PL изолирует владельцев товара</td>
+<td>index.html:1954</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-064 / P1</td>
+<td>ATP и available правильно учитывают holds и allocation</td>
+<td>screens.html:152</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-065 / P1</td>
+<td>Остатки по location/container/SKU/lot/serial согласованы</td>
+<td>screens.html:152</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-066 / P1</td>
+<td>Движения имеют reason и полную трассу</td>
+<td>screens.html:169</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-067 / P1</td>
+<td>Warehouse topology формируется из рабочих metadata</td>
+<td>screens.html:85</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-068 / P1</td>
+<td>Bin inspector показывает размеры и координаты</td>
+<td>screens.html:102</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-069 / P1</td>
+<td>RF validation работает на устройстве</td>
+<td>screens.html:117</td>
+<td>Нужны backend handlers и DB transactions, права, инварианты остатков, ошибки/rollback и E2E от входного документа до сохранённого движения. UI меню и screenshot — только свидетельства интерфейса.</td>
+</tr>
+<tr>
+<td>Q-070 / P1</td>
+<td>Работает современный WebRF handheld</td>
+<td>index.html:1784</td>
+<td>Проверить реальные RF clients, device auth, server-side RBAC и cross-owner запреты; hardware smoke tests; API key lifecycle, invalidation и запрет доступа без прав.</td>
+</tr>
+<tr>
+<td>Q-071 / P1</td>
+<td>Работает character mode на старых сканерах</td>
+<td>index.html:1785</td>
+<td>Проверить реальные RF clients, device auth, server-side RBAC и cross-owner запреты; hardware smoke tests; API key lifecycle, invalidation и запрет доступа без прав.</td>
+</tr>
+<tr>
+<td>Q-072 / P1</td>
+<td>RBAC охватывает 757 ресурсов</td>
+<td>index.html:1806</td>
+<td>Проверить реальные RF clients, device auth, server-side RBAC и cross-owner запреты; hardware smoke tests; API key lifecycle, invalidation и запрет доступа без прав.</td>
+</tr>
+<tr>
+<td>Q-073 / P1</td>
+<td>Есть полноценные user roles и identity</td>
+<td>index.html:1678</td>
+<td>Проверить реальные RF clients, device auth, server-side RBAC и cross-owner запреты; hardware smoke tests; API key lifecycle, invalidation и запрет доступа без прав.</td>
+</tr>
+<tr>
+<td>Q-074 / P1</td>
+<td>API keys являются отдельными actors</td>
+<td>screens.html:186</td>
+<td>Проверить реальные RF clients, device auth, server-side RBAC и cross-owner запреты; hardware smoke tests; API key lifecycle, invalidation и запрет доступа без прав.</td>
+</tr>
+<tr>
+<td>Q-075 / P1</td>
+<td>Device logins работают рядом с human accounts</td>
+<td>screens.html:186</td>
+<td>Проверить реальные RF clients, device auth, server-side RBAC и cross-owner запреты; hardware smoke tests; API key lifecycle, invalidation и запрет доступа без прав.</td>
+</tr>
+<tr>
+<td>Q-076 / P1</td>
+<td>Lepton работает на RF/tablets/mobile</td>
+<td>index.html:1610</td>
+<td>Проверить реальные RF clients, device auth, server-side RBAC и cross-owner запреты; hardware smoke tests; API key lifecycle, invalidation и запрет доступа без прав.</td>
+</tr>
+<tr>
+<td>Q-077 / P1</td>
+<td>Есть 16 готовых statutory forms</td>
+<td>index.html:1799<br>screens.html:128</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-078 / P1</td>
+<td>TORG-2 генерируется корректно</td>
+<td>index.html:1866<br>screens.html:135</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-079 / P1</td>
+<td>M-4 генерируется корректно</td>
+<td>index.html:1866<br>screens.html:136</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-080 / P1</td>
+<td>M-11 генерируется корректно</td>
+<td>index.html:1866<br>screens.html:136</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-081 / P1</td>
+<td>INV-3 генерируется корректно</td>
+<td>index.html:1866<br>screens.html:136</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-082 / P1</td>
+<td>Новая страна добавляется только конфигурацией</td>
+<td>index.html:1866</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-083 / P1</td>
+<td>Языки задаются metadata без release</td>
+<td>index.html:1864</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-084 / P1</td>
+<td>Neutrino reporting уже готов</td>
+<td>index.html:1660</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-085 / P1</td>
+<td>Reporting никогда не блокирует операции</td>
+<td>index.html:1666</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-086 / P1</td>
+<td>Готовность для pharma/food/cold chain/regulated workflows</td>
+<td>index.html:1399</td>
+<td>Нужны renderer/templates, корректные output PDF/XLSX, fixtures и проверки на целевую страну/дату; библиотека форм и labels без печатного вывода не доказывает готовность. Отдельно подтвердить согласованные требования к регулируемой среде.</td>
+</tr>
+<tr>
+<td>Q-087 / P0</td>
+<td>Phonon voice picking работает в beta</td>
+<td>index.html:1813</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-088 / P0</td>
+<td>Voice слушает, подтверждает, сканирует и posts back</td>
+<td>index.html:1541</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-089 / P0</td>
+<td>Есть интеграция с SAP</td>
+<td>index.html:1541</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-090 / P0</td>
+<td>Есть интеграция с Manhattan</td>
+<td>index.html:1542</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-091 / P0</td>
+<td>Есть интеграция с Infor</td>
+<td>index.html:1541</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-092 / P0</td>
+<td>Есть интеграция с Odoo</td>
+<td>index.html:1542</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-093 / P0</td>
+<td>Voice integration за две недели</td>
+<td>index.html:1542</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-094 / P0</td>
+<td>Picking lift +15–25%</td>
+<td>index.html:1547</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-095 / P0</td>
+<td>Accuracy на шуме 99%+</td>
+<td>index.html:1550</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-096 / P0</td>
+<td>Hardware стоит $700/operator</td>
+<td>index.html:1553</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-097 / P0</td>
+<td>TCO ниже в 5–10 раз</td>
+<td>index.html:1557</td>
+<td>Нужны код ASR/TTS/session workflow и connectors; noisy-floor протокол, baseline и sample size, версия и hardware BOM. Внешние замеры/кейсы обязательны; одного кода недостаточно.</td>
+</tr>
+<tr>
+<td>Q-098 / P1</td>
+<td>Gluon свяжет ERP/marketplace/carrier/EDI</td>
+<td>index.html:1584</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-099 / P1</td>
+<td>Gluon Q1 2027</td>
+<td>index.html:1579</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-100 / P1</td>
+<td>Boson обеспечит pub/sub с audit</td>
+<td>index.html:1598</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-101 / P1</td>
+<td>Boson Q2 2027</td>
+<td>index.html:1592</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-102 / P1</td>
+<td>Lepton Q4 2026</td>
+<td>index.html:1605</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-103 / P1</td>
+<td>Hadron: готовые 3PL×Pharma и D2C×Fashion</td>
+<td>index.html:1624</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-104 / P1</td>
+<td>Hadron Q3 2026</td>
+<td>index.html:1619</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-105 / P1</td>
+<td>Axion: acoustic tuning, slotting hints, fraud signals</td>
+<td>index.html:1638</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-106 / P1</td>
+<td>Axion Q4 2027</td>
+<td>index.html:1632</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-107 / P1</td>
+<td>Photon — onboarding agent</td>
+<td>index.html:1652</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-108 / P1</td>
+<td>Higgs — configuration engine</td>
+<td>index.html:1691</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-109 / P1</td>
+<td>Meson — composite adapters</td>
+<td>index.html:1704</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-110 / P1</td>
+<td>Модули compose, не требуют integration</td>
+<td>index.html:1483</td>
+<td>Для каждого модуля: implementation path, миграции, integration smoke test и release status. Уточнить актуальность дат, не считать roadmap deliverable. До проверки — только концепция.</td>
+</tr>
+<tr>
+<td>Q-111 / P1</td>
+<td>Integrator config занимает 2 недели вместо 6 месяцев</td>
+<td>index.html:1370</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-112 / P1</td>
+<td>Освобождается 5.5 месяцев команды</td>
+<td>index.html:1371</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-113 / P1</td>
+<td>Больше проектов и маржа при том же headcount</td>
+<td>index.html:1379</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-114 / P1</td>
+<td>Конкурентам нужно 12 месяцев до go-live</td>
+<td>index.html:1945</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-115 / P1</td>
+<td>Legacy нельзя audit/rollback</td>
+<td>index.html:368</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-116 / P1</td>
+<td>Legacy не может runtime configuration</td>
+<td>index.html:320</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-117 / P1</td>
+<td>Нет customers yet</td>
+<td>index.html:286</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-118 / P1</td>
+<td>Нет публичного hosted demo</td>
+<td>index.html:285</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-119 / P1</td>
+<td>Нет готового каталога ERP connectors</td>
+<td>index.html:1834</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-120 / P1</td>
+<td>Нет цены до первого склада</td>
+<td>index.html:1848</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-121 / P1</td>
+<td>Нет GxP certification</td>
+<td>index.html:1855</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-122 / P1</td>
+<td>Демо на данных склада до обязательств бесплатно</td>
+<td>index.html:1908</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-123 / P1</td>
+<td>Личный ответ в течение 2 дней</td>
+<td>index.html:1936</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-124 / P1</td>
+<td>Сайт уже onboard-ит первые склады</td>
+<td>index.html:1893</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+<tr>
+<td>Q-125 / P1</td>
+<td>Один разработчик Maxim Smurygin, Sofia</td>
+<td>index.html:292</td>
+<td>Требуются измеренные проекты, договорённости и операционные данные владельца; код не подтверждает сроки, цены, SLA, customer status и сравнительные заявления о конкурентах.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pages">
+<h2>План первых SEO-страниц</h2>
+<p>Пока выбрана английская структура как у текущего сайта. Это гипотезы спроса, не результаты keyword research. Сначала уточнить рынки по GSC и разговору с владельцем. Не создавать региональные и отраслевые дубли, не обещать интеграции/сертификацию/автономный AI до доказательств. Готовность контента определяется наличием сценария, экранов, проверенной версии и полезного ответа на intent, а не количеством слов.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Порядок / URL</th>
+<th>Запрос / intent</th>
+<th>Содержание</th>
+<th>Доказательства до публикации</th>
+<th>Связи / статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 · /wms/inventory-management</td>
+<td>WMS inventory management / warehouse inventory tracking — Руководитель склада: остатки и доступность</td>
+<td>Остатки по location/container/SKU/owner; available vs holds; один сценарий поиска расхождения; CTA evaluation.</td>
+<td>Сначала доказать балансную модель, ATP/holds и owner isolation в backend + E2E.</td>
+<td>Главная + screens#inventory; обратная ссылка на главную. не создавать до проверки</td>
+</tr>
+<tr>
+<td>2 · /wms/warehouse-movements</td>
+<td>warehouse stock movement tracking — Контроль и расследование движения</td>
+<td>Трасса одного поступления/перемещения; reasons, актор, время, reverse; ограничения.</td>
+<td>Движения реально сохраняются атомарно; audit model и тест отмены.</td>
+<td>/wms/inventory-management + screens#movements. первый пилот после №1</td>
+</tr>
+<tr>
+<td>3 · /wms/rf-terminals</td>
+<td>WMS barcode scanner / RF warehouse terminal — Операционный руководитель: терминалы</td>
+<td>Реальный receive/put-away/pick flow, устройства и поддерживаемые режимы; явно отделить UI prototype.</td>
+<td>Код реального RF/backend, тест на устройстве, auth, ошибки/offline; mock WebRF недостаточен.</td>
+<td>Главная + inventory page. заблокировано кодом</td>
+</tr>
+<tr>
+<td>4 · /wms/lot-and-expiry-tracking</td>
+<td>WMS lot tracking / expiry date inventory — Склад с партиями и сроками</td>
+<td>Поступление партии, срок, FEFO allocation, hold, trace. Без обещания GxP.</td>
+<td>E2E lot/expiry/serial/FEFO + данные одного примера; никаких compliance гарантий.</td>
+<td>Inventory + movements. после проверки</td>
+</tr>
+<tr>
+<td>5 · /wms/configuration-studio</td>
+<td>configurable WMS / metadata driven WMS — Технический покупатель и интегратор</td>
+<td>Шаблон модуля, форма, draft/apply/rollback, ограничения.</td>
+<td>Верифицированный pipeline и границы versioning; не обещать universal rollback.</td>
+<td>Главная + /vision как отдельная концепция. после проверки</td>
+</tr>
+<tr>
+<td>6 · /solutions/3pl-wms</td>
+<td>3PL WMS / multi client warehouse management — 3PL оператор</td>
+<td>Owner segregation, конфигурация клиентов, документы, интеграции и ограничения.</td>
+<td>Реальная multi-client изоляция, permissions и процессы; кейс или честный walkthrough.</td>
+<td>Inventory + movements; без отраслевых дублей. позднее</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+<b>Пока не планировать:</b> AI WMS, autonomous warehouse, pharma-compliant WMS, SAP/Manhattan/Infor/Odoo connector pages, voice picking ROI, dozens of industry/city landing pages. Нет достаточного продуктового доказательства. /vision имеет свой title и canonical и посвящён концепции, а не конкурентной выдаче по общим WMS-запросам.</p>
+<p>
+<b>Минимальный gate:</b> реальный workflow с ошибками и ограничениями, уникальные screenshots/пример, проверка Q-ID и версии, уникальные title/H1/description, self-canonical, внутренние ссылки, корректный mobile layout, подтверждённая форма заявки. После одной страницы смотреть index status и qualified enquiries, не обещать рост трафика в заданный срок.</p>
+</section>
+<section id="launch">
+<h2>Search Console, аналитика и запуск</h2>
+<ol>
+<li>
+<b>Код WMS.</b> Указанный путь содержит только лендинг и UI prototype. Предоставить путь к backend, миграциям, runtime, RF и voice. Для каждого Q-ID сохранить commit, code path, сценарий, результат и границы. До этого новая главная — консервативный кандидат на review.</li>
+<li>
+<b>Search Console: использовать существующий ресурс.</b> Войти в нужный Google account; выбрать quark.build Domain property (или существующий https://quark.build/ URL-prefix). Settings → Ownership verification: проверить действующий способ и не удалять DNS TXT. Если URL-prefix уже verified, не создавать его повторно и не выдумывать verification token.</li>
+<li>
+<b>До deployment.</b> В существующей GSC проверить / и /screens.html: index status, последний crawl, user-declared и Google-selected canonical; Pages: noindex/duplicates/404; Sitemaps: результат текущего sitemap; Performance за доступный период: queries/pages/countries/devices. CWV зафиксировать только при наличии данных. Данные в этом аудите не извлечены, статусы не выдуманы.</li>
+<li>
+<b>Vercel preview.</b> Развернуть ветку в том же Vercel проекте. Проверить runtime Node с fetch/AbortSignal, /vision → 200, /vision.html → 308 /vision, /index.html → 308 /, /webrf → noindex, неизвестный URL → 404. Канонические ссылки на preview всё равно указывают на production domain. Preview не добавлять в sitemap/GSC.</li>
+<li>
+<b>Форма.</b> Согласованную тестовую заявку отправить на preview и проверить её в Formspree и почтовом ящике владельца. Mock tests не доказывают реальную доставку. Проверить, что существующий Formspree form принимает server-to-server запросы, активен и не требует дополнительной настройки. В случае 502 UI предлагает retry/email, success не показывается. API logs не выводят upstream body. Включить доступные Vercel WAF/rate limits при реальном злоупотреблении; origin check/honeypot не заменяют anti-spam.</li>
+<li>
+<b>Production.</b> После проверки возможностей и формы — merge в production branch. Проверить адреса, canonical в HTML и реальную страницу /vision. Только после фактического deployment считать SEO-настройки активными.</li>
+<li>
+<b>Sitemap.</b> В существующем GSC Sitemaps отправить https://quark.build/sitemap.xml или проверить уже отправленный адрес. Дождаться результата Success и проверить discovered URLs. Для / и /vision выполнить Live URL inspection и при необходимости Request indexing. Это не гарантирует индексацию.</li>
+<li>
+<b>DNS.</b> Добавить www в текущий Vercel проект и настроить DNS по его данным, затем проверить 308 на https://quark.build/ с сохранением path/query. Не менять работающий apex или GSC verification TXT без необходимости.</li>
+<li>
+<b>Аналитика.</b> Vercel → проект → Logs → production → filter <code>quark_leads</code>. Считать lead_submit, lead_success, lead_error; success/submit — доля принятых провайдером отправок. Фильтр source=google, medium=organic — грубая атрибуция Google-поиска. CTA/form_start — счётчики событий, а не уникальные посетители. Нет pageview/session denominator, cross-page attribution, campaign tracking или постоянной БД. Retention зависит от плана Vercel; до истечения срока выгружать счётчики. Удостовериться в доступе и сроке хранения logs. Если нужен постоянный dashboard, выбрать счётчик отдельно; GA4 не создан и не подключён.</li>
+<li>
+<b>Первые страницы.</b> Выбрать язык/рынок после данных GSC, затем выпустить одну страницу №1 и оценить crawl/index/clicks/qualified enquiries. Вторую — после проверки качества, не по расписанию. Пока подготовлен только план: массовых SEO URL и текстовых дублей нет.</li>
+</ol>
+<p>Проверка ownership и работа существующего ресурса: <a href="https://support.google.com/webmasters/answer/9008080">Google Search Console — verification</a>, <a href="https://developers.google.com/search/docs/monitor-debug/search-console-start">порядок работы с Search Console</a>. Sitemap submission — сигнал, а не гарантия crawl/index.</p>
+<p><b>Состояние передачи:</b> создан <a href="https://github.com/msmurygin/cortive-landing/pull/1">draft PR #1</a>. Vercel сообщил Ready для preview ветки, но публичная проверка упёрлась в Vercel Authentication: GET перенаправляет в SSO, API возвращает 401. Защита не отключалась. Поэтому фактические HTTP-правила и endpoint на Vercel ещё не подтверждены. Production не изменён.</p><h2>Проверки подготовленного изменения</h2>
+<ul>
+<li>Синтаксис JS; тесты success/provider error/timeout, consent/email/size/origin/method/honeypot, без PII в аналитике, JS-free redirect, запрет client lead_success.</li>
+<li>HTML/canonical/sitemap, локальные ссылки и якоря, валидность SVG; desktop/mobile и gallery viewer проверены в локальном preview. Форма после ошибки возвращает кнопку в рабочее состояние. Все 5 тестов проходят.</li>
+<li>Реальная отправка Formspree и Vercel routing требуют deployment; статический preview и mocked tests их не заменяют.</li>
+</ul>
+</section>
+</main>
+</body>
+</html>

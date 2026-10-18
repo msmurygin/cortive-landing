@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Screens — Quark</title>
+        <title>Quark WMS Screens — Inventory, topology &amp; Studio</title>
         <meta
             name="description"
-            content="Seven more screens from Quark: warehouse topology, statutory reports, balances by location, movement log, identity and RF validation."
+            content="Product screens from Quark: warehouse topology, statutory reports, balances by location, movement log, identity and RF validation."
         />
         <meta name="robots" content="index,follow" />
         <link rel="canonical" href="https://quark.build/screens.html" />
@@ -20,12 +20,12 @@
             href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="assets/styles.css" />
-    </head>
+        <link rel="stylesheet" href="assets/styles.css?v=2" />
+    <style>.screens-title{font-size:clamp(38px,5vw,64px);line-height:1.05;font-weight:500;letter-spacing:-.04em}</style></head>
     <body>
         <nav class="nav">
             <div class="shell nav-row">
-                <a class="brand" href="index.html">
+                <a class="brand" href="/">
                     <svg
                         class="brand-logo"
                         viewBox="0 0 277 133"
@@ -46,14 +46,14 @@
                     <span class="brand-ipa">[kwɔːk]</span>
                 </a>
                 <div class="nav-mid">
-                    <a href="index.html#manifesto">Manifesto</a>
-                    <a href="index.html#how">How it works</a>
-                    <a href="index.html#architecture">Architecture</a>
-                    <a href="index.html#audience">Who it's for</a>
+                    <a href="/vision#manifesto">Manifesto</a>
+                    <a href="/#evaluation">How it works</a>
+                    <a href="/vision#architecture">Architecture</a>
+                    <a href="/#evaluation">Who it's for</a>
                 </div>
                 <div class="nav-right">
-                    <a class="btn" href="index.html#waitlist"
-                        >Join waitlist <span class="arrow">→</span></a
+                    <a class="btn" href="/#contact"
+                        >Discuss your warehouse <span class="arrow">→</span></a
                     >
                 </div>
             </div>
@@ -63,15 +63,13 @@
             <div class="shell">
                 <div class="sec-head">
                     <div class="col-idx idx">Appendix — screens</div>
-                    <h2>The rest of the<br />evidence.</h2>
+                    <h1 class="screens-title">Inside<br />Quark WMS.</h1>
                     <div class="col-desc">
-                        Nine more screens from a running system. Nothing here is
-                        a mockup or a render — these are the same builds our
-                        operators log into. Click any to enlarge.
+                        Supplied product screenshots of inventory, topology, reports and Studio. Screens show the interface; confirm workflow behaviour in an evaluation of the available build. Click any to enlarge.
                     </div>
                 </div>
 
-                <figure class="figure">
+                <figure class="figure" id="topology">
                     <img
                         src="assets/shots/web/3d-overview.jpg"
                         alt="Three-dimensional warehouse topology showing racks, aisles and zones"
@@ -81,9 +79,7 @@
                     />
                     <figcaption>
                         <span
-                            ><b>Topology.</b> The warehouse as it is actually
-                            shaped — racks, aisles, zones, drawn from the same
-                            metadata the pickers walk.</span
+                            ><b>Topology.</b> Racks, aisles and zones in the supplied warehouse view.</span
                         >
                     </figcaption>
                 </figure>
@@ -114,9 +110,7 @@
                         />
                         <figcaption>
                             <span
-                                ><b>Validation, on the device.</b> The rule fires
-                                where the work happens, not in a nightly
-                                report.</span
+                                ><b>RF validation.</b> A terminal screen displaying a validation message.</span
                             >
                         </figcaption>
                     </figure>
@@ -132,14 +126,12 @@
                     />
                     <figcaption>
                         <span
-                            ><b>Statutory documents.</b> Sixteen forms — TORG‑2,
-                            M‑4, M‑11, INV‑3 — out of the box, not as a
-                            customisation project.</span
+                            ><b>Report library.</b> The supplied screen lists warehouse document templates. Confirm output and jurisdiction requirements during evaluation.</span
                         >
                     </figcaption>
                 </figure>
 
-                <figure class="figure">
+                <figure class="figure" id="inventory">
                     <img
                         src="assets/shots/web/balances-by-location.jpg"
                         alt="Inventory balances by location with hold reasons for damage, customer return and QC quarantine"
@@ -149,14 +141,12 @@
                     />
                     <figcaption>
                         <span
-                            ><b>Balances.</b> One stock figure, six ways to read
-                            it — with holds and quarantine spelled out rather
-                            than netted away.</span
+                            ><b>Balances.</b> Inventory views with quantity, owner and hold information.</span
                         >
                     </figcaption>
                 </figure>
 
-                <figure class="figure">
+                <figure class="figure" id="movements">
                     <img
                         src="assets/shots/web/transactions-filtered.jpg"
                         alt="Transaction log listing deposits and moves, each with the reason it happened"
@@ -166,9 +156,7 @@
                     />
                     <figcaption>
                         <span
-                            ><b>Movements.</b> Every move carries the reason it
-                            happened — put‑away, QC, damage, return. This is what
-                            an auditor reads.</span
+                            ><b>Movements.</b> Transaction rows with warehouse movement reasons.</span
                         >
                     </figcaption>
                 </figure>
@@ -191,7 +179,7 @@
                 </figure>
 
                 <div class="fig-pair">
-                    <figure class="figure">
+                    <figure class="figure" id="studio">
                         <img
                             src="assets/shots/web/studio-version-history.png"
                             alt="Studio version history panel listing an active version and a current draft with Apply, Discard and Open"
@@ -217,9 +205,7 @@
                         />
                         <figcaption>
                             <span
-                                ><b>Scaffolds.</b> Seven templates, each declaring
-                                how many business objects and forms it will
-                                produce.</span
+                                ><b>Scaffolds.</b> A template wizard listing business-object and form counts.</span
                             >
                         </figcaption>
                     </figure>
@@ -227,10 +213,9 @@
 
                 <div class="strip-head" style="margin-top: 64px">
                     <span
-                        ><b>Back to the argument</b> — the six plates that carry
-                        it.</span
+                        ><b>Continue exploring</b> — the Quark product overview.</span
                     >
-                    <span><a href="index.html#how">Return to Quark →</a></span>
+                    <span><a href="/#evaluation">Return to Quark WMS →</a></span>
                 </div>
             </div>
         </section>
@@ -273,6 +258,6 @@
             <div class="lb-cap" id="lbCap"></div>
         </div>
 
-        <script src="assets/main.js?v=1" defer></script>
+        <script src="assets/main.js?v=2" defer></script>
     </body>
 </html>
