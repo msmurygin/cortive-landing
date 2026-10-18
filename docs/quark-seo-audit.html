@@ -990,10 +990,10 @@
 <b>Первые страницы.</b> Выбрать язык/рынок после данных GSC, затем выпустить одну страницу №1 и оценить crawl/index/clicks/qualified enquiries. Вторую — после проверки качества, не по расписанию. Пока подготовлен только план: массовых SEO URL и текстовых дублей нет.</li>
 </ol>
 <p>Проверка ownership и работа существующего ресурса: <a href="https://support.google.com/webmasters/answer/9008080">Google Search Console — verification</a>, <a href="https://developers.google.com/search/docs/monitor-debug/search-console-start">порядок работы с Search Console</a>. Sitemap submission — сигнал, а не гарантия crawl/index.</p>
-<h2>Проверки подготовленного изменения</h2>
+<p><b>Состояние передачи:</b> создан <a href="https://github.com/msmurygin/cortive-landing/pull/1">draft PR #1</a>. Vercel сообщил Ready для preview ветки, но публичная проверка упёрлась в Vercel Authentication: GET перенаправляет в SSO, API возвращает 401. Защита не отключалась. Поэтому фактические HTTP-правила и endpoint на Vercel ещё не подтверждены. Production не изменён.</p><h2>Проверки подготовленного изменения</h2>
 <ul>
 <li>Синтаксис JS; тесты success/provider error/timeout, consent/email/size/origin/method/honeypot, без PII в аналитике, JS-free redirect, запрет client lead_success.</li>
-<li>HTML/canonical/sitemap, локальные ссылки и якоря, валидность SVG; desktop/mobile и gallery viewer проверяются в preview.</li>
+<li>HTML/canonical/sitemap, локальные ссылки и якоря, валидность SVG; desktop/mobile и gallery viewer проверены в локальном preview. Форма после ошибки возвращает кнопку в рабочее состояние. Все 5 тестов проходят.</li>
 <li>Реальная отправка Formspree и Vercel routing требуют deployment; статический preview и mocked tests их не заменяют.</li>
 </ul>
 </section>

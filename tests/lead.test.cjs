@@ -53,3 +53,18 @@ test('analytics allowlists prevent spoofed lead successes and personal URL value
     assert.equal(res.code,204);const record=JSON.parse(logs[0]);assert.equal(record.source,'other');assert.equal(record.medium,'other');assert.equal(logs[0].includes('@'),false);
   }finally{console.info=originalInfo;}
 });
+
+test('Vercel deployment and branch preview origins are accepted explicitly', () => {
+  const {prepare}=require('../lib/lead-events');
+  const previousURL=process.env.VERCEL_URL, previousBranch=process.env.VERCEL_BRANCH_URL;
+  process.env.VERCEL_URL='example-deployment.vercel.app';process.env.VERCEL_BRANCH_URL='example-git-seo.vercel.app';
+  try {
+    for(const origin of ['https://example-deployment.vercel.app','https://example-git-seo.vercel.app']) {
+      assert.equal(prepare(request({}, {headers:{origin}}),response()),true);
+    }
+    const rejected=response();assert.equal(prepare(request({}, {headers:{origin:'https://other.vercel.app'}}),rejected),false);assert.equal(rejected.code,403);
+  } finally {
+    if(previousURL===undefined)delete process.env.VERCEL_URL;else process.env.VERCEL_URL=previousURL;
+    if(previousBranch===undefined)delete process.env.VERCEL_BRANCH_URL;else process.env.VERCEL_BRANCH_URL=previousBranch;
+  }
+});
