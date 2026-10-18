@@ -35,6 +35,8 @@ Only failed SEO audit is deliberate review index blocking: drafts have noindex m
 
 Existing SoftwareApplication facts remain intact. Draft BreadcrumbList matches visible navigation. Organization/reviews/ratings/offers are not fabricated. JSON-LD is validated locally; Google Rich Results testing of new public URLs remains pending their release.
 
+Vercel’s GitHub check succeeded for implementation commit ba40717. Authenticated browser checks of that actual preview confirmed 404 for both planned commercial routes, the direct draft HTML and review-build path, and measurement config enabled:false. See [preview evidence](evidence/sprint-2/vercel-preview.json). Unauthenticated shell requests redirect to Vercel login and were not treated as page-content verification. Main remains 24914b0.
+
 ## PROPOSED / publication state
 
 Both commercial pages and the privacy update are local drafts in the drafts directory, with review notice/noindex. They are absent from public Vercel output, current production sitemap and homepage navigation. Review via node scripts/preview.cjs (all enquiries mocked). Internal links cost↔inventory are draft links; release only links to independently approved pages. The page briefs document copying assets, configuring routes/canonical redirects, removing noindex/review notice and updating links/sitemap at the explicit release step.
