@@ -1,5 +1,7 @@
 # SEO Audit — Quark.build / Sprint 1
 
+> Subsequent work: [Sprint 2 report](SPRINT-2-REPORT.md), 19 October 2026. This document retains the dated Sprint 1 baseline/proposals; later GSC actions and founder-authorized scope are recorded separately.
+
 Audit date: 18 October 2026 (Europe/Sofia). This is a new audit of current `origin/main` and freshly fetched production responses; earlier audit documents are not used as evidence.
 
 ## Audit boundary and release status

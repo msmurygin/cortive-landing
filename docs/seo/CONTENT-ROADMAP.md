@@ -1,5 +1,7 @@
 # Content Roadmap — Quark WMS / Sprint 1
 
+> Subsequent work: [Sprint 2 report](SPRINT-2-REPORT.md), 19 October 2026. This document retains the dated Sprint 1 baseline/proposals; later GSC actions and founder-authorized scope are recorded separately.
+
 18 October 2026. **Proposals only.** No page creation, commercial copy rewrite, new navigation, CTA change or publication is included in this sprint. Preserve the deployed visual identity and the full /vision manifesto. The screenshot-removal proposal has been cancelled.
 
 ## Architecture decision: start with three existing URLs, at most two additions

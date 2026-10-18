@@ -1,0 +1,173 @@
+{
+  "reviewed_date": "2026-10-19",
+  "source_commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+  "method": "Bounded read-only reuse of certification and current handlers/service bodies. No WMS build/test/DB/command execution and no product changes. Runtime evidence remains historical and scoped.",
+  "package_current_status": {
+    "PASS": 3,
+    "BLOCKED": 8,
+    "FAIL": 1
+  },
+  "files": [
+    {
+      "id": "balance-model",
+      "path": "crates/libs/wms-lib-core/src/model/inventory/inventory_balances.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "51b5ff6d62c2a3f2140cad96b1e2586a023a4b3ac77ff8e2e86350158fbca5d1",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-lib-core/src/model/inventory/inventory_balances.rs"
+    },
+    {
+      "id": "stock-read-model",
+      "path": "crates/libs/wms-lib-core/src/model/inventory/inventory_balance_atp.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "f51b57afccf4554ca9fc647762948b8db892f7d55832954b2c04f5b2aab32c47",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-lib-core/src/model/inventory/inventory_balance_atp.rs"
+    },
+    {
+      "id": "inquiry",
+      "path": "crates/libs/wms-inventory/src/service/inventory_inquiry.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "b962008731d224dda731a3d3754b013f4613ff87140473f010c45e45963227fd",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-inventory/src/service/inventory_inquiry.rs"
+    },
+    {
+      "id": "receipt-finalizer",
+      "path": "crates/libs/wms-inbound/src/service/receipt/receive/receive_line_finalizer.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "0026c4dfab10ffe99a658595b8bf5ba5a3f3c6932b60a9442af02bcba6092f10",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-inbound/src/service/receipt/receive/receive_line_finalizer.rs"
+    },
+    {
+      "id": "move-handler",
+      "path": "crates/services/app-server/src/web/rpcs/move_command_rpc.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "846507b8ef798284591a495bb97dbbbe9615ae1687f9f5cce8f155c622715f7e",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/services/app-server/src/web/rpcs/move_command_rpc.rs"
+    },
+    {
+      "id": "move-service",
+      "path": "crates/libs/wms-inventory/src/movement/service.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "e85d6cb093398574f728d9b891720172bbc3419b1387cf0ab54048be7133aff7",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-inventory/src/movement/service.rs"
+    },
+    {
+      "id": "move-records",
+      "path": "crates/libs/wms-inventory/src/movement/side_effects.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "29bffc09ddd1bf755205d0f450d65e459e959d8dfdbab43692bc370c5bec528f",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-inventory/src/movement/side_effects.rs"
+    },
+    {
+      "id": "hold-rpc",
+      "path": "crates/services/app-server/src/web/rpcs/hold_rpc.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "0f3419f4c1ec1168fdb91494e388b129c05c51b3ab61be9103e3ad4945dde0e5",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/services/app-server/src/web/rpcs/hold_rpc.rs"
+    },
+    {
+      "id": "hold-service",
+      "path": "crates/libs/wms-inventory/src/service/hold.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "7dcd4a56532f8cd063c76c3b5d1e24cddd455efda986b1e21e364b29050937b6",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-inventory/src/service/hold.rs"
+    },
+    {
+      "id": "count-rpc",
+      "path": "crates/services/app-server/src/web/rpcs/inventory_count_rpc.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "72efc5fe14fc93bcfd1045d06dff6f3b3fec581bf6c701766fb188a0ebbea2c5",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/services/app-server/src/web/rpcs/inventory_count_rpc.rs"
+    },
+    {
+      "id": "count-observe",
+      "path": "crates/libs/wms-inventory/src/service/inventory_count/observe.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "e95bc560130529a5c1b4b245ed23ba4f9cbe0edf67b4bb16f608842f34d5ce15",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-inventory/src/service/inventory_count/observe.rs"
+    },
+    {
+      "id": "count-accept",
+      "path": "crates/libs/wms-inventory/src/service/inventory_count/accept.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "da4c91cd18e93ecc59f7b693d163abba6700b4ea2b40196ef4e789bce00d8bfd",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-inventory/src/service/inventory_count/accept.rs"
+    },
+    {
+      "id": "adjustment-rpc",
+      "path": "crates/services/app-server/src/web/rpcs/inventory_adjustment_rpc.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "a140ae88091480e05383d097dcadae1780d98ec0c583bf0f5b87bb0289dc8e7b",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/services/app-server/src/web/rpcs/inventory_adjustment_rpc.rs"
+    },
+    {
+      "id": "adjustment-post",
+      "path": "crates/libs/wms-inventory/src/service/inventory_adjustment/post.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "0531637aa8909c6f10cbeaef30bc5aa0d5b4845a189f4f7afe6513ba643c8dba",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/libs/wms-inventory/src/service/inventory_adjustment/post.rs"
+    },
+    {
+      "id": "inventory-context",
+      "path": "crates/services/app-server/src/web/rpcs/contexts/inventory.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "bd74015f4250e28506e0dc988e4432a7294cb01279313a18a3325fdb6eaa6fb1",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/services/app-server/src/web/rpcs/contexts/inventory.rs"
+    },
+    {
+      "id": "outbound-context",
+      "path": "crates/services/app-server/src/web/rpcs/contexts/outbound.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "617a331c077e6aab499528961de46876861b97efee33ff580d41eaeebb78af00",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/services/app-server/src/web/rpcs/contexts/outbound.rs"
+    },
+    {
+      "id": "reporting-context",
+      "path": "crates/services/app-server/src/web/rpcs/contexts/reporting.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "a86d6449196e1adf4a22ec64e429d0145f5ee24d8a27682bb2548a7ecdea1616",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/services/app-server/src/web/rpcs/contexts/reporting.rs"
+    },
+    {
+      "id": "enterprise-context",
+      "path": "crates/services/app-server/src/web/rpcs/contexts/enterprise.rs",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "f1ab331d951f5ac069d000625deda0bdbab9e36c6ad1f5631a3a8ac6449cad28",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/crates/services/app-server/src/web/rpcs/contexts/enterprise.rs"
+    },
+    {
+      "id": "certification-tracker",
+      "path": "docs/mvp-certification/MASTER-TRACKER.md",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "52bd28f4e718b8d970396b21ad93617301edb5b3e75f3ea708e75c6123065e1d",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/docs/mvp-certification/MASTER-TRACKER.md"
+    },
+    {
+      "id": "scoped-runtime",
+      "path": "docs/mvp-certification/receiving/execution/gate-b-report.md",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "7ec8b76db5ff2968caeb09ea429bf5f109402a0a054e807750a68fa438a4fcb2",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/docs/mvp-certification/receiving/execution/gate-b-report.md"
+    },
+    {
+      "id": "package-checkpoint",
+      "path": "docs/mvp-certification/receiving/execution/Package-A-report.md",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "a403aef3d1a08de41a043886d4a4e3875a829045cc8759ba9bdfb09225fc43a9",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/docs/mvp-certification/receiving/execution/Package-A-report.md"
+    },
+    {
+      "id": "current-package",
+      "path": "docs/mvp-certification/receiving/evidence/ct04-20261016-01/package-a-current-status.json",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "271526a307c4e25bdde063560ac0dcebdc3455783279d28ff9251d51253a55b0",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/docs/mvp-certification/receiving/evidence/ct04-20261016-01/package-a-current-status.json"
+    },
+    {
+      "id": "historical-defect",
+      "path": "docs/mvp-certification/receiving/execution/RCV-D-003.md",
+      "commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+      "sha256": "0682caad5e31d6e1286ba612e8ea76f31b347c77874fafc3f8cd59d6a0743379",
+      "github": "https://github.com/msmurygin/wms-axum/blob/d105fce525b95772730fcc00580aa18f0aeb1fa4/docs/mvp-certification/receiving/execution/RCV-D-003.md"
+    }
+  ]
+}

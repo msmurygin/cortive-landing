@@ -52,3 +52,21 @@
 ## Not now
 
 Mass articles; duplicated city/industry pages; a second general WMS page; standalone cloud/ROI/RF/accuracy pages; review-star schema; fake free pricing; framework migration; redesign; production claims for AI Harness/Onboarding/Support. Revisit only with implementation evidence and qualified demand.
+
+
+## Sprint 2 update — 19 October 2026
+
+The founder authorized implementation/review in the existing PR, with no new-page or production publication. Original queue above is retained as the Sprint 1 record; this table is the current delta.
+
+| ID | Priority / current status | Expected impact / task | Complexity | Dependencies | Acceptance criteria / remaining gate |
+|---|---|---|---|---|---|
+| SEO-01 | P1 / DONE submission; VERIFIED eligibility; processing pending | Refresh discovery of current three-URL sitemap | S | Google processing | Resubmission confirmation retained; record fresh processing/discovered count later; Vision eligibility is not indexing |
+| SEO-02 | P1 / PARTIAL evidence reused | Cover whole implemented WMS scope accurately | M | Existing WMS acceptance/retests and chosen release build | Source-linked inventory matrix prepared; no second certification; attach missing scope evidence before claims release |
+| SEO-03/04 | P1 / DONE review code/mock tests; BLOCKED live activation/receipt | Measurable organic landing→CTA→accepted→inbox-confirmed funnel | M | Explicit release, privacy approval, log retention/export, controlled provider/inbox test | Opt-in attribution, no PII, separate server acceptance and owner-confirmed delivery, no client success or double counting; real delivery not inferred |
+| SEO-08 | P2 / PROPOSED full-scope draft prepared | Distinct inventory commercial coverage | M | Capability wording approval, applicable MVP gates, explicit release | Source-backed inquiry/moves/holds/counts/adjustment scope; approved public route only after acceptance evidence; no universal correctness/KPI claim |
+| SEO-09 | P2 / DONE local cost implementation; PROPOSED publication | Budgeting intent with deterministic user-input calculator | M | Founder content approval and explicit release | Verified formula/corner-case tests; no default market prices, TCO excludes stated categories; approved metadata/links/schema/sitemap at release |
+| SEO-11 | P2 / DONE report tooling; BLOCKED durable production data | Weekly low-overhead decision summary | S | Complete retained log export, explicit activation | Filter production, deduplicate stages, show consented denominator and accepted/inbox/qualified separately; no automation created |
+| SEO-S2-privacy | P1 / PROPOSED draft prepared | Accurate opt-in/storage disclosure | S | Founder privacy/retention review | Publish approved privacy copy before enabling measurement; no cookie-free = consent-free inference; choice/withdrawal tested |
+| SEO-S2-release | P1 / pending approval | Keep unapproved commercial pages unpublished | S | Founder explicit release | drafts/scripts/review-dist excluded from Vercel; production new routes stay 404; release only approved copy/assets/routes/links; rollback documented |
+
+No GA4/Plausible account is needed for reviewing the first-party implementation. A durable analytics service remains an option if Vercel export/retention cannot meet weekly reporting. Keyword volumes/KD/CPC remain unavailable; no new forecast is fabricated. The founder’s expectation of bug fixes does not replace evidence of completed retests.

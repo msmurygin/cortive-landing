@@ -1,0 +1,6 @@
+.measurement-notice{position:fixed;right:16px;bottom:16px;z-index:90;width:min(440px,calc(100vw - 32px));padding:18px;background:var(--paper);color:var(--ink);border:1px solid var(--ink);box-shadow:0 4px 24px #0002;font:14px/1.5 var(--sans)}
+.measurement-notice[hidden]{display:none}
+.measurement-notice p{margin:0 0 14px}.measurement-notice div{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.measurement-notice button,.measurement-settings{font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--ink);padding:10px;min-height:44px;cursor:pointer}
+.measurement-notice a{text-decoration:underline}.measurement-settings{font-size:12px}
+.measurement-notice :focus-visible,.measurement-settings:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
