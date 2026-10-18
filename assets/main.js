@@ -1,17 +1,18 @@
 /* ─── THEME TOGGLE ─── */
 (function () {
     const root = document.documentElement;
-    const saved = localStorage.getItem("qk-theme") || "light";
+    let saved = "light";
+    try { saved = localStorage.getItem("qk-theme") || "light"; } catch {}
     root.setAttribute("data-theme", saved);
     document
         .getElementById("themeBtn")
-        .addEventListener("click", () => {
+        ?.addEventListener("click", () => {
             const next =
                 root.getAttribute("data-theme") === "dark"
                     ? "light"
                     : "dark";
             root.setAttribute("data-theme", next);
-            localStorage.setItem("qk-theme", next);
+            try { localStorage.setItem("qk-theme", next); } catch {}
         });
 })();
 
@@ -109,44 +110,6 @@
     }
     render();
     setInterval(render, 2200);
-})();
-
-/* ─── waitlist submit ─── */
-(function () {
-    var f = document.getElementById("waitlistForm");
-    if (!f) return;
-    var msg = document.getElementById("waitlistMsg");
-    f.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var btn = f.querySelector("button");
-        var orig = btn.textContent;
-        btn.textContent = "Sending…";
-        btn.disabled = true;
-        fetch(f.action, {
-            method: "POST",
-            body: new FormData(f),
-            headers: { Accept: "application/json" },
-        })
-            .then(function (r) {
-                if (r.ok) {
-                    f.style.display = "none";
-                    msg.classList.add("show");
-                } else {
-                    btn.textContent = orig;
-                    btn.disabled = false;
-                    alert(
-                        "Something went wrong. Please email maxim.smurygin@gmail.com directly.",
-                    );
-                }
-            })
-            .catch(function () {
-                btn.textContent = orig;
-                btn.disabled = false;
-                alert(
-                    "Network error. Please email maxim.smurygin@gmail.com directly.",
-                );
-            });
-    });
 })();
 
 /* ─── SCREENSHOTS: strip arrows + full-size viewer ─── */
