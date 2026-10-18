@@ -16,10 +16,6 @@ html {scroll-behavior:smooth;scroll-padding-top:85px}
 .product-lead .secondary{font-size:16px;color:var(--mute);margin-top:20px}
 .product-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:30px;font-size:14px}
 .product-page .btn-primary{background:var(--quark);color:#09241e;border:1px solid var(--quark);font-weight:650;border-radius:2px;padding:16px 22px}
-.product-shot{background:#202124;padding:12px;border:1px solid var(--line-2)}
-.shot-label{color:#cfddd7;display:flex;justify-content:space-between;padding:5px 8px 14px;font:10px var(--mono);letter-spacing:.08em}
-.product-shot img{width:100%;height:auto;display:block}
-.product-shot figcaption{color:#c3c9c6;font-size:12px;padding:14px 8px 5px;line-height:1.5}
 .product-section{padding-top:90px;padding-bottom:85px}
 .product-section-head{display:grid;grid-template-columns:.65fr 1.4fr 1fr;gap:35px;align-items:start}
 .product-page h2{font-size:clamp(34px,4vw,52px);font-weight:500;letter-spacing:-.045em;line-height:1.13}
@@ -28,12 +24,10 @@ html {scroll-behavior:smooth;scroll-padding-top:85px}
 .product-features article{border-top:1px solid var(--line-2);padding-top:18px}
 .feature-no{font:11px var(--mono);color:var(--mute)}
 .product-page h3{font-size:24px;font-weight:500;letter-spacing:-.03em;margin:20px 0 14px}
-.product-features p,.product-editorial p,.evaluation-steps p,.product-status p{color:var(--mute);font-size:16px;line-height:1.7}
-.product-features a,.product-editorial a,.product-status a{display:inline-block;margin-top:23px;font-size:14px;border-bottom:1px solid var(--line-2);padding-bottom:4px}
-.product-pair{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;margin-top:70px;align-items:center}
-.product-pair img{width:100%;height:auto;display:block;border:1px solid var(--line)}
-.product-pair figcaption{font:11px var(--mono);color:var(--mute);padding:15px 0}
-.product-editorial h3{font-size:42px;line-height:1.15}
+.product-features p,.product-studio p,.evaluation-steps p,.product-status p{color:var(--mute);font-size:16px;line-height:1.7}
+.product-features a,.product-studio a,.product-status a{display:inline-block;margin-top:23px;font-size:14px;border-bottom:1px solid var(--line-2);padding-bottom:4px}
+.product-studio{display:grid;grid-template-columns:.65fr 1.4fr 1fr;gap:35px;margin-top:60px;padding-top:36px;border-top:1px solid var(--line-2)}
+.product-studio h3{font-size:42px;line-height:1.15;margin:0}
 .product-evaluation{background:var(--paper-2);padding:70px 0}
 .evaluation-steps{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;gap:45px;margin-top:50px}
 .evaluation-steps li{border-top:1px solid var(--line-2);padding-top:18px}
@@ -66,10 +60,10 @@ html {scroll-behavior:smooth;scroll-padding-top:85px}
 .product-page button:disabled{opacity:.65;cursor:wait}
 
 @media(max-width:900px){.product-intro{gap:30px}
-.product-section-head{grid-template-columns:1fr 2fr}
+.product-section-head,.product-studio{grid-template-columns:1fr 2fr}
+.product-studio>div{grid-column:2}
 .product-section-head>p{grid-column:2}
 .product-status,.contact-grid{gap:45px}
-.product-pair{gap:30px}
 .product-footer{flex-wrap:wrap}
 .product-hero>.product-kicker{gap:20px}
 .product-hero>.product-kicker span{text-align:right}
@@ -83,16 +77,13 @@ html {scroll-behavior:smooth;scroll-padding-top:85px}
 .product-intro{grid-template-columns:1fr;gap:28px;padding:38px 0}
 .product-lead{font-size:21px}
 .product-section{padding-top:55px;padding-bottom:55px}
-.product-section-head,.product-status,.product-pair,.contact-grid{grid-template-columns:1fr;gap:28px}
-.product-section-head>p{grid-column:auto}
+.product-section-head,.product-status,.product-studio,.contact-grid{grid-template-columns:1fr;gap:28px}
+.product-section-head>p,.product-studio>div{grid-column:auto}
 .product-features,.evaluation-steps{grid-template-columns:1fr;gap:30px;margin-top:35px}
-.product-pair{margin-top:40px}
 .product-status h2{margin-top:16px}
 .product-contact{padding:50px 0}
 .product-footer>div{gap:18px}
 .product-footer{gap:22px}
-.shot-label{font-size:8px}
-.product-shot{padding:6px}
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
