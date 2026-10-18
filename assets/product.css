@@ -98,3 +98,8 @@ html {scroll-behavior:smooth;scroll-padding-top:85px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *{animation:none!important;transition:none!important}
 }
+
+/* Accessibility: keep normal muted text above 4.5:1 on both light surfaces. */
+html[data-theme="light"] .product-page {
+    --mute: rgba(10, 10, 10, 0.62);
+}
