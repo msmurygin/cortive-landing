@@ -1,6 +1,6 @@
 # Sprint 2 — Release Candidate & Approval Gate
 
-19 October 2026 · PR [#3](https://github.com/msmurygin/cortive-landing/pull/3) · branch `seo/foundation-sprint-1`. **REVIEW ONLY. No merge/deploy is authorized.** These four approval documents supersede Sprint 2's future-release instructions where they differ; the earlier reports remain dated evidence.
+19 October 2026 · PR [#3](https://github.com/msmurygin/cortive-landing/pull/3) · branch `seo/foundation-sprint-1`. **P0 approved for RC-A protected preview only. No merge or production release authorized.** These four approval documents supersede Sprint 2's future-release instructions where they differ; the earlier reports remain dated evidence.
 
 ## Decision in one minute
 
@@ -22,7 +22,17 @@ Run `node scripts/build-rc.cjs` to reproduce three local snapshots under ignored
 
 Start previews with `node scripts/preview-rc.cjs rc-a`, `rc-b`, or `rc-a-measurement` in separate terminals. They bind loopback only, send `X-Robots-Tag: noindex, follow`, disable measurement and reject enquiry submissions. This isolates exact publication composition from the older combined mock preview at port 4173. Snapshot HTML has intended production `index,follow`; the preview response header prevents indexing. The snapshots are not online deployments.
 
-For optional remote review, `node scripts/build-protected-preview.cjs` packages separate snapshots in `review-dist/protected-preview/rc-a` and `rc-b`. These copies replace enquiry/event endpoints with disabled stubs, force noindex metadata/headers and Disallow robots, and reject a normal production build through a preview-only guard. They do not change release candidates or public source routes. **No remote RC URL exists yet.** Actual hosted behaviour and Vercel Authentication must be verified after founder approval P0; `public:false` hides source/logs and is not site authentication. Never weaken deployment protection or attach quark.build to a review snapshot. Configuration references: [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json), [system environment variables](https://vercel.com/docs/environment-variables/system-environment-variables).
+**P0 completed, RC-A only:** [protected cost preview](https://project-ogj6r-b1l5js6ce-quark-build.vercel.app/wms-cost). Vercel deployment `dpl_8a2VgSyJkucpQuuqta49i5fwHgCw`, Ready, Preview environment; isolated snapshot branch `preview/p0-rc-a-2026-10-19`, commit `f93dbc27b7bc94869b3ee0da3099af6df448d464`, derived from PR source `3a16333f46329a203ff573ed8986eb555c235c7e`. **Never merge this snapshot branch.** RC-B was not deployed.
+
+Vercel Authentication is enabled with Require Log In / Standard Protection. On 19 October 2026 at 11:13 UTC, anonymous requests without cookies, credentials or bypass parameters to both the immutable URL and branch alias returned **302 to Vercel `/sso-api`**, `X-Robots-Tag: noindex`, and no commercial HTML. Authenticated browser access rendered the cost page and calculator. [Sanitized HTTP evidence](evidence/sprint-2/p0-preview-auth.json). No protection settings, exceptions, bypass secrets or production domains were changed.
+
+The review copy disables the contact form through a disabled fieldset and replaces its client script with a no-request stub. Enquiry/event endpoints return a constant disabled response; measurement configuration returns `enabled:false`. Authenticated hosted responses were checked. No Formspree submission was sent. All HTML has `noindex,nofollow,noarchive`; robots is `Disallow: /`; configured global response headers also prohibit indexing. Calculator USD 100/month with other costs zero produced USD 1,200 annually, 3,600 over three years and 6,000 over five. Mobile width 390 had no horizontal overflow. Vercel's own authenticated review toolbar may load; no Quark analytics was activated.
+
+The protected generator packages snapshots under `review-dist/protected-preview/`, without changing public source routes. It rejects production/development builds. The unsupported `public` configuration property was removed after Vercel schema validation rejected the first attempt; site access protection is provided by actual Vercel Authentication. Configuration references: [Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json), [system environment variables](https://vercel.com/docs/environment-variables/system-environment-variables).
+
+Production recheck: main remains `24914b0b2729e2b5b4f661a2db3569a6741a227d`; home, Vision, robots and sitemap retain the recorded baseline hashes; production `/wms-cost` remains 404. No merge or production deployment occurred.
+
+P0 validation: all **27 automated tests passed**; `python3 scripts/validate.py` and `git diff --check` passed. Tests include both local snapshot compositions; only RC-A was uploaded. Public root files remain unchanged.
 
 The proposed footer link is an approval item; existing homepage text, header navigation, primary CTA, screenshots and complete Vision stay unchanged. RC-B uses existing `/screens.html` references only. There are **no newly approved screenshots**; founder can approve this no-new-image composition, or nominate reviewed/redacted screenshots before RC-B release.
 
@@ -44,7 +54,7 @@ No fabricated pricing, market averages, guaranteed savings/ROI or implementation
 
 | ID | Founder decision | Effect |
 |---|---|---|
-| P0, optional remote review | Authorize a separate **protected Vercel preview** of the prepared RC snapshots, with noindex, no production alias and enquiry/measurement disabled. | Enables remote founder review only. Current PR preview intentionally excludes the commercial drafts. This permission does not approve page claims, a merge, production deployment or analytics activation. |
+| P0 — APPROVED / completed for RC-A only | Founder authorized a protected, non-indexable RC-A preview with enquiries and new analytics disabled. Exact URL and protection evidence are above. | Review only. No RC-B preview, A1 content approval, merge, production release or analytics activation authorized. |
 | A1 | Approve the complete cost page, calculator assumptions/disclaimer/CTA, contrast correction and one footer resource link. | Freezes RC-A minimum content and four-URL sitemap. |
 | A2 | Explicitly authorize the **RC-A minimum release**, with new measurement OFF. Inbox receipt is already owner-confirmed. | Agent can prepare the approved release commit from its manifest and deploy only that composition. No RC-B publication or measurement activation. |
 | D1 | Confirm controller identity/contact and approve the retention/deletion/provider/consent proposal in [data handling](DATA-HANDLING-APPROVAL.md); Gmail notification routing is already verified. Choose a durable reporting destination before optional analytics activation. | Resolves measurement-extension policy and storage gates; does not itself deploy or activate tracking. |

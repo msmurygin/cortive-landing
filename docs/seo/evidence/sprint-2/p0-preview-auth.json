@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-10-19T11:13:50.073Z",
+  "previewCommit": "f93dbc27b7bc94869b3ee0da3099af6df448d464",
+  "deploymentId": "dpl_8a2VgSyJkucpQuuqta49i5fwHgCw",
+  "previewUrl": "https://project-ogj6r-b1l5js6ce-quark-build.vercel.app/wms-cost",
+  "anonymousRequests": "No cookies, credentials or bypass parameters; redirects not followed",
+  "rows": [
+    {
+      "host": "project-ogj6r-b1l5js6ce-quark-build.vercel.app",
+      "path": "/wms-cost",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-b1l5js6ce-quark-build.vercel.app",
+      "path": "/api/lead",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-b1l5js6ce-quark-build.vercel.app",
+      "path": "/api/events",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-b1l5js6ce-quark-build.vercel.app",
+      "path": "/robots.txt",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-git-preview-p0-rc-a-2026-10-19-quark-build.vercel.app",
+      "path": "/wms-cost",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-git-preview-p0-rc-a-2026-10-19-quark-build.vercel.app",
+      "path": "/api/lead",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-git-preview-p0-rc-a-2026-10-19-quark-build.vercel.app",
+      "path": "/api/events",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-git-preview-p0-rc-a-2026-10-19-quark-build.vercel.app",
+      "path": "/robots.txt",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    }
+  ]
+}

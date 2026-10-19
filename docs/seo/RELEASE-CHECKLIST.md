@@ -25,7 +25,7 @@ Reuse [Sprint 2 Lighthouse](evidence/sprint-2/lighthouse-summary.json): cost mob
 
 | Blocker | Owner | Minimum action | Blocks |
 |---|---|---|---|
-| Optional remote RC preview not deployed | Founder, then agent | Approve P0 for protected preview only; agent verifies Vercel Authentication and hosted safeguards. Local previews already work. No production release is included in P0. | Review through an external Vercel URL only |
+| P0 RC-A preview — COMPLETE | Agent | Founder approved P0 for RC-A only. Protected URL, real anonymous authentication redirects, disabled form/events and noindex verified in [release candidate](RELEASE-CANDIDATE.md). RC-B not deployed. | A1 content and A2 production authorization remain pending |
 | Content/link/release authorization | Founder | Approve A1 and explicitly authorize A2 for a specified source/manifest, measurement OFF. | RC-A minimum |
 | Privacy operating policy / remaining provider safeguards | Founder/controller, then agent | Approve controller identity and retention/deletion. Agent verifies provider contracts/transfer/deletion controls and finalizes policy; Formspree archive ON, 30-day archive access and Gmail routing are already checked. | Measurement extension; not WMS work |
 | Weekly collection incomplete | Founder chooses destination; agent verifies configuration | Approve a durable data destination/retention; verify continuous collection, dedup/outage coverage and access limits before activation. | Measurement extension only |
