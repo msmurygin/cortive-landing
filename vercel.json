@@ -16,6 +16,16 @@
       "source": "/webrf/index.html",
       "destination": "/webrf",
       "permanent": true
+    },
+    {
+      "source": "/wms-cost/",
+      "destination": "/wms-cost",
+      "permanent": true
+    },
+    {
+      "source": "/wms-cost.html",
+      "destination": "/wms-cost",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -26,6 +36,10 @@
     {
       "source": "/webrf",
       "destination": "/webrf/index.html"
+    },
+    {
+      "source": "/wms-cost",
+      "destination": "/wms-cost.html"
     }
   ],
   "headers": [
