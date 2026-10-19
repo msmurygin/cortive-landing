@@ -17,7 +17,7 @@ test('blank is unknown; explicit zero is valid; cents rounded once',()=>{
  const r=calculate({...zero,migration:'0.05',contingency:'10'});assert.equal(r.initial.contingency,1);assert.equal(r.initialTotal,6);
 });
 test('counts, ranges and unsupported models are refused; complexity is not a hidden price multiplier',()=>{
- for(const x of [{users:'0'},{warehouses:'1.2'},{integrations:'-1'},{days:'10001'},{currency:'EUR'},{licensing:'free'},{contingency:'101'}])assert.throws(()=>calculate({...base,...x}));
+ for(const x of [{users:'0'},{warehouses:'1.2'},{integrations:'-1'},{days:'10001'},{currency:'JPY'},{licensing:'free'},{contingency:'101'}])assert.throws(()=>calculate({...base,...x}));
  assert.deepEqual(calculate({...base,complexity:'complex',approach:'partner'}),calculate(base));
  const gbp=calculate({...base,currency:'GBP'});assert.equal(gbp.tco5,calculate(base).tco5);assert.equal(gbp.currency,'GBP');
 });
@@ -36,5 +36,28 @@ test('currency display preserves cents at the accepted safe-integer boundary',()
  const {formatMoney}=require('../drafts/assets/cost-model');
  assert.equal(formatMoney(9000000000000001,'USD'),'$90,000,000,000,000.01');
  assert.equal(formatMoney(105,'GBP'),'£1.05');assert.equal(formatMoney(0,'USD'),'$0.00');
+ assert.equal(formatMoney(105,'EUR'),'€1.05');assert.equal(formatMoney(9000000000000001,'EUR'),'€90,000,000,000,000.01');
  assert.throws(()=>formatMoney(Number.MAX_SAFE_INTEGER+1,'USD'));
+});
+
+test('EUR labels both budget models without FX or formula changes',()=>{
+ for(const licensing of ['subscription','perpetual']){const input={...base,licensing,licenseBase:'100',licenseUser:'10'};const usd=calculate(input),eur=calculate({...input,currency:'EUR'});assert.deepEqual({...eur,currency:'USD'},usd);}
+});
+
+test('Quick Scope accepts unknown counts without inventing costs or effort',()=>{
+ const {scopePlan}=require('../drafts/assets/cost-model');
+ const p=scopePlan({warehouses:'',users:'',integrations:'',complexity:'unknown'});
+ assert.deepEqual(p.missingScope,['warehouses','users','integrations','operational complexity']);
+ assert.deepEqual(p.scope,{warehouses:null,users:null,integrations:null});
+ assert.equal(p.checklist.length,7);assert.match(p.summary,/unknown/);
+ assert.equal('tco3' in p,false);assert.equal('days' in p,false);
+ const scoped=scopePlan({warehouses:'3',users:'50',integrations:'4',complexity:'complex'});
+ assert.equal(scoped.missingScope.length,0);assert.match(scoped.checklist[1][1],/3 warehouses/);assert.match(scoped.checklist[2][1],/4 planned connections/);
+ assert.match(scoped.checklist[1][1],/No effort is inferred/);
+});
+
+test('Quick Scope distinguishes explicit zero connections and invalid scope',()=>{
+ const {scopePlan}=require('../drafts/assets/cost-model'),scope={warehouses:'1',users:'1',integrations:'0',complexity:'standard'};
+ assert.match(scopePlan(scope).checklist[2][1],/Confirm that no connections are needed/);
+ for(const x of [{users:'0'},{warehouses:'1.5'},{integrations:'-1'},{users:'10001'},{complexity:'arbitrary'}])assert.throws(()=>scopePlan({...scope,...x}));
 });
