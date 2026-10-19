@@ -1,1 +1,0 @@
-Review HTML artifact built in review-dist. Local only; API handlers require scripts/preview.cjs.

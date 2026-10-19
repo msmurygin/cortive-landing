@@ -223,15 +223,3 @@
         });
     }
 })();
-
-/* Measurement is disabled by default and never delays the product UI. */
-(() => {
-    if (window.QuarkMeasurementReady) return;
-    window.QuarkMeasurementReady = new Promise(resolve => {
-        const script = document.createElement('script');
-        script.src = '/assets/measurement.js';
-        script.onload = () => resolve(window.QuarkMeasurement);
-        script.onerror = () => resolve(null);
-        document.head.append(script);
-    });
-})();

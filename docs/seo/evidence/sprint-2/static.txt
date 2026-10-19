@@ -1,1 +1,0 @@
-PASS: static HTML/JSON-LD/canonical/links, 3-URL sitemap, draft exclusion, JS syntax, preserved home/Vision/privacy/config and documentation links.
