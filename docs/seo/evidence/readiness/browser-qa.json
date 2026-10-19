@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-10-19T19:01:17.531Z",
+  "scope": "Synthetic fixtures only. No buyer or enquiry data.",
+  "prototypePublished": false,
+  "prototypeDeployed": false,
+  "localUrl": "http://127.0.0.1:4190/tools/wms-readiness-assessment",
+  "tests": {
+    "total": 47,
+    "experiment": 17,
+    "passed": 47
+  },
+  "browser": {
+    "startDisabledWithoutConsent": true,
+    "backNextRetainsAnswers": true,
+    "headingFocus": true,
+    "keyboardNextAcrossAll12": true,
+    "complexPreparedCase": {
+      "sites": 2,
+      "users": 50,
+      "dailyOrderLines": 1000,
+      "complexity": "Complex",
+      "readiness": "Ready for detailed evaluation"
+    },
+    "unknownCase": {
+      "questions": 12,
+      "complexity": "Insufficient information",
+      "readiness": "Insufficient information",
+      "inventedGaps": false
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "contentWidth": 375,
+      "overflow": false
+    },
+    "contactDisabledBeforeConsent": true,
+    "contactEnabledAfterConsent": true,
+    "restartClearsAnswersReportAndConsent": true,
+    "jsonActualFilesystemDownloadValidated": true,
+    "pdfBrowserHandlerGenerated": true,
+    "pdfFilesystemDownloadConfirmed": false,
+    "nativePrintAutomation": "Unavailable with current app permissions; do not infer saved PDF from a click"
+  },
+  "pdfIndependentQA": {
+    "generator": "Same framework-free client writer as browser",
+    "syntheticFixture": "All unknowns",
+    "pages": 4,
+    "all12QuestionsPresent": true,
+    "recommendationsAndDateAndDisclaimer": true,
+    "allPagesVisuallyInspected": true
+  },
+  "privacy": {
+    "networkCode": false,
+    "persistenceCode": false,
+    "connectSrc": "none",
+    "formAction": "none",
+    "postRejected": 405,
+    "queryRejected": 400,
+    "answersInUrl": false,
+    "newAnalytics": false
+  },
+  "production": {
+    "assessmentRoute": 404,
+    "rcAUnaffected": true
+  }
+}
