@@ -18,7 +18,7 @@ function build(candidate, namespace=''){
  write(file,html);
  for(const n of inventory?['seo-content.css']:['seo-content.css','cost-model.js','cost-ui.js'])write('assets/seo/'+n,fs.readFileSync(path.join(root,'drafts/assets',n)));
  // Review proposal: one resource link in the existing footer; home copy and primary CTA stay intact.
- const home=original.get('index.html').toString().replace('<a href="/screens.html">Screens</a>', '<a href="/screens.html">Screens</a>\n<a href="'+route+'">'+(inventory?'Inventory management':'WMS cost guide')+'</a>');write('index.html',home);
+ const home=original.get('index.html').toString().replace(/<footer\b[\s\S]*?<\/footer>/,footer=>footer.replace('<a href="/screens.html">Screens</a>', '<a href="/screens.html">Screens</a>\n<a href="'+route+'">'+(inventory?'Inventory management':'WMS cost guide')+'</a>'));write('index.html',home);
  write('sitemap.xml',original.get('sitemap.xml').toString().replace('</urlset>','  <url><loc>https://quark.build'+route+'</loc></url>\n</urlset>'));
  const config=JSON.parse(original.get('vercel.json'));
  config.rewrites.push({source:route,destination:'/'+file});
