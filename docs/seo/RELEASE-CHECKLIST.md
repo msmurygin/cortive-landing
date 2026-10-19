@@ -1,6 +1,6 @@
 # Release checklist — explicit approval gate
 
-19 October 2026. No box below authorizes a merge/deployment. Existing Sprint 1/2 audit, GSC, Lighthouse and mock evidence are reused; this is a bounded release check.
+19 October 2026. **RC-A A2 explicitly approved and executed**, minimal PR #4 / production merge `2a628cbfa41cbd28a1959dc6818865342e017362`, approved tree `8b974f8`. Twenty production HTTP/hash checks plus browser/EUR/mobile checks passed; no rollback required. New analytics OFF, existing form/privacy/events retained, RC-B/PDF/readiness excluded. Sitemap submission confirmed in GSC, processing pending. [Outcome](evidence/release-candidate/rc-a-production-release.json). Historical preparation checks below remain dated evidence.
 
 ## Completed for review
 
@@ -28,7 +28,7 @@ Reuse [Sprint 2 Lighthouse](evidence/sprint-2/lighthouse-summary.json): cost mob
 | Blocker | Owner | Minimum action | Blocks |
 |---|---|---|---|
 | P0 RC-A preview — COMPLETE | Agent | Protected preview updated for the requested UX/EUR revision; anonymous Authentication redirects, disabled form/events and noindex reverified in [release candidate](RELEASE-CANDIDATE.md). RC-B not deployed. | No production authorization implied |
-| A2 release authorization — sole remaining minimum RC-A gate | Founder | A1 already approved. Authorize the frozen eight-file commit, new analytics OFF, baseline form/privacy/events retained, explicit checks and failure rollback. RC-B and PDF excluded. | RC-A minimum production release |
+| A2 — COMPLETE | Founder approved; agent released and verified | Exact frozen eight-file tree merged in minimal PR #4 and deployed; checks passed, rollback not needed. | No remaining RC-A initial-release gate |
 | Privacy operating policy / remaining provider safeguards | Founder/controller, then agent | Approve controller identity and retention/deletion. Agent verifies provider contracts/transfer/deletion controls and finalizes policy; Formspree archive ON, 30-day archive access and Gmail routing are already checked. | Measurement extension; not WMS work |
 | Weekly collection incomplete | Founder chooses destination; agent verifies configuration | Approve a durable data destination/retention; verify continuous collection, dedup/outage coverage and access limits before activation. | Measurement extension only |
 | Inventory relevant QA / defect retests incomplete | WMS engineering/QA owner | Link selected-build applicable existing proof; D003 implementation fix is already merged in PR #1314, so provide the matching required retest for affected receiving scope rather than reimplementing it. | RC-B only |
@@ -50,4 +50,4 @@ Record the actual previous successful deployment ID immediately before releasing
 
 Environment-variable edits affect **new deployments**, not a running one: [Vercel environment-variable guidance](https://vercel.com/docs/environment-variables). To stop activated measurement, deploy approved disabled configuration or promote a known disabled deployment; do not promise an immediate flag-only shutdown. Preserve redacted incident evidence and apply approved deletion rules to exported events.
 
-**STOP: A1 APPROVED; only A2 is pending for the minimum RC-A. No push, merge or deployment was performed in this preparation.**
+**RC-A release COMPLETE under explicit A2. No authorization extends to the new readiness prototype, RC-B, PDF follow-up or new analytics.**

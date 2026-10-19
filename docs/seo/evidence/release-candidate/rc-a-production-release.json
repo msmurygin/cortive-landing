@@ -1,0 +1,139 @@
+{
+  "checkedAt": "2026-10-19T16:41:19.518Z",
+  "A2": "APPROVED by founder",
+  "releaseCommit": "8b974f89796da5424e2a0d0e6f8d5746c0f6f5c4",
+  "productionMerge": "2a628cbfa41cbd28a1959dc6818865342e017362",
+  "releasePr": "https://github.com/msmurygin/cortive-landing/pull/4",
+  "vercelDeployment": "dpl_6EQo6ykqST9L6VVpJikbiQGRQtKM",
+  "treeEqualsApproved": true,
+  "checks": [
+    {
+      "path": "/assets/product.css",
+      "status": 200,
+      "sha256": "39c4af85c466c57543c863f502d5ace247f414e541680fd7bc12b164504c2f27",
+      "approvedHashMatches": true
+    },
+    {
+      "path": "/assets/seo/cost-model.js",
+      "status": 200,
+      "sha256": "900d6f14b2151c0454b50a05e4ac7ffc90dc3555774b32369d06a232d0cf20f2",
+      "approvedHashMatches": true
+    },
+    {
+      "path": "/assets/seo/cost-ui.js",
+      "status": 200,
+      "sha256": "01bec6a36da6a22d082790ca7c0f82b2aa910ca5bdbd0ff2f8d234135f3b0f6a",
+      "approvedHashMatches": true
+    },
+    {
+      "path": "/assets/seo/seo-content.css",
+      "status": 200,
+      "sha256": "05cc0b84116a492d9cc1ddb65e59d33cbb13bb0eb1fefc4fa20392f3c936d668",
+      "approvedHashMatches": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "21749710788215a33aa9d308550526b3a9fe820b5d2f478f5cc8f3daccb16049",
+      "approvedHashMatches": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "sha256": "bb7fb3bb84196fbcda767afb51f86188a579daaa18d0af9b432ba8b7add32dc4",
+      "approvedHashMatches": true
+    },
+    {
+      "path": "/wms-cost",
+      "status": 200,
+      "approvedHashMatches": true,
+      "indexable": true
+    },
+    {
+      "path": "/wms-cost/",
+      "status": 308,
+      "canonicalRedirect": true
+    },
+    {
+      "path": "/wms-cost.html",
+      "status": 308,
+      "canonicalRedirect": true
+    },
+    {
+      "path": "/features/inventory-management",
+      "status": 404
+    },
+    {
+      "path": "/api/measurement-config",
+      "status": 404
+    },
+    {
+      "path": "/assets/measurement.js",
+      "status": 404
+    },
+    {
+      "path": "/tools/wms-readiness-assessment",
+      "status": 404
+    },
+    {
+      "path": "/vision",
+      "status": 200,
+      "baselineUnchanged": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "baselineUnchanged": true
+    },
+    {
+      "path": "/legal/privacy.html",
+      "status": 200,
+      "baselineUnchanged": true
+    },
+    {
+      "path": "/assets/leads.js",
+      "status": 200,
+      "baselineUnchanged": true
+    },
+    {
+      "path": "/assets/main.js",
+      "status": 200,
+      "baselineUnchanged": true
+    },
+    {
+      "path": "/api/lead",
+      "status": 405,
+      "availableWithoutSubmission": true
+    },
+    {
+      "path": "/api/events",
+      "status": 405,
+      "availableWithoutSubmission": true
+    }
+  ],
+  "passed": true,
+  "newAnalytics": "excluded/OFF",
+  "realLeadTestsSent": 0,
+  "rollbackRequired": false,
+  "githubProductionDeployment": 7179235342,
+  "browserQA": {
+    "quickScope": true,
+    "eurFixture": {
+      "monthly": 100,
+      "annual": 1200,
+      "tco3": 3600,
+      "tco5": 6000
+    },
+    "mobile": {
+      "width": 390,
+      "contentWidth": 375
+    },
+    "passed": true
+  },
+  "searchConsole": {
+    "sitemap": "https://quark.build/sitemap.xml",
+    "submissionConfirmed": true,
+    "processing": "not yet verified",
+    "indexing": "not claimed"
+  }
+}

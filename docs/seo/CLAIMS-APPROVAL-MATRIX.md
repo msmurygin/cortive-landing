@@ -1,6 +1,6 @@
 # Claims approval matrix — Sprint 2 RC
 
-19 October 2026. **RC-A A1 APPROVED; A2 NOT approved.** Founder accepted both planner modes, USD/GBP/EUR, TCO/assumptions, sourced section, CTA, footer and contrast. RC-B is excluded from this release. This matrix retains significant assertions on both prepared pages as context. **Implementation scope is not release readiness.** Expected fixes are dependencies, not completed verification. No WMS feature has been removed to make this matrix green.
+19 October 2026. **RC-A A1/A2 APPROVED and RELEASED** through minimal PR #4 / merge `2a628cb…`, exact approved tree `8b974f8`. Both planner modes, USD/GBP/EUR, TCO/assumptions, sourced section, CTA, footer and contrast are live. RC-B and the readiness experiment are excluded from that release. This matrix retains significant assertions on both prepared pages as context. **Implementation scope is not release readiness.** Expected fixes are dependencies, not completed verification. No WMS feature has been removed to make this matrix green.
 
 Classification: **VERIFIED** means evidence supports the exact limited statement, including whether it is only a source representation fact. **CONDITIONAL** means implemented scope with relevant defects/retests or runtime evidence outstanding. **FUTURE** means planned, not available. **UNSUPPORTED** means insufficient basis; do not publish it as an existing capability. Source-field VERIFIED rows never approve a whole operational paragraph by implication.
 

@@ -1,10 +1,12 @@
 # Sprint 2 — Release Candidate & Approval Gate
 
-19 October 2026 · PR [#3](https://github.com/msmurygin/cortive-landing/pull/3) · branch `seo/foundation-sprint-1`. **P0 and A1 APPROVED for RC-A. A2 NOT APPROVED. No merge or production release authorized.** These four approval documents supersede Sprint 2's future-release instructions where they differ; the earlier reports remain dated evidence.
+19 October 2026 · **RC-A A1/A2 APPROVED and RELEASED** through the separate minimal [PR #4](https://github.com/msmurygin/cortive-landing/pull/4). Production merge `2a628cbfa41cbd28a1959dc6818865342e017362` has the exact tree of approved `8b974f89796da5424e2a0d0e6f8d5746c0f6f5c4`. Broader draft PR #3 remains unmerged. The historical preparation/approval plan below is retained for provenance; this release outcome supersedes its pending-A2 wording.
+
+**Current result:** [live cost planner](https://quark.build/wms-cost). Production deployment `7179235342` / Vercel `dpl_6EQo6ykqST9L6VVpJikbiQGRQtKM` is successful. Twenty HTTP/hash/redirect/indexability/baseline checks passed, as did browser Quick Scope, EUR arithmetic and mobile 390px checks. New analytics remains excluded/OFF; existing form/privacy/legacy events are unchanged. No new real lead was sent. RC-B, PDF follow-up and the readiness experiment were excluded. Rollback was not required. GSC confirmed submission of the updated sitemap; processing/indexing is not claimed. [Release evidence](evidence/release-candidate/rc-a-production-release.json).
 
 ## Decision in one minute
 
-**RC-A: A1 APPROVED by the founder after review of the protected preview. A2 production release is NOT approved.** Approval covers Quick Scope/checklist, progressive Advanced Budget, USD/GBP/EUR, current TCO/assumptions, sourced configurability section, CTA, footer link and contrast. A clean local release commit with exactly eight runtime files is ready below. It has not been pushed, merged or deployed. New measurement is excluded; existing production form, legacy event code and privacy remain baseline. RC-A is independent of WMS certification and RC-B.
+**RC-A: RELEASED under A2.** The founder approved the exact eight-file commit, baseline form/privacy/events, new analytics OFF and failure rollback. The page and approved footer/contrast/routes/sitemap are live; no unrelated commercial experiment was added. RC-A remains independent of WMS certification and RC-B.
 
 **RC-A measurement extension: BLOCKED.** Inbox receipt for the single labelled test was confirmed by the founder on 19 October 2026. The privacy proposal still requires provider/controller decisions, and current Vercel Hobby logs cannot support a complete weekly report. Do not make tracking activation a prerequisite for the first cost-page release. This is staged composition within RC-A, not another SEO sprint.
 
@@ -102,7 +104,7 @@ No other tracked file differs from production. In particular: no RC-B page/link,
 |---|---|---|
 | P0 — APPROVED / completed for RC-A only | Founder authorized a protected, non-indexable RC-A preview with enquiries and new analytics disabled. Exact URL and protection evidence are above. | Review only. No RC-B preview, A1 content approval, merge, production release or analytics activation authorized. |
 | A1 — APPROVED | Founder explicitly approved the complete reviewed RC-A, including both modes, USD/GBP/EUR, TCO/assumptions, sourced section, CTA, footer and contrast. | Content approval complete; A2 remains NOT approved. |
-| A2 — NOT APPROVED | Authorize frozen commit `8b974f89796da5424e2a0d0e6f8d5746c0f6f5c4` / exact eight-file manifest, new measurement OFF, baseline form/privacy/events, deployment checks and failure rollback above. | Only this minimum RC-A may be released after authorization; no RC-B, PDF, new analytics or whole-PR merge. |
+| A2 — APPROVED / RELEASED | Founder authorized frozen commit `8b974f8`, exact eight-file manifest, new measurement OFF, baseline form/privacy/events, checks and failure rollback. | Released via PR #4 / production merge `2a628cb…`; no RC-B, PDF, new analytics, prototype or whole-PR merge. |
 | D1 | Confirm controller identity/contact and approve the retention/deletion/provider/consent proposal in [data handling](DATA-HANDLING-APPROVAL.md); Gmail notification routing is already verified. Choose a durable reporting destination before optional analytics activation. | Resolves measurement-extension policy and storage gates; does not itself deploy or activate tracking. |
 | B1 | When WMS owner links the necessary existing QA/retests, approve matrix claims and no-new-image/gallery-link composition (or specific reviewed screenshots). | Makes RC-B eligible for a separate explicit release authorization. Never required for A2. |
 
