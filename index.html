@@ -190,7 +190,7 @@
 <a href="mailto:hello@quark.build" data-cta="email">hello@quark.build ↗</a>
 </div>
 <div>
-<form id="leadForm" action="/api/lead" method="POST">
+<form id="leadForm" action="/api/lead" method="POST"><p role="status">Private review — enquiry submission and analytics are disabled.</p><fieldset disabled>
 <label for="email">Work email</label>
 <input id="email" type="email" name="email" required maxlength="254" autocomplete="email" placeholder="you@company.com" />
 <label for="industry">Industry <span>(optional)</span>
@@ -216,10 +216,8 @@
 <button class="btn btn-primary" type="submit">Discuss my warehouse ↗</button>
 <p id="leadStatus" class="lead-status" role="status" aria-live="polite">
 </p>
-<noscript>
-<p>You can submit this form without JavaScript, or email hello@quark.build.</p>
-</noscript>
-</form>
+
+</fieldset></form>
 </div>
 </div>
 </section>
