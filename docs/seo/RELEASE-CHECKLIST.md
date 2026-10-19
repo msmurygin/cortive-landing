@@ -9,7 +9,7 @@
 - [x] Preserve actual public homepage, primary CTA, Vision, production privacy/routes/sitemap; prepare link/route/privacy changes in **excluded local compositions only**.
 - [x] Separate RC-A minimum, RC-A measurement extension and RC-B with exact manifests. No cost→unpublished inventory link; independent RC-B also omits unpublished cost link.
 - [x] Cost math, blank/zero, USD/GBP, licensing, overflow, whole counts, annual scope and rounding tested. Fix the observed one-cent high-value contingency error with exact integer math.
-- [x] One labelled real provider test returns 200. Redacted evidence distinguishes local RC handler/upstream acceptance from unconfirmed final inbox receipt.
+- [x] One labelled real provider test returns 200; founder confirmed receipt in Inbox on 19 October 2026. Redacted evidence distinguishes provider acceptance, owner-confirmed receipt and the still-unexecuted deployed-browser end-to-end test. No repeat submission or production analytics event was generated.
 - [x] Optional analytics disabled by default; local RC previews reject forms, send no events and set HTTP noindex. Current Vercel Hobby one-hour runtime window explicitly rejected as complete weekly storage.
 - [x] Full-scope claims matrix preserves intended MVP and historical QA provenance. No new certification, WMS mutations or production claims.
 
@@ -25,7 +25,6 @@ Reuse [Sprint 2 Lighthouse](evidence/sprint-2/lighthouse-summary.json): cost mob
 
 | Blocker | Owner | Minimum action | Blocks |
 |---|---|---|---|
-| Final notification receipt unknown | Founder / notification mailbox owner | Confirm exact QUARK-RC-TEST subject in Inbox or Spam; if absent, verify Formspree recipient/spam/quota and resolve delivery. Do not equate stored submission/HTTP200 with inbox. | RC-A go-live approval and measurement activation |
 | Content/link/release authorization | Founder | Approve A1 and explicitly authorize A2 for a specified source/manifest, measurement OFF. | RC-A minimum |
 | Privacy account facts / operating policy | Founder/controller, then agent | Confirm mailbox provider/controller; approve retention/deletion; agent verifies processor transfer/retention controls and prepares final policy without placeholders. | Measurement extension; not WMS work |
 | Weekly collection incomplete | Founder chooses destination; agent verifies configuration | Approve a durable data destination/retention; verify continuous collection, dedup/outage coverage and access limits before activation. | Measurement extension only |

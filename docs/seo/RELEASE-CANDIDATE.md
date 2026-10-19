@@ -4,9 +4,9 @@
 
 ## Decision in one minute
 
-**RC-A: cost page is technically prepared; release is pending founder approval and inbox receipt.** It is independent of WMS certification. Recommended first release is the page, its assets, the previously proposed contrast correction, one footer resource link and its sitemap/route changes. Keep new measurement OFF. Existing form and privacy remain as in production in this minimum composition.
+**RC-A: cost page is technically prepared; inbox receipt is confirmed by the founder; release is pending founder approval.** It is independent of WMS certification. Recommended first release is the page, its assets, the previously proposed contrast correction, one footer resource link and its sitemap/route changes. Keep new measurement OFF. Existing form and privacy remain as in production in this minimum composition.
 
-**RC-A measurement extension: BLOCKED.** The implementation is prepared, but inbox delivery is not confirmed, the privacy proposal requires provider/controller decisions, and current Vercel Hobby logs cannot support a complete weekly report. Do not make tracking activation a prerequisite for the first cost-page release. This is staged composition within RC-A, not another SEO sprint.
+**RC-A measurement extension: BLOCKED.** Inbox receipt for the single labelled test was confirmed by the founder on 19 October 2026. The privacy proposal still requires provider/controller decisions, and current Vercel Hobby logs cannot support a complete weekly report. Do not make tracking activation a prerequisite for the first cost-page release. This is staged composition within RC-A, not another SEO sprint.
 
 **RC-B: BLOCKED.** The implemented inventory scope is preserved. Relevant selected-build QA/retests and founder approval of claims/visual references remain outstanding. No promise that expected bug fixes are already complete.
 
@@ -43,7 +43,7 @@ No fabricated pricing, market averages, guaranteed savings/ROI or implementation
 | ID | Founder decision | Effect |
 |---|---|---|
 | A1 | Approve the complete cost page, calculator assumptions/disclaimer/CTA, contrast correction and one footer resource link. | Freezes RC-A minimum content and four-URL sitemap. |
-| A2 | After inbox receipt is confirmed, explicitly authorize the **RC-A minimum release**, with new measurement OFF. | Agent can prepare the approved release commit from its manifest and deploy only that composition. No RC-B publication or measurement activation. |
+| A2 | Explicitly authorize the **RC-A minimum release**, with new measurement OFF. Inbox receipt is already owner-confirmed. | Agent can prepare the approved release commit from its manifest and deploy only that composition. No RC-B publication or measurement activation. |
 | D1 | Confirm actual email provider/controller details and approve the retention/deletion/processor/consent proposal in [data handling](DATA-HANDLING-APPROVAL.md). Choose a durable reporting destination before optional analytics activation. | Resolves measurement-extension policy and storage gates; does not itself deploy or activate tracking. |
 | B1 | When WMS owner links the necessary existing QA/retests, approve matrix claims and no-new-image/gallery-link composition (or specific reviewed screenshots). | Makes RC-B eligible for a separate explicit release authorization. Never required for A2. |
 

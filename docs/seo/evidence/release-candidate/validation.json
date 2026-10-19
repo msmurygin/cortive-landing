@@ -157,7 +157,12 @@
     "last_week": "Observability Plus",
     "weekly_completeness": "NOT_SUPPORTED by current runtime-only design"
   },
-  "inbox_delivery": "UNCONFIRMED",
+  "inbox_delivery_at_validation": "UNCONFIRMED",
+  "subsequent_owner_confirmation": {
+    "recorded_date": "2026-10-19",
+    "status": "CONFIRMED_BY_OWNER_INBOX",
+    "evidence": "form-delivery.json"
+  },
   "release_authorized": false,
   "deployment_performed": false,
   "note": "Tests use provider mocks except the single separately recorded Formspree test. Final source commit is PR head; regenerate ignored RC manifests after commit to pin that exact source."

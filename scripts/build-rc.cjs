@@ -30,7 +30,7 @@ function build(candidate){
  }
  const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
  const changes=[];function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())walk(p);else{const n=path.relative(out,p),bytes=fs.readFileSync(p);if(!original.has(n)||!bytes.equals(original.get(n)))changes.push({path:n,sha256:hash(bytes),baseline_sha256:original.has(n)?hash(original.get(n)):null});}}}walk(out);
- const manifest={candidate,baseline,source_commit:git('rev-parse','HEAD').toString().trim(),release_authorized:false,measurement_enabled:false,blocked:inventory?'MVP evidence and founder claims approval':candidate==='rc-a-measurement'?'Inbox receipt, data handling, durable reporting and founder approval':'Inbox receipt and founder page/link/release approval',route,changes};
+ const manifest={candidate,baseline,source_commit:git('rev-parse','HEAD').toString().trim(),release_authorized:false,measurement_enabled:false,blocked:inventory?'MVP evidence and founder claims approval':candidate==='rc-a-measurement'?'Data handling, durable reporting and founder approval':'Founder page/link/release approval',route,changes};
  write('RC-MANIFEST.json',JSON.stringify(manifest,null,2)+'\n');return manifest;
 }
 if(require.main===module){for(const c of process.argv.slice(2).length?process.argv.slice(2):['rc-a','rc-a-measurement','rc-b'])console.log(JSON.stringify(build(c)));}

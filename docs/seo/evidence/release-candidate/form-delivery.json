@@ -10,7 +10,14 @@
     "ok": true,
     "delivery_status": "provider_accepted"
   },
-  "inbox_receipt": "UNCONFIRMED",
+  "inbox_receipt": "CONFIRMED_BY_OWNER",
+  "owner_confirmation": {
+    "recorded_date": "2026-10-19",
+    "source": "Founder reply to the question naming this exact test subject",
+    "folder": "inbox",
+    "statement": "Письмо получено во входящих",
+    "exact_receipt_time": null
+  },
   "analytics_enabled": false,
   "operational_stages": [
     {
