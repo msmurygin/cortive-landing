@@ -72,6 +72,5 @@
   ],
   "buildCommand": "node preview-only.cjs",
   "outputDirectory": ".",
-  "framework": null,
-  "public": false
+  "framework": null
 }
