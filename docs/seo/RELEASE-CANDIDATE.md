@@ -22,6 +22,8 @@ Run `node scripts/build-rc.cjs` to reproduce three local snapshots under ignored
 
 Start previews with `node scripts/preview-rc.cjs rc-a`, `rc-b`, or `rc-a-measurement` in separate terminals. They bind loopback only, send `X-Robots-Tag: noindex, follow`, disable measurement and reject enquiry submissions. This isolates exact publication composition from the older combined mock preview at port 4173. Snapshot HTML has intended production `index,follow`; the preview response header prevents indexing. The snapshots are not online deployments.
 
+For optional remote review, `node scripts/build-protected-preview.cjs` packages separate snapshots in `review-dist/protected-preview/rc-a` and `rc-b`. These copies replace enquiry/event endpoints with disabled stubs, force noindex metadata/headers and Disallow robots, and reject a normal production build through a preview-only guard. They do not change release candidates or public source routes. **No remote RC URL exists yet.** Actual hosted behaviour and Vercel Authentication must be verified after founder approval P0; `public:false` hides source/logs and is not site authentication. Never weaken deployment protection or attach quark.build to a review snapshot. Configuration references: [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json), [system environment variables](https://vercel.com/docs/environment-variables/system-environment-variables).
+
 The proposed footer link is an approval item; existing homepage text, header navigation, primary CTA, screenshots and complete Vision stay unchanged. RC-B uses existing `/screens.html` references only. There are **no newly approved screenshots**; founder can approve this no-new-image composition, or nominate reviewed/redacted screenshots before RC-B release.
 
 ## Provenance and production baseline
@@ -42,9 +44,10 @@ No fabricated pricing, market averages, guaranteed savings/ROI or implementation
 
 | ID | Founder decision | Effect |
 |---|---|---|
+| P0, optional remote review | Authorize a separate **protected Vercel preview** of the prepared RC snapshots, with noindex, no production alias and enquiry/measurement disabled. | Enables remote founder review only. Current PR preview intentionally excludes the commercial drafts. This permission does not approve page claims, a merge, production deployment or analytics activation. |
 | A1 | Approve the complete cost page, calculator assumptions/disclaimer/CTA, contrast correction and one footer resource link. | Freezes RC-A minimum content and four-URL sitemap. |
 | A2 | Explicitly authorize the **RC-A minimum release**, with new measurement OFF. Inbox receipt is already owner-confirmed. | Agent can prepare the approved release commit from its manifest and deploy only that composition. No RC-B publication or measurement activation. |
-| D1 | Confirm actual email provider/controller details and approve the retention/deletion/processor/consent proposal in [data handling](DATA-HANDLING-APPROVAL.md). Choose a durable reporting destination before optional analytics activation. | Resolves measurement-extension policy and storage gates; does not itself deploy or activate tracking. |
+| D1 | Confirm controller identity/contact and approve the retention/deletion/provider/consent proposal in [data handling](DATA-HANDLING-APPROVAL.md); Gmail notification routing is already verified. Choose a durable reporting destination before optional analytics activation. | Resolves measurement-extension policy and storage gates; does not itself deploy or activate tracking. |
 | B1 | When WMS owner links the necessary existing QA/retests, approve matrix claims and no-new-image/gallery-link composition (or specific reviewed screenshots). | Makes RC-B eligible for a separate explicit release authorization. Never required for A2. |
 
 Do not merge the whole PR as a substitute for A2: the minimum composition deliberately excludes measurement code/privacy proposals. [Checklist and rollback](RELEASE-CHECKLIST.md) define the explicit subsequent release step. This task stops at this gate.

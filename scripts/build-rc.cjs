@@ -2,9 +2,10 @@
 const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..'),baseline='24914b0b2729e2b5b4f661a2db3569a6741a227d';
 function git(...args){return cp.execFileSync('git',args,{cwd:root});}
-function build(candidate){
+function build(candidate, namespace=''){
  if(!['rc-a','rc-a-measurement','rc-b'].includes(candidate))throw Error('Unknown candidate');
- const out=path.join(root,'review-dist',candidate);fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
+ if(!['','preview-source'].includes(namespace))throw Error('Unknown review namespace');
+ const out=path.join(root,'review-dist',namespace,candidate);fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
  const write=(n,s)=>{const p=path.join(out,n);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,s);};
  const original=new Map();
  for(const n of git('ls-tree','-r','--name-only',baseline).toString().trim().split('\n')){

@@ -15,7 +15,7 @@
 
 ## Validation record
 
-25 automated tests pass: existing cost/form/measurement suites, new exact-cent regression exact currency-display regression and three independent-composition tests. `scripts/validate.py` verifies current draft HTML, H1/canonical/JSON-LD/links/anchors/assets, preserved baseline files and syntax. `scripts/build-review.cjs` plus `scripts/build-rc.cjs` generate private review artifacts; `git diff --check` checks whitespace. No configured linter or framework build exists; these checks are not described as a nonexistent lint/framework pipeline.
+27 automated tests pass (rerun on 19 October): the existing 25 cost/form/measurement/composition checks plus two protected-preview tests. The latter verify blocked production/development builds, no upstream requests from the disabled enquiry/event endpoints, measurement OFF, noindex rules and independent page composition. `scripts/validate.py` verifies draft/candidate HTML, H1/canonical/JSON-LD/links/anchors/assets, preserved baseline files and syntax. Review/RC/protected-preview builds generate excluded local artifacts; `git diff --check` checks whitespace. No configured linter or framework build exists. These are local checks, not a claimed Vercel RC deployment.
 
 Composition tests confirm page isolation, four-URL sitemap, self-canonical/indexable candidate HTML, intended route/redirects, asset presence and unchanged Vision/robots/gallery. Local HTTP smoke checks cover each candidate route, redirects, noindex response header, disabled config and absent other commercial route. Browser/mobile QA checks calculator, focus, reset/model changes and layout. Full checks/results are [recorded alongside this gate](evidence/release-candidate/validation.json).
 
@@ -25,10 +25,11 @@ Reuse [Sprint 2 Lighthouse](evidence/sprint-2/lighthouse-summary.json): cost mob
 
 | Blocker | Owner | Minimum action | Blocks |
 |---|---|---|---|
+| Optional remote RC preview not deployed | Founder, then agent | Approve P0 for protected preview only; agent verifies Vercel Authentication and hosted safeguards. Local previews already work. No production release is included in P0. | Review through an external Vercel URL only |
 | Content/link/release authorization | Founder | Approve A1 and explicitly authorize A2 for a specified source/manifest, measurement OFF. | RC-A minimum |
-| Privacy account facts / operating policy | Founder/controller, then agent | Confirm mailbox provider/controller; approve retention/deletion; agent verifies processor transfer/retention controls and prepares final policy without placeholders. | Measurement extension; not WMS work |
+| Privacy operating policy / remaining provider safeguards | Founder/controller, then agent | Approve controller identity and retention/deletion. Agent verifies provider contracts/transfer/deletion controls and finalizes policy; Formspree archive ON, 30-day archive access and Gmail routing are already checked. | Measurement extension; not WMS work |
 | Weekly collection incomplete | Founder chooses destination; agent verifies configuration | Approve a durable data destination/retention; verify continuous collection, dedup/outage coverage and access limits before activation. | Measurement extension only |
-| Inventory relevant QA / defect retests incomplete | WMS engineering/QA owner | Link selected-build applicable existing proof and close/retest relevant defects, including D003 for affected receiving scope. | RC-B only |
+| Inventory relevant QA / defect retests incomplete | WMS engineering/QA owner | Link selected-build applicable existing proof; D003 implementation fix is already merged in PR #1314, so provide the matching required retest for affected receiving scope rather than reimplementing it. | RC-B only |
 | Inventory wording/screenshots approval | Founder, after QA | Approve cleared matrix and existing gallery-link/no-new-image approach or specific redacted images. | RC-B only |
 
 ## Subsequent release procedure — NOT executed

@@ -163,6 +163,18 @@
     "status": "CONFIRMED_BY_OWNER_INBOX",
     "evidence": "form-delivery.json"
   },
+  "gate_recheck": {
+    "recorded_date": "2026-10-19",
+    "starting_pr_head": "3d46ffb49332fe2824f214cbedd764d7bbd4d8ab",
+    "tests_passed": 27,
+    "production_baseline_bytes_unchanged": true,
+    "production_commercial_routes": "both404",
+    "formspree_authenticated_inspection": "form-delivery.json provider_archive_confirmation",
+    "wms_d003_fix_merged": "PR1314 at d105fce52; runtime retest not supplied",
+    "protected_preview_artifacts": "built locally; disabled upstream calls and production-build guard tested",
+    "protected_preview_deployed": false,
+    "founder_preview_approval": "PENDING_P0"
+  },
   "release_authorized": false,
   "deployment_performed": false,
   "note": "Tests use provider mocks except the single separately recorded Formspree test. Final source commit is PR head; regenerate ignored RC manifests after commit to pin that exact source."
