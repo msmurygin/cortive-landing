@@ -70,3 +70,9 @@ The founder authorized implementation/review in the existing PR, with no new-pag
 | SEO-S2-release | P1 / pending approval | Keep unapproved commercial pages unpublished | S | Founder explicit release | drafts/scripts/review-dist excluded from Vercel; production new routes stay 404; release only approved copy/assets/routes/links; rollback documented |
 
 No GA4/Plausible account is needed for reviewing the first-party implementation. A durable analytics service remains an option if Vercel export/retention cannot meet weekly reporting. Keyword volumes/KD/CPC remain unavailable; no new forecast is fabricated. The founder’s expectation of bug fixes does not replace evidence of completed retests.
+
+## Approved RC-A follow-up — does not block initial release
+
+| ID | Priority / status | Expected impact | Complexity | Dependencies | Acceptance criteria |
+|---|---|---|---|---|---|
+| SEO-RCA-PDF | P3 / requested, deferred from initial RC-A | Let buyers retain their budget-planning checklist | S–M | Initial minimal RC-A release first; website agent implements as a separate reviewable change | Download Budget Checklist (PDF) generated entirely in the browser. No user-entered scope or financial data sent to any server, external PDF service, analytics or telemetry. Preserve unknowns, explicit zeros, currency labels and existing disclaimers; do not introduce estimated prices/effort/ROI. Verify no outbound payload and PDF readability for blank/filled/long checklists and mobile download. No new tracking or privacy scope. Not part of A2 candidate `8b974f8`; must not delay it. |

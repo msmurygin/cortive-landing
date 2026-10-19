@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-19T15:10:59.746Z",
+  "productionBase": "24914b0b2729e2b5b4f661a2db3569a6741a227d",
+  "rows": [
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "e3b7a4e9578616d0ed2a2120a8229d164558a90d0f83408103edb0da2ed32cd9",
+      "unchanged": true
+    },
+    {
+      "path": "/vision",
+      "status": 200,
+      "sha256": "4ca89735de2dc60a79588758070ddb3966bd9ed7c3a61657004dc11cba006225",
+      "unchanged": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "sha256": "b8e19fe21b8a48bc7d682697c92def28f280c8538e52d148f9f24c5bdba3744b",
+      "unchanged": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "sha256": "0e4c4c5c282b4901095c27d4ee9b7c843ac56d436a287d218859716c16a22be2",
+      "unchanged": true
+    },
+    {
+      "path": "/wms-cost",
+      "status": 404
+    },
+    {
+      "path": "/features/inventory-management",
+      "status": 404
+    }
+  ],
+  "mutations": 0
+}

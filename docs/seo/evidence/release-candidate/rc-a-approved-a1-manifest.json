@@ -1,0 +1,76 @@
+{
+  "candidate": "RC-A minimum production release",
+  "releaseCommit": "8b974f89796da5424e2a0d0e6f8d5746c0f6f5c4",
+  "parent": "24914b0b2729e2b5b4f661a2db3569a6741a227d",
+  "sourceCommit": "8ecd039c08238e3248dc26774eeb1b71cf223243",
+  "approvedContentSource": "5e1b8e1dde14f45c32a026b81f17706e1910bf5c",
+  "approvedProtectedPreview": {
+    "commit": "d0271db0fe18b9faeb74fd2fb9fa42bdff788a11",
+    "url": "https://project-ogj6r-nk5fnrmt2-quark-build.vercel.app/wms-cost"
+  },
+  "A1": "APPROVED by founder",
+  "A2": "NOT APPROVED",
+  "releaseAuthorized": false,
+  "pushed": false,
+  "deployed": false,
+  "newAnalytics": "EXCLUDED / OFF",
+  "existingHomeFormAndLegacyEvents": "UNCHANGED from production baseline",
+  "privacy": "UNCHANGED from production baseline",
+  "RCB": "EXCLUDED",
+  "pdfChecklist": "FOLLOW-UP / excluded from initial release",
+  "changes": [
+    {
+      "path": "assets/product.css",
+      "sha256": "39c4af85c466c57543c863f502d5ace247f414e541680fd7bc12b164504c2f27",
+      "baseline_sha256": "3051ac2ef3d5c4494ed4ad13ec776a3af92d261338b8c19f2bacc5a6d0e5b89b"
+    },
+    {
+      "path": "assets/seo/cost-model.js",
+      "sha256": "900d6f14b2151c0454b50a05e4ac7ffc90dc3555774b32369d06a232d0cf20f2",
+      "baseline_sha256": null
+    },
+    {
+      "path": "assets/seo/cost-ui.js",
+      "sha256": "01bec6a36da6a22d082790ca7c0f82b2aa910ca5bdbd0ff2f8d234135f3b0f6a",
+      "baseline_sha256": null
+    },
+    {
+      "path": "assets/seo/seo-content.css",
+      "sha256": "05cc0b84116a492d9cc1ddb65e59d33cbb13bb0eb1fefc4fa20392f3c936d668",
+      "baseline_sha256": null
+    },
+    {
+      "path": "index.html",
+      "sha256": "21749710788215a33aa9d308550526b3a9fe820b5d2f478f5cc8f3daccb16049",
+      "baseline_sha256": "e3b7a4e9578616d0ed2a2120a8229d164558a90d0f83408103edb0da2ed32cd9"
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "bb7fb3bb84196fbcda767afb51f86188a579daaa18d0af9b432ba8b7add32dc4",
+      "baseline_sha256": "0e4c4c5c282b4901095c27d4ee9b7c843ac56d436a287d218859716c16a22be2"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "85a004dfe6078df44d7661ee8bf28439a1436c120afefe8d3175a12b6d83aecb",
+      "baseline_sha256": "34e06bb252420dd502793af52fa07d2d1e82da7aca494db077650d59b5296f3a"
+    },
+    {
+      "path": "wms-cost.html",
+      "sha256": "6d853591dba4d2fb16cf2f1e9e099286528f2b185aa774a7d7df73cc41590d8f",
+      "baseline_sha256": null
+    }
+  ],
+  "validation": {
+    "automatedTestsPassed": 30,
+    "footerOnlyLinkAndUnchangedHeader": "PASS",
+    "releaseFileHashes": "PASS",
+    "baselineFormPrivacyVisionRobots": "PASS",
+    "staticSeoAndJsSyntax": "PASS",
+    "minimalReleaseEurFixture": "PASS",
+    "cleanCheckout": true
+  },
+  "artifacts": {
+    "patchSha256": "0b085719158bd450c86d25f4a73e2f13906f657c2f8b85f869151eca6fcae7bc",
+    "bundleSha256": "f0488c390889bc8b6492bbc15dfdbd07bc7d539b2235b1e76c12b001276016ee"
+  }
+}
