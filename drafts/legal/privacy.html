@@ -27,10 +27,7 @@
 
             <p>
                 Quark is a pre-launch project. This site does not offer a
-                service, an account or a purchase. The only personal data it
-                collects is what you type into the enquiry form, plus the
-                technical data any website receives when your browser requests a
-                page. This page explains both, in full.
+                service, an account or a purchase. It processes enquiry details and technical connection data. Optional measurement, if activated, also processes the limited event data described below.
             </p>
 
             <h2><span class="n">01</span>Who is responsible</h2>
@@ -82,7 +79,7 @@
             </table>
             <p>Operational event records help diagnose form submission, provider acceptance and errors. They do not include enquiry content, email, industry or raw URLs. Provider acceptance does not prove that a notification email reached an inbox. Hosting logs may separately contain connection data.</p>
             <p>Optional first-party measurement, when enabled, asks for your permission. It records fixed event names, timestamps, allowlisted page paths, coarse source/medium and random event or submission references, without a persistent visitor ID. It does not send names, email, free-text content, full URLs, referrers or calculator inputs to analytics. Browser Do Not Track and Global Privacy Control suppress this optional measurement. Refusing measurement does not prevent an enquiry.</p>
-            <p>These event records use the site's Vercel logs; a separate analytics database is not created. Hosting retention must be confirmed in the project settings before enabling measurement. We do not send these events to Google Analytics or an advertising service.</p>
+            <p>Event records currently use Vercel logs, with a one-hour runtime-log window on our Hobby plan. Optional measurement is disabled until a reporting destination and its retention are approved. We do not send these events to Google Analytics or an advertising service.</p>
             <h2><span class="n">03</span>Storage on your device</h2>
             <p>This site sets no cookies. The qk-theme local-storage value remembers your chosen display theme without an identifier. If optional measurement is enabled, session storage remembers your allow/decline choice for the tab. Only after you allow it, coarse source/medium and an allowlisted initial landing path are saved in the same tab, without an identifier. Attribution expires after 30 minutes from the last measured navigation; stale context is ignored. Closing the tab normally removes session storage. No calculator numbers are stored.</p>
             <p>Use Measurement settings in the footer to decline or withdraw permission; this removes the attribution context and stops optional events. The choice record remains only to remember your preference. If storage is unavailable, measurement can cover the current page but cannot preserve attribution across pages. Optional measurement does not claim to cover all visitors.</p>
@@ -96,7 +93,7 @@
                 <tr>
                     <td>Formspree, Inc.</td>
                     <td>
-                        Receives warehouse enquiries (email and optional industry) forwarded by our website
+                        Receives and stores enquiry email, optional industry, contact-consent wording and a random submission reference; forwards notifications to our business mailbox
                     </td>
                     <td>United States</td>
                 </tr>
@@ -117,19 +114,12 @@
                 </tr>
             </table>
             <p>
-                Transfers of personal data to the United States rely on the EU
-                Standard Contractual Clauses and, where applicable, the EU–US
-                Data Privacy Framework. No other party receives your data. We do
-                not disclose it to authorities unless legally compelled.
+                Approval required before publication: confirm the business email provider, processing locations and applicable transfer safeguards for Formspree, Vercel, email and font delivery. Provider names alone do not establish that safeguards are in place.
             </p>
 
             <h2><span class="n">05</span>How long we keep it</h2>
             <p>
-                Enquiry details are kept while we respond to and follow up on your enquiry, or until you ask us to delete them. In any
-                case we delete enquiry data no later than 24 months after you
-                submitted it. Server and security logs held by our providers are
-                retained for their standard periods, typically no more than 30
-                days.
+                Proposed operating policy, subject to controller approval: remove enquiry copies from Formspree, the business mailbox and controlled exports no later than 12 months after the last substantive contact, or earlier on a valid deletion request unless a legal obligation requires retention. Review overdue records monthly. Remove test submissions within seven days. Runtime event logs currently have a one-hour Vercel Hobby window; other provider security logs and backups follow separately confirmed provider policies. No general 30-day provider limit is asserted. Optional analytics retention is not activated by this draft.
             </p>
 
             <h2><span class="n">06</span>Your rights</h2>

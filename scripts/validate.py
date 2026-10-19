@@ -50,3 +50,28 @@ for f in (ROOT/'docs/seo').glob('*.md'):
   if target.startswith(('http://','https://','#')):continue
   assert (f.parent/target.split('#')[0]).exists(),(f,target,'broken doc reference')
 print('PASS: static HTML/JSON-LD/canonical/links, 3-URL sitemap, draft exclusion, JS syntax, preserved home/Vision/privacy/config and documentation links.')
+
+# Release snapshots are excluded artifacts; validate exact proposed public routes too.
+for candidate in ['rc-a','rc-a-measurement','rc-b']:
+ out=ROOT/'review-dist'/candidate
+ if not out.exists():continue
+ manifest=json.loads((out/'RC-MANIFEST.json').read_text());route=manifest['route']
+ config=json.loads((out/'vercel.json').read_text())
+ mapping={'/':'index.html',**{x['source']:x['destination'].lstrip('/') for x in config['rewrites']}}
+ route_docs={}
+ for url in ['/',route,'/vision','/screens.html','/legal/privacy.html','/legal/terms.html']:
+  file=mapping.get(url,url.lstrip('/'));doc=Doc();doc.feed((out/file).read_text());route_docs[url]=doc
+ doc=route_docs[route];assert doc.h1==1 and doc.canonical==['https://quark.build'+route] and doc.robots==['index,follow']
+ assert doc.ld[0]['@type']=='BreadcrumbList' and doc.ld[0]['itemListElement'][-1]['item']=='https://quark.build'+route
+ for url,doc in route_docs.items():
+  for ref in doc.links:
+   u=urlsplit(urljoin('https://quark.build'+url,ref))
+   if u.scheme!='https' or u.netloc!='quark.build':continue
+   file=mapping.get(u.path,u.path.lstrip('/'))
+   assert (out/file).is_file(),(candidate,url,ref,'missing candidate asset/route')
+   if u.fragment and u.path in route_docs:assert u.fragment in route_docs[u.path].ids,(candidate,ref,'anchor')
+ urls=[x.text for x in ET.parse(out/'sitemap.xml').findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
+ assert set(urls)=={'https://quark.build/','https://quark.build/vision','https://quark.build/screens.html','https://quark.build'+route}
+ for name in ['vision.html','screens.html','robots.txt']:
+  assert (out/name).read_bytes()==subprocess.check_output(['git','show',manifest['baseline']+':'+name],cwd=ROOT)
+print('PASS: independent RC canonical/robots/JSON-LD/crawlable HTML/anchors/assets, exact four-URL sitemaps and preserved Vision/gallery/robots.')

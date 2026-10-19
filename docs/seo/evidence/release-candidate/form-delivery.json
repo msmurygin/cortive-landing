@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-10-19T05:37:02.131Z",
+  "label": "QUARK-RC-TEST d80e4680-6a89-42a0-9d9e-7aa37f4623c3",
+  "submission_reference": "d80e4680-6a89-42a0-9d9e-7aa37f4623c3",
+  "handler_invocation": "local current RC api/lead.js, real upstream fetch; subject alone prefixed for test identification",
+  "test_count": 1,
+  "provider_http_status": 200,
+  "handler_status": 200,
+  "handler_response": {
+    "ok": true,
+    "delivery_status": "provider_accepted"
+  },
+  "inbox_receipt": "UNCONFIRMED",
+  "analytics_enabled": false,
+  "operational_stages": [
+    {
+      "event": "lead_submit",
+      "submission_id": "d80e4680-6a89-42a0-9d9e-7aa37f4623c3"
+    },
+    {
+      "event": "lead_success",
+      "submission_id": "d80e4680-6a89-42a0-9d9e-7aa37f4623c3"
+    }
+  ]
+}

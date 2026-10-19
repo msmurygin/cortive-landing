@@ -31,7 +31,10 @@
       devicesInfrastructure: warehouses * money(x, 'devices'),
     };
     const contingency = decimal(x.contingency, 'contingency percentage', 100);
-    initial.contingency = Math.round(Object.values(initial).reduce((a, b) => a + b, 0) * contingency / 10000);
+    const subtotal = Object.values(initial).reduce((a, b) => a + b, 0);
+    if (!Number.isSafeInteger(subtotal)) throw new Error('The total is too large to calculate safely.');
+    // Integer multiplication can exceed Number precision even when the result fits.
+    initial.contingency = Number((BigInt(subtotal) * BigInt(contingency) + 5000n) / 10000n);
     const annual = {
       software: x.licensing === 'subscription' ? 12 * (money(x, 'monthlyBase') + users * money(x, 'monthlyUser')) : 0,
       support: money(x, 'annualSupport'),
@@ -43,5 +46,12 @@
     if (![...Object.values(initial), ...Object.values(annual), initialTotal, annualTotal, tco3, tco5].every(Number.isSafeInteger)) throw new Error('The total is too large to calculate safely.');
     return { currency: x.currency, initial, annual, initialTotal, annualTotal, tco3, tco5 };
   }
-  return { calculate };
+  function formatMoney(cents, currency) {
+    if (!Number.isSafeInteger(cents) || cents < 0 || !['USD', 'GBP'].includes(currency)) throw new Error('Invalid money amount.');
+    const amount = BigInt(cents);
+    const formatter = new Intl.NumberFormat(currency === 'GBP' ? 'en-GB' : 'en-US', { style: 'currency', currency });
+    // Dividing a large Number by 100 can lose a cent before formatting.
+    return formatter.formatToParts(amount / 100n).map(part => part.type === 'fraction' ? String(amount % 100n).padStart(2, '0') : part.value).join('');
+  }
+  return { calculate, formatMoney };
 });

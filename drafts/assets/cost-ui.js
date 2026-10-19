@@ -18,7 +18,7 @@
     if (!form.reportValidity()) return;
     try {
       const r = window.QuarkCost.calculate(Object.fromEntries(new FormData(form)));
-      const fmt = n => new Intl.NumberFormat(r.currency === 'GBP' ? 'en-GB' : 'en-US', { style: 'currency', currency: r.currency }).format(n / 100);
+      const fmt = n => window.QuarkCost.formatMoney(n, r.currency);
       for (const key of ['initialTotal', 'annualTotal', 'tco3', 'tco5']) document.getElementById(key).textContent = fmt(r[key]);
       const labels = { software: 'Software', implementation: 'Implementation days', siteSetup: 'Warehouse setup', integrations: 'Integrations', migration: 'Migration', training: 'Training', devicesInfrastructure: 'Devices and infrastructure', contingency: 'Initial contingency', support: 'Support / maintenance', operations: 'Other recurring operations' };
       const body = document.getElementById('costBreakdown'); body.replaceChildren();
