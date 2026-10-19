@@ -24,10 +24,21 @@ html[data-theme="dark"] .seo-page{--mute:rgba(243,239,230,.74)}
 .cost-form [hidden],[hidden]{display:none!important}
 .cost-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
 .cost-actions button{cursor:pointer}
+.cost-mode-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cost-mode-options label{display:grid;grid-template-columns:24px 1fr;gap:4px 8px;padding:14px;border:1px solid var(--line);cursor:pointer}
+.cost-mode-options small{grid-column:2}
+.cost-form .cost-mode-options input{width:20px;height:20px;min-height:0;grid-row:span 2;margin:2px 0;accent-color:var(--ink)}
+.cost-mode-options label:has(input:checked){border-color:var(--ink);background:var(--paper-2)}
+.cost-form details{border-top:1px solid var(--line);padding:18px 0}
+.cost-form summary{font-weight:600;cursor:pointer;min-height:44px;line-height:1.5;padding:10px 0}
+.cost-form details[open]>summary{margin-bottom:18px}
+.cost-form details>.btn{margin-top:20px}
+.scope-results{border:1px solid var(--line);padding:0 24px 24px;margin-top:24px}
+.scope-results li+li{margin-top:16px}
 .cost-metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
 .cost-metrics>div{border:1px solid var(--line);padding:20px;min-width:0}
 .cost-metrics dt{font-size:14px;color:var(--mute)}
 .cost-metrics dd{margin:8px 0 0;font-size:clamp(23px,4vw,34px);overflow-wrap:anywhere}
 .seo-article :focus-visible{outline:3px solid var(--ink);outline-offset:4px}
 .seo-article .btn{white-space:normal;line-height:1.4;min-height:44px}
-@media(max-width:600px){.cost-grid,.cost-metrics{grid-template-columns:1fr}.cost-form{padding:18px}.seo-article{padding:25px 20px 60px}.seo-article table{font-size:14px}}
+@media(max-width:600px){.cost-grid,.cost-metrics,.cost-mode-options{grid-template-columns:1fr}.cost-form,.scope-results{padding:18px}.seo-article{padding:25px 20px 60px}.seo-article table{font-size:14px}}
