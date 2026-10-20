@@ -120,12 +120,12 @@
   }
   newPage('Executive summary');title('WMS Project Preparation Brief','Prepared '+report.generatedAt.slice(0,10)+' | Your warehouse project at a glance');
   paragraph('Executive summary',13,accent,'F2');
-  paragraph('Preparation status: '+doc.readinessLevel+'. This describes preparation for supplier evaluation, not readiness to go live.',10.5);
+  paragraph('Customer project preparation: '+doc.readinessLevel+'. This describes your implementation preparation; Quark core WMS operations are implemented.',10.5);
   table(['Business profile','Your stated position'],doc.profile,{size:9.5,gap:11});
   heading('Your top 3 actions');
   doc.first.forEach((x,i)=>action(x,i+1,true));
   if(pages.length)throw Error('Executive summary does not fit page one.');
-  paragraph('Preliminary, user-reported discovery. No product compatibility, compliance, cost, ROI or delivery commitment is established.',8.5,muted);
+  paragraph('Customer preparation brief. Specialist fit, certification, costs and rollout are scoped separately.',8.5,muted);
   if(pages.length)throw Error('Executive summary does not fit page one.');
   newPage('Complexity and preparation');title('Complexity and readiness','Operational scope and implementation preparation are assessed independently.');
   heading('Operational complexity factors');
@@ -141,9 +141,9 @@
   if(doc.remaining.length||doc.requirements.length||doc.hypotheses.length||doc.scenarios.length){
    newPage('Preparation and discovery');title('Preparation and discovery','Use the following items to prepare an internal project meeting or supplier discussion.');
    if(doc.remaining.length){heading('Further preparation tasks');paragraph('Complete the three actions on page one, then work through the remaining findings below. Priorities follow your answers; they are not estimates of effort.',9.5,muted);doc.remaining.forEach((x,i)=>{action(x,i+4);if(x.basis.some(Boolean))paragraph('Based on your answers: '+x.basis.filter(Boolean).join('; '),9,muted);});}
-   if(doc.requirements.length){heading('Requirements you explicitly reported');paragraph('These are your stated requirements, not independently verified facts or promises of Quark support.',9.5,muted);table(['Requirement','Your answer'],doc.requirements.map(s=>{const split=s.indexOf(': ');return split<0?['Stated requirement',s]:[s.slice(0,split),s.slice(split+2)];}));}
+   if(doc.requirements.length){heading('Requirements you explicitly reported');paragraph('These are your stated requirements. Specialist rules and connections need project-specific validation.',9.5,muted);table(['Requirement','Your answer'],doc.requirements.map(s=>{const split=s.indexOf(': ');return split<0?['Stated requirement',s]:[s.slice(0,split),s.slice(split+2)];}));}
    if(doc.hypotheses.length){heading('Discovery topics to validate');paragraph('Your industry and operating model select these topics. They do not establish applicable regulations, mandatory features or supplier compatibility.',9.5,muted);table(['Topic for discussion','Why it was selected'],doc.hypotheses.map(x=>[x.title,x.basis]));}
-   if(doc.scenarios.length){heading('Candidate supplier-evaluation scenarios');paragraph('These are proposals to validate with suppliers, not Quark capabilities or a committed pilot scope.',9.5,muted);if(doc.scenarioAction&&!doc.first.some(x=>x.action===doc.scenarioAction))paragraph(doc.scenarioAction,9.5);table(['Candidate scenario','Reason to evaluate it'],doc.scenarios.map(x=>[x.title,x.why+(x.action?' '+x.action:'')]));}
+   if(doc.scenarios.length){heading('Candidate supplier-evaluation scenarios');paragraph('These scenarios support customer acceptance planning. Specialist requirements and connections are verified within the project scope.',9.5,muted);if(doc.scenarioAction&&!doc.first.some(x=>x.action===doc.scenarioAction))paragraph(doc.scenarioAction,9.5);table(['Candidate scenario','Reason to evaluate it'],doc.scenarios.map(x=>[x.title,x.why+(x.action?' '+x.action:'')]));}
    paragraph('Keep operational details within your organisation unless sharing is authorised. Contacting Quark is optional and never attaches this report automatically.',9,muted);
   }
   paragraph(doc.disclaimer,9,muted);
