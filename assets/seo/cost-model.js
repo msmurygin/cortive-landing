@@ -68,13 +68,13 @@
       scope, missingScope,
       summary: 'Warehouses: ' + (scope.warehouses ?? 'unknown') + ' · Users: ' + (scope.users ?? 'unknown') + ' · Integrations: ' + (scope.integrations ?? 'unknown') + ' · ' + complexity[x.complexity] + '.',
       checklist: [
-        ['Software fees: missing cost assumptions', users + '; obtain subscription or perpetual licence terms, included modules and annual fees.'],
-        ['Configuration and delivery effort: missing cost assumptions', sites + '. ' + process + ' Ask for scoped person-days, rates, setup responsibilities, testing and cutover costs. No effort is inferred from your scope.'],
-        ['Connections: missing cost assumptions', connections + ' Establish one-off build/test costs and recurring charges, including any bundled costs.'],
-        ['Migration and transition: missing cost assumptions', 'Assess master-data cleanup, opening balances, reconciliation, operator training and transition coverage; identify owners and obtain costs.'],
-        ['Devices and infrastructure: missing cost assumptions', 'Inventory scanners, printers, labels, wireless coverage and hosting by warehouse; obtain purchase, replacement and operating costs.'],
-        ['Long-term ownership: missing cost assumptions', 'Confirm annual support, maintenance, upgrade regression testing and internal administration; avoid counting bundled services twice.'],
-        ['Contingency and exclusions: missing cost assumptions', 'Record unresolved scope and choose your own contingency rationale. Assess tax/VAT, inflation, growth and financing separately; no default allowance or ROI is supplied.'],
+        ['Software fees (missing cost assumptions)', users + '; obtain subscription or perpetual licence terms, included modules and annual fees.'],
+        ['Configuration and delivery effort (missing cost assumptions)', sites + '. ' + process + ' Ask for scoped person-days, rates, setup responsibilities, testing and cutover costs. No effort is inferred from your scope.'],
+        ['Connections (missing cost assumptions)', connections + ' Establish one-off build/test costs and recurring charges, including any bundled costs.'],
+        ['Migration and transition (missing cost assumptions)', 'Assess master-data cleanup, opening balances, reconciliation, operator training and transition coverage; identify owners and obtain costs.'],
+        ['Devices and infrastructure (missing cost assumptions)', 'Inventory scanners, printers, labels, wireless coverage and hosting by warehouse; obtain purchase, replacement and operating costs.'],
+        ['Long-term ownership (missing cost assumptions)', 'Confirm annual support, maintenance, upgrade regression testing and internal administration; avoid counting bundled services twice.'],
+        ['Contingency and exclusions (missing cost assumptions)', 'Record unresolved scope and choose your own contingency rationale. Assess tax/VAT, inflation, growth and financing separately; no default allowance or ROI is supplied.'],
       ],
     };
   }
