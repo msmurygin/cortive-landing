@@ -47,7 +47,7 @@
   {
     "page": "product.html",
     "before": "Know the scope. Evaluate the operation.\nExplore Quark’s warehouse operations and the questions to bring to an evaluation. Quark is an early-stage WMS: the operations and interfaces available for your project are agreed against the current build and your requirements.",
-    "after": "Run the warehouse. Configure the workflow.\nQuark manages receiving, putaway, inventory control, replenishment, allocation, picking, packing and shipping on one configurable platform. Office users and warehouse operators work from connected stock, document and task records. Customer-specific configuration, extensions and integrations build on this shared WMS core."
+    "after": "Run the warehouse. Configure the workflow.\nQuark manages receiving, putaway, inventory control, replenishment, allocation, picking, packing and shipping on one configurable platform. Customer-specific configuration, extensions and integrations build on this shared WMS core."
   },
   {
     "page": "product.html",
