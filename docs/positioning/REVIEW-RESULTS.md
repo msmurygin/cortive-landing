@@ -53,3 +53,9 @@ Existing non-blocking test observation: a checkbox click made by automation befo
 - These are copy-only changes; no feature implementation, UI, metadata, forms, analytics or production settings changed.
 
 - Further founder wording review: serial-number tracking is described as also supported; Outbound heading is “From order to shipment.” Wave planning is included in the Outbound introduction, capability map and operations list. Bounded read-only inspection of wave RPC/domain commands supports grouping, eligibility preview and release. No WMS tests or certification were launched.
+
+## Founder operator/contact correction
+
+- Replaced the location label “Sofia, Bulgaria” with the founder-requested “EU entity” across all eight public page footers and both legal operator/controller paragraphs. The named operator/controller remains Maxim Smurygin; no company registration or legal identity was invented.
+- Legal main-content contact links, including the Privacy rights contact, now use `max@quark.build`. General enquiries and footer links retain `hello@quark.build`. Form submission destinations, data processing, retention, analytics and consent behavior are unchanged.
+- Governing law, jurisdiction and supervisory-authority clauses remain unchanged; the location-label correction does not establish a different legal jurisdiction. Historical audit/source documents retain their original observations.
