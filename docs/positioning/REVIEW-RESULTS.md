@@ -36,7 +36,7 @@ No real lead submission was sent. Local preview POST requests are refused. Priva
 
 The immutable Vercel preview is https://project-ogj6r-pc5pp4nq4-quark-build.vercel.app/ . Its deployed preview commit is `9fe5c607f751636d0bfeed59928bd17f284b9201`; the content-only commit is `fe75ad96114c0bb0877db2a1c889b15263960edb`. Authentication was independently checked without cookie or redirect following on seven routes: each returned HTTP 302 to `vercel.com/sso-api`, not content. An already authorised browser loaded the five content pages and completed the Assessment including local PDF/JSON generation. See PREVIEW-PROTECTION.json and browser-checks.json. Non-indexing alone is not considered protection. The review deployment adds a separate preview-only commit: a build guard rejects production, X-Robots-Tag prevents indexing and caching is disabled. These review-only deployment files must not be included in a production content release.
 
-After approval, release only the content commit to main through the normal process. Do not merge the preview guard. Verify Home, Product, Vision, Cost, Assessment and the unchanged form endpoints, canonical metadata, sitemap, robots and mobile navigation. Roll back a failed content release by reverting its content commit normally, without force-pushing or discarding unrelated changes.
+After approval, release the original content commit and both Product copy follow-ups (the redundant introduction removal and optional serial-number clarification) to main through the normal process. Alternatively, transfer only the reviewed runtime content paths from the final review tree, excluding preview-only deployment configuration. Do not merge the preview guard. Verify Home, Product, Vision, Cost, Assessment and the unchanged form endpoints, canonical metadata, sitemap, robots and mobile navigation. Roll back a failed content release by reverting its content commit normally, without force-pushing or discarding unrelated changes.
 
 Founder decisions: approve the prepared wording, including the factual website Terms/Privacy introductory correction; then give an explicit production release instruction. Individual advanced-capability verification is required only before expanding those claims, not as another core-WMS certification gate.
 
@@ -45,3 +45,9 @@ Founder decisions: approve the prepared wording, including the factual website T
 Responsive viewport emulation is not physical iOS/Android device testing. This work does not certify the WMS, every configuration variant, device, integration or regulated deployment. Existing QA facts retain their original status. No production performance or commercial-outcome claim is introduced. The target duration of the Assessment remains an unmeasured UX target.
 
 Existing non-blocking test observation: a checkbox click made by automation before deferred Assessment scripts finished loading did not enable Start until the checkbox was toggled again after load. The UI source is byte-identical to production. This content candidate does not change questionnaire behavior; a future narrow UI fix can synchronise the initial button state with consent after script loading. This is independent of the WMS core and of the copy approval.
+
+## Founder copy review follow-ups
+
+- Removed the redundant sentence about office users and warehouse operators without replacement.
+- Clarified serial-number tracking as optional in both the Inventory introduction and its capability list, following founder correction. Lot and serial identities are no longer presented as an unconditional combined tracking requirement.
+- These are copy-only changes; no feature implementation, UI, metadata, forms, analytics or production settings changed.
