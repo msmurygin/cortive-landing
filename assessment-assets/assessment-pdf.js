@@ -121,7 +121,7 @@
   newPage('Executive summary');title('WMS Project Preparation Brief','Prepared '+report.generatedAt.slice(0,10)+' | Your warehouse project at a glance');
   paragraph('Executive summary',13,accent,'F2');
   paragraph('Preparation status: '+doc.readinessLevel+'. This describes preparation for supplier evaluation, not readiness to go live.',10.5);
-  table(['Business profile','Your stated position'],doc.profile,{size:9.5,gap:5});
+  table(['Business profile','Your stated position'],doc.profile,{size:9.5,gap:11});
   heading('Your top 3 actions');
   doc.first.forEach((x,i)=>action(x,i+1,true));
   if(pages.length)throw Error('Executive summary does not fit page one.');
@@ -132,10 +132,10 @@
   const short=(chunks,max=3)=>{const chosen=[];for(const chunk of chunks){if(lines([...chosen,chunk].join('; '),9,346).length>max){chosen.push('Further details in the appendix');break;}chosen.push(chunk);}while(lines(chosen.join('; '),9,346).length>max&&chosen.length>1)chosen.splice(chosen.length-2,1);return chosen.join('; ');};
   const notAssessed=[];
   const dimensionRows=doc.dimensions.flatMap(d=>{const data=[...d.factors,...(d.unknowns.length?['Open: '+d.unknowns.join('; ')]:[])];if(!data.length){notAssessed.push(d.title);return [];}return [[d.title,short(data)]];});
-  table(['Dimension','Stated factors and open questions'],dimensionRows,{size:9,widths:[137,362],maxLines:3,gap:3});
+  table(['Dimension','Stated factors and open questions'],dimensionRows,{size:9,widths:[137,362],maxLines:3,gap:10,padding:8});
   if(notAssessed.length)paragraph('Not assessed from these answers: '+notAssessed.join(', ')+'. No requirement is inferred.',8.5,muted,'F1',3);
   heading('Implementation readiness: '+doc.readinessLevel);
-  table(['Preparation area','Your stated preparation'],doc.readiness,{size:9,widths:[137,362],gap:3});
+  table(['Preparation area','Your stated preparation'],doc.readiness,{size:9,widths:[137,362],gap:10,padding:8});
   paragraph('Unknown answers are open questions, not failed checks. Scale, industry and complexity do not lower this readiness result. Full answers follow in the appendix.',8.5,muted);
   if(pages.length!==1)throw Error('Complexity and readiness do not fit page two.');
   if(doc.remaining.length||doc.requirements.length||doc.hypotheses.length||doc.scenarios.length){
@@ -146,9 +146,10 @@
    if(doc.scenarios.length){heading('Candidate supplier-evaluation scenarios');paragraph('These are proposals to validate with suppliers, not Quark capabilities or a committed pilot scope.',9.5,muted);if(doc.scenarioAction&&!doc.first.some(x=>x.action===doc.scenarioAction))paragraph(doc.scenarioAction,9.5);table(['Candidate scenario','Reason to evaluate it'],doc.scenarios.map(x=>[x.title,x.why+(x.action?' '+x.action:'')]));}
    paragraph('Keep operational details within your organisation unless sharing is authorised. Contacting Quark is optional and never attaches this report automatically.',9,muted);
   }
-  newPage('Answers appendix');title('Appendix: your complete answers','Only questions in your active assessment path are included. Not specified means unknown, not no.');
+  paragraph(doc.disclaimer,9,muted);
+  newPage('Answers appendix');title('Appendix: your complete answers','Generated '+doc.generatedAt+' | Taxonomy '+report.taxonomyVersion+' | Rules '+report.rulesVersion+' | JSON schema '+report.assessmentSchemaVersion);
+  paragraph('Only questions in your active assessment path are included. Not specified means unknown, not no. Full answer-to-rule traceability remains in the structured JSON export.',9,muted);
   for(const q of doc.appendix){heading(q.title);table(['Question detail','Your answer'],q.answers,{padding:10,gap:7});}
-  heading('Method and limitations');paragraph(doc.disclaimer,9.5,muted);paragraph('Generated '+doc.generatedAt+'. Taxonomy '+report.taxonomyVersion+'; rules '+report.rulesVersion+'; JSON schema '+report.assessmentSchemaVersion+'. Full answer-to-rule traceability remains in the structured JSON export.',8.5,muted);
   if(page.length)pages.push(page);
   pages.forEach((p,i)=>{p.push(line+' rg '+left+' 43 '+total+' 0.7 re f');p.push(muted+' rg BT /F1 8 Tf 1 0 0 1 '+left+' 28 Tm (Quark | quark.build | Preliminary discovery) Tj ET');p.push(muted+' rg BT /F1 8 Tf 1 0 0 1 469 28 Tm (Page '+(i+1)+' of '+pages.length+') Tj ET');});
   return serialize(pages,true);
