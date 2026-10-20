@@ -26,6 +26,31 @@
       "source": "/wms-cost.html",
       "destination": "/wms-cost",
       "permanent": true
+    },
+    {
+      "source": "/screens.html",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/screens",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/screens/",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/product.html",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/product/",
+      "destination": "/product",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -40,6 +65,10 @@
     {
       "source": "/wms-cost",
       "destination": "/wms-cost.html"
+    },
+    {
+      "source": "/product",
+      "destination": "/product.html"
     }
   ],
   "headers": [
