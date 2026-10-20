@@ -1,0 +1,70 @@
+{
+  "preview": "https://project-ogj6r-pc5pp4nq4-quark-build.vercel.app",
+  "deploymentCommit": "9fe5c607f751636d0bfeed59928bd17f284b9201",
+  "checks": [
+    {
+      "route": "/",
+      "status": 302,
+      "authenticationRedirectHost": "vercel.com",
+      "authenticationRedirectPath": "/sso-api",
+      "protected": true,
+      "requestUsedCookies": false,
+      "followedRedirects": false
+    },
+    {
+      "route": "/product",
+      "status": 302,
+      "authenticationRedirectHost": "vercel.com",
+      "authenticationRedirectPath": "/sso-api",
+      "protected": true,
+      "requestUsedCookies": false,
+      "followedRedirects": false
+    },
+    {
+      "route": "/vision",
+      "status": 302,
+      "authenticationRedirectHost": "vercel.com",
+      "authenticationRedirectPath": "/sso-api",
+      "protected": true,
+      "requestUsedCookies": false,
+      "followedRedirects": false
+    },
+    {
+      "route": "/wms-cost",
+      "status": 302,
+      "authenticationRedirectHost": "vercel.com",
+      "authenticationRedirectPath": "/sso-api",
+      "protected": true,
+      "requestUsedCookies": false,
+      "followedRedirects": false
+    },
+    {
+      "route": "/tools/wms-readiness-assessment",
+      "status": 302,
+      "authenticationRedirectHost": "vercel.com",
+      "authenticationRedirectPath": "/sso-api",
+      "protected": true,
+      "requestUsedCookies": false,
+      "followedRedirects": false
+    },
+    {
+      "route": "/assessment-assets/discovery-model.js",
+      "status": 302,
+      "authenticationRedirectHost": "vercel.com",
+      "authenticationRedirectPath": "/sso-api",
+      "protected": true,
+      "requestUsedCookies": false,
+      "followedRedirects": false
+    },
+    {
+      "route": "/api/lead",
+      "status": 302,
+      "authenticationRedirectHost": "vercel.com",
+      "authenticationRedirectPath": "/sso-api",
+      "protected": true,
+      "requestUsedCookies": false,
+      "followedRedirects": false
+    }
+  ],
+  "passed": true
+}

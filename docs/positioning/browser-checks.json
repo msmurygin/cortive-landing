@@ -1,0 +1,199 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "h1": "A clearer view of warehouse work."
+    },
+    {
+      "route": "/product",
+      "h1": "Run the warehouse. Configure the workflow."
+    },
+    {
+      "route": "/vision",
+      "h1": "Our long-term vision: the warehouse that configures itself."
+    },
+    {
+      "route": "/wms-cost",
+      "h1": "How much does a warehouse management system cost?"
+    },
+    {
+      "route": "/tools/wms-readiness-assessment",
+      "h1": "Is your warehouse ready for a WMS?"
+    }
+  ],
+  "responsive": [
+    {
+      "width": 320,
+      "route": "/",
+      "client": 320,
+      "h1": "A clearer view of warehouse work.",
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "/product",
+      "client": 320,
+      "h1": "Run the warehouse. Configure the workflow.",
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "/vision",
+      "client": 320,
+      "h1": "Our long-term vision: the warehouse that configures itself.",
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "/wms-cost",
+      "client": 320,
+      "h1": "How much does a warehouse management system cost?",
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "/tools/wms-readiness-assessment",
+      "client": 320,
+      "h1": "Is your warehouse ready for a WMS?",
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "/legal/privacy.html",
+      "client": 320,
+      "h1": "Privacy Policy",
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "/legal/terms.html",
+      "client": 320,
+      "h1": "Terms of Use",
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "/thanks.html",
+      "client": 320,
+      "h1": "Enquiry received.",
+      "scroll": 320
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "client": 390,
+      "h1": "A clearer view of warehouse work.",
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "/product",
+      "client": 390,
+      "h1": "Run the warehouse. Configure the workflow.",
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "/vision",
+      "client": 390,
+      "h1": "Our long-term vision: the warehouse that configures itself.",
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "/wms-cost",
+      "client": 390,
+      "h1": "How much does a warehouse management system cost?",
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "/tools/wms-readiness-assessment",
+      "client": 390,
+      "h1": "Is your warehouse ready for a WMS?",
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "/legal/privacy.html",
+      "client": 390,
+      "h1": "Privacy Policy",
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "/legal/terms.html",
+      "client": 390,
+      "h1": "Terms of Use",
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "/thanks.html",
+      "client": 390,
+      "h1": "Enquiry received.",
+      "scroll": 390
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "client": 768,
+      "h1": "A clearer view of warehouse work.",
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "/product",
+      "client": 768,
+      "h1": "Run the warehouse. Configure the workflow.",
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "/vision",
+      "client": 768,
+      "h1": "Our long-term vision: the warehouse that configures itself.",
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "/wms-cost",
+      "client": 768,
+      "h1": "How much does a warehouse management system cost?",
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "/tools/wms-readiness-assessment",
+      "client": 768,
+      "h1": "Is your warehouse ready for a WMS?",
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "/legal/privacy.html",
+      "client": 768,
+      "h1": "Privacy Policy",
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "/legal/terms.html",
+      "client": 768,
+      "h1": "Terms of Use",
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "/thanks.html",
+      "client": 768,
+      "h1": "Enquiry received.",
+      "scroll": 768
+    }
+  ],
+  "protectedBrowserAccess": true,
+  "assessmentSevenSteps": true,
+  "pdfAndJsonLocalGeneration": true,
+  "noLeadSubmitted": true,
+  "deferredScriptTimingObservation": "Early checkbox interaction preceded deferred script initialisation; retoggle after load enabled Start. Assessment UI is byte-identical to baseline."
+}
