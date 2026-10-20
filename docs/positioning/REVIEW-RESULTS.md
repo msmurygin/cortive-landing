@@ -59,3 +59,7 @@ Existing non-blocking test observation: a checkbox click made by automation befo
 - Replaced the location label “Sofia, Bulgaria” with the founder-requested “EU entity” across all eight public page footers and both legal operator/controller paragraphs. The named operator/controller remains Maxim Smurygin; no company registration or legal identity was invented.
 - Legal main-content contact links, including the Privacy rights contact, now use `max@quark.build`. General enquiries and footer links retain `hello@quark.build`. Form submission destinations, data processing, retention, analytics and consent behavior are unchanged.
 - Governing law, jurisdiction and supervisory-authority clauses remain unchanged; the location-label correction does not establish a different legal jurisdiction. Historical audit/source documents retain their original observations.
+
+## Cookie question: bounded technical check
+
+The website source stores the visitor-selected appearance under `quark-theme`; Privacy had an obsolete `qk-theme` label, corrected without changing storage or consent behavior. No GA4/advertising scripts or application cookie writes were found in the checked website assets. Existing enquiry events use the first-party endpoint without persistent visitor identifiers; this is not a claim that hosting logs contain no personal data. A no-cookie design alone is not a complete legal-compliance guarantee. Cookie/appearance exceptions checked against CNIL and ICO guidance on 20 October 2026; reassess before adding trackers or external embeds.
