@@ -355,6 +355,8 @@ select.q-input{background-image:linear-gradient(45deg,transparent 50%,currentCol
 @media (max-width:1080px){.q-nav>a,.q-nav summary{padding:0 10px}.q-hdr-in{gap:20px}.q-particles{grid-template-columns:repeat(3,minmax(0,1fr))}.q-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.q-metrics div:nth-child(3){border-left:0}.q-metrics div:nth-child(n+3){border-top:1px solid var(--q-ink)}}
 @media (max-width:900px){
 :root{--q-hdr:64px}
+/* Backdrop filters contain fixed descendants; let the open menu fill the viewport. */
+.q-hdr[data-open]{background:var(--q-paper);backdrop-filter:none;-webkit-backdrop-filter:none}
 .q-nav,.q-hdr-act .q-btn,.q-hdr-act .q-theme{display:none}
 .q-logo svg{width:80px;height:38px}
 .q-burger{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border:1px solid var(--q-ink);background:transparent;cursor:pointer;font:500 11px var(--q-mono);letter-spacing:.12em;text-transform:uppercase}
