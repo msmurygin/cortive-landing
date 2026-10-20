@@ -1,0 +1,17 @@
+{
+  "downloadPreviewCommit": "66425553aa912365d49618316f16343c9350b204",
+  "downloadPreviewUrl": "https://project-ogj6r-at5xv6pc2-quark-build.vercel.app/tools/wms-readiness-assessment",
+  "scenario": "small, 7 question groups; same golden answers",
+  "realPdfAndJsonSaved": true,
+  "pdfBytesExactlyMatchFinalRenderer": true,
+  "jsonExactlyMatchesUnchangedEngineAtExportTimestamp": true,
+  "newestPreviewCommit": "80c3d2850e8214159e74974277e6d9174ba9bc2b",
+  "newestPreviewUrl": "https://project-ogj6r-sq91zwscv-quark-build.vercel.app/tools/wms-readiness-assessment",
+  "newestPreviewAuthenticatedLandingChecked": true,
+  "robots": "noindex,nofollow,noarchive",
+  "canonical": "https://quark.build/tools/wms-readiness-assessment",
+  "consentInitiallyUnchecked": true,
+  "newestCommitDifference": "Preserves uppercase acronyms in generated action headings; all five golden PDFs and downloaded small PDF remain byte-identical to final renderer.",
+  "contactSubmitted": false,
+  "newAnalytics": false
+}

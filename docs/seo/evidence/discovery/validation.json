@@ -1,0 +1,29 @@
+{
+  "tests": {
+    "exitCode": 0
+  },
+  "static": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "whitespace": {
+    "exitCode": 0
+  },
+  "status": "passed",
+  "testsTotal": 72,
+  "testsPassed": 72,
+  "newDiscoveryTests": 25,
+  "retainedTests": 47,
+  "syntax": "all readiness JavaScript passed",
+  "protectedSiteHashesUnchanged": true,
+  "externalDeployment": false,
+  "productionModified": false,
+  "pdfExample": {
+    "pages": 7,
+    "allPagesVisuallyReviewed": true,
+    "parsed": true,
+    "schemaAndVersionsAndAnswersAndRecommendations": true
+  }
+}

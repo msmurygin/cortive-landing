@@ -1,0 +1,19 @@
+{
+  "tests/discovery.test.cjs": "8cb8d84480c64d2cb619a206a056ae8a0b240223809c3360a3c314a7ba78642f",
+  "tests/lead.test.cjs": "ccb77b7370e4916501e43e9c52d79e96da881063c536ebcd31230879e6adb967",
+  "tests/measurement.test.cjs": "161a889df0eb5574a570f4b189274f7155b9b9f2f958739b3fa6a0fb6357305c",
+  "tests/readiness.test.cjs": "730111481ef755673265b139f9166fa9ee981b6e9e5761e9ae78951ecda91c04",
+  "tests/form-controller.test.cjs": "97edf54139d603caf68c4af4cb1edb11641b6dea417592b4b5f84a56d5c8a3f9",
+  "tests/release-composition.test.cjs": "c735783e8fbf6cadff71feba52bd4a6c7c6cc3e0997d1e8a075b36a57d3522d1",
+  "tests/cost.test.cjs": "23aa03f502c25602bc68f07f8fdad7c5f035554f6552fd9817247841c84cf028",
+  "tests/discovery-profiles.cjs": "4c3e7e171dfea1fe0c90636a48e18d3c3e6b98c3fe866f73a88fbedf56a1b74b",
+  "tests/assessment-rc.test.cjs": "c68a388d0105829d4bc06d88e1b3e1804a2d8cf4d89e2765cd3bf4fd8d568973",
+  "tests/protected-preview.test.cjs": "4b5cf93f5b43909a523da0304551c159712ff9aeacc21a971db90ed0e0da405f",
+  "drafts/readiness/discovery-model.js": "9d6dab3708b462df186f3a76a18a77c6bf3fca977d665de14d779fc0e02dd7e9",
+  "drafts/readiness/assessment-model.js": "891fc91e2e4264da50d965acbc1bac23d77e279ba6cfe5251489d95023e437e6",
+  "drafts/readiness/index.html": "380544d986fc4127b665a57e224a59444f5b5bc94e1009d3356efbe3d296321c",
+  "drafts/readiness/assessment.css": "8e8007da49d264b64d1271fc04fcdc3f8822140b1600bf6487a7afe065487a74",
+  "scripts/build-assessment-rc.cjs": "0f6e05539850c756f2074d50c1753397f64e61786a866ae415076f58f3d49de7",
+  "scripts/build-readiness.cjs": "4e0173b2353fe167645c41bb74f46ad1e502ab5d233b687234c6b0e582bd9595",
+  "scripts/preview-readiness.cjs": "9030e10aa45cd97602a54431555e784509981c1220277a013d6037d14737ae16"
+}

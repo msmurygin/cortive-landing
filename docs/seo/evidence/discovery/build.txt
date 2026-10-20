@@ -1,0 +1,1 @@
+Prepared local-only readiness prototype: /Users/Maksim.Smurygin/quark.build/cortive-landing/review-dist/readiness-experiment

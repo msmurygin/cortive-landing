@@ -1,0 +1,11 @@
+{
+  "questionnaireEnginesStylesBuildersFixturesAndExistingTestsByteIdentical": true,
+  "existingFilesVerified": 17,
+  "uiChangedOnlyPdfDownloadRendererCall": true,
+  "legacyPdfWriterPrefixByteIdentical": true,
+  "jsonSchema": "2.0.0",
+  "taxonomy": "0.1.0",
+  "rules": "0.2.0",
+  "newFeatures": false,
+  "newAnalytics": false
+}

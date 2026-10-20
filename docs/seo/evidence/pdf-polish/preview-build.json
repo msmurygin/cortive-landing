@@ -1,0 +1,82 @@
+{
+  "candidate": "assessment-rc",
+  "mode": "preview",
+  "baseline": "2a628cbfa41cbd28a1959dc6818865342e017362",
+  "route": "/tools/wms-readiness-assessment",
+  "out": "/Users/Maksim.Smurygin/quark.build/cortive-landing/review-dist/assessment-preview",
+  "changes": [
+    {
+      "path": "api/events.js",
+      "sha256": "ab3dc42b1d1c5cb7c2a58a024b3674bfa7a54eb5f850819cc52b8aa8c1413036",
+      "baselineSha256": "70e2c59356cdb5b555d97a4a4c5bed865a8709a971494d512fcc4b43a2936847"
+    },
+    {
+      "path": "api/lead.js",
+      "sha256": "ab3dc42b1d1c5cb7c2a58a024b3674bfa7a54eb5f850819cc52b8aa8c1413036",
+      "baselineSha256": "868e1b9cc7599595873837e52b13dd0ff651d80bc3295b4eaf3698a2b2af370d"
+    },
+    {
+      "path": "api/measurement-config.js",
+      "sha256": "79d6e0cccf46dfb3fe6d245bc17369a941edcddc1657f7c913a7cf55163d997f",
+      "baselineSha256": null
+    },
+    {
+      "path": "assessment-assets/assessment-model.js",
+      "sha256": "891fc91e2e4264da50d965acbc1bac23d77e279ba6cfe5251489d95023e437e6",
+      "baselineSha256": null
+    },
+    {
+      "path": "assessment-assets/assessment-pdf.js",
+      "sha256": "e4a52bfd15226432005d32460b6005a61292c256710c3416ed5310ab4b9245bd",
+      "baselineSha256": null
+    },
+    {
+      "path": "assessment-assets/assessment-ui.js",
+      "sha256": "f20b0e2b2309c6485f6723ccc0bf90cb57f005f8ac2e45af77500f4373e75f21",
+      "baselineSha256": null
+    },
+    {
+      "path": "assessment-assets/assessment.css",
+      "sha256": "8e8007da49d264b64d1271fc04fcdc3f8822140b1600bf6487a7afe065487a74",
+      "baselineSha256": null
+    },
+    {
+      "path": "assessment-assets/discovery-model.js",
+      "sha256": "9d6dab3708b462df186f3a76a18a77c6bf3fca977d665de14d779fc0e02dd7e9",
+      "baselineSha256": null
+    },
+    {
+      "path": "preview-only.cjs",
+      "sha256": "71079c91942fda497e552bc2a416301442d1c1747b81d20be583d69275d552db",
+      "baselineSha256": null
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
+      "baselineSha256": "b8e19fe21b8a48bc7d682697c92def28f280c8538e52d148f9f24c5bdba3744b"
+    },
+    {
+      "path": "tools/wms-readiness-assessment.html",
+      "sha256": "380544d986fc4127b665a57e224a59444f5b5bc94e1009d3356efbe3d296321c",
+      "baselineSha256": null
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "e7972d874bec57dc6a6521a91f8a8be615d89474fd4ebaca71240f643847ad1f",
+      "baselineSha256": "85a004dfe6078df44d7661ee8bf28439a1436c120afefe8d3175a12b6d83aecb"
+    }
+  ],
+  "releaseAuthorized": false,
+  "newAnalytics": false,
+  "answersTransmitted": false,
+  "requiresVercelAuthentication": true,
+  "protectedProductionPaths": [
+    "index.html",
+    "vision.html",
+    "wms-cost.html",
+    "legal/privacy.html",
+    "assets/leads.js",
+    "assets/main.js"
+  ],
+  "note": "Protected review only; never promote this guarded snapshot to production."
+}

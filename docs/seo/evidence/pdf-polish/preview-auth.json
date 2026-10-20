@@ -1,0 +1,80 @@
+{
+  "previewUrl": "https://project-ogj6r-sq91zwscv-quark-build.vercel.app/tools/wms-readiness-assessment",
+  "commit": "80c3d2850e8214159e74974277e6d9174ba9bc2b",
+  "deploymentId": 7198303203,
+  "method": "Anonymous HTTP, no cookies/auth/bypass, redirects not followed. Existing Standard Protection preserved.",
+  "checks": [
+    {
+      "path": "/",
+      "status": 302,
+      "sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "bodyContainsAssessment": false
+    },
+    {
+      "path": "/tools/wms-readiness-assessment",
+      "status": 302,
+      "sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "bodyContainsAssessment": false
+    },
+    {
+      "path": "/assessment-assets/discovery-model.js",
+      "status": 302,
+      "sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "bodyContainsAssessment": false
+    },
+    {
+      "path": "/assessment-assets/assessment-pdf.js",
+      "status": 302,
+      "sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "bodyContainsAssessment": false
+    },
+    {
+      "path": "/robots.txt",
+      "status": 302,
+      "sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "bodyContainsAssessment": false
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 302,
+      "sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "bodyContainsAssessment": false
+    },
+    {
+      "path": "/api/lead",
+      "status": 302,
+      "sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "bodyContainsAssessment": false
+    },
+    {
+      "path": "/api/events",
+      "status": 302,
+      "sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "bodyContainsAssessment": false
+    }
+  ]
+}

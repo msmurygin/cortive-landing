@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://quark.build/</loc></url>
-  <url><loc>https://quark.build/screens.html</loc></url>
+  <url><loc>https://quark.build/product</loc></url>
   <url><loc>https://quark.build/vision</loc></url>
+  <url><loc>https://quark.build/wms-cost</loc></url>
+  <url><loc>https://quark.build/tools/wms-readiness-assessment</loc></url>
 </urlset>

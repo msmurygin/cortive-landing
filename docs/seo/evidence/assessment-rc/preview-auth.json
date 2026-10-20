@@ -1,0 +1,73 @@
+{
+  "deploymentId": 7195608232,
+  "commit": "347c19e4ffab2be008d85271396668d0020faaa9",
+  "previewUrl": "https://project-ogj6r-g7430ubzl-quark-build.vercel.app/tools/wms-readiness-assessment",
+  "method": "Anonymous HTTP without cookies, credentials, bypass parameters or redirect following. Existing Vercel Require Log In + Standard Protection confirmed in settings.",
+  "checks": [
+    {
+      "path": "/",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialHtmlExposed": false
+    },
+    {
+      "path": "/tools/wms-readiness-assessment",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialHtmlExposed": false
+    },
+    {
+      "path": "/assessment-assets/discovery-model.js",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialHtmlExposed": false
+    },
+    {
+      "path": "/assessment-assets/assessment-pdf.js",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialHtmlExposed": false
+    },
+    {
+      "path": "/robots.txt",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialHtmlExposed": false
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialHtmlExposed": false
+    },
+    {
+      "path": "/api/lead",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialHtmlExposed": false
+    },
+    {
+      "path": "/api/events",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api",
+      "xRobots": "noindex",
+      "commercialHtmlExposed": false
+    }
+  ],
+  "passed": true
+}

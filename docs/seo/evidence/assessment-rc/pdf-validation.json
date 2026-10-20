@@ -1,0 +1,90 @@
+[
+  {
+    "case": "edited",
+    "pages": 5,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "61f1290925d0451fa2a6087f5f826de281935f74bc440a223d833d391fa92d5f"
+  },
+  {
+    "case": "fashion",
+    "pages": 6,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "91636793530c71cbd79b81084f0634ab4ce4e640815ca08aa2079eb45f7957bd"
+  },
+  {
+    "case": "fmcg",
+    "pages": 5,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "2a361473a01802ea915f6aec44d003d652015624dfb9fb09ae3e2fc68631b3d8"
+  },
+  {
+    "case": "hosted-pharmaCold",
+    "pages": 7,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "8e2649831745ccafd2b5a8f3c5a931b173b5fecf18e8e6c9b00bedb39b2bbb8b"
+  },
+  {
+    "case": "manyOwners",
+    "pages": 6,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "864189754a0af65d8a52f2168bb50a791fe7c514c6ab3b4ce14d710ad122832e"
+  },
+  {
+    "case": "mixed",
+    "pages": 9,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "7d975bd846eaedd2a493bec46bb25821b75d0b5f1ecddd95e1b3a4d1020a0124"
+  },
+  {
+    "case": "pharmaCold",
+    "pages": 7,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "07437e88a0cae8e5d4a282d972c783f45fe1a1a9412cbdb8d2d66675dae001ea"
+  },
+  {
+    "case": "pharmaManufacturing",
+    "pages": 7,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "7393cdc35898da31766228ca1c83634081aae92925815ee3a203f0d1482e83ed"
+  },
+  {
+    "case": "repeatable",
+    "pages": 5,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "f8a4bd2a7b06c02caeec45af8e1440b4422b75615e727f48b470344513bbae59"
+  },
+  {
+    "case": "small",
+    "pages": 5,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "e66724918354934747ab06b37e55838b21be62b24948bf73e8e23d0b6fc661d7"
+  },
+  {
+    "case": "unknown",
+    "pages": 8,
+    "allActiveQuestionAndRecommendationReferencesPresent": true,
+    "dateAndDisclaimer": true,
+    "textOriginsWithinPageMargins": true,
+    "sha256": "a361aa13a4c39150372de8c11a916c3cc5d88b15d36dcc26e80f274dff8223ff"
+  }
+]

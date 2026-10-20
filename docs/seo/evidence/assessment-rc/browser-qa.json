@@ -1,0 +1,187 @@
+{
+  "scope": "Synthetic fixtures only; no real buyer answers or contact submissions",
+  "localEndToEnd": [
+    {
+      "case": "small",
+      "questions": 7,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Ready for detailed evaluation",
+      "recommendationsMatch": true,
+      "width": 1265,
+      "viewport": 1280,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 27331
+    },
+    {
+      "case": "repeatable",
+      "questions": 8,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Ready for detailed evaluation",
+      "recommendationsMatch": true,
+      "width": 1265,
+      "viewport": 1280,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 28319
+    },
+    {
+      "case": "manyOwners",
+      "questions": 9,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Preparation required",
+      "recommendationsMatch": true,
+      "width": 1265,
+      "viewport": 1280,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 39811
+    },
+    {
+      "case": "pharmaCold",
+      "questions": 10,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Ready for detailed evaluation",
+      "recommendationsMatch": true,
+      "width": 375,
+      "viewport": 390,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 43710
+    },
+    {
+      "case": "pharmaManufacturing",
+      "questions": 10,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Preparation required",
+      "recommendationsMatch": true,
+      "width": 1265,
+      "viewport": 1280,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 44393
+    },
+    {
+      "case": "fmcg",
+      "questions": 8,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Ready for detailed evaluation",
+      "recommendationsMatch": true,
+      "width": 1265,
+      "viewport": 1280,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 31525
+    },
+    {
+      "case": "fashion",
+      "questions": 8,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Ready for detailed evaluation",
+      "recommendationsMatch": true,
+      "width": 1265,
+      "viewport": 1280,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 35763
+    },
+    {
+      "case": "edited",
+      "questions": 7,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Ready for detailed evaluation",
+      "recommendationsMatch": true,
+      "earlierAnswersChanged": true,
+      "staleConditionalAnswersExcluded": true,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 27331
+    },
+    {
+      "case": "mixed",
+      "questions": 13,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Ready for detailed evaluation",
+      "recommendationsMatch": true,
+      "width": 1265,
+      "viewport": 1280,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 65303
+    },
+    {
+      "case": "unknown",
+      "questions": 7,
+      "noDuplicateQuestions": true,
+      "relevantPathMatches": true,
+      "readiness": "Insufficient information",
+      "recommendationsMatch": true,
+      "width": 1265,
+      "viewport": 1280,
+      "pdfSavedAndRead": true,
+      "jsonSavedAndExact": true,
+      "pdfBytes": 49935
+    }
+  ],
+  "hostedPreview": {
+    "url": "https://project-ogj6r-g7430ubzl-quark-build.vercel.app/tools/wms-readiness-assessment",
+    "authenticatedPharmaColdFlow": {
+      "questions": 10,
+      "pdfSavedAndRead": true,
+      "jsonAnswersExact": true
+    },
+    "unknownKeyboardFlow": {
+      "questions": 7,
+      "viewport": 320,
+      "documentWidth": 305,
+      "focused": "reportTitle",
+      "readiness": "Insufficient information"
+    },
+    "htmlAliasRedirectsToCanonicalSlug": true,
+    "robotsMeta": "noindex,nofollow,noarchive",
+    "measurementConfigEnabled": false,
+    "leadEndpoint": "Protected assessment review: submission and analytics disabled.",
+    "platformToolbarObserved": true
+  },
+  "errorsAndNavigation": {
+    "primaryRequiredErrorObserved": true,
+    "numericMinValidationAndFocusObserved": true,
+    "backRetainedSites": 2,
+    "backRetainedUsers": 50,
+    "spaceAndEnterUsable": true,
+    "restartClearsReportAndConsentAndExportLinks": true
+  },
+  "consentAndPrivacy": {
+    "startDisabledBeforeLocalConsent": true,
+    "fullReportAndExportsBeforeContactConsent": true,
+    "contactDisabledBeforeSeparateChoice": true,
+    "contactEnabledAfterChoice": true,
+    "answersInContactUrl": false,
+    "realSubmissionsSent": 0,
+    "newAnalytics": false
+  },
+  "mobile": [
+    {
+      "viewport": 390,
+      "documentWidth": 375,
+      "horizontalOverflow": false
+    },
+    {
+      "viewport": 320,
+      "documentWidth": 305,
+      "horizontalOverflow": false
+    }
+  ],
+  "downloadVerification": "PDF/JSON generated by page buttons, then actually saved via visible Save PDF/JSON again links and read from filesystem. Native in-app download-event waiting did not confirm save and is not counted as success.",
+  "humanCompletionTime": "3\u20135 minute target remains unmeasured for a nontechnical user",
+  "crossBrowserLimits": "Chromium/in-app tested; Safari, Firefox, screen reader and physical-device certification not claimed"
+}

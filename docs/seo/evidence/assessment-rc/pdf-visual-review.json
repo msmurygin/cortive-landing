@@ -1,0 +1,14 @@
+{
+  "reviewedExamples": [
+    "small-brief",
+    "manyOwners-brief",
+    "pharmaCold-brief",
+    "pharmaManufacturing-brief",
+    "fashion-brief",
+    "mixed",
+    "unknown"
+  ],
+  "allPagesRendered": true,
+  "review": "All pages reviewed as contact sheets; no clipped content, overlapping text or lost table headings observed. Short and complex profiles included. Native browser print and Unicode fallback remain unverified.",
+  "pdfSource": "Actual client-generated browser downloads, not reconstructed reports."
+}

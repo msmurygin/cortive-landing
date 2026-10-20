@@ -1,0 +1,57 @@
+{
+  "baseCommit": "2f6a3aabe3fd289d9f1366166ae25a544b775283",
+  "changedSourceFiles": [
+    "drafts/readiness/discovery-model.js",
+    "drafts/readiness/assessment-ui.js",
+    "drafts/readiness/index.html",
+    "drafts/readiness/assessment.css",
+    "drafts/readiness/assessment-pdf.js",
+    "scripts/build-readiness.cjs",
+    "scripts/preview-readiness.cjs",
+    "tests/discovery.test.cjs",
+    "tests/discovery-profiles.cjs"
+  ],
+  "protectedFilesUnchanged": {
+    "index.html": "e3b7a4e9578616d0ed2a2120a8229d164558a90d0f83408103edb0da2ed32cd9",
+    "vision.html": "4ca89735de2dc60a79588758070ddb3966bd9ed7c3a61657004dc11cba006225",
+    "robots.txt": "b8e19fe21b8a48bc7d682697c92def28f280c8538e52d148f9f24c5bdba3744b",
+    "sitemap.xml": "0e4c4c5c282b4901095c27d4ee9b7c843ac56d436a287d218859716c16a22be2",
+    "vercel.json": "34e06bb252420dd502793af52fa07d2d1e82da7aca494db077650d59b5296f3a",
+    "legal/privacy.html": "d47a3ada0ac70484678ebafb906404d6cd3451ca81ddc62f4a10df9b04556acb",
+    "assets/main.js": "8224c02512dce8bc3bf8b4103348f20d48bd11e9c380dc100f2436bba4503bb4",
+    "assets/leads.js": "f65bbc7e8511359f8afc871ae0d7f3ae3b9c664e19b671b1393625dd73ce8ca1",
+    "drafts/wms-cost.html": "a11d6fd494bf05c7ea510e315af2569c424fceb5f2274d10ad5847a1939903c9",
+    "drafts/assets/cost-model.js": "900d6f14b2151c0454b50a05e4ac7ffc90dc3555774b32369d06a232d0cf20f2",
+    "drafts/assets/cost-ui.js": "01bec6a36da6a22d082790ca7c0f82b2aa910ca5bdbd0ff2f8d234135f3b0f6a"
+  },
+  "productionOperations": false,
+  "reviewFiles": [
+    "drafts/readiness/discovery-model.js",
+    "drafts/readiness/assessment-ui.js",
+    "drafts/readiness/index.html",
+    "drafts/readiness/assessment.css",
+    "drafts/readiness/assessment-pdf.js",
+    "scripts/build-readiness.cjs",
+    "scripts/preview-readiness.cjs",
+    "tests/discovery.test.cjs",
+    "tests/discovery-profiles.cjs",
+    "docs/seo/DISCOVERY-TAXONOMY-V0.1.md",
+    "docs/seo/WMS-READINESS-EXPERIMENT.md",
+    "docs/seo/evidence/discovery/provenance.json",
+    "docs/seo/evidence/discovery/validation.json",
+    "docs/seo/evidence/discovery/browser-qa.json"
+  ],
+  "sourceSha256": {
+    "drafts/readiness/discovery-model.js": "ad86f805e235bbcb8896c485b925caab18fbd8c801a42002ae8bb0369ad29f7f",
+    "drafts/readiness/assessment-ui.js": "811a4b4d32123bb043027aa8dabcbe07cddcd6117d50f5d82de9a32494520382",
+    "drafts/readiness/index.html": "47cafc48829d54b0dfe397ec47a11542f4eb9efe2bc1512621e36df1fe2e1a9e",
+    "drafts/readiness/assessment.css": "4c84e5fc5db5d78db6947efee3c4bfc29afc6ce8fdd37ac57be0a47417dbf178",
+    "drafts/readiness/assessment-pdf.js": "990e5d6676e4c550ff22adec51d91d1e9ac69a656807c82658ce6e027c31208e",
+    "scripts/build-readiness.cjs": "4e0173b2353fe167645c41bb74f46ad1e502ab5d233b687234c6b0e582bd9595",
+    "scripts/preview-readiness.cjs": "9030e10aa45cd97602a54431555e784509981c1220277a013d6037d14737ae16",
+    "tests/discovery.test.cjs": "8cb8d84480c64d2cb619a206a056ae8a0b240223809c3360a3c314a7ba78642f",
+    "tests/discovery-profiles.cjs": "4c3e7e171dfea1fe0c90636a48e18d3c3e6b98c3fe866f73a88fbedf56a1b74b",
+    "docs/seo/DISCOVERY-TAXONOMY-V0.1.md": "a941927e69824bd176b8b9d342c96152187c6ebab483bf9a48401b04b12800ce",
+    "docs/seo/WMS-READINESS-EXPERIMENT.md": "2deaa3f769e8853751366e3e95beb48cf1d36f2daa3362d946c49ef55ea8d468"
+  }
+}

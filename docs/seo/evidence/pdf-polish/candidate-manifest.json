@@ -1,0 +1,53 @@
+{
+  "candidateCommit": "5c9665d2f4f27ea9122b7b3bb7bc2c7424a6e179",
+  "candidateTree": "e9c1defdde4e0dc1961172df9878cfdcd674f7ce",
+  "baseline": "2a628cbfa41cbd28a1959dc6818865342e017362",
+  "supersedes": "3ddbf846609da78e5fe479bd91e4a1ab8ea92e17",
+  "candidatePushed": false,
+  "changes": [
+    {
+      "path": "assessment-assets/assessment-model.js",
+      "sha256": "891fc91e2e4264da50d965acbc1bac23d77e279ba6cfe5251489d95023e437e6"
+    },
+    {
+      "path": "assessment-assets/assessment-pdf.js",
+      "sha256": "e4a52bfd15226432005d32460b6005a61292c256710c3416ed5310ab4b9245bd"
+    },
+    {
+      "path": "assessment-assets/assessment-ui.js",
+      "sha256": "f20b0e2b2309c6485f6723ccc0bf90cb57f005f8ac2e45af77500f4373e75f21"
+    },
+    {
+      "path": "assessment-assets/assessment.css",
+      "sha256": "8e8007da49d264b64d1271fc04fcdc3f8822140b1600bf6487a7afe065487a74"
+    },
+    {
+      "path": "assessment-assets/discovery-model.js",
+      "sha256": "9d6dab3708b462df186f3a76a18a77c6bf3fca977d665de14d779fc0e02dd7e9"
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "e5311e2b64a41789562399b3e9b1ab0be9b8839536c80970808292293dd447d1"
+    },
+    {
+      "path": "tools/wms-readiness-assessment.html",
+      "sha256": "98a39637c303da5c0c68160b6ed889fd42a51f1d7394102e7fb77c58e0b3db17"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "26f3dba58ead69edaf47702d4bff82aaaadf2adfe5b96fa5a7ca765ad07c0ab0"
+    }
+  ],
+  "pdfPolishDelta": [
+    "assessment-assets/assessment-pdf.js",
+    "assessment-assets/assessment-ui.js"
+  ],
+  "previewCommit": "80c3d2850e8214159e74974277e6d9174ba9bc2b",
+  "previewUrl": "https://project-ogj6r-sq91zwscv-quark-build.vercel.app/tools/wms-readiness-assessment",
+  "deploymentId": 7198303203,
+  "previewProtected": true,
+  "previewIndexable": false,
+  "publicationApproved": false,
+  "newAnalytics": false,
+  "answersTransmitted": false
+}

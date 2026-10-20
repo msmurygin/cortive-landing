@@ -1,0 +1,27 @@
+{
+  "releaseHtml": {
+    "title": "WMS Readiness Assessment \u2014 Free Warehouse Evaluation Tool",
+    "description": "Assess your warehouse operations, identify implementation risks and get a free WMS project preparation report.",
+    "h1Count": 1,
+    "canonical": "https://quark.build/tools/wms-readiness-assessment",
+    "robots": "index,follow",
+    "crawlableIntro": true,
+    "structuredData": [
+      "WebPage",
+      "BreadcrumbList"
+    ]
+  },
+  "sitemapUrls": [
+    "https://quark.build/",
+    "https://quark.build/screens.html",
+    "https://quark.build/vision",
+    "https://quark.build/wms-cost",
+    "https://quark.build/tools/wms-readiness-assessment"
+  ],
+  "allLocalAssetsExist": true,
+  "previewAndReleaseRuntimeAssetsIdentical": true,
+  "previewHtmlDiffOnlyRobotsAndReviewBanner": true,
+  "candidateHashesMatch": true,
+  "productionPublicationApproved": false,
+  "newAnalytics": false
+}

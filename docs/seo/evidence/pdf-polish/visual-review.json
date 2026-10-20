@@ -1,0 +1,15 @@
+{
+  "profiles": [
+    "small",
+    "manyOwners",
+    "pharmaCold",
+    "pharmaManufacturing",
+    "fashion"
+  ],
+  "allPagesRendered": true,
+  "allPagesReviewedAsContactSheets": true,
+  "openingPagesReviewedAtReadableScale": true,
+  "findings": "No clipped or overlapping text observed. No detached table headings. Repeated table headers on continuations. No standalone methodology page.",
+  "goldenPdfsByteMatchFinalRenderer": true,
+  "asciiLimitationUnchanged": true
+}

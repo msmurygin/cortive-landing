@@ -1,7 +1,7 @@
 /* Loopback only. No request-body parsing/logging and no upstream connection. */
 const http=require('node:http'),fs=require('node:fs'),path=require('node:path');
 const {buildReadiness,csp}=require('./build-readiness.cjs');
-function createPreview(root){const files={'/tools/wms-readiness-assessment':'index.html','/robots.txt':'robots.txt','/assessment-assets/assessment-model.js':'assessment-assets/assessment-model.js','/assessment-assets/assessment-pdf.js':'assessment-assets/assessment-pdf.js','/assessment-assets/assessment-ui.js':'assessment-assets/assessment-ui.js','/assessment-assets/assessment.css':'assessment-assets/assessment.css'};return http.createServer((req,res)=>{
+function createPreview(root){const files={'/tools/wms-readiness-assessment':'index.html','/robots.txt':'robots.txt','/assessment-assets/discovery-model.js':'assessment-assets/discovery-model.js','/assessment-assets/assessment-model.js':'assessment-assets/assessment-model.js','/assessment-assets/assessment-pdf.js':'assessment-assets/assessment-pdf.js','/assessment-assets/assessment-ui.js':'assessment-assets/assessment-ui.js','/assessment-assets/assessment.css':'assessment-assets/assessment.css'};return http.createServer((req,res)=>{
  res.setHeader('X-Robots-Tag','noindex, nofollow, noarchive');res.setHeader('Cache-Control','no-store');res.setHeader('Content-Security-Policy',csp);res.setHeader('Referrer-Policy','no-referrer');
  if(!['GET','HEAD'].includes(req.method)){req.resume();res.writeHead(405);return res.end('No submissions are accepted.');}
  const url=new URL(req.url,'http://127.0.0.1');if(url.search){res.writeHead(400);return res.end('Query parameters are not accepted.');}

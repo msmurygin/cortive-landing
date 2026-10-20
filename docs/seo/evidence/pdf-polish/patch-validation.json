@@ -1,0 +1,4 @@
+{
+  "twoFileDeltaAppliesAndMatchesCandidate": true,
+  "eightFileReleasePatchAppliesToProductionBaselineAndMatchesCandidate": true
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "profile": "small",
+    "pages": 5,
+    "executiveFirstPage": true,
+    "complexityReadinessSecondPage": true,
+    "allActionsReasonsTopicsScenariosAndActiveAnswersPresent": true,
+    "noRepeatedRecommendationActions": true,
+    "noGeneratedRuleOrQuestionIds": true,
+    "textOriginsWithinMargins": true,
+    "legacyPdfByteIdentical": true,
+    "jsonByteIdentical": true,
+    "pdfSha256": "7f06850e88a12ebc8dfb57d80f7c0b5c5a6d95000747fae071263aafdce2965a"
+  },
+  {
+    "profile": "manyOwners",
+    "pages": 7,
+    "executiveFirstPage": true,
+    "complexityReadinessSecondPage": true,
+    "allActionsReasonsTopicsScenariosAndActiveAnswersPresent": true,
+    "noRepeatedRecommendationActions": true,
+    "noGeneratedRuleOrQuestionIds": true,
+    "textOriginsWithinMargins": true,
+    "legacyPdfByteIdentical": true,
+    "jsonByteIdentical": true,
+    "pdfSha256": "e77df128be5d3ca2e81da5871ad0ea4e1502d46bc47190593ccd05d98527020d"
+  },
+  {
+    "profile": "pharmaCold",
+    "pages": 7,
+    "executiveFirstPage": true,
+    "complexityReadinessSecondPage": true,
+    "allActionsReasonsTopicsScenariosAndActiveAnswersPresent": true,
+    "noRepeatedRecommendationActions": true,
+    "noGeneratedRuleOrQuestionIds": true,
+    "textOriginsWithinMargins": true,
+    "legacyPdfByteIdentical": true,
+    "jsonByteIdentical": true,
+    "pdfSha256": "3dba9ddbda9a1a40ab11e6c5d064461271156109cbf6fa9e2e5121642c6ca232"
+  },
+  {
+    "profile": "pharmaManufacturing",
+    "pages": 7,
+    "executiveFirstPage": true,
+    "complexityReadinessSecondPage": true,
+    "allActionsReasonsTopicsScenariosAndActiveAnswersPresent": true,
+    "noRepeatedRecommendationActions": true,
+    "noGeneratedRuleOrQuestionIds": true,
+    "textOriginsWithinMargins": true,
+    "legacyPdfByteIdentical": true,
+    "jsonByteIdentical": true,
+    "pdfSha256": "751a7aed612acc9d224b59a903220049cb4ff5eabb228994dc3a51238f61d66f"
+  },
+  {
+    "profile": "fashion",
+    "pages": 7,
+    "executiveFirstPage": true,
+    "complexityReadinessSecondPage": true,
+    "allActionsReasonsTopicsScenariosAndActiveAnswersPresent": true,
+    "noRepeatedRecommendationActions": true,
+    "noGeneratedRuleOrQuestionIds": true,
+    "textOriginsWithinMargins": true,
+    "legacyPdfByteIdentical": true,
+    "jsonByteIdentical": true,
+    "pdfSha256": "51b1593cf5bad4db80f64feb7080567dd458bb92761a766761b7d78667d1e67c"
+  }
+]

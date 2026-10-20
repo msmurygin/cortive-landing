@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-19",
+  "syntheticDataOnly": true,
+  "localUrl": "http://127.0.0.1:4192/tools/wms-readiness-assessment",
+  "externalDeployment": false,
+  "productionModified": false,
+  "startRequiresUncheckedConsent": true,
+  "mixedProfile": {
+    "industries": [
+      "pharmaceutical",
+      "manufacturing"
+    ],
+    "models": [
+      "3pl",
+      "manufacturing-supply"
+    ],
+    "steps": 13,
+    "separateDimensions": 7,
+    "readiness": "Ready for detailed evaluation",
+    "backRetainsAnswers": true,
+    "keyboardEnterAndHeadingFocus": true
+  },
+  "editedSimpleProfile": {
+    "industry": "distribution",
+    "models": [
+      "own"
+    ],
+    "steps": 7,
+    "oldJurisdictionInReport": false,
+    "oldProductionAnswerInReport": false,
+    "readiness": "Ready for detailed evaluation"
+  },
+  "allUnknownProfile": {
+    "steps": 7,
+    "readiness": "Insufficient information",
+    "noEmailGate": true
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 375,
+    "overflow": false
+  },
+  "contact": {
+    "disabledBeforeSeparateChoice": true,
+    "enabledAfterChoice": true,
+    "clickedToProduction": false,
+    "answersShared": false
+  },
+  "restartClearsAnswersReportAndConsent": true,
+  "pdfBrowserHandler": "PDF generated locally. No answers were transmitted.",
+  "browserFileSaveCompletion": "not independently confirmed; no success inferred from request",
+  "nativePrintAndCrossBrowser": "manual check pending",
+  "pdfSeparateQA": {
+    "sameClientWriter": true,
+    "fixture": "pharmaCold",
+    "allPagesRenderedAndVisuallyReviewed": true,
+    "contentAndSourceReferencesParsed": true
+  },
+  "json": "seven deterministic schema-2 synthetic example pairs; browser download handler local-only",
+  "screenshots": [
+    "mobile-question.png",
+    "mobile-dimensions.png",
+    "mobile-unknown-dimensions.png",
+    "desktop-intro.png"
+  ],
+  "finalBuildReloaded": true,
+  "finalUnknownDimensions": 7,
+  "finalNoindexMeta": "noindex,nofollow,noarchive"
+}

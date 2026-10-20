@@ -1,0 +1,22 @@
+{
+  "candidate": {
+    "previousCommit": "3ddbf846609da78e5fe479bd91e4a1ab8ea92e17",
+    "commit": "5c9665d2f4f27ea9122b7b3bb7bc2c7424a6e179",
+    "tree": "e9c1defdde4e0dc1961172df9878cfdcd674f7ce",
+    "files": [
+      "assessment-assets/assessment-pdf.js",
+      "assessment-assets/assessment-ui.js"
+    ],
+    "branch": "release/assessment-rc-2026-10-20"
+  },
+  "preview": {
+    "previousCommit": "347c19e4ffab2be008d85271396668d0020faaa9",
+    "commit": "80c3d2850e8214159e74974277e6d9174ba9bc2b",
+    "tree": "dc0888bb196f6ccfc888951a66adcf1e4f69a611",
+    "files": [
+      "assessment-assets/assessment-pdf.js",
+      "assessment-assets/assessment-ui.js"
+    ],
+    "branch": "preview/assessment-rc-2026-10-20"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "mainCommit": "2a628cbfa41cbd28a1959dc6818865342e017362",
+  "paths": [
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "21749710788215a33aa9d308550526b3a9fe820b5d2f478f5cc8f3daccb16049",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    },
+    {
+      "path": "/vision",
+      "status": 200,
+      "sha256": "4ca89735de2dc60a79588758070ddb3966bd9ed7c3a61657004dc11cba006225",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    },
+    {
+      "path": "/wms-cost",
+      "status": 200,
+      "sha256": "6d853591dba4d2fb16cf2f1e9e099286528f2b185aa774a7d7df73cc41590d8f",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "sha256": "b8e19fe21b8a48bc7d682697c92def28f280c8538e52d148f9f24c5bdba3744b",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "sha256": "bb7fb3bb84196fbcda767afb51f86188a579daaa18d0af9b432ba8b7add32dc4",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    },
+    {
+      "path": "/legal/privacy.html",
+      "status": 200,
+      "sha256": "d47a3ada0ac70484678ebafb906404d6cd3451ca81ddc62f4a10df9b04556acb",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    },
+    {
+      "path": "/assets/leads.js",
+      "status": 200,
+      "sha256": "b3a20c9d9f5c7f6aa9a5f2a5e71662923ed6800f931476ae31cf30ba9707e30d",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    },
+    {
+      "path": "/assets/main.js",
+      "status": 200,
+      "sha256": "274f4af99975aa860407db9612d20382c9470093047323f97c76827552ba9d4a",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    },
+    {
+      "path": "/tools/wms-readiness-assessment",
+      "status": 404,
+      "sha256": "cb997ab0c1ab55c92e46d2ead1ee0982ffc220ffc99c15d34149b13f555f0f22",
+      "redirectHost": null,
+      "redirectPath": "",
+      "xRobots": null,
+      "bodyContainsAssessment": false,
+      "unchanged": true
+    }
+  ],
+  "productionChanged": false
+}

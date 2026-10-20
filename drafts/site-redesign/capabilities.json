@@ -1,0 +1,213 @@
+[
+  {
+    "area": "Receiving",
+    "implemented": "Yes — receipt commands and receive services",
+    "qa": "Historical Web Receive 2EA PASS; ASN EA/CS four-case retest PASS on c2c4b4f67. Package A remains 3 PASS / 1 FAIL / 8 BLOCKED. Blind no-ASN fix source exists; applicable release retest not established.",
+    "demo": "Historical real Web/WebRF evidence; no approved current marketing capture",
+    "safe": "CONDITIONAL — describe implemented MVP scope and bounded historical checks; no blanket receiving-ready claim",
+    "action": "ACTION FOR AGENT: link the selected demo build/configuration to the existing receipt acceptance evidence and the applicable blind no-ASN retest.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/receipt_commands_rpc.rs",
+      "crates/libs/wms-inbound/src/service/receipt/receive/receive_blind.rs",
+      "docs/mvp-certification/receiving/execution/gate-b-report.md",
+      "docs/mvp-certification/receiving/execution/RCV-D-002-retest.md",
+      "docs/mvp-certification/receiving/execution/CT04-blind-receiving.md"
+    ]
+  },
+  {
+    "area": "Putaway",
+    "implemented": "Yes — policy selection/reservation and location-suggestion pipeline",
+    "qa": "No applicable current end-to-end placement acceptance located in the reused certification record",
+    "demo": "Capture pending; a 3D topology view does not prove putaway execution",
+    "safe": "CONDITIONAL — MVP scope; do not imply every destination/exception policy is verified",
+    "action": "ACTION FOR AGENT: reuse the existing putaway placement/reservation/exception evidence for the selected build and identify a repeatable demo journey.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/putaway_rpc.rs",
+      "crates/libs/wms-inventory/src/putaway/policy.rs",
+      "crates/libs/wms-inventory/src/putaway/reserve.rs"
+    ]
+  },
+  {
+    "area": "Inventory visibility and stock movements",
+    "implemented": "Yes — balance inquiry, movement and transaction surfaces",
+    "qa": "Representation supported by supplied captures and source; complete movement/permissions acceptance not established here",
+    "demo": "Supplied balance and transaction captures available; live demonstration/recapture approval pending",
+    "safe": "VERIFIED for the exact visible screen contents; CONDITIONAL for operational availability/enforcement",
+    "action": "ACTION FOR AGENT: confirm the selected build balance inquiry and a matching movement readback against existing QA; approve a coherent guided workflow recording. Stills are supporting evidence only.",
+    "sources": [
+      "crates/libs/wms-inventory/src/service/inventory_inquiry.rs",
+      "crates/services/app-server/src/web/rpcs/move_command_rpc.rs",
+      "crates/services/app-server/src/web/rpcs/transaction_log_rpc.rs"
+    ]
+  },
+  {
+    "area": "Holds, lots, serials and containers",
+    "implemented": "Yes — identity representation and hold/serial/container operations",
+    "qa": "Scope-dependent enforcement, nested containers and lot/serial policy coverage remain conditional",
+    "demo": "Balances show these contexts; not a certified hold/serial/container workflow demo",
+    "safe": "VERIFIED as visible representation; CONDITIONAL as a complete workflow claim",
+    "action": "ACTION FOR AGENT: match relevant hold create/release/enforcement, lot/serial capture and container boundaries to the existing selected-build acceptance record.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/hold_rpc.rs",
+      "crates/libs/wms-inventory/src/service/hold.rs",
+      "crates/services/app-server/src/web/rpcs/serial_commands_rpc.rs",
+      "crates/services/app-server/src/web/rpcs/container_commands_rpc.rs"
+    ]
+  },
+  {
+    "area": "Inventory counting and adjustments",
+    "implemented": "Yes — count observation/acceptance and adjustment posting",
+    "qa": "Existing source evidence; selected-build variance/recount/approval/posting acceptance not established",
+    "demo": "No approved customer-facing capture located",
+    "safe": "CONDITIONAL — include in intended MVP scope; do not claim all counting policies are release-ready",
+    "action": "ACTION FOR AGENT: attach existing count/recount, variance and adjustment approval/posting acceptance evidence; select one normal and one exception demo case.",
+    "sources": [
+      "crates/libs/wms-inventory/src/service/inventory_count/observe.rs",
+      "crates/libs/wms-inventory/src/service/inventory_count/accept.rs",
+      "crates/libs/wms-inventory/src/service/inventory_adjustment/post.rs"
+    ]
+  },
+  {
+    "area": "Allocation",
+    "implemented": "Yes — allocation planning/reservation/release services",
+    "qa": "Scoped TOPUP-01 normal API 3/10/7 PASS at product d105fce52; retained RF and Release-to-Created scoped PASS referenced. Allocation explicitly NOT Certified. Pre-push suites PASS do not certify live workflows.",
+    "demo": "Real bounded QA evidence exists; current public demo/capture not approved",
+    "safe": "CONDITIONAL — describe the exact scoped example only after build/asset review; no universal strategy/throughput promise",
+    "action": "ACTION FOR AGENT: bind the chosen allocation walkthrough to retained scenario/build/policy evidence; do not rerun certification for website work.",
+    "sources": [
+      "crates/libs/wms-outbound/src/allocation/mod.rs",
+      "crates/libs/wms-outbound/src/allocation/reserve.rs",
+      "docs/mvp-certification/allocation/handoff/topup-20261019-24/report.md",
+      "docs/mvp-certification/allocation/handoff/release-task-20261019-21/report.md",
+      "docs/mvp-certification/allocation/handoff/prepush-validation-20261019-27/report.md"
+    ]
+  },
+  {
+    "area": "Picking",
+    "implemented": "Yes — workstation review/complete/finalize and picking services",
+    "qa": "No complete applicable pick-and-handoff acceptance established by this website review; allocation/RF evidence is not automatically picking PASS",
+    "demo": "Current marketing demo/capture pending",
+    "safe": "CONDITIONAL — implemented MVP scope, selected path to confirm",
+    "action": "ACTION FOR AGENT: link existing selected-build picking completion/short/hold/handoff acceptance and an approved operator journey.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/pick_commands_rpc.rs",
+      "crates/libs/wms-outbound/src/picking/placement/short.rs",
+      "crates/libs/wms-outbound/src/picking/placement/placed.rs"
+    ]
+  },
+  {
+    "area": "Packing and sorting",
+    "implemented": "Packing: yes — station queue, carton and source-completion operations. Sorting as a distinct demonstrable workflow: not established.",
+    "qa": "Selected-build packing acceptance not established; no sorting readiness inferred from packing/staging",
+    "demo": "Capture pending; no fabricated packing/sorting interface",
+    "safe": "CONDITIONAL for packing; UNSUPPORTED as a distinct available sorting claim until evidence is found",
+    "action": "ACTION FOR AGENT: verify packing acceptance and whether a distinct sorting workflow exists against implementation and MVP acceptance evidence; retain intended scope without claiming availability.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/packing_rpc.rs",
+      "crates/libs/wms-outbound/src/packing/commands/carton_close.rs",
+      "crates/libs/wms-outbound/src/packing/commands/source_complete.rs",
+      "crates/services/app-server/src/web/rpcs/staging_rpc.rs"
+    ]
+  },
+  {
+    "area": "Shipping and loading",
+    "implemented": "Yes — dispatch/load planning and load lifecycle/shipping service paths",
+    "qa": "No applicable complete loading/goods-issue acceptance established here",
+    "demo": "Current controlled journey/capture pending",
+    "safe": "CONDITIONAL — no carrier compatibility or complete receive-to-ship claim",
+    "action": "ACTION FOR AGENT: attach existing loading, exception/recovery and goods-issue evidence for the selected demo build; confirm the exact boundary shown to a buyer.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/dispatch_rpc.rs",
+      "crates/services/app-server/src/web/rpcs/loading_rpc.rs",
+      "crates/libs/wms-outbound/src/service/load/confirm_unit.rs",
+      "crates/libs/wms-outbound/src/service/load/ship.rs"
+    ]
+  },
+  {
+    "area": "Replenishment",
+    "implemented": "Yes — planning, take-next and completion command paths",
+    "qa": "No applicable current replenishment acceptance located in reused records",
+    "demo": "Capture pending",
+    "safe": "CONDITIONAL — no automatic replenishment or throughput guarantee",
+    "action": "ACTION FOR AGENT: reuse existing replenishment planning/completion/shortage acceptance and confirm a demonstrable pick-location scenario.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/replenishment_rpc.rs",
+      "crates/libs/wms-inventory/src/domain/replenishment/task_manager.rs"
+    ]
+  },
+  {
+    "area": "RF terminal workflows",
+    "implemented": "Yes — real Go terminal/WebRF bridge; separate React RF surface also exists",
+    "qa": "Historical bounded Receiving WebRF checks and retained Allocation RF checks; not every device/workflow or interface parity",
+    "demo": "Real QA evidence exists. The public /webrf and its validation-error image are a sample-data interface prototype, not backend proof.",
+    "safe": "CONDITIONAL for chosen real journey; VERIFIED only that the public prototype is a prototype",
+    "action": "ACTION FOR AGENT: select the real RF implementation/device/build and existing accepted operator path; replace prototype imagery with an approved real capture.",
+    "sources": [
+      "clients/rf-go/internal/app/web.go",
+      "clients/rf-go/internal/loader/http_loader.go",
+      "docs/mvp-certification/architecture/ui-rf-map.md",
+      "docs/mvp-certification/receiving/execution/RCV-D-002-retest.md"
+    ]
+  },
+  {
+    "area": "Task Management",
+    "implemented": "Yes — claim, lease heartbeat, progress and release surfaces",
+    "qa": "Do not infer every task source, permission or warehouse handoff from task handlers or Allocation evidence",
+    "demo": "Chosen task lifecycle demonstration pending",
+    "safe": "CONDITIONAL — exact lifecycle and operator boundaries must be confirmed",
+    "action": "ACTION FOR AGENT: link existing task claim/progress/completion/lease and handoff acceptance for the chosen scenario.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/task_commands_rpc.rs",
+      "crates/libs/wms-tasks/src/domain/task/aggregate.rs",
+      "docs/mvp-certification/architecture/backend-map.md"
+    ]
+  },
+  {
+    "area": "Metadata Studio and configuration",
+    "implemented": "Yes — Studio lifecycle/export/import/entity-wizard services and versioned RF metadata",
+    "qa": "Supplied UI views and source; full change/activation/upgrade/RBAC acceptance not established",
+    "demo": "Existing version-history/template captures, not a verified no-code change demo",
+    "safe": "VERIFIED as supplied interface/source existence; CONDITIONAL for a supported configuration-change promise",
+    "action": "ACTION FOR AGENT: choose one existing supported configuration change with before/after, version/activation and acceptance evidence; distinguish configuration from extensions.",
+    "sources": [
+      "crates/services/web-ui-server/src/services/studio/module_lifecycle.rs",
+      "crates/services/web-ui-server/src/services/studio/entity_wizard.rs",
+      "crates/services/app-server/src/web/rpcs/metadata_rpc.rs",
+      "crates/services/web-ui-server/src/meta/snapshot.rs"
+    ]
+  },
+  {
+    "area": "Reporting",
+    "implemented": "Yes — report definitions/templates and data-generation service path",
+    "qa": "Template/library presence does not certify report outputs, jurisdiction or statutory compliance",
+    "demo": "Supplied report-library capture; output demonstration pending",
+    "safe": "VERIFIED for a report-library view only; CONDITIONAL for any specific operational output",
+    "action": "ACTION FOR AGENT: select an actual report output and existing dataset/render acceptance; remove any unsupported statutory applicability claim.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/report_definition_rpc.rs",
+      "crates/services/app-server/src/web/rpcs/report_template_rpc.rs"
+    ]
+  },
+  {
+    "area": "Integrations",
+    "implemented": "Integration event/delivery observation surfaces exist; particular connector implementations and availability not established by this review",
+    "qa": "No named ERP/carrier/automation connector acceptance supplied",
+    "demo": "No approved connector demo",
+    "safe": "Describe interface requirements as an evaluation topic; no prebuilt connector logos or seamless-integration promise",
+    "action": "ACTION FOR AGENT: verify each proposed named connector against implementation, ownership/recovery and existing acceptance evidence before advertising it.",
+    "sources": [
+      "crates/services/app-server/src/web/rpcs/contexts/integration.rs",
+      "crates/services/app-server/src/web/rpcs/integration_event_rpc.rs",
+      "crates/services/app-server/src/web/rpcs/integration_event_delivery_rpc.rs"
+    ]
+  },
+  {
+    "area": "AI Harness / AI Onboarding / AI Support",
+    "implemented": "Future Vision; current availability not established",
+    "qa": "Not a production capability in this brief",
+    "demo": "No implemented-product demo claimed",
+    "safe": "FUTURE — long-term Vision only, explicitly labelled",
+    "action": "No AI implementation in this website task. Keep the manifesto intact and future-labelled.",
+    "sources": []
+  }
+]
