@@ -1,0 +1,181 @@
+{
+  "checked_at": "2026-10-19T05:45:24.301598+00:00",
+  "starting_pr_head": "426ef5c991c5b407cb6c7740f5867e7a4d69df99",
+  "production_commit": "24914b0b2729e2b5b4f661a2db3569a6741a227d",
+  "production_deployment": 7160016913,
+  "production_unchanged": {
+    "home_vision_robots_sitemap": "matched origin/main byte-for-byte 2026-10-19T05:36:18Z",
+    "commercial_urls": "both404"
+  },
+  "wms_commit": "d105fce525b95772730fcc00580aa18f0aeb1fa4",
+  "wms_pinned_hashes_rechecked": 23,
+  "tests_passed": 25,
+  "commands": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/*.test.cjs"
+      ],
+      "exit_code": 0,
+      "output": "\u2714 subscription includes year-one recurring cost, scoped multipliers and contingency (1.15875ms)\n\u2714 perpetual charges licence once, excludes inactive subscription, and retains maintenance (0.113291ms)\n\u2714 blank is unknown; explicit zero is valid; cents rounded once (0.252584ms)\n\u2714 counts, ranges and unsupported models are refused; complexity is not a hidden price multiplier (0.993291ms)\n\u2714 unsafe integer totals are rejected instead of silently losing monetary precision (0.212125ms)\n\u2714 large but valid budgets round percentage contingency to the exact cent (0.119375ms)\n\u2714 currency display preserves cents at the accepted safe-integer boundary (17.988959ms)\n\u2714 form binds once, suppresses in-flight duplicates, and never sends a browser success event (31.689542ms)\n\u2714 native invalid form does not count an attempted send; optional API availability never blocks contact (1.148542ms)\n\u2714 network, provider rejection and malformed success keep UI recoverable without fake conversions (2.302084ms)\n\u2714 lead acceptance and provider errors are counted separately; no PII reaches event logs (4.624334ms)\n\u2714 validation, consent, size, method and origin checks do not forward requests (0.769791ms)\n\u2714 non-JavaScript form POST redirects on provider acceptance (0.514625ms)\n\u2714 browser cannot assert a delivered or accepted enquiry (0.136833ms)\n\u2714 Vercel deployment and branch preview origins are accepted explicitly (0.193ms)\n\u2714 only consented eligible events are recorded; preview and tracking-off remain disabled (2.820375ms)\n\u2714 PII, arbitrary paths, placements and source strings cannot enter measurement records (0.787625ms)\n\u2714 acceptance is backend-only, provider failures never emit delivery success, validation is an error (1.693666ms)\n\u2714 explicit opt-in preserves a clean Google landing across pages; decline clears context; DNT suppresses all (44.183042ms)\n\u2714 query PII is discarded and a session context expires rather than attributing indefinitely (1.660708ms)\n\u2714 report deduplicates repeated events, excludes test data and never claims inbox delivery (0.421709ms)\n\u2714 inbox success requires an explicit owner attestation matching backend acceptance, not an HTTP status (33.08825ms)\n\u2714 rc-a contains only its independently released page and preserved Vision (1838.745291ms)\n\u2714 rc-a-measurement contains only its independently released page and preserved Vision (2100.279958ms)\n\u2714 rc-b contains only its independently released page and preserved Vision (1901.873584ms)\n\u2139 tests 25\n\u2139 suites 0\n\u2139 pass 25\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 6018.915875\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/validate.py"
+      ],
+      "exit_code": 0,
+      "output": "PASS: static HTML/JSON-LD/canonical/links, 3-URL sitemap, draft exclusion, JS syntax, preserved home/Vision/privacy/config and documentation links.\nPASS: independent RC canonical/robots/JSON-LD/crawlable HTML/anchors/assets, exact four-URL sitemaps and preserved Vision/gallery/robots.\n"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build-review.cjs"
+      ],
+      "exit_code": 0,
+      "output": "Review HTML artifact built in review-dist. Local only; API handlers require scripts/preview.cjs.\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "http_checks": [
+    {
+      "port": 4180,
+      "path": "/wms-cost",
+      "status": 200,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4180,
+      "path": "/wms-cost/",
+      "status": 308,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4180,
+      "path": "/wms-cost.html",
+      "status": 308,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4180,
+      "path": "/features/inventory-management",
+      "status": 404,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4180,
+      "path": "/api/measurement-config",
+      "status": 200,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4181,
+      "path": "/features/inventory-management",
+      "status": 200,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4181,
+      "path": "/features/inventory-management/",
+      "status": 308,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4181,
+      "path": "/features/inventory-management.html",
+      "status": 308,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4181,
+      "path": "/wms-cost",
+      "status": 404,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4181,
+      "path": "/api/measurement-config",
+      "status": 200,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4182,
+      "path": "/wms-cost",
+      "status": 200,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4182,
+      "path": "/wms-cost/",
+      "status": 308,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4182,
+      "path": "/wms-cost.html",
+      "status": 308,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4182,
+      "path": "/features/inventory-management",
+      "status": 404,
+      "x_robots_tag": "noindex, follow"
+    },
+    {
+      "port": 4182,
+      "path": "/api/measurement-config",
+      "status": 200,
+      "x_robots_tag": "noindex, follow"
+    }
+  ],
+  "browser_checks": {
+    "mobile_width": 390,
+    "cost_document_width": 390,
+    "inventory_document_width": 390,
+    "zero_tco": "$0.00",
+    "negative_input": "results invalidated; native validation prevents recalculation",
+    "clear": "financial inputs blank, results hidden",
+    "licensing": "inactive subscription fields disabled when perpetual selected",
+    "keyboard": "licensing Tab reaches warehouse count",
+    "images_added_to_inventory": 0,
+    "screenshots": "private review evidence only, never website assets"
+  },
+  "vercel_account_observation": {
+    "plan": "Hobby",
+    "last_hour": "available",
+    "last_12_hours_and_day": "Upgrade to Pro",
+    "last_week": "Observability Plus",
+    "weekly_completeness": "NOT_SUPPORTED by current runtime-only design"
+  },
+  "inbox_delivery_at_validation": "UNCONFIRMED",
+  "subsequent_owner_confirmation": {
+    "recorded_date": "2026-10-19",
+    "status": "CONFIRMED_BY_OWNER_INBOX",
+    "evidence": "form-delivery.json"
+  },
+  "gate_recheck": {
+    "recorded_date": "2026-10-19",
+    "starting_pr_head": "3d46ffb49332fe2824f214cbedd764d7bbd4d8ab",
+    "tests_passed": 27,
+    "production_baseline_bytes_unchanged": true,
+    "production_commercial_routes": "both404",
+    "formspree_authenticated_inspection": "form-delivery.json provider_archive_confirmation",
+    "wms_d003_fix_merged": "PR1314 at d105fce52; runtime retest not supplied",
+    "protected_preview_artifacts": "built locally; disabled upstream calls and production-build guard tested",
+    "protected_preview_deployed": false,
+    "founder_preview_approval": "PENDING_P0"
+  },
+  "release_authorized": false,
+  "deployment_performed": false,
+  "note": "Tests use provider mocks except the single separately recorded Formspree test. Final source commit is PR head; regenerate ignored RC manifests after commit to pin that exact source."
+}

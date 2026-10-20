@@ -1,0 +1,57 @@
+{
+  "observed_date": "2026-10-19",
+  "timezone": "Europe/Sofia",
+  "property": "sc-domain:quark.build",
+  "access": "verified owner, existing authenticated property",
+  "actions": [
+    {
+      "action": "Resubmit existing sitemap",
+      "url": "https://quark.build/sitemap.xml",
+      "result": "File sitemap submitted confirmation shown",
+      "submitted_date_displayed": "19 October 2026",
+      "last_processed_displayed": "15 July 2026",
+      "discovered_pages_displayed": 1,
+      "status_displayed": "Success",
+      "caveat": "Submission accepted. New processing/discovery/indexing not yet established."
+    },
+    {
+      "action": "Vision indexed inspection",
+      "url": "https://quark.build/vision",
+      "result": "URL unknown to Google, not indexed; no crawl/canonical data"
+    },
+    {
+      "action": "Vision live test",
+      "url": "https://quark.build/vision",
+      "tested_displayed": "19 October 2026 00:11",
+      "result": "URL is available to Google; page can be indexed",
+      "caveat": "Eligibility is not indexing or Google canonical selection."
+    }
+  ],
+  "performance_read_today": {
+    "period_start": "2026-07-17",
+    "period_end": "2026-10-16",
+    "search_type": "Web",
+    "clicks": 7,
+    "impressions": 507,
+    "ctr_percent": 1.4,
+    "average_position_displayed": 20,
+    "historical_not_post_redesign": true
+  },
+  "index_coverage_read_today": {
+    "report_updated": "2026-10-12",
+    "indexed": 2,
+    "not_indexed": 6,
+    "reasons": {
+      "noindex": 2,
+      "redirect": 1,
+      "alternate_canonical": 1,
+      "crawled_not_indexed": 2
+    }
+  },
+  "not_performed": [
+    "No new property or account changes",
+    "No indexing request for unpublished pages",
+    "No new page publication",
+    "No claim of new sitemap processing"
+  ]
+}

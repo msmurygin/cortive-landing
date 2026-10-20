@@ -1,0 +1,308 @@
+{
+  "checkedAt": "2026-10-19T11:33:29.257Z",
+  "sourceCommit": "5e1b8e1dde14f45c32a026b81f17706e1910bf5c",
+  "previewCommit": "d0271db0fe18b9faeb74fd2fb9fa42bdff788a11",
+  "deploymentId": "dpl_AqpXeH84ByhQJN5MTMUXqmABGaVW",
+  "previewUrl": "https://project-ogj6r-nk5fnrmt2-quark-build.vercel.app/wms-cost",
+  "authTest": "Anonymous requests without cookies, credentials or bypass parameters; redirects not followed. Authenticated browser renders both modes.",
+  "rows": [
+    {
+      "host": "project-ogj6r-nk5fnrmt2-quark-build.vercel.app",
+      "path": "/wms-cost",
+      "status": 302,
+      "redirect": "https://vercel.com/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-nk5fnrmt2-quark-build.vercel.app",
+      "path": "/api/lead",
+      "status": 302,
+      "redirect": "https://vercel.com/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-nk5fnrmt2-quark-build.vercel.app",
+      "path": "/api/events",
+      "status": 302,
+      "redirect": "https://vercel.com/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-nk5fnrmt2-quark-build.vercel.app",
+      "path": "/robots.txt",
+      "status": 302,
+      "redirect": "https://vercel.com/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-git-preview-p0-rc-a-2026-10-19-quark-build.vercel.app",
+      "path": "/wms-cost",
+      "status": 302,
+      "redirect": "https://vercel.com/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-git-preview-p0-rc-a-2026-10-19-quark-build.vercel.app",
+      "path": "/api/lead",
+      "status": 302,
+      "redirect": "https://vercel.com/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-git-preview-p0-rc-a-2026-10-19-quark-build.vercel.app",
+      "path": "/api/events",
+      "status": 302,
+      "redirect": "https://vercel.com/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    },
+    {
+      "host": "project-ogj6r-git-preview-p0-rc-a-2026-10-19-quark-build.vercel.app",
+      "path": "/robots.txt",
+      "status": 302,
+      "redirect": "https://vercel.com/sso-api",
+      "xRobots": "noindex",
+      "commercialContentExposed": false
+    }
+  ],
+  "production": [
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "e3b7a4e9578616d0ed2a2120a8229d164558a90d0f83408103edb0da2ed32cd9",
+      "unchanged": true
+    },
+    {
+      "path": "/vision",
+      "status": 200,
+      "sha256": "4ca89735de2dc60a79588758070ddb3966bd9ed7c3a61657004dc11cba006225",
+      "unchanged": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "sha256": "b8e19fe21b8a48bc7d682697c92def28f280c8538e52d148f9f24c5bdba3744b",
+      "unchanged": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "sha256": "0e4c4c5c282b4901095c27d4ee9b7c843ac56d436a287d218859716c16a22be2",
+      "unchanged": true
+    },
+    {
+      "path": "/wms-cost",
+      "status": 404
+    }
+  ],
+  "snapshotFiles": [
+    {
+      "path": "api/events.js",
+      "sha256": "9bd37cf5fb753f68d1b6be04c23d944887951938cfab08be1b63f69d737aa7db"
+    },
+    {
+      "path": "api/lead.js",
+      "sha256": "9bd37cf5fb753f68d1b6be04c23d944887951938cfab08be1b63f69d737aa7db"
+    },
+    {
+      "path": "api/measurement-config.js",
+      "sha256": "982fee57d6911f9f6262d47dda39249d8522fefd08a4f3e7fe12ad318e77f5df"
+    },
+    {
+      "path": "assets/leads.js",
+      "sha256": "8ad44bab6cd6048a37fc0cc79af591b14bb2398e1db550a1ba215185021ad4b3"
+    },
+    {
+      "path": "assets/legal.css",
+      "sha256": "e00423ae54a5cba73bf4d1d76d3886d3b33f1052907e123c88a745ec59e036b4"
+    },
+    {
+      "path": "assets/main.js",
+      "sha256": "274f4af99975aa860407db9612d20382c9470093047323f97c76827552ba9d4a"
+    },
+    {
+      "path": "assets/product.css",
+      "sha256": "39c4af85c466c57543c863f502d5ace247f414e541680fd7bc12b164504c2f27"
+    },
+    {
+      "path": "assets/quark-logo-dark.svg",
+      "sha256": "ed4990ee017161cd1657170bdc9ef7cd0414ad57531c6ff8444654d823f0bf59"
+    },
+    {
+      "path": "assets/quark-logo-light.png",
+      "sha256": "015e12a5109ae0a778325ac28df86207b7696ce5758129739ee921db97c3eb87"
+    },
+    {
+      "path": "assets/quark-logo-light2.png",
+      "sha256": "58ba5b9ddb4369f2954bb2e80d1ecb11389205e30d18efbfa4a96d1da86e36d5"
+    },
+    {
+      "path": "assets/quark-logo.svg",
+      "sha256": "64f04564cbfc017ab94482e05f794503dfb890c3bc23de614ec1151748f33f8d"
+    },
+    {
+      "path": "assets/seo/cost-model.js",
+      "sha256": "900d6f14b2151c0454b50a05e4ac7ffc90dc3555774b32369d06a232d0cf20f2"
+    },
+    {
+      "path": "assets/seo/cost-ui.js",
+      "sha256": "01bec6a36da6a22d082790ca7c0f82b2aa910ca5bdbd0ff2f8d234135f3b0f6a"
+    },
+    {
+      "path": "assets/seo/seo-content.css",
+      "sha256": "05cc0b84116a492d9cc1ddb65e59d33cbb13bb0eb1fefc4fa20392f3c936d668"
+    },
+    {
+      "path": "assets/shots/web/3d-inspect.jpg",
+      "sha256": "976654a14402a86595b26394930112c475b7816b7f8c237c43dceedaac410d3e"
+    },
+    {
+      "path": "assets/shots/web/3d-overview.jpg",
+      "sha256": "3cfd6820c4c58776888abf5afca66deb28d63977031bbec9ab6d071b89a6ccef"
+    },
+    {
+      "path": "assets/shots/web/balances-by-location.jpg",
+      "sha256": "260988a57e35e6cb2b13f36edb5e12d292d5b923b6c02848acf42e4193846567"
+    },
+    {
+      "path": "assets/shots/web/reports.jpg",
+      "sha256": "4830f36ec8b491459ef9166e0f0230a2722e9e0dc9adac7602038f64f086e8e3"
+    },
+    {
+      "path": "assets/shots/web/studio-template-wizard.png",
+      "sha256": "79ddf8e266a7dde4f1a2ce49dc2d5a577bcc025562a9cfa8629085cc463484fc"
+    },
+    {
+      "path": "assets/shots/web/studio-version-history.png",
+      "sha256": "6dee2d5e2ccf36e3917a2731ff3bb174d926c2076c0a51bbc827038eac42306c"
+    },
+    {
+      "path": "assets/shots/web/transactions-filtered.jpg",
+      "sha256": "310d8515c1fc6c0b49082cb5dd51b3301dcaccf8c5d4fa33a5579d6a5184774f"
+    },
+    {
+      "path": "assets/shots/web/users.jpg",
+      "sha256": "8fbaea2c53a3204ebe6d59d724fa2b868cba3509791e263103e1cc50fc43e9c9"
+    },
+    {
+      "path": "assets/shots/web/webrf-validation-error.jpg",
+      "sha256": "53d7ea2ecb8b89c75827c1ee101c680c92ed6d81851c63a200707d27b221a10d"
+    },
+    {
+      "path": "assets/styles.css",
+      "sha256": "8bb107c0dc83f26216f567fc48628e70b24858026e3c92343ab07ec96a78c09f"
+    },
+    {
+      "path": "index.html",
+      "sha256": "610bfc42a20cd619f67d130f8fd99378467def0b3b41eafaa5e252c08ef05ee0"
+    },
+    {
+      "path": "legal/privacy.html",
+      "sha256": "e91901fecf2ff338e93650c5f38dc2dbc1487de07a29e2bc41a08114189a7be0"
+    },
+    {
+      "path": "legal/terms.html",
+      "sha256": "f71f36553e90155a4383bc656b1c88fa008a21c83d9284627c0df864bc600e58"
+    },
+    {
+      "path": "lib/lead-events.js",
+      "sha256": "4dac6030ff63bb3c920a206bc93aeefa83c738ac8dd299e712013e2f73db2524"
+    },
+    {
+      "path": "preview-only.cjs",
+      "sha256": "3d3ef34d48c74cd728488cfe0c4970b7215cade66529c3fca9703558c8e59c84"
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    },
+    {
+      "path": "screens.html",
+      "sha256": "b09569ef8f5e3a4145f17f6bdf261508d82d015bac278f6471c7791dbd69da1e"
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "bb7fb3bb84196fbcda767afb51f86188a579daaa18d0af9b432ba8b7add32dc4"
+    },
+    {
+      "path": "thanks.html",
+      "sha256": "04692bc92d16223284ac4ee38a5234f084dda9912ca72324fc5c68984b25b401"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "a78c8732c9aef84eb4b39eb60658845f5bf2e1b486296501f09fa430a61c6afe"
+    },
+    {
+      "path": "vision.html",
+      "sha256": "e8aec35a4c0d7f12086b121c7afe3a35d6a45104fe84efb49977a81ad2c5a93e"
+    },
+    {
+      "path": "webrf/app.jsx",
+      "sha256": "bb2bb36765a2f57762c5b211760a1598969e4c4866143f4f00976f2e32cfa4f1"
+    },
+    {
+      "path": "webrf/index.html",
+      "sha256": "67cb5281daae9cee093435a42cd58229d1be97e5d3949bba4375629c18ecc15d"
+    },
+    {
+      "path": "wms-cost.html",
+      "sha256": "a02ae60d0bb188f1edbca59054c418ea64e60d70e9648cf367b20a594fe83a81"
+    }
+  ],
+  "tests": {
+    "automated": 30,
+    "passed": 30,
+    "staticValidation": "PASS",
+    "metadataHeadUnchanged": true,
+    "tcoFormulaUnchangedExceptEurAllowlist": true
+  },
+  "approval": {
+    "P0": "approved protected RC-A preview only",
+    "A1": "conditional; final UX/EUR/configurability review pending",
+    "A2": "NOT APPROVED",
+    "measurement": "OFF"
+  },
+  "browserQA": {
+    "authenticatedHostedQuickScope": true,
+    "initialFinancialFieldsHiddenAndDisabled": true,
+    "advancedInitialOpenGroups": 1,
+    "advancedTotalGroups": 4,
+    "unknownScopeAndMissingCostChecklist": "PASS (local browser)",
+    "scopeRetentionAndReset": "PASS (local browser)",
+    "invalidCollapsedFieldRevealAndNativeFocus": "PASS (local browser)",
+    "localEurFixture": {
+      "initial": "1100.00",
+      "annual": "600.00",
+      "tco3": "2900.00",
+      "tco5": "4100.00"
+    },
+    "hostedEurSyntheticFixture": {
+      "monthly": "100.00",
+      "otherCosts": "explicit zero",
+      "annual": "1200.00",
+      "tco3": "3600.00",
+      "tco5": "6000.00"
+    },
+    "hostedMobile": {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 375,
+      "horizontalOverflow": false
+    },
+    "hostedContactFieldsetAndSubmitDisabled": true,
+    "hostedMeasurementConfig": {
+      "enabled": false,
+      "environment": "preview"
+    },
+    "hostedEnquiryAndEvents": "Private review: enquiries and measurement are disabled.",
+    "hostedRobots": "User-agent: *; Disallow: /",
+    "hostedHtmlRobots": "noindex,nofollow,noarchive",
+    "providerSubmissionsSent": 0
+  }
+}

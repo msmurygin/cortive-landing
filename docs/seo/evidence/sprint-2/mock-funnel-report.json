@@ -1,0 +1,19 @@
+{
+  "environment": "test",
+  "warning": "Consented measured entries, not all visitors or unique people. Provider acceptance is not inbox delivery or qualification. Export retention and completeness must be verified.",
+  "rows": [
+    {
+      "source": "google",
+      "medium": "organic",
+      "landing": "/wms-cost",
+      "entry_views": 1,
+      "page_views": 4,
+      "cta_clicks": 1,
+      "submit_attempts": 1,
+      "provider_accepted": 1,
+      "inbox_confirmed": 0,
+      "errors": 0,
+      "accepted_per_entry": 1
+    }
+  ]
+}

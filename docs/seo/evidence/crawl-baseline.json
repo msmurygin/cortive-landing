@@ -1,0 +1,1302 @@
+{
+  "checked_at": "2026-10-18T20:20:23.897570+00:00",
+  "base_commit": "24914b0b2729e2b5b4f661a2db3569a6741a227d",
+  "pages": [
+    {
+      "url": "https://quark.build/",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "716",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline",
+        "Content-Length": "13023",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"9037196897bb7e2e2e71a6db508b93f1\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:24 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::bzm86-1792354821000-2bf86dca39a5",
+        "Connection": "close"
+      },
+      "bytes": 13023,
+      "sha256": "e3b7a4e9578616d0ed2a2120a8229d164558a90d0f83408103edb0da2ed32cd9",
+      "html": {
+        "title": "Quark WMS — Warehouse inventory & operations",
+        "meta": {
+          "": "",
+          "viewport": "width=device-width,initial-scale=1",
+          "description": "Explore Quark WMS: inventory by location, warehouse movement records, topology and configuration screens. Discuss your warehouse and evaluate the available build.",
+          "robots": "index,follow",
+          "og:type": "website",
+          "og:site_name": "Quark",
+          "og:url": "https://quark.build/",
+          "og:title": "Quark WMS — Warehouse inventory & operations",
+          "og:description": "Explore the warehouse screens. Discuss your operation. Agree on scope before implementation.",
+          "og:image": "https://quark.build/assets/shots/web/balances-by-location.jpg",
+          "og:image:alt": "Quark inventory screen showing stock by location and hold reasons",
+          "twitter:card": "summary_large_image",
+          "twitter:title": "Quark WMS — Warehouse inventory & operations",
+          "twitter:description": "Inventory, warehouse movement records and configuration screens. Evaluate Quark for your operation.",
+          "twitter:image": "https://quark.build/assets/shots/web/balances-by-location.jpg"
+        },
+        "canonical": [
+          "https://quark.build/"
+        ],
+        "headings": [
+          {
+            "level": 1,
+            "text": "Know your stock. See your warehouse."
+          },
+          {
+            "level": 2,
+            "text": "A closer look at warehouse work."
+          },
+          {
+            "level": 3,
+            "text": "Inventory in context"
+          },
+          {
+            "level": 3,
+            "text": "A record of movements"
+          },
+          {
+            "level": 3,
+            "text": "A view of the floor"
+          },
+          {
+            "level": 3,
+            "text": "Make the setup visible."
+          },
+          {
+            "level": 2,
+            "text": "Your operation. A defined scope."
+          },
+          {
+            "level": 3,
+            "text": "Describe the workflow"
+          },
+          {
+            "level": 3,
+            "text": "Review the available build"
+          },
+          {
+            "level": 3,
+            "text": "Agree on an evaluation"
+          },
+          {
+            "level": 2,
+            "text": "Built by one person. Open about the stage."
+          },
+          {
+            "level": 2,
+            "text": "Start with your warehouse."
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/shots/web/balances-by-location.jpg",
+            "alt": "Quark inventory screen: locations, SKU, owner, lots, quantities and hold reasons",
+            "width": "1800",
+            "height": "1012",
+            "fetchpriority": "high"
+          },
+          {
+            "src": "/assets/shots/web/3d-overview.jpg",
+            "alt": "Quark warehouse topology screen with aisles and rack locations",
+            "width": "1400",
+            "height": "782",
+            "loading": "lazy"
+          }
+        ],
+        "jsonld": [
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Quark WMS",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://quark.build/",
+            "description": "Warehouse management software. Explore supplied product screens and discuss evaluation of the available build."
+          }
+        ]
+      },
+      "local_match": true
+    },
+    {
+      "url": "https://quark.build/vision",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "715",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"vision.html\"",
+        "Content-Length": "98079",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"f995463fae34a7b9882709a213e36dfb\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:25 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::7m8pz-1792354821009-d24d65219a8b",
+        "Connection": "close"
+      },
+      "bytes": 98079,
+      "sha256": "4ca89735de2dc60a79588758070ddb3966bd9ed7c3a61657004dc11cba006225",
+      "html": {
+        "title": "Quark Vision — A long-term concept for warehouse software",
+        "meta": {
+          "": "",
+          "viewport": "width=device-width,initial-scale=1",
+          "description": "The long-term Quark vision: metadata-driven warehouse software, reversible configuration and human oversight. A concept, not a statement of current availability.",
+          "og:type": "website",
+          "og:url": "https://quark.build/vision",
+          "og:title": "Quark Vision — Long-term concept",
+          "og:description": "A long-term concept for metadata-driven warehouse software. Current availability is described on the product page.",
+          "og:site_name": "Quark",
+          "twitter:card": "summary_large_image",
+          "twitter:title": "Quark Vision — Long-term concept",
+          "twitter:description": "A long-term concept for metadata-driven warehouse software. Current availability is described on the product page.",
+          "robots": "index,follow"
+        },
+        "canonical": [
+          "https://quark.build/vision"
+        ],
+        "headings": [
+          {
+            "level": 1,
+            "text": "Our long-term vision: The warehouse that configures itself."
+          },
+          {
+            "level": 2,
+            "text": "Traditional WMSis stuck in 2010."
+          },
+          {
+            "level": 3,
+            "text": "You are running it on spreadsheets, or on something you inherited."
+          },
+          {
+            "level": 3,
+            "text": "We would rather say so than waste your quarter."
+          },
+          {
+            "level": 2,
+            "text": "Describe your warehouse.Log in tomorrow."
+          },
+          {
+            "level": 3,
+            "text": "Tell the AI about your operation."
+          },
+          {
+            "level": 3,
+            "text": "Review the draft in the Studio."
+          },
+          {
+            "level": 3,
+            "text": "Operators log in. The system is live."
+          },
+          {
+            "level": 2,
+            "text": "Metadata‑GovernableArchitecture."
+          },
+          {
+            "level": 2,
+            "text": "Five layers.One contract."
+          },
+          {
+            "level": 2,
+            "text": "Two readers.One economic shift."
+          },
+          {
+            "level": 3,
+            "text": "Your business is not threatened.It is transformed."
+          },
+          {
+            "level": 3,
+            "text": "Pharma. 3PL. Food. Electronics."
+          },
+          {
+            "level": 2,
+            "text": "A platform of particles.Each one does one thing well."
+          },
+          {
+            "level": 3,
+            "text": "Quark"
+          },
+          {
+            "level": 3,
+            "text": "Phonon"
+          },
+          {
+            "level": 3,
+            "text": "Gluon"
+          },
+          {
+            "level": 3,
+            "text": "Boson"
+          },
+          {
+            "level": 3,
+            "text": "Lepton"
+          },
+          {
+            "level": 3,
+            "text": "Hadron"
+          },
+          {
+            "level": 3,
+            "text": "Axion"
+          },
+          {
+            "level": 3,
+            "text": "Photon"
+          },
+          {
+            "level": 3,
+            "text": "Neutrino"
+          },
+          {
+            "level": 3,
+            "text": "Fermion"
+          },
+          {
+            "level": 3,
+            "text": "Higgs"
+          },
+          {
+            "level": 3,
+            "text": "Meson"
+          },
+          {
+            "level": 2,
+            "text": "One person.A short list of things that already run."
+          },
+          {
+            "level": 3,
+            "text": "What you can see today."
+          },
+          {
+            "level": 3,
+            "text": "What we are not pretending."
+          },
+          {
+            "level": 2,
+            "text": "Start with the current product."
+          }
+        ],
+        "images": [
+          {
+            "id": "lbImg",
+            "alt": ""
+          }
+        ],
+        "jsonld": []
+      },
+      "local_match": true
+    },
+    {
+      "url": "https://quark.build/screens.html",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "714",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"screens.html\"",
+        "Content-Length": "12219",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"abd7f8c573ce10d5e591703476c9c2ce\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:26 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::7h4ss-1792354821002-2661b050691d",
+        "Connection": "close"
+      },
+      "bytes": 12219,
+      "sha256": "0cd401bd1907cd677ff824d4ff05378fddbc9d1af83c35c93ca8cc32c00e548f",
+      "html": {
+        "title": "Quark WMS Screens — Inventory, topology & Studio",
+        "meta": {
+          "": "",
+          "viewport": "width=device-width,initial-scale=1",
+          "description": "Product screens from Quark: warehouse topology, statutory reports, balances by location, movement log, identity and RF validation.",
+          "robots": "index,follow"
+        },
+        "canonical": [
+          "https://quark.build/screens.html"
+        ],
+        "headings": [
+          {
+            "level": 1,
+            "text": "InsideQuark WMS."
+          }
+        ],
+        "images": [
+          {
+            "src": "assets/shots/web/3d-overview.jpg",
+            "alt": "Three-dimensional warehouse topology showing racks, aisles and zones",
+            "loading": "lazy",
+            "width": "1400",
+            "height": "782"
+          },
+          {
+            "src": "assets/shots/web/3d-inspect.jpg",
+            "alt": "Inspected bin showing its zone, type, aisle, bay, level and dimensions",
+            "loading": "lazy",
+            "width": "1800",
+            "height": "1011"
+          },
+          {
+            "src": "assets/shots/web/webrf-validation-error.jpg",
+            "alt": "Web RF terminal refusing an entry with a validation error",
+            "loading": "lazy",
+            "width": "1800",
+            "height": "1356"
+          },
+          {
+            "src": "assets/shots/web/reports.jpg",
+            "alt": "Report library showing sixteen statutory warehouse forms grouped by section",
+            "loading": "lazy",
+            "width": "1800",
+            "height": "1125"
+          },
+          {
+            "src": "assets/shots/web/balances-by-location.jpg",
+            "alt": "Inventory balances by location with hold reasons for damage, customer return and QC quarantine",
+            "loading": "lazy",
+            "width": "1800",
+            "height": "1012"
+          },
+          {
+            "src": "assets/shots/web/transactions-filtered.jpg",
+            "alt": "Transaction log listing deposits and moves, each with the reason it happened",
+            "loading": "lazy",
+            "width": "1800",
+            "height": "1010"
+          },
+          {
+            "src": "assets/shots/web/users.jpg",
+            "alt": "User record with API access and RF device login toggles and an audit block",
+            "loading": "lazy",
+            "width": "1400",
+            "height": "784"
+          },
+          {
+            "src": "assets/shots/web/studio-version-history.png",
+            "alt": "Studio version history panel listing an active version and a current draft with Apply, Discard and Open",
+            "loading": "lazy",
+            "width": "694",
+            "height": "528"
+          },
+          {
+            "src": "assets/shots/web/studio-template-wizard.png",
+            "alt": "Entity Template Wizard offering seven form templates, each with its business-object and form count",
+            "loading": "lazy",
+            "width": "1570",
+            "height": "1654"
+          },
+          {
+            "id": "lbImg",
+            "alt": ""
+          }
+        ],
+        "jsonld": []
+      },
+      "local_match": true
+    },
+    {
+      "url": "https://quark.build/legal/privacy.html",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "0",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"privacy.html\"",
+        "Content-Length": "9708",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"730a362d6872751c778762aaf4af0eda\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "MISS",
+        "X-Vercel-Id": "fra1::vltqs-1792354821008-a597838cb15f",
+        "Connection": "close"
+      },
+      "bytes": 9708,
+      "sha256": "d47a3ada0ac70484678ebafb906404d6cd3451ca81ddc62f4a10df9b04556acb",
+      "html": {
+        "title": "Privacy Policy — Quark",
+        "meta": {
+          "": "",
+          "viewport": "width=device-width,initial-scale=1",
+          "description": "How Quark handles warehouse enquiries and basic website event records.",
+          "robots": "noindex,follow"
+        },
+        "canonical": [
+          "https://quark.build/legal/privacy.html"
+        ],
+        "headings": [
+          {
+            "level": 1,
+            "text": "Privacy Policy"
+          },
+          {
+            "level": 2,
+            "text": "01Who is responsible"
+          },
+          {
+            "level": 2,
+            "text": "02What we collect, and why"
+          },
+          {
+            "level": 2,
+            "text": "03Storage on your device"
+          },
+          {
+            "level": 2,
+            "text": "04Who else processes your data"
+          },
+          {
+            "level": 2,
+            "text": "05How long we keep it"
+          },
+          {
+            "level": 2,
+            "text": "06Your rights"
+          },
+          {
+            "level": 2,
+            "text": "07Security"
+          },
+          {
+            "level": 2,
+            "text": "08Changes"
+          }
+        ],
+        "images": [],
+        "jsonld": []
+      },
+      "local_match": true
+    },
+    {
+      "url": "https://quark.build/legal/terms.html",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "0",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"terms.html\"",
+        "Content-Length": "5947",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"694aae4cde1d5cddfca3a8d907ac65fa\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "MISS",
+        "X-Vercel-Id": "fra1::twcj7-1792354821138-0c93c1904e10",
+        "Connection": "close"
+      },
+      "bytes": 5947,
+      "sha256": "eb7cc37042a55d4f10e074f3fe87b42366d7ff1c9eb21a5edeed884a9924f232",
+      "html": {
+        "title": "Terms of Use — Quark",
+        "meta": {
+          "": "",
+          "viewport": "width=device-width,initial-scale=1",
+          "description": "Terms for using the Quark website and submitting a warehouse enquiry.",
+          "robots": "noindex,follow"
+        },
+        "canonical": [
+          "https://quark.build/legal/terms.html"
+        ],
+        "headings": [
+          {
+            "level": 1,
+            "text": "Terms of Use"
+          },
+          {
+            "level": 2,
+            "text": "01Who operates this site"
+          },
+          {
+            "level": 2,
+            "text": "02What this site is"
+          },
+          {
+            "level": 2,
+            "text": "03Warehouse enquiries"
+          },
+          {
+            "level": 2,
+            "text": "04Using the site fairly"
+          },
+          {
+            "level": 2,
+            "text": "05Content and marks"
+          },
+          {
+            "level": 2,
+            "text": "06No warranty, and the limits of our liability"
+          },
+          {
+            "level": 2,
+            "text": "07Links out"
+          },
+          {
+            "level": 2,
+            "text": "08Changes"
+          },
+          {
+            "level": 2,
+            "text": "09Governing law"
+          }
+        ],
+        "images": [],
+        "jsonld": []
+      },
+      "local_match": true
+    },
+    {
+      "url": "https://quark.build/thanks.html",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "0",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"thanks.html\"",
+        "Content-Length": "544",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"ae2f8343983a475a26a46c777dba5834\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "MISS",
+        "X-Vercel-Id": "fra1::c6l7t-1792354821136-e138321f9838",
+        "Connection": "close"
+      },
+      "bytes": 544,
+      "sha256": "5d28bf9a9f9fb6f4a1487b318c7b9e20577c2c2964b474aaa4713d476e8579de",
+      "html": {
+        "title": "Enquiry received — Quark",
+        "meta": {
+          "": "",
+          "viewport": "width=device-width,initial-scale=1",
+          "robots": "noindex,follow"
+        },
+        "canonical": [],
+        "headings": [
+          {
+            "level": 1,
+            "text": "Enquiry received."
+          }
+        ],
+        "images": [],
+        "jsonld": []
+      },
+      "local_match": true
+    },
+    {
+      "url": "https://quark.build/webrf",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "714",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"webrf\"",
+        "Content-Length": "1346",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"8caea96565f59980f3c14e73ec6d3cdf\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:26 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Robots-Tag": "noindex, follow",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::qrb9g-1792354821227-54c5842ebe6b",
+        "Connection": "close"
+      },
+      "bytes": 1346,
+      "sha256": "962926f1b53cc334ef25874e954c62ee42d0634dc41e841246fb4ad4f4265826",
+      "html": {
+        "title": "WebRF — Warehouse Terminal Prototype",
+        "meta": {
+          "": "",
+          "viewport": "width=1920",
+          "robots": "noindex,follow"
+        },
+        "canonical": [],
+        "headings": [],
+        "images": [],
+        "jsonld": []
+      },
+      "local_match": true
+    },
+    {
+      "url": "https://quark.build/index.html",
+      "status": 308,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Type": "text/plain",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Location": "/",
+        "Refresh": "0;url=/",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Vercel-Id": "fra1::7x9t5-1792354821291-f964c6d02d60",
+        "Connection": "close",
+        "Transfer-Encoding": "chunked"
+      },
+      "bytes": 15,
+      "sha256": "7c040f8633b8823d72ed63da9b3b2dfe9846e912c66a64c9433ec9c4815d76c2"
+    },
+    {
+      "url": "https://quark.build/vision.html",
+      "status": 308,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Type": "text/plain",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Location": "/vision",
+        "Refresh": "0;url=/vision",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Vercel-Id": "fra1::xps5k-1792354821350-0bbabb29d0bb",
+        "Connection": "close",
+        "Transfer-Encoding": "chunked"
+      },
+      "bytes": 15,
+      "sha256": "7c040f8633b8823d72ed63da9b3b2dfe9846e912c66a64c9433ec9c4815d76c2"
+    },
+    {
+      "url": "https://quark.build/vision/",
+      "status": 308,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Type": "text/plain",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Location": "/vision",
+        "Refresh": "0;url=/vision",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Vercel-Id": "fra1::9g5sv-1792354821430-1015d98c96a5",
+        "Connection": "close",
+        "Transfer-Encoding": "chunked"
+      },
+      "bytes": 15,
+      "sha256": "7c040f8633b8823d72ed63da9b3b2dfe9846e912c66a64c9433ec9c4815d76c2"
+    },
+    {
+      "url": "https://quark.build/screens",
+      "status": 404,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Length": "79",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Error": "NOT_FOUND",
+        "X-Vercel-Id": "fra1::hqmmq-1792354821418-472206b0e61d",
+        "Connection": "close"
+      },
+      "bytes": 79,
+      "sha256": "933f4a5561f709c210e9050e876ff45670536e34ccd9ca1947c4f24b735e7dfa"
+    },
+    {
+      "url": "https://quark.build/webrf/",
+      "status": 308,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Type": "text/plain",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Location": "/webrf",
+        "Refresh": "0;url=/webrf",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Vercel-Id": "fra1::p2ljv-1792354821478-f933f601b659",
+        "Connection": "close",
+        "Transfer-Encoding": "chunked"
+      },
+      "bytes": 15,
+      "sha256": "7c040f8633b8823d72ed63da9b3b2dfe9846e912c66a64c9433ec9c4815d76c2"
+    },
+    {
+      "url": "https://quark.build/webrf/index.html",
+      "status": 308,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Type": "text/plain",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Location": "/webrf",
+        "Refresh": "0;url=/webrf",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Vercel-Id": "fra1::9snlc-1792354821501-cdf906f7e1c5",
+        "Connection": "close",
+        "Transfer-Encoding": "chunked"
+      },
+      "bytes": 15,
+      "sha256": "7c040f8633b8823d72ed63da9b3b2dfe9846e912c66a64c9433ec9c4815d76c2"
+    },
+    {
+      "url": "https://quark.build/robots.txt",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "714",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"robots.txt\"",
+        "Content-Length": "64",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"a589c6ffc4c14aba65456ba65ea0c416\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:26 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::c44s2-1792354821560-4af9f140bbcd",
+        "Connection": "close"
+      },
+      "bytes": 64,
+      "sha256": "b8e19fe21b8a48bc7d682697c92def28f280c8538e52d148f9f24c5bdba3744b",
+      "body_text": "User-agent: *\nAllow: /\nSitemap: https://quark.build/sitemap.xml\n"
+    },
+    {
+      "url": "https://quark.build/sitemap.xml",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "714",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"sitemap.xml\"",
+        "Content-Length": "263",
+        "Content-Type": "application/xml",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Etag": "\"3a67ee0b8ca281fe2697750392e39a3a\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:27 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::jqw86-1792354821572-4a4f702d68e9",
+        "Connection": "close"
+      },
+      "bytes": 263,
+      "sha256": "0e4c4c5c282b4901095c27d4ee9b7c843ac56d436a287d218859716c16a22be2",
+      "body_text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://quark.build/</loc></url>\n  <url><loc>https://quark.build/screens.html</loc></url>\n  <url><loc>https://quark.build/vision</loc></url>\n</urlset>\n"
+    },
+    {
+      "url": "https://quark.build/not-a-page-seo-audit",
+      "status": 404,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Length": "79",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Error": "NOT_FOUND",
+        "X-Vercel-Id": "fra1::dk9d4-1792354821607-4a4f4aada8eb",
+        "Connection": "close"
+      },
+      "bytes": 79,
+      "sha256": "a0086852c5b17a09a20b034e64a0a2ec5d896f9cd8e6ff65139f92b5f49d5d38"
+    },
+    {
+      "url": "https://quark.build/api/lead",
+      "status": 405,
+      "headers": {
+        "Age": "0",
+        "Allow": "POST",
+        "Cache-Control": "no-store",
+        "Content-Length": "30",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:22 GMT",
+        "Etag": "W/\"1e-iziTnYcqoJggpt2KVA8fS/so0II\"",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Robots-Tag": "noindex",
+        "X-Vercel-Cache": "MISS",
+        "X-Vercel-Id": "fra1::iad1::vdd6t-1792354821640-b4af62958fb0",
+        "Connection": "close"
+      },
+      "bytes": 30,
+      "sha256": "a95fc358abdccaedaa897d7b52208a16be222db5273af907da49ea31f40fad0a"
+    },
+    {
+      "url": "https://quark.build/api/events",
+      "status": 405,
+      "headers": {
+        "Age": "0",
+        "Allow": "POST",
+        "Cache-Control": "no-store",
+        "Content-Length": "30",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:22 GMT",
+        "Etag": "W/\"1e-iziTnYcqoJggpt2KVA8fS/so0II\"",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Robots-Tag": "noindex",
+        "X-Vercel-Cache": "MISS",
+        "X-Vercel-Id": "fra1::iad1::f8sh5-1792354821692-079926b01cb1",
+        "Connection": "close"
+      },
+      "bytes": 30,
+      "sha256": "a95fc358abdccaedaa897d7b52208a16be222db5273af907da49ea31f40fad0a"
+    },
+    {
+      "url": "https://quark.build/docs/quark-seo-audit.html",
+      "status": 404,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Length": "79",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:21 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Error": "NOT_FOUND",
+        "X-Vercel-Id": "fra1::j2x68-1792354821692-d2e026f90ff5",
+        "Connection": "close"
+      },
+      "bytes": 79,
+      "sha256": "0aa2f0ab65446a335501d6d33182579c25987be0acdeede67ebc4f5ce36902ff"
+    },
+    {
+      "url": "http://quark.build/",
+      "status": 308,
+      "headers": {
+        "Content-Type": "text/plain",
+        "Location": "https://quark.build/",
+        "Refresh": "0;url=https://quark.build/",
+        "server": "Vercel"
+      },
+      "bytes": 14,
+      "sha256": "cd23991b4e02a17e5a224a1f8265c5a187ab366b40b8f8a14608371feb8f6e25"
+    },
+    {
+      "url": "https://www.quark.build/",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://quark.build/assets/leads.js",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "703",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"leads.js\"",
+        "Content-Length": "3316",
+        "Content-Type": "application/javascript; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"673045a55f756cc2eef2a4849fbfaf69\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:39 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::c6l7t-1792354823163-bca61015f55f",
+        "Connection": "close"
+      },
+      "bytes": 3316,
+      "sha256": "b3a20c9d9f5c7f6aa9a5f2a5e71662923ed6800f931476ae31cf30ba9707e30d"
+    },
+    {
+      "url": "https://quark.build/assets/legal.css",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "0",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"legal.css\"",
+        "Content-Length": "2238",
+        "Content-Type": "text/css; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"9d852a364acf8ac680b32c0a6900bd34\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "MISS",
+        "X-Vercel-Id": "fra1::rh82z-1792354823131-a2e276772076",
+        "Connection": "close"
+      },
+      "bytes": 2238,
+      "sha256": "e00423ae54a5cba73bf4d1d76d3886d3b33f1052907e123c88a745ec59e036b4"
+    },
+    {
+      "url": "https://quark.build/assets/main.js",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "703",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"main.js\"",
+        "Content-Length": "8129",
+        "Content-Type": "application/javascript; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"c485d306b5f80c1e705658b2406116d9\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:39 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::2mjg9-1792354823138-ead19c67e37e",
+        "Connection": "close"
+      },
+      "bytes": 8129,
+      "sha256": "274f4af99975aa860407db9612d20382c9470093047323f97c76827552ba9d4a"
+    },
+    {
+      "url": "https://quark.build/assets/product.css",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "703",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"product.css\"",
+        "Content-Length": "6650",
+        "Content-Type": "text/css; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"a3293a4d67471f6d56d401f66db6ec76\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:39 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::czqlw-1792354823158-39b59e12f1c0",
+        "Connection": "close"
+      },
+      "bytes": 6650,
+      "sha256": "3051ac2ef3d5c4494ed4ad13ec776a3af92d261338b8c19f2bacc5a6d0e5b89b"
+    },
+    {
+      "url": "https://quark.build/assets/quark-logo.svg",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "703",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"quark-logo.svg\"",
+        "Content-Length": "3251",
+        "Content-Type": "image/svg+xml",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"367b02375a253d1cc4ab2b952bbea6bb\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:40 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::dfh6r-1792354823315-2af9ee14afb6",
+        "Connection": "close"
+      },
+      "bytes": 3251,
+      "sha256": "64f04564cbfc017ab94482e05f794503dfb890c3bc23de614ec1151748f33f8d"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/3d-inspect.jpg",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "385",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"3d-inspect.jpg\"",
+        "Content-Length": "166346",
+        "Content-Type": "image/jpeg",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"1d2bd664a4b71e88e265eb253ce4689e\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:13:58 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::dfjkl-1792354823316-a2a06f60f27f",
+        "Connection": "close"
+      },
+      "bytes": 166346,
+      "sha256": "976654a14402a86595b26394930112c475b7816b7f8c237c43dceedaac410d3e"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/3d-overview.jpg",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "703",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"3d-overview.jpg\"",
+        "Content-Length": "102978",
+        "Content-Type": "image/jpeg",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"4437bbde009990481ae54a562e4c69ae\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:39 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::kpj7b-1792354823315-e8b9a5c2f77b",
+        "Connection": "close"
+      },
+      "bytes": 102978,
+      "sha256": "3cfd6820c4c58776888abf5afca66deb28d63977031bbec9ab6d071b89a6ccef"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/balances-by-location.jpg",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "703",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"balances-by-location.jpg\"",
+        "Content-Length": "314300",
+        "Content-Type": "image/jpeg",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"a8583390345e29ee7c5ca2a37a4034ae\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:39 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::tg868-1792354823400-7df0a5c6c90f",
+        "Connection": "close"
+      },
+      "bytes": 314300,
+      "sha256": "260988a57e35e6cb2b13f36edb5e12d292d5b923b6c02848acf42e4193846567"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/reports.jpg",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "390",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"reports.jpg\"",
+        "Content-Length": "219592",
+        "Content-Type": "image/jpeg",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"6934d19f95f995fc9a010f8eabf5af62\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:13:52 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::2mjg9-1792354823465-eaa9779afbc1",
+        "Connection": "close"
+      },
+      "bytes": 219592,
+      "sha256": "4830f36ec8b491459ef9166e0f0230a2722e9e0dc9adac7602038f64f086e8e3"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/studio-template-wizard.png",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "390",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"studio-template-wizard.png\"",
+        "Content-Length": "226223",
+        "Content-Type": "image/png",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"c48a6d0e6256e54673fcfc4e0a01a238\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:13:52 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::mfc7t-1792354823466-ca7eda95e768",
+        "Connection": "close"
+      },
+      "bytes": 226223,
+      "sha256": "79ddf8e266a7dde4f1a2ce49dc2d5a577bcc025562a9cfa8629085cc463484fc"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/studio-version-history.png",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "390",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"studio-version-history.png\"",
+        "Content-Length": "49598",
+        "Content-Type": "image/png",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"92e5e23677730e64e40d49dcaa135829\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:13:52 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::j2ffj-1792354823491-62ea847fd577",
+        "Connection": "close"
+      },
+      "bytes": 49598,
+      "sha256": "6dee2d5e2ccf36e3917a2731ff3bb174d926c2076c0a51bbc827038eac42306c"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/transactions-filtered.jpg",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "390",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"transactions-filtered.jpg\"",
+        "Content-Length": "245968",
+        "Content-Type": "image/jpeg",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"fe79172be76000e759dca5b17709749f\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:13:52 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::c6l7t-1792354823573-f77266c109de",
+        "Connection": "close"
+      },
+      "bytes": 245968,
+      "sha256": "310d8515c1fc6c0b49082cb5dd51b3301dcaccf8c5d4fa33a5579d6a5184774f"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/users.jpg",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "390",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"users.jpg\"",
+        "Content-Length": "99504",
+        "Content-Type": "image/jpeg",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"1cfc72671870e60d386ce58e36c7c127\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:13:52 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::2lrcp-1792354823639-f89b77aae482",
+        "Connection": "close"
+      },
+      "bytes": 99504,
+      "sha256": "8fbaea2c53a3204ebe6d59d724fa2b868cba3509791e263103e1cc50fc43e9c9"
+    },
+    {
+      "url": "https://quark.build/assets/shots/web/webrf-validation-error.jpg",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "385",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"webrf-validation-error.jpg\"",
+        "Content-Length": "206970",
+        "Content-Type": "image/jpeg",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"8528384c748dc07040f91e3356d3eb70\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:13:57 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::nqdjl-1792354823640-da90dd06e844",
+        "Connection": "close"
+      },
+      "bytes": 206970,
+      "sha256": "53d7ea2ecb8b89c75827c1ee101c680c92ed6d81851c63a200707d27b221a10d"
+    },
+    {
+      "url": "https://quark.build/assets/styles.css",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "703",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline; filename=\"styles.css\"",
+        "Content-Length": "55978",
+        "Content-Type": "text/css; charset=utf-8",
+        "Date": "Sun, 18 Oct 2026 20:20:23 GMT",
+        "Etag": "\"52d046bd1b9be5ccecc8816c562cf653\"",
+        "Last-Modified": "Sun, 18 Oct 2026 20:08:39 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "fra1::2lrcp-1792354823653-55be1fe8e7fd",
+        "Connection": "close"
+      },
+      "bytes": 55978,
+      "sha256": "8bb107c0dc83f26216f567fc48628e70b24858026e3c92343ab07ec96a78c09f"
+    }
+  ],
+  "broken_fragments": []
+}

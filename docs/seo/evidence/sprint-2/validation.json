@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-10-18T21:33:49.260976+00:00",
+  "date_local": "2026-10-19",
+  "checks": {
+    "tests": {
+      "command": [
+        "node",
+        "--test",
+        "tests/cost.test.cjs",
+        "tests/form-controller.test.cjs",
+        "tests/lead.test.cjs",
+        "tests/measurement.test.cjs"
+      ],
+      "exit_code": 0
+    },
+    "review_build": {
+      "command": [
+        "node",
+        "scripts/build-review.cjs"
+      ],
+      "exit_code": 0
+    },
+    "static": {
+      "command": [
+        "python3",
+        "scripts/validate.py"
+      ],
+      "exit_code": 0
+    },
+    "whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  },
+  "tests_passed": 20,
+  "lint": "not configured; JS syntax/static checks are recorded separately",
+  "production_release": false,
+  "new_pages_published": false,
+  "wms_code_mutations": false,
+  "external_form_submission": "not performed; provider mocked in tests and local review",
+  "limitations": [
+    "Lighthouse is local simulated mobile, not field CWV.",
+    "Real provider/inbox receipt and durable log retention remain unverified.",
+    "Draft noindex/exclusion are deliberate release guards."
+  ]
+}

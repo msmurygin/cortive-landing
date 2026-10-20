@@ -45,13 +45,10 @@ test('non-JavaScript form POST redirects on provider acceptance',async()=>{
   const originalFetch=global.fetch,originalInfo=console.info;global.fetch=async()=>({ok:true});console.info=()=>{};
   try {const res=response(); await lead(request(new URLSearchParams(valid).toString(),{headers:{origin:'https://quark.build','content-type':'application/x-www-form-urlencoded',accept:'text/html'}}),res);assert.equal(res.code,303);assert.equal(res.location,'/thanks.html');}finally{global.fetch=originalFetch;console.info=originalInfo;}
 });
-test('analytics allowlists prevent spoofed lead successes and personal URL values',()=>{
-  const originalInfo=console.info, logs=[];console.info=s=>logs.push(s);
-  try {
-    const invalid=response();events(request({event:'lead_success',placement:'hero'}),invalid);assert.equal(invalid.code,400);
-    const res=response();events(request({event:'cta_click',placement:'hero',source:'person@example.com',medium:'https://private.test',email:valid.email}),res);
-    assert.equal(res.code,204);const record=JSON.parse(logs[0]);assert.equal(record.source,'other');assert.equal(record.medium,'other');assert.equal(logs[0].includes('@'),false);
-  }finally{console.info=originalInfo;}
+test('browser cannot assert a delivered or accepted enquiry',()=>{
+  for(const name of ['lead_success','demo_form_success','demo_form_accepted']) {
+    const res=response();events(request({event:name}),res);assert.equal(res.code,400);
+  }
 });
 
 test('Vercel deployment and branch preview origins are accepted explicitly', () => {
