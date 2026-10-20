@@ -49,7 +49,7 @@
       const response = await fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ ...data, source, medium }) });
       if (!response.ok) throw new Error('send');
       form.reset();
-      status.textContent = 'Thank you. Your enquiry has been received.';
+      status.textContent = 'Thank you — your enquiry has been received.';
       button.textContent = 'Enquiry sent ✓';
       // Prevent accidental duplicate submissions after confirmed acceptance.
     } catch {
