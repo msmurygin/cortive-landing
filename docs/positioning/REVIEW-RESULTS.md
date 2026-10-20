@@ -51,3 +51,5 @@ Existing non-blocking test observation: a checkbox click made by automation befo
 - Removed the redundant sentence about office users and warehouse operators without replacement.
 - Clarified serial-number tracking as optional in both the Inventory introduction and its capability list, following founder correction. Lot and serial identities are no longer presented as an unconditional combined tracking requirement.
 - These are copy-only changes; no feature implementation, UI, metadata, forms, analytics or production settings changed.
+
+- Further founder wording review: serial-number tracking is described as also supported; Outbound heading is “From order to shipment.” Wave planning is included in the Outbound introduction, capability map and operations list. Bounded read-only inspection of wave RPC/domain commands supports grouping, eligibility preview and release. No WMS tests or certification were launched.
