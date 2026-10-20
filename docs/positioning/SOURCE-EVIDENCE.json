@@ -1,0 +1,127 @@
+{
+  "websiteBaseline": "b30604f52c06ebc83960273717329d23ff623b92",
+  "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686",
+  "method": "Existing certification artifacts and bounded source inspection only; no WMS build/runtime/DB/certification was launched.",
+  "sources": [
+    {
+      "claim": "Receiving",
+      "source": "crates/services/app-server/src/web/rpcs/receipt_commands_rpc.rs",
+      "line": 41,
+      "symbolOrAnchor": "receipt_receive_against_asn",
+      "sha256": "33a65092a152a10fceec3d5a05bfba1f73d31de455cc8506577836264a5e21e1",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Putaway",
+      "source": "crates/services/app-server/src/web/rpcs/putaway_rpc.rs",
+      "line": 21,
+      "symbolOrAnchor": "putaway_suggest_location",
+      "sha256": "b5c47127ed7e5339b253cf9fb6c53463b22d218b706dd50e032d8a2babb0db5a",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Putaway execution",
+      "source": "crates/libs/wms-lib-sql/sql/rf-screens/093_uc_putaway.sql",
+      "line": 37,
+      "symbolOrAnchor": "move_execute",
+      "sha256": "53fab747e9d0618650c81cf85252dd064b8b0f114d9fbd53524bb2b9b3a3e95e",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Inventory and holds",
+      "source": "docs/mvp-certification/inventory/discovery-configuration.md",
+      "line": 32,
+      "symbolOrAnchor": "Capability inventory",
+      "sha256": "8affe30917c4f673fb0c9f2b0575b78a1c9cfe6e71869a3bef7b88ee6d1b6dfa",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Counting and adjustment",
+      "source": "crates/services/app-server/src/web/rpcs/inventory_count_rpc.rs",
+      "line": 60,
+      "symbolOrAnchor": "inventory_count_observe",
+      "sha256": "72efc5fe14fc93bcfd1045d06dff6f3b3fec581bf6c701766fb188a0ebbea2c5",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Replenishment",
+      "source": "crates/services/app-server/src/web/rpcs/replenishment_rpc.rs",
+      "line": 17,
+      "symbolOrAnchor": "replenishment_confirm",
+      "sha256": "d013c5e678c204e48557d35584c0237c1e0db3a074d6da5c05b40d79f413b1d5",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Allocation",
+      "source": "crates/services/app-server/src/web/rpcs/shipment_order_commands_rpc.rs",
+      "line": 56,
+      "symbolOrAnchor": "shipment_order_allocate",
+      "sha256": "16da63b06993ef03ec75a4ed5df930e3310265a013cf44aadb6fa50ae2d3e162",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Picking",
+      "source": "crates/services/app-server/src/web/rpcs/pick_commands_rpc.rs",
+      "line": 32,
+      "symbolOrAnchor": "pick_confirm_qty",
+      "sha256": "87cad5d78aa523f71f606d2248be26b0b58b4ab88a92203d75d2142ac2cc9209",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Packing",
+      "source": "crates/services/app-server/src/web/rpcs/packing_rpc.rs",
+      "line": 38,
+      "symbolOrAnchor": "packing_carton_close",
+      "sha256": "a8c998a52fe897db5825e02ab680922b44d1e10461095fff2492d8890e51e5f3",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Dispatch and loading",
+      "source": "crates/services/app-server/src/web/rpcs/dispatch_rpc.rs",
+      "line": 22,
+      "symbolOrAnchor": "dispatch_create",
+      "sha256": "b17c15b6f66a8522996c16f6dd21e18cba2ed624b563d75b9484de07ee423c71",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Shipment / goods issue",
+      "source": "crates/services/app-server/src/web/rpcs/loading_rpc.rs",
+      "line": 14,
+      "symbolOrAnchor": "confirm_shipment",
+      "sha256": "3cd228e9f12052048da5491e7e83fab318cdb3cf7068d7ea6b70012fe2c3aa18",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Configurable platform",
+      "source": "crates/services/web-ui-server/src/routes/studio_handler.rs",
+      "line": 182,
+      "symbolOrAnchor": "apply_module_handler",
+      "sha256": "618a90d6f9d425f6485f93aeded5fe7bd10c6c99fdf63db027416d9c45057431",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Studio data model",
+      "source": "crates/services/web-ui-server/src/services/studio/module_fork.rs",
+      "line": 24,
+      "symbolOrAnchor": "deep_copy_module",
+      "sha256": "dae070fada29cd524d1fe1049017a8d2e7260a45a02528df9b5726cceb87e00b",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Reporting",
+      "source": "crates/services/app-server/src/web/rpcs/report_definition_rpc.rs",
+      "line": 23,
+      "symbolOrAnchor": "generate_report_data",
+      "sha256": "6beabcd52f19ffb84407116948595f2d1b3f88c8cf9a37386fe45741a7847463",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    },
+    {
+      "claim": "Integration visibility",
+      "source": "crates/services/app-server/src/web/rpcs/integration_event_delivery_rpc.rs",
+      "line": 8,
+      "symbolOrAnchor": "get_integration_event_delivery",
+      "sha256": "d1dc1f66505c8d3f9120a124598665455c6a28d8e2a185d531fc16b824ea7443",
+      "wmsObservedHead": "b036fc5c9ba57d0ba9b36b0d1a2e4dc6890b2686"
+    }
+  ]
+}

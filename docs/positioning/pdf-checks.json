@@ -1,0 +1,42 @@
+[
+  {
+    "profile": "pharmaCold",
+    "pages": 7,
+    "executiveAndTop3PageOne": true,
+    "complexityReadinessPageTwo": true,
+    "textOriginsWithinMargins": true,
+    "allPagesRendered": true
+  },
+  {
+    "profile": "fashion",
+    "pages": 7,
+    "executiveAndTop3PageOne": true,
+    "complexityReadinessPageTwo": true,
+    "textOriginsWithinMargins": true,
+    "allPagesRendered": true
+  },
+  {
+    "profile": "pharmaManufacturing",
+    "pages": 7,
+    "executiveAndTop3PageOne": true,
+    "complexityReadinessPageTwo": true,
+    "textOriginsWithinMargins": true,
+    "allPagesRendered": true
+  },
+  {
+    "profile": "manyOwners",
+    "pages": 7,
+    "executiveAndTop3PageOne": true,
+    "complexityReadinessPageTwo": true,
+    "textOriginsWithinMargins": true,
+    "allPagesRendered": true
+  },
+  {
+    "profile": "small",
+    "pages": 5,
+    "executiveAndTop3PageOne": true,
+    "complexityReadinessPageTwo": true,
+    "textOriginsWithinMargins": true,
+    "allPagesRendered": true
+  }
+]

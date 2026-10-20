@@ -1,0 +1,407 @@
+[
+  {
+    "page": "index.html",
+    "before": "Quark is an early-stage WMS. Explore its inventory and operations scope, then discuss the workflows relevant to your warehouse.\nAvailable capabilities, project fit and implementation commitments are confirmed individually.",
+    "after": "Quark is a configurable warehouse management system with standard warehouse operations built in. Receive and put away goods, control inventory, replenish picking locations and fulfil orders on one shared platform.\nStandard warehouse operations are implemented. Configuration, extensions and integrations are scoped for your warehouse."
+  },
+  {
+    "page": "index.html",
+    "before": "Confirm the available operations and interfaces against your warehouse requirements during evaluation.",
+    "after": "Receiving, inventory and fulfilment share the same stock and task context. Customer-specific connections are scoped separately."
+  },
+  {
+    "page": "index.html",
+    "before": "One Product Overview connects inbound, stock control, outbound and execution with the platform beneath them.",
+    "after": "Quark connects receiving and putaway, inventory control, allocation, picking, packing and shipping on one configurable platform."
+  },
+  {
+    "page": "index.html",
+    "before": "Allocation, picking, packing and loading: evaluate the handoffs between operations.",
+    "after": "Reserve stock, pick orders, complete packing and manage dispatch, loading and shipment confirmation."
+  },
+  {
+    "page": "index.html",
+    "before": "Start with an operational question. Examine the relevant steps and the result you need to check in an evaluation.\nContext What does the warehouse need to resolve?\nOperation Which actions and handoffs matter?\nResult What needs to change, and how will you check it?",
+    "after": "Follow how Quark records stock, guides warehouse work and carries each operation into the next process.\nContext Find the order, stock or warehouse task.\nOperation Receive, move, count, pick or pack in Quark.\nResult Track the resulting stock and process status."
+  },
+  {
+    "page": "index.html",
+    "before": "Make change something you can evaluate.\nQuark includes Metadata Studio and configuration interfaces. Bring a concrete process change to the discussion so we can examine the setup it needs.\nAsk what can be configured, what needs development and how a change is validated before use.",
+    "after": "Configure the work. Keep the core.\nWe built Quark with standard warehouse operations and a metadata-configurable platform. Adapt forms, screens and process settings to your warehouse without starting again with a new WMS.\nCustomer-specific extensions and integrations are scoped around that core. Your implementation includes data preparation, testing, training and rollout."
+  },
+  {
+    "page": "index.html",
+    "before": "Answer a few questions about your operations and receive a practical project preparation brief. Your answers stay in the page.",
+    "after": "Assess your project preparation: data, requirements, ownership and implementation planning. Your answers stay in the page."
+  },
+  {
+    "page": "index.html",
+    "before": "Start with your warehouse.\nLeave your email and, if useful, your industry. We’ll use it to follow up on your enquiry.",
+    "after": "See Quark at work.\nRequest a demonstration of Quark’s core warehouse workflows. Leave your email and optional industry; we’ll follow up to discuss your operation, configuration and integration needs."
+  },
+  {
+    "page": "index.html",
+    "before": "Warehouse inventory and operations, with evaluation scope agreed for your project.",
+    "after": "A configurable WMS for receiving, inventory and fulfilment."
+  },
+  {
+    "page": "product.html",
+    "before": "Know the scope. Evaluate the operation.\nExplore Quark’s warehouse operations and the questions to bring to an evaluation. Quark is an early-stage WMS: the operations and interfaces available for your project are agreed against the current build and your requirements.",
+    "after": "Run the warehouse. Configure the workflow.\nQuark manages receiving, putaway, inventory control, replenishment, allocation, picking, packing and shipping on one configurable platform. Office users and warehouse operators work from connected stock, document and task records. Customer-specific configuration, extensions and integrations build on this shared WMS core."
+  },
+  {
+    "page": "product.html",
+    "before": "A conceptual overview of Quark WMS — how the warehouse flow and the capabilities that support it share one core. Select a domain to jump to its module.",
+    "after": "Quark’s implemented warehouse operations share inventory, task execution and a configurable platform. Select a domain to see how it works. Specialist options and customer connections are scoped separately."
+  },
+  {
+    "page": "product.html",
+    "before": "Real-time inventory",
+    "after": "Inventory balances"
+  },
+  {
+    "page": "product.html",
+    "before": "Packing & sorting",
+    "after": "Packing & carton completion"
+  },
+  {
+    "page": "product.html",
+    "before": "Voice picking\nAndroid / mobile",
+    "after": "Voice options: individual verification\nMobile device fit: project-specific"
+  },
+  {
+    "page": "product.html",
+    "before": "API / iPaaS\nMarketplace & ERP",
+    "after": "Integration events & API\nERP connections: project-specific"
+  },
+  {
+    "page": "product.html",
+    "before": "ZPL labels",
+    "after": "Label templates"
+  },
+  {
+    "page": "product.html",
+    "before": "A direction we're exploring — not available today. Read the vision ↗",
+    "after": "AI Harness, AI Onboarding and AI Support are future vision. Core WMS operations work today. Read the vision ↗"
+  },
+  {
+    "page": "product.html",
+    "before": "Conceptual overview — not a release list.",
+    "after": "Core operations are implemented. Specialist options and external connections are verified per project."
+  },
+  {
+    "page": "product.html",
+    "before": "A receipt is only useful when the stock identity and its destination can be followed.\nCapability scope Scope\nReceiving goods and recording receipts\nPutaway destinations and stock placement\nWhat to evaluate Checks\nConfirm the received quantity and stock identity.\nReview the destination and check the resulting stock.",
+    "after": "Quark records incoming goods against an ASN or through blind receiving, captures their stock identity and moves them into storage through putaway.\nWhat Quark does Core\nReceive against expected lines or record an unplanned receipt, with quantities, owner, SKU and configured lot or serial details.\nApply putaway rules to identify storage destinations and confirm the movement of received stock.\nHow the work flows Workflow\nThe receiver identifies the goods and records actual quantities. Quark creates the receipt and inventory records and applies the configured receiving checks.\nThe putaway operator confirms the destination. Stock is recorded at its storage location for inventory control, replenishment and allocation."
+  },
+  {
+    "page": "product.html",
+    "before": "A quantity alone does not explain where stock is, its identity or why it is held.\nCapability scope Scope\nStock balances and movement records\nHolds, lots, serial numbers and containers\nInventory counts and stock adjustments\nReplenishment planning and execution\nWhat to evaluate Checks\nInspect the location, owner, SKU and relevant stock identities.\nRelate a balance or hold to its operation history.\nReview count, adjustment and replenishment requirements.",
+    "after": "Quark shows stock by owner, SKU, location, container, lot and serial number, with quantities, availability, holds and movement history.\nWhat Quark does Core\nView stock balances and transaction history; move full or partial quantities between warehouse locations.\nTrack lot, expiry, serial and container identities and the holds that affect stock availability.\nRecord inventory counts, review variances and post stock adjustments through the document workflow.\nPlan replenishment for configured picking locations and execute source, quantity and destination confirmations.\nHow the work flows Workflow\nSupervisors filter balances to identify stock and investigate its location, hold context and recorded movements.\nCount observations are reviewed before accepted variances update inventory through stock adjustments.\nReplenishment moves stock into picking locations; allocation uses the resulting available stock for orders."
+  },
+  {
+    "page": "product.html",
+    "before": "Allocation, picking and shipping need clear handoffs and visible exceptions.\nCapability scope Scope\nAllocation and stock reservation\nPicking review and completion\nPacking workstations and carton completion\nDispatch and loading\nWhat to evaluate Checks\nExamine the demand, reservation and remaining quantity.\nFollow completion and the handoff to the next operation.\nDefine the checks between loading and goods issue.",
+    "after": "Quark connects shipment orders to stock reservation, warehouse picking, packing, dispatch, loading and goods issue.\nWhat Quark does Core\nAllocate stock to order demand using configured policies; track reserved quantities and remaining demand.\nRelease picking work, guide source and quantity confirmations, and record full or short picks.\nVerify picked cartons or repack picked goods at a packing station, then complete cartons with weights and labels.\nPlan dispatch and loads, confirm loaded units and record shipment confirmation with goods issue.\nHow the work flows Workflow\nAllocation reserves stock for the order. Released work becomes picking tasks for warehouse operators.\nPicking records the goods taken and hands them to the configured next step, including packing where required.\nPacking, loading and shipment confirmation have distinct completion steps. Goods issue updates inventory and shipment records."
+  },
+  {
+    "page": "product.html",
+    "before": "Operators and supervisors need to know which task they are doing and what happens when it cannot be completed.\nCapability scope Scope\nRF terminal workflows\nTask ownership, progress and handoffs\nWhat to evaluate Checks\nReview the operator journey on the relevant RF interface.\nCheck task ownership, progress and exception handling.",
+    "after": "Quark’s RF workflows guide operators through warehouse tasks, while task records connect ownership and progress to the underlying operation.\nWhat Quark does Core\nUse RF workflows for receiving, stock inquiry, movements, counts, replenishment and picking.\nAssign and dispatch work, track the responsible operator and record completion or supported exception outcomes.\nHow the work flows Workflow\nOperators identify the task and confirm the stock, quantity or destination required by that workflow.\nThe business operation updates its inventory or document records alongside task progress, keeping execution connected to warehouse state."
+  },
+  {
+    "page": "product.html",
+    "before": "Evaluate how the setup changes.\nA process change needs an identifiable owner, a clear version and a checked operational effect.\nCapability scope Scope\nMetadata Studio and configuration management\nReport definitions and templates\nIntegration-event visibility\nWhat to evaluate Checks\nAsk to compare one supported configuration change before and after use.\nCheck a report output against its source data.\nConfirm interface ownership, error handling and recovery.",
+    "after": "Configure the platform. Support the operation.\nQuark combines standard warehouse processes with metadata-driven screens, versioned modules, roles and report definitions. Implementation teams adapt the user workspace and process settings around the same core, rather than creating a new WMS for each customer.\nWhat Quark does Core\nManage forms, screens and module drafts in Metadata Studio; apply reviewed module versions.\nDefine report data and templates and make operational outputs available to users.\nInspect integration-event records and deliveries; define external connections within the customer implementation.\nHow the work flows Workflow\nAn administrator prepares a configuration change in a module draft and applies the reviewed version.\nRoles govern access to operations; report definitions and templates turn warehouse data into usable outputs.\nERP, carrier, marketplace and automation connections are implemented against agreed data contracts, ownership and recovery requirements."
+  },
+  {
+    "page": "product.html",
+    "before": "Bring an operational question.\nThese examples help frame an evaluation. They describe questions and checks to work through together, rather than a self-service product demonstration.",
+    "after": "Follow an operational workflow.\nThese examples show how warehouse users work in Quark: investigate stock, reserve demand and apply a configuration change."
+  },
+  {
+    "page": "product.html",
+    "before": "A clear set of facts to discuss: which stock is involved, what happened and what still needs investigation.",
+    "after": "A stock view tied to its owner, location, holds and movement history, so a supervisor can investigate availability."
+  },
+  {
+    "page": "product.html",
+    "before": "Step 3 Check that the recorded operation explains the balance.",
+    "after": "Step 3 Use the stock context and recorded operations to investigate the balance."
+  },
+  {
+    "page": "product.html",
+    "before": "Review demand and allocation.\nAn order has partially allocated demand. A further allocation needs to be understood.\nCompare the reserved stock and remaining demand before and after the operation.\nAn explicit reservation change and any remaining demand. Picking and shipping are separate steps to examine.",
+    "after": "Reserve stock for order demand.\nAn order needs available stock reserved before warehouse picking.\nReserve eligible stock and identify any demand that remains unallocated.\nOrder reservations and remaining demand are visible before the order proceeds to picking and shipment."
+  },
+  {
+    "page": "product.html",
+    "before": "Step 2 Follow the agreed allocation scenario in the available build.",
+    "after": "Step 2 Run allocation using the order’s configured policy."
+  },
+  {
+    "page": "product.html",
+    "before": "Evaluate a process change.\nA warehouse process needs a change in its supported configuration.\nUnderstand the change, who owns it and how its effect is checked.\nAn agreed before/after evaluation, with responsibilities and any development needs made clear.\nStep 1 Describe the current operation and expected difference.\nStep 2 Identify the supported setting, its version and the steps needed to apply it.\nStep 3 Repeat the same operation, compare the result and discuss how to restore the prior setup.\nPlan the evaluation\nConfirm the fit before making commitments.\nAvailability, project scope, device compatibility and individual connections are confirmed during evaluation.",
+    "after": "Apply a configuration change.\nAn administrator needs to update a warehouse form or screen.\nPrepare and review a module version before applying the configuration change.\nA reviewed configuration version that adapts the user workspace while keeping core warehouse operations in place.\nStep 1 Select the module and prepare a draft with the required form or screen change.\nStep 2 Review the draft and check the changed interface against the warehouse workflow.\nStep 3 Apply the reviewed module version and confirm the updated workspace.\nPlan your implementation\nKeep the core. Scope your implementation.\nStandard warehouse operations are implemented. Your project defines configuration, extensions, integrations and rollout. Specialist process requirements, device compatibility and any regulatory validation or certification requirements are verified for the customer project."
+  },
+  {
+    "page": "product.html",
+    "before": "Bring your processes, stock identities, users and device requirements. Agree the relevant checks and open gaps before a rollout.\nCheck change and connections\nReview supported configuration changes and report outputs. Confirm each ERP, carrier or automation connection individually.",
+    "after": "Define locations, stock identities, roles and process rules. Plan master-data preparation, training, acceptance testing and rollout.\nScope extensions and connections\nAgree any extensions and each ERP, carrier or automation connection, including data flows, ownership and recovery."
+  },
+  {
+    "page": "product.html",
+    "before": "Let’s evaluate the fit\nStart with your warehouse.\nDescribe your operation and review the available build together. Agree on scope, open requirements and success criteria before making implementation commitments.",
+    "after": "Request a product demonstration\nSee Quark at work.\nSee Quark’s implemented core workflows and discuss how the configurable platform fits your warehouse. Customer-specific setup, extensions, integrations and rollout are scoped separately."
+  },
+  {
+    "page": "product.html",
+    "before": "Warehouse inventory and operations, with evaluation scope agreed for your project.",
+    "after": "A configurable WMS for receiving, inventory and fulfilment."
+  },
+  {
+    "page": "vision.html",
+    "before": "A warehouse management system that deploys in days, not years . Built for the warehouse still run out of spreadsheets, and for the 3PL carrying a system nobody left instructions for. An AI agent configures it — not a consulting team — because every feature is metadata, not code.\nA warehouse management system whose features live as metadata instead of code — so it is configured, not customised.\nBuilt and running: Studio, RF terminals, lots and serials, statutory forms, voice picking in beta. No hosted demo yet. No customers yet.\nMaxim Smurygin, in Sofia. Building it alone, looking for the first warehouse rather than the fiftieth.\nWrite to me directly — hello@quark.build . Otherwise the form at the foot of the page does the same thing.\n§ 01 — The diagnosis\nTraditional WMS is stuck in 2010.\nManhattan, SAP and Infor are excellent systems — built for an era when warehouse management meant custom code. That era is ending. Their architecture was never designed to be configured at runtime; only customised, by experts, over months, with tribal knowledge trapped in their heads. We respect what they built. We are building what comes next.\nLegacy WMS · circa 2010\nCustomised by experts. Slowly.\n12 months to go live\nHardcoded processes you can’t touch\nNew SKU? File a ticket. Wait 3 weeks.\nTribal knowledge in consultants’ heads\nEvery change is a customisation project\nCannot be audited. Cannot be rolled back.\nQuark · 2026\nConfigured by AI. Live.\n1 day to go live\nEvery feature is metadata, addressable by agents\nNew SKU? Type it in. It’s live in seconds.\nThe system describes itself at runtime\nEvery mutation is versioned and reversible\nDestructive ops require human approval — by design\nFit — this is you\nYou are running it on spreadsheets, or on something you inherited.\nNo WMS team, and no appetite for a six-month project. Either there is no system at all and the warehouse lives in Excel and in people’s heads, or there is one — written years ago, by someone who has left, and nobody dares touch it.",
+    "after": "Quark’s core warehouse operations are implemented on a configurable platform. Our next ambition is AI Harness: AI Onboarding, AI Support and assisted setup under human control. These AI capabilities are future vision; customer implementation is scoped around the working WMS.\nA working WMS with standard warehouse operations and metadata-driven configuration. Customer-specific extensions and integrations are scoped separately.\nImplemented: receiving, putaway, inventory, replenishment, allocation, picking, packing and shipping, with Studio and RF workflows. Voice options require individual verification; autonomous AI setup is future vision.\nMaxim Smurygin, in Sofia. Founder of Quark WMS, working with prospective warehouse customers on implementation needs.\nWrite to me directly, hello@quark.build . The warehouse enquiry form is available through the contact links.\n§ 01, Core and vision\nA working WMS. A future AI layer.\nQuark runs standard warehouse processes today. The configurable platform supports customer implementation; the future AI Harness aims to assist configuration and support. Implementation time and operational outcomes depend on the warehouse, its data, integrations and agreed rollout.\nImplemented core WMS\nWarehouse work. Connected.\nCore implemented operations\nReceiving, putaway and inventory control\nReplenishment, allocation and picking\nPacking, dispatch, loading and goods issue\nConfigurable screens, roles and policies\nCustomer-specific implementation scope\nFuture AI Harness\nAssisted setup. Human control.\nAI future vision\nAI Onboarding to propose configuration drafts\nAI Support to help users investigate issues\nMachine-readable context for AI assistance\nHuman review before proposed changes are applied\nProject validation before operational use\nFit, this is you\nYou need warehouse control that can adapt.\nQuark supports warehouse teams moving from manual work or replacing an existing system. Standard operations provide the core; your locations, roles, policies and connections define the implementation."
+  },
+  {
+    "page": "vision.html",
+    "before": "Statutory paperwork you currently assemble by hand",
+    "after": "Operational reports and documents built from warehouse data"
+  },
+  {
+    "page": "vision.html",
+    "before": "Fit — not yet\nWe would rather say so than waste your quarter.\nQuark is early. There are places where a system with twenty years of scar tissue is still the right answer, and we would rather you heard that here than three months into an evaluation.\nHundreds of thousands of SKUs across many sites\nAutomation on the floor — AS/RS, shuttles, sorters\nA validated GxP environment that must be certified before it is touched\nYou need a vendor with a decade of references tomorrow morning\n§ 02 — The day we go live\nDescribe your warehouse. Log in tomorrow.\nNot a prototype. Not a sandbox demo. Production. Bring a photo of your aisles, a spreadsheet of your SKUs, and a short conversation about how you actually run. By morning, your operators have a working WMS configured to your specific business — RF terminals, picking rules, integrations, the lot.\nDay zero · 09:00 — Tell the AI about your operation. Upload a photo of your aisles. Drop in your stock list as Excel. Describe — in your own words — what you store, how you receive, who picks. The agent extracts zones, SKUs, lot policies and team structure automatically.\nDay zero · 14:30 — Review the draft in the Studio. The agent’s configuration arrives as a draft version of the module — never as a change to your running system. You open it in the Studio and inspect it as a graph: business objects, forms, roles, navigation, rules. Apply when it’s right, discard when it isn’t.\nDay one · 08:00 — Operators log in. The system is live. RF terminals scan their first pallet. Pickers walk their first wave. Every change from this moment goes through the same Draft → Validate → Approve → Apply pipeline — including the ones the AI proposes itself.\n§ 03 — The foundation",
+    "after": "Requirements to verify individually\nSpecialist requirements need explicit scope.\nCore capability and project suitability are different questions. Scale, automation, regulatory validation and specialist workflows need their own requirements, evidence and acceptance criteria.\nHigh-volume or multi-site performance requirements\nAutomation on the floor, AS/RS, shuttles, sorters\nValidated GxP environments and required certification\nSpecialist device, packing and integration requirements\n§ 02, Future AI Onboarding\nDescribe the operation. Review an AI proposal.\nOur future AI Onboarding concept would turn warehouse descriptions and structured inputs into configuration proposals for human review. Today, configuration, data preparation, integrations, testing and rollout are carried out as a customer implementation. No automatic setup or fixed deployment time is promised.\nFuture concept · Describe your operation. AI Onboarding would help interpret warehouse descriptions and structured data, then suggest locations, stock settings and role configuration. This is a proposed future workflow.\nFuture concept · Review a proposed draft. The intended AI Harness would submit a configuration draft for review in Studio. Reviewers would check proposed changes and decide what to accept; AI-generated drafts are future vision.\nImplementation · Validate and roll out. Warehouse teams validate data, devices, interfaces and operating scenarios before rollout. The implemented core WMS supports warehouse execution; AI assistance would not replace customer acceptance or implementation planning.\n§ 03, The foundation"
+  },
+  {
+    "page": "vision.html",
+    "before": "A manifesto for systems that AI agents can safely operate. Not governance bolted on top — governance baked into the data model itself. Five principles. No path around them.\nFeatures are data, not code.\nForms, workflows, validation rules, navigation, business objects — all rows in a database. Not source files. An agent issues INSERT/UPDATE statements; not merge requests.",
+    "after": "The future AI Harness is guided by these design principles. Quark’s current configuration platform is the foundation; the principles below describe intended controls for AI-assisted changes, not a claim of autonomous production operation.\nConfiguration has a defined model.\nQuark already uses metadata for configurable screens and modules. The future Harness would use supported configuration interfaces to propose changes while core warehouse business rules remain in the product."
+  },
+  {
+    "page": "vision.html",
+    "before": "Every capability self-describes.\nEndpoints, objects, UI elements expose machine-readable schemas through introspection. Agents discover new capabilities the moment they exist — no client update, no integration work.\nopenrpc · json schema · live\nMutations are reversible.\nNo write goes direct to a live system. Every change passes Draft → Validate → Apply as a new version. The version that was live before it stays. Rollback as a structural property, not a recovery procedure.",
+    "after": "Expose context to AI assistance.\nThe future Harness would use machine-readable descriptions of supported operations and configuration. Each integration would still need an agreed interface and project validation.\nmachine-readable context · future AI use\nReview and version configuration.\nStudio manages module drafts and versions today. AI-proposed configuration would follow a reviewed change lifecycle; operational stock transactions keep their own business rules and audit records."
+  },
+  {
+    "page": "vision.html",
+    "before": "Dangerous ops require a human.\nDeletions, financial transactions, customer-facing publishes — they cannot reach execution without an approval signal. Not a configurable option. A code path that physically does not exist.\nunavoidable · by design\nSandboxing is structural.\nA field script can read a field. It cannot call the database. It cannot make HTTP. The sandbox isn’t a scanner looking for dangerous calls — it’s an architecture that refuses to expose the APIs at all.",
+    "after": "Keep people responsible for approval.\nThe future Harness should require accountable human approval for sensitive proposed actions. This is a design requirement for the AI layer, not a blanket claim about every current operation.\nfuture AI approval policy\nLimit the AI execution surface.\nFuture AI and extension execution should use explicitly scoped interfaces. Isolation and access controls must be verified for the actual deployment and extension."
+  },
+  {
+    "page": "vision.html",
+    "before": "A stronger claim — no path around the controls.\nExternal governance is only as strong as its perimeter. Quark embeds governance into the primary data model. Change , validation and rollback are not enforced from outside — they are the only available vocabulary for mutation.",
+    "after": "A design goal: controlled AI assistance.\nAI Harness should make change , validation and approval explicit. Its future controls need evidence before use; the existing core WMS does not depend on the AI layer."
+  },
+  {
+    "page": "vision.html",
+    "before": "§ 04 — Figure 01",
+    "after": "§ 04, Figure 01"
+  },
+  {
+    "page": "vision.html",
+    "before": "Mutation flows top-down: an agent (or human) drafts a change against the metadata layer, validation runs against the schema, the apply step is gated by approval policy, and the runtime is rebuilt from metadata — no redeploy, no migration, no downtime.",
+    "after": "This diagram describes the intended AI Harness change flow: prepare a draft, validate its configuration and obtain approval before application. It is a future AI architecture concept, not a guarantee of zero downtime or automatic customer implementation."
+  },
+  {
+    "page": "vision.html",
+    "before": "L3 Approval gate webhook · telegram · email · dashboard human",
+    "after": "L3 Approval gate proposed human approval channels human"
+  },
+  {
+    "page": "vision.html",
+    "before": "Fig. 01 · Metadata-governable architecture\nGovernance is not a layer on top. It is the only vocabulary for change.\nMetadata is the source of truth. The runtime is rebuilt from L1, not the other way around.\nDrafts are isolated. A bad agent decision becomes a discarded draft — not a production incident.\nApproval is unavoidable. Destructive paths cannot reach execution without a signed signal.\nSandboxes refuse, not detect. The architecture doesn’t scan scripts for danger — it never exposes the dangerous APIs.\nIntrospection is live. Agents read the system the same way the system reads itself.\n§ 05 — Who it’s for\nTwo readers. One economic shift.\nQuark transforms two groups simultaneously. The integrators who today bill 6 months on routine config — and the regulated industries that need every change attributable to the record.",
+    "after": "Fig. 01 · Future AI Harness architecture concept\nAI assistance needs explicit controls.\nMetadata is the source of truth. The future AI layer should work through supported configuration models.\nDrafts are isolated. AI proposals should remain separate until reviewed and accepted.\nHuman approval is required by the design. Sensitive AI proposals should require a recorded human decision.\nExecution access is scoped. Future extensions should operate within explicit access boundaries.\nContext is machine-readable. AI assistance should use the context made available by supported interfaces.\n§ 05, Who it’s for\nImplementation teams. Accountable operations.\nThe configurable core serves warehouse teams and implementation partners. Future AI assistance aims to support their work; it does not establish savings, ROI or regulatory certification."
+  },
+  {
+    "page": "vision.html",
+    "before": "Your business is not threatened. It is transformed.\nToday, implementing Infor or SAP eats six months of your team mapping SKUs, drawing zones and writing printer scripts. Clients consider it “included.” Your margin lives in the leftover hours.\nWith Quark, that work takes two weeks. The remaining 5.5 months become available for the work you actually enjoy — process consulting, ERP integration, operator training, new clients.\nMore projects per year, same headcount\nHigher margin per billable hour\nNo junior implementer treadmill\n“Sell, train, support — the platform handles configuration.”",
+    "after": "Configure the core. Deliver the project.\nImplementation partners define warehouse processes, configure Quark, prepare data and connect external systems. Training, acceptance testing and rollout remain part of the customer project.\nFuture AI Onboarding and AI Support aim to assist these activities. Any delivery-time, productivity or cost benefit must be measured in the relevant customer context.\nConfigured warehouse processes\nExplicit integration responsibilities\nTraining and acceptance criteria\n“A working core, configured for the customer’s operation.”"
+  },
+  {
+    "page": "vision.html",
+    "before": "Compliance does not relax because AI is in the loop — it tightens. Quark’s approval hooks, audit logs, and reversible mutations are designed for environments where every change must be justified, attributable, and traceable.\nEvery mutation logged with actor, timestamp, before / after state\nEvery deployment is a named version — who applied it, when, and why\nDestructive operations require sign-off through a channel of your choice\nEvery user script runs in a sandbox that cannot escape its permissions\nIf your auditor asks “what did the AI change last Tuesday?” — we show them, to the record, in under a minute.\n§ 06 — The Standard Model",
+    "after": "Quark provides stock identities, holds, role-based access and operational records. Regulated deployments require a separate review of applicable obligations, validation evidence and certification. Future AI features do not substitute for those responsibilities.\nIdentify the controls required for the customer’s process\nReview access, records and configuration versions\nAgree validation and change-approval responsibilities\nVerify extensions and interfaces within the deployment scope\nRequired audit evidence and response times are defined and verified within the customer project.\n§ 06, The Standard Model"
+  },
+  {
+    "page": "vision.html",
+    "before": "Named after the fundamental particles of matter — because warehouses are built from fundamental blocks too. Each module is a quark, gluon, boson, or lepton in a single coherent system. You compose, not integrate.",
+    "after": "The particle names distinguish the current WMS platform, specialist options and future product directions. The roadmap does not replace the implemented core or imply ready-made external-system connections."
+  },
+  {
+    "page": "vision.html",
+    "before": "Metadata core. The fundamental particles of warehouse operations — entities, policies, rules.",
+    "after": "Implemented standard warehouse operations on a metadata-configurable platform."
+  },
+  {
+    "page": "vision.html",
+    "before": "Voice layer over your WMS. The quantum of sound — listens, confirms, scans, posts back. Stays on SAP, Manhattan, Infor, Odoo. Two-week integration, not a rip-and-replace.\n+15–25%\n99%+\n$700\n5×–10×",
+    "after": "Voice picking is a specialist option. Supported workflows, devices, languages and any connection to another WMS require individual verification. No standard integration time or performance improvement is claimed.\nVerify\nTest\nScope\nMeasure"
+  },
+  {
+    "page": "vision.html",
+    "before": "Binds Quark to ERP, marketplaces, carriers, EDI. The strong force between systems.",
+    "after": "A planned integration product direction. Current customer connections are scoped individually."
+  },
+  {
+    "page": "vision.html",
+    "before": "Carries every state change — receipt, ship, adjust — across modules. Pub/sub with audit.",
+    "after": "A planned event-bus product direction, separate from the integration-event records already in the platform."
+  },
+  {
+    "page": "vision.html",
+    "before": "Lightweight client for RF scanners, tablets, mobiles. Runs everywhere, weighs nothing.",
+    "after": "A planned edge/client product direction. Quark already provides RF workflows; device compatibility is verified per project."
+  },
+  {
+    "page": "vision.html",
+    "before": "Pre-composed industry templates — 3PL × Pharma, D2C × Fashion. Quarks bound by an industry.",
+    "after": "A planned direction for industry templates. Templates and any regulated use require separate verification."
+  },
+  {
+    "page": "vision.html",
+    "before": "The intelligence hidden in voice sessions. Per-operator acoustic tuning, slotting hints, fraud signals.",
+    "after": "Future research into voice-session assistance and tuning; no production accuracy or productivity claim."
+  },
+  {
+    "page": "vision.html",
+    "before": "The onboarding agent. Carries information at the speed of light.",
+    "after": "Future AI Onboarding and AI Support within the proposed AI Harness."
+  },
+  {
+    "page": "vision.html",
+    "before": "Reporting that passes through everything — almost weightless, never blocking.",
+    "after": "Operational report definitions and templates on the current platform."
+  },
+  {
+    "page": "vision.html",
+    "before": "RBAC and identity. Pauli’s principle — every user is unique.",
+    "after": "RBAC and identity. Pauli’s principle, every user is unique."
+  },
+  {
+    "page": "vision.html",
+    "before": "Gives meaning — the configuration field that makes other particles real.",
+    "after": "A future AI-oriented configuration-engine direction, separate from the current Metadata Studio and configurable WMS."
+  },
+  {
+    "page": "vision.html",
+    "before": "Composite adapters — bridges between protocols, formats, eras.\nQuark is pronounced [kwɔːk], after Gell-Mann’s coinage. He took the spelling from a single line in Joyce’s Finnegans Wake : “Three quarks for Muster Mark.” Mark is also the name of my son. The metaphor and the family — they earn their place.\n§ 07 — Who is building this",
+    "after": "Composite adapters, bridges between protocols, formats, eras.\nQuark is pronounced [kwɔːk], after Gell-Mann’s coinage. He took the spelling from a single line in Joyce’s Finnegans Wake : “Three quarks for Muster Mark.” Mark is also the name of my son. The metaphor and the family, they earn their place.\n§ 07, Who is building this"
+  },
+  {
+    "page": "vision.html",
+    "before": "Quark has no customers yet. That is the honest state of it, and it is also the reason this page exists — we are looking for the first warehouse, not the fiftieth.\nI built Quark because I kept watching the same thing happen: a warehouse that knows exactly how it wants to work, and a system that will not let it, until somebody bills six months to change two columns on a form. The problem was never the consultants. It was an architecture where every business rule is code, and code is expensive to touch.\nSo Quark keeps its features in tables instead — forms, rules, roles, navigation, statutory documents. That one decision is what makes a day-long deployment possible, and it is also what lets an AI agent operate the system without being trusted, because every change it proposes arrives as a draft that a person applies or discards.\nIt is named after the particle, which Gell-Mann named after a line in Finnegans Wake — three quarks for Muster Mark. Mark is my son.",
+    "after": "Quark brings standard warehouse operations and a configurable user platform together. Customer implementations start from that shared core and define configuration, extensions and integrations for each operation.\nI built Quark to connect standard warehouse operations with a configurable user platform. The core handles warehouse work; implementation teams adapt settings, screens and connections to the customer’s requirements.\nMetadata Studio manages forms, screens and module versions today. Future AI Harness work aims to assist configuration and support through reviewed proposals. It is separate from the implemented WMS and from customer delivery commitments.\nIt is named after the particle, which Gell-Mann named after a line in Finnegans Wake , three quarks for Muster Mark. Mark is my son."
+  },
+  {
+    "page": "vision.html",
+    "before": "Metadata core and Studio — modules as graphs, drafts, versions, one-click rollback\nRF terminals, both kinds — modern web handheld and character mode on legacy scanners",
+    "after": "Configurable platform and Studio, forms, screens, module drafts and versions\nRF terminals, both kinds, modern web handheld and character mode on legacy scanners"
+  },
+  {
+    "page": "vision.html",
+    "before": "Lots, expiry, serials, and sixteen statutory forms\nPermissions across 757 resources, role by role\nPhonon — hands-free voice picking, in beta\nNot built yet\nA hosted demo you can open by yourself — it runs locally today\nA catalogue of ready ERP and marketplace connectors\nThe roadmap modules — Gluon, Boson, Lepton, Hadron and the rest\nA price list. There is no point setting one before the first warehouse\nCertification for validated GxP environments",
+    "after": "Lot, expiry, serial and container stock identities\nRole-based access to warehouse operations\nAllocation, packing, dispatch, loading and goods issue\nProject scope and future directions\nProduct demonstrations are arranged through the contact form\nERP and marketplace connections are scoped for each project\nAI Harness, AI Onboarding and AI Support remain future vision\nCommercial terms and implementation timelines are agreed separately\nRegulatory certification and specialist deployment requirements need individual verification"
+  },
+  {
+    "page": "vision.html",
+    "before": "Discuss your warehouse requirements and evaluate the available build before agreeing on scope or timing.\nWarehouse inventory and operations, with evaluation scope agreed for your project.",
+    "after": "See Quark’s implemented warehouse workflows in a demonstration. Then define your configuration, integration and rollout requirements separately.\nA configurable WMS for receiving, inventory and fulfilment."
+  },
+  {
+    "page": "wms-cost.html",
+    "before": "This guide offers a scoping framework, not market price ranges or a Quark price list. The calculator uses only numbers you enter. It makes no assumption about Quark’s deployment model, available integrations or implementation time.",
+    "after": "This guide offers a scoping framework, not market price ranges or a Quark price list. The calculator uses only numbers you enter. Quark provides implemented core warehouse operations. Deployment, customer-specific configuration, extensions and integrations are separate project costs."
+  },
+  {
+    "page": "wms-cost.html",
+    "before": "What is available to evaluate, and what remains unsupported?",
+    "after": "Which customer-specific configuration, extensions and integrations are required?"
+  },
+  {
+    "page": "wms-cost.html",
+    "before": "Quark is an early-stage WMS. Evaluation scope, capabilities, deployment and commercial terms must be confirmed individually. This guide is not a quotation or delivery commitment.\nRead the long-term vision . The vision does not substitute for verification of the available build.",
+    "after": "Quark is a working, configurable WMS with implemented standard warehouse operations. Your project budget covers the agreed software terms, configuration, extensions, integrations and rollout. This input-based guide is not a quotation or delivery estimate.\nRead the long-term vision . AI Harness is future vision and is separate from the implemented core WMS and the budget for your customer implementation."
+  },
+  {
+    "page": "wms-cost.html",
+    "before": "Warehouse inventory and operations, with evaluation scope agreed for your project.",
+    "after": "A configurable WMS for receiving, inventory and fulfilment."
+  },
+  {
+    "page": "tools/wms-readiness-assessment/index.html",
+    "before": "Answer a few questions about your operations and receive a practical, industry-aware project preparation brief.",
+    "after": "Assess your warehouse project preparation: data, requirements, internal ownership and implementation planning. Receive a practical brief for your customer implementation."
+  },
+  {
+    "page": "tools/wms-readiness-assessment/index.html",
+    "before": "A practical starting point for WMS selection.\nUse this free tool before an internal planning meeting or a conversation with a WMS supplier. It is designed for warehouse and logistics managers, IT teams and 3PL operators preparing to evaluate a warehouse management system.",
+    "after": "Prepare your project for implementation.\nQuark provides implemented standard warehouse operations. This free tool helps warehouse managers, IT teams and 3PL operators assess their own data, requirements, responsibilities and implementation preparation."
+  },
+  {
+    "page": "tools/wms-readiness-assessment/index.html",
+    "before": "The result is preliminary discovery, not a product recommendation, go-live assessment or implementation estimate. If you need to organise financial assumptions separately, read our WMS cost planning guide . Learn about Quark WMS and its long-term vision .",
+    "after": "The result describes your project preparation. It does not certify regulatory compliance, go-live readiness or compatibility with specialist requirements, and it does not estimate implementation effort. If you need to organise financial assumptions separately, read our WMS cost planning guide . Learn about Quark WMS and its long-term vision ."
+  },
+  {
+    "page": "tools/wms-readiness-assessment/index.html",
+    "before": "Your report is ready. Read it below or download your full PDF and JSON — no email required.\nA preliminary discovery brief. User-reported facts, hypotheses and unknowns are separate. This is not a compliance audit, go-live assessment or confirmation that Quark supports your requirements.",
+    "after": "Your report is ready. Read it below or download your full PDF and JSON, no email required.\nThis brief assesses your project preparation. Quark’s core WMS operations are implemented; your configuration, integrations and specialist requirements are scoped separately. The brief is not a compliance audit or go-live certification."
+  },
+  {
+    "page": "tools/wms-readiness-assessment/index.html",
+    "before": "This is a deterministic planning questionnaire. A larger or more complex warehouse is not less prepared by definition. High volume and having no existing WMS do not reduce readiness. Industry and operating models select questions only; explicit answers establish stated requirements. Separate dimensions disclose factors, supporting answers and unknowns. No applicable regulation or template is inferred. It makes no cost, ROI, implementation-time or Quark compatibility promises.\nWarehouse inventory and operations, with evaluation scope agreed for your project.",
+    "after": "This is a deterministic planning questionnaire. A larger or more complex warehouse is not less prepared by definition. High volume and having no existing WMS do not reduce readiness. Industry and operating models select questions only; explicit answers establish stated requirements. Separate dimensions disclose factors, supporting answers and unknowns. No applicable regulation or template is inferred. It evaluates customer preparation separately from Quark’s implemented core capabilities. Customer-specific fit, certification, cost and delivery timing require their own project scope.\nA configurable WMS for receiving, inventory and fulfilment."
+  },
+  {
+    "page": "legal/terms.html",
+    "before": "These terms cover one thing: your use of the quark.build website. There is no product to subscribe to yet, no account to open and nothing to pay for. When Quark becomes available as a service, it will come with its own agreement, and that agreement — not this page — will govern it.",
+    "after": "These terms cover one thing: your use of the quark.build website. Quark provides implemented standard warehouse operations. This website does not provide online account registration or checkout. Software use and customer implementation are governed by a separate agreement, not these website terms."
+  },
+  {
+    "page": "legal/terms.html",
+    "before": "A description of a warehouse management system under development, and a form to register interest in it. Everything here — capabilities, timelines, module status, performance figures — describes an intended product. It is not an offer, a specification, a warranty or a commitment to deliver any particular feature by any particular date. Plans change, and some of what is described may never ship.",
+    "after": "Product information about Quark WMS, its implemented core operations and configurable platform, with a warehouse enquiry form. Customer-specific configuration, extensions, integrations and implementation timelines are agreed separately. AI Harness and other explicitly marked future directions are plans, not current capabilities or delivery commitments. Website content does not replace the specification, warranties or commitments in a signed customer agreement."
+  },
+  {
+    "page": "legal/terms.html",
+    "before": "The text, design, diagrams and code of this site belong to us, except where noted. \"Quark\" and the Quark logo are our marks. Other product and company names — SAP, Manhattan, Infor, Odoo and others — are the marks of their respective owners, mentioned here only to describe compatibility or comparison, and their mention implies no affiliation with or endorsement by them.",
+    "after": "The text, design, diagrams and code of this site belong to us, except where noted. \"Quark\" and the Quark logo are our marks. Other product and company names, SAP, Manhattan, Infor, Odoo and others, are the marks of their respective owners, mentioned here only to describe compatibility or comparison, and their mention implies no affiliation with or endorsement by them."
+  },
+  {
+    "page": "legal/terms.html",
+    "before": "The site is provided as it is, without warranty of any kind. We do not promise it will be available without interruption or free of errors, and we are not liable for loss arising from your reliance on information published here — save that nothing in these terms limits liability for death or personal injury caused by negligence, for fraud, or for anything else that cannot lawfully be limited. If you are a consumer, your statutory rights under EU and Bulgarian law are unaffected by anything on this page.",
+    "after": "The site is provided as it is, without warranty of any kind. We do not promise it will be available without interruption or free of errors, and we are not liable for loss arising from your reliance on information published here, save that nothing in these terms limits liability for death or personal injury caused by negligence, for fraud, or for anything else that cannot lawfully be limited. If you are a consumer, your statutory rights under EU and Bulgarian law are unaffected by anything on this page."
+  },
+  {
+    "page": "legal/terms.html",
+    "before": "Warehouse inventory and operations, with evaluation scope agreed for your project.",
+    "after": "A configurable WMS for receiving, inventory and fulfilment."
+  },
+  {
+    "page": "legal/privacy.html",
+    "before": "Quark is a pre-launch project. This site does not offer a service, an account or a purchase. The only personal data it collects is what you type into the enquiry form, plus the technical data any website receives when your browser requests a page. This page explains both, in full.",
+    "after": "Quark is a working warehouse management system. This website provides product information and a warehouse enquiry form, not online account registration or checkout. The personal data it collects is what you type into the enquiry form, plus the technical data any website receives when your browser requests a page. This page explains both, in full."
+  },
+  {
+    "page": "legal/privacy.html",
+    "before": "The controller of the data described here is Maxim Smurygin, Sofia, Bulgaria. For anything relating to your data — questions, requests, or complaints — write to hello@quark.build .",
+    "after": "The controller of the data described here is Maxim Smurygin, Sofia, Bulgaria. For anything relating to your data, questions, requests, or complaints, write to hello@quark.build ."
+  },
+  {
+    "page": "legal/privacy.html",
+    "before": "To exercise any of these, write to hello@quark.build . One message is enough — you do not need to give a reason, and we will answer within one month. If you are unhappy with how we handle it, you may complain to the Bulgarian Commission for Personal Data Protection ( cpdp.bg ) or to the supervisory authority where you live.",
+    "after": "To exercise any of these, write to hello@quark.build . One message is enough, you do not need to give a reason, and we will answer within one month. If you are unhappy with how we handle it, you may complain to the Bulgarian Commission for Personal Data Protection ( cpdp.bg ) or to the supervisory authority where you live."
+  },
+  {
+    "page": "legal/privacy.html",
+    "before": "If this policy changes materially — a new recipient, a new purpose, a company taking over as controller — we will update the date at the top and, where the change affects data you have already given us, tell you by email before it takes effect.\nWarehouse inventory and operations, with evaluation scope agreed for your project.",
+    "after": "If this policy changes materially, a new recipient, a new purpose, a company taking over as controller, we will update the date at the top and, where the change affects data you have already given us, tell you by email before it takes effect.\nA configurable WMS for receiving, inventory and fulfilment."
+  },
+  {
+    "page": "thanks.html",
+    "before": "Warehouse inventory and operations, with evaluation scope agreed for your project.",
+    "after": "A configurable WMS for receiving, inventory and fulfilment."
+  }
+]

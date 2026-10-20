@@ -1,0 +1,1748 @@
+{
+  "baseline": "b30604f52c06ebc83960273717329d23ff623b92",
+  "passed": true,
+  "checks": [
+    {
+      "check": "unchanged metadata/head index.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged control attributes index.html",
+      "passed": true
+    },
+    {
+      "check": "existing IDs retained index.html",
+      "passed": true
+    },
+    {
+      "check": "no duplicate IDs index.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged metadata/head product.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged control attributes product.html",
+      "passed": true
+    },
+    {
+      "check": "existing IDs retained product.html",
+      "passed": true
+    },
+    {
+      "check": "no duplicate IDs product.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged metadata/head vision.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged control attributes vision.html",
+      "passed": true
+    },
+    {
+      "check": "existing IDs retained vision.html",
+      "passed": true
+    },
+    {
+      "check": "no duplicate IDs vision.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged metadata/head wms-cost.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged control attributes wms-cost.html",
+      "passed": true
+    },
+    {
+      "check": "existing IDs retained wms-cost.html",
+      "passed": true
+    },
+    {
+      "check": "no duplicate IDs wms-cost.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged metadata/head tools/wms-readiness-assessment/index.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged control attributes tools/wms-readiness-assessment/index.html",
+      "passed": true
+    },
+    {
+      "check": "existing IDs retained tools/wms-readiness-assessment/index.html",
+      "passed": true
+    },
+    {
+      "check": "no duplicate IDs tools/wms-readiness-assessment/index.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged metadata/head legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged control attributes legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "existing IDs retained legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "no duplicate IDs legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged metadata/head legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged control attributes legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "existing IDs retained legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "no duplicate IDs legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged metadata/head thanks.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged control attributes thanks.html",
+      "passed": true
+    },
+    {
+      "check": "existing IDs retained thanks.html",
+      "passed": true
+    },
+    {
+      "check": "no duplicate IDs thanks.html",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config api/lead.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config api/events.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config lib/lead-events.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config assets/leads.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config assets/seo/cost-model.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config assets/seo/cost-ui.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config assessment-assets/assessment-ui.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config assessment-assets/assessment.css",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config design-assets/plates.js",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config design-assets/capability-map.css",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config vercel.json",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config robots.txt",
+      "passed": true
+    },
+    {
+      "check": "unchanged runtime/config sitemap.xml",
+      "passed": true
+    },
+    {
+      "check": "exact form index.html",
+      "passed": true
+    },
+    {
+      "check": "exact form wms-cost.html",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /assets/quark-logo.svg",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /design-assets/plates.js",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html #main",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html #main",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#inbound",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#inbound",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#inventory",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#inventory",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#outbound",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#outbound",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#execution",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#execution",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#inventory",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#inventory",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#platform",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#platform",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html #product",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html #product",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html #fit",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html #fit",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html #evaluation",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html #evaluation",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html #contact",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html #contact",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#inbound",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#inbound",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#inventory",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#inventory",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#outbound",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#outbound",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#platform",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#platform",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /assets/leads.js",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference index.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /assets/quark-logo.svg",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /design-assets/capability-map.css",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /design-assets/plates.js",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #main",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #main",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #topology",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #topology",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #inbound",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #inbound",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #inventory",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #inventory",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #outbound",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #outbound",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #execution",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #execution",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #platform",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #platform",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #inbound",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #inbound",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #inventory",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #inventory",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #outbound",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #outbound",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #execution",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #execution",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #platform",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #platform",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html #platform",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html #platform",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment product.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference product.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /assets/quark-logo.svg",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /design-assets/plates.js",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html #main",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html #main",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html #manifesto",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html #manifesto",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /assets/leads.js",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment vision.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference vision.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /assets/quark-logo.svg",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html #main",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html #main",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html #calculator",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html #calculator",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html #cost-drivers",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html #cost-drivers",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html #calculator",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html #calculator",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html #configurability",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html #configurability",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html #overruns",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html #overruns",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html #roi",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html #roi",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html #questions",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html #questions",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /assets/seo/cost-model.js",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /assets/seo/cost-ui.js",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment wms-cost.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference wms-cost.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /assessment-assets/assessment.css",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /assessment-assets/assessment-model.js",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /assessment-assets/discovery-model.js",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /assessment-assets/assessment-pdf.js",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /assessment-assets/assessment-ui.js",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /assets/quark-logo.svg",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html #main",
+      "passed": true
+    },
+    {
+      "check": "fragment tools/wms-readiness-assessment/index.html #main",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment tools/wms-readiness-assessment/index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment tools/wms-readiness-assessment/index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment tools/wms-readiness-assessment/index.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment tools/wms-readiness-assessment/index.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment tools/wms-readiness-assessment/index.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference tools/wms-readiness-assessment/index.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /assets/quark-logo.svg",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html #main",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/privacy.html #main",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/privacy.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/privacy.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/privacy.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/privacy.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/privacy.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/privacy.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /assets/quark-logo.svg",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html #main",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/terms.html #main",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/terms.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/terms.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/terms.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/terms.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment legal/terms.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference legal/terms.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /assets/quark-logo.svg",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /design-assets/qds.css",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /design-assets/qds.js",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html #main",
+      "passed": true
+    },
+    {
+      "check": "fragment thanks.html #main",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment thanks.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment thanks.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /product",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "fragment thanks.html /product#topology",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "fragment thanks.html /product#workflows",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /wms-cost",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /tools/wms-readiness-assessment",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /vision",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "fragment thanks.html /#contact",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "local reference thanks.html /legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "no unfinished-core framing index.html",
+      "passed": true
+    },
+    {
+      "check": "no unfinished-core framing product.html",
+      "passed": true
+    },
+    {
+      "check": "no unfinished-core framing wms-cost.html",
+      "passed": true
+    },
+    {
+      "check": "no unfinished-core framing legal/terms.html",
+      "passed": true
+    },
+    {
+      "check": "no unfinished-core framing legal/privacy.html",
+      "passed": true
+    },
+    {
+      "check": "no unfinished-core framing thanks.html",
+      "passed": true
+    },
+    {
+      "check": "operational Product Overview",
+      "passed": true
+    },
+    {
+      "check": "no global real-time promise",
+      "passed": true
+    },
+    {
+      "check": "future AI explicit",
+      "passed": true
+    },
+    {
+      "check": "no unsupported duration/saving claims",
+      "passed": true
+    },
+    {
+      "check": "rules/UI no network or storage",
+      "passed": true
+    }
+  ],
+  "localReferences": 284,
+  "mode": "production-shaped content candidate, before review-only overlay"
+}
