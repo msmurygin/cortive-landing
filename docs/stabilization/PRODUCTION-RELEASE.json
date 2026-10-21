@@ -1,0 +1,52 @@
+{
+  "status": "RELEASED AND VERIFIED",
+  "date": "2026-10-21",
+  "founderApproval": "User approved stabilization REPORT.html in this session",
+  "baseline": "029347ae5c4c62a728c838c5d6930d0f7293eb3f",
+  "releaseCommit": "dd5fc0fc01e29a8817f109ef353f2ffa7cce20c6",
+  "approvedRuntimeSource": "c13878fcab24c8920112afd8aa81d0423b321acd",
+  "runtimeFiles": 13,
+  "production": "https://quark.build",
+  "vercelDeployment": 7224061051,
+  "vercelState": "success",
+  "staticChecks": 599,
+  "internalReferences": 288,
+  "releaseFocusedTests": 14,
+  "inactiveVideoTests": 4,
+  "existingAssessmentPdfTests": 48,
+  "productionExactContentChecks": 21,
+  "productionRedirectChecks": 2,
+  "browserQA": {
+    "mobileMenu": [
+      320,
+      390
+    ],
+    "panelHeightAt844": 780,
+    "allFiveLinksVisible": true,
+    "noHorizontalOverflow": true,
+    "escapeCloses": true,
+    "demoLinkOpensBlankForm": true,
+    "assessmentUnknownFlow": "7 steps, explicit uncertainty, summary and full findings",
+    "assessmentExports": {
+      "jsonBytes": 80812,
+      "pdfBytes": 37443
+    },
+    "assessmentContact": "No answers or parameters forwarded; blank form; consent false",
+    "cost": "Quick Scope checklist; progressive Advanced Budget; EUR selectable; unknown amounts correctly rejected",
+    "consoleErrorsObserved": 0
+  },
+  "preserved": [
+    "Analytics settings and event handlers",
+    "Form fields, consent, provider/backend",
+    "Assessment engine, rules, schema and PDF renderer",
+    "Cost formulas/UI",
+    "Robots, sitemap and canonical routes"
+  ],
+  "videoPublication": "NOT RELEASED; separate approval gate; no video assets or slots included",
+  "delivery": "Previously verified provider browser acceptance and founder Inbox confirmation; no additional test submission in this release",
+  "rollback": "Not required. If needed: revert dd5fc0f from fresh current main, push normally, await Production success and re-verify prior baseline. Never force-push. Prior baseline retains known mobile menu defect.",
+  "limitations": [
+    "Mobile QA used browser viewport simulation, not physical iOS/Android certification",
+    "Lighthouse evidence is lab testing, not field Core Web Vitals"
+  ]
+}

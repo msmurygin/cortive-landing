@@ -1,5 +1,5 @@
 {
-  "state": "APPROVAL GATE: no production release authorised",
+  "state": "RELEASED: founder-approved stabilization, production verified",
   "baseline": "029347ae5c4c62a728c838c5d6930d0f7293eb3f",
   "stabilizationRuntimeFiles": [
     "index.html",
@@ -43,11 +43,11 @@
     "Wait for successful Vercel redeployment and verify baseline routes, forms, metadata and mobile behavior.",
     "Rollback restores the prior website, including its known menu defect; report that explicitly and retain the fix branch."
   ],
-  "approvalNeeded": [
-    "Founder approval of stabilization preview and explicit production release"
-  ],
+  "approvalNeeded": [],
   "legalDecision": "Founder explicitly requested retaining EU entity for now. No registered company, SLA, support hours or hosting arrangement was invented.",
   "stabilizationCommit": "c13878fcab24c8920112afd8aa81d0423b321acd",
   "inactiveVideoPreparationCommit": "d24ac09fe834387fb9bd53a9562453cafa82291e",
-  "deliveryVerified": "Provider browser acceptance and founder Inbox confirmation, 2026-10-21"
+  "deliveryVerified": "Provider browser acceptance and founder Inbox confirmation, 2026-10-21",
+  "releasedCommit": "dd5fc0fc01e29a8817f109ef353f2ffa7cce20c6",
+  "productionVerification": "PRODUCTION-RELEASE.json"
 }
