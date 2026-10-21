@@ -360,11 +360,13 @@ select.q-input{background-image:linear-gradient(45deg,transparent 50%,currentCol
 .q-burger{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border:1px solid var(--q-ink);background:transparent;cursor:pointer;font:500 11px var(--q-mono);letter-spacing:.12em;text-transform:uppercase}
 .q-burger i{width:14px;height:8px;border-block:1.5px solid currentColor}
 .q-hdr[data-open] .q-burger i{height:1.5px;border:0;background:currentColor;box-shadow:none}
-.q-mnav{display:block;position:fixed;inset:var(--q-hdr) 0 0;background:var(--q-paper);border-top:1px solid var(--q-ink);padding:8px var(--q-gut) 32px;overflow:auto;visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .18s ease,transform .18s ease,visibility 0s .18s}
+/* A filtered ancestor contains fixed descendants: remove that containing block while the menu is open. */
+.q-hdr[data-open]{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--q-paper)}
+.q-mnav{display:block;position:fixed;inset:auto 0 auto;top:var(--q-hdr);z-index:1;height:calc(100vh - var(--q-hdr));height:calc(100dvh - var(--q-hdr));background:var(--q-paper);border-top:1px solid var(--q-ink);padding:8px max(var(--q-gut),env(safe-area-inset-right)) max(32px,env(safe-area-inset-bottom)) max(var(--q-gut),env(safe-area-inset-left));overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .18s ease,transform .18s ease,visibility 0s .18s}
 .q-hdr[data-open] .q-mnav{visibility:visible;opacity:1;transform:none;transition:opacity .18s ease,transform .18s ease}
 .q-mnav ul{list-style:none;counter-reset:qm}
 .q-mnav li{counter-increment:qm;border-bottom:1px solid var(--q-line-2)}
-.q-mnav li a{display:flex;align-items:baseline;gap:14px;min-height:64px;padding:16px 0;font-weight:500;font-size:28px;letter-spacing:-.03em;text-decoration:none}
+.q-mnav li a{display:flex;overflow-wrap:anywhere;min-width:0;align-items:baseline;gap:14px;min-height:64px;padding:16px 0;font-weight:500;font-size:28px;letter-spacing:-.03em;text-decoration:none}
 .q-mnav li a::before{content:counter(qm,decimal-leading-zero);font:500 11px var(--q-mono);color:var(--q-teal);letter-spacing:.08em}
 .q-mnav li a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--q-mint);text-decoration-thickness:3px;text-underline-offset:8px}
 .q-mnav .q-label{display:block;margin:28px 0 4px;color:var(--q-mute)}
