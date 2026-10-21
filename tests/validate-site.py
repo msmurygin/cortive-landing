@@ -52,4 +52,5 @@ for f,p in parsed.items():
   refs+=1
 check('no remote demo requests',(not re.search(r'youtube(?:-nocookie)?\.com|ytimg.com|<iframe',(root/'product.html').read_text())))
 report={'passed':True,'checks':len(checks),'references':refs,'baseline':baseline,'metadata':[{ 'file':f,'canonical':parsed[f].canonical,'metadata':parsed[f].meta}for f in pages[:5]]}
+(root/'docs/stabilization').mkdir(parents=True,exist_ok=True)
 (root/'docs/stabilization/site-validation.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print(json.dumps({k:report[k]for k in ['passed','checks','references']}))

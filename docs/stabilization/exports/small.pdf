@@ -1,0 +1,357 @@
+%PDF-1.4
+%Quark local-only assessment
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 5 /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 3668 >>
+stream
+0 0.43 0.39 rg 48 796 23 5 re f
+0.08 0.16 0.17 rg BT /F2 13 Tf 1 0 0 1 81 791 Tm (QUARK) Tj ET
+0.30 0.37 0.38 rg BT /F2 8 Tf 1 0 0 1 357 794 Tm (WMS PROJECT PREPARATION) Tj ET
+0.80 0.85 0.83 rg 48 776 499 0.7 re f
+0.08 0.16 0.17 rg BT /F2 23 Tf 1 0 0 1 48 754 Tm (WMS Project Preparation Brief) Tj ET
+0.30 0.37 0.38 rg BT /F1 9.5 Tf 1 0 0 1 48 720 Tm (Prepared 2026-10-21 | Your warehouse project at a glance) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 694.5 Tm (Executive summary) Tj ET
+0.08 0.16 0.17 rg BT /F1 10.5 Tf 1 0 0 1 48 670.5 Tm (Customer project preparation: Ready for detailed evaluation. This describes your implementation) Tj ET
+0.08 0.16 0.17 rg BT /F1 10.5 Tf 1 0 0 1 48 656 Tm (preparation; Quark core WMS operations are implemented.) Tj ET
+0.08 0.16 0.17 rg 48 612.5 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 620.5 Tm (Business profile) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 620.5 Tm (Your stated position) Tj ET
+0.94 0.97 0.96 rg 48 583.5 499 27 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 595.5 Tm (Primary industry) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 595.5 Tm (General Distribution) Tj ET
+0.98 0.99 0.98 rg 48 555.5 499 27 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 567.5 Tm (Operating models) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 567.5 Tm (Own Inventory) Tj ET
+0.94 0.97 0.96 rg 48 527.5 499 27 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 539.5 Tm (Warehouse footprint) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 539.5 Tm (1 warehouse) Tj ET
+0.98 0.99 0.98 rg 48 499.5 499 27 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 511.5 Tm (Active users) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 511.5 Tm (12 active users) Tj ET
+0.94 0.97 0.96 rg 48 471.5 499 27 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 483.5 Tm (Daily volume) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 483.5 Tm (250 orders per day) Tj ET
+0.98 0.99 0.98 rg 48 443.5 499 27 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 455.5 Tm (Current systems) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 455.5 Tm (Paper / spreadsheets / manual processes; ERP: No ERP in use) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 425.5 Tm (Your top 3 actions) Tj ET
+0 0.43 0.39 rg 48 396.5 4 13 re f
+0.08 0.16 0.17 rg BT /F2 11 Tf 1 0 0 1 60 399.5 Tm (1. Confirm the stated project basis) Tj ET
+0.08 0.16 0.17 rg BT /F1 10 Tf 1 0 0 1 48 379.5 Tm (Review the stated data, requirements, owner and budget basis with your internal project owner before detailed) Tj ET
+0.08 0.16 0.17 rg BT /F1 10 Tf 1 0 0 1 48 365.5 Tm (supplier evaluation.) Tj ET
+0 0.43 0.39 rg 48 336.5 4 13 re f
+0.08 0.16 0.17 rg BT /F2 11 Tf 1 0 0 1 60 339.5 Tm (2. Choose a supplier-evaluation scenario) Tj ET
+0.08 0.16 0.17 rg BT /F1 10 Tf 1 0 0 1 48 319.5 Tm (Choose representative normal and exception cases with a process owner and validate with shortlisted suppliers.) Tj ET
+0 0.43 0.39 rg 48 290.5 4 13 re f
+0.08 0.16 0.17 rg BT /F2 11 Tf 1 0 0 1 60 293.5 Tm (3. Bring the right people together) Tj ET
+0.08 0.16 0.17 rg BT /F1 10 Tf 1 0 0 1 48 273.5 Tm (Use this brief with operations, IT and the accountable sponsor to plan data preparation, customer-specific) Tj ET
+0.08 0.16 0.17 rg BT /F1 10 Tf 1 0 0 1 48 259.5 Tm (configuration, integrations and acceptance scenarios.) Tj ET
+0.30 0.37 0.38 rg BT /F1 8.5 Tf 1 0 0 1 48 233.5 Tm (Customer preparation brief. Specialist fit, certification, costs and rollout are scoped separately.) Tj ET
+0.80 0.85 0.83 rg 48 43 499 0.7 re f
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 48 28 Tm (Quark | quark.build | Preliminary discovery) Tj ET
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 469 28 Tm (Page 1 of 5) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 4366 >>
+stream
+0 0.43 0.39 rg 48 796 23 5 re f
+0.08 0.16 0.17 rg BT /F2 13 Tf 1 0 0 1 81 791 Tm (QUARK) Tj ET
+0.30 0.37 0.38 rg BT /F2 8 Tf 1 0 0 1 357 794 Tm (WMS PROJECT PREPARATION) Tj ET
+0.80 0.85 0.83 rg 48 776 499 0.7 re f
+0.08 0.16 0.17 rg BT /F2 23 Tf 1 0 0 1 48 754 Tm (Complexity and readiness) Tj ET
+0.30 0.37 0.38 rg BT /F1 9.5 Tf 1 0 0 1 48 720 Tm (Operational scope and implementation preparation are assessed independently.) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 688.5 Tm (Operational complexity factors) Tj ET
+0.08 0.16 0.17 rg 48 640.5 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 648.5 Tm (Dimension) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 648.5 Tm (Stated factors and open questions) Tj ET
+0.94 0.97 0.96 rg 48 618 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 623.5 Tm (Process Variability) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 623.5 Tm (Process variation: One broadly consistent set of processes) Tj ET
+0.98 0.99 0.98 rg 48 596.5 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 602 Tm (Inventory & Traceability) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 602 Tm (Tracking: Quantity only; Ownership: One owner; Units: A single handling unit) Tj ET
+0.94 0.97 0.96 rg 48 575 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 580.5 Tm (Integrations) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 580.5 Tm (Connections: No external connections planned) Tj ET
+0.98 0.99 0.98 rg 48 553.5 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 559 Tm (Automation) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 559 Tm (RF/mobile: Not currently used or planned; Equipment: No automation in scope) Tj ET
+0.94 0.97 0.96 rg 48 532 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 537.5 Tm (Multi-owner Operations) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 537.5 Tm (Ownership: One owner) Tj ET
+0.98 0.99 0.98 rg 48 510.5 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 516 Tm (Deployment Replicability) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 516 Tm (Sites: 1) Tj ET
+0.30 0.37 0.38 rg BT /F1 8.5 Tf 1 0 0 1 48 499.5 Tm (Not assessed from these answers: Compliance. No requirement is inferred.) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 478 Tm (Implementation readiness: Ready for detailed evaluation) Tj ET
+0.08 0.16 0.17 rg 48 430 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 438 Tm (Preparation area) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 438 Tm (Your stated preparation) Tj ET
+0.94 0.97 0.96 rg 48 407.5 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 413 Tm (Master data) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 413 Tm (Available, reviewed and consistent) Tj ET
+0.98 0.99 0.98 rg 48 386 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 391.5 Tm (Requirements) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 391.5 Tm (Documented and agreed with process owners) Tj ET
+0.94 0.97 0.96 rg 48 364.5 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 370 Tm (Project owner) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 370 Tm (An owner is assigned with time allocated) Tj ET
+0.98 0.99 0.98 rg 48 343 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 348.5 Tm (Budget basis) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 348.5 Tm (A planning basis and decision process are agreed) Tj ET
+0.94 0.97 0.96 rg 48 321.5 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 327 Tm (Operations and IT) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 327 Tm (Agreed and assigned) Tj ET
+0.98 0.99 0.98 rg 48 300 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 305.5 Tm (Acceptance tests) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 305.5 Tm (Agreed and assigned) Tj ET
+0.94 0.97 0.96 rg 48 278.5 499 20.5 re f
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 56 284 Tm (Target window) Tj ET
+0.08 0.16 0.17 rg BT /F1 9 Tf 1 0 0 1 193 284 Tm (Considering a start in 6-12 months) Tj ET
+0.30 0.37 0.38 rg BT /F1 8.5 Tf 1 0 0 1 48 267.5 Tm (Unknown answers are open questions, not failed checks. Scale, industry and complexity do not lower this readiness result. Full) Tj ET
+0.30 0.37 0.38 rg BT /F1 8.5 Tf 1 0 0 1 48 255 Tm (answers follow in the appendix.) Tj ET
+0.80 0.85 0.83 rg 48 43 499 0.7 re f
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 48 28 Tm (Quark | quark.build | Preliminary discovery) Tj ET
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 469 28 Tm (Page 2 of 5) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 3627 >>
+stream
+0 0.43 0.39 rg 48 796 23 5 re f
+0.08 0.16 0.17 rg BT /F2 13 Tf 1 0 0 1 81 791 Tm (QUARK) Tj ET
+0.30 0.37 0.38 rg BT /F2 8 Tf 1 0 0 1 357 794 Tm (WMS PROJECT PREPARATION) Tj ET
+0.80 0.85 0.83 rg 48 776 499 0.7 re f
+0.08 0.16 0.17 rg BT /F2 23 Tf 1 0 0 1 48 754 Tm (Preparation and discovery) Tj ET
+0.30 0.37 0.38 rg BT /F1 9.5 Tf 1 0 0 1 48 720 Tm (Use the following items to prepare an internal project meeting or supplier discussion.) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 688.5 Tm (Requirements you explicitly reported) Tj ET
+0.30 0.37 0.38 rg BT /F1 9.5 Tf 1 0 0 1 48 662.5 Tm (These are your stated requirements. Specialist rules and connections need project-specific validation.) Tj ET
+0.08 0.16 0.17 rg 48 620 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 628 Tm (Requirement) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 628 Tm (Your answer) Tj ET
+0.94 0.97 0.96 rg 48 591 499 27 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 603 Tm (Required tracking) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 603 Tm (Quantity only) Tj ET
+0.98 0.99 0.98 rg 48 563 499 27 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 575 Tm (Units of measure) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 575 Tm (A single handling unit) Tj ET
+0.94 0.97 0.96 rg 48 522 499 40 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 547 Tm (Required integration) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 534 Tm (categories) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 547 Tm (No external connections planned) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 504 Tm (Candidate supplier-evaluation scenarios) Tj ET
+0.30 0.37 0.38 rg BT /F1 9.5 Tf 1 0 0 1 48 478 Tm (These scenarios support customer acceptance planning. Specialist requirements and connections are verified within) Tj ET
+0.30 0.37 0.38 rg BT /F1 9.5 Tf 1 0 0 1 48 464.5 Tm (the project scope.) Tj ET
+0.08 0.16 0.17 rg 48 422 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 430 Tm (Candidate scenario) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 430 Tm (Reason to evaluate it) Tj ET
+0.94 0.97 0.96 rg 48 380 499 40 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 405 Tm (Receiving and putaway) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 405 Tm (These workflows are in the stated scope. Use a representative receipt and) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 392 Tm (storage exception.) Tj ET
+0.98 0.99 0.98 rg 48 339 499 40 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 364 Tm (Picking and shipping) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 351 Tm (evaluation) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 364 Tm (An outbound workflow is in scope; select a representative order and exception.) Tj ET
+0.30 0.37 0.38 rg BT /F1 9 Tf 1 0 0 1 48 327 Tm (Keep operational details within your organisation unless sharing is authorised. Contacting Quark is optional and never) Tj ET
+0.30 0.37 0.38 rg BT /F1 9 Tf 1 0 0 1 48 314 Tm (attaches this report automatically.) Tj ET
+0.30 0.37 0.38 rg BT /F1 9 Tf 1 0 0 1 48 294 Tm (This brief assesses customer project preparation. Quark provides implemented core warehouse operations. User-reported) Tj ET
+0.30 0.37 0.38 rg BT /F1 9 Tf 1 0 0 1 48 281 Tm (requirements, specialist capabilities and external connections need project-specific validation. This is not compliance) Tj ET
+0.30 0.37 0.38 rg BT /F1 9 Tf 1 0 0 1 48 268 Tm (certification, a cost/ROI/effort estimate or go-live approval.) Tj ET
+0.80 0.85 0.83 rg 48 43 499 0.7 re f
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 48 28 Tm (Quark | quark.build | Preliminary discovery) Tj ET
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 469 28 Tm (Page 3 of 5) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 4078 >>
+stream
+0 0.43 0.39 rg 48 796 23 5 re f
+0.08 0.16 0.17 rg BT /F2 13 Tf 1 0 0 1 81 791 Tm (QUARK) Tj ET
+0.30 0.37 0.38 rg BT /F2 8 Tf 1 0 0 1 357 794 Tm (WMS PROJECT PREPARATION) Tj ET
+0.80 0.85 0.83 rg 48 776 499 0.7 re f
+0.08 0.16 0.17 rg BT /F2 23 Tf 1 0 0 1 48 754 Tm (Appendix: your complete answers) Tj ET
+0.30 0.37 0.38 rg BT /F1 9.5 Tf 1 0 0 1 48 720 Tm (Generated 2026-10-21T09:59:31.575Z | Taxonomy 0.1.0 | Rules 0.2.0 | JSON schema 2.0.0) Tj ET
+0.30 0.37 0.38 rg BT /F1 9 Tf 1 0 0 1 48 694.5 Tm (Only questions in your active assessment path are included. Not specified means unknown, not no. Full answer-to-rule) Tj ET
+0.30 0.37 0.38 rg BT /F1 9 Tf 1 0 0 1 48 681.5 Tm (traceability remains in the structured JSON export.) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 655.5 Tm (Which industries does this warehouse serve?) Tj ET
+0.08 0.16 0.17 rg 48 607.5 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 615.5 Tm (Question detail) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 615.5 Tm (Your answer) Tj ET
+0.94 0.97 0.96 rg 48 582.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 590.5 Tm (Industries) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 590.5 Tm (General Distribution \(primary\)) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 568.5 Tm (How does the warehouse operate?) Tj ET
+0.08 0.16 0.17 rg 48 520.5 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 528.5 Tm (Question detail) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 528.5 Tm (Your answer) Tj ET
+0.94 0.97 0.96 rg 48 495.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 503.5 Tm (Operating models) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 503.5 Tm (Own Inventory) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 481.5 Tm (What scale should the discussion cover?) Tj ET
+0.08 0.16 0.17 rg 48 433.5 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 441.5 Tm (Question detail) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 441.5 Tm (Your answer) Tj ET
+0.94 0.97 0.96 rg 48 408.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 416.5 Tm (Warehouses) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 416.5 Tm (1) Tj ET
+0.98 0.99 0.98 rg 48 384.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 392.5 Tm (Active warehouse users) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 392.5 Tm (12) Tj ET
+0.94 0.97 0.96 rg 48 360.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 368.5 Tm (Approximate daily volume) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 368.5 Tm (250) Tj ET
+0.98 0.99 0.98 rg 48 336.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 344.5 Tm (Volume unit) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 344.5 Tm (Orders per day) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 322.5 Tm (What inventory rules are actually required?) Tj ET
+0.08 0.16 0.17 rg 48 274.5 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 282.5 Tm (Question detail) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 282.5 Tm (Your answer) Tj ET
+0.94 0.97 0.96 rg 48 249.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 257.5 Tm (Required tracking) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 257.5 Tm (Quantity only) Tj ET
+0.98 0.99 0.98 rg 48 225.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 233.5 Tm (Inventory ownership) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 233.5 Tm (One owner) Tj ET
+0.94 0.97 0.96 rg 48 201.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 209.5 Tm (Storage environment) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 209.5 Tm (Ambient) Tj ET
+0.98 0.99 0.98 rg 48 177.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 185.5 Tm (Order channel) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 185.5 Tm (B2B) Tj ET
+0.94 0.97 0.96 rg 48 153.5 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 161.5 Tm (Units of measure) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 161.5 Tm (A single handling unit) Tj ET
+0.80 0.85 0.83 rg 48 43 499 0.7 re f
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 48 28 Tm (Quark | quark.build | Preliminary discovery) Tj ET
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 469 28 Tm (Page 4 of 5) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 4959 >>
+stream
+0 0.43 0.39 rg 48 796 23 5 re f
+0.08 0.16 0.17 rg BT /F2 13 Tf 1 0 0 1 81 791 Tm (QUARK) Tj ET
+0.30 0.37 0.38 rg BT /F2 8 Tf 1 0 0 1 357 794 Tm (WMS PROJECT PREPARATION) Tj ET
+0.80 0.85 0.83 rg 48 776 499 0.7 re f
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 748 Tm (Which systems and floor technologies are in scope?) Tj ET
+0.08 0.16 0.17 rg 48 700 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 708 Tm (Question detail) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 708 Tm (Your answer) Tj ET
+0.94 0.97 0.96 rg 48 662 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 683 Tm (Current warehouse) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 670 Tm (management) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 683 Tm (Paper / spreadsheets / manual processes) Tj ET
+0.98 0.99 0.98 rg 48 638 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 646 Tm (ERP presence) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 646 Tm (No ERP in use) Tj ET
+0.94 0.97 0.96 rg 48 601 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 622 Tm (Required integration) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 609 Tm (categories) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 622 Tm (No external connections planned) Tj ET
+0.98 0.99 0.98 rg 48 564 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 585 Tm (RF / mobile warehouse) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 572 Tm (operations) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 585 Tm (Not currently used or planned) Tj ET
+0.94 0.97 0.96 rg 48 527 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 548 Tm (Automation equipment in) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 535 Tm (use or planned) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 548 Tm (No automation in scope) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 513 Tm (Which workflows, variations and problems matter?) Tj ET
+0.08 0.16 0.17 rg 48 465 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 473 Tm (Question detail) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 473 Tm (Your answer) Tj ET
+0.94 0.97 0.96 rg 48 440 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 448 Tm (Warehouse workflows) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 448 Tm (Receiving, Putaway, Picking, Shipping) Tj ET
+0.98 0.99 0.98 rg 48 416 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 424 Tm (Process variations) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 424 Tm (One broadly consistent set of processes) Tj ET
+0.94 0.97 0.96 rg 48 379 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 400 Tm (Important operational) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 387 Tm (problems) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 400 Tm (No specific problem identified yet) Tj ET
+0 0.43 0.39 rg BT /F2 13 Tf 1 0 0 1 48 365 Tm (What is prepared for a supplier evaluation?) Tj ET
+0.08 0.16 0.17 rg 48 317 499 24 re f
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 56 325 Tm (Question detail) Tj ET
+1 1 1 rg BT /F2 8.7 Tf 1 0 0 1 193 325 Tm (Your answer) Tj ET
+0.94 0.97 0.96 rg 48 279 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 300 Tm (SKU and location master) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 287 Tm (data) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 300 Tm (Available, reviewed and consistent) Tj ET
+0.98 0.99 0.98 rg 48 255 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 263 Tm (Operational requirements) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 263 Tm (Documented and agreed with process owners) Tj ET
+0.94 0.97 0.96 rg 48 231 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 239 Tm (Internal project owner) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 239 Tm (An owner is assigned with time allocated) Tj ET
+0.98 0.99 0.98 rg 48 207 499 23 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 215 Tm (Budget readiness) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 215 Tm (A planning basis and decision process are agreed) Tj ET
+0.94 0.97 0.96 rg 48 170 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 191 Tm (Intended implementation) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 178 Tm (horizon) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 191 Tm (Considering a start in 6-12 months) Tj ET
+0.98 0.99 0.98 rg 48 133 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 154 Tm (Operations and IT) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 141 Tm (stakeholders) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 154 Tm (Agreed and assigned) Tj ET
+0.94 0.97 0.96 rg 48 96 499 36 re f
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 117 Tm (Representative tests and) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 56 104 Tm (exception scenarios) Tj ET
+0.08 0.16 0.17 rg BT /F1 9.5 Tf 1 0 0 1 193 117 Tm (Agreed and assigned) Tj ET
+0.80 0.85 0.83 rg 48 43 499 0.7 re f
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 48 28 Tm (Quark | quark.build | Preliminary discovery) Tj ET
+0.30 0.37 0.38 rg BT /F1 8 Tf 1 0 0 1 469 28 Tm (Page 5 of 5) Tj ET
+endstream
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000038 00000 n 
+0000000087 00000 n 
+0000000170 00000 n 
+0000000267 00000 n 
+0000000369 00000 n 
+0000000505 00000 n 
+0000004224 00000 n 
+0000004360 00000 n 
+0000008777 00000 n 
+0000008914 00000 n 
+0000012593 00000 n 
+0000012731 00000 n 
+0000016861 00000 n 
+0000016999 00000 n 
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+22010
+%%EOF

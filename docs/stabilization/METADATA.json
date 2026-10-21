@@ -1,0 +1,27 @@
+[
+  {
+    "file": "index.html",
+    "title": "Quark WMS — Configurable Warehouse Management System",
+    "description": "Quark WMS runs receiving, inventory control, fulfilment and RF warehouse workflows on a configurable platform. Request a product demo."
+  },
+  {
+    "file": "product.html",
+    "title": "Quark WMS Product Overview — Operations & Configuration",
+    "description": "See how Quark WMS manages receiving, putaway, inventory, wave planning, picking and shipping, with RF execution and customer-specific configuration."
+  },
+  {
+    "file": "vision.html",
+    "title": "Quark WMS Vision — Future AI Onboarding & Support",
+    "description": "Explore Quark’s future AI Onboarding and AI Support vision, built around its implemented core WMS and configurable platform."
+  },
+  {
+    "file": "wms-cost.html",
+    "title": "How Much Does a Warehouse Management System Cost? — Quark",
+    "description": "Build a WMS budget from your own inputs: licensing, implementation, integrations, devices, support and three- or five-year total cost of ownership."
+  },
+  {
+    "file": "tools/wms-readiness-assessment/index.html",
+    "title": "WMS Readiness Assessment — Free Warehouse Evaluation Tool",
+    "description": "Assess your warehouse project preparation, identify open requirements and get a free WMS preparation brief with practical next steps."
+  }
+]

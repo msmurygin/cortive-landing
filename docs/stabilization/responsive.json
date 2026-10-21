@@ -1,0 +1,182 @@
+[
+  {
+    "overflow": false,
+    "pageWidth": 320,
+    "route": "/",
+    "width": 320
+  },
+  {
+    "overflow": false,
+    "pageWidth": 320,
+    "route": "/product",
+    "width": 320
+  },
+  {
+    "overflow": false,
+    "pageWidth": 320,
+    "route": "/vision",
+    "width": 320
+  },
+  {
+    "overflow": false,
+    "pageWidth": 320,
+    "route": "/wms-cost",
+    "width": 320
+  },
+  {
+    "overflow": false,
+    "pageWidth": 320,
+    "route": "/tools/wms-readiness-assessment",
+    "width": 320
+  },
+  {
+    "overflow": false,
+    "pageWidth": 375,
+    "route": "/",
+    "width": 375
+  },
+  {
+    "overflow": false,
+    "pageWidth": 375,
+    "route": "/product",
+    "width": 375
+  },
+  {
+    "overflow": false,
+    "pageWidth": 375,
+    "route": "/vision",
+    "width": 375
+  },
+  {
+    "overflow": false,
+    "pageWidth": 375,
+    "route": "/wms-cost",
+    "width": 375
+  },
+  {
+    "overflow": false,
+    "pageWidth": 375,
+    "route": "/tools/wms-readiness-assessment",
+    "width": 375
+  },
+  {
+    "overflow": false,
+    "pageWidth": 390,
+    "route": "/",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "pageWidth": 390,
+    "route": "/product",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "pageWidth": 390,
+    "route": "/vision",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "pageWidth": 390,
+    "route": "/wms-cost",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "pageWidth": 390,
+    "route": "/tools/wms-readiness-assessment",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "pageWidth": 430,
+    "route": "/",
+    "width": 430
+  },
+  {
+    "overflow": false,
+    "pageWidth": 430,
+    "route": "/product",
+    "width": 430
+  },
+  {
+    "overflow": false,
+    "pageWidth": 430,
+    "route": "/vision",
+    "width": 430
+  },
+  {
+    "overflow": false,
+    "pageWidth": 430,
+    "route": "/wms-cost",
+    "width": 430
+  },
+  {
+    "overflow": false,
+    "pageWidth": 430,
+    "route": "/tools/wms-readiness-assessment",
+    "width": 430
+  },
+  {
+    "overflow": false,
+    "pageWidth": 768,
+    "route": "/",
+    "width": 768
+  },
+  {
+    "overflow": false,
+    "pageWidth": 768,
+    "route": "/product",
+    "width": 768
+  },
+  {
+    "overflow": false,
+    "pageWidth": 768,
+    "route": "/vision",
+    "width": 768
+  },
+  {
+    "overflow": false,
+    "pageWidth": 768,
+    "route": "/wms-cost",
+    "width": 768
+  },
+  {
+    "overflow": false,
+    "pageWidth": 768,
+    "route": "/tools/wms-readiness-assessment",
+    "width": 768
+  },
+  {
+    "overflow": false,
+    "pageWidth": 1280,
+    "route": "/",
+    "width": 1280
+  },
+  {
+    "overflow": false,
+    "pageWidth": 1280,
+    "route": "/product",
+    "width": 1280
+  },
+  {
+    "overflow": false,
+    "pageWidth": 1280,
+    "route": "/vision",
+    "width": 1280
+  },
+  {
+    "overflow": false,
+    "pageWidth": 1280,
+    "route": "/wms-cost",
+    "width": 1280
+  },
+  {
+    "overflow": false,
+    "pageWidth": 1280,
+    "route": "/tools/wms-readiness-assessment",
+    "width": 1280
+  }
+]

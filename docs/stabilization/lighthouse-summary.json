@@ -1,0 +1,58 @@
+{
+  "measurements": [
+    {
+      "page": "before-home",
+      "version": "13.5.0",
+      "scores": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "LCP_ms": 2648,
+      "CLS": 0,
+      "youtubeRequests": 0
+    },
+    {
+      "page": "after-home",
+      "version": "13.5.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "LCP_ms": 1652,
+      "CLS": 0.0005932067230324619,
+      "youtubeRequests": 0
+    },
+    {
+      "page": "after-product",
+      "version": "13.5.0",
+      "scores": {
+        "performance": 91,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "LCP_ms": 2822,
+      "CLS": 0,
+      "youtubeRequests": 0
+    },
+    {
+      "page": "before-product",
+      "version": "13.5.0",
+      "scores": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "LCP_ms": 2918,
+      "CLS": 0,
+      "youtubeRequests": 0
+    }
+  ],
+  "method": "Lighthouse 13.5.0 mobile simulation in isolated headless Chrome; same machine, local static baseline and candidate. Lab samples, not field CWV.",
+  "seoNote": "Local QA servers deliberately set X-Robots-Tag noindex. SEO score 66 is not a production-indexability result. Canonical/robots/sitemap preservation checked separately."
+}

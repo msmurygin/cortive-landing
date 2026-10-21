@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "checks": 599,
+  "references": 288,
+  "baseline": "029347ae5c4c62a728c838c5d6930d0f7293eb3f",
+  "metadata": [
+    {
+      "file": "index.html",
+      "canonical": [
+        "https://quark.build/"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width,initial-scale=1",
+        "description": "Quark WMS runs receiving, inventory control, fulfilment and RF warehouse workflows on a configurable platform. Request a product demo.",
+        "robots": "index,follow",
+        "og:type": "website",
+        "og:site_name": "Quark",
+        "og:title": "Quark WMS — Configurable Warehouse Management System",
+        "og:description": "Quark WMS runs receiving, inventory control, fulfilment and RF warehouse workflows on a configurable platform. Request a product demo.",
+        "og:url": "https://quark.build/",
+        "og:image": "https://quark.build/assets/shots/web/balances-by-location.jpg",
+        "og:image:alt": "Quark inventory screen showing stock by location and hold reasons",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Quark WMS — Configurable Warehouse Management System",
+        "twitter:description": "Quark WMS runs receiving, inventory control, fulfilment and RF warehouse workflows on a configurable platform. Request a product demo.",
+        "twitter:image": "https://quark.build/assets/shots/web/balances-by-location.jpg"
+      }
+    },
+    {
+      "file": "product.html",
+      "canonical": [
+        "https://quark.build/product"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width,initial-scale=1",
+        "description": "See how Quark WMS manages receiving, putaway, inventory, wave planning, picking and shipping, with RF execution and customer-specific configuration.",
+        "robots": "index,follow",
+        "og:type": "website",
+        "og:site_name": "Quark",
+        "og:title": "Quark WMS Product Overview — Operations & Configuration",
+        "og:description": "See how Quark WMS manages receiving, putaway, inventory, wave planning, picking and shipping, with RF execution and customer-specific configuration.",
+        "og:url": "https://quark.build/product",
+        "og:image": "https://quark.build/assets/shots/web/balances-by-location.jpg",
+        "og:image:alt": "Quark inventory screen showing stock by location and hold reasons",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Quark WMS Product Overview — Operations & Configuration",
+        "twitter:description": "See how Quark WMS manages receiving, putaway, inventory, wave planning, picking and shipping, with RF execution and customer-specific configuration.",
+        "twitter:image": "https://quark.build/assets/shots/web/balances-by-location.jpg"
+      }
+    },
+    {
+      "file": "vision.html",
+      "canonical": [
+        "https://quark.build/vision"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width,initial-scale=1",
+        "description": "Explore Quark’s future AI Onboarding and AI Support vision, built around its implemented core WMS and configurable platform.",
+        "og:type": "website",
+        "og:url": "https://quark.build/vision",
+        "og:title": "Quark WMS Vision — Future AI Onboarding & Support",
+        "og:description": "Explore Quark’s future AI Onboarding and AI Support vision, built around its implemented core WMS and configurable platform.",
+        "og:site_name": "Quark",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Quark WMS Vision — Future AI Onboarding & Support",
+        "twitter:description": "Explore Quark’s future AI Onboarding and AI Support vision, built around its implemented core WMS and configurable platform.",
+        "robots": "index,follow"
+      }
+    },
+    {
+      "file": "wms-cost.html",
+      "canonical": [
+        "https://quark.build/wms-cost"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width,initial-scale=1",
+        "description": "Build a WMS budget from your own inputs: licensing, implementation, integrations, devices, support and three- or five-year total cost of ownership.",
+        "robots": "index,follow",
+        "og:type": "website",
+        "og:title": "How Much Does a Warehouse Management System Cost? — Quark",
+        "og:description": "Build a WMS budget from your own inputs: licensing, implementation, integrations, devices, support and three- or five-year total cost of ownership.",
+        "og:url": "https://quark.build/wms-cost",
+        "twitter:card": "summary",
+        "twitter:title": "How Much Does a Warehouse Management System Cost? — Quark",
+        "twitter:description": "Build a WMS budget from your own inputs: licensing, implementation, integrations, devices, support and three- or five-year total cost of ownership."
+      }
+    },
+    {
+      "file": "tools/wms-readiness-assessment/index.html",
+      "canonical": [
+        "https://quark.build/tools/wms-readiness-assessment"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width,initial-scale=1",
+        "description": "Assess your warehouse project preparation, identify open requirements and get a free WMS preparation brief with practical next steps.",
+        "robots": "index,follow",
+        "og:type": "website",
+        "og:title": "WMS Readiness Assessment — Free Warehouse Evaluation Tool",
+        "og:description": "Assess your warehouse project preparation, identify open requirements and get a free WMS preparation brief with practical next steps.",
+        "og:url": "https://quark.build/tools/wms-readiness-assessment",
+        "twitter:title": "WMS Readiness Assessment — Free Warehouse Evaluation Tool",
+        "twitter:description": "Assess your warehouse project preparation, identify open requirements and get a free WMS preparation brief with practical next steps."
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "name": "small",
+    "steps": 7,
+    "readiness": "Ready for detailed evaluation",
+    "actions": [],
+    "overflow": false
+  },
+  {
+    "name": "pharmaCold",
+    "steps": 10,
+    "readiness": "Ready for detailed evaluation",
+    "actions": [
+      "Validate client-specific acceptance scenarios",
+      "Document controlled-environment exceptions",
+      "Investigate Inventory accuracy"
+    ],
+    "overflow": false
+  },
+  {
+    "name": "manyOwners",
+    "steps": 9,
+    "readiness": "Ready for detailed evaluation",
+    "actions": [
+      "Clarify the planned ERP connection despite no ERP today",
+      "Validate client-specific acceptance scenarios",
+      "Build an interface validation sheet"
+    ],
+    "overflow": false
+  },
+  {
+    "name": "pharmaManufacturing",
+    "steps": 10,
+    "readiness": "Ready for detailed evaluation",
+    "actions": [
+      "Build an interface validation sheet",
+      "Document a production-supply scenario",
+      "Map stock status and release authority"
+    ],
+    "overflow": false
+  },
+  {
+    "name": "fashion",
+    "steps": 8,
+    "readiness": "Ready for detailed evaluation",
+    "actions": [
+      "Investigate Picking errors",
+      "Investigate Too much manual work",
+      "Prepare a return-to-disposition scenario"
+    ],
+    "overflow": false
+  }
+]

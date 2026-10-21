@@ -1,0 +1,1573 @@
+{
+  "reportTitle": "WMS Project Preparation Brief",
+  "assessmentSchemaVersion": "2.0.0",
+  "taxonomyVersion": "0.1.0",
+  "rulesVersion": "0.2.0",
+  "generatedAt": "2026-10-21T09:59:31.575Z",
+  "localProcessingConsentConfirmed": true,
+  "answers": {
+    "industries": [
+      "distribution"
+    ],
+    "primaryIndustry": "distribution",
+    "models": [
+      "own"
+    ],
+    "sites": 1,
+    "users": 12,
+    "volume": 250,
+    "volumeUnit": "orders",
+    "tracking": [
+      "quantity"
+    ],
+    "ownership": "single",
+    "environment": [
+      "ambient"
+    ],
+    "channel": "b2b",
+    "units": "single",
+    "currentSystem": "manual",
+    "erp": "no",
+    "integrations": [
+      "none"
+    ],
+    "rf": "no",
+    "automation": [
+      "none"
+    ],
+    "processes": [
+      "receiving",
+      "putaway",
+      "picking",
+      "shipping"
+    ],
+    "variants": "standard",
+    "challenges": [
+      "none"
+    ],
+    "masterData": "ready",
+    "requirements": "ready",
+    "owner": "ready",
+    "budget": "ready",
+    "horizon": "later",
+    "stakeholders": "ready",
+    "uat": "ready"
+  },
+  "selectedTaxonomy": {
+    "primaryIndustry": "distribution",
+    "industries": [
+      "distribution"
+    ],
+    "operatingModels": [
+      "own"
+    ]
+  },
+  "warehouseProfile": {
+    "warehouses": 1,
+    "activeUsers": 12,
+    "dailyVolume": 250,
+    "volumeUnit": "orders",
+    "industryDescription": null,
+    "modelDescription": null
+  },
+  "confirmedCharacteristics": [
+    {
+      "ruleId": "fact:industries",
+      "conclusionType": "confirmed_answer",
+      "title": "Industries: General Distribution",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "industries",
+          "questionId": "D01",
+          "value": [
+            "distribution"
+          ],
+          "label": "Industries",
+          "display": "General Distribution"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:primaryIndustry",
+      "conclusionType": "confirmed_answer",
+      "title": "Primary industry: General Distribution",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "primaryIndustry",
+          "questionId": "D01",
+          "value": "distribution",
+          "label": "Primary industry",
+          "display": "General Distribution"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:models",
+      "conclusionType": "confirmed_answer",
+      "title": "Operating models: Own Inventory",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "models",
+          "questionId": "D02",
+          "value": [
+            "own"
+          ],
+          "label": "Operating models",
+          "display": "Own Inventory"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:sites",
+      "conclusionType": "confirmed_answer",
+      "title": "Warehouses: 1",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "sites",
+          "questionId": "D03",
+          "value": 1,
+          "label": "Warehouses",
+          "display": "1"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:users",
+      "conclusionType": "confirmed_answer",
+      "title": "Active warehouse users: 12",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "users",
+          "questionId": "D03",
+          "value": 12,
+          "label": "Active warehouse users",
+          "display": "12"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:volume",
+      "conclusionType": "confirmed_answer",
+      "title": "Approximate daily volume: 250",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "volume",
+          "questionId": "D03",
+          "value": 250,
+          "label": "Approximate daily volume",
+          "display": "250"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:volumeUnit",
+      "conclusionType": "confirmed_answer",
+      "title": "Volume unit: Orders per day",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "volumeUnit",
+          "questionId": "D03",
+          "value": "orders",
+          "label": "Volume unit",
+          "display": "Orders per day"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:tracking",
+      "conclusionType": "confirmed_answer",
+      "title": "Required tracking: Quantity only",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "tracking",
+          "questionId": "D04",
+          "value": [
+            "quantity"
+          ],
+          "label": "Required tracking",
+          "display": "Quantity only"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:ownership",
+      "conclusionType": "confirmed_answer",
+      "title": "Inventory ownership: One owner",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "ownership",
+          "questionId": "D04",
+          "value": "single",
+          "label": "Inventory ownership",
+          "display": "One owner"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:environment",
+      "conclusionType": "confirmed_answer",
+      "title": "Storage environment: Ambient",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "environment",
+          "questionId": "D04",
+          "value": [
+            "ambient"
+          ],
+          "label": "Storage environment",
+          "display": "Ambient"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:channel",
+      "conclusionType": "confirmed_answer",
+      "title": "Order channel: B2B",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "channel",
+          "questionId": "D04",
+          "value": "b2b",
+          "label": "Order channel",
+          "display": "B2B"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:units",
+      "conclusionType": "confirmed_answer",
+      "title": "Units of measure: A single handling unit",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "units",
+          "questionId": "D04",
+          "value": "single",
+          "label": "Units of measure",
+          "display": "A single handling unit"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:currentSystem",
+      "conclusionType": "confirmed_answer",
+      "title": "Current warehouse management: Paper / spreadsheets / manual processes",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "currentSystem",
+          "questionId": "D05",
+          "value": "manual",
+          "label": "Current warehouse management",
+          "display": "Paper / spreadsheets / manual processes"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:erp",
+      "conclusionType": "confirmed_answer",
+      "title": "ERP presence: No ERP in use",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "erp",
+          "questionId": "D05",
+          "value": "no",
+          "label": "ERP presence",
+          "display": "No ERP in use"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:integrations",
+      "conclusionType": "confirmed_answer",
+      "title": "Required integration categories: No external connections planned",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "integrations",
+          "questionId": "D05",
+          "value": [
+            "none"
+          ],
+          "label": "Required integration categories",
+          "display": "No external connections planned"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:rf",
+      "conclusionType": "confirmed_answer",
+      "title": "RF / mobile warehouse operations: Not currently used or planned",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "rf",
+          "questionId": "D05",
+          "value": "no",
+          "label": "RF / mobile warehouse operations",
+          "display": "Not currently used or planned"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:automation",
+      "conclusionType": "confirmed_answer",
+      "title": "Automation equipment in use or planned: No automation in scope",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "automation",
+          "questionId": "D05",
+          "value": [
+            "none"
+          ],
+          "label": "Automation equipment in use or planned",
+          "display": "No automation in scope"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:processes",
+      "conclusionType": "confirmed_answer",
+      "title": "Warehouse workflows: Receiving, Putaway, Picking, Shipping",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "processes",
+          "questionId": "D06",
+          "value": [
+            "receiving",
+            "putaway",
+            "picking",
+            "shipping"
+          ],
+          "label": "Warehouse workflows",
+          "display": "Receiving, Putaway, Picking, Shipping"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:variants",
+      "conclusionType": "confirmed_answer",
+      "title": "Process variations: One broadly consistent set of processes",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "variants",
+          "questionId": "D06",
+          "value": "standard",
+          "label": "Process variations",
+          "display": "One broadly consistent set of processes"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:challenges",
+      "conclusionType": "confirmed_answer",
+      "title": "Important operational problems: No specific problem identified yet",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "challenges",
+          "questionId": "D06",
+          "value": [
+            "none"
+          ],
+          "label": "Important operational problems",
+          "display": "No specific problem identified yet"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:masterData",
+      "conclusionType": "confirmed_answer",
+      "title": "SKU and location master data: Available, reviewed and consistent",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "masterData",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "SKU and location master data",
+          "display": "Available, reviewed and consistent"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:requirements",
+      "conclusionType": "confirmed_answer",
+      "title": "Operational requirements: Documented and agreed with process owners",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "requirements",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Operational requirements",
+          "display": "Documented and agreed with process owners"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:owner",
+      "conclusionType": "confirmed_answer",
+      "title": "Internal project owner: An owner is assigned with time allocated",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "owner",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Internal project owner",
+          "display": "An owner is assigned with time allocated"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:budget",
+      "conclusionType": "confirmed_answer",
+      "title": "Budget readiness: A planning basis and decision process are agreed",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "budget",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Budget readiness",
+          "display": "A planning basis and decision process are agreed"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:horizon",
+      "conclusionType": "confirmed_answer",
+      "title": "Intended implementation horizon: Considering a start in 6–12 months",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "horizon",
+          "questionId": "D07",
+          "value": "later",
+          "label": "Intended implementation horizon",
+          "display": "Considering a start in 6–12 months"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:stakeholders",
+      "conclusionType": "confirmed_answer",
+      "title": "Operations and IT stakeholders: Agreed and assigned",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "stakeholders",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Operations and IT stakeholders",
+          "display": "Agreed and assigned"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:uat",
+      "conclusionType": "confirmed_answer",
+      "title": "Representative tests and exception scenarios: Agreed and assigned",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "uat",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Representative tests and exception scenarios",
+          "display": "Agreed and assigned"
+        }
+      ]
+    }
+  ],
+  "derivedHypotheses": [],
+  "complexityDimensions": [
+    {
+      "id": "process",
+      "title": "Process Variability",
+      "status": "Evidence to evaluate",
+      "factors": [
+        {
+          "ruleId": "fact:variants",
+          "conclusionType": "confirmed_answer",
+          "title": "Process variations: One broadly consistent set of processes",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "variants",
+              "questionId": "D06",
+              "value": "standard",
+              "label": "Process variations",
+              "display": "One broadly consistent set of processes"
+            }
+          ],
+          "answerKey": "variants",
+          "text": "Process variations: One broadly consistent set of processes"
+        }
+      ],
+      "uncertainty": [
+        {
+          "answerKey": "clientVariance",
+          "questionId": "COWN",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "dispatch",
+          "questionId": "CFLOW",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "packing",
+          "questionId": "CECOM",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "siteSimilarity",
+          "questionId": "CSITES",
+          "reason": "Not selected by this path; relevance not established"
+        }
+      ],
+      "explanation": "Compare exceptions across clients, channels and sites; scale alone is not process variation."
+    },
+    {
+      "id": "inventory",
+      "title": "Inventory & Traceability",
+      "status": "Evidence to evaluate",
+      "factors": [
+        {
+          "ruleId": "fact:tracking",
+          "conclusionType": "confirmed_answer",
+          "title": "Required tracking: Quantity only",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "tracking",
+              "questionId": "D04",
+              "value": [
+                "quantity"
+              ],
+              "label": "Required tracking",
+              "display": "Quantity only"
+            }
+          ],
+          "answerKey": "tracking",
+          "text": "Required tracking: Quantity only"
+        },
+        {
+          "ruleId": "fact:ownership",
+          "conclusionType": "confirmed_answer",
+          "title": "Inventory ownership: One owner",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "ownership",
+              "questionId": "D04",
+              "value": "single",
+              "label": "Inventory ownership",
+              "display": "One owner"
+            }
+          ],
+          "answerKey": "ownership",
+          "text": "Inventory ownership: One owner"
+        },
+        {
+          "ruleId": "fact:units",
+          "conclusionType": "confirmed_answer",
+          "title": "Units of measure: A single handling unit",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "units",
+              "questionId": "D04",
+              "value": "single",
+              "label": "Units of measure",
+              "display": "A single handling unit"
+            }
+          ],
+          "answerKey": "units",
+          "text": "Units of measure: A single handling unit"
+        }
+      ],
+      "uncertainty": [
+        {
+          "answerKey": "qc",
+          "questionId": "CREG",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "productVariants",
+          "questionId": "CECOM",
+          "reason": "Not selected by this path; relevance not established"
+        }
+      ],
+      "explanation": "Explicit tracking/status/unit rules need representative samples; industry does not establish required tracking."
+    },
+    {
+      "id": "integrations",
+      "title": "Integrations",
+      "status": "Evidence to evaluate",
+      "factors": [
+        {
+          "ruleId": "fact:integrations",
+          "conclusionType": "confirmed_answer",
+          "title": "Required integration categories: No external connections planned",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "integrations",
+              "questionId": "D05",
+              "value": [
+                "none"
+              ],
+              "label": "Required integration categories",
+              "display": "No external connections planned"
+            }
+          ],
+          "answerKey": "integrations",
+          "text": "Required integration categories: No external connections planned"
+        }
+      ],
+      "uncertainty": [
+        {
+          "answerKey": "interfacePattern",
+          "questionId": "CIF",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "interfaceOwnership",
+          "questionId": "CIF",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "interfaceRecovery",
+          "questionId": "CIF",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "productionLink",
+          "questionId": "CMFG",
+          "reason": "Not selected by this path; relevance not established"
+        }
+      ],
+      "explanation": "Categories identify scope; protocols, ownership and recovery determine the questions to investigate, not a count-based effort score."
+    },
+    {
+      "id": "automation",
+      "title": "Automation",
+      "status": "Evidence to evaluate",
+      "factors": [
+        {
+          "ruleId": "fact:rf",
+          "conclusionType": "confirmed_answer",
+          "title": "RF / mobile warehouse operations: Not currently used or planned",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "rf",
+              "questionId": "D05",
+              "value": "no",
+              "label": "RF / mobile warehouse operations",
+              "display": "Not currently used or planned"
+            }
+          ],
+          "answerKey": "rf",
+          "text": "RF / mobile warehouse operations: Not currently used or planned"
+        },
+        {
+          "ruleId": "fact:automation",
+          "conclusionType": "confirmed_answer",
+          "title": "Automation equipment in use or planned: No automation in scope",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "automation",
+              "questionId": "D05",
+              "value": [
+                "none"
+              ],
+              "label": "Automation equipment in use or planned",
+              "display": "No automation in scope"
+            }
+          ],
+          "answerKey": "automation",
+          "text": "Automation equipment in use or planned: No automation in scope"
+        }
+      ],
+      "uncertainty": [
+        {
+          "answerKey": "equipmentOwner",
+          "questionId": "CAUTO",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "fallback",
+          "questionId": "CAUTO",
+          "reason": "Not selected by this path; relevance not established"
+        }
+      ],
+      "explanation": "RF devices are distinct from equipment control. Supplier compatibility and recovery need validation."
+    },
+    {
+      "id": "compliance",
+      "title": "Compliance",
+      "status": "Insufficient information",
+      "factors": [],
+      "uncertainty": [
+        {
+          "answerKey": "jurisdiction",
+          "questionId": "CREG",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "obligations",
+          "questionId": "CREG",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "obligationNotes",
+          "questionId": "CREG",
+          "reason": "Not selected by this path; relevance not established"
+        }
+      ],
+      "explanation": "Only user-stated obligations are reported. No applicable law, certification or conformity is inferred."
+    },
+    {
+      "id": "multi-owner",
+      "title": "Multi-owner Operations",
+      "status": "Evidence to evaluate",
+      "factors": [
+        {
+          "ruleId": "fact:ownership",
+          "conclusionType": "confirmed_answer",
+          "title": "Inventory ownership: One owner",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "ownership",
+              "questionId": "D04",
+              "value": "single",
+              "label": "Inventory ownership",
+              "display": "One owner"
+            }
+          ],
+          "answerKey": "ownership",
+          "text": "Inventory ownership: One owner"
+        }
+      ],
+      "uncertainty": [
+        {
+          "answerKey": "owners",
+          "questionId": "COWN",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "clientVariance",
+          "questionId": "COWN",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "clientNeeds",
+          "questionId": "COWN",
+          "reason": "Not selected by this path; relevance not established"
+        }
+      ],
+      "explanation": "Separate depositor count from differences in ownership, policies, labels, reporting and billing requirements."
+    },
+    {
+      "id": "replication",
+      "title": "Deployment Replicability",
+      "status": "Evidence to evaluate",
+      "factors": [
+        {
+          "ruleId": "fact:sites",
+          "conclusionType": "confirmed_answer",
+          "title": "Warehouses: 1",
+          "explanation": "Explicitly reported answer, not an independently established fact.",
+          "uncertainty": "User-reported; not independently verified.",
+          "action": "Validate with the responsible process or system owner.",
+          "priority": 3,
+          "supportingAnswers": [
+            {
+              "answerKey": "sites",
+              "questionId": "D03",
+              "value": 1,
+              "label": "Warehouses",
+              "display": "1"
+            }
+          ],
+          "answerKey": "sites",
+          "text": "Warehouses: 1"
+        }
+      ],
+      "uncertainty": [
+        {
+          "answerKey": "siteSimilarity",
+          "questionId": "CSITES",
+          "reason": "Not selected by this path; relevance not established"
+        },
+        {
+          "answerKey": "replication",
+          "questionId": "CSITES",
+          "reason": "Not selected by this path; relevance not established"
+        }
+      ],
+      "explanation": "Repeatability depends on process and exception similarity, not the number of sites alone."
+    }
+  ],
+  "implementationReadiness": {
+    "level": "Ready for detailed evaluation",
+    "keys": [
+      "masterData",
+      "requirements",
+      "owner",
+      "budget",
+      "stakeholders",
+      "uat"
+    ],
+    "gaps": [],
+    "unknownInputs": [],
+    "horizon": "later",
+    "supportingAnswers": [
+      {
+        "answerKey": "masterData",
+        "questionId": "D07",
+        "value": "ready",
+        "label": "SKU and location master data",
+        "display": "Available, reviewed and consistent"
+      },
+      {
+        "answerKey": "requirements",
+        "questionId": "D07",
+        "value": "ready",
+        "label": "Operational requirements",
+        "display": "Documented and agreed with process owners"
+      },
+      {
+        "answerKey": "owner",
+        "questionId": "D07",
+        "value": "ready",
+        "label": "Internal project owner",
+        "display": "An owner is assigned with time allocated"
+      },
+      {
+        "answerKey": "budget",
+        "questionId": "D07",
+        "value": "ready",
+        "label": "Budget readiness",
+        "display": "A planning basis and decision process are agreed"
+      },
+      {
+        "answerKey": "stakeholders",
+        "questionId": "D07",
+        "value": "ready",
+        "label": "Operations and IT stakeholders",
+        "display": "Agreed and assigned"
+      },
+      {
+        "answerKey": "uat",
+        "questionId": "D07",
+        "value": "ready",
+        "label": "Representative tests and exception scenarios",
+        "display": "Agreed and assigned"
+      },
+      {
+        "answerKey": "horizon",
+        "questionId": "D07",
+        "value": "later",
+        "label": "Intended implementation horizon",
+        "display": "Considering a start in 6–12 months"
+      }
+    ]
+  },
+  "unknownRequirements": [],
+  "recommendations": [],
+  "findings": [
+    {
+      "ruleId": "fact:industries",
+      "conclusionType": "confirmed_answer",
+      "title": "Industries: General Distribution",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "industries",
+          "questionId": "D01",
+          "value": [
+            "distribution"
+          ],
+          "label": "Industries",
+          "display": "General Distribution"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:primaryIndustry",
+      "conclusionType": "confirmed_answer",
+      "title": "Primary industry: General Distribution",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "primaryIndustry",
+          "questionId": "D01",
+          "value": "distribution",
+          "label": "Primary industry",
+          "display": "General Distribution"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:models",
+      "conclusionType": "confirmed_answer",
+      "title": "Operating models: Own Inventory",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "models",
+          "questionId": "D02",
+          "value": [
+            "own"
+          ],
+          "label": "Operating models",
+          "display": "Own Inventory"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:sites",
+      "conclusionType": "confirmed_answer",
+      "title": "Warehouses: 1",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "sites",
+          "questionId": "D03",
+          "value": 1,
+          "label": "Warehouses",
+          "display": "1"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:users",
+      "conclusionType": "confirmed_answer",
+      "title": "Active warehouse users: 12",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "users",
+          "questionId": "D03",
+          "value": 12,
+          "label": "Active warehouse users",
+          "display": "12"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:volume",
+      "conclusionType": "confirmed_answer",
+      "title": "Approximate daily volume: 250",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "volume",
+          "questionId": "D03",
+          "value": 250,
+          "label": "Approximate daily volume",
+          "display": "250"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:volumeUnit",
+      "conclusionType": "confirmed_answer",
+      "title": "Volume unit: Orders per day",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "volumeUnit",
+          "questionId": "D03",
+          "value": "orders",
+          "label": "Volume unit",
+          "display": "Orders per day"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:tracking",
+      "conclusionType": "confirmed_answer",
+      "title": "Required tracking: Quantity only",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "tracking",
+          "questionId": "D04",
+          "value": [
+            "quantity"
+          ],
+          "label": "Required tracking",
+          "display": "Quantity only"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:ownership",
+      "conclusionType": "confirmed_answer",
+      "title": "Inventory ownership: One owner",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "ownership",
+          "questionId": "D04",
+          "value": "single",
+          "label": "Inventory ownership",
+          "display": "One owner"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:environment",
+      "conclusionType": "confirmed_answer",
+      "title": "Storage environment: Ambient",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "environment",
+          "questionId": "D04",
+          "value": [
+            "ambient"
+          ],
+          "label": "Storage environment",
+          "display": "Ambient"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:channel",
+      "conclusionType": "confirmed_answer",
+      "title": "Order channel: B2B",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "channel",
+          "questionId": "D04",
+          "value": "b2b",
+          "label": "Order channel",
+          "display": "B2B"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:units",
+      "conclusionType": "confirmed_answer",
+      "title": "Units of measure: A single handling unit",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "units",
+          "questionId": "D04",
+          "value": "single",
+          "label": "Units of measure",
+          "display": "A single handling unit"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:currentSystem",
+      "conclusionType": "confirmed_answer",
+      "title": "Current warehouse management: Paper / spreadsheets / manual processes",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "currentSystem",
+          "questionId": "D05",
+          "value": "manual",
+          "label": "Current warehouse management",
+          "display": "Paper / spreadsheets / manual processes"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:erp",
+      "conclusionType": "confirmed_answer",
+      "title": "ERP presence: No ERP in use",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "erp",
+          "questionId": "D05",
+          "value": "no",
+          "label": "ERP presence",
+          "display": "No ERP in use"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:integrations",
+      "conclusionType": "confirmed_answer",
+      "title": "Required integration categories: No external connections planned",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "integrations",
+          "questionId": "D05",
+          "value": [
+            "none"
+          ],
+          "label": "Required integration categories",
+          "display": "No external connections planned"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:rf",
+      "conclusionType": "confirmed_answer",
+      "title": "RF / mobile warehouse operations: Not currently used or planned",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "rf",
+          "questionId": "D05",
+          "value": "no",
+          "label": "RF / mobile warehouse operations",
+          "display": "Not currently used or planned"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:automation",
+      "conclusionType": "confirmed_answer",
+      "title": "Automation equipment in use or planned: No automation in scope",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "automation",
+          "questionId": "D05",
+          "value": [
+            "none"
+          ],
+          "label": "Automation equipment in use or planned",
+          "display": "No automation in scope"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:processes",
+      "conclusionType": "confirmed_answer",
+      "title": "Warehouse workflows: Receiving, Putaway, Picking, Shipping",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "processes",
+          "questionId": "D06",
+          "value": [
+            "receiving",
+            "putaway",
+            "picking",
+            "shipping"
+          ],
+          "label": "Warehouse workflows",
+          "display": "Receiving, Putaway, Picking, Shipping"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:variants",
+      "conclusionType": "confirmed_answer",
+      "title": "Process variations: One broadly consistent set of processes",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "variants",
+          "questionId": "D06",
+          "value": "standard",
+          "label": "Process variations",
+          "display": "One broadly consistent set of processes"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:challenges",
+      "conclusionType": "confirmed_answer",
+      "title": "Important operational problems: No specific problem identified yet",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "challenges",
+          "questionId": "D06",
+          "value": [
+            "none"
+          ],
+          "label": "Important operational problems",
+          "display": "No specific problem identified yet"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:masterData",
+      "conclusionType": "confirmed_answer",
+      "title": "SKU and location master data: Available, reviewed and consistent",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "masterData",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "SKU and location master data",
+          "display": "Available, reviewed and consistent"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:requirements",
+      "conclusionType": "confirmed_answer",
+      "title": "Operational requirements: Documented and agreed with process owners",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "requirements",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Operational requirements",
+          "display": "Documented and agreed with process owners"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:owner",
+      "conclusionType": "confirmed_answer",
+      "title": "Internal project owner: An owner is assigned with time allocated",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "owner",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Internal project owner",
+          "display": "An owner is assigned with time allocated"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:budget",
+      "conclusionType": "confirmed_answer",
+      "title": "Budget readiness: A planning basis and decision process are agreed",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "budget",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Budget readiness",
+          "display": "A planning basis and decision process are agreed"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:horizon",
+      "conclusionType": "confirmed_answer",
+      "title": "Intended implementation horizon: Considering a start in 6–12 months",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "horizon",
+          "questionId": "D07",
+          "value": "later",
+          "label": "Intended implementation horizon",
+          "display": "Considering a start in 6–12 months"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:stakeholders",
+      "conclusionType": "confirmed_answer",
+      "title": "Operations and IT stakeholders: Agreed and assigned",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "stakeholders",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Operations and IT stakeholders",
+          "display": "Agreed and assigned"
+        }
+      ]
+    },
+    {
+      "ruleId": "fact:uat",
+      "conclusionType": "confirmed_answer",
+      "title": "Representative tests and exception scenarios: Agreed and assigned",
+      "explanation": "Explicitly reported answer, not an independently established fact.",
+      "uncertainty": "User-reported; not independently verified.",
+      "action": "Validate with the responsible process or system owner.",
+      "priority": 3,
+      "supportingAnswers": [
+        {
+          "answerKey": "uat",
+          "questionId": "D07",
+          "value": "ready",
+          "label": "Representative tests and exception scenarios",
+          "display": "Agreed and assigned"
+        }
+      ]
+    }
+  ],
+  "candidateEvaluationScenarios": [
+    {
+      "ruleId": "pilot:receive",
+      "conclusionType": "recommendation",
+      "title": "Receiving and putaway",
+      "explanation": "These workflows are in the stated scope. Use a representative receipt and storage exception.",
+      "uncertainty": "Customer acceptance scenario; specialist requirements and connections need project-specific validation.",
+      "action": "Choose representative normal and exception cases with a process owner and validate with shortlisted suppliers.",
+      "supportingAnswers": [
+        {
+          "answerKey": "processes",
+          "questionId": "D06",
+          "value": [
+            "receiving",
+            "putaway",
+            "picking",
+            "shipping"
+          ],
+          "label": "Warehouse workflows",
+          "display": "Receiving, Putaway, Picking, Shipping"
+        }
+      ]
+    },
+    {
+      "ruleId": "pilot:outbound",
+      "conclusionType": "recommendation",
+      "title": "Picking and shipping evaluation",
+      "explanation": "An outbound workflow is in scope; select a representative order and exception.",
+      "uncertainty": "Customer acceptance scenario; specialist requirements and connections need project-specific validation.",
+      "action": "Choose representative normal and exception cases with a process owner and validate with shortlisted suppliers.",
+      "supportingAnswers": [
+        {
+          "answerKey": "processes",
+          "questionId": "D06",
+          "value": [
+            "receiving",
+            "putaway",
+            "picking",
+            "shipping"
+          ],
+          "label": "Warehouse workflows",
+          "display": "Receiving, Putaway, Picking, Shipping"
+        }
+      ]
+    }
+  ],
+  "nextSteps": [],
+  "questionPath": {
+    "universal": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D06",
+      "D07"
+    ],
+    "conditional": [],
+    "deferred": []
+  },
+  "disclaimer": "This brief assesses customer project preparation. Quark provides implemented core warehouse operations. User-reported requirements, specialist capabilities and external connections need project-specific validation. This is not compliance certification, a cost/ROI/effort estimate or go-live approval."
+}

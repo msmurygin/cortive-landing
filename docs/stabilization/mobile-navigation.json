@@ -1,0 +1,242 @@
+{
+  "widths": [
+    {
+      "focusInMenu": true,
+      "links": [
+        {
+          "hit": true,
+          "text": "Product",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "WMS Cost Calculator",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Readiness Assessment",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Vision",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Request a Demo\n↗",
+          "visible": true
+        }
+      ],
+      "menuHeight": 780,
+      "menuTop": 64,
+      "overflow": false,
+      "scrollHeight": 779,
+      "viewport": 320,
+      "closed": {
+        "expanded": "false",
+        "focusReturned": true
+      }
+    },
+    {
+      "focusInMenu": true,
+      "links": [
+        {
+          "hit": true,
+          "text": "Product",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "WMS Cost Calculator",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Readiness Assessment",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Vision",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Request a Demo\n↗",
+          "visible": true
+        }
+      ],
+      "menuHeight": 780,
+      "menuTop": 64,
+      "overflow": false,
+      "scrollHeight": 779,
+      "viewport": 375,
+      "closed": {
+        "expanded": "false",
+        "focusReturned": true
+      }
+    },
+    {
+      "focusInMenu": true,
+      "links": [
+        {
+          "hit": true,
+          "text": "Product",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "WMS Cost Calculator",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Readiness Assessment",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Vision",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Request a Demo\n↗",
+          "visible": true
+        }
+      ],
+      "menuHeight": 780,
+      "menuTop": 64,
+      "overflow": false,
+      "scrollHeight": 779,
+      "viewport": 390,
+      "closed": {
+        "expanded": "false",
+        "focusReturned": true
+      }
+    },
+    {
+      "focusInMenu": true,
+      "links": [
+        {
+          "hit": true,
+          "text": "Product",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "WMS Cost Calculator",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Readiness Assessment",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Vision",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Request a Demo\n↗",
+          "visible": true
+        }
+      ],
+      "menuHeight": 780,
+      "menuTop": 64,
+      "overflow": false,
+      "scrollHeight": 779,
+      "viewport": 430,
+      "closed": {
+        "expanded": "false",
+        "focusReturned": true
+      }
+    },
+    {
+      "focusInMenu": true,
+      "links": [
+        {
+          "hit": true,
+          "text": "Product",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "WMS Cost Calculator",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Readiness Assessment",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Vision",
+          "visible": true
+        },
+        {
+          "hit": true,
+          "text": "Request a Demo\n↗",
+          "visible": true
+        }
+      ],
+      "menuHeight": 780,
+      "menuTop": 64,
+      "overflow": false,
+      "scrollHeight": 779,
+      "viewport": 768,
+      "closed": {
+        "expanded": "false",
+        "focusReturned": true
+      }
+    }
+  ],
+  "scrollBefore": {
+    "button": [
+      327.16015625,
+      32
+    ],
+    "x": 20,
+    "y": 1234
+  },
+  "scrollLocked": {
+    "bodyTop": "-1234px",
+    "position": "fixed"
+  },
+  "scrollAfter": {
+    "x": 20,
+    "y": 1234
+  },
+  "focusChecks": [
+    {
+      "label": "Close",
+      "mainInert": true,
+      "tag": "BUTTON",
+      "withinHeader": true
+    },
+    {
+      "label": "Quark home",
+      "mainInert": true,
+      "tag": "A",
+      "withinHeader": true
+    },
+    {
+      "label": "Switch colour theme",
+      "mainInert": true,
+      "tag": "BUTTON",
+      "withinHeader": true
+    },
+    {
+      "label": "Quark home",
+      "mainInert": true,
+      "tag": "A",
+      "withinHeader": true
+    }
+  ],
+  "locatorNote": "Native coordinate click preserves scroll exactly. The automation locator click itself scrolls the document before the event; that movement is excluded from the lock comparison."
+}

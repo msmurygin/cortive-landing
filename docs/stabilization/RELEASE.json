@@ -1,0 +1,53 @@
+{
+  "state": "APPROVAL GATE: no production release authorised",
+  "baseline": "029347ae5c4c62a728c838c5d6930d0f7293eb3f",
+  "stabilizationRuntimeFiles": [
+    "index.html",
+    "product.html",
+    "vision.html",
+    "wms-cost.html",
+    "thanks.html",
+    "legal/privacy.html",
+    "legal/terms.html",
+    "tools/wms-readiness-assessment/index.html",
+    "design-assets/qds.js",
+    "design-assets/qds.css",
+    "assessment-assets/assessment-ui.js",
+    "assessment-assets/assessment.css",
+    "assessment-assets/assessment-summary.js"
+  ],
+  "videoPublication": "Separate gate; not a dependency. All four IDs null and approval flags false.",
+  "preserve": [
+    "Formspree/backend handlers and settings",
+    "Cost formulas and UI logic",
+    "Assessment engine/questions/rules/schema/PDF renderer",
+    "Production robots/sitemap/canonical URLs",
+    "Branding and visual identity"
+  ],
+  "excludeFromProduction": [
+    "preview-only.cjs",
+    "preview-only vercel.json overlay",
+    "unapproved activated videos",
+    "review-only evidence/artifacts unless intentionally published"
+  ],
+  "deployment": [
+    "Obtain explicit founder release approval for stabilization only.",
+    "Fetch current main; verify baseline or reconcile unrelated changes without resetting them.",
+    "Transfer exactly the 13 runtime files from the approved stabilization commit to a clean branch based on main; include latest reviewed fixes. Video preparation may be omitted entirely.",
+    "Run node syntax, tests and validate-site.py using matching baseline; ensure no preview-only build guard/global noindex is included.",
+    "Push approved content-only change through normal fast-forward main flow; wait for Vercel Production success.",
+    "Verify public Home/Product/Vision/Cost/Assessment plus legal contacts, exact content hashes, canonical/robots/sitemap, legacy redirects, mobile menu, demo route and no unintended YouTube requests. Do not send additional test enquiries without owner authorisation."
+  ],
+  "rollback": [
+    "If rollout checks fail, revert only the release commit using git revert, then push main normally; do not force-push or discard unrelated work.",
+    "Wait for successful Vercel redeployment and verify baseline routes, forms, metadata and mobile behavior.",
+    "Rollback restores the prior website, including its known menu defect; report that explicitly and retain the fix branch."
+  ],
+  "approvalNeeded": [
+    "Founder approval of stabilization preview and production release",
+    "Inbox confirmation for labelled delivery test (account-owner action; UI/backend tests otherwise complete)"
+  ],
+  "legalDecision": "Founder explicitly requested retaining EU entity for now. No registered company, SLA, support hours or hosting arrangement was invented.",
+  "stabilizationCommit": "c13878fcab24c8920112afd8aa81d0423b321acd",
+  "inactiveVideoPreparationCommit": "d24ac09fe834387fb9bd53a9562453cafa82291e"
+}
