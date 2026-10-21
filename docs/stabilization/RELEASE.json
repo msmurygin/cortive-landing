@@ -44,10 +44,10 @@
     "Rollback restores the prior website, including its known menu defect; report that explicitly and retain the fix branch."
   ],
   "approvalNeeded": [
-    "Founder approval of stabilization preview and production release",
-    "Inbox confirmation for labelled delivery test (account-owner action; UI/backend tests otherwise complete)"
+    "Founder approval of stabilization preview and explicit production release"
   ],
   "legalDecision": "Founder explicitly requested retaining EU entity for now. No registered company, SLA, support hours or hosting arrangement was invented.",
   "stabilizationCommit": "c13878fcab24c8920112afd8aa81d0423b321acd",
-  "inactiveVideoPreparationCommit": "d24ac09fe834387fb9bd53a9562453cafa82291e"
+  "inactiveVideoPreparationCommit": "d24ac09fe834387fb9bd53a9562453cafa82291e",
+  "deliveryVerified": "Provider browser acceptance and founder Inbox confirmation, 2026-10-21"
 }

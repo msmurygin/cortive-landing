@@ -25,7 +25,7 @@
         },
         {
           "hit": true,
-          "text": "Request a Demo\n↗",
+          "text": "Request a Demo\n\u2197",
           "visible": true
         }
       ],
@@ -64,7 +64,7 @@
         },
         {
           "hit": true,
-          "text": "Request a Demo\n↗",
+          "text": "Request a Demo\n\u2197",
           "visible": true
         }
       ],
@@ -103,7 +103,7 @@
         },
         {
           "hit": true,
-          "text": "Request a Demo\n↗",
+          "text": "Request a Demo\n\u2197",
           "visible": true
         }
       ],
@@ -142,7 +142,7 @@
         },
         {
           "hit": true,
-          "text": "Request a Demo\n↗",
+          "text": "Request a Demo\n\u2197",
           "visible": true
         }
       ],
@@ -181,7 +181,7 @@
         },
         {
           "hit": true,
-          "text": "Request a Demo\n↗",
+          "text": "Request a Demo\n\u2197",
           "visible": true
         }
       ],
@@ -238,5 +238,19 @@
       "withinHeader": true
     }
   ],
-  "locatorNote": "Native coordinate click preserves scroll exactly. The automation locator click itself scrolls the document before the event; that movement is excluded from the lock comparison."
+  "locatorNote": "Native coordinate click preserves scroll exactly. The automation locator click itself scrolls the document before the event; that movement is excluded from the lock comparison.",
+  "landscape": {
+    "width": 768,
+    "height": 430,
+    "menuClientHeight": 365,
+    "menuScrollHeight": 495,
+    "overflowY": "auto",
+    "footerActionsReachable": true
+  },
+  "desktop": {
+    "width": 1280,
+    "navigationDisplay": "flex",
+    "burgerDisplay": "none",
+    "horizontalOverflow": false
+  }
 }
