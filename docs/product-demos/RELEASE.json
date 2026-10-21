@@ -1,0 +1,39 @@
+{
+  "release": "Four founder-approved Quark WMS demonstrations",
+  "approval": "Founder explicitly requested publication and deployment in this conversation, 2026-10-21",
+  "baseline": "dd5fc0fc01e29a8817f109ef353f2ffa7cce20c6",
+  "placements": {
+    "receiving": "/product#demo-receiving (Inbound)",
+    "putaway": "/product#demo-putaway (Inbound)",
+    "inventory-counting": "/product#demo-inventory-counting (Inventory)",
+    "replenishment": "/product#demo-replenishment (Execution)"
+  },
+  "privacy": "Four local YouTube-provided thumbnails, lazy loaded; no third-party requests before explicit Load video player interaction. youtube-nocookie.com iframe only on click, with clear disclosure and an external YouTube fallback. Privacy updated for optional video processing. No new analytics or form changes.",
+  "accessibility": "Real descriptive titles, focusable keyboard buttons, focus passed to iframe; existing verified workflow text and inline text descriptions remain available. YouTube reports captions unavailable for all four recordings; captionsConfirmed remains false. Text descriptions are not presented as transcripts.",
+  "structuredData": "VideoObject only for receiving and replenishment, whose real upload timestamps were exposed by public YouTube metadata. No date, duration or transcript fabricated for any video. All four titles/channels verified by oEmbed; all four watch pages played in browser.",
+  "checks": {
+    "automated": 7,
+    "siteValidationChecks": 616,
+    "localReferences": 298,
+    "lighthouseMobile": {
+      "performance": 91,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "youtubeRequestsBeforeInteraction": 0
+    },
+    "mobileWidth": 390,
+    "horizontalOverflow": false,
+    "localEmbeddedPlayback": "Receiving and Putaway verified; production playback verification follows deployment"
+  },
+  "preserved": [
+    "Home and Vision",
+    "Cost and Assessment",
+    "Existing Product copy and CTAs",
+    "Forms and analytics settings",
+    "Robots/sitemap/canonical URLs",
+    "Production deployment configuration"
+  ],
+  "deployment": "Static generated Product HTML and local assets; no preview-only guard or noindex overlay. Production tracks main.",
+  "rollback": "Revert only this release commit on current main, push normally and verify redeployment; never force-push."
+}

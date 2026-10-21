@@ -1,0 +1,88 @@
+[
+  {
+    "key": "receiving",
+    "section": "inbound",
+    "title": "Quark WMS Receiving Demo | Warehouse Receiving with Web & RF",
+    "description": "Web UI + RF receiving.",
+    "problem": "Record incoming goods and hand received stock to the next warehouse operation.",
+    "stages": [
+      "View the inbound receipt in the web interface.",
+      "Follow the receiving workflow on an RF terminal."
+    ],
+    "youtubeId": "pmOGie2ltEg",
+    "poster": "/assets/demos/receiving.jpg",
+    "width": 1280,
+    "height": 720,
+    "captionsConfirmed": false,
+    "transcript": null,
+    "uploadDate": "2026-10-21T03:58:21-07:00",
+    "duration": null,
+    "metadataVerified": true,
+    "publicationApproved": true,
+    "accessibleDescription": "The recording shows receiving in the Quark web interface and on an RF terminal. The web view provides the inbound receipt context; the RF view shows the warehouse receiving workflow."
+  },
+  {
+    "key": "putaway",
+    "section": "inbound",
+    "title": "Quark WMS Putaway Demo | RF Warehouse Operations",
+    "description": "RF putaway workflow.",
+    "problem": "Move received stock into its storage location with an RF workflow.",
+    "stages": [
+      "Follow the putaway workflow in the RF interface."
+    ],
+    "youtubeId": "cP4fYOkpGNY",
+    "poster": "/assets/demos/putaway.jpg",
+    "width": 1280,
+    "height": 720,
+    "captionsConfirmed": false,
+    "transcript": null,
+    "uploadDate": null,
+    "duration": null,
+    "metadataVerified": true,
+    "publicationApproved": true,
+    "accessibleDescription": "The recording shows a warehouse operator working through putaway in the Quark RF interface. Putaway moves received goods into storage and records the destination in the warehouse workflow."
+  },
+  {
+    "key": "inventory-counting",
+    "section": "inventory",
+    "title": "Quark WMS Inventory Counting Demo | RF Stock Counting",
+    "description": "RF inventory counting.",
+    "problem": "Record warehouse count observations for inventory review.",
+    "stages": [
+      "Follow inventory counting in the RF interface."
+    ],
+    "youtubeId": "oV1XNz-Wz4g",
+    "poster": "/assets/demos/inventory-counting.jpg",
+    "width": 1280,
+    "height": 720,
+    "captionsConfirmed": false,
+    "transcript": null,
+    "uploadDate": null,
+    "duration": null,
+    "metadataVerified": true,
+    "publicationApproved": true,
+    "accessibleDescription": "The recording follows inventory counting on a Quark RF terminal. Warehouse staff use the RF workflow to record count observations for inventory review."
+  },
+  {
+    "key": "replenishment",
+    "section": "execution",
+    "title": "Quark WMS Replenishment Demo | Web & RF Warehouse Workflow",
+    "description": "Web UI + RF replenishment.",
+    "problem": "Keep picking locations supplied through replenishment planning and RF execution.",
+    "stages": [
+      "View replenishment in the web interface.",
+      "Follow replenishment execution on an RF terminal."
+    ],
+    "youtubeId": "bpwlTV-cp44",
+    "poster": "/assets/demos/replenishment.jpg",
+    "width": 1280,
+    "height": 720,
+    "captionsConfirmed": false,
+    "transcript": null,
+    "uploadDate": "2026-10-21T04:02:38-07:00",
+    "duration": null,
+    "metadataVerified": true,
+    "publicationApproved": true,
+    "accessibleDescription": "The recording shows replenishment management in the Quark web application and execution on an RF terminal. These views connect the office planning context with the warehouse replenishment workflow."
+  }
+]
