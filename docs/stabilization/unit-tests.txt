@@ -1,25 +1,26 @@
-✔ four independent videos remain unpublished, without player or third-party media requests (4.065166ms)
-✔ video publication requires verified IDs, posters, captions and separate approval (0.416583ms)
-✔ client component constructs a privacy-enhanced player only within explicit click handler (1.494541ms)
-✔ summary preserves existing findings and priority: small (12.668209ms)
-✔ summary preserves existing findings and priority: repeatable (3.383958ms)
-✔ summary preserves existing findings and priority: manyOwners (23.564834ms)
-✔ summary preserves existing findings and priority: pharmaCold (4.394959ms)
-✔ summary preserves existing findings and priority: pharmaManufacturing (4.158875ms)
-✔ summary preserves existing findings and priority: fmcg (3.583667ms)
-✔ summary preserves existing findings and priority: fashion (2.997625ms)
-✔ zero/fewer than three findings never manufactures recommendations (0.552292ms)
-✔ summary deduplicates identical actions without deleting the full report (0.309041ms)
-✔ assessment engine, PDF and cost calculation files are byte-identical to production baseline (339.895584ms)
-✔ assessment UI has no transmission, storage, query-parameter or consent-gated contact path (18.586208ms)
-✔ current form provider, server handlers and event settings are unchanged (210.798625ms)
-✔ mobile menu repairs fixed containing block and includes focus and scrolling controls (6.794292ms)
-✔ existing enquiry handler forwards to the current provider and distinguishes rejection (16.196791ms)
-ℹ tests 17
+✔ four independent videos remain unpublished, without player or third-party media requests (35.910459ms)
+✔ video publication requires verified IDs, posters, captions and separate approval (0.390541ms)
+✔ client component constructs a privacy-enhanced player only within explicit click handler (43.220042ms)
+✔ approved fixture builds correct placement, aspect ratio and optional valid VideoObject without requests (1259.694042ms)
+✔ summary preserves existing findings and priority: small (22.1965ms)
+✔ summary preserves existing findings and priority: repeatable (3.545958ms)
+✔ summary preserves existing findings and priority: manyOwners (25.510458ms)
+✔ summary preserves existing findings and priority: pharmaCold (4.879042ms)
+✔ summary preserves existing findings and priority: pharmaManufacturing (5.317916ms)
+✔ summary preserves existing findings and priority: fmcg (3.6475ms)
+✔ summary preserves existing findings and priority: fashion (5.400625ms)
+✔ zero/fewer than three findings never manufactures recommendations (1.310292ms)
+✔ summary deduplicates identical actions without deleting the full report (0.340541ms)
+✔ assessment engine, PDF and cost calculation files are byte-identical to production baseline (1202.058542ms)
+✔ assessment UI has no transmission, storage, query-parameter or consent-gated contact path (18.241834ms)
+✔ current form provider, server handlers and event settings are unchanged (381.569917ms)
+✔ mobile menu repairs fixed containing block and includes focus and scrolling controls (11.456083ms)
+✔ existing enquiry handler forwards to the current provider and distinguishes rejection (69.47925ms)
+ℹ tests 18
 ℹ suites 0
-ℹ pass 17
+ℹ pass 18
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 801.245417
+ℹ duration_ms 2047.079084

@@ -3,7 +3,7 @@ const fs = require('node:fs'), path = require('node:path');
 const placements = {receiving:'inbound',putaway:'inbound','inventory-counting':'inventory',replenishment:'execution'};
 const escape = value => String(value).replace(/[&<>"']/g, x => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
 function validate(demo, root) {
-  if (placements[demo.key] !== demo.section) throw Error('Incorrect operational placement');
+  if (!Object.hasOwn(placements,demo.key) || placements[demo.key] !== demo.section) throw Error('Incorrect operational placement');
   if (!demo.publicationApproved) return false;
   if (!demo.metadataVerified || !/^[\w-]{11}$/.test(demo.youtubeId || '')) throw Error('Verified YouTube ID required');
   if (!demo.captionsConfirmed) throw Error('Confirm accessible YouTube captions before publication');
@@ -12,7 +12,7 @@ function validate(demo, root) {
   }
   if (!demo.poster || !demo.width || !demo.height || !Number.isInteger(demo.width) || !Number.isInteger(demo.height) || demo.width<1 || demo.height<1) throw Error('Verified poster and original aspect ratio required');
   if (!demo.stages?.length || !demo.title || !demo.description || !demo.problem) throw Error('Approved recording-specific narrative required');
-  if (demo.uploadDate && !/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:Z|[+-]\d\d:\d\d)$/.test(demo.uploadDate)) throw Error('Verified ISO upload date required');
+  if (demo.uploadDate && (!Number.isFinite(Date.parse(demo.uploadDate)) || !/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:Z|[+-]\d\d:\d\d)$/.test(demo.uploadDate))) throw Error('Verified ISO upload date required');
   if (demo.duration && !/^PT(?=\d)(?:\d+H)?(?:\d+M)?(?:\d+S)?$/.test(demo.duration)) throw Error('Invalid verified duration');
   return true;
 }
