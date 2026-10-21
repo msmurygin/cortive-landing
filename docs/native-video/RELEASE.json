@@ -1,5 +1,5 @@
 {
-  "status": "READY FOR FOUNDER PREVIEW REVIEW; NO PRODUCTION RELEASE APPROVED",
+  "status": "RELEASED: founder-approved content-only production release verified",
   "date": "2026-10-21",
   "baseline": "b52e60073c80e2c89819f232543bf3f1896a2e28",
   "totalOriginalBytes": 1488452,
@@ -71,20 +71,17 @@
       "Production robots/sitemap/canonical URLs"
     ]
   },
-  "approval": "Stop before merge, production push or deploy. After founder approval create a clean content-only release from then-current main, carrying only listed runtime changes/deletion; verify no preview guard/global noindex/QA page leaks.",
+  "approval": "Founder approved production deployment in this session. Content-only release shipped without preview guard, global noindex overlay or QA page. See PRODUCTION-RELEASE.json.",
   "rollback": "If an approved release later fails, revert only that release commit and redeploy main normally; never force-push. Prior baseline uses YouTube and retains its known sign-in problem.",
   "preview": "https://project-ogj6r-bixgcejim-quark-build.vercel.app/product#demo-receiving",
   "runtimeCommit": "27fb011e43232ea970e710a2be0363d4751411fa",
   "previewDeploymentId": 7224891940,
   "remainingReview": [
     {
-      "owner": "Founder",
-      "action": "Review protected preview and approve a separately composed content-only production release."
-    },
-    {
       "owner": "Founder or device QA",
       "action": "When iPhone/Android is available, open preview in iOS Safari and Android Chrome; verify play/pause, timeline seek, inline/fullscreen controls and return to Product. No physical device/emulator was connected in this session."
     }
   ],
-  "trackedSourceBytesExcludingIgnoredDocsTests": 2956449
+  "trackedSourceBytesExcludingIgnoredDocsTests": 2956449,
+  "productionCommit": "0bf1f34c838f02150ad07ff28f4f36589c2bbdfd"
 }

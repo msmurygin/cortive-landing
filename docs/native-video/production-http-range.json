@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "key": "receiving",
+      "headStatus": 200,
+      "mime": "video/mp4",
+      "length": 536572,
+      "acceptRanges": "bytes",
+      "firstAndSuffixStatus": 206,
+      "originalChunksMatch": true,
+      "unsatisfiableStatus": 416,
+      "anonymousAccess": true
+    },
+    {
+      "key": "putaway",
+      "headStatus": 200,
+      "mime": "video/mp4",
+      "length": 155538,
+      "acceptRanges": "bytes",
+      "firstAndSuffixStatus": 206,
+      "originalChunksMatch": true,
+      "unsatisfiableStatus": 416,
+      "anonymousAccess": true
+    },
+    {
+      "key": "inventory-counting",
+      "headStatus": 200,
+      "mime": "video/mp4",
+      "length": 263986,
+      "acceptRanges": "bytes",
+      "firstAndSuffixStatus": 206,
+      "originalChunksMatch": true,
+      "unsatisfiableStatus": 416,
+      "anonymousAccess": true
+    },
+    {
+      "key": "replenishment",
+      "headStatus": 200,
+      "mime": "video/mp4",
+      "length": 532356,
+      "acceptRanges": "bytes",
+      "firstAndSuffixStatus": 206,
+      "originalChunksMatch": true,
+      "unsatisfiableStatus": 416,
+      "anonymousAccess": true
+    }
+  ],
+  "previewQaAndYoutubeScriptAbsent": true
+}

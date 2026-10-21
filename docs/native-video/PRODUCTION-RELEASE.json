@@ -1,0 +1,42 @@
+{
+  "status": "RELEASED AND VERIFIED",
+  "date": "2026-10-21",
+  "founderApproval": "Founder explicitly requested deployment to production in this session",
+  "baseline": "b52e60073c80e2c89819f232543bf3f1896a2e28",
+  "approvedPreviewSource": "27fb011e43232ea970e710a2be0363d4751411fa",
+  "productionCommit": "0bf1f34c838f02150ad07ff28f4f36589c2bbdfd",
+  "deploymentId": 7225354408,
+  "deploymentStatus": "success",
+  "production": "https://quark.build/product#demo-receiving",
+  "composition": "Nine approved runtime files plus deletion of assets/product-demos.js; production Vercel config unchanged; preview-only guard and QA page absent",
+  "checks": {
+    "runtimeTests": 9,
+    "previewGuardTest": "Not applicable to content-only production release; guard intentionally absent. Production safety verified by baseline config equality and absent preview files.",
+    "staticChecks": 619,
+    "localReferences": 301,
+    "exactProductionContentMatches": 30,
+    "redirectChecks": 2,
+    "mp4RangeTests": 4,
+    "mime": "video/mp4",
+    "anonymousMp4Access": "200 HEAD; no login/Google required",
+    "range": "All four first/suffix requests return 206 with matching original bytes; unsatisfiable requests return 416",
+    "desktopPlayback": "All four decode/play at 1280x720, readyState 4, advancing currentTime, no media errors",
+    "seek": "Receiving paused seek advanced from 22.541481 to 32.899533 seconds using keyboard controls",
+    "mobileViewport": "Actual 390 px; all players 350x196.875; no horizontal overflow; Putaway played readyState 4 without media error",
+    "physicalDevices": "iOS Safari and Android Chrome not available in this session; not certified",
+    "seo": "Production remains indexable; canonical and existing page metadata preserved; dated VideoObjects use native contentUrl and measured duration",
+    "excludedPreviewFiles": "preview-only.cjs, qa/native-video-checks.html and deleted YouTube script all return 404"
+  },
+  "preserved": [
+    "Home",
+    "Vision",
+    "Cost",
+    "Assessment",
+    "Enquiry form/provider",
+    "Analytics settings",
+    "Branding",
+    "Robots/sitemap",
+    "Production deployment protection configuration"
+  ],
+  "rollback": "Not required. If needed, revert only 0bf1f34 on current main and push normally; await successful Vercel redeployment and verify baseline. Do not force-push. Baseline restores YouTube and its known anti-bot issue."
+}

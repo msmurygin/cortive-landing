@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "commit": "0bf1f34c838f02150ad07ff28f4f36589c2bbdfd",
+  "checks": [
+    {
+      "route": "/",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/product",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/vision",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/wms-cost",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/thanks.html",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/legal/terms.html",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/legal/privacy.html",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/tools/wms-readiness-assessment",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assessment-assets/assessment-model.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assessment-assets/discovery-model.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assessment-assets/assessment-pdf.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/robots.txt",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/design-assets/qds.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/leads.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/seo/cost-model.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/seo/cost-ui.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assessment-assets/assessment-ui.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assessment-assets/assessment-summary.js",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assessment-assets/assessment.css",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/design-assets/qds.css",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/design-assets/product-demos.css",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/demos/receiving.jpg",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/demos/putaway.jpg",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/demos/inventory-counting.jpg",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/demos/replenishment.jpg",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/demos/receiving.mp4",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/demos/putaway.mp4",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/demos/inventory-counting.mp4",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/assets/demos/replenishment.mp4",
+      "status": 200,
+      "exactContentMatch": true
+    },
+    {
+      "route": "/screens.html",
+      "redirectTo": "https://quark.build/product"
+    },
+    {
+      "route": "/product.html",
+      "redirectTo": "https://quark.build/product"
+    }
+  ]
+}

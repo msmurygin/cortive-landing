@@ -1,0 +1,38 @@
+[
+  {
+    "key": "receiving",
+    "duration": 103.583333,
+    "height": 720,
+    "paused": false,
+    "ready": 4,
+    "time": 22.521482,
+    "width": 1280
+  },
+  {
+    "key": "putaway",
+    "duration": 64.833333,
+    "height": 720,
+    "paused": false,
+    "ready": 4,
+    "time": 0.252041,
+    "width": 1280
+  },
+  {
+    "key": "inventory-counting",
+    "duration": 91.833333,
+    "height": 720,
+    "paused": false,
+    "ready": 4,
+    "time": 0.128996,
+    "width": 1280
+  },
+  {
+    "key": "replenishment",
+    "duration": 102.375,
+    "height": 720,
+    "paused": false,
+    "ready": 4,
+    "time": 0.067644,
+    "width": 1280
+  }
+]
