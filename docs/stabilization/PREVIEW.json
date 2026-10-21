@@ -1,0 +1,62 @@
+{
+  "preview": "https://project-ogj6r-8lm21gvrv-quark-build.vercel.app",
+  "deployedCommit": "3e048114762a9c3245a95a62987c4694134b7f0d",
+  "productionBaseline": "029347ae5c4c62a728c838c5d6930d0f7293eb3f",
+  "authenticationVerified": [
+    {
+      "route": "/",
+      "anonymousStatus": 302,
+      "redirectHostPath": "vercel.com/sso-api"
+    },
+    {
+      "route": "/product",
+      "anonymousStatus": 302,
+      "redirectHostPath": "vercel.com/sso-api"
+    },
+    {
+      "route": "/tools/wms-readiness-assessment",
+      "anonymousStatus": 302,
+      "redirectHostPath": "vercel.com/sso-api"
+    },
+    {
+      "route": "/assets/product-demos.js",
+      "anonymousStatus": 302,
+      "redirectHostPath": "vercel.com/sso-api"
+    },
+    {
+      "route": "/content/product-demos.json",
+      "anonymousStatus": 302,
+      "redirectHostPath": "vercel.com/sso-api"
+    },
+    {
+      "route": "/docs/stabilization/REPORT.html",
+      "anonymousStatus": 302,
+      "redirectHostPath": "vercel.com/sso-api"
+    },
+    {
+      "route": "/api/lead",
+      "anonymousStatus": 302,
+      "redirectHostPath": "vercel.com/sso-api"
+    }
+  ],
+  "previewOnlyGuardVerified": true,
+  "productionHomeAndProductUnchanged": true,
+  "videoPublication": "Separate approval gate; all four videos inactive",
+  "authenticatedBrowserChecks": {
+    "productLoaded": true,
+    "mobileMenu": [
+      {
+        "width": 390,
+        "height": 780,
+        "overflow": false
+      },
+      {
+        "width": 320,
+        "height": 780,
+        "overflow": false
+      }
+    ]
+  },
+  "artifactNote": "docs/ and tests/ are intentionally excluded from Vercel by the unchanged .vercelignore. Authentication is checked on those paths but their content is provided in the PR/local report, not deployed as website pages.",
+  "stabilizationRuntimeMatchesC13878f": true
+}
