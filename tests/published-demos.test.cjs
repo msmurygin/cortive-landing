@@ -1,28 +1,39 @@
-const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),cp=require('node:child_process');
-const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),manifest=require('../content/product-demos.json'),demos=require('../scripts/product-demos.cjs');
-test('four founder-supplied IDs appear only in the agreed operational sections',()=>{
- a.deepEqual(manifest.map(x=>x.youtubeId),['pmOGie2ltEg','cP4fYOkpGNY','oV1XNz-Wz4g','bpwlTV-cp44']);const html=read('product.html');
- for(const d of manifest){a.equal(demos.validate(d,root),true);a.ok(d.accessibleDescription);a.equal(d.captionsConfirmed,false);a.equal(d.duration,null);a.ok(html.indexOf('id="demo-'+d.key+'"')>html.indexOf('id="'+d.section+'"'));a.ok(html.indexOf('id="demo-'+d.key+'"')<html.indexOf('</section>',html.indexOf('id="'+d.section+'"')));}
+const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),manifest=require('../content/product-demos.json'),demos=require('../scripts/product-demos.cjs'),media=require('../docs/native-video/ORIGINAL-MEDIA.json');
+const baseline='b52e60073c80e2c89819f232543bf3f1896a2e28';
+test('all four original MP4s are byte-identical to founder-provided files',()=>{
+ for(const d of manifest){const bytes=fs.readFileSync(path.join(root,d.source)),expected=media.files.find(x=>x.key===d.key);a.equal(bytes.length,expected.bytes);a.equal(crypto.createHash('sha256').update(bytes).digest('hex'),expected.sha256);a.equal(d.originalSha256,expected.sha256);a.equal(expected.moovBeforeMdat,true);a.deepEqual(expected.codecFamilies,['avc1']);a.equal(d.width,expected.width);a.equal(d.height,expected.height);a.equal(Number(d.duration.slice(2,-1)),expected.durationSeconds);}
 });
-test('build preserves all existing Product content, metadata, navigation and CTAs',()=>{
- let html=read('product.html');for(const d of manifest)html=html.replace(demos.render(d),'');html=html.replace('<link rel="stylesheet" href="/design-assets/product-demos.css"><script src="/assets/product-demos.js" defer></script>','');a.equal(html,cp.execFileSync('git',['show','dd5fc0f:product.html'],{cwd:root,encoding:'utf8'}));
+test('native controls, inline playback, preload none, local posters and accessible titles exist without autoplay',()=>{
+ const html=read('product.html');a.equal((html.match(/<video /g)||[]).length,4);
+ for(const d of manifest){const s=demos.render(d);a.match(s,/<video controls playsinline preload="none"/);a.match(s,/type="video\/mp4"/);a.ok(s.includes('aria-label="'+d.title.replaceAll('&','&amp;')+'"'));a.ok(s.includes('poster="'+d.poster+'"'));a.ok(s.includes('id="demo-'+d.key+'-description"'));a.match(s,/Download the MP4 demonstration/);a.doesNotMatch(s,/autoplay|<iframe|data-youtube-id/);a.equal(demos.validate(d,root),true);}
 });
-test('initial markup has local lazy posters, no iframe, Google scripts, preconnect or remote thumbnails',()=>{
- const html=read('product.html');a.doesNotMatch(html,/<iframe|<[^>]+(?:src|href)=["']https:\/\/(?:i\.ytimg|www\.youtube|www\.google)[^>]+(?:preconnect|script|img)/i);
- for(const d of manifest){a.ok(fs.statSync(path.join(root,d.poster)).size<100000);a.match(demos.render(d),/loading="lazy" decoding="async"/);a.match(demos.render(d),/Text description of this demonstration/);}
+test('Product copy, CTAs, existing metadata and operational placements are preserved',()=>{
+ const strip=s=>s.replace(/<figure class="q-demo" id="demo-[^"]+">[\s\S]*?<\/figure>(?:<script type="application\/ld\+json">[\s\S]*?<\/script>)?/g,'').replace('<script src="/assets/product-demos.js" defer></script>','');
+ const html=read('product.html');a.equal(strip(html),strip(cp.execFileSync('git',['show',baseline+':product.html'],{cwd:root,encoding:'utf8'})));
+ for(const d of manifest){const start=html.indexOf('id="'+d.section+'"'),at=html.indexOf('id="demo-'+d.key+'"');a.ok(at>start&&at<html.indexOf('</section>',start));}
 });
-test('component makes zero player connections before interaction, then loads only the selected nocookie video',()=>{
- let created=[],callbacks=[];const containers=manifest.map(d=>({dataset:{youtubeId:d.youtubeId,title:d.title},querySelector(){return {hidden:true,addEventListener(type,cb,opts){a.equal(type,'click');a.equal(opts.once,true);callbacks.push(cb)}}},replaceChildren(f){this.child=f}}));
- const document={querySelectorAll(){return containers},createElement(tag){a.equal(tag,'iframe');const f={focus(){this.focused=true}};created.push(f);return f}};vm.runInNewContext(read('assets/product-demos.js'),{document});a.equal(created.length,0);
- callbacks[2]();a.equal(created.length,1);a.equal(containers[2].child.src,'https://www.youtube-nocookie.com/embed/oV1XNz-Wz4g?rel=0&cc_load_policy=1&playsinline=1');a.equal(containers[2].child.title,manifest[2].title);a.equal(containers[2].child.focused,true);a.ok(!containers[0].child);a.equal(containers[2].child.allowFullscreen,true);a.doesNotMatch(read('assets/product-demos.js'),/autoplay|fetch\(|sendBeacon|localStorage|sessionStorage/);
+test('no YouTube player script, iframe, remote poster or custom playback dependency remains',()=>{
+ const html=read('product.html');a.doesNotMatch(html,/<iframe|data-youtube-id|youtube-nocookie|src="\/assets\/product-demos\.js/);a.equal(fs.existsSync(path.join(root,'assets/product-demos.js')),false);
+ for(const s of html.matchAll(/<(?:script|source|video|img)\b[^>]*>/g))a.doesNotMatch(s[0],/https?:\/\/(?:www\.)?(?:youtube|google|i\.ytimg)/);
 });
-test('only verified upload dates produce VideoObject; no invented duration or transcripts',()=>{
- const html=read('product.html');const schemas=[...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>JSON.parse(m[1])).filter(x=>x['@type']==='VideoObject');a.equal(schemas.length,2);
- for(const d of manifest){a.equal(d.transcript,null);a.equal(schemas.filter(s=>s.embedUrl.endsWith(d.youtubeId)).length,d.uploadDate?1:0);}for(const s of schemas){a.ok(!('duration'in s));a.ok(s.thumbnailUrl.startsWith('https://quark.build/assets/demos/'));}
+test('optional YouTube links remain plain external links and do not gate local playback',()=>{
+ for(const d of manifest){a.match(demos.render(d),new RegExp('href="https://www.youtube.com/watch\\?v='+d.youtubeId+'"'));a.ok(demos.render({...d,youtubeId:null}).includes('<video controls'));a.equal(demos.validate({...d,youtubeId:null},root),true);}
 });
-test('publication remains gated; captions cannot be fabricated, and text alternative is required when absent',()=>{
- const d=manifest[0];a.equal(demos.validate({...d,publicationApproved:false},root),false);a.throws(()=>demos.validate({...d,accessibleDescription:'',captionsConfirmed:false},root),/Captions|description/);a.throws(()=>demos.validate({...d,youtubeId:'invalid'},root),/Verified/);
+test('only known upload dates produce VideoObject, with real duration and native content URL',()=>{
+ const schemas=[...read('product.html').matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>JSON.parse(m[1])).filter(x=>x['@type']==='VideoObject');a.equal(schemas.length,2);
+ for(const d of manifest){const found=schemas.filter(s=>s.contentUrl==='https://quark.build'+d.source);a.equal(found.length,d.uploadDate?1:0);if(found.length){a.equal(found[0].duration,d.duration);a.equal(found[0].uploadDate,d.uploadDate);a.ok(!('embedUrl'in found[0]));}a.equal(d.transcript,null);}
 });
-test('unrelated production files and settings remain unchanged',()=>{
- for(const f of ['index.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','vercel.json','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','assessment-assets/discovery-model.js','assessment-assets/assessment-ui.js','assessment-assets/assessment-pdf.js','design-assets/qds.js','design-assets/qds.css'])a.equal(read(f),cp.execFileSync('git',['show','dd5fc0f:'+f],{cwd:root,encoding:'utf8'}),f);
+test('build is idempotent and does not duplicate players or structured data',()=>{
+ const before=read('product.html');a.equal(demos.build(root,manifest).active,4);a.equal(read('product.html'),before);
+});
+test('missing files, escaping and wrong placements cannot silently publish',()=>{
+ const d=manifest[0];a.equal(demos.validate({...d,publicationApproved:false},root),false);a.throws(()=>demos.validate({...d,source:'/assets/demos/missing.mp4'},root),/MP4/);a.throws(()=>demos.validate({...d,source:'/assets/demos/../receiving.mp4'},root),/MP4/);a.throws(()=>demos.validate({...d,section:'inventory'},root),/placement/);a.throws(()=>demos.validate({...d,captionsConfirmed:false,accessibleDescription:''},root),/description/);
+});
+test('preview build accepts preview only and rejects production/development',()=>{
+ for(const env of ['production','development','']){const r=cp.spawnSync(process.execPath,['preview-only.cjs'],{cwd:root,env:{...process.env,VERCEL_ENV:env}});a.notEqual(r.status,0);}a.equal(cp.spawnSync(process.execPath,['preview-only.cjs'],{cwd:root,env:{...process.env,VERCEL_ENV:'preview'}}).status,0);
+ const c=JSON.parse(read('vercel.json'));a.equal(c.buildCommand,'node preview-only.cjs');a.ok(c.headers.some(x=>x.source==='/(.*)'&&x.headers.some(h=>h.key==='X-Robots-Tag'&&h.value.includes('noindex'))));
+});
+test('Home, Vision, Cost, Assessment, forms, analytics, sitemap and branding remain unchanged',()=>{
+ for(const f of ['index.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','assessment-assets/discovery-model.js','assessment-assets/assessment-ui.js','assessment-assets/assessment-pdf.js','assets/seo/cost-model.js','assets/seo/cost-ui.js','design-assets/qds.js','design-assets/qds.css'])a.equal(read(f),cp.execFileSync('git',['show',baseline+':'+f],{cwd:root,encoding:'utf8'}),f);
 });

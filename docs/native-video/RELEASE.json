@@ -1,0 +1,55 @@
+{
+  "status": "PROTECTED PREVIEW; PRODUCTION RELEASE NOT APPROVED",
+  "date": "2026-10-21",
+  "baseline": "b52e60073c80e2c89819f232543bf3f1896a2e28",
+  "totalOriginalBytes": 1488452,
+  "hosting": "Existing Vercel static asset CDN. Largest MP4 536572 bytes; all four 1488452 bytes. Below even the documented 100 MB Hobby CLI source-upload envelope (Pro 1 GB); Git deployment success is checked separately. No new CDN account, plan change or dependency. Actual account billing plan/remaining transfer quota not read.",
+  "hostingSources": [
+    "https://vercel.com/docs/limits",
+    "https://vercel.com/docs/caching/cdn-cache",
+    "https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif"
+  ],
+  "files": "Original file hashes, durations and dimensions: ORIGINAL-MEDIA.json. No re-edit, encoding or container rewrite. Existing local posters preserved byte-for-byte.",
+  "player": "Native video controls playsinline preload=none; no autoplay; 1280x720 original aspect ratio; local source type video/mp4; accessible title and existing text description; downloadable fallback; optional plain YouTube link. No video JS dependency.",
+  "privacy": "No embedded Google/YouTube connection before or after local playback. Same Vercel hosting processes ordinary asset requests. External YouTube processing applies only if visitor follows the plain link. Form/analytics settings unchanged. Preview privacy text updated accordingly.",
+  "seo": "Existing Product title, description, canonical and site JSON-LD preserved. Two dated VideoObjects retain verified upload dates, receive original-file durations and native contentUrl. Other upload dates remain unknown, no fabricated VideoObject. Protected preview stays noindex; production contentUrl paths will only become public after a separately approved release.",
+  "checks": {
+    "nativeRegressionTests": 10,
+    "siteValidation": "site-validation.json",
+    "browserAndHttp": "Pending protected preview verification"
+  },
+  "devices": "No adb or available iOS simulator found; currently connected browser is Codex IAB. Physical iOS Safari and Android Chrome are not certified by viewport emulation.",
+  "releaseComposition": {
+    "runtime": [
+      "product.html",
+      "legal/privacy.html",
+      "content/product-demos.json",
+      "scripts/product-demos.cjs",
+      "design-assets/product-demos.css",
+      "assets/demos/receiving.mp4",
+      "assets/demos/putaway.mp4",
+      "assets/demos/inventory-counting.mp4",
+      "assets/demos/replenishment.mp4"
+    ],
+    "delete": [
+      "assets/product-demos.js"
+    ],
+    "exclude": [
+      "preview-only.cjs",
+      "preview-only changes to vercel.json",
+      "qa/native-video-checks.html"
+    ],
+    "preserve": [
+      "Home",
+      "Vision",
+      "Cost",
+      "Assessment",
+      "Forms",
+      "Analytics",
+      "Branding",
+      "Production robots/sitemap/canonical URLs"
+    ]
+  },
+  "approval": "Stop before merge, production push or deploy. After founder approval create a clean content-only release from then-current main, carrying only listed runtime changes/deletion; verify no preview guard/global noindex/QA page leaks.",
+  "rollback": "If an approved release later fails, revert only that release commit and redeploy main normally; never force-push. Prior baseline uses YouTube and retains its known sign-in problem."
+}

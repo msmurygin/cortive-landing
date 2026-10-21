@@ -16,10 +16,13 @@
     "captionsConfirmed": false,
     "transcript": null,
     "uploadDate": "2026-10-21T03:58:21-07:00",
-    "duration": null,
+    "duration": "PT103.584S",
     "metadataVerified": true,
     "publicationApproved": true,
-    "accessibleDescription": "The recording shows receiving in the Quark web interface and on an RF terminal. The web view provides the inbound receipt context; the RF view shows the warehouse receiving workflow."
+    "accessibleDescription": "The recording shows receiving in the Quark web interface and on an RF terminal. The web view provides the inbound receipt context; the RF view shows the warehouse receiving workflow.",
+    "source": "/assets/demos/receiving.mp4",
+    "originalSha256": "bad34db1da887288bf46f00cb881d6da23ff4baf929c7551b2614864d59afd4e",
+    "bytes": 536572
   },
   {
     "key": "putaway",
@@ -37,10 +40,13 @@
     "captionsConfirmed": false,
     "transcript": null,
     "uploadDate": null,
-    "duration": null,
+    "duration": "PT64.834S",
     "metadataVerified": true,
     "publicationApproved": true,
-    "accessibleDescription": "The recording shows a warehouse operator working through putaway in the Quark RF interface. Putaway moves received goods into storage and records the destination in the warehouse workflow."
+    "accessibleDescription": "The recording shows a warehouse operator working through putaway in the Quark RF interface. Putaway moves received goods into storage and records the destination in the warehouse workflow.",
+    "source": "/assets/demos/putaway.mp4",
+    "originalSha256": "a7c8014739efba6ddde7aa2dd43a4b3d5cdd6a3b06070ee35f74b421b263155b",
+    "bytes": 155538
   },
   {
     "key": "inventory-counting",
@@ -58,10 +64,13 @@
     "captionsConfirmed": false,
     "transcript": null,
     "uploadDate": null,
-    "duration": null,
+    "duration": "PT91.834S",
     "metadataVerified": true,
     "publicationApproved": true,
-    "accessibleDescription": "The recording follows inventory counting on a Quark RF terminal. Warehouse staff use the RF workflow to record count observations for inventory review."
+    "accessibleDescription": "The recording follows inventory counting on a Quark RF terminal. Warehouse staff use the RF workflow to record count observations for inventory review.",
+    "source": "/assets/demos/inventory-counting.mp4",
+    "originalSha256": "eccc06404ef2f23eee02d679691838244612957fdf48687acfe912960f4ad956",
+    "bytes": 263986
   },
   {
     "key": "replenishment",
@@ -80,9 +89,12 @@
     "captionsConfirmed": false,
     "transcript": null,
     "uploadDate": "2026-10-21T04:02:38-07:00",
-    "duration": null,
+    "duration": "PT102.375S",
     "metadataVerified": true,
     "publicationApproved": true,
-    "accessibleDescription": "The recording shows replenishment management in the Quark web application and execution on an RF terminal. These views connect the office planning context with the warehouse replenishment workflow."
+    "accessibleDescription": "The recording shows replenishment management in the Quark web application and execution on an RF terminal. These views connect the office planning context with the warehouse replenishment workflow.",
+    "source": "/assets/demos/replenishment.mp4",
+    "originalSha256": "5e8e26008328ad399cafdfa90e5c1f6979af43faa97d6c0642938f93b64750d5",
+    "bytes": 532356
   }
 ]
