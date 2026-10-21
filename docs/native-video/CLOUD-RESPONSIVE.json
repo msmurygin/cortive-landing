@@ -1,0 +1,68 @@
+[
+  {
+    "overflow": false,
+    "players": [
+      {
+        "height": 157.5,
+        "width": 280
+      },
+      {
+        "height": 157.5,
+        "width": 280
+      },
+      {
+        "height": 157.5,
+        "width": 280
+      },
+      {
+        "height": 157.5,
+        "width": 280
+      }
+    ],
+    "width": 320
+  },
+  {
+    "overflow": false,
+    "players": [
+      {
+        "height": 196.875,
+        "width": 350
+      },
+      {
+        "height": 196.875,
+        "width": 350
+      },
+      {
+        "height": 196.875,
+        "width": 350
+      },
+      {
+        "height": 196.875,
+        "width": 350
+      }
+    ],
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "players": [
+      {
+        "height": 397.4296875,
+        "width": 706.5546875
+      },
+      {
+        "height": 397.4296875,
+        "width": 706.5546875
+      },
+      {
+        "height": 397.4296875,
+        "width": 706.5546875
+      },
+      {
+        "height": 397.4296875,
+        "width": 706.5546875
+      }
+    ],
+    "width": 768
+  }
+]

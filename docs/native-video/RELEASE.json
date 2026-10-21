@@ -1,5 +1,5 @@
 {
-  "status": "PROTECTED PREVIEW; PRODUCTION RELEASE NOT APPROVED",
+  "status": "READY FOR FOUNDER PREVIEW REVIEW; NO PRODUCTION RELEASE APPROVED",
   "date": "2026-10-21",
   "baseline": "b52e60073c80e2c89819f232543bf3f1896a2e28",
   "totalOriginalBytes": 1488452,
@@ -14,9 +14,30 @@
   "privacy": "No embedded Google/YouTube connection before or after local playback. Same Vercel hosting processes ordinary asset requests. External YouTube processing applies only if visitor follows the plain link. Form/analytics settings unchanged. Preview privacy text updated accordingly.",
   "seo": "Existing Product title, description, canonical and site JSON-LD preserved. Two dated VideoObjects retain verified upload dates, receive original-file durations and native contentUrl. Other upload dates remain unknown, no fabricated VideoObject. Protected preview stays noindex; production contentUrl paths will only become public after a separately approved release.",
   "checks": {
-    "nativeRegressionTests": 10,
-    "siteValidation": "site-validation.json",
-    "browserAndHttp": "Pending protected preview verification"
+    "nativeRegressionTests": "10/10 passed",
+    "staticValidationChecks": 619,
+    "localReferences": 301,
+    "previewBuild": "Vercel preview success; production/development guard rejection tests passed",
+    "protection": "Six anonymous page/MP4/QA requests returned 302 to Vercel SSO. Existing authenticated browser could access and play media; no protection settings changed.",
+    "http": "All four: HEAD 200 video/mp4, Accept-Ranges bytes, correct Content-Length; first and suffix ranges 206 matching original bytes; unsatisfiable range 416. See CLOUD-RANGE-CHECKS.json.",
+    "desktop": "All four originals decoded at 1280x720 and played in Codex IAB, observed advancing currentTime/readyState=4 without media error. Receiving keyboard seek from 43.993306 to 54.351333 seconds.",
+    "mobile": "Viewport checks at actual widths 320/390/768 with no horizontal overflow and 16:9 video boxes. Putaway played at actual viewport 390 with original decoded 1280x720, readyState=4, no media error. This is viewport QA, not physical device certification.",
+    "startup": "One cloud Replenishment sample: first decoded frame observed within 438 ms including automation roundtrips, currentTime 0.316649. Same browser had run Range QA beforehand; indicative sample, not cold-cache/real-device guarantee.",
+    "lighthouse": {
+      "scores": {
+        "performance": 0.9,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.66,
+        "agentic-browsing": 1
+      },
+      "mp4OrYoutubeRequestsBeforePlay": [],
+      "lcpMs": 2927.0278,
+      "cls": 0.02901893138234424,
+      "lighthouseVersion": "13.5.0"
+    },
+    "lighthouseCaveat": "Local Chromium mobile lab sample. SEO 66 is expected from preview-only noindex headers; production metadata remains unchanged. No MP4/YouTube request before interaction.",
+    "productionUnchanged": "Remote main still b52e600; 27 public content checks and 2 redirects still match pre-task production."
   },
   "devices": "No adb or available iOS simulator found; currently connected browser is Codex IAB. Physical iOS Safari and Android Chrome are not certified by viewport emulation.",
   "releaseComposition": {
@@ -51,5 +72,19 @@
     ]
   },
   "approval": "Stop before merge, production push or deploy. After founder approval create a clean content-only release from then-current main, carrying only listed runtime changes/deletion; verify no preview guard/global noindex/QA page leaks.",
-  "rollback": "If an approved release later fails, revert only that release commit and redeploy main normally; never force-push. Prior baseline uses YouTube and retains its known sign-in problem."
+  "rollback": "If an approved release later fails, revert only that release commit and redeploy main normally; never force-push. Prior baseline uses YouTube and retains its known sign-in problem.",
+  "preview": "https://project-ogj6r-bixgcejim-quark-build.vercel.app/product#demo-receiving",
+  "runtimeCommit": "27fb011e43232ea970e710a2be0363d4751411fa",
+  "previewDeploymentId": 7224891940,
+  "remainingReview": [
+    {
+      "owner": "Founder",
+      "action": "Review protected preview and approve a separately composed content-only production release."
+    },
+    {
+      "owner": "Founder or device QA",
+      "action": "When iPhone/Android is available, open preview in iOS Safari and Android Chrome; verify play/pause, timeline seek, inline/fullscreen controls and return to Product. No physical device/emulator was connected in this session."
+    }
+  ],
+  "trackedSourceBytesExcludingIgnoredDocsTests": 2956449
 }

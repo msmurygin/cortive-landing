@@ -1,0 +1,47 @@
+{
+  "iframes": 0,
+  "overflow": false,
+  "videos": [
+    {
+      "duration": 103.583333,
+      "height": 720,
+      "key": "demo-receiving",
+      "paused": true,
+      "ready": 4,
+      "source": "/assets/demos/receiving.mp4",
+      "time": 54.351333,
+      "width": 1280
+    },
+    {
+      "duration": 64.833333,
+      "height": 720,
+      "key": "demo-putaway",
+      "paused": true,
+      "ready": 4,
+      "source": "/assets/demos/putaway.mp4",
+      "time": 64.833333,
+      "width": 1280
+    },
+    {
+      "duration": 91.833333,
+      "height": 720,
+      "key": "demo-inventory-counting",
+      "paused": true,
+      "ready": 4,
+      "source": "/assets/demos/inventory-counting.mp4",
+      "time": 17.612663,
+      "width": 1280
+    },
+    {
+      "duration": 102.375,
+      "height": 720,
+      "key": "demo-replenishment",
+      "paused": true,
+      "ready": 4,
+      "source": "/assets/demos/replenishment.mp4",
+      "time": 28.138012,
+      "width": 1280
+    }
+  ],
+  "viewport": 1280
+}

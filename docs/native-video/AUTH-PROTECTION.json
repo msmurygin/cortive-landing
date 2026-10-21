@@ -1,0 +1,42 @@
+{
+  "preview": "https://project-ogj6r-bixgcejim-quark-build.vercel.app",
+  "anonymousRequests": [
+    {
+      "path": "/product",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api"
+    },
+    {
+      "path": "/assets/demos/receiving.mp4",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api"
+    },
+    {
+      "path": "/assets/demos/putaway.mp4",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api"
+    },
+    {
+      "path": "/assets/demos/inventory-counting.mp4",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api"
+    },
+    {
+      "path": "/assets/demos/replenishment.mp4",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api"
+    },
+    {
+      "path": "/qa/native-video-checks.html",
+      "status": 302,
+      "redirectHost": "vercel.com",
+      "redirectPath": "/sso-api"
+    }
+  ],
+  "authenticatedBrowserVerification": "Pending"
+}

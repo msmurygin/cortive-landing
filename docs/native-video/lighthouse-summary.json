@@ -1,0 +1,13 @@
+{
+  "scores": {
+    "performance": 0.9,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.66,
+    "agentic-browsing": 1
+  },
+  "mp4OrYoutubeRequestsBeforePlay": [],
+  "lcpMs": 2927.0278,
+  "cls": 0.02901893138234424,
+  "lighthouseVersion": "13.5.0"
+}
