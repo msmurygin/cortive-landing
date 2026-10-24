@@ -1,0 +1,42 @@
+{
+  "status": "READY FOR FOUNDER APPROVAL; NOT PUBLISHED",
+  "baseline": "0bf1f34c838f02150ad07ff28f4f36589c2bbdfd",
+  "branch": "seo/wms-cost-growth-2026-10-24",
+  "cost_commit": "ea3172235f9498c6f12794f5ac7ff981e5ebf76b",
+  "runtime_files": [
+    "wms-cost.html"
+  ],
+  "new_runtime_dependencies": 0,
+  "local_preview": "http://127.0.0.1:4216/wms-cost",
+  "review": "http://127.0.0.1:4216/__review",
+  "preview_safety": "Bound to 127.0.0.1 only; X-Robots-Tag noindex,nofollow,noarchive; CSP blocks form submissions and external fetch; local POST rejected; no Vercel deployment created",
+  "production_settings": "Unchanged; new analytics stays OFF; forms/privacy unchanged",
+  "checks": {
+    "node_tests": 5,
+    "static_checks": 466,
+    "local_references": 303,
+    "mobile_widths": [
+      320,
+      390,
+      768,
+      900
+    ],
+    "physical_devices": "Not tested",
+    "site_build": "Static HTML site, no package build; JS syntax and static render/reference validation passed"
+  },
+  "promotional_outputs": {
+    "linkedin_posts": 4,
+    "youtube_descriptions": 4,
+    "consultant_feedback_invitation": 1
+  },
+  "approval_gates": [
+    "Cost-page copy/description/CTA approval before release",
+    "Approve selected social posts and publishing account before publication",
+    "Optional: approve descriptions only if editing the existing YouTube channel; not a blocker for website or social materials",
+    "Select recipients and authorize sending before any outreach"
+  ],
+  "deployment": "After separate approval: recheck current main and published Cost page; carry only wms-cost.html from the approved cost commit onto a clean release branch; run relevant checks; merge/push only after release authorization. Await successful Vercel production deployment; verify HTTP 200, canonical, robots, metadata, internal anchors and Quick/Advanced flows. No review server or documents are part of the runtime change.",
+  "rollback": "If a later approved release fails checks: revert that release commit on main and deploy normally. Never force-push or reset unrelated changes. Verify baseline content and calculator after rollback.",
+  "measurement": "GSC and platform aggregates plus manual enquiry qualification only; no new tracking or attributable conversion claims without approval",
+  "video_delivery": "Existing native HTML5 MP4 playback on Vercel; promotional posts link to Product and its native players; YouTube descriptions optional and independent"
+}
