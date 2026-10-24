@@ -1,0 +1,22 @@
+Quark WMS Replenishment Demo | Web & RF Warehouse Workflow
+English narration
+
+Warehouse replenishment in Quark WMS. Follow the web application and RF workflow.
+
+Start with replenishment records in the web application. Open a record to review the movement before following its execution on RF.
+
+Review the selected replenishment record and its details in the web interface.
+
+The demonstration now moves to the RF terminal for execution on the warehouse floor.
+
+Open Replenish from the RF inventory menu.
+
+Identify the source location from which the stock will be moved.
+
+Review the planned quantity and enter the quantity to move.
+
+Bring the stock to the destination shown on the RF screen.
+
+Confirm the destination location.
+
+The Replenished screen confirms the movement at that location.

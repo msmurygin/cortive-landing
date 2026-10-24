@@ -1,0 +1,22 @@
+Quark WMS Inventory Counting Demo | RF Stock Counting
+English narration
+
+Inventory counting in Quark WMS. Follow a stock count on an RF terminal.
+
+The operator identifies the work area and location, then records what is physically present.
+
+Select the count work area before continuing to the warehouse location.
+
+Identify the location to count on the RF terminal.
+
+The count screen shows the location and asks for stock details.
+
+Identify the stock and enter the quantity physically counted.
+
+Continue recording the stock found at this location.
+
+Use the SKU, lot and pallet fields where applicable to the stock being counted.
+
+Finish the location count once the observations have been entered.
+
+The final message flags a difference for supervisor review.

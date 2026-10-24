@@ -1,0 +1,30 @@
+Warehouse Receiving and Putaway | Quark WMS Guided Demo
+English narration
+
+How does inbound stock move from receipt to storage? These Quark WMS recordings show receiving and putaway as separate operations.
+
+Start in the web application. The receipt list provides the inbound context. Open the receipt to review the document.
+
+Review the receipt and its lines before following the receiving operation on RF.
+
+On the RF terminal, the operator opens receiving and identifies the advance shipping notice, or ASN.
+
+Identify the SKU to receive before entering the received quantity.
+
+Enter the quantity received. This example shows a staging destination.
+
+The workflow returns to SKU entry, then ends at the receipt summary.
+
+A separate putaway example.
+
+Open Putaway from the RF inventory menu.
+
+Identify the pallet by its license plate number, or LPN.
+
+Review the pallet details and confirm the stock.
+
+The RF screen shows the destination. Move the pallet and confirm the location.
+
+The Put Away screen confirms storage placement at the selected location.
+
+Explore inbound workflows on quark.build. Use Discuss Your Warehouse Project to talk through your own warehouse process.

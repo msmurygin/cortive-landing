@@ -1,0 +1,22 @@
+Quark WMS Receiving Demo | Warehouse Receiving with Web & RF
+English narration
+
+Warehouse receiving in Quark WMS. Follow the web application and RF workflow.
+
+Start with the inbound receipt list in the web application. Review the receipt records before opening the document.
+
+Open the receipt and review its lines. This provides the document context for the receiving operation.
+
+The demonstration now moves to RF execution, where the warehouse operator follows the receiving steps.
+
+Open the receiving workflow on the RF terminal.
+
+Identify the advance shipping notice, or ASN. This selects the inbound document for receiving.
+
+Identify the SKU to receive, then continue to the quantity entry screen.
+
+Enter the received quantity. The destination shown in this example is the staging location.
+
+The screen returns to SKU entry, showing progress against the receipt.
+
+Review the receipt summary.

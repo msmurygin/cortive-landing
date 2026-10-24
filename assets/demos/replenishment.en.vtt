@@ -1,0 +1,49 @@
+WEBVTT
+
+1
+00:00:00.400 --> 00:00:06.671
+Warehouse replenishment in Quark WMS. Follow the web
+application and RF workflow.
+
+2
+00:00:09.000 --> 00:00:17.703
+Start with replenishment records in the web application.
+Open a record to review the movement before following its
+execution on RF.
+
+3
+00:00:25.000 --> 00:00:30.020
+Review the selected replenishment record and its details
+in the web interface.
+
+4
+00:00:38.000 --> 00:00:43.628
+The demonstration now moves to the RF terminal for
+execution on the warehouse floor.
+
+5
+00:00:53.000 --> 00:00:56.084
+Open Replenish from the RF inventory menu.
+
+6
+00:01:03.000 --> 00:01:07.136
+Identify the source location from which the stock will be
+moved.
+
+7
+00:01:13.000 --> 00:01:16.721
+Review the planned quantity and enter the quantity to
+move.
+
+8
+00:01:24.000 --> 00:01:27.453
+Bring the stock to the destination shown on the RF screen.
+
+9
+00:01:31.500 --> 00:01:33.786
+Confirm the destination location.
+
+10
+00:01:35.000 --> 00:01:38.659
+The Replenished screen confirms the movement at that
+location.

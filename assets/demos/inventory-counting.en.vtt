@@ -1,0 +1,49 @@
+WEBVTT
+
+1
+00:00:00.400 --> 00:00:05.963
+Inventory counting in Quark WMS. Follow a stock count on
+an RF terminal.
+
+2
+00:00:10.000 --> 00:00:16.316
+The operator identifies the work area and location, then
+records what is physically present.
+
+3
+00:00:23.000 --> 00:00:27.633
+Select the count work area before continuing to the
+warehouse location.
+
+4
+00:00:32.000 --> 00:00:35.459
+Identify the location to count on the RF terminal.
+
+5
+00:00:40.000 --> 00:00:44.018
+The count screen shows the location and asks for stock
+details.
+
+6
+00:00:49.000 --> 00:00:53.081
+Identify the stock and enter the quantity physically
+counted.
+
+7
+00:00:57.000 --> 00:01:00.137
+Continue recording the stock found at this location.
+
+8
+00:01:06.000 --> 00:01:11.436
+Use the SKU, lot and pallet fields where applicable to the
+stock being counted.
+
+9
+00:01:16.000 --> 00:01:20.154
+Finish the location count once the observations have been
+entered.
+
+10
+00:01:25.000 --> 00:01:28.770
+The final message flags a difference for supervisor
+review.

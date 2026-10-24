@@ -1,0 +1,50 @@
+WEBVTT
+
+1
+00:00:00.400 --> 00:00:06.577
+Warehouse receiving in Quark WMS. Follow the web
+application and RF workflow.
+
+2
+00:00:09.000 --> 00:00:16.403
+Start with the inbound receipt list in the web
+application. Review the receipt records before opening the
+document.
+
+3
+00:00:25.000 --> 00:00:31.820
+Open the receipt and review its lines. This provides the
+document context for the receiving operation.
+
+4
+00:00:38.000 --> 00:00:44.926
+The demonstration now moves to RF execution, where the
+warehouse operator follows the receiving steps.
+
+5
+00:00:53.000 --> 00:00:56.099
+Open the receiving workflow on the RF terminal.
+
+6
+00:01:00.500 --> 00:01:07.082
+Identify the advance shipping notice, or ASN. This selects
+the inbound document for receiving.
+
+7
+00:01:13.000 --> 00:01:18.318
+Identify the SKU to receive, then continue to the quantity
+entry screen.
+
+8
+00:01:22.000 --> 00:01:28.255
+Enter the received quantity. The destination shown in this
+example is the staging location.
+
+9
+00:01:33.000 --> 00:01:37.906
+The screen returns to SKU entry, showing progress against
+the receipt.
+
+10
+00:01:40.000 --> 00:01:41.678
+Review the receipt summary.

@@ -1,28 +1,30 @@
-const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),cp=require('node:child_process');
+const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),cp=require('node:child_process');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),manifest=require('../content/product-demos.json'),demos=require('../scripts/product-demos.cjs');
-test('four founder-supplied IDs appear only in the agreed operational sections',()=>{
- a.deepEqual(manifest.map(x=>x.youtubeId),['pmOGie2ltEg','cP4fYOkpGNY','oV1XNz-Wz4g','bpwlTV-cp44']);const html=read('product.html');
- for(const d of manifest){a.equal(demos.validate(d,root),true);a.ok(d.accessibleDescription);a.equal(d.captionsConfirmed,false);a.equal(d.duration,null);a.ok(html.indexOf('id="demo-'+d.key+'"')>html.indexOf('id="'+d.section+'"'));a.ok(html.indexOf('id="demo-'+d.key+'"')<html.indexOf('</section>',html.indexOf('id="'+d.section+'"')));}
+const old=f=>cp.execFileSync('git',['show','494564b2de8565d03b435e5c410487a0f5205983:'+f],{cwd:root,encoding:'utf8'});
+const strip=h=>h.replace(/<figure class="q-demo" id="demo-[\w-]+">[\s\S]*?<\/figure>(?:<script type="application\/ld\+json">[\s\S]*?<\/script>)?/g,'');
+test('five approved recordings retain their corresponding operational sections',()=>{
+ a.deepEqual(manifest.map(d=>d.key),['receiving','putaway','receiving-and-putaway','inventory-counting','replenishment']);let h=read('product.html');
+ for(const d of manifest){a.equal(demos.validate(d,root),true);const pos=h.indexOf('id="demo-'+d.key+'"'),sec=h.indexOf('id="'+d.section+'"');a.ok(pos>sec&&pos<h.indexOf('</section>',sec));a.equal(h.split('id="demo-'+d.key+'"').length-1,1);a.ok(h.includes(demos.render(d)));}
 });
-test('build preserves all existing Product content, metadata, navigation and CTAs',()=>{
- let html=read('product.html');for(const d of manifest)html=html.replace(demos.render(d),'');html=html.replace('<link rel="stylesheet" href="/design-assets/product-demos.css"><script src="/assets/product-demos.js" defer></script>','');a.equal(html,cp.execFileSync('git',['show','dd5fc0f:product.html'],{cwd:root,encoding:'utf8'}));
+test('media matches approved hashes and originals remain available',()=>{
+ for(const d of manifest){const b=fs.readFileSync(path.join(root,d.source));a.equal(crypto.createHash('sha256').update(b).digest('hex'),d.sha256);a.equal(b.length,d.bytes);a.ok(b.length<3_000_000);if(d.originalSha256)a.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/demos/'+d.key+'.mp4'))).digest('hex'),d.originalSha256);}
 });
-test('initial markup has local lazy posters, no iframe, Google scripts, preconnect or remote thumbnails',()=>{
- const html=read('product.html');a.doesNotMatch(html,/<iframe|<[^>]+(?:src|href)=["']https:\/\/(?:i\.ytimg|www\.youtube|www\.google)[^>]+(?:preconnect|script|img)/i);
- for(const d of manifest){a.ok(fs.statSync(path.join(root,d.poster)).size<100000);a.match(demos.render(d),/loading="lazy" decoding="async"/);a.match(demos.render(d),/Text description of this demonstration/);}
+test('native players preserve privacy, accessible titles, aspect ratio and explicit playback',()=>{
+ a.doesNotMatch(read('product.html'),/<iframe|youtube-nocookie|<script[^>]+src=["'][^"']*(youtube|google\.com)/i);
+ for(const d of manifest){const h=demos.render(d);a.match(h,/<video controls playsinline preload="none"/);a.match(h,/width="1280" height="720"/);a.doesNotMatch(h,/autoplay|preconnect/);a.ok(d.accessibleDescription);a.ok(h.includes('poster="'+d.poster+'"'));a.ok(h.includes('aria-describedby="demo-'+d.key+'-description"'));a.ok(fs.statSync(path.join(root,d.poster)).size<100000);}
 });
-test('component makes zero player connections before interaction, then loads only the selected nocookie video',()=>{
- let created=[],callbacks=[];const containers=manifest.map(d=>({dataset:{youtubeId:d.youtubeId,title:d.title},querySelector(){return {hidden:true,addEventListener(type,cb,opts){a.equal(type,'click');a.equal(opts.once,true);callbacks.push(cb)}}},replaceChildren(f){this.child=f}}));
- const document={querySelectorAll(){return containers},createElement(tag){a.equal(tag,'iframe');const f={focus(){this.focused=true}};created.push(f);return f}};vm.runInNewContext(read('assets/product-demos.js'),{document});a.equal(created.length,0);
- callbacks[2]();a.equal(created.length,1);a.equal(containers[2].child.src,'https://www.youtube-nocookie.com/embed/oV1XNz-Wz4g?rel=0&cc_load_policy=1&playsinline=1');a.equal(containers[2].child.title,manifest[2].title);a.equal(containers[2].child.focused,true);a.ok(!containers[0].child);a.equal(containers[2].child.allowFullscreen,true);a.doesNotMatch(read('assets/product-demos.js'),/autoplay|fetch\(|sendBeacon|localStorage|sessionStorage/);
+test('all 51 English narration cues have valid bounds and matching transcripts',()=>{
+ const counts={receiving:10,putaway:7,'receiving-and-putaway':14,'inventory-counting':10,replenishment:10};
+ for(const d of manifest){a.equal(d.captionsConfirmed,true);let vtt=read(d.captions);a.match(vtt,/^WEBVTT/);let bounds=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d\.\d{3}) --> (\d\d):(\d\d):(\d\d\.\d{3})/g)];a.equal(bounds.length,counts[d.key]);let prev=0;for(const b of bounds){let s=+b[1]*3600+ +b[2]*60+ +b[3],e=+b[4]*3600+ +b[5]*60+ +b[6];a.ok(s>=prev&&e>s&&e<=Number(d.duration.match(/[\d.]+/)[0]));prev=e;}a.match(demos.render(d),/<track kind="captions"[^>]+srclang="en"[^>]+default>/);a.ok(read(d.transcript).length>100);}
 });
-test('only verified upload dates produce VideoObject; no invented duration or transcripts',()=>{
- const html=read('product.html');const schemas=[...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>JSON.parse(m[1])).filter(x=>x['@type']==='VideoObject');a.equal(schemas.length,2);
- for(const d of manifest){a.equal(d.transcript,null);a.equal(schemas.filter(s=>s.embedUrl.endsWith(d.youtubeId)).length,d.uploadDate?1:0);}for(const s of schemas){a.ok(!('duration'in s));a.ok(s.thumbnailUrl.startsWith('https://quark.build/assets/demos/'));}
+test('VideoObject uses confirmed dates, durations, language and native URLs',()=>{
+ const schemas=[...read('product.html').matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>JSON.parse(m[1])).filter(s=>s['@type']==='VideoObject');a.equal(schemas.length,manifest.filter(d=>d.uploadDate).length);
+ for(const d of manifest){const s=schemas.find(s=>s.contentUrl==='https://quark.build'+d.source);a.equal(!!s,!!d.uploadDate);if(s){a.equal(s.uploadDate,d.uploadDate);a.equal(s.duration,d.duration);a.equal(s.inLanguage,'en');a.equal(s.thumbnailUrl,'https://quark.build'+d.poster);a.ok(!s.embedUrl);}}
 });
-test('publication remains gated; captions cannot be fabricated, and text alternative is required when absent',()=>{
- const d=manifest[0];a.equal(demos.validate({...d,publicationApproved:false},root),false);a.throws(()=>demos.validate({...d,accessibleDescription:'',captionsConfirmed:false},root),/Captions|description/);a.throws(()=>demos.validate({...d,youtubeId:'invalid'},root),/Verified/);
+test('Product copy, SEO, navigation, layout and CTAs outside demo figures are unchanged',()=>a.equal(strip(read('product.html')),strip(old('product.html'))));
+test('unrelated pages, settings, privacy, forms and analytics are unchanged',()=>{
+ for(const f of ['index.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','vercel.json','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','legal/privacy.html','legal/terms.html','assessment-assets/discovery-model.js','assessment-assets/assessment-ui.js','assessment-assets/assessment-pdf.js','design-assets/qds.js','design-assets/qds.css'])a.equal(read(f),old(f),f);
 });
-test('unrelated production files and settings remain unchanged',()=>{
- for(const f of ['index.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','vercel.json','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','assessment-assets/discovery-model.js','assessment-assets/assessment-ui.js','assessment-assets/assessment-pdf.js','design-assets/qds.js','design-assets/qds.css'])a.equal(read(f),cp.execFileSync('git',['show','dd5fc0f:'+f],{cwd:root,encoding:'utf8'}),f);
+test('publication rejects unverified media, captions, IDs and placements',()=>{
+ const d=manifest[0];a.equal(demos.validate({...d,publicationApproved:false},root),false);a.throws(()=>demos.validate({...d,captions:null},root),/captions/);a.throws(()=>demos.validate({...d,captions:'/assets/demos/missing.vtt'},root),/local media/);a.throws(()=>demos.validate({...d,source:'/assets/demos/missing.mp4'},root),/MP4/);a.throws(()=>demos.validate({...d,youtubeId:'invalid'},root),/YouTube/);a.throws(()=>demos.validate({...d,section:'inventory'},root),/placement/);
 });

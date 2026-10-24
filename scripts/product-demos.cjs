@@ -1,6 +1,6 @@
 /* Separate publication gate. No fetch, API key, generated footage or guessed media metadata. */
 const fs = require('node:fs'), path = require('node:path');
-const placements = {receiving:'inbound',putaway:'inbound','inventory-counting':'inventory',replenishment:'execution'};
+const placements = {receiving:'inbound',putaway:'inbound','receiving-and-putaway':'inbound','inventory-counting':'inventory',replenishment:'execution'};
 const escape = value => String(value).replace(/[&<>"']/g, x => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
 function validate(demo, root) {
   if (!Object.hasOwn(placements,demo.key) || placements[demo.key] !== demo.section) throw Error('Incorrect operational placement');
@@ -9,19 +9,20 @@ function validate(demo, root) {
   if (!/^\/assets\/demos\/[a-z0-9-]+\.mp4$/.test(demo.source || '') || !fs.existsSync(path.join(root,demo.source))) throw Error('Approved local MP4 required');
   if (demo.youtubeId && !/^[\w-]{11}$/.test(demo.youtubeId)) throw Error('Invalid optional YouTube ID');
   if (!demo.captionsConfirmed && !demo.accessibleDescription) throw Error('Captions or a verified text description required before publication');
-  for (const local of [demo.poster, demo.transcript].filter(Boolean)) {
+  if (demo.captionsConfirmed && !demo.captions) throw Error('Confirmed local captions required');
+  for (const local of [demo.poster, demo.transcript, demo.captions].filter(Boolean)) {
     if (!/^\/assets\/demos\/[a-zA-Z0-9_./-]+$/.test(local) || local.includes('..') || !fs.existsSync(path.join(root, local))) throw Error('Approved local media asset required');
   }
   if (!demo.poster || !demo.width || !demo.height || !Number.isInteger(demo.width) || !Number.isInteger(demo.height) || demo.width<1 || demo.height<1) throw Error('Verified poster and original aspect ratio required');
   if (!demo.stages?.length || !demo.title || !demo.description || !demo.problem) throw Error('Approved recording-specific narrative required');
-  if (demo.uploadDate && (!Number.isFinite(Date.parse(demo.uploadDate)) || !/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:Z|[+-]\d\d:\d\d)$/.test(demo.uploadDate))) throw Error('Verified ISO upload date required');
+  if (demo.uploadDate && (!Number.isFinite(Date.parse(demo.uploadDate)) || !/^\d{4}-\d\d-\d\d(?:T\d\d:\d\d:\d\d(?:Z|[+-]\d\d:\d\d))?$/.test(demo.uploadDate))) throw Error('Verified ISO upload date required');
   if (demo.duration && !/^PT(?=\d)(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?$/.test(demo.duration)) throw Error('Invalid verified duration');
   return true;
 }
 function render(demo) {
   const watch=demo.youtubeId?'https://www.youtube.com/watch?v='+demo.youtubeId:null;
-  const schema=demo.uploadDate?{'@context':'https://schema.org','@type':'VideoObject',name:demo.title,description:demo.description,thumbnailUrl:'https://quark.build'+demo.poster,uploadDate:demo.uploadDate,contentUrl:'https://quark.build'+demo.source,...(demo.duration?{duration:demo.duration}:{})}:null;
-  return `<figure class="q-demo" id="demo-${demo.key}"><h3>${escape(demo.title)}</h3><p>${escape(demo.problem)}</p><ol class="q-checks">${demo.stages.map(stage=>'<li>'+escape(stage)+'</li>').join('')}</ol><div class="q-demo-player" style="aspect-ratio:${demo.width}/${demo.height}"><video controls playsinline preload="none" width="${demo.width}" height="${demo.height}" poster="${escape(demo.poster)}" aria-label="${escape(demo.title)}" aria-describedby="demo-${demo.key}-description"><source src="${escape(demo.source)}" type="video/mp4"><p>Your browser cannot play this recording. <a href="${escape(demo.source)}">Download the MP4 demonstration</a>.</p></video></div><figcaption><p>${escape(demo.description)}</p>${demo.accessibleDescription?'<details><summary>Text description of this demonstration</summary><p id="demo-'+demo.key+'-description">'+escape(demo.accessibleDescription)+'</p></details>':''}${watch?'<a href="'+watch+'" rel="noopener noreferrer" target="_blank">Watch on YouTube (opens a new tab)</a> · ':''}<a href="/product#${demo.section}">About this warehouse operation</a>${demo.transcript?' · <a href="'+escape(demo.transcript)+'">Read the transcript</a>':''}</figcaption></figure>${schema?'<script type="application/ld+json">'+JSON.stringify(schema).replace(/</g,'\\u003c')+'</script>':''}`;
+  const schema=demo.uploadDate?{'@context':'https://schema.org','@type':'VideoObject',name:demo.title,description:demo.description,thumbnailUrl:'https://quark.build'+demo.poster,uploadDate:demo.uploadDate,contentUrl:'https://quark.build'+demo.source,...(demo.duration?{duration:demo.duration}:{}),...(demo.inLanguage?{inLanguage:demo.inLanguage}:{})}:null;
+  return `<figure class="q-demo" id="demo-${demo.key}"><h3>${escape(demo.title)}</h3><p>${escape(demo.problem)}</p><ol class="q-checks">${demo.stages.map(stage=>'<li>'+escape(stage)+'</li>').join('')}</ol><div class="q-demo-player" style="aspect-ratio:${demo.width}/${demo.height}"><video controls playsinline preload="none" width="${demo.width}" height="${demo.height}" poster="${escape(demo.poster)}" aria-label="${escape(demo.title)}" aria-describedby="demo-${demo.key}-description"><source src="${escape(demo.source)}" type="video/mp4">${demo.captions?'<track kind="captions" src="'+escape(demo.captions)+'" srclang="en" label="English narration" default>':''}<p>Your browser cannot play this recording. <a href="${escape(demo.source)}">Download the MP4 demonstration</a>.</p></video></div><figcaption><p>${escape(demo.description)}</p>${demo.accessibleDescription?'<details><summary>Text description of this demonstration</summary><p id="demo-'+demo.key+'-description">'+escape(demo.accessibleDescription)+'</p></details>':''}${watch?'<a href="'+watch+'" rel="noopener noreferrer" target="_blank">Watch on YouTube (opens a new tab)</a> · ':''}<a href="/product#${demo.section}">About this warehouse operation</a>${demo.transcript?' · <a href="'+escape(demo.transcript)+'">Read the transcript</a>':''}</figcaption></figure>${schema?'<script type="application/ld+json">'+JSON.stringify(schema).replace(/</g,'\\u003c')+'</script>':''}`;
 }
 function build(root, demos) {
   const file=path.join(root,'product.html');let html=fs.readFileSync(file,'utf8'),active=0;

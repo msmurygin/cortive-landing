@@ -1,0 +1,16 @@
+Quark WMS Putaway Demo | RF Warehouse Operations
+English narration
+
+Warehouse putaway in Quark WMS. This example follows storage placement on an RF terminal.
+
+Follow the pallet identification, stock confirmation and destination steps shown in this recording.
+
+Open Putaway from the RF inventory menu.
+
+Identify the pallet by its license plate number, or LPN.
+
+Review the pallet details and confirm the stock.
+
+Move to the destination shown on the RF screen, then confirm the warehouse location.
+
+The Put Away screen confirms the placement at the selected location.
