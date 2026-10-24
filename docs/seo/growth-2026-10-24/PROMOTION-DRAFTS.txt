@@ -1,0 +1,241 @@
+QUARK WMS | FIRST DISTRIBUTION PACK
+Status: DRAFT FOR FOUNDER APPROVAL. Nothing has been sent or published.
+Prepared: 24 October 2026
+Audience: warehouse operations and IT decision-makers; USA and UK initially.
+Language: English. No customer results, prices, ROI or delivery-time claims.
+
+1. LINKEDIN POST: WMS BUDGET PLANNING
+
+A WMS subscription is one line in a warehouse project budget.
+
+Before comparing proposals, separate software, configuration, integrations,
+data migration, training, equipment and ongoing support. Agree who owns each
+item and whether it is included, excluded or still unknown.
+
+Our WMS cost guide includes two ways to start:
+* Quick Scope: a preparation checklist when you do not have prices yet.
+* Advanced Budget: three- and five-year TCO using your own assumptions.
+
+USD, GBP and EUR are supported. There are no prefilled market prices or ROI
+promises. Calculator inputs remain in your browser page and are not attached
+to an enquiry.
+
+Use it before your next supplier discussion:
+https://quark.build/wms-cost
+
+Publication gate: publish after the cost-page update is approved and verified
+on production. The tool itself is already public; this sequencing makes the
+campaign link point to the reviewed version.
+
+2. LINKEDIN POST: RECEIVING AND PUTAWAY
+
+What happens between an inbound receipt and stock reaching a storage location?
+
+Two short Quark WMS recordings show the operations separately:
+* Receiving in the web interface and on an RF terminal.
+* Putaway through the RF workflow.
+
+They show the actual application, alongside an explanation of the inbound
+process. Quark has standard warehouse operations built in; configuration,
+extensions and connections are scoped for each customer project.
+
+Watch receiving and putaway:
+https://quark.build/product#inbound
+
+Publication gate: founder approves copy and publishing account. This links to
+existing public demonstrations and can be released independently of the cost
+page. Use the approved original recordings; no re-edit is included here.
+
+3. LINKEDIN POST: INVENTORY COUNTING AND REPLENISHMENT
+
+Inventory counting and replenishment answer different warehouse questions:
+what stock is recorded, and what needs to move to keep picking locations
+supplied?
+
+Our Quark WMS demos show RF inventory counting, plus replenishment in the web
+interface and RF workflow. Each recording sits beside its operational
+explanation rather than in a separate screen gallery.
+
+Inventory counting:
+https://quark.build/product#demo-inventory-counting
+
+Replenishment:
+https://quark.build/product#demo-replenishment
+
+What would you want to see in a warehouse workflow demonstration?
+
+Publication gate: founder approves copy and account. No claim of improved
+accuracy, productivity or automatic replenishment is implied by the demos.
+
+4. LINKEDIN POST: PROJECT PREPARATION
+
+Preparing to evaluate a WMS? Start with the warehouse facts and decisions you
+can bring to the first discussion.
+
+The Quark WMS Readiness Assessment produces a project preparation brief with
+your warehouse profile, complexity factors, preparation gaps and next steps.
+Operational complexity and implementation readiness are assessed separately.
+
+You can view the report and download PDF or JSON without registration or an
+email address. Answers are processed in the browser and are not automatically
+sent with a project enquiry.
+
+This is preliminary planning guidance, not a go-live certification or a
+confirmation that every requirement is supported by Quark.
+
+Try the assessment:
+https://quark.build/tools/wms-readiness-assessment
+
+Publication gate: founder approves copy and account. No completion-time claim
+or conversion uplift is asserted.
+
+5. OPTIONAL RESERVE: YOUTUBE TITLES AND DESCRIPTIONS
+
+The website already plays all four MP4s natively from Vercel. The primary
+promotion links lead to /product and its native players. YouTube edits are
+optional and do not block the website or social-content release.
+
+These are four independent videos. Update only the corresponding verified
+video, after approval. Keep the original media. No new upload date, chapters,
+transcript, certification, pricing or customer outcome is supplied.
+
+5A. RECEIVING
+Verified video: https://youtu.be/pmOGie2ltEg
+Title: Quark WMS Receiving Demo | Warehouse Receiving with Web & RF
+Description:
+See receiving in the Quark WMS web interface and on an RF terminal. The web
+view provides the inbound receipt context, followed by the warehouse
+receiving workflow on RF.
+
+Explore receiving and putaway in Product Overview:
+https://quark.build/product#inbound
+
+Plan the scope and costs of your warehouse project:
+https://quark.build/wms-cost
+
+Quark WMS provides standard warehouse operations on a configurable platform.
+Customer-specific configuration, extensions and integrations are scoped for
+your project.
+
+5B. PUTAWAY
+Verified video: https://youtu.be/cP4fYOkpGNY
+Title: Quark WMS Putaway Demo | RF Warehouse Operations
+Description:
+Follow putaway in the Quark WMS RF interface. The workflow moves received
+goods into storage and records the destination as part of the warehouse
+operation.
+
+See how putaway connects with inbound operations:
+https://quark.build/product#inbound
+
+Prepare for a WMS project discussion:
+https://quark.build/tools/wms-readiness-assessment
+
+This is a recording of the actual application. Customer-specific rules,
+devices and connections require project scoping.
+
+5C. INVENTORY COUNTING
+Verified video: https://youtu.be/oV1XNz-Wz4g
+Title: Quark WMS Inventory Counting Demo | RF Stock Counting
+Description:
+Follow inventory counting on a Quark WMS RF terminal. Warehouse staff use
+the workflow to record count observations for inventory review.
+
+Explore inventory management and watch this demonstration in context:
+https://quark.build/product#inventory
+
+Prepare your warehouse project brief:
+https://quark.build/tools/wms-readiness-assessment
+
+The recording demonstrates the workflow; it does not make a measured
+inventory-accuracy or productivity claim.
+
+5D. REPLENISHMENT
+Verified video: https://youtu.be/bpwlTV-cp44
+Title: Quark WMS Replenishment Demo | Web & RF Warehouse Workflow
+Description:
+See replenishment in the Quark WMS web application and RF interface. The
+recording shows the planning context and the warehouse execution workflow
+for supplying picking locations.
+
+Explore warehouse execution and replenishment:
+https://quark.build/product#execution
+
+Plan your WMS project budget:
+https://quark.build/wms-cost
+
+Quark has standard warehouse operations built in. Customer-specific
+configuration and connections are agreed separately for each project.
+
+6. PERSONAL OUTREACH DRAFT: WMS CONSULTANT / IMPLEMENTATION PARTNER
+
+Suggested subject: Feedback on a warehouse project preparation brief
+
+Hello [Name],
+
+We have built Quark WMS with standard warehouse operations on a configurable
+platform. We also created a free browser-based assessment to help warehouse
+teams prepare for a WMS evaluation.
+
+Would you be willing to review the questions and a preparation report for a
+synthetic warehouse scenario? I would value your view on missing questions,
+unclear terminology and whether the resulting actions would help a first
+supplier meeting.
+
+https://quark.build/tools/wms-readiness-assessment
+
+No registration or email is needed. Please use synthetic answers, rather
+than confidential customer or warehouse information.
+
+Best,
+[Approved sender]
+
+Send gate: founder chooses recipients and explicitly authorizes sending.
+No names, addresses, relationships or endorsements are invented here.
+This is a feedback invitation, not an announcement of a partner programme.
+
+7. EVIDENCE AND CLAIM BOUNDARIES (INTERNAL REVIEW NOTES)
+
+Demonstration claims: content/product-demos.json, its accessibleDescription
+and stages, and the existing /product operation descriptions. The four IDs
+above are founder-supplied. No new video capability is inferred.
+
+Budget claims: assets/seo/cost-model.js and assets/seo/cost-ui.js. No changes
+to the formula, currencies, licensing models, storage or transmission.
+
+Assessment claims: the existing public assessment page and browser-only
+assessment-assets implementation. No new questionnaire or product-compatibility
+claim is proposed.
+
+Captions/transcripts are not confirmed in the current video manifest. Do not
+advertise them or generate a supposed verbatim transcript from the summaries.
+
+Use the clean URLs above. No new analytics, tracking pixels, UTM persistence,
+contact-data collection or automated outreach is activated by this pack.
+Existing contact flow and privacy text remain unchanged.
+
+8. SMALL VALIDATION SEQUENCE
+
+First: approve and release the isolated cost-page update, if accepted.
+Then: publish the budget post and one workflow post from an approved account.
+Separately: update the four YouTube descriptions, if approved.
+Manually test the assessment with 3-5 experienced WMS practitioners, using
+synthetic profiles; this is a proposed learning sample, not a conversion target.
+
+Review after two weeks, and again after four weeks if traffic is sparse:
+* Search Console: relevant non-brand cost/selection queries, landing pages,
+  clicks and impressions, with USA and UK shown separately.
+* Public posts: aggregate reach, link clicks and relevant replies where the
+  platform provides those figures. These are separate from Google organic.
+* Enquiries: manually count confirmed requests and record whether the person
+  has a real warehouse project. Ask the source optionally in conversation.
+* Opportunities: actual operational need, decision role and agreed next step;
+  unknown budget or timeline alone must not disqualify a prospect.
+
+Without approved attribution, do not call a form enquiry an organic conversion
+or claim that a LinkedIn/YouTube click became a lead. Never put answers, cost
+inputs, company contact data or free text into analytics or URL parameters.
+
+Expansion gate: look for relevant buyer conversations, useful practitioner
+feedback or sustained relevant search visibility before adding new pages or
+another tool. Sparse traffic is insufficient to validate or reject conversion.
