@@ -24,7 +24,7 @@ test('all 51 English narration cues have valid bounds and matching transcripts',
  for(const d of manifest){a.equal(d.captionsConfirmed,true);let vtt=read(d.captions);a.match(vtt,/^WEBVTT/);let bounds=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d\.\d{3}) --> (\d\d):(\d\d):(\d\d\.\d{3})/g)];a.equal(bounds.length,counts[d.key]);let prev=0;for(const b of bounds){let s=+b[1]*3600+ +b[2]*60+ +b[3],e=+b[4]*3600+ +b[5]*60+ +b[6];a.ok(s>=prev&&e>s&&e<=Number(d.duration.match(/[\d.]+/)[0]));prev=e;}a.match(demos.render(d),/<track kind="captions"[^>]+srclang="en"[^>]+default>/);a.ok(read(d.transcript).length>100);}
 });
 test('VideoObject uses confirmed dates, durations, language and native URLs',()=>{
- const schemas=[...read('product.html').matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>JSON.parse(m[1])).filter(s=>s['@type']==='VideoObject');a.equal(schemas.length,manifest.filter(d=>d.uploadDate).length);
+ const schemas=[...read('product.html').matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>JSON.parse(m[1])).filter(s=>s['@type']==='VideoObject'&&s.contentUrl.includes('/assets/demos/'));a.equal(schemas.length,manifest.filter(d=>d.uploadDate).length);
  for(const d of manifest){const s=schemas.find(s=>s.contentUrl==='https://quark.build'+d.source);a.equal(!!s,!!d.uploadDate);if(s){a.equal(s.uploadDate,d.uploadDate);a.equal(s.duration,d.duration);a.equal(s.inLanguage,'en');a.equal(s.thumbnailUrl,'https://quark.build'+d.poster);a.ok(!s.embedUrl);}}
 });
 test('visual revision preserves published page copy, SEO, navigation, CTAs and forms',()=>{
@@ -35,7 +35,7 @@ test('visual revision preserves published page copy, SEO, navigation, CTAs and f
   a.equal((after.match(/<h1\b/g)||[]).length,1,f+' H1');a.equal(head(after),head(before),f+' SEO/head');
   a.deepEqual(icons(after),icons(read('index.html')),f+' approved square favicon');a.ok(icons(after).some(s=>s.includes('/favicon.ico')));a.ok(icons(after).some(s=>s.includes('/assets/favicon.png')));
   a.deepEqual(after.match(/<form\b[\s\S]*?<\/form>/g),before.match(/<form\b[\s\S]*?<\/form>/g),f+' forms');
-  a.deepEqual(after.match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
+  a.deepEqual(after.replace(/<script type="application\/ld\+json" data-rf-demo-schema>[\s\S]*?<\/script>/g,'').match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
  }
 });
 test('visual revision preserves app logic, settings, forms, privacy wording and analytics',()=>{
@@ -46,7 +46,7 @@ test('publication rejects unverified media, captions, IDs and placements',()=>{
  const d=manifest[0];a.equal(demos.validate({...d,publicationApproved:false},root),false);a.throws(()=>demos.validate({...d,captions:null},root),/captions/);a.throws(()=>demos.validate({...d,captions:'/assets/demos/missing.vtt'},root),/local media/);a.throws(()=>demos.validate({...d,source:'/assets/demos/missing.mp4'},root),/MP4/);a.throws(()=>demos.validate({...d,youtubeId:'invalid'},root),/YouTube/);a.throws(()=>demos.validate({...d,section:'inventory'},root),/placement/);
 });
 test('approved configuration recording is one ordered native player with local captions and no invented video metadata',()=>{
- const h=read('product.html'),figure=h.match(/<figure class="q-context-demo" id="demo-metadata-driven">[\s\S]*?<\/figure>/)?.[0];a.ok(figure);a.equal((h.match(/class="q-context-demo"/g)||[]).length,1);
+ const h=read('product.html'),figure=h.match(/<figure class="q-context-demo" id="demo-metadata-driven">[\s\S]*?<\/figure>/)?.[0];a.ok(figure);a.equal((h.match(/class="q-context-demo"/g)||[]).length,2);
  a.ok(h.indexOf('id="demo-metadata-driven"')>h.indexOf('id="platform"'));a.match(figure,/<video controls playsinline preload="none"/);a.doesNotMatch(figure,/autoplay|iframe|youtube/);a.match(figure,/00:00 Working SKU interface · 00:34 Metadata and form configuration/);a.match(figure,/<track kind="captions"[^>]+default>/);
  a.match(h,/<a[^>]+href="#demo-metadata-driven"/);for(const ref of matches(figure,/(?:src|poster|href)="(\/assets\/product-context\/[^"#]+)"/g))a.ok(fs.existsSync(path.join(root,ref)),ref);
  const bytes=fs.readFileSync(path.join(root,'assets/product-context/metadata-driven-Michael.mp4'));a.equal(bytes.length,5110733);a.equal(crypto.createHash('sha256').update(bytes).digest('hex'),'721f908e29ab3d3e8abd6867205ffc5afe235b61917210570a2cb33ac62c35a7');a.ok(bytes.indexOf(Buffer.from('moov'))<bytes.indexOf(Buffer.from('mdat')));

@@ -1,0 +1,43 @@
+Configure RF Warehouse Screens in Quark WMS
+
+00:00
+See how RF warehouse screens are configured in Quark's WebRF Studio, using receiving screens as the example.
+
+00:08
+The new screen dialog offers different screen types. The editor then brings together the screen list, a visual preview, and configuration properties.
+
+00:20
+Switch between handheld and forklift display layouts. The main menu preview shows how warehouse operations are presented on each screen format.
+
+00:34
+Open the ASN Receipt screen and add example widgets. Each added item appears in the preview and in the widget list.
+
+00:47
+Select a choice field to inspect its properties. Its identifier, label, type, placement, and input settings are shown together in the property panel.
+
+01:06
+Add number and lookup fields to the screen. Select each widget to inspect its individual input settings in the properties panel.
+
+01:22
+A date widget adds a date entry to the preview. Selecting it exposes the settings for that specific field.
+
+01:37
+Remove the temporary example fields and return to the ASN input. The preview follows the changes made in the designer.
+
+01:55
+Screen settings bring together the title, operator prompt, configured submit action, and navigation links. Version information distinguishes published definitions from work in a draft.
+
+02:12
+The logic panel exposes configured response handling. Move through the connected receiving screens to inspect their settings and function keys.
+
+02:42
+Receive Line shows quantity, unit of measure, lot, expiry, destination location, and pallet identification. Lot and expiry are marked as conditional fields.
+
+02:54
+Select the destination location field to review required entry, uppercase handling, and the order in which its value is sent.
+
+03:06
+Switch between the light and dark previews to inspect the same receiving screen in both themes.
+
+03:16
+This walkthrough brings screen layout, field properties, and navigation settings together in Quark’s RF screen designer.

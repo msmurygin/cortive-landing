@@ -1,0 +1,82 @@
+WEBVTT
+
+1
+00:00:00.600 --> 00:00:08.219
+See how RF warehouse screens are configured in Quark's
+WebRF Studio, using receiving screens as the example.
+
+2
+00:00:08.500 --> 00:00:18.268
+The new screen dialog offers different screen types. The
+editor then brings together the screen list, a visual
+preview, and configuration properties.
+
+3
+00:00:20.000 --> 00:00:29.553
+Switch between handheld and forklift display layouts. The
+main menu preview shows how warehouse operations are
+presented on each screen format.
+
+4
+00:00:34.000 --> 00:00:42.533
+Open the ASN Receipt screen and add example widgets. Each
+added item appears in the preview and in the widget list.
+
+5
+00:00:47.000 --> 00:00:56.856
+Select a choice field to inspect its properties. Its
+identifier, label, type, placement, and input settings are
+shown together in the property panel.
+
+6
+00:01:06.000 --> 00:01:14.135
+Add number and lookup fields to the screen. Select each
+widget to inspect its individual input settings in the
+properties panel.
+
+7
+00:01:22.000 --> 00:01:29.044
+A date widget adds a date entry to the preview. Selecting
+it exposes the settings for that specific field.
+
+8
+00:01:37.000 --> 00:01:45.814
+Remove the temporary example fields and return to the ASN
+input. The preview follows the changes made in the
+designer.
+
+9
+00:01:55.000 --> 00:02:07.251
+Screen settings bring together the title, operator prompt,
+configured submit action, and navigation links. Version
+information distinguishes published definitions from work
+in a draft.
+
+10
+00:02:12.000 --> 00:02:21.409
+The logic panel exposes configured response handling. Move
+through the connected receiving screens to inspect their
+settings and function keys.
+
+11
+00:02:42.000 --> 00:02:53.565
+Receive Line shows quantity, unit of measure, lot, expiry,
+destination location, and pallet identification. Lot and
+expiry are marked as conditional fields.
+
+12
+00:02:54.500 --> 00:03:02.976
+Select the destination location field to review required
+entry, uppercase handling, and the order in which its
+value is sent.
+
+13
+00:03:06.000 --> 00:03:12.008
+Switch between the light and dark previews to inspect the
+same receiving screen in both themes.
+
+14
+00:03:16.000 --> 00:03:23.838
+This walkthrough brings screen layout, field properties,
+and navigation settings together in Quark’s RF screen
+designer.
