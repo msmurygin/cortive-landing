@@ -1,0 +1,28 @@
+From SKU Attributes to Form Configuration | Quark WMS
+
+Part 1: Working SKU interface (00:00)
+
+Quark keeps SKU attributes alongside the product record. Open the SKU list.
+
+Open a SKU, then switch to Attributes to review the values attached to that item.
+
+Start a new attribute entry. The lookup lists the available attribute definitions for this record.
+
+Choose the definition and enter its value. The attribute stays in the context of the selected SKU.
+
+Part 2: Metadata and form configuration (00:34)
+
+Now follow that workspace into Quark's metadata tools. Open SKU Management to inspect the form configuration.
+
+The SKU Attributes form is connected to the tabbed SKU detail screen and to the attribute editing form.
+
+Create a draft from the selected module version. The configuration work continues in that draft.
+
+Return to the forms layer and locate SKU Attributes. Its details provide a route into the form designer.
+
+Open the designer to inspect the attribute list layout. The table and its properties appear in one workspace.
+
+Select a column to review its display settings. The preview shows the form while the property panel exposes the selected configuration.
+
+Adjust the displayed settings, then save the form configuration. This recording shows editing in a draft, not a production rollout.
+

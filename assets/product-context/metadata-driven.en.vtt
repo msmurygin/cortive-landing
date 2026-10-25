@@ -1,0 +1,58 @@
+WEBVTT
+
+1
+00:00:00.400 --> 00:00:06.325
+Quark keeps SKU attributes alongside the product record.
+Open the SKU list.
+
+2
+00:00:08.000 --> 00:00:13.646
+Open a SKU, then switch to Attributes to review the values
+attached to that item.
+
+3
+00:00:16.200 --> 00:00:22.583
+Start a new attribute entry. The lookup lists the
+available attribute definitions for this record.
+
+4
+00:00:25.000 --> 00:00:32.063
+Choose the definition and enter its value. The attribute
+stays in the context of the selected SKU.
+
+5
+00:00:34.700 --> 00:00:42.795
+Now follow that workspace into Quark's metadata tools.
+Open SKU Management to inspect the form configuration.
+
+6
+00:00:46.200 --> 00:00:54.102
+The SKU Attributes form is connected to the tabbed SKU
+detail screen and to the attribute editing form.
+
+7
+00:00:57.200 --> 00:01:03.582
+Create a draft from the selected module version. The
+configuration work continues in that draft.
+
+8
+00:01:09.200 --> 00:01:16.725
+Return to the forms layer and locate SKU Attributes. Its
+details provide a route into the form designer.
+
+9
+00:01:22.200 --> 00:01:29.221
+Open the designer to inspect the attribute list layout.
+The table and its properties appear in one workspace.
+
+10
+00:01:32.200 --> 00:01:41.124
+Select a column to review its display settings. The
+preview shows the form while the property panel exposes
+the selected configuration.
+
+11
+00:01:43.200 --> 00:01:51.783
+Adjust the displayed settings, then save the form
+configuration. This recording shows editing in a draft,
+not a production rollout.
