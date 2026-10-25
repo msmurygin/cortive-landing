@@ -151,4 +151,23 @@ body.q-indigo{--q-serif:var(--q-sans);--sans:var(--q-sans);--serif:var(--q-sans)
 .q-indigo .q-context-demo figcaption{font-size:13px;line-height:1.65;color:var(--q-mute)}
 .q-indigo .q-context-demo figcaption a{display:inline-flex;align-items:center;min-height:44px}
 @media(max-width:700px){.q-indigo .q-context-demo{margin-top:24px}.q-indigo .q-context-demo h3{font-size:18px}}
+/* Final continuity pass for the existing Vision and budget components. */
+.q-indigo .q-particles,.q-indigo .q-principles{border-color:var(--q-line-2)}
+.q-indigo .q-particles article,.q-indigo .q-principles article{border-color:var(--q-line-2);padding:28px;gap:16px}
+.q-indigo .q-particles .q-sym{font-family:var(--q-mono);font-style:normal;font-size:38px;line-height:1;color:var(--q-teal)}
+.q-indigo .q-particles h3{font-weight:600;font-size:21px;line-height:1.3}
+.q-indigo .q-particles p{line-height:1.65}
+.q-indigo .q-particles header{flex-wrap:wrap;gap:16px}
+.q-indigo .q-particles .is-future{border-style:dashed;border-color:var(--q-vision)}
+.q-indigo .q-principles article.is-inf{--q-mute:#b3b3c3;background:#0b0b12;color:#fff}
+.q-indigo .q-cmp,.q-indigo .q-cmp>div+div,.q-indigo .q-layers li{border-color:var(--q-line-2)}
+.q-indigo .q-cmp .q-big{font-weight:700}
+.q-indigo .q-layers li.is-core{background:#3d3d7a;color:#fff}
+.q-indigo .q-layers li{padding-block:20px}
+.q-indigo .q-layers li strong{font-weight:600}
+.q-indigo .q-metrics{border-color:var(--q-line-2)}
+.q-indigo .q-metrics div+div{border-color:var(--q-line-2)}
+.q-indigo .q-metrics dd{font-weight:600;line-height:1.25}
+.q-indigo .q-metrics div:last-child dd{background:none;color:var(--q-teal)}
+@media(max-width:700px){.q-indigo .q-particles article,.q-indigo .q-principles article{padding:24px}.q-indigo .q-particles .q-sym{font-size:32px}}
 }
