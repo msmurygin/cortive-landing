@@ -36,7 +36,9 @@ test('visual revision preserves published page copy, SEO, navigation, CTAs and f
   if(f==='vision.html'){
    a.match(before,phononCard);a.match(after,phononCard);
    const card=after.match(phononCard)[0];a.match(card,/<h3>Phonon<\/h3>/);a.match(card,/Separate product · Voice/);a.match(card,/href="\/product#phonon"/);
-   included(text(before.replace(phononCard,'')),text(after.replace(phononCard,'')),f+' copy outside Phonon');
+   // Approved name note uses third person; its duplicate personal reference is aligned too.
+   const approvedNameCopy=before.replace('Mark is also the name of my son. The metaphor and the family, they earn their place.','The name also has a family connection: the founder’s son is named Mark.').replace('Mark is my son.','Mark is the founder’s son.');
+   included(text(approvedNameCopy.replace(phononCard,'')),text(after.replace(phononCard,'')),f+' copy outside Phonon');
   }else included(text(before),text(after),f+' copy');
   included(matches(before,/<a\b[^>]*href=["']([^"']*)/g),matches(after,/<a\b[^>]*href=["']([^"']*)/g),f+' links');
   const ids=matches(after,/\bid=["']([^"']+)/g);included(matches(before,/\bid=["']([^"']+)/g),ids,f+' anchors');a.equal(ids.length,new Set(ids).size,f+' duplicate IDs');
