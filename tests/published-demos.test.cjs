@@ -29,7 +29,15 @@ test('VideoObject uses confirmed dates, durations, language and native URLs',()=
 });
 test('visual revision preserves published page copy, SEO, navigation, CTAs and forms',()=>{
  for(const f of ['index.html','product.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','legal/privacy.html','legal/terms.html','thanks.html']){
-  const before=old(f),after=read(f);included(text(before),text(after),f+' copy');
+  const before=old(f),after=read(f);
+  // Founder-requested Phonon positioning replaces this card's old marketing copy.
+  // Keep preservation checks for all other copy, plus links, anchors, SEO, forms and scripts below.
+  const phononCard=/<article\b[^>]*><header><span class="q-sym">φ<\/span>[\s\S]*?<\/article>/;
+  if(f==='vision.html'){
+   a.match(before,phononCard);a.match(after,phononCard);
+   const card=after.match(phononCard)[0];a.match(card,/<h3>Phonon<\/h3>/);a.match(card,/Separate product · Voice/);a.match(card,/href="\/product#phonon"/);
+   included(text(before.replace(phononCard,'')),text(after.replace(phononCard,'')),f+' copy outside Phonon');
+  }else included(text(before),text(after),f+' copy');
   included(matches(before,/<a\b[^>]*href=["']([^"']*)/g),matches(after,/<a\b[^>]*href=["']([^"']*)/g),f+' links');
   const ids=matches(after,/\bid=["']([^"']+)/g);included(matches(before,/\bid=["']([^"']+)/g),ids,f+' anchors');a.equal(ids.length,new Set(ids).size,f+' duplicate IDs');
   a.equal((after.match(/<h1\b/g)||[]).length,1,f+' H1');a.equal(head(after),head(before),f+' SEO/head');
