@@ -61,6 +61,16 @@
       "source": "/tools/wms-readiness-assessment/index.html",
       "destination": "/tools/wms-readiness-assessment",
       "permanent": true
+    },
+    {
+      "source": "/integrations.html",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/",
+      "destination": "/integrations",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -83,6 +93,10 @@
     {
       "source": "/tools/wms-readiness-assessment",
       "destination": "/tools/wms-readiness-assessment/index.html"
+    },
+    {
+      "source": "/integrations",
+      "destination": "/integrations.html"
     }
   ],
   "headers": [
