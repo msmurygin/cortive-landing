@@ -29,3 +29,15 @@ test('catalogue uses the shared site footer rather than a nested capability-map 
  const expected=product.slice(start,product.indexOf('</footer>',start)+9);
  a.equal(footer.slice(0,footer.indexOf('</footer>')+9).replace(' aria-current="page"',''),expected);
 });
+
+test('all public pages expose Integrations after Product on desktop and mobile',()=>{
+ for(const f of ['index.html','product.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','thanks.html','legal/privacy.html','legal/terms.html','integrations.html']){
+  const page=read(f),desktop=page.match(/<nav class="q-nav"[\s\S]*?<\/nav>/)[0],mobile=page.match(/<nav class="q-mnav"[\s\S]*?<\/nav>/)[0];
+  for(const nav of [desktop,mobile]){
+   a.equal((nav.match(/data-nav="integrations"/g)||[]).length,1,f);
+   a.match(nav,/<a href="\/integrations" data-nav="integrations"(?: aria-current="page")?>Integrations<\/a>/);
+   a.ok(nav.indexOf('data-nav="product"')<nav.indexOf('data-nav="integrations"'),f);
+  }
+  a.equal((page.match(/href="\/integrations"/g)||[]).length, f==='product.html'?4:3,f);
+ }
+});
