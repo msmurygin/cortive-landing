@@ -25,7 +25,7 @@ test('Vision keeps built, separate and planned products distinct; relations are 
 });
 test('new interactions do not persist or transmit selections and introduce no dependencies',()=>{
  a.doesNotMatch(read('design-assets/product-experiences.js'),/fetch\s*\(|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|cookie|\.submit\s*\(|https?:|import\s*\(/);
- const withoutDocumentationLinks=html=>html.replace(/<a href="https:\/\/docs\.quark\.build\/" data-nav="documentation"><strong>Documentation<\/strong><span>Warehouse guides, Metadata Studio and API reference\.<\/span><\/a>/g,'').replace(/<li><a href="https:\/\/docs\.quark\.build\/"(?: data-nav="documentation")?>Documentation<\/a><\/li>/g,'');
+ const withoutDocumentationLinks=html=>html.replace(/<li><a href="https:\/\/docs\.quark\.build\/"(?: data-nav="documentation")?>Documentation<\/a><\/li>/g,'').replace(/<a href="https:\/\/docs\.quark\.build\/" data-nav="documentation">Documentation<\/a>/g,'');
  for(const f of ['wms-cost.html','tools/wms-readiness-assessment/index.html','legal/privacy.html','legal/terms.html','assets/leads.js','api/events.js','api/lead.js','robots.txt','sitemap.xml','vercel.json'])a.equal(withoutDocumentationLinks(read(f)),cp.execFileSync('git',['show','a2be3e6:'+f],{encoding:'utf8',cwd:require('node:path').join(__dirname,'..')}),f);
 });
 test('generator remains stable and no-JS HTML retains all existing Vision descriptions',()=>{
