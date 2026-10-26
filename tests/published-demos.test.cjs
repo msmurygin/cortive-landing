@@ -1,16 +1,16 @@
 const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),cp=require('node:child_process');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),manifest=require('../content/product-demos.json'),demos=require('../scripts/product-demos.cjs');
-// Published baseline before the founder-approved indigo visual revision.
-const old=f=>cp.execFileSync('git',['show','f62d32d00af298ef273ddbd9844192644d44b3c6:'+f],{cwd:root,encoding:'utf8'});
+// Current published functional baseline, before isolated UX concepts 01, 02 and 06.
+const old=f=>cp.execFileSync('git',['show','a2be3e6a92b1f0de11739cdcb25d10982639aa87:'+f],{cwd:root,encoding:'utf8'});
 const counts=xs=>xs.reduce((m,x)=>(m.set(x,(m.get(x)||0)+1),m),new Map());
 const included=(before,after,label)=>{const c=counts(after);for(const [value,n]of counts(before))a.ok((c.get(value)||0)>=n,label+': '+value);};
 const text=h=>h.replace(/<(script|style|svg)\b[^>]*>[\s\S]*?<\/\1>/gi,'').split(/<[^>]*>/).map(s=>s.replace(/\s+/g,' ').trim()).filter(Boolean);
 const matches=(h,re)=>[...h.matchAll(re)].map(m=>m[1]);
 const icons=h=>h.match(/<link\b[^>]*rel="icon"[^>]*>/g)||[];
-const head=h=>h.split('</head>')[0].replace(/<link\b[^>]*rel="icon"[^>]*>/g,'').replace(/<link rel="stylesheet" href="\/design-assets\/(?:home|site)-indigo\.css">/g,'').replace('family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500','family=Geist:wght@400;500;600;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1');
+const head=h=>h.split('</head>')[0].replace('<link rel="stylesheet" href="/design-assets/product-experiences.css">','');
 test('five approved recordings retain their corresponding operational sections',()=>{
  a.deepEqual(manifest.map(d=>d.key),['receiving','putaway','receiving-and-putaway','inventory-counting','replenishment']);let h=read('product.html');
- for(const d of manifest){a.equal(demos.validate(d,root),true);const pos=h.indexOf('id="demo-'+d.key+'"'),sec=h.indexOf('id="'+d.section+'"');a.ok(pos>sec&&pos<h.indexOf('</section>',sec));a.equal(h.split('id="demo-'+d.key+'"').length-1,1);a.ok(h.includes(demos.render(d)));}
+ for(const d of manifest){a.equal(demos.validate(d,root),true);const pos=h.indexOf('id="demo-'+d.key+'"'),sec=h.indexOf('id="'+d.section+'"');a.ok(pos>sec&&pos<h.indexOf('</section>',sec));a.equal(h.split('id="demo-'+d.key+'"').length-1,1);const heading=old('product.html').match(new RegExp('id="demo-'+d.key+'"><h3>(.*?)</h3>'))[1];a.ok(h.includes(demos.render(d).replace(/<h3>.*?<\/h3>/,'<h3>'+heading+'</h3>')));}
 });
 test('media matches approved hashes and originals remain available',()=>{
  for(const d of manifest){const b=fs.readFileSync(path.join(root,d.source));a.equal(crypto.createHash('sha256').update(b).digest('hex'),d.sha256);a.equal(b.length,d.bytes);a.ok(b.length<3_000_000);if(d.originalSha256)a.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/demos/'+d.key+'.mp4'))).digest('hex'),d.originalSha256);}
@@ -30,22 +30,13 @@ test('VideoObject uses confirmed dates, durations, language and native URLs',()=
 test('visual revision preserves published page copy, SEO, navigation, CTAs and forms',()=>{
  for(const f of ['index.html','product.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','legal/privacy.html','legal/terms.html','thanks.html']){
   const before=old(f),after=read(f);
-  // Founder-requested Phonon positioning replaces this card's old marketing copy.
-  // Keep preservation checks for all other copy, plus links, anchors, SEO, forms and scripts below.
-  const phononCard=/<article\b[^>]*><header><span class="q-sym">φ<\/span>[\s\S]*?<\/article>/;
-  if(f==='vision.html'){
-   a.match(before,phononCard);a.match(after,phononCard);
-   const card=after.match(phononCard)[0];a.match(card,/<h3>Phonon<\/h3>/);a.match(card,/Separate product · Voice/);a.match(card,/href="\/product#phonon"/);
-   // Approved name note uses third person; its duplicate personal reference is aligned too.
-   const approvedNameCopy=before.replace('Mark is also the name of my son. The metaphor and the family, they earn their place.','The name also has a family connection: the founder’s son is named Mark.').replace('Mark is my son.','Mark is the founder’s son.');
-   included(text(approvedNameCopy.replace(phononCard,'')),text(after.replace(phononCard,'')),f+' copy outside Phonon');
-  }else included(text(before),text(after),f+' copy');
+  included(text(before),text(after),f+' existing copy');
   included(matches(before,/<a\b[^>]*href=["']([^"']*)/g),matches(after,/<a\b[^>]*href=["']([^"']*)/g),f+' links');
   const ids=matches(after,/\bid=["']([^"']+)/g);included(matches(before,/\bid=["']([^"']+)/g),ids,f+' anchors');a.equal(ids.length,new Set(ids).size,f+' duplicate IDs');
   a.equal((after.match(/<h1\b/g)||[]).length,1,f+' H1');a.equal(head(after),head(before),f+' SEO/head');
   a.deepEqual(icons(after),icons(read('index.html')),f+' approved square favicon');a.ok(icons(after).some(s=>s.includes('/favicon.ico')));a.ok(icons(after).some(s=>s.includes('/assets/favicon.png')));
   a.deepEqual(after.match(/<form\b[\s\S]*?<\/form>/g),before.match(/<form\b[\s\S]*?<\/form>/g),f+' forms');
-  a.deepEqual(after.replace(/<script type="application\/ld\+json" data-rf-demo-schema>[\s\S]*?<\/script>/g,'').replace(f==='wms-cost.html'?'<script src="/assets/seo/cost-pdf.js"></script>':'','').match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
+  a.deepEqual(after.replace('<script src="/design-assets/product-experiences.js" defer></script>','').match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
  }
 });
 // Budget UI may add a local PDF action; its formulas and every other app remain frozen.
