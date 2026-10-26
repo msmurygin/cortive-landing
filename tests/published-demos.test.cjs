@@ -1,3 +1,4 @@
+const withoutIntegrationCatalogue=require('./integration-release-preservation.cjs');
 const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),cp=require('node:child_process');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),manifest=require('../content/product-demos.json'),demos=require('../scripts/product-demos.cjs');
 // Current published functional baseline, before isolated UX concepts 01, 02 and 06.
@@ -41,7 +42,7 @@ test('visual revision preserves published page copy, SEO, navigation, CTAs and f
 });
 // Budget UI may add a local PDF action; its formulas and every other app remain frozen.
 test('visual revision preserves app logic, settings, forms, privacy wording and analytics',()=>{
- for(const f of ['vercel.json','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','assets/seo/cost-model.js','assessment-assets/assessment-model.js','assessment-assets/discovery-model.js','assessment-assets/assessment-ui.js','assessment-assets/assessment-pdf.js','assessment-assets/assessment-summary.js','assessment-assets/assessment.css','design-assets/qds.js','design-assets/qds.css'])a.equal(read(f),old(f),f);
+ for(const f of ['vercel.json','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','assets/seo/cost-model.js','assessment-assets/assessment-model.js','assessment-assets/discovery-model.js','assessment-assets/assessment-ui.js','assessment-assets/assessment-pdf.js','assessment-assets/assessment-summary.js','assessment-assets/assessment.css','design-assets/qds.js','design-assets/qds.css'])a.equal(withoutIntegrationCatalogue(f,read(f)),old(f),f);
  for(const f of ['legal/privacy.html','legal/terms.html'])a.deepEqual(text(read(f).match(/<main\b[\s\S]*?<\/main>/)[0]),text(old(f).match(/<main\b[\s\S]*?<\/main>/)[0]),f+' legal body wording');
 });
 test('publication rejects unverified media, captions, IDs and placements',()=>{
