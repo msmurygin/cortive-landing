@@ -5,7 +5,20 @@
   const results = document.getElementById('costResults'), status = document.getElementById('costStatus');
   const scopeResults = document.getElementById('scopeResults'), advanced = document.getElementById('advancedBudget'), submit = document.getElementById('costSubmit');
   const isAdvanced = () => form.elements.mode.value === 'advanced';
-  function clearResults() { results.hidden = true; scopeResults.hidden = true; }
+  let exportInputs = null;
+  function clearResults() { results.hidden = true; scopeResults.hidden = true; exportInputs = null; }
+  document.querySelectorAll('[data-budget-pdf]').forEach(button => button.addEventListener('click', () => {
+    if (!exportInputs) return;
+    try {
+      const bytes = window.QuarkCostPdf.create(exportInputs);
+      const url = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+      const link = document.createElement('a'); link.href = url;
+      link.download = 'Quark-WMS-Budget-Checklist-' + exportInputs.mode + '-' + new Date().toISOString().slice(0, 10) + '.pdf';
+      document.body.append(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+      status.textContent = 'PDF prepared locally. Your inputs were not sent to Quark. Keep the downloaded file private if it contains confidential figures.';
+    } catch (e) { status.textContent = 'PDF could not be created. Your on-page results remain available. ' + e.message; }
+  }));
   function toggle() {
     const showAdvanced = isAdvanced();
     advanced.hidden = !showAdvanced;
@@ -45,6 +58,7 @@
         document.getElementById('scopeSummary').textContent = plan.summary;
         const list = document.getElementById('scopeChecklist'); list.replaceChildren();
         for (const [title, action] of plan.checklist) { const li = document.createElement('li'), strong = document.createElement('strong'); strong.textContent = title + ': '; li.append(strong, document.createTextNode(action)); list.append(li); }
+        exportInputs = Object.fromEntries(new FormData(form));
         scopeResults.hidden = false;
         status.textContent = 'Planning checklist ready. ' + (plan.missingScope.length ? 'Scope still to confirm: ' + plan.missingScope.join(', ') + '. ' : '') + 'Software fees, delivery effort and other cost assumptions still need to be established. No price or ROI has been estimated.';
         document.getElementById('scopeHeading').focus(); return;
@@ -59,6 +73,7 @@
         for (const text of [labels[key], phase === 'initial' ? 'One-off' : 'Each year', fmt(value)]) { const td = document.createElement('td'); td.textContent = text; tr.append(td); }
         body.append(tr);
       }
+      exportInputs = Object.fromEntries(new FormData(form));
       results.hidden = false;
       status.textContent = 'Calculated from your inputs. Initial cost ' + fmt(r.initialTotal) + '; annual recurring ' + fmt(r.annualTotal) + '; three-year TCO ' + fmt(r.tco3) + '; five-year TCO ' + fmt(r.tco5) + '. This is not a Quark quotation.';
     } catch (e) { clearResults(); status.textContent = e.message; }
