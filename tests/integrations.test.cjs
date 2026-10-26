@@ -22,3 +22,10 @@ test('canonical route, legacy redirects and sitemap publish the same single dest
  for(const f of ['index.html','product.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','thanks.html','legal/privacy.html','legal/terms.html'])a.ok(read(f).includes('<li><a href="/integrations">Integrations</a></li>'),f);
  a.match(read('product.html'),/Explore built-in integrations/);
 });
+
+test('catalogue uses the shared site footer rather than a nested capability-map legend',()=>{
+ const footer=h.slice(h.indexOf('<footer'));a.match(footer,/<footer class="q-ftr">/);a.doesNotMatch(footer,/class="cm-foot"/);
+ const product=read('product.html'),start=product.indexOf('<footer class="q-ftr">');
+ const expected=product.slice(start,product.indexOf('</footer>',start)+9);
+ a.equal(footer.slice(0,footer.indexOf('</footer>')+9).replace(' aria-current="page"',''),expected);
+});
