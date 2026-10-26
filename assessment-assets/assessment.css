@@ -29,7 +29,7 @@
 .q-assess #report{display:grid;gap:20px}
 .q-assess #reportTitle{font-weight:500;font-size:clamp(32px,4vw,56px);line-height:1;letter-spacing:-.035em}
 .q-assess #reportDate{font:12px/1.5 var(--q-mono);color:var(--q-mute)}
-.q-assess .complete{border:1px solid var(--q-ink);background:var(--q-mint);color:#0a0a0a;padding:14px 18px;font-weight:600}
+.q-assess .complete{display:flex;align-items:center;gap:12px;border:1px solid var(--q-line-2);background:var(--q-paper-2);color:var(--q-ink);padding:14px 18px;font-weight:500}.q-assess .complete::before{content:"";width:10px;height:10px;background:var(--q-mint);flex:none}
 .q-assess #report>.notice{border:1px solid var(--q-ink);padding:16px 18px;font-size:15px;background:var(--q-raise)}
 .q-assess #reportBody{display:grid;gap:8px}
 .q-assess #reportBody>section,.q-assess #reportBody>details{border-top:1px solid var(--q-ink);padding-top:18px;margin-top:20px;overflow-wrap:anywhere}

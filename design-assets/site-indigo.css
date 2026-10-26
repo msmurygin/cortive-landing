@@ -185,3 +185,12 @@ body.q-indigo{--q-serif:var(--q-sans);--sans:var(--q-sans);--serif:var(--q-sans)
 .q-indigo .q-outbound-flow figcaption a{display:inline-flex;align-items:center;min-height:44px;font-size:12px;gap:8px}
 @media(max-width:700px){.q-indigo .q-outbound-flow{gap:32px}.q-indigo .q-outbound-flow>li{padding-top:24px}.q-indigo .q-outbound-step-head h4{font-size:19px}.q-indigo .q-outbound-step-head .q-pixel-number{width:33px;height:21px}}
 }
+
+/* legal: section numbers */
+h2>.n{font:400 12px/1 var(--q-mono);color:var(--q-mute);margin-right:12px;vertical-align:middle}
+
+/* mobile: minimum label size */
+@media (max-width:620px){.q-kick,.q-meta,.q-crumb,.q-mono,.q-note,.q-tag,.q-mlink,.q-colhead span,.q-plate-bar,.q-flow-bar,.q-flow-ext,.q-flow-chain small,.q-flow-chain span,.q-flow-core p,.q-flow-sup a,.q-qs small,.q-qs span,.q-jump a,.q-tool-bar,.q-dl dt,.q-metrics dt,dl dt,.q-table th,.q-table caption,.q-ftr h2,.q-ftr-bot,.q-field>span,.q-label,.q-fgrid label,.q-layers li b,.q-layers li span,.q-cs,.q-cs-steps span,.q-cs-row small,.q-principles .q-tagline,.q-vband,.q-q,.q-qtag,.q-burger,.q-status,.pl-k,.q-rail li::after{font-size:12px!important;line-height:1.45}.q-hero .q-note,.q-note{font-size:13px!important}}
+
+/* mobile: minimum label size (v2) */
+@media (max-width:620px){html body :is(.q-kick,.q-meta,.q-meta *,.q-crumb,.q-tag,.q-mlink,.q-colhead span,.q-plate-bar,.q-plate-bar *,.q-flow-bar,.q-flow-bar *,.q-flow-chain small,.q-flow-chain span,.q-flow-core p,.q-qs small,.q-qs span,.q-jump a,.q-tool-bar,.q-tool-bar *,.q-dl dt,.q-metrics dt,dl dt,.q-table th,.q-table caption,.q-legal th,.q-ftr h2,.q-ftr-bot,.q-ftr-bot *,.q-field>span,.q-field small,.q-label,.q-fgrid label,.q-layers li b,.q-cs-steps span,.q-cs-row small,.q-principles .q-tagline,.q-vband,.q-q,.q-burger span,.q-notice>strong,.pl-k,.q-module-head .q-kick,.q-card .q-kick,.cm-core-top span,.cm-lab p,.cm-go,.cm-lg li,.cm-lg .m,.cm-lg .v,.cm-foot p){font-size:12px!important;line-height:1.45}html body .q-note{font-size:13px!important}}

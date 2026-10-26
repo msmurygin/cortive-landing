@@ -3,5 +3,6 @@
 .q-demo h3{font-size:22px;font-weight:500;line-height:1.25}
 .q-demo-player{position:relative;background:var(--q-paper-2);width:100%;overflow:hidden}
 .q-demo-player video{width:100%;height:100%;display:block;object-fit:contain;border:0}
-.q-demo figcaption{display:grid;gap:10px;font-size:14px;color:var(--q-mute)}
-.q-demo figcaption a{display:inline-flex;align-items:center;min-height:44px}
+.q-demo figcaption{display:block;font-size:14px;line-height:1.6;color:var(--q-mute)}
+.q-demo figcaption>p,.q-demo figcaption>details{margin:0 0 8px}
+.q-demo figcaption a{display:inline-flex;align-items:center;min-height:44px;color:var(--q-ink)}
