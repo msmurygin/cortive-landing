@@ -12,5 +12,5 @@ module.exports = function withoutIntegrationCatalogue(file, text) {
     return JSON.stringify(config, null, 2) + '\n';
   }
   if (file === 'sitemap.xml') return text.replace('  <url><loc>https://quark.build/integrations</loc></url>\n', '');
-  return text.replace('<li><a href="/integrations">Integrations</a></li>', '');
+  return text.replace('<li><a href="/integrations" data-nav="integrations">Integrations</a></li>', '').replace('<a href="/integrations" data-nav="integrations">Integrations</a>', '').replace('<li><a href="/integrations">Integrations</a></li>', '');
 };
