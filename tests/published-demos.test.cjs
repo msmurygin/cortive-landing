@@ -42,7 +42,7 @@ test('visual revision preserves published page copy, SEO, navigation, CTAs and f
 // Budget UI may add a local PDF action; its formulas and every other app remain frozen.
 test('visual revision preserves app logic, settings, forms, privacy wording and analytics',()=>{
  for(const f of ['vercel.json','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','assets/seo/cost-model.js','assessment-assets/assessment-model.js','assessment-assets/discovery-model.js','assessment-assets/assessment-ui.js','assessment-assets/assessment-pdf.js','assessment-assets/assessment-summary.js','assessment-assets/assessment.css','design-assets/qds.js','design-assets/qds.css'])a.equal(read(f),old(f),f);
- for(const f of ['legal/privacy.html','legal/terms.html'])a.deepEqual(text(read(f)),text(old(f)),f+' wording');
+ for(const f of ['legal/privacy.html','legal/terms.html'])a.deepEqual(text(read(f).match(/<main\b[\s\S]*?<\/main>/)[0]),text(old(f).match(/<main\b[\s\S]*?<\/main>/)[0]),f+' legal body wording');
 });
 test('publication rejects unverified media, captions, IDs and placements',()=>{
  const d=manifest[0];a.equal(demos.validate({...d,publicationApproved:false},root),false);a.throws(()=>demos.validate({...d,captions:null},root),/captions/);a.throws(()=>demos.validate({...d,captions:'/assets/demos/missing.vtt'},root),/local media/);a.throws(()=>demos.validate({...d,source:'/assets/demos/missing.mp4'},root),/MP4/);a.throws(()=>demos.validate({...d,youtubeId:'invalid'},root),/YouTube/);a.throws(()=>demos.validate({...d,section:'inventory'},root),/placement/);

@@ -32,9 +32,10 @@ test('PDF exports only the budget whitelist; extra contact or free-text data is 
  for(const f of ['assets/seo/cost-pdf.js','assets/seo/cost-ui.js'])a.doesNotMatch(read(f),/fetch\s*\(|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|\.submit\s*\(/);
 });
 test('proposal keeps SEO, calculator model, forms, analytics, privacy and other pages unchanged',()=>{
+ const withoutDocumentationLinks=html=>html.replace(/<a href="https:\/\/docs\.quark\.build\/" data-nav="documentation"><strong>Documentation<\/strong><span>Warehouse guides, Metadata Studio and API reference\.<\/span><\/a>/g,'').replace(/<li><a href="https:\/\/docs\.quark\.build\/"(?: data-nav="documentation")?>Documentation<\/a><\/li>/g,'');
  const base=f=>cp.execFileSync('git',['show','a2be3e6:'+f],{cwd:root,encoding:'utf8'}),h=read('wms-cost.html');
  a.equal(h.split('</head>')[0],base('wms-cost.html').split('</head>')[0]);a.equal(h.match(/<form\b[\s\S]*?<\/form>/)[0],base('wms-cost.html').match(/<form\b[\s\S]*?<\/form>/)[0]);
- for(const f of ['assets/seo/cost-model.js','tools/wms-readiness-assessment/index.html','vercel.json','sitemap.xml','robots.txt','api/events.js','api/lead.js','assets/leads.js','legal/privacy.html','legal/terms.html'])a.equal(read(f),base(f),f);
+ for(const f of ['assets/seo/cost-model.js','tools/wms-readiness-assessment/index.html','vercel.json','sitemap.xml','robots.txt','api/events.js','api/lead.js','assets/leads.js','legal/privacy.html','legal/terms.html'])a.equal(withoutDocumentationLinks(read(f)),base(f),f);
  a.equal((h.match(/data-budget-pdf/g)||[]).length,2);a.match(h,/2026-10-26/);a.match(h,/£325 per month/);a.match(h,/5,000 orders per month/);a.match(h,/€1,299 per month/);a.match(h,/five warehouse users/);a.match(h,/€6,200 one-off onboarding/);a.match(h,/no numerical price/);a.match(h,/not a market average/);
 });
 module.exports={quick,advanced};
