@@ -8,7 +8,14 @@ const included=(before,after,label)=>{const c=counts(after);for(const [value,n]o
 const text=h=>h.replace(/<(script|style|svg)\b[^>]*>[\s\S]*?<\/\1>/gi,'').split(/<[^>]*>/).map(s=>s.replace(/\s+/g,' ').trim()).filter(Boolean);
 const matches=(h,re)=>[...h.matchAll(re)].map(m=>m[1]);
 const icons=h=>h.match(/<link\b[^>]*rel="icon"[^>]*>/g)||[];
-const head=h=>h.split('</head>')[0].replace('<link rel="stylesheet" href="/design-assets/product-experiences.css">','');
+// Permit only the approved social-preview image replacement; retain all other head assertions.
+const socialCover='https://quark.build/assets/social/quark-wms-share-20261027.jpg';
+const coverAlt='Quark WMS. A clearer view of warehouse work. Configurable warehouse management system.';
+const head=h=>h.split('</head>')[0].replace('<link rel="stylesheet" href="/design-assets/product-experiences.css">','')
+ .replaceAll(socialCover,'https://quark.build/assets/shots/web/balances-by-location.jpg')
+ .replace("<meta property='og:image:type' content='image/jpeg'><meta property='og:image:width' content='1200'><meta property='og:image:height' content='630'>",'')
+ .replace("<meta property='og:image:alt' content='"+coverAlt+"'>","<meta property='og:image:alt' content='Quark inventory screen showing stock by location and hold reasons'>")
+ .replace("<meta name='twitter:image:alt' content='"+coverAlt+"'>",'');
 test('five approved recordings retain their corresponding operational sections',()=>{
  a.deepEqual(manifest.map(d=>d.key),['receiving','putaway','receiving-and-putaway','inventory-counting','replenishment']);let h=read('product.html');
  for(const d of manifest){a.equal(demos.validate(d,root),true);const pos=h.indexOf('id="demo-'+d.key+'"'),sec=h.indexOf('id="'+d.section+'"');a.ok(pos>sec&&pos<h.indexOf('</section>',sec));a.equal(h.split('id="demo-'+d.key+'"').length-1,1);const heading=old('product.html').match(new RegExp('id="demo-'+d.key+'"><h3>(.*?)</h3>'))[1];a.ok(h.includes(demos.render(d).replace(/<h3>.*?<\/h3>/,'<h3>'+heading+'</h3>')));}
