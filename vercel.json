@@ -71,6 +71,16 @@
       "source": "/integrations/",
       "destination": "/integrations",
       "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/pricing/",
+      "destination": "/pricing",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -97,6 +107,10 @@
     {
       "source": "/integrations",
       "destination": "/integrations.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
     }
   ],
   "headers": [
