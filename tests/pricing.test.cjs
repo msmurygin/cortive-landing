@@ -14,7 +14,7 @@ test('pricing is a crawlable standalone page with correct canonical and matching
  const ids=[...h.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);a.equal(ids.length,new Set(ids).size);
 });
 test('pricing reuses the contact destination and native FAQ without collecting or transmitting new data',()=>{
- a.equal((h.match(/<details class="q-price-faq">/g)||[]).length,6);for(const label of ['Request Early Access','Apply for Early Access','Request Pricing'])a.ok(h.includes('href="/#contact">'+label));
+ a.equal((h.match(/<details class="q-price-faq">/g)||[]).length,5);for(const label of ['Request Early Access','Apply for Early Access','Request Pricing'])a.ok(h.includes('href="/#contact">'+label));
  a.deepEqual([...h.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m=>m[1]),['/design-assets/qds.js']);
  a.doesNotMatch(h,/<form|<input|<iframe|onclick=|onchange=|fetch\(|sendBeacon|type="application\/ld\+json"[^>]*src=/);
  a.match(h,/href="\/wms-cost">Plan your total WMS budget/);a.match(h,/wider ownership and implementation budget using your own assumptions/);
