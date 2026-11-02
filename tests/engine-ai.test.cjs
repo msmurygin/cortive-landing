@@ -19,7 +19,7 @@ test('file signatures and size are checked; remote file URLs cannot be fetched',
 test('Claude receives structured inputs, server credentials and bounded output; only validated JSON is returned',async()=>{
  const calls=[];const result=await infer(input(),{key:'TEST-ONLY-KEY',model:'TEST-MODEL',fetchImpl:async(url,options)=>{calls.push({url,options});return response(url.endsWith('count_tokens')?{input_tokens:300}:{stop_reason:'end_turn',content:[{type:'text',text:JSON.stringify(good)}]})}});
  a.equal(result.levels,null);a.equal(calls.length,2);a.equal(calls[0].url,'https://api.anthropic.com/v1/messages/count_tokens');
- const body=JSON.parse(calls[1].options.body);a.equal(body.output_config.format.type,'json_schema');a.equal(body.max_tokens,1600);a.equal(calls[1].options.headers['x-api-key'],'TEST-ONLY-KEY');a.equal(body.tools,undefined);a.equal(body.model,'TEST-MODEL');
+ const body=JSON.parse(calls[1].options.body);a.equal(body.output_config.format.type,'json_schema');a.deepEqual(body.output_config.format.schema.properties.type.anyOf,[{type:'string',enum:['E-commerce','Distribution','3PL','Manufacturing']},{type:'null'}]);a.equal(body.max_tokens,1600);a.equal(calls[1].options.headers['x-api-key'],'TEST-ONLY-KEY');a.equal(body.tools,undefined);a.equal(body.model,'TEST-MODEL');
 });
 test('oversized token estimates stop before inference; refusals, invalid JSON and truncated responses fail closed',async()=>{
  let calls=0;await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async()=>{calls++;return response({input_tokens:12001})}}),/too detailed/);a.equal(calls,1);
