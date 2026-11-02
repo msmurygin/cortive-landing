@@ -39,7 +39,7 @@ test('workflow stays local; AI requests use only the server endpoint without tra
  const js=read('assets/engine-demo/engine-demo.js');assert.doesNotMatch(js,/XMLHttpRequest|sendBeacon|localStorage|sessionStorage|document\.cookie|import\s*\(|ANTHROPIC_API_KEY|api\.anthropic\.com/);assert.equal((js.match(/fetch\(/g)||[]).length,1);assert.match(js,/fetch\('\/api\/engine-analyze'/);
  const h=read('index.html');assert.equal((h.match(/id="engine-demo"/g)||[]).length,1);assert.ok(h.indexOf('id="engine-demo"')>h.indexOf('A clearer view of'));assert.ok(h.indexOf('id="engine-demo"')<h.indexOf('<nav class="q-qs"'));
  assert.match(h,/<noscript><p>This interactive example needs JavaScript/);
- assert.match(js,/send your plan or description to Anthropic/);assert.match(js,/nothing was sent and no workspace was created/);assert.doesNotMatch(js,/Prototype — contacts are not sent and no account is created yet/);
+ assert.match(js,/send your plan or description to our AI service/);assert.match(js,/nothing was sent and no workspace was created/);assert.doesNotMatch(js,/Prototype — contacts are not sent and no account is created yet/);
 });
 
 test('integration preserves the current homepage, including SEO, contact form, CTA and verification tags',()=>{
@@ -52,7 +52,7 @@ test('integration preserves the current homepage, including SEO, contact form, C
 test('Claude suggestions drive the preview while unknown fields and manual edits remain explicit',async()=>{
  let body;const p=preview(async(url,options)=>{assert.equal(url,'/api/engine-analyze');body=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true,result:{type:'3PL',aisles:2,bays:5,levels:null,summary:'Two aisles; rack height is not shown.',uncertainties:['Confirm rack levels.'],rules:[]}})}});
  p.demo.state.setup.levels=6;await p.click({id:'qe-demo',dataset:{}});
- assert.equal(body.consent,true);assert.equal(p.demo.state.setup.aisles,2);assert.equal(p.demo.state.setup.bays,5);assert.equal(p.demo.state.setup.levels,6);assert.equal(p.demo.state.setup.src,'ai');assert.match(p.root.innerHTML,/not found · check/);assert.match(p.root.innerHTML,/Confirm rack levels/);
+ assert.equal(body.consent,true);assert.equal(p.demo.state.setup.aisles,2);assert.equal(p.demo.state.setup.bays,5);assert.equal(p.demo.state.setup.levels,6);assert.equal(p.demo.state.setup.src,'ai');assert.match(p.root.innerHTML,/not found · check/);assert.doesNotMatch(p.root.innerHTML,/Claude|Anthropic/);assert.match(p.root.innerHTML,/Confirm rack levels/);
 });
 test('a delayed Claude response cannot overwrite parameters after cancellation',async()=>{
  let resolve;const p=preview(()=>new Promise(r=>resolve=r));const pending=p.click({id:'qe-demo',dataset:{}});

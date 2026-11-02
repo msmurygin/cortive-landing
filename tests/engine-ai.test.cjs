@@ -43,13 +43,13 @@ test('endpoint success exposes no prompt or credential; repeated requests are th
  try{process.env.ANTHROPIC_API_KEY='TEST-NOT-A-REAL-KEY';process.env.ENGINE_AI_PREVIEW_ORIGIN='http://127.0.0.1:49940';delete process.env.VERCEL_ENV;
  global.fetch=async url=>{calls++;return response(url.endsWith('count_tokens')?{input_tokens:100}:{stop_reason:'end_turn',content:[{type:'text',text:JSON.stringify(good)}]})};
  const handler=require('../api/engine-analyze');const req={...request({mode:'layout',consent:true,text:'3 aisles'}),method:'POST'};req.headers.origin='http://127.0.0.1:49940';req.headers['x-forwarded-for']='192.0.2.55';
- for(let i=0;i<6;i++){const r=res();await handler(req,r);a.equal(r.statusCode,200);a.equal(r.body.provider,'Claude');a.ok(!JSON.stringify(r.body).includes('TEST-NOT-A-REAL-KEY'))}
+ for(let i=0;i<6;i++){const r=res();await handler(req,r);a.equal(r.statusCode,200);a.equal(r.body.provider,'Quark AI');a.ok(!JSON.stringify(r.body).includes('TEST-NOT-A-REAL-KEY'))}
  const r=res();await handler(req,r);a.equal(r.statusCode,429);a.equal(calls,12);
  }finally{global.fetch=originalFetch;for(const k of Object.keys(process.env))if(!(k in save))delete process.env[k];Object.assign(process.env,save)}
 });
 
 test('model, authentication and input errors have accurate safe recovery messages',async()=>{
- for(const [status,pattern] of [[404,/model is unavailable/],[401,/connection needs attention/],[400,/rejected this input/],[429,/busy/]])await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async()=>({ok:false,status})}),e=>pattern.test(e.message));
+ for(const [status,pattern] of [[404,/temporarily unavailable/],[401,/connection needs attention/],[400,/could not analyse this input/],[429,/busy/]])await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async()=>({ok:false,status})}),e=>pattern.test(e.message));
 });
 
 test('preview diagnosis classifies provider configuration without exposing raw details',async()=>{
