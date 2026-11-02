@@ -47,3 +47,7 @@ test('endpoint success exposes no prompt or credential; repeated requests are th
  const r=res();await handler(req,r);a.equal(r.statusCode,429);a.equal(calls,12);
  }finally{global.fetch=originalFetch;for(const k of Object.keys(process.env))if(!(k in save))delete process.env[k];Object.assign(process.env,save)}
 });
+
+test('model, authentication and input errors have accurate safe recovery messages',async()=>{
+ for(const [status,pattern] of [[404,/model is unavailable/],[401,/connection needs attention/],[400,/rejected this input/],[429,/busy/]])await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async()=>({ok:false,status})}),e=>pattern.test(e.message));
+});
