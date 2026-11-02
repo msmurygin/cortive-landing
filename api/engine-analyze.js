@@ -22,6 +22,9 @@ module.exports=async function handler(req,res){
  try{
   const result=await infer(input,{key,model:process.env.ANTHROPIC_MODEL||'claude-haiku-5-5'});
   return res.status(200).json({ok:true,provider:'Claude',result});
- }catch(e){return res.status(e instanceof InputError?e.status:502).json({error:e instanceof InputError?e.message:'Claude analysis did not finish. Retry or set parameters manually.'})}
+ }catch(e){
+  const detail=process.env.VERCEL_ENV!=='production'&&e.reason?' ['+e.reason+']':'';
+  return res.status(e instanceof InputError?e.status:502).json({error:(e instanceof InputError?e.message:'Claude analysis did not finish. Retry or set parameters manually.')+detail});
+ }
  finally{active--}
 };

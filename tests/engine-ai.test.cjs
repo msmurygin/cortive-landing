@@ -51,3 +51,7 @@ test('endpoint success exposes no prompt or credential; repeated requests are th
 test('model, authentication and input errors have accurate safe recovery messages',async()=>{
  for(const [status,pattern] of [[404,/model is unavailable/],[401,/connection needs attention/],[400,/rejected this input/],[429,/busy/]])await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async()=>({ok:false,status})}),e=>pattern.test(e.message));
 });
+
+test('preview diagnosis classifies provider configuration without exposing raw details',async()=>{
+ for(const [detail,reason] of [['PRIVATE KEY credit balance too low','api_credits'],['unsupported anthropic-version','api_version'],['unknown model','model_configuration'],['output_config schema invalid','output_schema']])await a.rejects(infer(input(),{key:'PRIVATE',model:'test',fetchImpl:async()=>({ok:false,status:400,text:async()=>JSON.stringify({error:{message:detail}})})}),e=>e.reason===reason&&!e.message.includes('PRIVATE'));
+});
