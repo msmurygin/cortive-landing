@@ -8,10 +8,13 @@ const included=(before,after,label)=>{const c=counts(after);for(const [value,n]o
 const text=h=>h.replace(/<(script|style|svg)\b[^>]*>[\s\S]*?<\/\1>/gi,'').split(/<[^>]*>/).map(s=>s.replace(/\s+/g,' ').trim()).filter(Boolean);
 const matches=(h,re)=>[...h.matchAll(re)].map(m=>m[1]);
 const icons=h=>h.match(/<link\b[^>]*rel="icon"[^>]*>/g)||[];
-// Permit only the approved social-preview image replacement; retain all other head assertions.
+// Retain historical SEO assertions while allowing the approved cover, verification tags and local widget assets.
 const socialCover='https://quark.build/assets/social/quark-wms-share-20261027.jpg';
 const coverAlt='Quark WMS. A clearer view of warehouse work. Configurable warehouse management system.';
-const head=h=>h.split('</head>')[0].replace('<link rel="stylesheet" href="/design-assets/product-experiences.css">','')
+const head=h=>h.split('</head>')[0]
+ .replace('<link rel="stylesheet" href="/assets/engine-demo/engine-demo.css">','')
+ .replace('<meta name="seznam-wmt" content="iPQr2gZLvb75LlNhAzK6ut1uiZDstOZ4" />','')
+ .replace('<meta name="yandex-verification" content="3b128ecfdeff22be" />','').replace('<link rel="stylesheet" href="/design-assets/product-experiences.css">','')
  .replaceAll(socialCover,'https://quark.build/assets/shots/web/balances-by-location.jpg')
  .replace("<meta property='og:image:type' content='image/jpeg'><meta property='og:image:width' content='1200'><meta property='og:image:height' content='630'>",'')
  .replace("<meta property='og:image:alt' content='"+coverAlt+"'>","<meta property='og:image:alt' content='Quark inventory screen showing stock by location and hold reasons'>")
@@ -44,7 +47,7 @@ test('visual revision preserves published page copy, SEO, navigation, CTAs and f
   a.equal((after.match(/<h1\b/g)||[]).length,1,f+' H1');a.equal(head(after),head(before),f+' SEO/head');
   a.deepEqual(icons(after),icons(read('index.html')),f+' approved square favicon');a.ok(icons(after).some(s=>s.includes('/favicon.ico')));a.ok(icons(after).some(s=>s.includes('/assets/favicon.png')));
   a.deepEqual(after.match(/<form\b[\s\S]*?<\/form>/g),before.match(/<form\b[\s\S]*?<\/form>/g),f+' forms');
-  a.deepEqual(after.replace('<script src="/design-assets/product-experiences.js" defer></script>','').match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
+  a.deepEqual(after.replace('<script src="/design-assets/product-experiences.js" defer></script>','').replace('<script src="/assets/engine-demo/engine-demo.js" defer></script>','').match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
  }
 });
 // Budget UI may add a local PDF action; its formulas and every other app remain frozen.

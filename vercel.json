@@ -158,5 +158,10 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/engine-analyze.js": {
+      "maxDuration": 60
+    }
+  }
 }
