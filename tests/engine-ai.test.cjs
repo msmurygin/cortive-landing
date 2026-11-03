@@ -5,11 +5,14 @@ const good={task:Flow.emptyTask(),type:'E-commerce',aisles:3,bays:4,levels:null,
 const request=b=>({headers:{'content-type':'application/json'},body:JSON.stringify(b)});
 const input=()=>parseRequest(request({mode:'layout',consent:true,text:'3 aisles with 4 bays'}));
 const response=data=>({ok:true,text:async()=>JSON.stringify(data)});
-test('explicit submission is required; unknown counts remain unknown and output is bounded',()=>{
+test('explicit submission is required; unverified dimensions use marked demo defaults and output is bounded',()=>{
  a.throws(()=>parseRequest(request({mode:'layout',text:'3 aisles'})),/Confirm/);
  a.throws(()=>parseRequest(request({mode:'layout',consent:true,text:'x'.repeat(12001)})),/length/);
- a.equal(validateResult(good,input()).levels,null);
- for(const patch of [{levels:0},{levels:999},{aisles:1.2},{type:'Invented WMS'},{summary:'x'.repeat(401)},{uncertainties:Array(6).fill('unknown')},{rules:[{level:9,category:'COLD',text:'Invalid level'}]},{command:'create_warehouse'}])a.throws(()=>validateResult({...good,...patch},input()));
+ a.equal(validateResult(good,input()).levels,4);
+ a.deepEqual(validateResult(good,input()).defaulted_layout,['levels']);
+ a.equal(validateResult({...good,levels:999},input()).levels,4);
+ a.equal(validateResult({...good,detected_region:'RO-BUCHAREST-WEST'},input()).detected_region,'RO-BUCHAREST-WEST');
+ for(const patch of [{levels:0},{aisles:1.2},{type:'Invented WMS'},{summary:'x'.repeat(401)},{uncertainties:Array(6).fill('unknown')},{rules:[{level:9,category:'COLD',text:'Invalid level'}]},{command:'create_warehouse'}])a.throws(()=>validateResult({...good,...patch},input()));
 });
 test('file signatures and size are checked; remote file URLs cannot be fetched',()=>{
  for(const type of ['image/jpeg','image/png','application/pdf'])a.throws(()=>parseRequest(request({mode:'layout',consent:true,file:{type,data:Buffer.from('<script>bad</script>').toString('base64')}})));
@@ -19,12 +22,12 @@ test('file signatures and size are checked; remote file URLs cannot be fetched',
 });
 test('Claude receives structured inputs, server credentials and bounded output; only validated JSON is returned',async()=>{
  const calls=[];const result=await infer(input(),{key:'TEST-ONLY-KEY',model:'TEST-MODEL',fetchImpl:async(url,options)=>{calls.push({url,options});return response(url.endsWith('count_tokens')?{input_tokens:300}:{stop_reason:'end_turn',content:[{type:'text',text:JSON.stringify(good)}]})}});
- a.equal(result.levels,null);a.equal(calls.length,2);a.equal(calls[0].url,'https://api.anthropic.com/v1/messages/count_tokens');
+ a.equal(result.levels,4);a.equal(calls.length,2);a.equal(calls[0].url,'https://api.anthropic.com/v1/messages/count_tokens');
  const body=JSON.parse(calls[1].options.body);a.equal(body.output_config.format.type,'json_schema');a.deepEqual(body.output_config.format.schema.properties.type.anyOf,[{type:'string',enum:['E-commerce','Distribution','3PL','Manufacturing']},{type:'null'}]);a.equal(body.max_tokens,2400);a.equal(calls[1].options.headers['x-api-key'],'TEST-ONLY-KEY');a.equal(body.tools,undefined);a.equal(body.model,'TEST-MODEL');
 });
 test('oversized token estimates stop before inference; refusals, invalid JSON and truncated responses fail closed',async()=>{
  let calls=0;await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async()=>{calls++;return response({input_tokens:12001})}}),/too detailed/);a.equal(calls,1);
- for(const reply of [{stop_reason:'max_tokens',content:[{type:'text',text:JSON.stringify(good)}]},{stop_reason:'refusal',content:[]},{stop_reason:'end_turn',content:[{type:'text',text:'not json'}]},{stop_reason:'end_turn',content:[{type:'text',text:JSON.stringify({...good,aisles:999})}]}]){
+ for(const reply of [{stop_reason:'max_tokens',content:[{type:'text',text:JSON.stringify(good)}]},{stop_reason:'refusal',content:[]},{stop_reason:'end_turn',content:[{type:'text',text:'not json'}]},{stop_reason:'end_turn',content:[{type:'text',text:JSON.stringify({...good,aisles:-1})}]}]){
  await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async url=>response(url.endsWith('count_tokens')?{input_tokens:100}:reply)}));
  }
 });
@@ -60,10 +63,26 @@ test('preview diagnosis classifies provider configuration without exposing raw d
 test('model output cannot bypass serial capture, package limits or intact-LPN move semantics',()=>{
  const make=op=>{const t=Flow.emptyTask();t.operation=op;t.title=op;t.product={name:'Laptops',sku:'LP-1',pack_label:'Case',pack_units:6,pack_quantity:2,serialized:true,lot_controlled:false};t.destination_aisle='B';t.steps=Flow.defaults(op,true,false);return t};
  const valid={...good,task:make('receiving')};a.equal(validateResult(valid,input()).task.product.pack_units,6);
+ const ro=validateResult({...valid,detected_region:'RO-BUCHAREST-WEST'},input());
+ a.equal(ro.task.localized_commands.primary_btn,'CONFIRMĂ PRIMIREA');
+ const bg=validateResult({...good,detected_region:'BG-PLOVDIV-TRAKIA',task:make('putaway')},input());
+ a.equal(bg.task.localized_commands.primary_btn,'ПОТВЪРДИ МЕСТЕНЕ');
+ const ordinary=make('receiving');ordinary.product.serialized=false;ordinary.steps=Flow.defaults('receiving',false,false);
+ ordinary.product.pack_quantity=1000;ordinary.product.pack_units=10;
+ a.equal(validateResult({...good,task:ordinary},input()).task.product.pack_quantity,1000);
+ ordinary.product.pack_units=11;
+ a.equal(validateResult({...good,task:ordinary},input()).task.product.pack_quantity,24);
+ const prior=make('putaway');
+ const ruleInput={mode:'rule',setup:{aisles:3,bays:4,levels:4,task:prior}};
+ const rule=validateResult({...valid,rule_only:true,rules:[{level:1,category:'COLD',text:'Keep chilled goods on level one.'}]},ruleInput);
+ a.deepEqual(rule.task,prior);a.equal(rule.rules.length,1);
+
  const noSerial=make('receiving');noSerial.steps=noSerial.steps.filter(x=>x!=='capture_serials');a.throws(()=>validateResult({...good,task:noSerial},input()));
  const move=make('putaway');move.steps.splice(1,0,'receive_line');a.throws(()=>validateResult({...good,task:move},input()));
  const arbitrary=make('putaway');arbitrary.steps=['fetch_customer_data'];a.throws(()=>validateResult({...good,task:arbitrary},input()));
- const big=make('receiving');big.product.pack_quantity=100;a.throws(()=>validateResult({...good,task:big},input()));
+ const big=make('receiving');big.product.pack_quantity=100;const sample=validateResult({...good,task:big},input());
+ a.deepEqual([sample.task.product.pack_quantity,sample.task.product.pack_units,sample.task.product.pack_label],[24,1,'Each']);
+ a.match(sample.summary,/Demo quantity/);
 });
 test('dialog context preserves the current process and explicit unknown layout fields',()=>{
  const b={mode:'layout',consent:true,text:'For the demo use one level.',setup:{type:'E-commerce',aisles:2,bays:15,levels:4,confirmed:['type','aisles'],previous_summary:'Levels are not visible on the uploaded plan.',task:Flow.emptyTask()}};

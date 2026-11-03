@@ -46,8 +46,11 @@ test('the homepage still preserves existing SEO, copy, CTA, form and verificatio
  const stripped=read('index.html').replace('<link rel="stylesheet" href="/assets/engine-demo/engine-demo.css">','').replace(/<section class="qe qe-sec[\s\S]*?<\/section>/,'').replace('<script src="/assets/engine-demo/engine-flow.js" defer></script>','').replace('<script src="/assets/engine-demo/engine-demo.js" defer></script>','');a.equal(stripped.replace(/>\s+</g,'><'),base.replace(/>\s+</g,'><'));
 });
 test('AI process JSON reaches the renderers while unknown layout fields remain explicit',async()=>{
- let body;const p=preview(async(url,options)=>{body=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true,result:ai(task(),{aisles:2,bays:5,levels:null,uncertainties:['Confirm rack levels.']})})}});
- p.demo.state.setup.levels=6;await p.click({id:'qe-demo',dataset:{}});a.equal(body.consent,true);a.equal(p.demo.state.setup.aisles,2);a.equal(p.demo.state.setup.levels,6);a.equal(p.demo.state.setup.task.operation,'putaway');a.match(p.root.innerHTML,/not found · check/);a.match(p.root.innerHTML,/Confirm rack levels/);a.doesNotMatch(p.root.innerHTML,/claude|anthropic/i);
+ let body;const p=preview(async(url,options)=>{body=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true,result:ai({...task(),localized_commands:{primary_btn:'ПОТВЪРДИ МЕСТЕНЕ'}},{aisles:2,bays:5,levels:4,defaulted_layout:['levels'],detected_region:'BG-PLOVDIV-TRAKIA',uncertainties:['Confirm rack levels.']})})}});
+ p.demo.state.setup.levels=6;await p.click({id:'qe-demo',dataset:{}});a.equal(body.consent,true);a.equal(p.demo.state.setup.aisles,2);a.equal(p.demo.state.setup.levels,4);a.equal(p.demo.state.setup.task.operation,'putaway');a.match(p.root.innerHTML,/demo default · check/);a.match(p.root.innerHTML,/Confirm rack levels/);a.doesNotMatch(p.root.innerHTML,/claude|anthropic/i);
+ p.demo.generate();p.flush();a.match(p.root.innerHTML,/ВЪВЕДИ/);
+ p.demo.act.demo('web');p.demo.act.demo('web');
+ a.match(p.root.innerHTML,/data-a="flow-confirm"><span>ПОТВЪРДИ МЕСТЕНЕ/);
 });
 test('cancelled or failed AI requests do not fabricate a process or overwrite manual setup',async()=>{
  let resolve;const p=preview(()=>new Promise(r=>resolve=r));const pending=p.click({id:'qe-demo',dataset:{}});await p.click({id:'qe-manual',dataset:{}});resolve({ok:true,json:async()=>({ok:true,result:ai(task(),{aisles:8})})});await pending;a.equal(p.demo.state.stage,'params');a.equal(p.demo.state.setup.src,'manual');a.equal(p.demo.state.setup.aisles,3);

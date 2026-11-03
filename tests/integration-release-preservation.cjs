@@ -8,7 +8,7 @@ module.exports = function withoutIntegrationCatalogue(file, text) {
       delete config.functions['api/engine-enquiry.js'];
       if (!Object.keys(config.functions).length) delete config.functions;
     }
-    if (config.functions && JSON.stringify(config.functions['api/engine-analyze.js']) === JSON.stringify({maxDuration:60})) {
+    if (config.functions && JSON.stringify(config.functions['api/engine-analyze.js']) === JSON.stringify({maxDuration:60,includeFiles:'api/_photon-system.md'})) {
       delete config.functions['api/engine-analyze.js'];
       if (!Object.keys(config.functions).length) delete config.functions;
     }

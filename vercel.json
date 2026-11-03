@@ -161,7 +161,8 @@
   ],
   "functions": {
     "api/engine-analyze.js": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "includeFiles": "api/_photon-system.md"
     },
     "api/engine-enquiry.js": {
       "maxDuration": 20
