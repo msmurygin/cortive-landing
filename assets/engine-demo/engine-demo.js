@@ -10,7 +10,7 @@ const WRONG='B-02-01-L3';
 const EXAMPLE='An e-commerce warehouse with 3 aisles, 4 bays per rack and 4 levels.';
 const STEPS=['receive','scan','putaway','done'];
 let pendingFile=null,aiController=null,aiSerial=0;
-const S={phase:'setup',stage:'drop',an:null,dragOver:false,setup:{ai:null,aiKnown:{},type:'E-commerce',aisles:3,bays:4,levels:4,text:'',plan:null,src:null,manual:{},fromText:{}},prog:0,step:'receive',draft:'',mismatch:null,dock:0,onhand:0,log:[],modalShown:false,modal:false,sync:null,face:{aisle:'A',side:'02'},formErr:''};
+const S={phase:'setup',stage:'drop',an:null,dragOver:false,setup:{ai:null,aiKnown:{},type:'E-commerce',aisles:3,bays:4,levels:4,text:'',plan:null,src:null,manual:{},fromText:{}},prog:0,step:'receive',draft:'',mismatch:null,dock:0,onhand:0,log:[],modalShown:false,modal:false,sent:false,sending:false,sendErr:'',sync:null,face:{aisle:'A',side:'02'},formErr:''};
 const pad=(n)=>String(n).padStart(2,'0');
 const clamp=(k,v)=>{v=parseInt(v,10);if(isNaN(v))return null;return Math.max(LIM[k][0],Math.min(LIM[k][1],v))};
 const locCount=()=>S.setup.aisles*2*S.setup.bays*S.setup.levels;
@@ -44,7 +44,7 @@ let prepT=[],leadTimer;
 function generate(){
 clearTimeout(leadTimer);
 const st=S.setup;['aisles','bays','levels'].forEach(k=>{st[k]=clamp(k,st[k])||LIM[k][0]});
-Object.assign(S,{phase:'preparing',prog:0,step:'receive',draft:'',mismatch:null,dock:0,onhand:0,log:[],modalShown:false,modal:false,sync:null,face:{aisle:'A',side:'02'}});
+Object.assign(S,{phase:'preparing',prog:0,step:'receive',draft:'',mismatch:null,dock:0,onhand:0,log:[],modalShown:false,modal:false,sent:false,sending:false,sendErr:'',sync:null,face:{aisle:'A',side:'02'}});
 const seq=[
 ['INPUT','Warehouse parameters accepted · '+st.type+(st.src==='ai'?' · reviewed AI suggestions':st.src==='demo'?' · from demo schematic':st.src==='file'?' · plan kept as reference':st.src==='text'?' · from description':' · manual')],
 ['LAYOUT','Preparing aisle and rack structure · '+st.aisles+' aisle'+(st.aisles>1?'s':'')+' × 2 rack faces × '+st.bays+' bays × '+st.levels+' levels'],
@@ -176,12 +176,21 @@ return '<div class="qe-face">'
 +'<ul class="qe-leg"><li class="e">Empty</li><li class="o">Occupied</li><li class="t">Target</li><li class="d">Confirmed</li><li class="x">Mismatch</li></ul></div>'}
 function logHTML(){if(!S.log.length)return '<ol class="qe-log"><li><time>--:--:--</time><span class="qe-mute">No events yet</span></li></ol>';
 return '<ol class="qe-log" aria-live="polite">'+S.log.map(e=>'<li class="'+(e.cls||'')+'"><time>'+e.t+'</time><span><span class="k">['+esc(e.k)+']</span> '+esc(e.m)+'</span></li>').join('')+'</ol>'}
+function enquirySetup(){const st=S.setup,t=st.task||{},p=t.product||{};return {warehouse:{type:st.type,aisles:st.aisles,bays:st.bays,levels:st.levels},process:{operation:t.operation||'receiving_and_putaway',product:p.name||t.item_name||TASK.itemName,pack_label:p.pack_label||'Each',pack_units:p.pack_units||1,pack_quantity:p.pack_quantity||TASK.qty,serialized:Boolean(p.serialized)}}}
 function modalHTML(){if(!S.modal)return '';const st=S.setup;
-return '<div class="qe-ov" id="qe-ov"><div class="qe-modal" role="dialog" aria-modal="true" aria-labelledby="qe-mh"><button type="button" class="qe-x" id="qe-mx" aria-label="Close and return to demo">×</button><h3 id="qe-mh">Continue with your warehouse setup</h3><p>Review the next step for this sample configuration. Workspace provisioning is not connected in this preview.</p>'
-+'<div class="qe-msum"><span><b>'+esc(st.type)+'</b></span><span><b>'+st.aisles+'×'+st.bays+'×'+st.levels+'</b> layout</span><span><b>'+locCount()+'</b> addresses</span><span>Receiving + putaway</span></div>'
-+(S.sent?'<p class="qe-proto" style="margin-top:20px" role="status">Prototype: nothing was sent and no workspace was created. In the connected version this step continues to your Quark workspace with this setup.</p><div class="qe-mf"><button type="button" class="qe-btn is-ghost" id="qe-mback"><span>Back to demo</span></button></div>'
-:'<form class="qe-mf" id="qe-mform" novalidate><div><label class="qe-lab" for="qe-em">Work email</label><input id="qe-em" type="email" autocomplete="email" value="'+esc(S.em||'')+'"'+(S.emErr?' aria-invalid="true" aria-describedby="qe-eme"':'')+'>'+(S.emErr?'<span class="qe-err" id="qe-eme">'+esc(S.emErr)+'</span>':'')+'</div><div><label class="qe-lab" for="qe-co">Company</label><input id="qe-co" autocomplete="organization" value="'+esc(S.co||'')+'"'+(S.coErr?' aria-invalid="true"':'')+'>'+(S.coErr?'<span class="qe-err">'+esc(S.coErr)+'</span>':'')+'</div><button class="qe-btn is-wide" type="submit"><span>[ PREVIEW WORKSPACE REQUEST ]</span><span aria-hidden="true">→</span></button></form>')
+return '<div class="qe-ov" id="qe-ov"><div class="qe-modal" role="dialog" aria-modal="true" aria-labelledby="qe-mh"><button type="button" class="qe-x" id="qe-mx" aria-label="Close and return to demo">×</button><h3 id="qe-mh">Continue with your warehouse setup</h3><p>Send this setup to the Quark team. We will follow up with you about your warehouse.</p>'
++'<div class="qe-msum"><span><b>'+esc(st.type)+'</b></span><span><b>'+st.aisles+'×'+st.bays+'×'+st.levels+'</b> layout</span><span><b>'+locCount()+'</b> addresses</span><span>'+esc(enquirySetup().process.operation.replaceAll('_',' '))+'</span></div>'
++(S.sent?'<p class="qe-note" style="margin-top:20px" role="status">Your setup request was sent to Quark. We will follow up at '+esc(S.em)+'.</p><div class="qe-mf"><button type="button" class="qe-btn is-ghost" id="qe-mback"><span>Back to demo</span></button></div>'
+:'<form class="qe-mf" id="qe-mform" novalidate><div><label class="qe-lab" for="qe-em">Work email</label><input id="qe-em" type="email" autocomplete="email" maxlength="254" value="'+esc(S.em||'')+'"'+(S.emErr?' aria-invalid="true" aria-describedby="qe-eme"':'')+'>'+(S.emErr?'<span class="qe-err" id="qe-eme">'+esc(S.emErr)+'</span>':'')+'</div><div><label class="qe-lab" for="qe-co">Company</label><input id="qe-co" autocomplete="organization" maxlength="160" value="'+esc(S.co||'')+'"'+(S.coErr?' aria-invalid="true"':'')+'>'+(S.coErr?'<span class="qe-err">'+esc(S.coErr)+'</span>':'')+'</div><div class="qe-sr" aria-hidden="true"><label>Website<input id="qe-website" tabindex="-1" autocomplete="off"></label></div><label class="qe-consent"><input id="qe-consent" type="checkbox"'+(S.consent?' checked':'')+'><span>Send my contact details and this demo setup to Quark for follow-up. <a href="/legal/privacy.html" target="_blank" rel="noopener">Privacy policy</a></span></label>'+(S.sendErr?'<p class="qe-err" role="alert">'+esc(S.sendErr)+'</p>':'')+'<button class="qe-btn is-wide" type="submit"'+(S.sending?' disabled':'')+'><span>'+(S.sending?'Sending…':'Send my setup to Quark')+'</span><span aria-hidden="true">→</span></button></form>')
 +'</div></div>'}
+async function sendEnquiry(){
+ if(S.sending)return;S.emErr=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((S.em||'').trim())?'':'Enter a valid work email.';S.coErr=(S.co||'').trim()?'':'Enter your company name.';S.sendErr=S.consent?'':'Please agree to send your contact details and this setup.';
+ if(S.emErr||S.coErr||S.sendErr){render();const f=$('[aria-invalid="true"]')||$('#qe-consent');f&&f.focus();return}
+ S.sending=true;S.sendErr='';render();
+ try{const response=await fetch('/api/engine-enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:S.em.trim(),company:S.co.trim(),consent:'yes',website:S.website||'',...enquirySetup()}),signal:AbortSignal.timeout(15000)});const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.error||'Could not send. Please retry.');S.sent=true}
+ catch(e){S.sendErr=e.name==='TimeoutError'?'The request timed out. Please retry.':e.message}
+ finally{S.sending=false;render();const f=S.sent?$('#qe-mback'):$('#qe-em');f&&f.focus()}
+}
 /* ---------- mount ---------- */
 let lastModal=false,opener=null;
 function render(){
@@ -243,9 +252,10 @@ if(t.id==='qe-answer')S.clarification=t.value;
 if(t.dataset.question!=null){S.answers=S.answers||{};S.answers[t.dataset.question]=t.value}
 if(t.id==='qe-answer'||t.dataset.question!=null){const b=$('#qe-refine');if(b)b.disabled=!hasReplies()}
 if(t.id==='qe-ask')S.ruleText=t.value;
-if(t.id==='qe-em')S.em=t.value;if(t.id==='qe-co')S.co=t.value});
+if(t.id==='qe-em')S.em=t.value;if(t.id==='qe-co')S.co=t.value;if(t.id==='qe-website')S.website=t.value});
 root.addEventListener('change',(e)=>{const t=e.target;
 if(t.classList.contains('qe-num')){t.value=S.setup[t.dataset.k];}
+if(t.id==='qe-consent')S.consent=t.checked;
 if(t.id==='qe-plan'&&t.files[0])takeFile(t.files[0])});
 function takeFile(f){if(!/\.(jpe?g|png|pdf)$/i.test(f.name)){S.formErr='Use a JPEG, PNG or PDF file.';return render()}if(f.size>3*1024*1024){S.formErr='Use a file smaller than 3 MB.';return render()}cancelAI();if(S.setup.plan&&S.setup.plan.url)URL.revokeObjectURL(S.setup.plan.url);pendingFile=f;S.setup.plan={name:f.name,size:f.size,url:/^image\//.test(f.type)?URL.createObjectURL(f):null};S.formErr='';render()}
 root.addEventListener('dragover',(e)=>{const d=e.target.closest&&e.target.closest('#qe-drop');if(!d)return;e.preventDefault();if(!S.dragOver){S.dragOver=true;d.classList.add('is-over')}});
@@ -259,7 +269,7 @@ if(t.dataset&&t.dataset.scan&&e.key==='Enter'){e.preventDefault();return act.sca
 if(t.closest&&t.closest('#qe-tui')){if(e.key==='F2'){e.preventDefault();tuiKey('F2')}else if(e.key==='F3'){e.preventDefault();tuiKey('F3')}else if(e.key==='Escape'){e.preventDefault();tuiKey('ESC')}else if(e.key==='Enter'&&t.id==='qe-tui'){e.preventDefault();tuiKey('F2')}}});
 root.addEventListener('submit',(e)=>{e.preventDefault();
 if(e.target.id==='qe-form'){if(!locCount()){S.formErr='Set aisles, bays and levels.';return render()}S.formErr='';return generate()}
-if(e.target.id==='qe-mform'){S.emErr=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((S.em||'').trim())?'':'Enter a valid work email.';S.coErr=(S.co||'').trim()?'':'Enter your company name.';if(!S.emErr&&!S.coErr)S.sent=true;render();if(S.sent){const b=$('#qe-mback');b&&b.focus()}else{const x=$('[aria-invalid="true"]');x&&x.focus()}}});
+if(e.target.id==='qe-mform')return sendEnquiry();});
 render();
 window.QuarkEngineDemo={state:S,act,generate};
 })();

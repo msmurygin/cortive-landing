@@ -378,3 +378,5 @@ html .qe.is-onyx,html[data-theme="dark"] .qe.is-onyx{--qe-bg:#0b0b12;--qe-raise:
 .qe-ai-result p{margin:0}.qe-ai-result ul{margin:8px 0 0;padding-left:16px}
 
 .qe-conversation{max-height:420px;max-height:min(52vh,420px);overflow-y:auto;overscroll-behavior:contain;padding:0 12px 12px 0;scrollbar-gutter:stable}.qe-conversation:focus-visible{outline:2px solid var(--qe-ac);outline-offset:3px}.qe-questions{padding-left:20px;margin:14px 0}.qe-questions li{margin:0 0 18px}.qe-question{display:block;margin-bottom:8px;color:var(--qe-ink);font:500 13px/1.5 var(--qe-sans)}.qe-answer{min-height:72px}.qe-ai-result>.qe-btn{margin-top:12px}
+
+.qe-consent{display:flex;align-items:flex-start;gap:10px;font:400 12px/1.5 var(--qe-sans);color:var(--qe-mute)}.qe-consent input{flex:0 0 auto;min-width:18px;min-height:18px;margin:2px 0 0;accent-color:var(--qe-ac)}

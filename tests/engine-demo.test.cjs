@@ -36,10 +36,10 @@ test('minimum and maximum layouts always contain the destination; parameter limi
  }
 });
 test('workflow stays local; AI requests use only the server endpoint without trackers or browser credentials',()=>{
- const js=read('assets/engine-demo/engine-demo.js');assert.doesNotMatch(js,/claude|anthropic/i);assert.doesNotMatch(js,/XMLHttpRequest|sendBeacon|localStorage|sessionStorage|document\.cookie|import\s*\(|ANTHROPIC_API_KEY|api\.anthropic\.com/);assert.equal((js.match(/fetch\(/g)||[]).length,1);assert.match(js,/fetch\('\/api\/engine-analyze'/);
+ const js=read('assets/engine-demo/engine-demo.js');assert.doesNotMatch(js,/claude|anthropic/i);assert.doesNotMatch(js,/XMLHttpRequest|sendBeacon|localStorage|sessionStorage|document\.cookie|import\s*\(|ANTHROPIC_API_KEY|api\.anthropic\.com/);assert.equal((js.match(/fetch\(/g)||[]).length,2);assert.match(js,/fetch\('\/api\/engine-analyze'/);
  const h=read('index.html');assert.equal((h.match(/id="engine-demo"/g)||[]).length,1);assert.ok(h.indexOf('id="engine-demo"')>h.indexOf('A clearer view of'));assert.ok(h.indexOf('id="engine-demo"')<h.indexOf('<nav class="q-qs"'));
  assert.match(h,/<noscript><p>This interactive example needs JavaScript/);
- assert.match(js,/send your plan or description to our AI service/);assert.match(js,/nothing was sent and no workspace was created/);assert.doesNotMatch(js,/Prototype — contacts are not sent and no account is created yet/);
+ assert.match(js,/send your plan or description to our AI service/);assert.match(js,/fetch\('\/api\/engine-enquiry'/);assert.match(js,/Send my contact details and this demo setup/);assert.doesNotMatch(js,/Prototype — contacts are not sent and no account is created yet/);
 });
 
 test('integration preserves the current homepage, including SEO, contact form, CTA and verification tags',()=>{
