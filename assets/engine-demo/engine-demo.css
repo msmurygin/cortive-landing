@@ -314,7 +314,7 @@ html[data-theme="dark"] .qe-log .k{color:#b5b5f5}
 .qe-x{position:absolute;top:14px;right:14px;width:40px;height:40px;border:0;background:none;color:var(--qe-mute);font:400 20px/1 var(--qe-mono);cursor:pointer}
 .qe-x:hover{color:var(--qe-ink)}
 .qe-mf{display:grid;gap:14px;margin-top:22px}
-.qe-mf input{width:100%;min-height:48px;padding:0 14px;border:1px solid var(--qe-ln2);background:var(--qe-bg);color:var(--qe-ink);font:400 15px/1.2 var(--qe-sans)}
+.qe-mf input:not([type="checkbox"]){width:100%;min-height:48px;padding:0 14px;border:1px solid var(--qe-ln2);background:var(--qe-bg);color:var(--qe-ink);font:400 15px/1.2 var(--qe-sans)}
 .qe-mf input:focus{outline:2px solid var(--qe-ac);outline-offset:1px}
 .qe-mf input[aria-invalid="true"]{border-color:var(--qe-err)}
 .qe-msum{display:flex;gap:6px 16px;flex-wrap:wrap;margin-top:18px;padding:10px 12px;border:1px solid var(--qe-ln);background:var(--qe-bg);font:400 12px/1.4 var(--qe-mono);color:var(--qe-mute)}
