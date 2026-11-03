@@ -77,7 +77,7 @@ return '<form class="qe-setup'+(S.unfold?' is-unfold':'')+'" id="qe-form" novali
 +(src==='text'||st.text?'<div><label class="qe-lab" for="qe-desc">Description</label><textarea class="qe-ta" id="qe-desc" maxlength="5000" style="min-height:72px">'+esc(st.text)+'</textarea><div class="qe-row"><span class="qe-parsed" id="qe-parsed">'+(S.descriptionChanged?'Description changed. Analyse again to update suggestions.':'Edit the description and ask Quark AI to review it.')+'</span><button type="button" class="qe-link" id="qe-desc-go"'+(st.text.trim()?'':' disabled')+'>Analyse again with Quark AI →</button></div></div>':'')
 +'<div><span class="qe-lab" id="qe-type-l">Warehouse type</span><div class="qe-seg" role="group" aria-labelledby="qe-type-l">'+TYPES.map(t=>'<button type="button" data-type="'+t+'" aria-pressed="'+(st.type===t)+'">'+t+'</button>').join('')+'</div></div>'
 +'<div class="qe-nums">'+nf('aisles','Aisles')+nf('bays','Bays / rack')+nf('levels','Rack levels')+'</div>'
-+(st.ai?'<div class="qe-ai-result"><p>'+esc(st.ai.summary)+'</p>'+(st.ai.uncertainties.length?'<ul>'+st.ai.uncertainties.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+'</div>':'')
++(st.ai?'<div class="qe-ai-result"><p>'+esc(st.ai.summary)+'</p>'+(st.ai.uncertainties.length?'<ul>'+st.ai.uncertainties.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+'<label class="qe-lab" for="qe-answer" style="margin-top:16px">Answer questions or refine this setup</label><textarea class="qe-ta" id="qe-answer" maxlength="2000" placeholder="Reply in any language. You can also say what is unknown or choose an assumption for the demo.">'+esc(S.clarification||'')+'</textarea><button type="button" class="qe-btn is-wide" id="qe-refine"'+(S.clarification&&S.clarification.trim()?'':' disabled')+'>Update setup with Quark AI →</button><p class="qe-note" style="margin-top:8px">Your answers and the selected plan are sent for AI analysis. You do not need to choose the file again.</p></div>':'')
 +'<p class="qe-note">Check the values and change any of them by hand. A value you edit stays as you set it.</p>'
 +'<div class="qe-ask"><label class="qe-lab" for="qe-ask">Ask Quark AI about a preview rule</label><div class="qe-askrow"><span aria-hidden="true">&gt;_</span><input id="qe-ask" value="'+esc(S.ruleText||'')+'" maxlength="1000" placeholder="e.g. Reserve Level 4 for heavy LPNs" autocomplete="off"><button type="button" id="qe-ask-go"'+(S.ruleBusy?' disabled':'')+'>'+(S.ruleBusy?'Thinking…':'Ask Quark AI')+'</button></div>'+(st.rules&&st.rules.length?'<ul class="qe-rules">'+st.rules.map((r,i)=>'<li><span class="qe-mono">'+esc(r.code)+'</span>'+esc(r.text)+'<button type="button" class="qe-x2" data-rule="'+i+'" aria-label="Remove rule">×</button></li>').join('')+'</ul>':'')+(S.ruleErr?'<p class="qe-err" role="alert">'+esc(S.ruleErr)+'</p>':'')+'<p class="qe-note">This rule and the preview parameters are sent to Quark AI for interpretation.</p></div>'
 +(S.formErr?'<p class="qe-err">'+esc(S.formErr)+'</p>':'')
@@ -102,17 +102,17 @@ async function requestAI(body){
  }finally{clearTimeout(timer);if(aiController===controller)aiController=null}
 }
 function readPlan(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]);reader.onerror=()=>reject(new Error('Could not read this file.'));reader.readAsDataURL(file)})}
-async function analyze(plan){
+async function analyze(plan,options={}){
  cancelAI();const serial=aiSerial;S.formErr='';S.ruleErr='';if(S.setup.plan&&S.setup.plan.url&&S.setup.plan!==plan)URL.revokeObjectURL(S.setup.plan.url);S.setup.plan=plan;S.stage='analyzing';render();
  try{
- const body={mode:'layout',text:plan&&plan.demo?EXAMPLE:S.setup.text};
+ const body={mode:'layout',text:plan&&plan.demo?EXAMPLE+(S.setup.text?'\n'+S.setup.text:''):S.setup.text};
  if(plan&&!plan.demo){if(!pendingFile)throw new Error('Choose your plan again.');body.file={type:pendingFile.type||(/\.pdf$/i.test(pendingFile.name)?'application/pdf':/\.png$/i.test(pendingFile.name)?'image/png':'image/jpeg'),data:await readPlan(pendingFile)}}
  if(serial!==aiSerial)return;const result=await requestAI(body);if(serial!==aiSerial)return;
  const st=S.setup;st.ai=result;st.aiKnown={};st.fromText={};
  ['type','aisles','bays','levels'].forEach(k=>{if(result[k]!=null&&!st.manual[k]){st[k]=result[k];st.fromText[k]=true;st.aiKnown[k]=true}});
  st.rules=result.rules.map(r=>({code:r.level?'L'+r.level+' → '+r.category:'RULE',text:r.text,lv:r.level,cls:r.category}));
- st.src='ai';S.descriptionChanged=false;S.stage='params';S.unfold=true;render();const f=$('#qe-aisles');f&&f.focus({preventScroll:true});
- }catch(e){if(serial!==aiSerial)return;S.stage='drop';S.formErr=e.name==='AbortError'?'Quark AI analysis timed out. Retry or set parameters manually.':e.message;render()}
+ st.src='ai';S.clarification='';S.descriptionChanged=false;S.stage='params';S.unfold=true;render();const f=$('#qe-aisles');f&&f.focus({preventScroll:true});
+ }catch(e){if(serial!==aiSerial)return;S.stage=options.refine?'params':'drop';S.formErr=e.name==='AbortError'?'Quark AI analysis timed out. Retry or set parameters manually.':e.message;render()}
 }
 async function askRule(){
  const input=$('#qe-ask');if(!input||!input.value.trim())return input&&input.focus();if(S.ruleBusy)return;
@@ -202,6 +202,13 @@ root.addEventListener('click',(e)=>{const t=e.target.closest('button');if(!t)ret
 if(t.id==='qe-demo')return analyze(DEMO_PLAN);
 if(t.id==='qe-analyze-file')return analyze(S.setup.plan);
 if(t.id==='qe-ask-go')return askRule();
+if(t.id==='qe-refine'){
+ const answer=(S.clarification||'').trim();if(!answer)return;
+ const questions=S.setup.ai?.uncertainties||[];
+ const text=(S.setup.text||'')+'\nClarification round:\nQuestions: '+questions.join(' | ')+'\nUser answers: '+answer;
+ if(text.length>5000){S.formErr='Please shorten the description or answers before sending.';return render()}
+ S.setup.text=text;return analyze(S.setup.plan,{refine:true});
+}
 if(t.dataset.rule!=null){S.setup.rules.splice(+t.dataset.rule,1);return render()}
 if(t.id==='qe-desc-go')return analyze(null);
 if(t.id==='qe-manual'){cancelAI();S.formErr='';S.setup.ai=null;S.setup.src='manual';S.setup.plan=null;S.setup.fromText={};S.stage='params';S.unfold=true;return render()}
@@ -228,6 +235,7 @@ root.addEventListener('input',(e)=>{const t=e.target;
 if(t.id==='qe-desc'){S.setup.text=t.value;S.descriptionChanged=true;const g=$('#qe-desc-go');if(g)g.disabled=!t.value.trim();const p=$('#qe-parsed');if(p)p.textContent=S.stage==='params'?'Description changed. Analyse again to update suggestions.':'Quark AI will suggest parameters from your description';return}
 if(t.dataset.k&&t.classList.contains('qe-num')){const v=clamp(t.dataset.k,t.value);if(v!=null){S.setup[t.dataset.k]=v;S.setup.manual[t.dataset.k]=true;S.setup.fromText[t.dataset.k]=false;t.nextElementSibling.textContent='set manually';t.nextElementSibling.className='';const n=root.querySelector('.qe-setup .qe-note .qe-mono');if(n)n.textContent=locCount()}return}
 if(t.dataset.scan){const v=t.value.toUpperCase().replace(/[^A-Z0-9-]/g,'');if(v!==t.value){const p=t.selectionStart;t.value=v;t.setSelectionRange(p,p)}S.draft=v;const other=$(t.dataset.scan==='web'?'#qe-tuiscan':'#qe-rfscan');if(other)other.value=v;return}
+if(t.id==='qe-answer'){S.clarification=t.value;const b=$('#qe-refine');if(b)b.disabled=!t.value.trim()}
 if(t.id==='qe-ask')S.ruleText=t.value;
 if(t.id==='qe-em')S.em=t.value;if(t.id==='qe-co')S.co=t.value});
 root.addEventListener('change',(e)=>{const t=e.target;

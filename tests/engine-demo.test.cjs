@@ -63,3 +63,9 @@ test('a failed AI call exposes an error and never fabricates a successful analys
  const p=preview(async()=>({ok:false,json:async()=>({error:'Claude is unavailable.'})}));await p.click({id:'qe-demo',dataset:{}});
  assert.equal(p.demo.state.stage,'drop');assert.match(p.root.innerHTML,/Claude is unavailable/);assert.equal(p.demo.state.setup.ai,null);
 });
+
+test('clarification answers retain the selected plan and update the AI result',async()=>{
+ const requests=[];const p=preview(async(url,options)=>{requests.push(JSON.parse(options.body));return {ok:true,json:async()=>({ok:true,result:{type:'E-commerce',aisles:2,bays:15,levels:requests.length===1?null:1,summary:'A rack preview.',uncertainties:requests.length===1?['How many vertical levels?']:[],rules:[]}})}});
+ await p.click({id:'qe-demo',dataset:{}});p.demo.state.clarification='Ярусы неизвестны. Для демо используй один.';await p.click({id:'qe-refine',dataset:{}});
+ assert.equal(p.demo.state.setup.plan.demo,true);assert.equal(p.demo.state.setup.levels,1);assert.match(requests[1].text,/How many vertical levels/);assert.match(requests[1].text,/Ярусы неизвестны/);assert.match(p.root.innerHTML,/Answer questions or refine this setup/);
+});
