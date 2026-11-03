@@ -4,6 +4,43 @@
   else root.QuarkEngineFlow = factory();
 })(typeof window !== 'undefined' ? window : this, function () {
   'use strict';
+  const rfCommands = {
+    en: { enter: 'Enter', fallback: 'CONFIRM' },
+    pl: { enter: 'WPROWADŹ', fallback: 'POTWIERDŹ' },
+    cs: { enter: 'ZADAT', fallback: 'POTVRDIT' },
+    sk: { enter: 'ZADAŤ', fallback: 'POTVRDIŤ' },
+    hu: { enter: 'BEVITEL', fallback: 'MEGERŐSÍTÉS' },
+    uk: { enter: 'ВВЕСТИ', fallback: 'ПІДТВЕРДИТИ' },
+    be: { enter: 'УВЕСЦІ', fallback: 'ПАЦВЕРДЗІЦЬ' },
+    ru: { enter: 'ВВЕСТИ', fallback: 'ПОДТВЕРДИТЬ' },
+    et: { enter: 'SISESTA', fallback: 'KINNITA' },
+    lv: { enter: 'IEVADĪT', fallback: 'APSTIPRINĀT' },
+    lt: { enter: 'ĮVESTI', fallback: 'PATVIRTINTI' },
+    sl: { enter: 'VNESI', fallback: 'POTRDI' },
+    hr: { enter: 'UNESI', fallback: 'POTVRDI' },
+    bs: { enter: 'UNESI', fallback: 'POTVRDI' },
+    cnr: { enter: 'UNESI', fallback: 'POTVRDI' },
+    sr: { enter: 'УНЕСИ', fallback: 'ПОТВРДИ' },
+    mk: { enter: 'ВНЕСИ', fallback: 'ПОТВРДИ' },
+    sq: { enter: 'FUT', fallback: 'KONFIRMO' },
+    el: { enter: 'ΕΙΣΑΓΩΓΗ', fallback: 'ΕΠΙΒΕΒΑΙΩΣΗ' },
+    tr: { enter: 'GİR', fallback: 'ONAYLA' },
+    ro: {
+      enter: 'INTRODU',
+      receiving: 'CONFIRMĂ PRIMIREA',
+      putaway: 'PLASARE LPN',
+      receiving_and_putaway: 'PLASARE LPN',
+      picking: 'CONFIRMĂ CULESUL',
+      fallback: 'CONFIRMĂ',
+    },
+    bg: {
+      enter: 'ВЪВЕДИ',
+      receiving: 'ПОТВЪРДИ ПРИЕМАНЕ',
+      putaway: 'ПОТВЪРДИ МЕСТЕНЕ',
+      receiving_and_putaway: 'ПОТВЪРДИ МЕСТЕНЕ',
+      fallback: 'ПОТВЪРДИ ЗАПИС',
+    },
+  };
   const operations = [
     'receiving',
     'putaway',
@@ -391,6 +428,7 @@
     return r;
   }
   return {
+    rfCommands,
     operations,
     labels,
     catalogue,

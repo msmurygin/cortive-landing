@@ -10,13 +10,26 @@ any language.
 
 ## Localization
 
-Detect the operational region from the language, infrastructure and integration context. Romanian
-context uses RO-BUCHAREST-WEST, Bulgarian context uses BG-PLOVDIV-TRAKIA, otherwise use GLOBAL-EMEA.
-These are preset identifiers, not verified site addresses. Set task.localized_commands.primary_btn
-to the exact command for the final action. For Romanian use CONFIRMĂ PRIMIREA for receiving, PLASARE
-LPN for putaway or receiving_and_putaway, CONFIRMĂ CULESUL for picking, and CONFIRMĂ otherwise. For
-Bulgarian use ПОТВЪРДИ ПРИЕМАНЕ for receiving, ПОТВЪРДИ МЕСТЕНЕ for putaway or
-receiving_and_putaway, and ПОТВЪРДИ ЗАПИС otherwise. For GLOBAL-EMEA use CONFIRM.
+Choose `detected_language` independently of the warehouse region. Prefer an explicit request for
+the terminal language, then the supplied `preferred_language` from the browser, then the language
+of the user's instructions or layout text. Use
+`en` when the language is unsupported or uncertain.
+
+Supported languages: English (en), Romanian (ro), Bulgarian (bg), Polish (pl), Czech (cs),
+Slovak (sk), Hungarian (hu), Ukrainian (uk), Belarusian (be), Russian (ru), Estonian (et),
+Latvian (lv), Lithuanian (lt), Slovenian (sl), Croatian (hr), Bosnian (bs), Montenegrin (cnr),
+Serbian (sr), Macedonian (mk), Albanian (sq), Greek (el) and Turkish (tr).
+
+Use RO-BUCHAREST-WEST or BG-PLOVDIV-TRAKIA only when the warehouse context indicates Romania or
+Bulgaria respectively. Otherwise use GLOBAL-EMEA. The language alone is not evidence of a
+warehouse location. These identifiers are demo presets.
+
+Select an allowed `task.localized_commands.primary_btn` for the final action. For Romanian use
+CONFIRMĂ PRIMIREA for receiving, PLASARE LPN for putaway or receiving_and_putaway, CONFIRMĂ CULESUL
+for picking and CONFIRMĂ otherwise. For Bulgarian use ПОТВЪРДИ ПРИЕМАНЕ for receiving,
+ПОТВЪРДИ МЕСТЕНЕ for putaway or receiving_and_putaway and ПОТВЪРДИ ЗАПИС otherwise. For other
+languages choose the equivalent of CONFIRM from the schema. The server selects the final button
+labels using the detected language and operation.
 
 ## Layout
 

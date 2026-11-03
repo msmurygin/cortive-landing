@@ -688,7 +688,7 @@
       const res = await fetch('/api/engine-analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...body, consent: true }),
+        body: JSON.stringify({ ...body, consent: true, preferred_language: browserLanguage() }),
         signal: controller.signal,
       });
       const data = await res.json();
@@ -880,15 +880,238 @@
       '<button type="button" class="qe-link" id="qe-reset">Restart task</button><button type="button" class="qe-link" id="qe-edit">Edit setup</button></div></div>'
     );
   }
+  const terminalTranslations = {
+    'no task': { ro: 'fără sarcină', bg: 'няма задача', el: 'χωρίς εργασία' },
+    'No task assigned': {
+      ro: 'Nicio sarcină alocată',
+      bg: 'Няма възложена задача',
+      el: 'Δεν έχει ανατεθεί εργασία',
+    },
+    'Attaching RF process…': {
+      ro: 'Se încarcă procesul RF…',
+      bg: 'Зареждане на RF процес…',
+      el: 'Φόρτωση διαδικασίας RF…',
+    },
+    'Analyse your request or set up a warehouse to generate a process.': {
+      ro: 'Analizează cererea sau configurează un depozit pentru a crea un proces.',
+      bg: 'Анализирай заявката или настрой склад, за да създадеш процес.',
+      el: 'Ανάλυσε το αίτημα ή ρύθμισε μια αποθήκη για να δημιουργήσεις διαδικασία.',
+    },
+    'WAITING FOR SETUP': {
+      ro: 'AȘTEAPTĂ CONFIGURAREA',
+      bg: 'ИЗЧАКВА НАСТРОЙКА',
+      el: 'ΑΝΑΜΟΝΗ ΡΥΘΜΙΣΗΣ',
+    },
+    'ATTACHING RF PROCESS...': {
+      ro: 'SE ÎNCARCĂ PROCESUL RF...',
+      bg: 'ЗАРЕЖДАНЕ НА RF ПРОЦЕС...',
+      el: 'ΦΟΡΤΩΣΗ ΔΙΑΔΙΚΑΣΙΑΣ RF...',
+    },
+
+    Receiving: { ro: 'Recepție', bg: 'Приемане', el: 'Παραλαβή' },
+    Putaway: { ro: 'Depozitare', bg: 'Местене', el: 'Τοποθέτηση' },
+    'Receiving + putaway': {
+      ro: 'Recepție + depozitare',
+      bg: 'Приемане + местене',
+      el: 'Παραλαβή + τοποθέτηση',
+    },
+    Picking: { ro: 'Colectare', bg: 'Комплектоване', el: 'Συλλογή' },
+    'Inventory count': { ro: 'Inventariere', bg: 'Инвентаризация', el: 'Απογραφή' },
+    Replenishment: { ro: 'Reaprovizionare', bg: 'Попълване', el: 'Αναπλήρωση' },
+    Packing: { ro: 'Ambalare', bg: 'Опаковане', el: 'Συσκευασία' },
+    Loading: { ro: 'Încărcare', bg: 'Товарене', el: 'Φόρτωση' },
+    'Scan receipt / ASN': {
+      ro: 'Scanează recepția / ASN',
+      bg: 'Сканирай приемане / ASN',
+      el: 'Σάρωση παραλαβής / ASN',
+    },
+    'Scan product barcode': {
+      ro: 'Scanează codul produsului',
+      bg: 'Сканирай кода на продукта',
+      el: 'Σάρωση κωδικού προϊόντος',
+    },
+    'Scan LPN': { ro: 'Scanează LPN', bg: 'Сканирай LPN', el: 'Σάρωση LPN' },
+    'Enter lot number': {
+      ro: 'Introdu numărul lotului',
+      bg: 'Въведи номер на партида',
+      el: 'Εισαγωγή αριθμού παρτίδας',
+    },
+    'Enter expiry date': {
+      ro: 'Introdu data expirării',
+      bg: 'Въведи срок на годност',
+      el: 'Εισαγωγή ημερομηνίας λήξης',
+    },
+    'Receive quantity': {
+      ro: 'Cantitate recepționată',
+      bg: 'Прието количество',
+      el: 'Ποσότητα παραλαβής',
+    },
+    'Scan serial number': {
+      ro: 'Scanează seria',
+      bg: 'Сканирай сериен номер',
+      el: 'Σάρωση σειριακού αριθμού',
+    },
+    'Verify serial number': {
+      ro: 'Verifică seria',
+      bg: 'Провери серийния номер',
+      el: 'Έλεγχος σειριακού αριθμού',
+    },
+    'Close receipt': {
+      ro: 'Închide recepția',
+      bg: 'Приключи приемането',
+      el: 'Κλείσιμο παραλαβής',
+    },
+    'Scan source location': {
+      ro: 'Scanează locația sursă',
+      bg: 'Сканирай изходна локация',
+      el: 'Σάρωση θέσης προέλευσης',
+    },
+    'Scan destination location': {
+      ro: 'Scanează destinația',
+      bg: 'Сканирай целева локация',
+      el: 'Σάρωση θέσης προορισμού',
+    },
+    'Confirm LPN placement': {
+      ro: 'Confirmă plasarea LPN',
+      bg: 'Потвърди местене на LPN',
+      el: 'Επιβεβαίωση τοποθέτησης LPN',
+    },
+    'Enter quantity': {
+      ro: 'Introdu cantitatea',
+      bg: 'Въведи количество',
+      el: 'Εισαγωγή ποσότητας',
+    },
+    'Confirm count': {
+      ro: 'Confirmă inventarul',
+      bg: 'Потвърди броенето',
+      el: 'Επιβεβαίωση απογραφής',
+    },
+    'Confirm pick': {
+      ro: 'Confirmă culesul',
+      bg: 'Потвърди комплектацията',
+      el: 'Επιβεβαίωση συλλογής',
+    },
+    'Confirm replenishment': {
+      ro: 'Confirmă reaprovizionarea',
+      bg: 'Потвърди попълването',
+      el: 'Επιβεβαίωση αναπλήρωσης',
+    },
+    'Confirm packing': {
+      ro: 'Confirmă ambalarea',
+      bg: 'Потвърди опаковането',
+      el: 'Επιβεβαίωση συσκευασίας',
+    },
+    'Confirm loading': {
+      ro: 'Confirmă încărcarea',
+      bg: 'Потвърди товаренето',
+      el: 'Επιβεβαίωση φόρτωσης',
+    },
+    Product: { ro: 'Produs', bg: 'Продукт', el: 'Προϊόν' },
+    Packaging: { ro: 'Ambalaj', bg: 'Опаковка', el: 'Συσκευασία' },
+    'Base units': { ro: 'Unități de bază', bg: 'Базови единици', el: 'Βασικές μονάδες' },
+    'At dock / stored': {
+      ro: 'La rampă / depozitat',
+      bg: 'На рампа / складирани',
+      el: 'Στη ράμπα / σε αποθήκευση',
+    },
+    'Task completed': {
+      ro: 'Sarcină finalizată',
+      bg: 'Задачата е завършена',
+      el: 'Η εργασία ολοκληρώθηκε',
+    },
+    units: { ro: 'unități', bg: 'единици', el: 'μονάδες' },
+    'serials preserved': {
+      ro: 'serii păstrate',
+      bg: 'запазени серийни номера',
+      el: 'διατηρήθηκαν σειριακοί αριθμοί',
+    },
+    'serial numbers verified': {
+      ro: 'serii verificate',
+      bg: 'проверени серийни номера',
+      el: 'ελεγμένοι σειριακοί αριθμοί',
+    },
+    'serial numbers captured': {
+      ro: 'serii înregistrate',
+      bg: 'записани серийни номера',
+      el: 'καταχωρισμένοι σειριακοί αριθμοί',
+    },
+    'Scan serial, then Enter': {
+      ro: 'Scanează seria și apasă Enter',
+      bg: 'Сканирай номера и натисни Enter',
+      el: 'Σάρωσε τον σειριακό αριθμό και πάτησε Enter',
+    },
+    'Scan or type, then Enter': {
+      ro: 'Scanează sau tastează, apoi Enter',
+      bg: 'Сканирай или въведи, после Enter',
+      el: 'Σάρωσε ή πληκτρολόγησε και πάτησε Enter',
+    },
+    'Simulate next serial': {
+      ro: 'Simulează seria următoare',
+      bg: 'Симулирай следващ номер',
+      el: 'Προσομοίωση επόμενου αριθμού',
+    },
+    'Use sample': { ro: 'Folosește exemplul', bg: 'Използвай пример', el: 'Χρήση παραδείγματος' },
+    'Scan location': { ro: 'Scanează locația', bg: 'Сканирай локация', el: 'Σάρωση θέσης' },
+    ITEM: { ro: 'PRODUS', bg: 'ПРОДУКТ', el: 'ΠΡΟΪΟΝ' },
+    PACK: { ro: 'AMBALAJ', bg: 'ОПАКОВКА', el: 'ΣΥΣΚ.' },
+    UNITS: { ro: 'UNITĂȚI', bg: 'ЕДИНИЦИ', el: 'ΜΟΝΑΔΕΣ' },
+    SERIALS: { ro: 'SERII', bg: 'СЕРИЙНИ №', el: 'ΣΕΙΡΙΑΚΟΙ' },
+    DOCK: { ro: 'RAMPĂ', bg: 'РАМПА', el: 'ΡΑΜΠΑ' },
+    STORED: { ro: 'STOCAT', bg: 'СКЛАД', el: 'ΑΠΟΘΗΚΗ' },
+    TO: { ro: 'LA', bg: 'КЪМ', el: 'ΠΡΟΣ' },
+    COMPLETED: { ro: 'FINALIZAT', bg: 'ЗАВЪРШЕНО', el: 'ΟΛΟΚΛΗΡΩΘΗΚΕ' },
+    CONFIRM: { ro: 'CONFIRMĂ', bg: 'ПОТВЪРДИ', el: 'ΕΠΙΒΕΒΑΙΩΣΗ' },
+  };
+  function browserLanguage() {
+    if (typeof navigator === 'undefined') return undefined;
+    const preferences = navigator.languages?.length ? navigator.languages : [navigator.language];
+    return (
+      preferences
+        .map((locale) => locale?.toLowerCase().split('-')[0])
+        .find((language) => Object.hasOwn(Flow.rfCommands, language)) ?? 'en'
+    );
+  }
+
+  function terminalLanguage() {
+    const analysis = state.setup.rfLocale;
+    if (analysis?.detected_language) return analysis.detected_language;
+    if (analysis?.detected_region === 'RO-BUCHAREST-WEST') return 'ro';
+    if (analysis?.detected_region === 'BG-PLOVDIV-TRAKIA') return 'bg';
+    return browserLanguage() ?? 'en';
+  }
+
+  function terminalText(label) {
+    return terminalTranslations[label]?.[terminalLanguage()] ?? label;
+  }
+
   function processView() {
     return Flow.view(state.definition, state.run);
   }
+  // The localized command describes the final action of the analyzed operation.
+  function confirmationLabel(fallback) {
+    const analyzedTask = state.setup.rfLocale?.task;
+    const { operation, steps } = state.definition;
+    if (state.run.index !== steps.length - 1) return fallback;
+    if (analyzedTask?.operation === operation && analyzedTask.localized_commands?.primary_btn) {
+      return analyzedTask.localized_commands.primary_btn;
+    }
+    const language = terminalLanguage();
+    const commands = Flow.rfCommands[language];
+    return language === 'en' || !commands ? fallback : (commands[operation] ?? commands.fallback);
+  }
+
   function rfHTML() {
     if (state.phase !== 'live')
       return (
-        '<div class="qe-rf qe-dev"><div class="qe-rf-bar">WebRF<span>no task</span></div><div class="qe-wait"><b>' +
-        (state.phase === 'preparing' ? 'Attaching RF process…' : 'No task assigned') +
-        '</b>Analyse your request or set up a warehouse to generate a process.</div></div>'
+        '<div class="qe-rf qe-dev"><div class="qe-rf-bar">WebRF<span>' +
+        esc(terminalText('no task')) +
+        '</span></div><div class="qe-wait"><b>' +
+        esc(
+          terminalText(state.phase === 'preparing' ? 'Attaching RF process…' : 'No task assigned'),
+        ) +
+        '</b>' +
+        esc(terminalText('Analyse your request or set up a warehouse to generate a process.')) +
+        '</div></div>'
       );
     const d = state.definition,
       r = state.run,
@@ -897,21 +1120,29 @@
       serial = v.control === 'serial',
       captured = v.code === 'verify_serials' ? r.verified : r.serials.map((x) => x.value);
     const context =
-      '<dl class="qe-rf-dl"><dt>Product</dt><dd>' +
+      '<dl class="qe-rf-dl"><dt>' +
+      esc(terminalText('Product')) +
+      '</dt><dd>' +
       esc(p.name) +
       '</dd><dt>SKU</dt><dd>' +
       esc(p.sku) +
       '</dd><dt>LPN</dt><dd>' +
       esc(d.lpn) +
-      '</dd><dt>Packaging</dt><dd>' +
+      '</dd><dt>' +
+      esc(terminalText('Packaging')) +
+      '</dt><dd>' +
       p.pack_quantity +
       ' ' +
       esc(p.pack_label) +
       ' × ' +
       p.pack_units +
-      '</dd><dt>Base units</dt><dd>' +
+      '</dd><dt>' +
+      esc(terminalText('Base units')) +
+      '</dt><dd>' +
       d.total_units +
-      '</dd><dt>At dock / stored</dt><dd>' +
+      '</dd><dt>' +
+      esc(terminalText('At dock / stored')) +
+      '</dt><dd>' +
       r.dock +
       ' / ' +
       r.stored +
@@ -919,14 +1150,19 @@
     let body = '';
     if (r.completed)
       body =
-        '<div class="qe-done"><b>Task completed</b><span class="qe-note">' +
-        esc(Flow.labels[d.operation]) +
+        '<div class="qe-done"><b>' +
+        esc(terminalText('Task completed')) +
+        '</b><span class="qe-note">' +
+        esc(terminalText(Flow.labels[d.operation])) +
         ' · ' +
         esc(p.name) +
         ' · ' +
         d.total_units +
-        ' units' +
-        (r.serials.length ? ' · ' + r.serials.length + ' serials preserved' : '') +
+        ' ' +
+        esc(terminalText('units')) +
+        (r.serials.length
+          ? ' · ' + r.serials.length + ' ' + esc(terminalText('serials preserved'))
+          : '') +
         '</span></div>';
     else {
       if (r.error) body += '<div class="qe-alert" role="alert">' + esc(r.error) + '</div>';
@@ -936,8 +1172,12 @@
           captured.length +
           ' / ' +
           d.total_units +
-          '</b><span>serial numbers ' +
-          (v.code === 'verify_serials' ? 'verified' : 'captured') +
+          '</b><span>' +
+          esc(
+            terminalText(
+              v.code === 'verify_serials' ? 'serial numbers verified' : 'serial numbers captured',
+            ),
+          ) +
           '</span></div>' +
           (captured.length
             ? '<ol class="qe-serial-list">' +
@@ -947,48 +1187,42 @@
                 .join('') +
               '</ol>'
             : '');
-      const locale = state.setup.rfLocale;
-      const region = locale?.detected_region;
-      const enterLabel =
-        region === 'RO-BUCHAREST-WEST'
-          ? 'INTRODU'
-          : region === 'BG-PLOVDIV-TRAKIA'
-            ? 'ВЪВЕДИ'
-            : 'Enter';
-      const finalStep = r.index === d.steps.length - 1;
-      const confirmationLabel =
-        finalStep && locale?.task?.operation === d.operation
-          ? locale.task.localized_commands?.primary_btn || v.label
-          : v.label;
+      const enterLabel = Flow.rfCommands[terminalLanguage()]?.enter ?? 'Enter';
       if (v.control === 'confirm')
         body +=
           '<div class="qe-rf-act"><button class="qe-btn is-wide" type="button" data-a="flow-confirm"><span>' +
-          esc(confirmationLabel) +
+          esc(confirmationLabel(terminalText(v.label))) +
           '</span><span aria-hidden="true">→</span></button></div>';
       else
         body +=
           '<div class="qe-rf-act"><label class="qe-lab" for="qe-rfscan">' +
-          esc(v.label) +
+          esc(terminalText(v.label)) +
           (v.control === 'number' ? ' (' + esc(p.pack_label) + ')' : '') +
           '</label><div class="qe-scanrow"><input class="qe-scan" id="qe-rfscan" data-scan="web" value="' +
           esc(state.draft) +
           '" maxlength="64"' +
           (v.control === 'number' ? ' inputmode="numeric"' : '') +
           ' placeholder="' +
-          (serial
-            ? 'Scan serial, then Enter'
-            : v.control === 'date'
-              ? 'YYYY-MM-DD'
-              : 'Scan or type, then Enter') +
+          esc(
+            terminalText(
+              serial
+                ? 'Scan serial, then Enter'
+                : v.control === 'date'
+                  ? 'YYYY-MM-DD'
+                  : 'Scan or type, then Enter',
+            ),
+          ) +
           '" autocomplete="off" spellcheck="false"><button type="button" data-a="flow-submit">' +
           esc(enterLabel) +
           '</button></div><div class="qe-sims"><button class="qe-link" type="button" data-a="flow-demo">' +
-          (serial ? 'Simulate next serial' : 'Use sample · ' + esc(Flow.expected(d, r))) +
+          (serial
+            ? esc(terminalText('Simulate next serial'))
+            : esc(terminalText('Use sample')) + ' · ' + esc(Flow.expected(d, r))) +
           '</button></div></div>';
     }
     return (
       '<div class="qe-rf qe-dev"><div class="qe-rf-bar">' +
-      esc(Flow.labels[d.operation]) +
+      esc(terminalText(Flow.labels[d.operation])) +
       '<span>' +
       Math.min(r.index + 1, d.steps.length) +
       ' / ' +
@@ -996,11 +1230,13 @@
       '</span></div><div class="qe-rf-steps" aria-hidden="true">' +
       d.steps.map((_, i) => '<i class="' + (i < r.index ? 'on' : '') + '"></i>').join('') +
       '</div><div class="qe-rf-b"><h4 class="qe-rf-title">' +
-      esc(v.label) +
+      esc(terminalText(v.label)) +
       '</h4>' +
       context +
       (state.step === 'scan'
-        ? '<div class="qe-rf-loc"><small>Scan location</small><b>' +
+        ? '<div class="qe-rf-loc"><small>' +
+          esc(terminalText('Scan location')) +
+          '</small><b>' +
           esc(Flow.expected(d, r)) +
           '</b></div>'
         : '') +
@@ -1014,7 +1250,14 @@
   function tuiLines() {
     const L = [ln('QUARK WMS / TERMINAL PREVIEW'), rule()];
     if (state.phase !== 'live') {
-      L.push(ln(state.phase === 'preparing' ? ' ATTACHING RF PROCESS...' : ' WAITING FOR SETUP'));
+      L.push(
+        ln(
+          ' ' +
+            terminalText(
+              state.phase === 'preparing' ? 'ATTACHING RF PROCESS...' : 'WAITING FOR SETUP',
+            ),
+        ),
+      );
       while (L.length < 14) L.push(ln(''));
       L.push(rule(), ln(' [ESC] CLEAR', 'dim'));
       return L;
@@ -1026,34 +1269,61 @@
     L.push(
       ln(
         ' ' +
-          Flow.labels[d.operation].toUpperCase() +
+          terminalText(Flow.labels[d.operation]).toUpperCase() +
           ' ' +
           Math.min(r.index + 1, d.steps.length) +
           '/' +
           d.steps.length,
       ),
-      ln(' ITEM : ' + d.product.name),
+      ln(
+        (terminalText('ITEM') === 'ITEM' ? ' ITEM : ' : ' ' + terminalText('ITEM') + ': ') +
+          d.product.name,
+      ),
       ln(' SKU  : ' + d.product.sku),
       ln(
-        ' PACK : ' +
+        (terminalText('PACK') === 'PACK' ? ' PACK : ' : ' ' + terminalText('PACK') + ': ') +
           d.product.pack_quantity +
           ' ' +
           d.product.pack_label +
           ' x ' +
           d.product.pack_units,
       ),
-      ln(' UNITS: ' + d.total_units),
+      ln(
+        (terminalText('UNITS') === 'UNITS' ? ' UNITS: ' : ' ' + terminalText('UNITS') + ': ') +
+          d.total_units,
+      ),
       ln(' LPN  : ' + d.lpn),
     );
-    if (v.control === 'serial') L.push(ln(' SERIALS: ' + count + ' / ' + d.total_units));
-    else L.push(ln(' DOCK: ' + r.dock + ' STORED: ' + r.stored));
-    L.push(rule(), ln(' ' + v.label.toUpperCase(), r.completed ? 'hi' : ''));
-    if (r.error) L.push(ln('! ' + r.error, 'er'));
-    else if (state.step === 'scan') L.push(ln(' TO: ' + Flow.expected(d, r), 'hi'));
-    else L.push(ln(''));
-    if (!r.completed && v.control !== 'confirm') L.push({ input: true });
+    if (v.control === 'serial')
+      L.push(ln(' ' + terminalText('SERIALS') + ': ' + count + ' / ' + d.total_units));
     else
-      L.push(ln(r.completed ? ' *** COMPLETED ***' : ' [ENTER] CONFIRM', r.completed ? 'hi' : ''));
+      L.push(
+        ln(
+          ' ' +
+            terminalText('DOCK') +
+            ': ' +
+            r.dock +
+            ' ' +
+            terminalText('STORED') +
+            ': ' +
+            r.stored,
+        ),
+      );
+    L.push(rule(), ln(' ' + terminalText(v.label).toUpperCase(), r.completed ? 'hi' : ''));
+    if (r.error) L.push(ln('! ' + r.error, 'er'));
+    else if (state.step === 'scan')
+      L.push(ln(' ' + terminalText('TO') + ': ' + Flow.expected(d, r), 'hi'));
+    else L.push(ln(''));
+    if (r.completed) {
+      L.push(ln(' *** ' + terminalText('COMPLETED') + ' ***', 'hi'));
+    } else if (v.control === 'confirm') {
+      const command = confirmationLabel(terminalText('CONFIRM')).toUpperCase();
+      const action = ' [ENTER] ' + command;
+      if (action.length <= W) L.push(ln(action));
+      else L.push(ln(' [ENTER]'), ln(' ' + command));
+    } else {
+      L.push({ input: true });
+    }
     while (L.length < 14) L.push(ln(''));
     L.push(
       rule(),
@@ -1364,6 +1634,8 @@
       sel = ae && ae.selectionStart != null ? [ae.selectionStart, ae.selectionEnd] : null;
     const live = state.phase === 'live',
       sf = state.sync && Date.now() - state.sync.at < 1000 ? state.sync.from : null;
+    const region = state.setup.rfLocale?.detected_region;
+    const regionTag = region ? '<span class="qe-ai-node">[AI:' + esc(region) + ']</span>' : '';
     root.innerHTML =
       '<div class="qe-box' +
       (live ? ' is-live' : '') +
@@ -1373,14 +1645,18 @@
       (live ? summaryHTML() : setupHTML()) +
       '<div class="qe-stage"><section class="qe-pane' +
       (sf && sf !== 'web' ? ' is-sync' : '') +
-      '" aria-label="WebRF preview"><div class="qe-ph"><b>WebRF Studio · preview</b><span class="qe-sync">updated from ' +
+      '" aria-label="WebRF preview"><div class="qe-ph"><b>WebRF Studio · preview</b>' +
+      regionTag +
+      '<span class="qe-sync">updated from ' +
       (sf ? SRC[sf] : '') +
       '</span></div><div class="qe-pb">' +
       rfHTML() +
       '</div></section>' +
       '<section class="qe-pane' +
       (sf && sf !== 'tui' ? ' is-sync' : '') +
-      '" aria-label="Terminal UI preview"><div class="qe-ph"><b>Terminal UI · preview</b><span class="qe-lep">ℓ Lepton · planned</span><span class="qe-sync">updated from ' +
+      '" aria-label="Terminal UI preview"><div class="qe-ph"><b>Terminal UI · preview</b>' +
+      regionTag +
+      '<span class="qe-lep">ℓ Lepton · planned</span><span class="qe-sync">updated from ' +
       (sf ? SRC[sf] : '') +
       '</span></div><div class="qe-pb" style="background:transparent">' +
       tuiHTML() +

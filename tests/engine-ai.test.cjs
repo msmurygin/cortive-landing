@@ -89,3 +89,18 @@ test('dialog context preserves the current process and explicit unknown layout f
  const r=parseRequest(request(b));a.deepEqual(r.setup.confirmed,['type','aisles']);a.equal(r.setup.task.operation,null);a.match(r.setup.previous_summary,/not visible/);
  a.throws(()=>parseRequest(request({...b,setup:{...b.setup,confirmed:['private_api_key']}})));
 });
+
+test('RF button language can differ from the warehouse region', () => {
+ const polish = validateResult({
+  ...good,
+  detected_region: 'RO-BUCHAREST-WEST',
+  detected_language: 'pl',
+  task: {...good.task, localized_commands: {primary_btn: 'CONFIRMĂ PRIMIREA'}},
+ }, input());
+ a.equal(polish.detected_region, 'RO-BUCHAREST-WEST');
+ a.deepEqual(polish.task.localized_commands, {primary_btn: 'POTWIERDŹ', enter_btn: 'WPROWADŹ'});
+ const ukrainian = validateResult({...good, detected_language: 'uk'}, input());
+ a.equal(ukrainian.detected_region, 'GLOBAL-EMEA');
+ a.equal(ukrainian.task.localized_commands.primary_btn, 'ПІДТВЕРДИТИ');
+ a.throws(() => validateResult({...good, detected_language: 'unsupported'}, input()));
+});

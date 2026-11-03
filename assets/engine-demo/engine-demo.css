@@ -154,6 +154,8 @@ html[data-theme="dark"] .qe-badge.is-warn{color:#ffc14d;border-color:#ffc14d}
 .qe-pane{min-width:0;display:flex;flex-direction:column;border-right:1px solid var(--qe-ln2);border-bottom:1px solid var(--qe-ln2)}
 .qe-pane:nth-child(2n){border-right:0}
 .qe-ph{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--qe-ln);font:500 11px/1.2 var(--qe-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--qe-mute)}
+.qe-ph:has(.qe-ai-node){flex-wrap:wrap}
+.qe-ai-node{color:var(--qe-ac);white-space:nowrap}
 .qe-ph b{color:var(--qe-ink);font-weight:500}
 .qe-sync{font:500 10px/1 var(--qe-mono);color:var(--qe-ac);opacity:0;transition:opacity .2s;text-transform:none;letter-spacing:0}
 .qe-pane.is-sync .qe-sync{opacity:1}

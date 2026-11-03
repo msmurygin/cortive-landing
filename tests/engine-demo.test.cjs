@@ -3,11 +3,11 @@ const F=require('../assets/engine-demo/engine-flow');
 const read=f=>fs.readFileSync(path.join(__dirname,'..',f),'utf8');
 function task(op='putaway',serial=false){const t=F.emptyTask();Object.assign(t,{operation:op,title:F.labels[op],destination_aisle:'B'});t.product={name:serial?'Laptops':'Olive oil',sku:serial?'LAPTOP-1':'OIL-1',pack_label:'Case',pack_units:6,pack_quantity:2,serialized:serial,lot_controlled:false};t.steps=F.defaults(op,serial,false);return t}
 const ai=(t=F.emptyTask(),over={})=>({type:'E-commerce',aisles:3,bays:4,levels:4,summary:'Warehouse preview.',uncertainties:[],rules:[],task:t,...over});
-function preview(fetchImpl){
+function preview(fetchImpl,navigator){
  let id=0;const timers=new Map(),listeners={};
  const root={innerHTML:'',contains:()=>false,querySelector:()=>null,querySelectorAll:()=>[],addEventListener:(n,f)=>{(listeners[n]??=[]).push(f)}};
  class Reader{readAsDataURL(file){file.arrayBuffer().then(b=>{this.result='data:'+file.type+';base64,'+Buffer.from(b).toString('base64');this.onload()})}}
- const context={document:{activeElement:null,getElementById:k=>k==='qe-root'?root:null},window:{QuarkEngineFlow:F},Date,URL,FileReader:Reader,AbortController,AbortSignal,fetch:fetchImpl,
+ const context={navigator,document:{activeElement:null,getElementById:k=>k==='qe-root'?root:null},window:{QuarkEngineFlow:F},Date,URL,FileReader:Reader,AbortController,AbortSignal,fetch:fetchImpl,
  setTimeout:f=>{timers.set(++id,f);return id},clearTimeout:n=>timers.delete(n)};
  vm.runInNewContext(read('assets/engine-demo/engine-demo.js'),context);
  const event=(name,target)=>Promise.all((listeners[name]||[]).map(f=>f({preventDefault(){},target:{dataset:{},classList:{contains:()=>false},...target}})));
@@ -46,11 +46,16 @@ test('the homepage still preserves existing SEO, copy, CTA, form and verificatio
  const stripped=read('index.html').replace('<link rel="stylesheet" href="/assets/engine-demo/engine-demo.css">','').replace(/<section class="qe qe-sec[\s\S]*?<\/section>/,'').replace('<script src="/assets/engine-demo/engine-flow.js" defer></script>','').replace('<script src="/assets/engine-demo/engine-demo.js" defer></script>','');a.equal(stripped.replace(/>\s+</g,'><'),base.replace(/>\s+</g,'><'));
 });
 test('AI process JSON reaches the renderers while unknown layout fields remain explicit',async()=>{
- let body;const p=preview(async(url,options)=>{body=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true,result:ai({...task(),localized_commands:{primary_btn:'ПОТВЪРДИ МЕСТЕНЕ'}},{aisles:2,bays:5,levels:4,defaulted_layout:['levels'],detected_region:'BG-PLOVDIV-TRAKIA',uncertainties:['Confirm rack levels.']})})}});
+ let body;const p=preview(async(url,options)=>{body=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true,result:ai({...task(),localized_commands:{primary_btn:'ПОТВЪРДИ МЕСТЕНЕ',enter_btn:'ВЪВЕДИ'}},{aisles:2,bays:5,levels:4,defaulted_layout:['levels'],detected_region:'BG-PLOVDIV-TRAKIA',uncertainties:['Confirm rack levels.']})})}});
  p.demo.state.setup.levels=6;await p.click({id:'qe-demo',dataset:{}});a.equal(body.consent,true);a.equal(p.demo.state.setup.aisles,2);a.equal(p.demo.state.setup.levels,4);a.equal(p.demo.state.setup.task.operation,'putaway');a.match(p.root.innerHTML,/demo default · check/);a.match(p.root.innerHTML,/Confirm rack levels/);a.doesNotMatch(p.root.innerHTML,/claude|anthropic/i);
  p.demo.generate();p.flush();a.match(p.root.innerHTML,/ВЪВЕДИ/);
  p.demo.act.demo('web');p.demo.act.demo('web');
  a.match(p.root.innerHTML,/data-a="flow-confirm"><span>ПОТВЪРДИ МЕСТЕНЕ/);
+ a.match(p.root.innerHTML,/\[ENTER\] ПОТВЪРДИ МЕСТЕНЕ/);
+ a.match(p.root.innerHTML,/<h4 class="qe-rf-title">Потвърди местене на LPN<\/h4>/);
+ a.match(p.root.innerHTML,/ПОТВЪРДИ МЕСТЕНЕ НА LPN/);
+ a.match(p.root.innerHTML,/<dt>Базови единици<\/dt>/);
+ a.equal((p.root.innerHTML.match(/\[AI:BG-PLOVDIV-TRAKIA\]/g)||[]).length,2);
 });
 test('cancelled or failed AI requests do not fabricate a process or overwrite manual setup',async()=>{
  let resolve;const p=preview(()=>new Promise(r=>resolve=r));const pending=p.click({id:'qe-demo',dataset:{}});await p.click({id:'qe-manual',dataset:{}});resolve({ok:true,json:async()=>({ok:true,result:ai(task(),{aisles:8})})});await pending;a.equal(p.demo.state.stage,'params');a.equal(p.demo.state.setup.src,'manual');a.equal(p.demo.state.setup.aisles,3);
@@ -72,4 +77,16 @@ test('model-generated labels and serial text are escaped by both renderers',()=>
  const p=preview(),t=task('receiving',true);t.product.name='<img src=x onerror=alert(1)>';t.lpn='<svg onload=alert(1)>';p.demo.state.setup.task=t;p.demo.generate();p.flush();a.ok(!p.root.innerHTML.includes('<img src=x'));a.match(p.root.innerHTML,/&lt;img/);
  while(F.view(p.demo.state.definition,p.demo.state.run).code!=='capture_serials')p.demo.act.demo('web');p.demo.act.submit('web','<script>bad</script>');a.ok(!p.root.innerHTML.includes('<script>bad'));a.match(p.root.innerHTML,/&lt;script&gt;/);
  p.finish();a.ok(!p.root.innerHTML.includes('<svg onload='));a.match(p.root.innerHTML,/&lt;svg onload/);
+});
+
+test('browser preferences localize both terminals before any AI request',()=>{
+ const p=preview(undefined,{languages:['fr-FR','el-GR'],language:'fr-FR'});
+ a.match(p.root.innerHTML,/Δεν έχει ανατεθεί εργασία/);
+ a.match(p.root.innerHTML,/ΑΝΑΜΟΝΗ ΡΥΘΜΙΣΗΣ/);
+ p.demo.state.setup.task=task();
+ p.demo.generate();p.flush();
+ a.match(p.root.innerHTML,/data-a="flow-submit">ΕΙΣΑΓΩΓΗ/);
+ p.demo.act.demo('web');p.demo.act.demo('web');
+ a.match(p.root.innerHTML,/data-a="flow-confirm"><span>ΕΠΙΒΕΒΑΙΩΣΗ/);
+ a.match(p.root.innerHTML,/\[ENTER\] ΕΠΙΒΕΒΑΙΩΣΗ/);
 });
