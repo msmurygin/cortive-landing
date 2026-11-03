@@ -1,48 +1,57 @@
-# Home engine demo and Claude analysis
+# Home engine demo
 
-The homepage embeds the supplied designer widget after the existing hero and before the four-question navigation. Existing hero copy, CTA, inventory illustration, SEO metadata, verification tags and contact form are preserved.
+The supplied widget sits after the existing hero and before the four-question navigation. The homepage copy, branding, SEO, verification tags, existing forms and analytics are preserved. No dependencies are added.
 
-## Runtime
+## Shared process runtime
 
-- WebRF, terminal UI, receiving, mismatch and putaway are one browser-local simulation.
-- Layout descriptions, JPEG/PNG plans and PDFs can be submitted explicitly to Claude via `POST /api/engine-analyze`.
-- Selecting a file alone does not transmit it. The analysis button explains that the selected input goes to Anthropic.
-- The same server endpoint interprets requests for preview rules. No model output is executed as code or sent to a WMS API.
-- Claude returns structured JSON. Server validation bounds each count and all text. Unknown dimensions remain null; the UI asks for confirmation instead of calling defaults detected values.
-- The SaaS continuation form is still a UI preview. It does not submit contacts or create accounts. The owner-requested Prototype sentence beneath the form was removed.
+`engine-flow.js` validates a bounded process definition and runs its listed primitives. Both WebRF and terminal previews render the same definition and accepted state. Model responses cannot execute code or call a WMS API.
 
-## Server environment
+The definition separates operation, product/SKU, packaging, packages, base units per package, LPN and destination aisle. Eight representative process templates are supported: receiving, putaway, receiving with putaway, picking, counting, replenishment, packing and loading. This is a single-product/LPN demonstration, not a live warehouse workspace.
 
-Set `ANTHROPIC_API_KEY` in the Vercel project **Preview** environment. A Production-only variable is not available in Preview deployments. Never put this variable in browser JavaScript or commit a local environment file.
+- Direct putaway starts with an existing sample LPN, never a receipt. Its contents and existing serials move together.
+- Receiving two cases of six serial-controlled units requires twelve distinct serial scans. Enter accepts each scan; duplicate scans do not increase the count. The receipt cannot close early. Captured serials retain SKU, LPN, receipt, lot, expiry and location context where supplied.
+- Accepted events update both renderers. Invalid scans preserve progress and show an error. An accepted scan clears the entry while retaining focus; a rejected entry is selected for replacement.
+- Quantity, document and location data that the visitor did not supply use labelled sample values. The rack elevation and deterministic occupied/free cells are representative, not a reconstruction of arbitrary floor-plan geometry or real stock.
+- Storage rules are proposals for review; they are not connected to live warehouse policies.
 
-Optional: `ANTHROPIC_MODEL`, default `claude-haiku-5-5`. The model identifier can be changed without modifying the widget.
+## AI and clarification
 
-Production analysis is disabled unless `ENGINE_AI_PUBLIC_ENABLED=true` is separately enabled with owner approval. A model connection is not an approval to merge or release this branch.
+Explicit analysis sends the selected description or JPEG/PNG/PDF to a server endpoint using the configured AI provider. Selecting a file alone does not transmit it. Public UI uses Quark AI branding; credentials remain server-side.
 
-## Bounds and errors
+Structured output includes layout facts, unknowns, questions and RF process JSON. Unknown vertical levels are not inferred from a floor plan. Questions have individual answer fields inside a scrollable region, plus an optional general reply. Refinement retains the original selected file, description, current process and prior summary. Manually edited fields remain under visitor control. Cancelled or superseded requests cannot overwrite newer input. Provider failures show a retry/manual path, never fabricated success.
 
-- One JPEG/PNG/PDF per analysis, at most 3 MiB. Base64 and request metadata fit below the Vercel Functions 4.5 MB body limit.
-- Up to 5,000 description characters or 1,000 rule characters.
-- Token-count preflight; requests estimated over 12,000 input tokens do not proceed to generation. Output capped at 1,600 tokens.
-- 40-second provider timeout, 45-second browser timeout, 60-second function duration. No automatic paid retries.
-- Best-effort throttle: six analyses per five minutes per IP hash and two concurrent requests per warm instance. This is **not** a durable, cross-instance abuse or spending limit.
-- Production release requires edge-level limits/provider budget settings and review of the new data-processing notice before enabling the public endpoint. Preview stays behind existing Vercel authentication.
-- No request bodies, images, emails, model responses or keys are logged by this implementation. Anthropic's own data handling applies to submitted input; do not promise zero retention.
-- Invalid output, refusals, provider errors and unconfigured credentials display a retry/manual path. They never trigger fake successful analysis.
+## Setup enquiries
 
-## Validation
+After completion, a visitor can explicitly send their email, company and selected setup through `/api/engine-enquiry` to the existing Formspree form. Consent is required. The payload contains the warehouse dimensions, process, product, packaging and tracking flag. It excludes the uploaded plan, raw conversation, individual serials and Assessment answers. No SaaS account or workspace is created. Success is shown only after the endpoint acknowledges provider acceptance. Preview subjects are labelled `[Preview test]`.
 
-Run `node --test tests/*.test.cjs`.
+## Server environment and limits
 
-Automated checks include provider request contract, input consent, signatures and limits, nullable fields, refusal/truncation handling, origin checks, missing credentials, production gate, throttling, client cancellation, synchronized workflow and stock conservation, plus the existing site regression suite.
+Set `ANTHROPIC_API_KEY` in Vercel Preview. Never export it into browser assets or Git. Optional `ANTHROPIC_MODEL` defaults to `claude-haiku-5-5`.
 
-A successful mocked request is a contract test, not proof of a live Claude response. Before release, verify with the configured Preview key: description, image, PDF, rule, user edits, invalid scan, completion, cancellation and mobile layout. Use a synthetic plan, not customer data.
+Production analysis and enquiries remain disabled unless `ENGINE_AI_PUBLIC_ENABLED=true` is separately enabled with owner approval. Branch work and successful Preview tests do not authorize a production merge or deployment.
 
-## Sources checked 2026-11-03
+- One JPEG/PNG/PDF up to 3 MiB, with type/signature/base64 validation. Request bound: 4,250,000 bytes, below Vercel's 4.5 MB function-body limit.
+- Initial description: 5,000 UI characters. Clarification request including question context: 12,000 server characters. Rule request: 1,000 characters.
+- Token-count preflight: at most 12,000 input tokens; output at most 2,400 tokens. No automatic paid retries.
+- Provider timeout 40 s, browser 45 s, analysis function 60 s. Enquiry provider 10 s, browser 15 s, function 20 s.
+- Best-effort warm-instance throttles: Preview 20 AI calls / 5 min per IP hash; other environments 6. Two concurrent analyses per instance. Enquiries: 3 / 10 min. These are not durable cross-instance spending/abuse controls.
+- Public release still needs an approved privacy/data-processing notice and durable provider/edge cost controls. Existing Vercel authentication stays enabled for Preview.
+- No request bodies, uploads, email addresses, model responses or keys are logged here. Provider data handling still applies; no zero-retention claim is made.
 
+## Verification
+
+Run `node --test tests/*.test.cjs` using Node 22 or later. Tests cover input/output contracts, consent/origin gates, file bounds, nullable schemas, unsafe/inconsistent workflows, package conversion, duplicate/early-close handling, intact LPN movement, all supported templates, synchronized renderers, cancellation, retained-plan clarification, enquiry payloads and existing site regressions.
+
+Keep dated live-browser evidence and private QA notes outside the repository. Mocked contracts do not prove live AI or email delivery; report provider acknowledgement separately from observed inbox delivery. Viewport emulation does not establish physical iOS Safari/Android Chrome compatibility.
+
+## Official references checked 2026-11-03
+
+- https://docs.quark.build/docs/reference/inbound/capturing-serial-numbers/
+- https://docs.quark.build/docs/operator/receiving-against-asn/
+- https://docs.quark.build/docs/operator/putaway/
+- https://docs.quark.build/docs/admin/owners-sku-uom-pack-hierarchy/
 - https://platform.claude.com/docs/en/build-with-claude/structured-outputs
 - https://platform.claude.com/docs/en/build-with-claude/vision
 - https://platform.claude.com/docs/en/build-with-claude/pdf-support
 - https://platform.claude.com/docs/en/build-with-claude/token-counting
-- https://platform.claude.com/docs/en/models/overview
 - https://vercel.com/docs/functions/limitations

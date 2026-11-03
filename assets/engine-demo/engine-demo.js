@@ -1,6 +1,6 @@
 /* Quark — one metadata engine, two interfaces. Single shared state; WebRF and TUI are pure renders of it. Workflow runs locally; optional Quark AI analysis uses the same-origin server endpoint. */
 (function(){
-const root=document.getElementById('qe-root');if(!root)return;
+const root=document.getElementById('qe-root');const Flow=window.QuarkEngineFlow;if(!root||!Flow)return;
 const $=(s,r)=>(r||root).querySelector(s);
 const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const TYPES=['E-commerce','Distribution','3PL','Manufacturing'];
@@ -8,9 +8,8 @@ const LIM={aisles:[1,12],bays:[1,20],levels:[1,8]};
 const TASK={doc:'PO-DEMO-1042',lpn:'DEMO-LPN-001',item:'BOTTLE-500',itemName:'Bottle 500 ml',qty:24,target:'A-01-02-L1'};
 const WRONG='B-02-01-L3';
 const EXAMPLE='An e-commerce warehouse with 3 aisles, 4 bays per rack and 4 levels.';
-const STEPS=['receive','scan','putaway','done'];
 let pendingFile=null,aiController=null,aiSerial=0;
-const S={phase:'setup',stage:'drop',an:null,dragOver:false,setup:{ai:null,aiKnown:{},type:'E-commerce',aisles:3,bays:4,levels:4,text:'',plan:null,src:null,manual:{},fromText:{}},prog:0,step:'receive',draft:'',mismatch:null,dock:0,onhand:0,log:[],modalShown:false,modal:false,sent:false,sending:false,sendErr:'',sync:null,face:{aisle:'A',side:'02'},formErr:''};
+const S={phase:'setup',stage:'drop',an:null,dragOver:false,setup:{task:Flow.emptyTask(),taskManual:{},ai:null,aiKnown:{},type:'E-commerce',aisles:3,bays:4,levels:4,text:'',plan:null,src:null,manual:{},fromText:{}},prog:0,step:'receive',draft:'',mismatch:null,dock:0,onhand:0,log:[],modalShown:false,modal:false,sent:false,sending:false,sendErr:'',sync:null,face:{aisle:'A',side:'02'},formErr:''};
 const pad=(n)=>String(n).padStart(2,'0');
 const clamp=(k,v)=>{v=parseInt(v,10);if(isNaN(v))return null;return Math.max(LIM[k][0],Math.min(LIM[k][1],v))};
 const locCount=()=>S.setup.aisles*2*S.setup.bays*S.setup.levels;
@@ -19,43 +18,46 @@ const lastLoc=()=>aisleL(S.setup.aisles-1)+'-'+pad(S.setup.bays)+'-02-L'+S.setup
 function locExists(c){const m=/^([A-Z])-(\d{2})-(0[12])-L(\d)$/.exec(c);if(!m)return false;return m[1].charCodeAt(0)-65<S.setup.aisles&&+m[2]>=1&&+m[2]<=S.setup.bays&&+m[4]>=1&&+m[4]<=S.setup.levels}
 const now=()=>{const d=new Date();return d.toTimeString().slice(0,8)};
 function log(k,m,cls){S.log.push({t:now(),k,m,cls});if(S.log.length>7)S.log=S.log.slice(-7)}
-/* ---------- workflow actions (shared by both interfaces) ---------- */
+/* ---------- one metadata process, two renderers ---------- */
 const SRC={web:'WebRF',tui:'TUI',map:'Schematic'};
 function synced(from){log('WEBRF PREVIEW','State updated'+(from==='web'?'':' · from '+SRC[from]));log('TUI PREVIEW','State updated'+(from==='tui'?'':' · from '+SRC[from]));S.sync={from,at:Date.now()}}
+function syncProcess(){
+ if(!S.definition||!S.run)return;const d=S.definition,r=S.run,v=Flow.view(d,r),target=v.code==='scan_source'?d.source:d.destination;
+ Object.assign(TASK,{doc:d.document,lpn:d.lpn,item:d.product.sku,itemName:d.product.name,qty:d.total_units,target});
+ S.step=r.completed?'done':['scan_source','scan_destination'].includes(v.code)?'scan':'workflow';S.onhand=r.stored;S.dock=r.dock;
+ if(/^[A-L]-/.test(target)&&['scan_source','scan_destination'].includes(v.code)){S.face={aisle:target[0],side:target.split('-')[2]}}
+}
+function mergeTask(task){
+ if(!task)return;const st=S.setup,old=st.task||Flow.emptyTask(),next=JSON.parse(JSON.stringify(task));
+ for(const key of Object.keys(st.taskManual||{})){
+  if(key.startsWith('product.'))next.product[key.slice(8)]=old.product[key.slice(8)];else next[key]=old[key];
+ }
+ if(st.taskManual.operation||st.taskManual['product.serialized']||st.taskManual['product.lot_controlled'])next.steps=Flow.defaults(next.operation||'receiving_and_putaway',next.product.serialized,next.product.lot_controlled);
+ st.task=next;
+}
 const act={
-receive(from){if(S.step!=='receive'){log('RECEIPT',TASK.lpn+' already received · quantity unchanged','er');return render()}
-S.dock=TASK.qty;S.step='scan';log('RECEIPT',TASK.lpn+' received · '+TASK.qty+' units','ok');synced(from);render()},
-scan(code,from,demo){code=String(code||'').trim().toUpperCase();
-if(S.step==='receive'){log('SCAN','Confirm receipt first','er');return render()}
-if(S.step!=='scan'){log('SCAN','Destination already matched · scan ignored','er');return render()}
-if(!code)return;S.draft='';
-const tag=demo?'SCAN DEMO':'SCAN';
-if(code===TASK.target){S.mismatch=null;S.step='putaway';log(tag,code+' → destination matched','ok')}
-else{S.mismatch={code,why:locExists(code)?'Wrong location':'Unknown address'};log(tag,code+' → mismatch · expected '+TASK.target,'er')}
-synced(from);render()},
-putaway(from){if(S.step==='done'){log('WORKFLOW','Putaway already confirmed · stock unchanged','er');return render()}
-if(S.step!=='putaway'){log('WORKFLOW','Scan the destination before confirming','er');return render()}
-S.step='done';S.dock=0;S.onhand=TASK.qty;log('WORKFLOW','Putaway confirmed · '+TASK.target+' on hand '+TASK.qty,'ok');synced(from);render();
-if(!S.modalShown){S.modalShown=true;leadTimer=setTimeout(()=>{if(S.phase==='live'&&S.step==='done'){S.modal=true;render()}},900)}},
-back(from){if(S.step==='scan'&&(S.mismatch||S.draft)){S.mismatch=null;S.draft='';log('WORKFLOW','Scan cleared');synced(from);return render()}
-if(S.step==='putaway'){S.step='scan';log('WORKFLOW','Destination scan cleared · rescan required');synced(from);return render()}}};
-/* ---------- generate ---------- */
+ submit(from,value){
+  if(S.phase!=='live')return;const before=Flow.view(S.definition,S.run),entered=value==null?S.draft:value;
+  S.run=Flow.submit(S.definition,S.run,entered);S.draft=S.run.error?String(entered||''):'';
+  S.mismatch=S.run.error&&['scan_source','scan_destination'].includes(before.code)?{code:String(entered||'').toUpperCase(),why:S.run.error}:null;
+  for(const message of S.run.events)log(before.control==='serial'?'SERIAL':'WORKFLOW',message,'ok');
+  if(S.run.error)log('CHECK',S.run.error,'er');syncProcess();synced(from);render();
+  const scan=$('#'+(from==='tui'?'qe-tuiscan':'qe-rfscan'));if(scan&&S.run.error){scan.focus({preventScroll:true});scan.select()}
+  if(S.run.completed&&!S.modalShown){S.modalShown=true;leadTimer=setTimeout(()=>{if(S.phase==='live'&&S.run?.completed){S.modal=true;render()}},900)}
+ },
+ demo(from){return act.submit(from,Flow.expected(S.definition,S.run))},
+ scan(value,from){return act.submit(from,value)},
+ back(from){S.draft='';S.mismatch=null;if(S.run)S.run.error=null;log('WORKFLOW','Entry cleared · accepted scans and progress kept');synced(from);render()}
+};
 let prepT=[],leadTimer;
 function generate(){
-clearTimeout(leadTimer);
-const st=S.setup;['aisles','bays','levels'].forEach(k=>{st[k]=clamp(k,st[k])||LIM[k][0]});
-Object.assign(S,{phase:'preparing',prog:0,step:'receive',draft:'',mismatch:null,dock:0,onhand:0,log:[],modalShown:false,modal:false,sent:false,sending:false,sendErr:'',sync:null,face:{aisle:'A',side:'02'}});
-const seq=[
-['INPUT','Warehouse parameters accepted · '+st.type+(st.src==='ai'?' · reviewed AI suggestions':st.src==='demo'?' · from demo schematic':st.src==='file'?' · plan kept as reference':st.src==='text'?' · from description':' · manual')],
-['LAYOUT','Preparing aisle and rack structure · '+st.aisles+' aisle'+(st.aisles>1?'s':'')+' × 2 rack faces × '+st.bays+' bays × '+st.levels+' levels'],
-['LOCATIONS','Generated '+locCount()+' location addresses · A-01-01-L1 … '+lastLoc()],
-...(st.rules||[]).map(r=>['SAMPLE RULE',r.text]),['WORKFLOW','Receiving and putaway task created · '+TASK.doc+' · '+TASK.lpn],
-['WEBRF PREVIEW','Workflow state attached'],
-['TUI PREVIEW','Workflow state attached'],
-['READY','Receiving and putaway preview available']];
-prepT.forEach(clearTimeout);prepT=[];
-render();
-seq.forEach((s,i)=>prepT.push(setTimeout(()=>{log(s[0],s[1],i===seq.length-1?'ok':'');S.prog=Math.round((i+1)/seq.length*100);if(i===seq.length-1){S.phase='live'}render()},380*(i+1))))}
+ clearTimeout(leadTimer);S.mailSerial=(S.mailSerial||0)+1;const st=S.setup;
+ ['aisles','bays','levels'].forEach(k=>{st[k]=clamp(k,st[k])||LIM[k][0]});
+ try{S.definition=Flow.resolve(st.task||Flow.emptyTask(),st);S.run=Flow.create(S.definition)}catch(e){S.formErr=e.message;S.stage='params';S.phase='setup';return render()}
+ Object.assign(S,{phase:'preparing',prog:0,draft:'',mismatch:null,log:[],modalShown:false,modal:false,sent:false,sending:false,sendErr:'',sync:null,face:{aisle:S.definition.destination[0],side:S.definition.destination.split('-')[2]}});syncProcess();
+ const seq=[['INPUT','Preview parameters accepted · '+st.type],['LAYOUT',st.aisles+' aisles × 2 rack faces × '+st.bays+' bays × '+st.levels+' levels'],['METADATA',S.definition.title+' · '+S.definition.steps.length+' RF screens'],['PRODUCT',S.definition.product.name+' · '+S.definition.product.pack_quantity+' '+S.definition.product.pack_label+' × '+S.definition.product.pack_units+' = '+S.definition.total_units+' units'],['WEBRF PREVIEW','Process JSON attached'],['TUI PREVIEW','Same process JSON attached'],['READY','Ready · '+Flow.labels[S.definition.operation]]];
+ prepT.forEach(clearTimeout);prepT=[];render();seq.forEach((x,i)=>prepT.push(setTimeout(()=>{log(x[0],x[1],i===seq.length-1?'ok':'');S.prog=Math.round((i+1)/seq.length*100);if(i===seq.length-1)S.phase='live';render()},260*(i+1))))
+}
 /* ---------- renders ---------- */
 const DEMO_PLAN={name:'demo-ecommerce-schematic.svg',demo:true};
 function demoPlanSVG(k){
@@ -70,7 +72,18 @@ if(p.url)return '<img src="'+p.url+'" alt="Uploaded plan '+esc(p.name)+'">';
 return '<div class="qe-pdf"><span>PDF</span><b>'+esc(p.name)+'</b><small>'+Math.max(1,Math.round(p.size/1024))+' KB</small></div>'}
 function hasReplies(){return Boolean((S.clarification||'').trim()||Object.values(S.answers||{}).some(v=>v.trim()))}
 function questionsHTML(ai){const questions=Array.isArray(ai.uncertainties)?ai.uncertainties:[];
-return '<div class="qe-ai-result"><div class="qe-conversation" role="region" aria-label="AI questions and your answers" tabindex="0"><p>'+esc(ai.summary)+'</p>'+(questions.length?'<ol class="qe-questions">'+questions.map((q,i)=>'<li><label class="qe-question" for="qe-answer-'+i+'">'+esc(q)+'</label><textarea class="qe-ta qe-answer" id="qe-answer-'+i+'" data-question="'+i+'" maxlength="400" placeholder="Your answer, or say this is unknown…">'+esc((S.answers||{})[i]||'')+'</textarea></li>').join('')+'</ol>':'')+'<label class="qe-lab" for="qe-answer" style="margin-top:16px">'+(questions.length?'Anything else? (optional)':'Refine this setup')+'</label><textarea class="qe-ta" id="qe-answer" maxlength="2000" placeholder="You can reply in any language or choose assumptions for this demo.">'+esc(S.clarification||'')+'</textarea></div><button type="button" class="qe-btn is-wide" id="qe-refine"'+(hasReplies()?'':' disabled')+'>Update setup with Quark AI →</button><p class="qe-note" style="margin-top:8px">Your answers and the selected plan are sent for AI analysis. You do not need to choose the file again.</p></div>'}
+return '<div class="qe-ai-result"><div class="qe-conversation" role="region" aria-label="AI questions and your answers" tabindex="0"><p>'+esc(ai.summary)+'</p>'+((S.dialog||[]).length?'<details class="qe-history"><summary>Previous answers · '+S.dialog.length+' rounds</summary>'+S.dialog.map(r=>'<div>'+r.replies.map(x=>'<p><b>'+esc(x.question)+'</b><br>'+esc(x.answer)+'</p>').join('')+(r.additional_information?'<p>'+esc(r.additional_information)+'</p>':'')+'</div>').join('')+'</details>':'')+(questions.length?'<ol class="qe-questions">'+questions.map((q,i)=>'<li><label class="qe-question" for="qe-answer-'+i+'">'+esc(q)+'</label><textarea class="qe-ta qe-answer" id="qe-answer-'+i+'" data-question="'+i+'" maxlength="400" placeholder="Your answer, or say this is unknown…">'+esc((S.answers||{})[i]||'')+'</textarea></li>').join('')+'</ol>':'')+'<label class="qe-lab" for="qe-answer" style="margin-top:16px">'+(questions.length?'Anything else? (optional)':'Refine this setup')+'</label><textarea class="qe-ta" id="qe-answer" maxlength="2000" placeholder="You can reply in any language or choose assumptions for this demo.">'+esc(S.clarification||'')+'</textarea></div><button type="button" class="qe-btn is-wide" id="qe-refine"'+(hasReplies()?'':' disabled')+'>Update setup with Quark AI →</button><p class="qe-note" style="margin-top:8px">Your answers and the selected plan are sent for AI analysis. You do not need to choose the file again.</p></div>'}
+function taskParamsHTML(){const st=S.setup,t=st.task||Flow.emptyTask(),p=t.product,op=t.operation||'receiving_and_putaway';
+const input=(id,label,value,type='text',max=80)=>'<div><label class="qe-lab" for="'+id+'">'+label+'</label><input class="qe-task-input" id="'+id+'" type="'+type+'" value="'+esc(value)+'"'+(type==='number'?' min="1" max="1000" inputmode="numeric"':' maxlength="'+max+'"')+'></div>';
+let definition;try{definition=Flow.resolve(t,st)}catch(e){definition=null}
+return '<div class="qe-task-params"><div><label class="qe-lab" for="qe-operation">RF process</label><select class="qe-task-input" id="qe-operation">'+Flow.operations.map(x=>'<option value="'+x+'"'+(op===x?' selected':'')+'>'+Flow.labels[x]+'</option>').join('')+'</select></div>'
++input('qe-product','Product',p.name||'Sample product')+input('qe-sku','Product barcode / SKU',p.sku||definition?.product.sku||'DEMO-SAMPLE-PRODUCT','text',40)+input('qe-pack-label','Packaging / UOM',p.pack_label||'Each','text',40)
++'<div class="qe-pack-grid">'+input('qe-pack-qty','Packages',p.pack_quantity||(p.serialized?3:24),'number')+input('qe-pack-units','Units per package',p.pack_units||1,'number')+'</div>'
++'<label class="qe-consent"><input id="qe-serialized" type="checkbox"'+(p.serialized?' checked':'')+'><span>Serial-controlled · one serial per base unit</span></label><label class="qe-consent"><input id="qe-lot-controlled" type="checkbox"'+(p.lot_controlled?' checked':'')+'><span>Capture a lot / batch</span></label>'
++input('qe-lpn','LPN / container',t.lpn||'DEMO-LPN-001','text',40)
++'<div><label class="qe-lab" for="qe-target-aisle">Destination aisle</label><select class="qe-task-input" id="qe-target-aisle">'+(t.destination_aisle&&t.destination_aisle.charCodeAt(0)-65>=st.aisles?'<option value="" selected>Choose an aisle</option>':'')+Array.from({length:st.aisles},(_,i)=>String.fromCharCode(65+i)).map(a=>'<option value="'+a+'"'+((t.destination_aisle||'A')===a?' selected':'')+'>'+a+'</option>').join('')+'</select></div>'
++'<p class="qe-note">Check product and packaging before starting. Missing values use sample data; sample availability is independent of your real stock.</p>'
++(definition?'<details class="qe-definition"><summary>RF process definition · '+definition.steps.length+' screens</summary><ol>'+definition.steps.map(c=>'<li>'+esc(Flow.catalogue[c].label)+'</li>').join('')+'</ol><pre>'+esc(JSON.stringify({operation:definition.operation,product:definition.product,lpn:definition.lpn,steps:definition.steps},null,2))+'</pre></details>':'')+'</div>'}
 function paramsHTML(){
 const st=S.setup,src=st.src;
 const nf=(k,l)=>'<div class="qe-nf"><label for="qe-'+k+'">'+l+'</label><input class="qe-num" id="qe-'+k+'" data-k="'+k+'" type="number" inputmode="numeric" min="'+LIM[k][0]+'" max="'+LIM[k][1]+'" value="'+st[k]+'"><small class="'+(st.fromText[k]?'is-desc':'')+'">'+(st.manual[k]?'set manually':src==='ai'&&!st.aiKnown[k]?'not found · check':st.fromText[k]?(src==='ai'?'from AI':src==='demo'?(k==='levels'?'default · check':'from plan'):'from description'):LIM[k][0]+'–'+LIM[k][1])+'</small></div>';
@@ -79,7 +92,7 @@ return '<form class="qe-setup'+(S.unfold?' is-unfold':'')+'" id="qe-form" novali
 +(st.plan?'<div class="qe-thumb"><div class="qe-thumb-i">'+previewHTML()+'</div><div><b>'+esc(st.plan.name)+'</b><small>'+(st.plan.demo?'Demo schematic · levels are not shown on a floor plan':'Reviewed with Quark AI · check the suggested values')+'</small></div></div>':'')
 +(src==='text'||st.text?'<div><label class="qe-lab" for="qe-desc">Description</label><textarea class="qe-ta" id="qe-desc" maxlength="5000" style="min-height:72px">'+esc(st.text)+'</textarea><div class="qe-row"><span class="qe-parsed" id="qe-parsed">'+(S.descriptionChanged?'Description changed. Analyse again to update suggestions.':'Edit the description and ask Quark AI to review it.')+'</span><button type="button" class="qe-link" id="qe-desc-go"'+(st.text.trim()?'':' disabled')+'>Analyse again with Quark AI →</button></div></div>':'')
 +'<div><span class="qe-lab" id="qe-type-l">Warehouse type</span><div class="qe-seg" role="group" aria-labelledby="qe-type-l">'+TYPES.map(t=>'<button type="button" data-type="'+t+'" aria-pressed="'+(st.type===t)+'">'+t+'</button>').join('')+'</div></div>'
-+'<div class="qe-nums">'+nf('aisles','Aisles')+nf('bays','Bays / rack')+nf('levels','Rack levels')+'</div>'
++'<div class="qe-nums">'+nf('aisles','Aisles')+nf('bays','Bays / rack')+nf('levels','Rack levels')+'</div>'+taskParamsHTML()
 +(st.ai?questionsHTML(st.ai):'')
 +'<p class="qe-note">Check the values and change any of them by hand. A value you edit stays as you set it.</p>'
 +'<div class="qe-ask"><label class="qe-lab" for="qe-ask">Ask Quark AI about a preview rule</label><div class="qe-askrow"><span aria-hidden="true">&gt;_</span><input id="qe-ask" value="'+esc(S.ruleText||'')+'" maxlength="1000" placeholder="e.g. Reserve Level 4 for heavy LPNs" autocomplete="off"><button type="button" id="qe-ask-go"'+(S.ruleBusy?' disabled':'')+'>'+(S.ruleBusy?'Thinking…':'Ask Quark AI')+'</button></div>'+(st.rules&&st.rules.length?'<ul class="qe-rules">'+st.rules.map((r,i)=>'<li><span class="qe-mono">'+esc(r.code)+'</span>'+esc(r.text)+'<button type="button" class="qe-x2" data-rule="'+i+'" aria-label="Remove rule">×</button></li>').join('')+'</ul>':'')+(S.ruleErr?'<p class="qe-err" role="alert">'+esc(S.ruleErr)+'</p>':'')+'<p class="qe-note">This rule and the preview parameters are sent to Quark AI for interpretation.</p></div>'
@@ -108,56 +121,59 @@ function readPlan(file){return new Promise((resolve,reject)=>{const reader=new F
 async function analyze(plan,options={}){
  cancelAI();const serial=aiSerial;S.formErr='';S.ruleErr='';if(S.setup.plan&&S.setup.plan.url&&S.setup.plan!==plan)URL.revokeObjectURL(S.setup.plan.url);S.setup.plan=plan;S.stage='analyzing';render();
  try{
- const body={mode:'layout',text:plan&&plan.demo?EXAMPLE+(S.setup.text?'\n'+S.setup.text:''):S.setup.text};
+ const body={mode:'layout',text:options.text??(plan&&plan.demo?EXAMPLE+(S.setup.text?'\n'+S.setup.text:''):S.setup.text)};
  if(plan&&!plan.demo){if(!pendingFile)throw new Error('Choose your plan again.');body.file={type:pendingFile.type||(/\.pdf$/i.test(pendingFile.name)?'application/pdf':/\.png$/i.test(pendingFile.name)?'image/png':'image/jpeg'),data:await readPlan(pendingFile)}}
+ if(S.setup.ai)body.setup={type:S.setup.type,aisles:S.setup.aisles,bays:S.setup.bays,levels:S.setup.levels,task:S.setup.task,previous_summary:S.setup.ai.summary,confirmed:Object.keys(S.setup.aiKnown||{}).filter(k=>S.setup.aiKnown[k])};
  if(serial!==aiSerial)return;const result=await requestAI(body);if(serial!==aiSerial)return;
- const st=S.setup;st.ai=result;st.aiKnown={};st.fromText={};
+ const st=S.setup;st.ai=result;mergeTask(result.task);st.aiKnown={};st.fromText={};
  ['type','aisles','bays','levels'].forEach(k=>{if(result[k]!=null&&!st.manual[k]){st[k]=result[k];st.fromText[k]=true;st.aiKnown[k]=true}});
  st.rules=result.rules.map(r=>({code:r.level?'L'+r.level+' → '+r.category:'RULE',text:r.text,lv:r.level,cls:r.category}));
- st.src='ai';S.clarification='';S.answers={};S.descriptionChanged=false;S.stage='params';S.unfold=true;render();const f=$('#qe-aisles');f&&f.focus({preventScroll:true});
+ st.src='ai';if(options.round)S.dialog=[...(S.dialog||[]),options.round].slice(-3);S.clarification='';S.answers={};S.descriptionChanged=false;S.stage='params';S.unfold=true;render();const f=$('#qe-aisles');f&&f.focus({preventScroll:true});
  }catch(e){if(serial!==aiSerial)return;S.stage=options.refine?'params':'drop';S.formErr=e.name==='AbortError'?'Quark AI analysis timed out. Retry or set parameters manually.':e.message;render()}
 }
 async function askRule(){
  const input=$('#qe-ask');if(!input||!input.value.trim())return input&&input.focus();if(S.ruleBusy)return;
  const text=input.value.trim();cancelAI();const serial=aiSerial;S.ruleBusy=true;S.ruleErr='';S.ruleText=text;render();
- try{const st=S.setup,result=await requestAI({mode:'rule',text,setup:{type:st.type,aisles:st.aisles,bays:st.bays,levels:st.levels}});if(serial!==aiSerial)return;
- if(!result.rules.length)throw new Error(result.uncertainties[0]||'Add more detail about the rule you want to try.');
- st.rules=(st.rules||[]).concat(result.rules.map(r=>({code:r.level?'L'+r.level+' → '+r.category:'RULE',text:r.text,lv:r.level,cls:r.category}))).slice(-8);S.ruleText='';
+ try{const st=S.setup,result=await requestAI({mode:'rule',text,setup:{type:st.type,aisles:st.aisles,bays:st.bays,levels:st.levels,task:st.task}});if(serial!==aiSerial)return;
+ if(!result.rules.length&&!result.task?.operation)throw new Error(result.uncertainties[0]||'Add more detail about the rule you want to try.');
+ mergeTask(result.task);st.rules=(st.rules||[]).concat(result.rules.map(r=>({code:r.level?'L'+r.level+' → '+r.category:'RULE',text:r.text,lv:r.level,cls:r.category}))).slice(-8);S.ruleText='';
  }catch(e){if(serial!==aiSerial)return;S.ruleErr=e.name==='AbortError'?'Quark AI request timed out. Please retry.':e.message}
  finally{if(serial===aiSerial){S.ruleBusy=false;render()}}
 }
-function summaryHTML(){const st=S.setup;
-return '<div class="qe-sum"><dl><div><dt>Type</dt><dd>'+esc(st.type)+'</dd></div><div><dt>Layout</dt><dd>'+st.aisles+' aisles × '+st.bays+' bays × '+st.levels+' levels</dd></div><div><dt>Addresses</dt><dd>'+locCount()+'</dd></div>'+(st.src==='file'?'<div><dt>Plan</dt><dd>reference only</dd></div>':st.src==='demo'?'<div><dt>Plan</dt><dd>demo schematic</dd></div>':'')+'</dl><div class="qe-sum-act">'+(S.step==='done'?'<button type="button" class="qe-link" id="qe-cont">Continue with this setup →</button>':'')+'<button type="button" class="qe-link" id="qe-reset">Restart task</button><button type="button" class="qe-link" id="qe-edit">Edit setup</button></div></div>'}
-const stepNo=()=>Math.min(3,STEPS.indexOf(S.step)+1);
+function summaryHTML(){const st=S.setup,d=S.definition;
+return '<div class="qe-sum"><dl><div><dt>Type</dt><dd>'+esc(st.type)+'</dd></div><div><dt>Layout</dt><dd>'+st.aisles+' × '+st.bays+' × '+st.levels+'</dd></div><div><dt>Process</dt><dd>'+esc(Flow.labels[d.operation])+'</dd></div><div><dt>Product</dt><dd>'+esc(d.product.name)+'</dd></div><div><dt>Packaging</dt><dd>'+d.product.pack_quantity+' '+esc(d.product.pack_label)+' × '+d.product.pack_units+'</dd></div><div><dt>Tracking</dt><dd>'+(d.product.serialized?'Serial per unit':'Standard')+'</dd></div></dl><div class="qe-sum-act">'+(S.run.completed?'<button type="button" class="qe-link" id="qe-cont">Continue with this setup →</button>':'')+'<button type="button" class="qe-link" id="qe-reset">Restart task</button><button type="button" class="qe-link" id="qe-edit">Edit setup</button></div></div>'}
+function processView(){return Flow.view(S.definition,S.run)}
 function rfHTML(){
-if(S.phase!=='live')return '<div class="qe-rf qe-dev"><div class="qe-rf-bar">WebRF<span>no task</span></div><div class="qe-wait">'+(S.phase==='preparing'?'<b>Attaching workflow…</b>':'<b>No task assigned</b>Generate a warehouse setup to load a receiving and putaway task.')+'</div></div>';
-const i=STEPS.indexOf(S.step);
-let body='';
-if(S.step==='receive')body='<p class="qe-note">Pallet at dock. Check the label, then confirm receipt.</p><div class="qe-rf-act"><button type="button" class="qe-btn is-wide" data-a="receive"><span>Confirm receipt</span><span aria-hidden="true">→</span></button></div>';
-if(S.step==='scan')body=(S.mismatch?'<div class="qe-alert" role="alert">'+esc(S.mismatch.why)+' <b>'+esc(S.mismatch.code)+'</b>. Expected <b>'+TASK.target+'</b>. Scan again.</div>':'')+'<div class="qe-rf-act"><label class="qe-lab" for="qe-rfscan" style="margin:0">Scan destination</label><div class="qe-scanrow"><input class="qe-scan" id="qe-rfscan" data-scan="web" value="'+esc(S.draft)+'" placeholder="Scan or type location" autocomplete="off" spellcheck="false" autocapitalize="characters"><button type="button" data-a="scan-web">Enter</button></div><div class="qe-sims"><button type="button" class="qe-link" data-a="sim-ok">Simulate scan · '+TASK.target+'</button><button type="button" class="qe-link" data-a="sim-bad">Simulate wrong scan · '+WRONG+'</button></div></div>';
-if(S.step==='putaway')body='<div class="qe-okmsg">Destination matched. Place the pallet and confirm.</div><div class="qe-rf-act"><button type="button" class="qe-btn is-wide" data-a="putaway"><span>Confirm putaway</span><span aria-hidden="true">→</span></button><button type="button" class="qe-btn is-ghost is-wide" data-a="back"><span>Back · rescan</span></button></div>';
-if(S.step==='done')body='<div class="qe-done"><b>Task completed</b><span class="qe-note">'+TASK.qty+' units of '+TASK.item+' on hand at '+TASK.target+'.</span></div><div class="qe-rf-act"><button type="button" class="qe-btn is-wide" disabled><span>Putaway confirmed</span><span aria-hidden="true">✓</span></button></div>';
-return '<div class="qe-rf qe-dev"><div class="qe-rf-bar">'+(S.step==='receive'?'Receiving':'Putaway')+'<span>'+TASK.doc+' · '+stepNo()+'/3</span></div><div class="qe-rf-steps" aria-hidden="true">'+[0,1,2].map(k=>'<i class="'+(k<i||S.step==='done'?'on':'')+'"></i>').join('')+'</div><div class="qe-rf-b"><h4 class="qe-rf-title">'+(S.step==='receive'?'Receive pallet':S.step==='done'?'Putaway complete':'Put away pallet')+'</h4>'
-+'<dl class="qe-rf-dl"><dt>LPN</dt><dd>'+TASK.lpn+'</dd><dt>Item</dt><dd>'+TASK.item+'</dd><dt>Quantity</dt><dd>'+TASK.qty+' units</dd><dt>'+(S.step==='done'?'On hand':'At dock')+'</dt><dd>'+(S.step==='done'?S.onhand:S.dock)+' units</dd></dl>'
-+'<div class="qe-rf-loc'+(S.step==='putaway'||S.step==='done'?' is-ok':'')+'"><small>Destination</small><b>'+TASK.target+'</b></div>'+(S.step==='scan'||S.step==='putaway'?'<div class="qe-copilot"><i aria-hidden="true"></i><span><b>Route preview</b> Example route · Dock → A-01 → 02-L1</span></div>':'')+body+'</div></div>'}
-const W=32;
-const ln=(t,c)=>({t:String(t).slice(0,W).padEnd(W,' '),c});
-const rule=()=>ln('-'.repeat(W),'dim');
+ if(S.phase!=='live')return '<div class="qe-rf qe-dev"><div class="qe-rf-bar">WebRF<span>no task</span></div><div class="qe-wait"><b>'+(S.phase==='preparing'?'Attaching RF process…':'No task assigned')+'</b>Analyse your request or set up a warehouse to generate a process.</div></div>';
+ const d=S.definition,r=S.run,v=processView(),p=d.product,serial=v.control==='serial',captured=v.code==='verify_serials'?r.verified:r.serials.map(x=>x.value);
+ const context='<dl class="qe-rf-dl"><dt>Product</dt><dd>'+esc(p.name)+'</dd><dt>SKU</dt><dd>'+esc(p.sku)+'</dd><dt>LPN</dt><dd>'+esc(d.lpn)+'</dd><dt>Packaging</dt><dd>'+p.pack_quantity+' '+esc(p.pack_label)+' × '+p.pack_units+'</dd><dt>Base units</dt><dd>'+d.total_units+'</dd><dt>At dock / stored</dt><dd>'+r.dock+' / '+r.stored+'</dd></dl>';
+ let body='';if(r.completed)body='<div class="qe-done"><b>Task completed</b><span class="qe-note">'+esc(Flow.labels[d.operation])+' · '+esc(p.name)+' · '+d.total_units+' units'+(r.serials.length?' · '+r.serials.length+' serials preserved':'')+'</span></div>';
+ else{
+  if(r.error)body+='<div class="qe-alert" role="alert">'+esc(r.error)+'</div>';
+  if(serial)body+='<div class="qe-serial-count" role="status"><b>'+captured.length+' / '+d.total_units+'</b><span>serial numbers '+(v.code==='verify_serials'?'verified':'captured')+'</span></div>'+(captured.length?'<ol class="qe-serial-list">'+captured.slice(-3).map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>':'');
+  if(v.control==='confirm')body+='<div class="qe-rf-act"><button class="qe-btn is-wide" type="button" data-a="flow-confirm"><span>'+esc(v.label)+'</span><span aria-hidden="true">→</span></button></div>';
+  else body+='<div class="qe-rf-act"><label class="qe-lab" for="qe-rfscan">'+esc(v.label)+(v.control==='number'?' ('+esc(p.pack_label)+')':'')+'</label><div class="qe-scanrow"><input class="qe-scan" id="qe-rfscan" data-scan="web" value="'+esc(S.draft)+'" maxlength="64"'+(v.control==='number'?' inputmode="numeric"':'')+' placeholder="'+(serial?'Scan serial, then Enter':v.control==='date'?'YYYY-MM-DD':'Scan or type, then Enter')+'" autocomplete="off" spellcheck="false"><button type="button" data-a="flow-submit">Enter</button></div><div class="qe-sims"><button class="qe-link" type="button" data-a="flow-demo">'+(serial?'Simulate next serial':'Use sample · '+esc(Flow.expected(d,r)))+'</button></div></div>';
+ }
+ return '<div class="qe-rf qe-dev"><div class="qe-rf-bar">'+esc(Flow.labels[d.operation])+'<span>'+Math.min(r.index+1,d.steps.length)+' / '+d.steps.length+'</span></div><div class="qe-rf-steps" aria-hidden="true">'+d.steps.map((_,i)=>'<i class="'+(i<r.index?'on':'')+'"></i>').join('')+'</div><div class="qe-rf-b"><h4 class="qe-rf-title">'+esc(v.label)+'</h4>'+context+(S.step==='scan'?'<div class="qe-rf-loc"><small>Scan location</small><b>'+esc(Flow.expected(d,r))+'</b></div>':'')+body+'</div></div>'
+}
+const W=32,ln=(t,c)=>({t:String(t).slice(0,W).padEnd(W,' '),c}),rule=()=>ln('-'.repeat(W),'dim');
 function tuiLines(){
-const L=[ln('QUARK WMS / TERMINAL PREVIEW'),rule()];
-if(S.phase!=='live'){L.push(ln(''),ln(S.phase==='preparing'?' ATTACHING WORKFLOW...':' WAITING FOR SETUP'),ln(S.phase==='preparing'?' '+'#'.repeat(Math.round(S.prog/100*24)).padEnd(24,'.'):' NO TASK ASSIGNED','dim'));for(let i=0;i<9;i++)L.push(ln(''));L.push(rule(),ln(' [ESC] BACK','dim'));return L}
-L.push(ln((' '+(S.step==='receive'?'RECEIVE':'PUTAWAY')+' PALLET').padEnd(W-9)+'STEP '+stepNo()+'/3'),ln(' DOC  : '+TASK.doc),ln(' LPN  : '+TASK.lpn),ln(' ITEM : '+TASK.item),ln(' QTY  : '+TASK.qty+' units'),ln(' LOC  : '+TASK.target+(S.step==='putaway'||S.step==='done'?'  OK':'')),ln(' '+(S.step==='done'?'ONHND: '+S.onhand:'DOCK : '+S.dock)),ln(S.step==='scan'||S.step==='putaway'?' DEMO PATH // DOCK>A-01>02-L1':(S.setup.rules||[]).filter(r=>r.lv)[0]?' DEMO RULE // '+S.setup.rules.filter(r=>r.lv)[0].code.replace('→','>'):'','dim'),rule());
-if(S.step==='receive')L.push(ln('> CONFIRM RECEIPT?','hi'),ln(''),ln(''));
-if(S.step==='scan'){if(S.mismatch)L.push(ln('!! MISMATCH: '+S.mismatch.code,'er'),ln('   EXPECTED '+TASK.target));else L.push(ln('> SCAN DESTINATION BARCODE','hi'),ln(''));L.push({input:true})}
-if(S.step==='putaway')L.push(ln('> DESTINATION MATCHED','hi'),ln('  CONFIRM PUTAWAY?'),ln(''));
-if(S.step==='done')L.push(ln('*** TASK COMPLETED ***','hi'),ln('  '+TASK.qty+' UNITS AT '+TASK.target),ln(''));
-L.push(rule(),ln(S.step==='done'?' [F2] CONFIRM':S.step==='scan'?' [ENT] SCAN  [F2] OK  [ESC] BACK':' [F2] CONFIRM       [ESC] BACK','dim'));return L}
+ const L=[ln('QUARK WMS / TERMINAL PREVIEW'),rule()];
+ if(S.phase!=='live'){L.push(ln(S.phase==='preparing'?' ATTACHING RF PROCESS...':' WAITING FOR SETUP'));while(L.length<14)L.push(ln(''));L.push(rule(),ln(' [ESC] CLEAR','dim'));return L}
+ const d=S.definition,r=S.run,v=processView(),count=v.code==='verify_serials'?r.verified.length:r.serials.length;
+ L.push(ln(' '+Flow.labels[d.operation].toUpperCase()+' '+Math.min(r.index+1,d.steps.length)+'/'+d.steps.length),ln(' ITEM : '+d.product.name),ln(' SKU  : '+d.product.sku),ln(' PACK : '+d.product.pack_quantity+' '+d.product.pack_label+' x '+d.product.pack_units),ln(' UNITS: '+d.total_units),ln(' LPN  : '+d.lpn));
+ if(v.control==='serial')L.push(ln(' SERIALS: '+count+' / '+d.total_units));else L.push(ln(' DOCK: '+r.dock+' STORED: '+r.stored));
+ L.push(rule(),ln(' '+v.label.toUpperCase(),r.completed?'hi':''));
+ if(r.error)L.push(ln('! '+r.error,'er'));else if(S.step==='scan')L.push(ln(' TO: '+Flow.expected(d,r),'hi'));else L.push(ln(''));
+ if(!r.completed&&v.control!=='confirm')L.push({input:true});else L.push(ln(r.completed?' *** COMPLETED ***':' [ENTER] CONFIRM',r.completed?'hi':''));
+ while(L.length<14)L.push(ln(''));L.push(rule(),ln(v.code==='close_receipt'?' [F8] CLOSE   [ESC] CLEAR':' [F2] ENTER [F3] DEMO [ESC] CLEAR','dim'));return L;
+}
 function tuiHTML(){
-const body=tuiLines().map(l=>l.input?'<span class="l">LOC&gt; <input id="qe-tuiscan" data-scan="tui" value="'+esc(S.draft)+'" maxlength="16" size="16" autocomplete="off" spellcheck="false" autocapitalize="characters" aria-label="Terminal scan input"><span class="bl">_</span>'+' '.repeat(W-22)+'</span>':'<span class="l'+(l.c?' '+l.c:'')+'">'+esc(l.t)+'</span>').join('\n');
-const live=S.phase==='live';
-return '<div class="qe-tuiwrap qe-dev"><div class="qe-tuitop"><span>HANDHELD · 240×320 CLASS</span><span>'+(live?'ONLINE':'IDLE')+'</span></div><pre class="qe-tui" id="qe-tui" tabindex="0" role="application" aria-label="Terminal preview. F2 confirms, Escape goes back, Enter submits a scan."><code>'+body+'</code></pre>'
-+'<div class="qe-keys"><button type="button" data-k="F2"'+(live?'':' disabled')+'><b>F2</b> CONFIRM</button><button type="button" data-k="F3"'+(live&&S.step==='scan'?'':' disabled')+'><b>F3</b> DEMO SCAN</button><button type="button" data-k="ESC"'+(live?'':' disabled')+'><b>ESC</b> BACK</button></div><div class="qe-tuihint">Click the screen and use F2 / Esc / Enter, or the keys above.<br>ℓ Lepton is a planned edge/client direction. Device compatibility is verified per project.</div></div>'}
-function occ(code){let h=0;for(const c of code)h=(h*31+c.charCodeAt(0))>>>0;return h%10<3}
+ const body=tuiLines().map(l=>l.input?'<span class="l">&gt; <input id="qe-tuiscan" data-scan="tui" value="'+esc(S.draft)+'" maxlength="64" size="25" autocomplete="off" spellcheck="false" aria-label="Terminal scan input"><span class="bl">_</span></span>':'<span class="l'+(l.c?' '+l.c:'')+'">'+esc(l.t)+'</span>').join('\n');
+ const live=S.phase==='live',v=live?processView():null,closed=v?.code==='close_receipt';
+ return '<div class="qe-tuiwrap qe-dev"><div class="qe-tuitop"><span>HANDHELD · 240×320 CLASS</span><span>'+(live?'ONLINE':'IDLE')+'</span></div><pre class="qe-tui" id="qe-tui" tabindex="0" role="application" aria-label="Terminal preview. Enter or F2 submits; F3 uses a sample; F8 closes a completed receipt capture."><code>'+body+'</code></pre><div class="qe-keys"><button type="button" data-k="'+(closed?'F8':'F2')+'"'+(live&&!S.run.completed?'':' disabled')+'><b>'+(closed?'F8':'F2')+'</b> '+(closed?'CLOSE':'ENTER')+'</button><button type="button" data-k="F3"'+(live&&!S.run.completed&&v.control!=='confirm'?'':' disabled')+'><b>F3</b> DEMO</button><button type="button" data-k="ESC"'+(live?'':' disabled')+'><b>ESC</b> CLEAR</button></div><div class="qe-tuihint">The same process definition and accepted scans drive both interfaces.<br>Device compatibility is verified separately.</div></div>'
+}
+function occ(code){return Flow.occupied(code)}
 function faceHTML(){
 if(S.phase!=='live')return '<div class="qe-face"><div class="qe-bp-empty"><span>NO LAYOUT LOADED</span><small>Rack elevation appears after generation.</small></div></div>';
 const st=S.setup,f=S.face,scan=S.step==='scan',fresh=S.sync&&Date.now()-S.sync.at<1000;
@@ -165,7 +181,7 @@ const lv=[];for(let l=st.levels;l>=1;l--)lv.push(l);
 const bays=[];for(let b=1;b<=st.bays;b++){
 const cells=lv.map(l=>{const code=f.aisle+'-'+pad(b)+'-'+f.side+'-L'+l,t=code===TASK.target,x=S.mismatch&&S.mismatch.code===code,o=!t&&occ(code);
 const cls='qe-loc'+(t?(S.step==='done'?' is-done'+(fresh?' is-anim':''):' is-t'):'')+(o?' is-o':'')+(x?' is-x':'');
-const lab=t?(S.step==='done'?'<b>LOCKED</b><i>'+TASK.qty+' U · '+TASK.lpn+'</i>':'<b>TARGET</b><i>'+code+'</i>'):x?'<b>MISMATCH</b><i>'+code+'</i>':o?'<i class="qe-lpn">LPN</i><em>'+code+'</em>':'<em>'+code+'</em>';
+const lab=t?(S.step==='done'?'<b>LOCKED</b><i>'+TASK.qty+' U · '+esc(TASK.lpn)+'</i>':'<b>TARGET</b><i>'+code+'</i>'):x?'<b>MISMATCH</b><i>'+code+'</i>':o?'<i class="qe-lpn">LPN</i><em>'+code+'</em>':'<em>'+code+'</em>';
 return '<button type="button" class="'+cls+'" data-loc="'+code+'" '+(scan?'aria-label="Simulate scan '+code+(o?' (occupied)':'')+'"':'tabindex="-1" aria-label="'+code+(o?' occupied':t?' target':'')+'"')+'>'+lab+(t&&scan?'<span class="qe-tip">[ CLICK TO SIMULATE SCAN ]</span>':'')+'</button>'}).join('');
 bays.push('<div class="qe-bay"><div class="qe-dim"><span>BAY '+pad(b)+'</span></div><div class="qe-bay-c">'+cells+'</div></div>'+(b<st.bays?'<div class="qe-up" aria-hidden="true"></div>':''))}
 return '<div class="qe-face">'
@@ -176,7 +192,7 @@ return '<div class="qe-face">'
 +'<ul class="qe-leg"><li class="e">Empty</li><li class="o">Occupied</li><li class="t">Target</li><li class="d">Confirmed</li><li class="x">Mismatch</li></ul></div>'}
 function logHTML(){if(!S.log.length)return '<ol class="qe-log"><li><time>--:--:--</time><span class="qe-mute">No events yet</span></li></ol>';
 return '<ol class="qe-log" aria-live="polite">'+S.log.map(e=>'<li class="'+(e.cls||'')+'"><time>'+e.t+'</time><span><span class="k">['+esc(e.k)+']</span> '+esc(e.m)+'</span></li>').join('')+'</ol>'}
-function enquirySetup(){const st=S.setup,t=st.task||{},p=t.product||{};return {warehouse:{type:st.type,aisles:st.aisles,bays:st.bays,levels:st.levels},process:{operation:t.operation||'receiving_and_putaway',product:p.name||t.item_name||TASK.itemName,pack_label:p.pack_label||'Each',pack_units:p.pack_units||1,pack_quantity:p.pack_quantity||TASK.qty,serialized:Boolean(p.serialized)}}}
+function enquirySetup(){const st=S.setup,t=S.definition||st.task||{},p=t.product||{};return {warehouse:{type:st.type,aisles:st.aisles,bays:st.bays,levels:st.levels},process:{operation:t.operation||'receiving_and_putaway',product:p.name||t.item_name||TASK.itemName,pack_label:p.pack_label||'Each',pack_units:p.pack_units||1,pack_quantity:p.pack_quantity||TASK.qty,serialized:Boolean(p.serialized)}}}
 function modalHTML(){if(!S.modal)return '';const st=S.setup;
 return '<div class="qe-ov" id="qe-ov"><div class="qe-modal" role="dialog" aria-modal="true" aria-labelledby="qe-mh"><button type="button" class="qe-x" id="qe-mx" aria-label="Close and return to demo">×</button><h3 id="qe-mh">Continue with your warehouse setup</h3><p>Send this setup to the Quark team. We will follow up with you about your warehouse.</p>'
 +'<div class="qe-msum"><span><b>'+esc(st.type)+'</b></span><span><b>'+st.aisles+'×'+st.bays+'×'+st.levels+'</b> layout</span><span><b>'+locCount()+'</b> addresses</span><span>'+esc(enquirySetup().process.operation.replaceAll('_',' '))+'</span></div>'
@@ -186,10 +202,10 @@ return '<div class="qe-ov" id="qe-ov"><div class="qe-modal" role="dialog" aria-m
 async function sendEnquiry(){
  if(S.sending)return;S.emErr=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((S.em||'').trim())?'':'Enter a valid work email.';S.coErr=(S.co||'').trim()?'':'Enter your company name.';S.sendErr=S.consent?'':'Please agree to send your contact details and this setup.';
  if(S.emErr||S.coErr||S.sendErr){render();const f=$('[aria-invalid="true"]')||$('#qe-consent');f&&f.focus();return}
- S.sending=true;S.sendErr='';render();
- try{const response=await fetch('/api/engine-enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:S.em.trim(),company:S.co.trim(),consent:'yes',website:S.website||'',...enquirySetup()}),signal:AbortSignal.timeout(15000)});const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.error||'Could not send. Please retry.');S.sent=true}
- catch(e){S.sendErr=e.name==='TimeoutError'?'The request timed out. Please retry.':e.message}
- finally{S.sending=false;render();const f=S.sent?$('#qe-mback'):$('#qe-em');f&&f.focus()}
+ S.sending=true;S.sendErr='';const mailSerial=S.mailSerial=(S.mailSerial||0)+1;render();
+ try{const response=await fetch('/api/engine-enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:S.em.trim(),company:S.co.trim(),consent:'yes',website:S.website||'',...enquirySetup()}),signal:AbortSignal.timeout(15000)});const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.error||'Could not send. Please retry.');if(mailSerial===S.mailSerial)S.sent=true}
+ catch(e){if(mailSerial===S.mailSerial)S.sendErr=e.name==='TimeoutError'?'The request timed out. Please retry.':e.message}
+ finally{if(mailSerial===S.mailSerial){S.sending=false;render();const f=S.sent?$('#qe-mback'):$('#qe-em');f&&f.focus()}}
 }
 /* ---------- mount ---------- */
 let lastModal=false,opener=null;
@@ -206,10 +222,7 @@ if(S.modal&&!lastModal){opener=aid;const f=$('#qe-em')||$('#qe-mback');f&&f.focu
 if(!S.modal&&lastModal){const c=$('#qe-cont')||$('#qe-reset');c&&c.focus({preventScroll:true})}
 lastModal=S.modal;S.unfold=false;
 if(sf)setTimeout(()=>{root.querySelectorAll('.is-sync').forEach(n=>n.classList.remove('is-sync'))},1000)}
-function tuiKey(k){if(S.phase!=='live')return;
-if(k==='F2'){if(S.step==='receive')act.receive('tui');else if(S.step==='scan'){if(S.draft)act.scan(S.draft,'tui');else{log('WORKFLOW','Scan the destination before confirming','er');render()}}else act.putaway('tui')}
-if(k==='F3'&&S.step==='scan')act.scan(TASK.target,'tui',true);
-if(k==='ESC')act.back('tui')}
+function tuiKey(k){if(S.phase!=='live')return;if(k==='F2')return act.submit('tui');if(k==='F3')return act.demo('tui');if(k==='F8'&&processView().code==='close_receipt')return act.submit('tui');if(k==='ESC')return act.back('tui')}
 root.addEventListener('click',(e)=>{const t=e.target.closest('button');if(!t)return;
 if(t.id==='qe-demo')return analyze(DEMO_PLAN);
 if(t.id==='qe-analyze-file')return analyze(S.setup.plan);
@@ -219,26 +232,22 @@ if(t.id==='qe-refine'){
  const replies=questions.map((q,i)=>({question:q,answer:(S.answers?.[i]||'').trim()})).filter(x=>x.answer);
  const answer=(S.clarification||'').trim();if(!answer&&!replies.length)return;
  const text=(S.setup.text||'')+'\nClarification round:\nQuestions: '+questions.join(' | ')+'\nUser answers: '+JSON.stringify({replies,additional_information:answer});
- if(text.length>5000){S.formErr='Please shorten the description or answers before sending.';return render()}
- S.setup.text=text;return analyze(S.setup.plan,{refine:true});
+ if(text.length>12000){S.formErr='Please shorten this answer before sending.';return render()}
+ return analyze(S.setup.plan,{refine:true,text,round:{replies,additional_information:answer}});
 }
 if(t.dataset.rule!=null){S.setup.rules.splice(+t.dataset.rule,1);return render()}
-if(t.id==='qe-desc-go')return analyze(null);
+if(t.id==='qe-desc-go')return analyze(S.setup.plan);
 if(t.id==='qe-manual'){cancelAI();S.formErr='';S.setup.ai=null;S.setup.src='manual';S.setup.plan=null;S.setup.fromText={};S.stage='params';S.unfold=true;return render()}
-if(t.id==='qe-restart'){cancelAI();pendingFile=null;S.setup.ai=null;S.setup.aiKnown={};S.setup.rules=[];anT.forEach(clearTimeout);if(S.setup.plan&&S.setup.plan.url)URL.revokeObjectURL(S.setup.plan.url);Object.assign(S.setup,{plan:null,src:null,manual:{},fromText:{},text:''});S.stage='drop';S.formErr='';return render()}
+if(t.id==='qe-restart'){cancelAI();pendingFile=null;S.setup.ai=null;S.setup.aiKnown={};S.setup.rules=[];S.dialog=[];S.answers={};S.clarification='';S.setup.task=Flow.emptyTask();S.setup.taskManual={};anT.forEach(clearTimeout);if(S.setup.plan&&S.setup.plan.url)URL.revokeObjectURL(S.setup.plan.url);Object.assign(S.setup,{plan:null,src:null,manual:{},fromText:{},text:''});S.stage='drop';S.formErr='';return render()}
 if(t.dataset.type){S.setup.type=t.dataset.type;S.setup.manual.type=true;S.setup.fromText.type=false;return render()}
 if(t.id==='qe-unplan'){pendingFile=null;if(S.setup.plan&&S.setup.plan.url)URL.revokeObjectURL(S.setup.plan.url);S.setup.plan=null;return render()}
 if(t.id==='qe-edit'){cancelAI();clearTimeout(leadTimer);prepT.forEach(clearTimeout);S.phase='setup';S.stage='params';S.unfold=true;S.modal=false;return render()}
-if(t.id==='qe-reset'){clearTimeout(leadTimer);Object.assign(S,{step:'receive',draft:'',mismatch:null,dock:0,onhand:0,modal:false});log('WORKFLOW','Task restarted · '+TASK.doc);synced('web');return render()}
+if(t.id==='qe-reset'){clearTimeout(leadTimer);S.run=Flow.create(S.definition);S.draft='';S.mismatch=null;S.modal=false;syncProcess();log('WORKFLOW','RF process restarted');synced('web');return render()}
 if(t.id==='qe-cont'){S.modal=true;S.sent=false;return render()}
 if(t.id==='qe-mx'||t.id==='qe-mback'){S.modal=false;return render()}
 const a=t.dataset.a;
-if(a==='receive')return act.receive('web');
-if(a==='putaway')return act.putaway('web');
-if(a==='back')return act.back('web');
-if(a==='scan-web')return act.scan(S.draft,'web');
-if(a==='sim-ok')return act.scan(TASK.target,'web',true);
-if(a==='sim-bad')return act.scan(WRONG,'web',true);
+if(a==='flow-submit'||a==='flow-confirm')return act.submit('web');
+if(a==='flow-demo')return act.demo('web');
 if(t.dataset.k)return tuiKey(t.dataset.k);
 if(t.dataset.aisle){S.face.aisle=t.dataset.aisle;return render()}
 if(t.dataset.side){S.face.side=t.dataset.side;return render()}
@@ -247,15 +256,23 @@ root.addEventListener('click',(e)=>{if(e.target.id==='qe-ov'){S.modal=false;rend
 root.addEventListener('input',(e)=>{const t=e.target;
 if(t.id==='qe-desc'){S.setup.text=t.value;S.descriptionChanged=true;const g=$('#qe-desc-go');if(g)g.disabled=!t.value.trim();const p=$('#qe-parsed');if(p)p.textContent=S.stage==='params'?'Description changed. Analyse again to update suggestions.':'Quark AI will suggest parameters from your description';return}
 if(t.dataset.k&&t.classList.contains('qe-num')){const v=clamp(t.dataset.k,t.value);if(v!=null){S.setup[t.dataset.k]=v;S.setup.manual[t.dataset.k]=true;S.setup.fromText[t.dataset.k]=false;t.nextElementSibling.textContent='set manually';t.nextElementSibling.className='';const n=root.querySelector('.qe-setup .qe-note .qe-mono');if(n)n.textContent=locCount()}return}
-if(t.dataset.scan){const v=t.value.toUpperCase().replace(/[^A-Z0-9-]/g,'');if(v!==t.value){const p=t.selectionStart;t.value=v;t.setSelectionRange(p,p)}S.draft=v;const other=$(t.dataset.scan==='web'?'#qe-tuiscan':'#qe-rfscan');if(other)other.value=v;return}
+if(t.dataset.scan){S.draft=t.value.slice(0,64);const other=$(t.dataset.scan==='web'?'#qe-tuiscan':'#qe-rfscan');if(other)other.value=S.draft;return}
+const productFields={'qe-product':'name','qe-sku':'sku','qe-pack-label':'pack_label','qe-pack-qty':'pack_quantity','qe-pack-units':'pack_units'};
+if(productFields[t.id]){const key=productFields[t.id];S.setup.task.product[key]=key.startsWith('pack_')&&key!=='pack_label'?(t.value===''?null:Number(t.value)):t.value;S.setup.taskManual['product.'+key]=true}
+if(t.id==='qe-lpn'){S.setup.task.lpn=t.value;S.setup.taskManual.lpn=true}
 if(t.id==='qe-answer')S.clarification=t.value;
 if(t.dataset.question!=null){S.answers=S.answers||{};S.answers[t.dataset.question]=t.value}
 if(t.id==='qe-answer'||t.dataset.question!=null){const b=$('#qe-refine');if(b)b.disabled=!hasReplies()}
 if(t.id==='qe-ask')S.ruleText=t.value;
 if(t.id==='qe-em')S.em=t.value;if(t.id==='qe-co')S.co=t.value;if(t.id==='qe-website')S.website=t.value});
 root.addEventListener('change',(e)=>{const t=e.target;
-if(t.classList.contains('qe-num')){t.value=S.setup[t.dataset.k];}
+if(t.classList.contains('qe-num')){t.value=S.setup[t.dataset.k];if(t.dataset.k==='aisles')return render()}
+if(['qe-product','qe-sku','qe-pack-label','qe-pack-qty','qe-pack-units','qe-lpn'].includes(t.id))return render();
 if(t.id==='qe-consent')S.consent=t.checked;
+if(t.id==='qe-operation'){S.setup.task.operation=t.value;S.setup.task.title=Flow.labels[t.value];S.setup.task.steps=Flow.defaults(t.value,S.setup.task.product.serialized,S.setup.task.product.lot_controlled);S.setup.taskManual.operation=true;return render()}
+if(t.id==='qe-serialized'||t.id==='qe-lot-controlled'){const key=t.id==='qe-serialized'?'serialized':'lot_controlled';S.setup.task.product[key]=t.checked;S.setup.taskManual['product.'+key]=true;S.setup.task.operation=S.setup.task.operation||'receiving_and_putaway';S.setup.task.steps=Flow.defaults(S.setup.task.operation,S.setup.task.product.serialized,S.setup.task.product.lot_controlled);return render()}
+if(t.id==='qe-target-aisle'){S.setup.task.destination_aisle=t.value;S.setup.taskManual.destination_aisle=true}
+
 if(t.id==='qe-plan'&&t.files[0])takeFile(t.files[0])});
 function takeFile(f){if(!/\.(jpe?g|png|pdf)$/i.test(f.name)){S.formErr='Use a JPEG, PNG or PDF file.';return render()}if(f.size>3*1024*1024){S.formErr='Use a file smaller than 3 MB.';return render()}cancelAI();if(S.setup.plan&&S.setup.plan.url)URL.revokeObjectURL(S.setup.plan.url);pendingFile=f;S.setup.plan={name:f.name,size:f.size,url:/^image\//.test(f.type)?URL.createObjectURL(f):null};S.formErr='';render()}
 root.addEventListener('dragover',(e)=>{const d=e.target.closest&&e.target.closest('#qe-drop');if(!d)return;e.preventDefault();if(!S.dragOver){S.dragOver=true;d.classList.add('is-over')}});
@@ -263,10 +280,10 @@ root.addEventListener('dragleave',(e)=>{const d=e.target.closest&&e.target.close
 root.addEventListener('drop',(e)=>{const d=e.target.closest&&e.target.closest('#qe-drop');if(!d)return;e.preventDefault();S.dragOver=false;const f=e.dataTransfer.files[0];if(f)takeFile(f)});
 root.addEventListener('keydown',(e)=>{const t=e.target;
 if(S.modal&&e.key==='Escape'){S.modal=false;return render()}
-if(S.modal&&e.key==='Tab'){const f=[...root.querySelectorAll('.qe-modal button,.qe-modal input')];if(!f.length)return;const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}return}
+if(S.modal&&e.key==='Tab'){const f=[...root.querySelectorAll('.qe-modal button,.qe-modal input,.qe-modal a')].filter(el=>!el.disabled&&el.tabIndex!==-1&&el.offsetParent!==null);if(!f.length)return;const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}return}
 if(t.id==='qe-ask'&&e.key==='Enter'){e.preventDefault();const b=$('#qe-ask-go');b&&b.click();return}
-if(t.dataset&&t.dataset.scan&&e.key==='Enter'){e.preventDefault();return act.scan(t.value,t.dataset.scan==='web'?'web':'tui')}
-if(t.closest&&t.closest('#qe-tui')){if(e.key==='F2'){e.preventDefault();tuiKey('F2')}else if(e.key==='F3'){e.preventDefault();tuiKey('F3')}else if(e.key==='Escape'){e.preventDefault();tuiKey('ESC')}else if(e.key==='Enter'&&t.id==='qe-tui'){e.preventDefault();tuiKey('F2')}}});
+if(t.dataset&&t.dataset.scan&&e.key==='Enter'){e.preventDefault();return act.submit(t.dataset.scan==='web'?'web':'tui',t.value)}
+if(t.closest&&t.closest('#qe-tui')){if(e.key==='F2'){e.preventDefault();tuiKey('F2')}else if(e.key==='F3'){e.preventDefault();tuiKey('F3')}else if(e.key==='F8'){e.preventDefault();tuiKey('F8')}else if(e.key==='Escape'){e.preventDefault();tuiKey('ESC')}else if(e.key==='Enter'&&t.id==='qe-tui'){e.preventDefault();tuiKey('F2')}}});
 root.addEventListener('submit',(e)=>{e.preventDefault();
 if(e.target.id==='qe-form'){if(!locCount()){S.formErr='Set aisles, bays and levels.';return render()}S.formErr='';return generate()}
 if(e.target.id==='qe-mform')return sendEnquiry();});

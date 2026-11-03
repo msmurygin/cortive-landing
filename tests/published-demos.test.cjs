@@ -47,7 +47,7 @@ test('visual revision preserves published page copy, SEO, navigation, CTAs and f
   a.equal((after.match(/<h1\b/g)||[]).length,1,f+' H1');a.equal(head(after),head(before),f+' SEO/head');
   a.deepEqual(icons(after),icons(read('index.html')),f+' approved square favicon');a.ok(icons(after).some(s=>s.includes('/favicon.ico')));a.ok(icons(after).some(s=>s.includes('/assets/favicon.png')));
   a.deepEqual(after.match(/<form\b[\s\S]*?<\/form>/g),before.match(/<form\b[\s\S]*?<\/form>/g),f+' forms');
-  a.deepEqual(after.replace('<script src="/design-assets/product-experiences.js" defer></script>','').replace('<script src="/assets/engine-demo/engine-demo.js" defer></script>','').match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
+  a.deepEqual(after.replace('<script src="/design-assets/product-experiences.js" defer></script>','').replace('<script src="/assets/engine-demo/engine-demo.js" defer></script>','').replace('<script src="/assets/engine-demo/engine-flow.js" defer></script>','').match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
  }
 });
 // Budget UI may add a local PDF action; its formulas and every other app remain frozen.

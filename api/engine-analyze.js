@@ -17,7 +17,7 @@ module.exports=async function handler(req,res){
  const ip=String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'unknown').split(',')[0];
  const id=createHash('sha256').update(ip).digest('hex');
  const b=buckets.get(id)||{start:now,count:0};
- if(b.count>=6||active>=2||buckets.size>=1000)return res.status(429).json({error:'Preview request limit reached. Please try again in a few minutes.'});
+ if(b.count>=(process.env.VERCEL_ENV==='preview'?20:6)||active>=2||buckets.size>=1000)return res.status(429).json({error:'Preview request limit reached. Please try again in a few minutes.'});
  b.count++;buckets.set(id,b);active++;
  try{
   const result=await infer(input,{key,model:process.env.ANTHROPIC_MODEL||'claude-haiku-5-5'});

@@ -4,6 +4,10 @@ module.exports = function withoutIntegrationCatalogue(file, text) {
   text = withoutPricing(file, text);
   if (file === 'vercel.json') {
     const config = JSON.parse(text);
+    if (config.functions && JSON.stringify(config.functions['api/engine-enquiry.js']) === JSON.stringify({maxDuration:20})) {
+      delete config.functions['api/engine-enquiry.js'];
+      if (!Object.keys(config.functions).length) delete config.functions;
+    }
     if (config.functions && JSON.stringify(config.functions['api/engine-analyze.js']) === JSON.stringify({maxDuration:60})) {
       delete config.functions['api/engine-analyze.js'];
       if (!Object.keys(config.functions).length) delete config.functions;
