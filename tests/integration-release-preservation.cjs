@@ -1,9 +1,17 @@
 const withoutPricing=require('./pricing-preservation.cjs');
-// Permit only the integration catalogue's exact footer, sitemap and route additions.
+// Permit exact isolated catalogue additions and the new Claude endpoint duration. Other settings remain frozen.
 module.exports = function withoutIntegrationCatalogue(file, text) {
   text = withoutPricing(file, text);
   if (file === 'vercel.json') {
     const config = JSON.parse(text);
+    if (config.functions && JSON.stringify(config.functions['api/engine-enquiry.js']) === JSON.stringify({maxDuration:20})) {
+      delete config.functions['api/engine-enquiry.js'];
+      if (!Object.keys(config.functions).length) delete config.functions;
+    }
+    if (config.functions && JSON.stringify(config.functions['api/engine-analyze.js']) === JSON.stringify({maxDuration:60,includeFiles:'api/_photon-system.md'})) {
+      delete config.functions['api/engine-analyze.js'];
+      if (!Object.keys(config.functions).length) delete config.functions;
+    }
     config.redirects = config.redirects.filter(x => !(
       ['/integrations.html', '/integrations/'].includes(x.source) &&
       x.destination === '/integrations' && x.permanent === true && Object.keys(x).length === 3
