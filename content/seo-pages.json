@@ -10,5 +10,9 @@
   "ro/index.html",
   "sr/index.html",
   "el/index.html",
-  "solutions/legacy-hardware/index.html"
+  "solutions/legacy-hardware/index.html",
+  "solutions/legacy-hardware/bg/index.html",
+  "solutions/legacy-hardware/ro/index.html",
+  "solutions/legacy-hardware/sr/index.html",
+  "solutions/legacy-hardware/el/index.html"
 ]

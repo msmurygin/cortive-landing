@@ -1,0 +1,199 @@
+English	bg	ro
+Not known / not decided yet	Не е известно / още не е решено	Nu se știe / nu s-a decis încă
+Industries	Отрасли	Industrii
+Primary industry	Основен отрасъл	Industria principală
+Other industry: short description	Друг отрасъл: кратко описание	Altă industrie: descriere scurtă
+Operating models	Модели на работа	Modele de operare
+Hybrid / Other: short English description	Смесен / друг модел: кратко описание	Model hibrid / altul: descriere scurtă
+Warehouses	Складове	Depozite
+Active warehouse users	Активни потребители в склада	Utilizatori activi în depozit
+Approximate daily volume	Приблизителен дневен обем	Volum zilnic aproximativ
+Volume unit	Мерна единица за обема	Unitatea de măsură a volumului
+Required tracking	Необходима проследимост	Trasabilitate necesară
+Inventory ownership	Собственост на стоката	Proprietatea stocului
+Storage environment	Условия на съхранение	Condiții de depozitare
+Order channel	Канал за поръчки	Canalul comenzilor
+Units of measure	Мерни единици	Unități de măsură
+Current warehouse management	Текущо управление на склада	Gestionarea actuală a depozitului
+ERP presence	Използване на ERP	Utilizarea unui ERP
+Required integration categories	Необходими видове интеграции	Categorii de integrări necesare
+RF / mobile warehouse operations	Складови операции с RF / мобилни устройства	Operațiuni cu terminale RF / mobile
+Automation equipment in use or planned	Използвано или планирано автоматизирано оборудване	Echipamente de automatizare utilizate sau planificate
+Warehouse workflows	Складови процеси	Procese de depozit
+Process variations	Варианти на процесите	Variante ale proceselor
+Important operational problems	Важни оперативни проблеми	Probleme operaționale importante
+SKU and location master data	Основни данни за артикули и складови адреси	Date de bază despre articole și locații
+Operational requirements	Оперативни изисквания	Cerințe operaționale
+Internal project owner	Вътрешен отговорник за проекта	Responsabil intern de proiect
+Budget readiness	Подготовка на бюджета	Pregătirea bugetului
+Intended implementation horizon	Желан срок за начало на внедряването	Orizontul dorit pentru începerea implementării
+Operations and IT stakeholders	Участници от операции и ИТ	Persoane implicate din operațiuni și IT
+Integration ownership and contacts	Отговорници и контакти за интеграциите	Responsabili și contacte pentru integrări
+Representative tests and exception scenarios	Представителни тестове и сценарии за изключения	Teste reprezentative și scenarii de excepție
+Approximate depositors / inventory owners	Приблизителен брой вложители / собственици на стока	Număr aproximativ de deponenți / proprietari de stoc
+Cross-client process variation	Разлики в процесите между клиенти	Diferențe de proces între clienți
+Requirements to validate	Изисквания за проверка	Cerințe de verificat
+Countries / jurisdictions to verify	Държави / юрисдикции за проверка	Țări / jurisdicții de verificat
+Applicable obligations	Приложими задължения	Obligații aplicabile
+Identified obligations: optional short English description	Установени задължения: кратко описание по желание	Obligații identificate: descriere scurtă opțională
+Quarantine / QC release requirement	Необходимост от карантина / освобождаване след качествен контрол	Cerințe de carantină / eliberare după controlul calității
+Material stages	Етапи на материалите	Etape ale materialelor
+Production interactions	Взаимодействие с производството	Interacțiuni cu producția
+Production-order interface	Интерфейс за производствени поръчки	Interfață pentru ordine de producție
+Approximate temperature zones	Приблизителен брой температурни зони	Număr aproximativ de zone de temperatură
+Monitoring and alert ownership	Отговорници за наблюдение и сигнали	Responsabili pentru monitorizare și alerte
+Temperature exception / release process	Процес при температурно отклонение / освобождаване	Proces pentru abateri de temperatură / eliberare
+Temperature / product segregation requirement	Изискване за разделяне по температура / продукт	Cerințe de separare după temperatură / produs
+Handling flows	Потоци по товарни единици	Fluxuri pe unități de manipulare
+Forward-pick replenishment required	Необходимост от попълване на зоната за отбор	Este necesară reaprovizionarea locațiilor de picking
+Route / order waves	Вълни по маршрути / поръчки	Valuri pe rute / comenzi
+Peak / promotion variability	Промени при пикове / промоции	Variații la vârfuri / promoții
+Size / colour / style or other SKU variants	Размер / цвят / модел или други варианти на артикула	Mărime / culoare / model sau alte variante de articol
+Returns / inspection workflow required	Необходимост от процес за връщания / проверка	Este necesar un proces de retur / inspecție
+Packing and branding rules	Правила за опаковане и брандиране	Reguli de ambalare și branding
+Order-channel peak variability	Пикови промени по канали за поръчки	Variații de vârf pe canalele de comenzi
+Processes across sites	Процеси в различните складове	Procese între depozite
+Potential process / configuration reuse	Възможност за повторно използване на процеси / настройки	Posibila reutilizare a proceselor / configurărilor
+Equipment / WCS ownership	Отговорници за оборудването / WCS	Responsabili pentru echipamente / WCS
+Equipment failure / manual fallback scenarios	Сценарии при отказ на оборудването / ръчен резервен процес	Scenarii de defectare / operare manuală de rezervă
+Expected exchange pattern	Очакван модел за обмен на данни	Modelul de schimb de date așteptat
+System / interface ownership	Отговорници за системите / интерфейсите	Responsabili pentru sisteme / interfețe
+Failed-message recovery and reconciliation	Възстановяване и съгласуване на неуспешни съобщения	Recuperarea mesajelor eșuate și reconciliere
+Pharmaceutical	Фармация	Farmaceutică
+Retail	Търговия на дребно	Comerț cu amănuntul
+E-commerce	Електронна търговия	Comerț electronic
+HoReCa (hotels, restaurants and catering)	HoReCa (хотели, ресторанти и кетъринг)	HoReCa (hoteluri, restaurante și catering)
+FMCG	Бързооборотни стоки (FMCG)	Bunuri de larg consum (FMCG)
+Food & Beverage	Храни и напитки	Alimente și băuturi
+Fashion & Apparel	Мода и облекло	Modă și îmbrăcăminte
+Electronics	Електроника	Electronică
+Automotive & Spare Parts	Автомобили и резервни части	Auto și piese de schimb
+Manufacturing	Производство	Producție
+Healthcare (non-pharma)	Здравеопазване (без фармация)	Sănătate (fără produse farmaceutice)
+General Distribution	Обща дистрибуция	Distribuție generală
+Other	Друго	Altele
+Own Inventory	Собствени стоки	Stoc propriu
+3PL / Contract Logistics	3PL / договорна логистика	3PL / logistică contractuală
+Manufacturing Supply	Снабдяване на производство	Aprovizionarea producției
+Finished Goods Distribution	Дистрибуция на готова продукция	Distribuția produselor finite
+Retail Distribution Center	Дистрибуционен център за търговия на дребно	Centru de distribuție pentru retail
+E-commerce Fulfillment	Обработка на поръчки от електронна търговия	Procesarea comenzilor de comerț electronic
+Cross-docking	Крос-докинг	Cross-docking
+Hybrid / Other	Смесен / друг	Hibrid / altul
+Orders per day	Поръчки на ден	Comenzi pe zi
+Order lines per day	Редове в поръчки на ден	Linii de comandă pe zi
+Quantity only	Само количество	Doar cantitate
+Lot / batch	Партида	Lot
+Serial	Сериен номер	Număr de serie
+Expiry / best-before	Срок на годност / най-добър до	Expirare / a se consuma de preferință înainte de
+One owner	Един собственик	Un singur proprietar
+Multiple owners / depositors	Няколко собственици / вложители	Mai mulți proprietari / deponenți
+Consignment / supplier-owned	Консигнация / собственост на доставчика	Consignație / proprietatea furnizorului
+Mixed ownership rules	Смесени правила за собственост	Reguli mixte de proprietate
+Ambient	Околна температура	Temperatură ambiantă
+Cool / refrigerated	Охладено	Refrigerat
+Frozen / ultra-cold	Замразено / ултраниска температура	Congelat / temperatură foarte joasă
+Hazardous-goods area	Зона за опасни товари	Zonă pentru mărfuri periculoase
+Other controlled environment	Друга контролирана среда	Alt mediu controlat
+B2B	B2B	B2B
+B2C	B2C	B2C
+Mixed B2B / B2C	Смесен B2B / B2C	Mixt B2B / B2C
+A single handling unit	Една товарна единица	O singură unitate de manipulare
+Pallet / case / each conversions	Преобразуване палет / кашон / брой	Conversii palet / cutie / bucată
+Paper / spreadsheets / manual processes	Хартия / електронни таблици / ръчни процеси	Hârtie / foi de calcul / procese manuale
+Existing WMS	Съществуваща WMS	WMS existent
+Warehouse functions in an ERP	Складови функции в ERP	Funcții de depozit într-un ERP
+A mix of systems and manual processes	Комбинация от системи и ръчни процеси	Combinație de sisteme și procese manuale
+An ERP is in use	Използваме ERP	Utilizăm un ERP
+No ERP in use	Не използваме ERP	Nu utilizăm un ERP
+ERP selection or change planned	Планираме избор или смяна на ERP	Planificăm alegerea sau schimbarea ERP-ului
+ERP	ERP	ERP
+E-commerce / marketplaces	Електронна търговия / маркетплейси	Comerț electronic / marketplace-uri
+Carriers / parcel systems	Превозвачи / куриерски системи	Transportatori / sisteme de curierat
+Customer / partner EDI	EDI с клиенти / партньори	EDI cu clienți / parteneri
+Warehouse automation	Складова автоматизация	Automatizarea depozitului
+Other external systems	Други външни системи	Alte sisteme externe
+No external connections planned	Не се планират външни връзки	Nu sunt planificate conexiuni externe
+Used today	Използва се сега	Utilizat în prezent
+Planned for evaluation	Планира се оценка	Planificat pentru evaluare
+Not currently used or planned	Не се използва и не се планира	Nu este utilizat sau planificat
+Conveyors / sorters	Конвейери / сортери	Transportoare / sortatoare
+Automated storage and retrieval (AS/RS)	Автоматизирано складиране и извличане (AS/RS)	Depozitare și extragere automată (AS/RS)
+Mobile robots / guided vehicles (AMR/AGV)	Мобилни роботи / водени превозни средства (AMR/AGV)	Roboți mobili / vehicule ghidate (AMR/AGV)
+Other automation	Друга автоматизация	Alte automatizări
+No automation in scope	Без автоматизация в обхвата	Fără automatizare în acest proiect
+Receiving	Приемане	Recepție
+Putaway	Разполагане	Plasare în locație
+Picking	Отбор	Picking
+Replenishment	Попълване	Reaprovizionare
+Packing	Опаковане	Ambalare
+Shipping	Експедиция	Expediere
+One broadly consistent set of processes	Един общ набор от процеси	Un set de procese în mare parte uniforme
+Several process variants	Няколко варианта на процесите	Mai multe variante ale proceselor
+Site-specific or specialised rules and exceptions	Специфични за склада правила и изключения	Reguli și excepții specifice depozitului
+Inventory accuracy	Точност на наличностите	Acuratețea stocului
+Picking errors	Грешки при отбор	Erori de picking
+Warehouse productivity	Производителност на склада	Productivitatea depozitului
+Stock visibility	Видимост на наличностите	Vizibilitatea stocului
+Order fulfilment delays	Забавяне на поръчки	Întârzieri în procesarea comenzilor
+Too much manual work	Твърде много ръчен труд	Prea multă muncă manuală
+Scalability	Възможности за растеж	Scalabilitate
+No specific problem identified yet	Все още няма установен конкретен проблем	Nu a fost identificată încă o problemă concretă
+Available, reviewed and consistent	Налични, проверени и съгласувани	Disponibile, verificate și coerente
+Available but incomplete or inconsistent	Налични, но непълни или несъгласувани	Disponibile, dar incomplete sau incoerente
+Not yet available / need to be assembled	Все още липсват / трябва да се съберат	Nu sunt încă disponibile / trebuie pregătite
+Documented and agreed with process owners	Документирани и съгласувани с отговорниците	Documentate și agreate cu responsabilii de proces
+A draft exists but is not agreed	Има проект, но не е съгласуван	Există o ciornă, dar nu este agreată
+Not documented yet	Все още не са документирани	Nu sunt încă documentate
+An owner is assigned with time allocated	Има определен отговорник с отделено време	Există un responsabil desemnat, cu timp alocat
+An owner is identified; capacity is not agreed	Има отговорник, но времето не е съгласувано	Responsabilul este identificat, dar disponibilitatea nu este agreată
+No internal owner assigned	Няма определен вътрешен отговорник	Nu este desemnat un responsabil intern
+A planning basis and decision process are agreed	Основата за планиране и решенията са съгласувани	Baza de planificare și procesul decizional sunt agreate
+Budget discussions started; assumptions need work	Разговорите са започнали; допусканията трябва да се уточнят	Discuțiile au început; ipotezele trebuie clarificate
+Budget preparation has not started	Подготовката на бюджета не е започнала	Pregătirea bugetului nu a început
+Exploring whether to start a project	Проучваме дали да започнем проект	Analizăm dacă să începem un proiect
+Would like to begin within 6 months	Желаем начало до 6 месеца	Am dori să începem în 6 luni
+Considering a start in 6–12 months	Обмисляме начало след 6–12 месеца	Luăm în calcul începerea în 6–12 luni
+Considering a start more than 12 months away	Обмисляме начало след повече от 12 месеца	Luăm în calcul începerea peste mai mult de 12 luni
+Agreed and assigned	Съгласувано и възложено	Agreat și atribuit
+Partly prepared / not agreed	Частично подготвено / несъгласувано	Parțial pregătit / neagreat
+Not prepared / not assigned	Неподготвено / невъзложено	Nepregătit / neatribuit
+Broadly identical processes	Като цяло еднакви процеси	Procese în mare parte identice
+Some client-specific exceptions	Някои клиентски изключения	Unele excepții specifice clienților
+Substantially different processes	Съществено различни процеси	Procese substanțial diferite
+Inventory / access separation	Разделяне на наличности / достъп	Separarea stocului / accesului
+Client billing rules	Правила за фактуриране на клиенти	Reguli de facturare a clienților
+Client-specific labels	Клиентски етикети	Etichete specifice clienților
+Client-specific reports	Клиентски отчети	Rapoarte specifice clienților
+Client-facing interfaces	Интерфейси за клиенти	Interfețe pentru clienți
+No client-specific requirement identified	Не е установено клиентско изискване	Nu s-a identificat o cerință specifică unui client
+Some obligations have been identified by our team	Екипът е установил някои задължения	Echipa a identificat unele obligații
+No specific obligation identified by our team	Екипът не е установил конкретно задължение	Echipa nu a identificat o obligație concretă
+Yes / required	Да / необходимо	Da / necesar
+No / not required	Не / не е необходимо	Nu / nu este necesar
+Raw materials	Суровини	Materii prime
+Work in progress	Незавършено производство	Producție în curs
+Finished goods	Готова продукция	Produse finite
+Staging at production lines	Подготовка до производствените линии	Pregătire lângă liniile de producție
+Material issue	Отпускане на материали	Eliberare de materiale
+Unused-material returns	Връщане на неизползвани материали	Retur de materiale neutilizate
+Batch genealogy / traceability	История / проследимост на партидите	Genealogie / trasabilitate a loturilor
+No production interaction required	Не е необходимо взаимодействие с производство	Nu este necesară o interacțiune cu producția
+Pallet	Палет	Palet
+Case	Кашон	Cutie
+Each / item	Брой / артикул	Bucată / articol
+Broadly consistent dispatch rules	Като цяло еднакви правила за експедиция	Reguli de expediere în mare parte uniforme
+Route / channel / promotion-specific rules	Правила по маршрут / канал / промоция	Reguli specifice rutei / canalului / promoției
+Broadly consistent pattern	Като цяло постоянен модел	Model în mare parte constant
+Material peak / promotion variation	Съществени промени при пикове / промоции	Variații importante la vârfuri / promoții
+Broadly consistent rules	Като цяло еднакви правила	Reguli în mare parte uniforme
+Channel / customer-specific rules	Правила по канал / клиент	Reguli specifice canalului / clientului
+Significant peak / channel variation	Съществени промени при пикове / канали	Variații semnificative la vârfuri / pe canale
+Broadly identical	Като цяло еднакви	În mare parte identice
+Shared core with local differences	Обща основа с местни разлики	Bază comună cu diferențe locale
+Substantially different	Съществено различни	Substanțial diferite
+A shared process basis is intended	Планира се обща основа на процесите	Se urmărește o bază comună de procese
+Site-specific preparation is expected	Очаква се специфична подготовка за всеки склад	Se așteaptă o pregătire specifică fiecărui depozit
+Event / API messages	Събития / API съобщения	Evenimente / mesaje API
+Scheduled batch / files	Планирани пакети / файлове	Loturi programate / fișiere
+Mixed patterns	Смесени модели	Modele mixte

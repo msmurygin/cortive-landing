@@ -151,6 +151,46 @@
       "source": "/tools/wms-cost-calculator/index.html",
       "destination": "/wms-cost",
       "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/bg/",
+      "destination": "/solutions/legacy-hardware/bg",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/bg/index.html",
+      "destination": "/solutions/legacy-hardware/bg",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/ro/",
+      "destination": "/solutions/legacy-hardware/ro",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/ro/index.html",
+      "destination": "/solutions/legacy-hardware/ro",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/sr/",
+      "destination": "/solutions/legacy-hardware/sr",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/sr/index.html",
+      "destination": "/solutions/legacy-hardware/sr",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/el/",
+      "destination": "/solutions/legacy-hardware/el",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/el/index.html",
+      "destination": "/solutions/legacy-hardware/el",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -201,6 +241,22 @@
     {
       "source": "/solutions/legacy-hardware",
       "destination": "/solutions/legacy-hardware/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware/bg",
+      "destination": "/solutions/legacy-hardware/bg/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware/ro",
+      "destination": "/solutions/legacy-hardware/ro/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware/sr",
+      "destination": "/solutions/legacy-hardware/sr/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware/el",
+      "destination": "/solutions/legacy-hardware/el/index.html"
     }
   ],
   "headers": [
@@ -249,6 +305,6 @@
       ]
     }
   ],
-  "buildCommand": "node scripts/balkan-pages.cjs && node scripts/generate-sitemap.cjs",
+  "buildCommand": "node scripts/tool-locales.cjs && node scripts/balkan-pages.cjs && node scripts/legacy-pages.cjs && node scripts/generate-sitemap.cjs",
   "outputDirectory": "."
 }

@@ -39,7 +39,7 @@ test('VideoObject uses confirmed dates, durations, language and native URLs',()=
 });
 test('visual revision preserves published page copy, SEO, navigation, CTAs and forms',()=>{
  for(const f of ['index.html','product.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html','legal/privacy.html','legal/terms.html','thanks.html']){
-  const before=old(f),after=read(f);
+  const before=old(f),after=require('./tool-preservation.cjs')(f,read(f));
   included(text(before),text(after),f+' existing copy');
   included(matches(before,/<a\b[^>]*href=["']([^"']*)/g),matches(after,/<a\b[^>]*href=["']([^"']*)/g),f+' links');
   const ids=matches(after,/\bid=["']([^"']+)/g);included(matches(before,/\bid=["']([^"']+)/g),ids,f+' anchors');a.equal(ids.length,new Set(ids).size,f+' duplicate IDs');
@@ -49,9 +49,10 @@ test('visual revision preserves published page copy, SEO, navigation, CTAs and f
   a.deepEqual(after.replace('<script src="/design-assets/product-experiences.js" defer></script>','').match(/<script\b[\s\S]*?<\/script>/g),before.match(/<script\b[\s\S]*?<\/script>/g),f+' scripts and structured data');
  }
 });
-// Budget UI may add a local PDF action; its formulas and every other app remain frozen.
+// Budget and assessment presentation are covered by tool-locales.test.cjs and browser journeys.
+// Their formulas, inference rules, consent model and PDF engines remain frozen.
 test('visual revision preserves app logic, settings, forms, privacy wording and analytics',()=>{
- for(const f of ['vercel.json','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','assets/seo/cost-model.js','assessment-assets/assessment-model.js','assessment-assets/discovery-model.js','assessment-assets/assessment-ui.js','assessment-assets/assessment-pdf.js','assessment-assets/assessment-summary.js','assessment-assets/assessment.css','design-assets/qds.js','design-assets/qds.css'])a.equal(withoutIntegrationCatalogue(f,read(f)),old(f),f);
+ for(const f of ['vercel.json','robots.txt','sitemap.xml','api/lead.js','api/events.js','lib/lead-events.js','assets/leads.js','assets/seo/cost-model.js','assessment-assets/assessment-model.js','assessment-assets/discovery-model.js','assessment-assets/assessment-pdf.js','assessment-assets/assessment-summary.js','assessment-assets/assessment.css','design-assets/qds.js','design-assets/qds.css'])a.equal(withoutIntegrationCatalogue(f,read(f)),old(f),f);
  for(const f of ['legal/privacy.html','legal/terms.html'])a.deepEqual(text(read(f).match(/<main\b[\s\S]*?<\/main>/)[0]),text(old(f).match(/<main\b[\s\S]*?<\/main>/)[0]),f+' legal body wording');
 });
 test('publication rejects unverified media, captions, IDs and placements',()=>{

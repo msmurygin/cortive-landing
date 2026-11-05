@@ -1,0 +1,32 @@
+.q-tool-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.q-tool-lang-badge{display:inline-block;margin-left:5px;font-size:9px;line-height:1.2;opacity:.65;vertical-align:super}
+.q-localized-tool .q-article>.q-prose{width:100%;max-width:1100px;margin-inline:auto}
+.q-localized-tool .cost-grid{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
+/* Field labels and helper text share row tracks, without fixed text heights. */
+.q-localized-tool .cost-grid>label{min-width:0;grid-template-rows:minmax(2.8em,auto) auto 1fr}
+.q-localized-tool .cost-field-label{min-width:0;overflow-wrap:anywhere}
+@supports(grid-template-rows:subgrid){
+ .q-localized-tool .cost-grid{row-gap:8px}
+ .q-localized-tool .cost-grid>label{grid-row:span 3;grid-template-rows:subgrid;row-gap:8px;padding-bottom:12px}
+}
+@media(max-width:480px){.q-localized-tool .cost-grid{grid-template-columns:minmax(0,1fr)}}
+.q-tool-languages{display:flex;gap:18px;flex-wrap:wrap;padding-top:20px;padding-bottom:20px;font-size:14px}
+.q-tool-languages [aria-current]{font-weight:700;text-decoration:underline}
+#english-cost-guide{margin-top:48px;border-top:1px solid var(--q-line);padding-top:24px}
+#english-cost-guide>summary{font-weight:600;cursor:pointer;margin-bottom:24px}
+.q-localized-tool .q-hdr .q-nav{gap:16px}
+@media print{
+ .q-localized-tool{background:white!important;color:black!important}
+ .q-localized-tool .q-hdr,.q-localized-tool .q-ftr,.q-localized-tool .q-tool-languages,
+ .q-localized-tool .q-hero,.q-localized-tool #english-cost-guide,
+ .q-localized-tool .cost-actions,.q-localized-tool #calculator button,
+ .q-localized-tool #costStatus,.q-localized-tool #status{display:none!important}
+ .q-localized-tool .q-sec,.q-localized-tool .q-tool-body{padding:0!important}
+ .q-localized-tool .q-wrap,.q-localized-tool .q-prose{max-width:none!important;width:auto!important}
+ .q-localized-tool .q-tool{border:0!important;box-shadow:none!important}
+ .q-localized-tool #calculator input,.q-localized-tool #calculator select{background:white!important;color:black!important;border:1px solid #888}
+ .q-localized-tool #calculator fieldset[hidden],.q-localized-tool #calculator [data-license][hidden]{display:none!important}
+ .q-localized-tool #calculator [hidden]{display:none!important}
+ .q-localized-tool #calculator h2,.q-localized-tool #calculator h3{break-after:avoid}
+ .q-localized-tool #calculator tr{break-inside:avoid}
+}
