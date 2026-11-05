@@ -1,0 +1,45 @@
+key	bg	ro
+scopeReady	Списъкът за подготовка е готов.	Lista de pregătire este gata.
+missingScope	Обхват за уточняване:	Dimensiuni de clarificat:
+noEstimate	Все още трябва да установите цените на софтуера, труда и другите разходи. Не е изчислена цена или ROI.	Trebuie stabilite prețurile software-ului, efortul și celelalte costuri. Nu s-a estimat un preț sau ROI.
+calculated	Изчислено по вашите стойности.	Calculat din valorile introduse.
+notQuote	Това не е оферта от Quark.	Aceasta nu este o ofertă Quark.
+softwareTitle	Софтуер — липсващи разходни стойности	Software — valori de cost lipsă
+softwareAction	Проверете броя потребители, ролите и начина на таксуване. Поискайте условията за абонамент или безсрочен лиценз, включените модули и годишните такси.	Verificați numărul utilizatorilor, rolurile și modul de taxare. Cereți termenii abonamentului sau licenței perpetue, modulele incluse și taxele anuale.
+configurationTitle	Настройка и внедряване — липсващи разходни стойности	Configurare și implementare — valori de cost lipsă
+configurationAction	Документирайте настройките за всеки склад и вариантите на процесите. Поискайте човекодни, ставки и отговорности за настройка, тестове и старт. Обхватът не определя автоматично труд.	Documentați configurările fiecărui depozit și variantele proceselor. Cereți zile-om, tarife și responsabilități pentru configurare, teste și lansare. Dimensiunea proiectului nu stabilește automat efortul.
+connectionsTitle	Връзки — липсващи разходни стойности	Conexiuni — valori de cost lipsă
+connectionsAction	Избройте връзките, отговорниците, обмена на данни и обработката на грешки. Уточнете еднократните тестови и разработни разходи и текущите такси, включително пакетните услуги.	Listați conexiunile, responsabilii, fluxurile de date și tratarea erorilor. Stabiliți costurile inițiale de dezvoltare și testare și taxele recurente, inclusiv serviciile incluse în pachete.
+noConnectionsAction	Потвърдете, че не са нужни връзки; проверете ERP, превозвачи и автоматизация преди да приемете нулев разход за интеграции.	Confirmați că nu sunt necesare conexiuni; verificați ERP-ul, transportatorii și automatizarea înainte de a considera costurile integrărilor zero.
+migrationTitle	Миграция и преход — липсващи разходни стойности	Migrare și tranziție — valori de cost lipsă
+migrationAction	Оценете почистването на основните данни, началните наличности, съгласуването, обучението и покритието при прехода. Определете отговорници и разходи.	Evaluați curățarea datelor de bază, stocurile inițiale, reconcilierea, instruirea și acoperirea tranziției. Identificați responsabilii și costurile.
+devicesTitle	Устройства и инфраструктура — липсващи разходни стойности	Dispozitive și infrastructură — valori de cost lipsă
+devicesAction	Опишете скенери, принтери, етикети, Wi-Fi и хостинг по складове. Уточнете покупка, подмяна и текущи разходи.	Inventariați scanere, imprimante, etichete, Wi-Fi și găzduire pe depozite. Obțineți costurile de achiziție, înlocuire și operare.
+ownershipTitle	Дългосрочна поддръжка — липсващи разходни стойности	Administrare pe termen lung — valori de cost lipsă
+ownershipAction	Потвърдете годишната поддръжка, тестовете при обновяване и вътрешната администрация. Не отчитайте пакетни услуги два пъти.	Confirmați suportul anual, mentenanța, testele la actualizare și administrarea internă. Nu numărați de două ori serviciile incluse.
+contingencyTitle	Резерв и изключения — липсващи разходни стойности	Rezervă și excluderi — valori de cost lipsă
+contingencyAction	Запишете неуточнения обхват и собствената обосновка за резерв. Оценете отделно данъци, ДДС, инфлация, растеж и финансиране. Няма зададен резерв или ROI.	Notați domeniul neclarificat și justificarea propriei rezerve. Evaluați separat taxele, TVA-ul, inflația, creșterea și finanțarea. Nu se furnizează o rezervă implicită sau ROI.
+complexityUnknown	Оперативната сложност още не е определена	Complexitatea operațională nu este încă definită
+process:standard	Проверете стандартните процеси за приемане, съхранение и отбор и запишете изключенията.	Verificați procesele standard de recepție, depozitare și picking și notați excepțiile.
+process:moderate	Избройте всеки вариант и уточнете как ще се настрои и тества.	Listați fiecare variantă și clarificați cum va fi configurată și testată.
+process:complex	Опишете специфичните правила и изключения; уточнете кои се покриват с настройки и кои изискват код.	Descrieți regulile și excepțiile specifice; clarificați ce se configurează și ce necesită cod.
+process:unknown	Проследете приемане, съхранение, отбор, попълване и изключения за определяне на обхвата.	Parcurgeți recepția, depozitarea, pickingul, reaprovizionarea și excepțiile pentru a stabili domeniul.
+printHint	В прозореца за печат изберете „Запазване като PDF“. Данните остават локални.	În fereastra de tipărire alegeți „Salvează ca PDF“. Datele rămân locale.
+englishGuide	Пълното ръководство и публикуваните цени на доставчици (на английски)	Ghidul complet și prețurile publicate de furnizori (în engleză)
+heroTitle	Планирайте общите разходи за WMS.	Planificați costul total al unui WMS.
+heroText	Съберете софтуера, внедряването и текущите разходи в един бюджет. Започнете със списък за подготовка или въведете собствени оценки за три или пет години.	Includeți software-ul, implementarea și costurile recurente într-un singur buget. Începeți cu o listă de pregătire sau introduceți estimări proprii pentru trei sau cinci ani.
+heroNote	Инструментът не предоставя цени на Quark и не предвижда спестявания. Неизвестен разход не означава нула.	Instrumentul nu furnizează prețuri Quark și nu prevede economii. Un cost necunoscut nu înseamnă zero.
+startBudget	Към планирането на бюджета	Planifică bugetul
+noPrefilled	Без предварително въведени цени	Fără prețuri precompletate
+language	Език	Limbă
+english	На английски	În engleză
+validationError	Проверете въведените стойности.	Verificați valorile introduse.
+integerError	Въведете валиден цял брой:	Introduceți un număr întreg valid:
+numberError	Въведете неотрицателна стойност с до два десетични знака:	Introduceți o valoare nenegativă cu cel mult două zecimale:
+textError	Използвайте кратко описание до 120 знака без контролни символи:	Folosiți o descriere de cel mult 120 de caractere fără caractere de control:
+choiceError	Изберете стойност от списъка:	Alegeți o valoare din listă:
+step	Стъпка {current} от {total}	Pasul {current} din {total}
+adaptive	· следващите въпроси се адаптират към отговорите	· întrebările următoare se adaptează răspunsurilor
+openQuestions	Всички {count} отворени въпроса са запазени в подробния отчет по-долу.	Toate cele {count} întrebări deschise sunt păstrate în raportul detaliat de mai jos.
+jsonReady	JSON е създаден локално. Ако не се е записал, изберете повторното запазване. Отговорите не са изпратени.	JSON-ul a fost generat local. Dacă nu s-a salvat, alegeți salvarea din nou. Răspunsurile nu au fost trimise.
+saveAgain	Запази {type} отново	Salvează {type} din nou

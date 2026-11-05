@@ -1,0 +1,166 @@
+English	bg	ro
+Business profile	Бизнес профил	Profil de afaceri
+Operating model	Модел на работа	Model de operare
+Warehouse operations	Складови операции	Operațiuni de depozit
+Inventory characteristics	Характеристики на наличностите	Caracteristici ale stocului
+Current technology	Текущи технологии	Tehnologia actuală
+Operational challenges	Оперативни проблеми	Provocări operaționale
+Implementation preparation	Подготовка за внедряване	Pregătirea implementării
+Multi-owner discovery	Работа с няколко собственици	Analiza operării cu mai mulți proprietari
+Traceability and obligations	Проследимост и задължения	Trasabilitate și obligații
+Production supply	Снабдяване на производство	Aprovizionarea producției
+Controlled environment	Контролирана среда	Mediu controlat
+Distribution flow	Дистрибуционен поток	Flux de distribuție
+Consumer fulfilment	Обработка на потребителски поръчки	Procesarea comenzilor pentru consumatori
+Deployment replication	Повторно използване между складове	Reutilizare între depozite
+Equipment interaction	Взаимодействие с оборудване	Interacțiune cu echipamentele
+Interface characteristics	Характеристики на интерфейсите	Caracteristicile interfețelor
+Unknown	Не е известно	Necunoscut
+Not known yet	Все още не е известно	Încă nu se știe
+Optional short English description; no confidential details	Кратко описание по желание; без поверителни данни	Descriere scurtă opțională; fără detalii confidențiale
+Additional industries / change selections (optional)	Допълнителни отрасли / промяна на избора (по желание)	Industrii suplimentare / schimbarea selecției (opțional)
+Optional: stakeholders, interface ownership and test preparation	По желание: участници, отговорници за интерфейсите и тестова подготовка	Opțional: persoane implicate, responsabili pentru interfețe și pregătirea testelor
+Next	Напред	Înainte
+Back	Назад	Înapoi
+View my complete brief	Покажи пълния ми отчет	Vezi raportul complet
+Why this appears	Защо е включено	De ce apare
+No additional preparation action was identified from these answers.	От тези отговори не е установена допълнителна задача за подготовка.	Aceste răspunsuri nu au indicat o sarcină suplimentară de pregătire.
+Open questions are included in the priority actions above.	Отворените въпроси са включени в приоритетните задачи по-горе.	Întrebările deschise sunt incluse în sarcinile prioritare de mai sus.
+No unknown or conflicting answer was identified.	Не е установен неизвестен или противоречив отговор.	Nu s-a identificat un răspuns necunoscut sau contradictoriu.
+Your complete brief is ready. No answers have been transmitted.	Пълният отчет е готов. Не са изпратени отговори.	Raportul complet este gata. Nu au fost trimise răspunsuri.
+Assessment restarted. Answers and brief cleared from the page.	Оценката започва отначало. Отговорите и отчетът са изчистени от страницата.	Evaluarea a fost repornită. Răspunsurile și raportul au fost șterse din pagină.
+No explicit item identified from the answers. Validate the stated basis with your project owner.	От отговорите не е установен конкретен елемент. Проверете основата с отговорника за проекта.	Răspunsurile nu au indicat un element concret. Verificați baza declarată cu responsabilul de proiect.
+Initial exploration	Първоначално проучване	Explorare inițială
+Preparation required	Нужна е подготовка	Este necesară pregătire
+Insufficient information	Недостатъчна информация	Informații insuficiente
+Ready for detailed evaluation	Готовност за подробна оценка	Pregătit pentru evaluare detaliată
+Consent to local processing is required.	Необходимо е съгласие за локална обработка.	Este necesar acordul pentru procesare locală.
+Choose exactly one primary industry among your selected industries.	Изберете точно един основен отрасъл от посочените.	Alegeți exact o industrie principală dintre cele selectate.
+The primary industry must be one of your selected industries.	Основният отрасъл трябва да е сред посочените.	Industria principală trebuie să fie dintre cele selectate.
+Plan your	Планирайте	Planificați
+WMS budget	бюджета за WMS	bugetul pentru WMS
+WMS budget planner	Планиране на бюджет за WMS	Planificarea bugetului WMS
+Inputs stay in this page	Данните остават на тази страница	Datele rămân în această pagină
+Choose your starting point	Изберете откъде да започнете	Alegeți punctul de pornire
+Quick Scope	Първоначален обхват	Definirea proiectului
+I need a planning checklist.	Нужен ми е списък за подготовка.	Am nevoie de o listă pentru pregătire.
+Advanced Budget	Подробен бюджет	Buget detaliat
+I have cost assumptions to enter.	Имам разходни стойности за въвеждане.	Am valori de cost de introdus.
+Your warehouse scope	Обхват на склада	Dimensiunea proiectului
+Users	Потребители	Utilizatori
+Integrations	Интеграции	Integrări
+Operational complexity	Оперативна сложност	Complexitate operațională
+Standard processes	Стандартни процеси	Procese standard
+Complex or site-specific processes	Сложни или специфични за склада процеси	Procese complexe sau specifice depozitului
+Not sure yet	Още не е уточнено	Nu este încă stabilit
+Used for planning questions only; no price or effort multiplier.	Използва се само за въпросите за подготовка; не умножава цена или труд.	Se folosește doar pentru întrebările de pregătire; nu multiplică prețul sau efortul.
+1. Software and licensing	1. Софтуер и лицензиране	1. Software și licențiere
+Currency	Валута	Monedă
+USD — US dollar	USD — щатски долар	USD — dolar american
+GBP — pound sterling	GBP — британска лира	GBP — liră sterlină
+EUR — euro	EUR — евро	EUR — euro
+Use one currency for every amount. Changing this label does not convert existing numbers.	Използвайте една валута за всички суми. Смяната на етикета не преизчислява въведените стойности.	Folosiți aceeași monedă pentru toate sumele. Schimbarea etichetei nu convertește valorile introduse.
+Licensing model	Модел на лицензиране	Model de licențiere
+Subscription	Абонамент	Abonament
+Perpetual licence	Безсрочен лиценз	Licență perpetuă
+Subscription inputs	Стойности за абонамента	Valori pentru abonament
+Monthly platform fee	Месечна такса за платформата	Taxă lunară pentru platformă
+Monthly fee per user	Месечна такса на потребител	Taxă lunară per utilizator
+Perpetual licence inputs	Стойности за безсрочния лиценз	Valori pentru licența perpetuă
+One-off platform licence	Еднократен лиценз за платформата	Licență unică pentru platformă
+One-off licence per user	Еднократен лиценз на потребител	Licență unică per utilizator
+Continue to implementation	Към внедряването	Continuă la implementare
+2. Implementation and connections	2. Внедряване и връзки	2. Implementare și conexiuni
+Implementation approach	Подход за внедряване	Abordarea implementării
+Internal team and partner	Вътрешен екип и партньор	Echipă internă și partener
+Internal team	Вътрешен екип	Echipă internă
+Implementation partner	Партньор за внедряване	Partener de implementare
+No automatic discount or surcharge.	Без автоматична отстъпка или надценка.	Fără reducere sau suprataxă automată.
+Implementation person-days	Човекодни за внедряване	Zile-om de implementare
+Cost per implementation day	Цена на ден за внедряване	Cost pe zi de implementare
+One-off setup per warehouse	Еднократна настройка на склад	Configurare inițială per depozit
+One-off cost per integration	Еднократен разход на интеграция	Cost inițial per integrare
+Continue to transition	Към прехода	Continuă la tranziție
+3. Migration, training and equipment	3. Миграция, обучение и оборудване	3. Migrare, instruire și echipamente
+Total data migration cost	Общ разход за миграция на данни	Cost total de migrare a datelor
+Total training and transition cost	Общ разход за обучение и преход	Cost total de instruire și tranziție
+Devices and infrastructure per warehouse	Устройства и инфраструктура на склад	Dispozitive și infrastructură per depozit
+Continue to ongoing costs	Към текущите разходи	Continuă la costurile recurente
+4. Ongoing costs and contingency	4. Текущи разходи и резерв	4. Costuri recurente și rezervă
+Annual support / maintenance total	Обща годишна поддръжка	Total anual pentru suport / mentenanță
+Other annual operating costs	Други годишни оперативни разходи	Alte costuri operaționale anuale
+Contingency on all initial costs (%)	Резерв върху всички начални разходи (%)	Rezervă aplicată tuturor costurilor inițiale (%)
+Build planning checklist	Създай списък за подготовка	Creează lista de pregătire
+Calculate TCO	Изчисли общата цена на притежание	Calculează costul total de proprietate
+Clear inputs	Изчисти стойностите	Șterge valorile
+Your budget-planning checklist	Вашият списък за бюджетна подготовка	Lista de pregătire a bugetului
+Download Budget Checklist (PDF)	Печат / запазване като PDF	Tipărește / salvează ca PDF
+Open Advanced Budget	Отвори подробния бюджет	Deschide bugetul detaliat
+Your input-based budget	Бюджет по вашите стойности	Buget calculat din valorile introduse
+Initial one-off cost	Начален еднократен разход	Cost inițial unic
+Annual recurring cost	Годишен текущ разход	Cost anual recurent
+Three-year TCO	Обща цена за три години	Cost total pe trei ani
+Five-year TCO	Обща цена за пет години	Cost total pe cinci ani
+Included categories	Включени категории	Categorii incluse
+Category	Категория	Categorie
+Timing	Период	Perioadă
+Amount	Сума	Sumă
+How the calculation works	Как се изчислява	Cum se calculează
+Software	Софтуер	Software
+Implementation days	Дни за внедряване	Zile de implementare
+Warehouse setup	Настройка на склад	Configurarea depozitului
+Migration	Миграция	Migrare
+Training	Обучение	Instruire
+Devices and infrastructure	Устройства и инфраструктура	Dispozitive și infrastructură
+Initial contingency	Начален резерв	Rezervă inițială
+Support / maintenance	Поддръжка	Suport / mentenanță
+Other recurring operations	Други текущи операции	Alte operațiuni recurente
+One-off	Еднократно	O singură dată
+Each year	Всяка година	În fiecare an
+Budget assumptions changed. Calculate again to update the results.	Допусканията са променени. Изчислете отново за актуален резултат.	Ipotezele s-au schimbat. Recalculați pentru rezultate actualizate.
+Scope changed. Build your checklist to update the plan.	Обхватът е променен. Създайте отново списъка за актуален план.	Proiectul s-a schimbat. Generați din nou lista pentru a actualiza planul.
+Inputs changed. Calculate to update the results.	Стойностите са променени. Изчислете отново.	Valorile s-au schimbat. Recalculați rezultatele.
+Your scope is retained. Add your own cost assumptions, starting with software and licensing.	Обхватът е запазен. Добавете разходни стойности, като започнете със софтуера и лицензирането.	Dimensiunea proiectului a fost păstrată. Adăugați valorile de cost, începând cu software-ul și licențierea.
+A value is missing or invalid. Check the highlighted field; unknown costs cannot be treated as zero.	Липсва или е невалидна стойност. Проверете посоченото поле; неизвестните разходи не са нула.	O valoare lipsește sau este invalidă. Verificați câmpul indicat; costurile necunoscute nu sunt zero.
+Choose an operational complexity before calculating a budget. No effort multiplier is applied.	Изберете оперативна сложност преди изчисляването. Не се прилага множител за труд.	Alegeți complexitatea operațională înainte de calcul. Nu se aplică un multiplicator de efort.
+Choose currency and licensing model.	Изберете валута и модел на лицензиране.	Alegeți moneda și modelul de licențiere.
+Choose explicit scope assumptions.	Посочете конкретни допускания за обхвата.	Alegeți ipoteze explicite pentru proiect.
+Choose an operational complexity.	Изберете оперативна сложност.	Alegeți complexitatea operațională.
+The total is too large to calculate safely.	Общата сума е твърде голяма за надеждно изчисление.	Totalul este prea mare pentru un calcul sigur.
+Privacy	Поверителност	Confidențialitate
+Terms	Условия	Termeni
+Resources	Ресурси	Resurse
+Documentation	Документация	Documentație
+Company	Компания	Companie
+Product	Продукт	Produs
+Pricing	Цени	Prețuri
+Product Overview	Преглед на продукта	Prezentarea produsului
+Integrations	Интеграции	Integrări
+WMS Cost Calculator	Калкулатор за разходите за WMS	Calculator de costuri WMS
+WMS Readiness Assessment	Оценка на готовността за WMS	Evaluarea pregătirii pentru WMS
+Readiness Assessment	Готовност за WMS	Pregătire pentru WMS
+Legacy RF terminals	Стари RF терминали	Terminale RF vechi
+Request a Demo	Обсъдете вашия склад	Discutați despre depozitul dvs.
+Menu	Меню	Meniu
+Close	Затвори	Închide
+Dark theme	Тъмна тема	Temă întunecată
+Switch colour theme	Смени темата	Schimbă tema
+Skip to content	Към съдържанието	Sari la conținut
+WMS cost	Разходи за WMS	Costuri WMS
+Resource · Budget planning	Ресурс · Планиране на бюджет	Resursă · Planificarea bugetului
+A configurable WMS for receiving, inventory and fulfilment.	Гъвкава WMS за приемане, наличности и обработка на поръчки.	Un WMS configurabil pentru recepție, stoc și procesarea comenzilor.
+Capability map	Карта на възможностите	Harta funcțiilor
+Workflow examples	Примери за процеси	Exemple de procese
+Long-term Vision	Дългосрочна визия	Viziune pe termen lung
+Vision	Визия	Viziune
+Warehouse management software	Софтуер за управление на склад	Software de gestionare a depozitului
+© 2026 Quark · EU entity	© 2026 Quark · Организация в ЕС	© 2026 Quark · Entitate UE
+Main	Основно меню	Meniu principal
+Mobile	Мобилно меню	Meniu mobil
+Breadcrumb	Навигация	Navigare
+On this page	На тази страница	Pe această pagină
+Quark home	Начало на Quark	Pagina principală Quark
+Question progress	Напредък на въпросника	Progresul chestionarului
+Brief sections	Раздели на отчета	Secțiunile raportului
+Generated download files	Създадени файлове за изтегляне	Fișiere generate pentru descărcare
+Detailed project preparation brief	Подробен отчет за подготовката на проекта	Raport detaliat de pregătire a proiectului

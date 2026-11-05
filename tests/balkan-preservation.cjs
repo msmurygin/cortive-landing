@@ -1,10 +1,11 @@
 const localePaths = ['/bg', '/ro', '/sr', '/el'];
-const newPaths = [...localePaths, '/solutions/legacy-hardware'];
+const newPaths = [...localePaths, '/solutions/legacy-hardware', ...localePaths.map(locale => '/solutions/legacy-hardware' + locale)];
 const aliases = ['/tools/wms-cost-calculator', '/tools/wms-cost-calculator/',
   '/tools/wms-cost-calculator.html', '/tools/wms-cost-calculator/index.html'];
 
 // Keep historical release assertions scoped to the content they originally protected.
 module.exports = function withoutBalkanPages(file, text) {
+  text = require('./tool-preservation.cjs')(file, text);
   if (file === 'design-assets/qds.js') {
     return text.replace("const menuLabel=burger.querySelector('span').textContent,closeLabel=burger.dataset.closeLabel||'Close';\n", '')
       .replace("burger.querySelector('span').textContent=closeLabel", "burger.querySelector('span').textContent='Close'")
@@ -21,7 +22,7 @@ module.exports = function withoutBalkanPages(file, text) {
     config.rewrites = config.rewrites.filter(rule => !(
       Object.keys(rule).length === 2 && newPaths.includes(rule.source) && rule.destination === rule.source + '/index.html'
     ));
-    if (config.buildCommand === 'node scripts/balkan-pages.cjs && node scripts/generate-sitemap.cjs') delete config.buildCommand;
+    if (['node scripts/balkan-pages.cjs && node scripts/generate-sitemap.cjs', 'node scripts/balkan-pages.cjs && node scripts/legacy-pages.cjs && node scripts/generate-sitemap.cjs', 'node scripts/tool-locales.cjs && node scripts/balkan-pages.cjs && node scripts/legacy-pages.cjs && node scripts/generate-sitemap.cjs'].includes(config.buildCommand)) delete config.buildCommand;
     if (config.outputDirectory === '.') delete config.outputDirectory;
     return JSON.stringify(config, null, 2) + '\n';
   }

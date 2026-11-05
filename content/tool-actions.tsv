@@ -1,0 +1,67 @@
+key	bg	ro
+industries	Съгласувайте основния и допълнителните отрасли със спонсора на проекта.	Agreați industria principală și industriile suplimentare cu sponsorul proiectului.
+primaryIndustry	Изберете един основен отрасъл от посочените.	Alegeți o industrie principală dintre cele selectate.
+models	Опишете със складовия екип реалните модели за собствени стоки, клиенти, производство и дистрибуция.	Descrieți cu echipa operațională modelele reale de stoc propriu, clienți, producție și distribuție.
+sites	Съставете списък на текущите и планираните складове с отговорника за операциите.	Listați depozitele actuale și planificate cu responsabilul de operațiuni.
+users	Уточнете ролите и приблизителния достъп по смени с ръководителите.	Confirmați rolurile și accesul aproximativ pe schimburi cu supervizorii.
+volume	Прегледайте реални дневни обеми и пикове; не използвайте общи отраслови норми.	Analizați volume zilnice și vârfuri reprezentative; nu folosiți repere generale de industrie.
+volumeUnit	С отговорника за отчетите изберете поръчки или редове в поръчки.	Alegeți comenzi sau linii de comandă împreună cu responsabilul de raportare.
+tracking	Проверете примерни артикули и клиентски изисквания за проследимост с отговорника за наличностите.	Verificați articole reprezentative și cerințele clienților privind trasabilitatea cu responsabilul de stoc.
+ownership	Уточнете правната и оперативната собственост и нуждата от разделяне на стоките.	Confirmați proprietatea juridică și operațională și necesitatea separării stocurilor.
+environment	Прегледайте условията за съхранение на продуктите и реалните контролирани зони.	Verificați instrucțiunile de depozitare și zonele controlate existente.
+channel	Уточнете B2B/B2C потоците и изключенията с обслужването на клиенти.	Identificați fluxurile B2B/B2C și excepțiile cu serviciul clienți.
+units	Проверете преобразуванията на единиците и определенията за товарни единици с примерни артикули.	Verificați conversiile unităților și definițiile unităților de manipulare pe articole reprezentative.
+currentSystem	Направете с ИТ опис на електронните таблици и складовите приложения.	Inventariați foile de calcul și aplicațiile de depozit împreună cu IT.
+erp	Уточнете текущата или планираната ERP система и отговорника за данните.	Identificați ERP-ul actual sau planificat și responsabilul de date.
+integrations	С ИТ опишете системите, събитията, посоките на обмен и отговорниците.	Listați cu IT sistemele, evenimentele, direcțiile schimburilor și responsabilii.
+rf	Опишете скенери, принтери и Wi-Fi покритие; проверете представителни задачи.	Inventariați scanerele, imprimantele și acoperirea Wi-Fi; verificați sarcini reprezentative.
+automation	С инженерите опишете оборудването, управлението му и ръчните резервни процеси.	Inventariați cu inginerii echipamentele, controlul lor și procesele manuale de rezervă.
+processes	Проследете представителни процеси за приемане, съхранение и експедиция.	Parcurgeți procese reprezentative de recepție, depozitare și expediere.
+variants	Запишете изключенията по склад, клиент и канал с отговорниците за процесите.	Documentați excepțiile pe depozit, client și canal cu responsabilii de proces.
+challenges	Съберете примери и текущи измервания за заявените оперативни проблеми.	Colectați exemple și o bază măsurată pentru problemele operaționale declarate.
+masterData	Съберете кодове на артикули и адреси, единици, статуси и начални наличности. Определете отговорник за проверка и съгласуване.	Colectați coduri de articole și locații, unități, stări și stocuri inițiale. Desemnați un responsabil pentru verificare și reconciliere.
+requirements	Съгласувайте основните процеси, изключенията и критериите за приемане с отговорниците.	Agreați procesele principale, excepțiile și criteriile de acceptare cu responsabilii.
+owner	Определете вътрешен отговорник, права за вземане на решения и отделено време.	Desemnați un responsabil intern, drepturi de decizie și timp alocat.
+budget	Определете отговорници за еднократните и текущите разходи, процес за решения и реални оценки.	Desemnați responsabili pentru costurile inițiale și recurente, agreați procesul decizional și obțineți estimări reale.
+horizon	Съгласувайте желания срок за решение и начало отделно от оценката на доставчика за изпълнение.	Agreați intervalul dorit pentru decizie și început separat de estimarea de livrare a furnizorului.
+stakeholders	Уточнете участниците от операции, ИТ и спонсора и тяхната наличност.	Identificați decidenții din operațiuni, IT și sponsorul, precum și disponibilitatea lor.
+integrationOwner	Определете отговорник за всяка система източник, система получател и обмен.	Desemnați un responsabil pentru fiecare sistem sursă, sistem destinație și schimb.
+uat	Подгответе нормални и изключителни тестови сценарии и съгласувайте отговорностите за приемане.	Pregătiți teste pentru cazuri normale și excepții și agreați responsabilitățile de acceptare.
+owners	Избройте вложителите и клиентските групи; разграничете броя им от разликите в правилата.	Listați deponenții și grupurile de clienți; separați numărul lor de diferențele dintre reguli.
+clientVariance	Сравнете представителни клиенти и документирайте изключенията; броят клиенти сам не определя сложността.	Comparați clienți reprezentativi și documentați excepțiile; numărul clienților nu stabilește singur complexitatea.
+clientNeeds	Проверете с оперативните и търговските отговорници кои правила за разделяне, фактуриране, етикети, отчети и интерфейси действително важат.	Verificați cu responsabilii operaționali și comerciali ce cerințe de separare, facturare, etichete, rapoarte și interfețe se aplică.
+jurisdiction	Нека отговорният специалист уточни държавите, юрисдикциите и продуктовите потоци за проверка.	Specialistul responsabil trebuie să identifice țările, jurisdicțiile și fluxurile de produse de verificat.
+obligations	Нека компетентният специалист установи приложимите задължения и доказателства. Това не е правен одит.	Specialistul responsabil trebuie să identifice obligațiile aplicabile și dovezile. Acesta nu este un audit juridic.
+obligationNotes	Запишете вече установените от специалиста задължения или оставете темата изрично неизвестна.	Notați obligațiile deja identificate de specialist sau păstrați explicit răspunsul necunoscut.
+qc	С качеството и операциите уточнете статусите, правото за освобождаване от карантина и изключенията.	Confirmați cu echipele de calitate și operațiuni stările stocului, autoritatea de eliberare și excepțiile.
+materials	С производственото планиране уточнете суровини, незавършено производство и готови продукти.	Identificați materiile prime, producția în curs și produsele finite cu planificarea producției.
+productionFlows	Проследете подготовката, отпускането и връщането на материали; опишете нужните партидни и качествени изключения.	Parcurgeți pregătirea, eliberarea și returul materialelor; documentați excepțiile de lot și calitate necesare.
+productionLink	С производственото ИТ опишете събитията по поръчките, отговорниците за данни и възстановяването.	Descrieți cu IT-ul producției evenimentele ordinelor, responsabilii de date și recuperarea.
+temperatureZones	С отговорника за съоръжението и качеството опишете зоните и температурните диапазони по продукти.	Listați zonele și intervalele specifice produselor cu responsabilii clădirii și calității.
+monitoring	Определете отговорници за наблюдение и сигнали; прегледайте представителен запис на сигнал.	Desemnați responsabili pentru monitorizare și alerte; analizați un exemplu de alertă.
+excursions	С компетентния отговорник съгласувайте действията при температурно отклонение, карантина и освобождаване.	Agreați cu responsabilul calificat tratarea abaterilor de temperatură, carantina și eliberarea.
+segregation	Потвърдете правилата за разделяне с отговорен специалист според продуктовите инструкции и приложимите задължения.	Confirmați regulile de separare cu specialistul responsabil, conform instrucțiunilor produselor și obligațiilor aplicabile.
+handling	Изберете представителни потоци с палети, кашони и бройки и проверете преобразуванията на единиците.	Alegeți fluxuri reprezentative cu paleți, cutii și bucăți și verificați conversiile unităților.
+replenishment	Проследете попълване на място за отбор и случай на недостиг с оперативния екип.	Urmăriți o reaprovizionare a locației de picking și un caz de lipsă de stoc cu operațiunile.
+dispatch	Документирайте правилата и изключенията за експедиция по маршрут, поръчка и промоция.	Documentați regulile și excepțiile de expediere pe rută, comandă și promoție.
+peaks	Съберете представителни поръчки за нормално и пиково натоварване и промоционални промени.	Colectați un mix reprezentativ de comenzi normale, de vârf și schimbări promoționale.
+productVariants	С отговорника за каталога проверете кодовете на основни продукти и варианти и примери за размер, цвят и модел.	Verificați codurile de produs și variantă și exemple de mărime, culoare și model cu responsabilul de catalog.
+returns	Опишете проверката, състоянието, решението за връщане и отговорностите за повторно складиране.	Documentați inspecția returului, starea, decizia de tratare și responsabilitățile de restocare.
+packing	Сравнете опаковки, етикети и изключения по канал и клиент.	Comparați ambalajele, etichetele și excepțiile pe canal și client.
+orderPeaks	Документирайте пиковете и промените по канали без да приемате гарантирана производителност на продукта.	Documentați vârfurile și schimbările pe canale fără a presupune un debit garantat al produsului.
+siteSimilarity	С местните отговорници сравнете процесите и изключенията в различните складове.	Comparați procesele și excepțiile între depozite cu responsabilii locali.
+replication	Уточнете коя обща основа може да се използва отново и кои местни решения изискват проверка.	Identificați ce bază de proces poate fi reutilizată și ce decizii locale trebuie verificate.
+equipmentOwner	Определете доставчиците на оборудване и контролери, отговорностите за интерфейсите и контактите за поддръжка.	Identificați furnizorii de echipamente și controlere, responsabilitățile interfețelor și contactele de suport.
+fallback	С инженерите съгласувайте тестове за отказ, възстановяване и безопасен ръчен резервен процес.	Agreați cu inginerii teste de defectare, recuperare și operare manuală de rezervă în siguranță.
+interfacePattern	Избройте съобщенията, файловете и API, условията за задействане, честотата и отговорниците от двете страни.	Listați mesajele, fișierele și API-urile, declanșatoarele, frecvența și responsabilii ambelor sisteme.
+interfaceOwnership	Определете отговорници за системите и обмена от двете страни.	Desemnați responsabili pentru sisteme și schimburi de ambele părți.
+interfaceRecovery	С ИТ определете тестове за повторни опити, идемпотентност, съгласуване и приемане на неуспешни съобщения.	Definiți cu IT teste pentru reîncercări, idempotență, reconciliere și acceptarea mesajelor eșuate.
+problem-accuracy	Сравнете физическите и отчетните наличности и причините за корекции с отговорника за стоките.	Comparați stocul fizic, cel înregistrat și motivele ajustărilor cu responsabilul de stoc.
+problem-errors	Проследете грешка при отбор от откриването до корекцията с ръководителя.	Urmăriți o eroare de picking de la detectare la corectare cu supervizorul.
+problem-productivity	Наблюдавайте представителни задачи и измерете текущия труд преди обсъждане на подобрения.	Observați sarcini reprezentative și măsurați efortul actual înainte de a discuta îmbunătățiri.
+problem-visibility	Съгласувайте нужните изгледи на наличности, актуалността и границите по собственост и статус.	Agreați vizualizările de stoc, actualitatea și delimitările după proprietate și stare.
+problem-delays	Проследете поръчка през предаванията между екипи и запишете реалните места на изчакване.	Urmăriți o comandă prin transferurile dintre echipe și notați punctele reale de așteptare.
+problem-manual	Избройте двойното въвеждане и ръчните решения с отговорниците; запазете необходимите контроли.	Listați introducerile duble și deciziile manuale cu responsabilii; păstrați controalele necesare.
+problem-scale	Опишете планираните промени по складове, потребители и процеси, без да предполагате поддръжка от доставчика.	Descrieți schimbările planificate de depozite, utilizatori și procese fără a presupune suportul furnizorului.
+otherIndustry	Уточнете краткото описание с отговорника за проекта.	Confirmați descrierea scurtă cu responsabilul de proiect.
+otherModel	Уточнете краткото описание с отговорника за проекта.	Confirmați descrierea scurtă cu responsabilul de proiect.
