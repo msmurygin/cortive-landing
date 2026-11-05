@@ -199,12 +199,10 @@
       else if (href === '/solutions/legacy-hardware') anchor.setAttribute('href', href + '/' + code);
       else if (/^\/(pricing|integrations|vision|legal\/)/.test(href) || href.startsWith('https://docs.quark.build')) {
         anchor.setAttribute('hreflang', 'en');
-        const note = doc.createElement('span'); note.textContent = ' (' + b('english') + ')';
-        if (anchor.closest('header')) {
-          note.className = 'q-tool-sr';
-          const badge = doc.createElement('small'); badge.className = 'q-tool-lang-badge'; badge.textContent = 'EN'; badge.setAttribute('aria-hidden', 'true');
-          anchor.append(note, badge);
-        } else anchor.append(note);
+        if (!anchor.closest('header')) {
+          const note = doc.createElement('span'); note.textContent = ' (' + b('english') + ')';
+          anchor.append(note);
+        }
       }
     }
     // Give the field heading its own grid item. Subgrid can then align controls
