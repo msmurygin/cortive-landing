@@ -1,0 +1,363 @@
+English	el	sr
+Not known / not decided yet	Δεν είναι γνωστό / δεν έχει αποφασιστεί	Nije poznato / još nije odlučeno
+Industries	Κλάδοι	Delatnosti
+Primary industry	Κύριος κλάδος	Glavna delatnost
+Other industry: short description	Άλλος κλάδος: σύντομη περιγραφή	Druga delatnost: kratak opis
+Operating models	Μοντέλα λειτουργίας	Modeli poslovanja
+Hybrid / Other: short English description	Υβριδικό / άλλο μοντέλο: σύντομη περιγραφή	Hibridni / drugi model: kratak opis
+Warehouses	Αποθήκες	Skladišta
+Active warehouse users	Ενεργοί χρήστες αποθήκης	Aktivni korisnici skladišta
+Approximate daily volume	Κατά προσέγγιση ημερήσιος όγκος	Približan dnevni obim
+Volume unit	Μονάδα μέτρησης όγκου	Jedinica obima
+Required tracking	Απαιτούμενη ιχνηλασιμότητα	Potrebno praćenje
+Inventory ownership	Κυριότητα αποθέματος	Vlasništvo nad zalihama
+Storage environment	Συνθήκες αποθήκευσης	Uslovi skladištenja
+Order channel	Κανάλι παραγγελιών	Kanal porudžbina
+Units of measure	Μονάδες μέτρησης	Jedinice mere
+Current warehouse management	Τρέχουσα διαχείριση αποθήκης	Trenutno upravljanje skladištem
+ERP presence	Χρήση ERP	Korišćenje ERP-a
+Required integration categories	Απαιτούμενες κατηγορίες διασυνδέσεων	Potrebne kategorije integracija
+RF / mobile warehouse operations	Εργασίες με RF / κινητές συσκευές	Skladišne operacije na RF / mobilnim uređajima
+Automation equipment in use or planned	Αυτοματισμοί σε χρήση ή στον σχεδιασμό	Automatizovana oprema u upotrebi ili planu
+Warehouse workflows	Διαδικασίες αποθήκης	Skladišni procesi
+Process variations	Παραλλαγές διαδικασιών	Varijante procesa
+Important operational problems	Σημαντικά λειτουργικά προβλήματα	Važni operativni problemi
+SKU and location master data	Βασικά δεδομένα ειδών και θέσεων	Matični podaci o artiklima i lokacijama
+Operational requirements	Λειτουργικές απαιτήσεις	Operativni zahtevi
+Internal project owner	Εσωτερικός υπεύθυνος έργου	Interna odgovorna osoba za projekat
+Budget readiness	Προετοιμασία προϋπολογισμού	Pripremljenost budžeta
+Intended implementation horizon	Επιθυμητός ορίζοντας έναρξης	Željeni rok za početak uvođenja
+Operations and IT stakeholders	Συμμετέχοντες από λειτουργία και πληροφορική	Učesnici iz operacija i IT-a
+Integration ownership and contacts	Υπεύθυνοι και επαφές διασυνδέσεων	Odgovorne osobe i kontakti za integracije
+Representative tests and exception scenarios	Αντιπροσωπευτικές δοκιμές και εξαιρέσεις	Reprezentativni testovi i scenariji izuzetaka
+Approximate depositors / inventory owners	Περίπου πόσοι αποθέτες / ιδιοκτήτες αποθέματος	Približan broj deponenata / vlasnika zaliha
+Cross-client process variation	Διαφορές διαδικασιών μεταξύ πελατών	Razlike u procesima između klijenata
+Requirements to validate	Απαιτήσεις προς έλεγχο	Zahtevi za proveru
+Countries / jurisdictions to verify	Χώρες / δικαιοδοσίες προς έλεγχο	Države / jurisdikcije za proveru
+Applicable obligations	Εφαρμοστέες υποχρεώσεις	Primenljive obaveze
+Identified obligations: optional short English description	Γνωστές υποχρεώσεις: προαιρετική σύντομη περιγραφή	Utvrđene obaveze: neobavezan kratak opis
+Quarantine / QC release requirement	Απαίτηση καραντίνας / αποδέσμευσης μετά τον ποιοτικό έλεγχο	Zahtev za karantin / puštanje posle kontrole kvaliteta
+Material stages	Στάδια υλικών	Faze materijala
+Production interactions	Σύνδεση με την παραγωγή	Interakcije sa proizvodnjom
+Production-order interface	Διασύνδεση εντολών παραγωγής	Interfejs za proizvodne naloge
+Approximate temperature zones	Περίπου πόσες θερμοκρασιακές ζώνες	Približan broj temperaturnih zona
+Monitoring and alert ownership	Υπεύθυνοι παρακολούθησης και ειδοποιήσεων	Odgovorni za nadzor i upozorenja
+Temperature exception / release process	Διαδικασία απόκλισης θερμοκρασίας / αποδέσμευσης	Postupak pri temperaturnom odstupanju / puštanju
+Temperature / product segregation requirement	Απαίτηση διαχωρισμού θερμοκρασίας / προϊόντων	Zahtev za razdvajanje po temperaturi / proizvodu
+Handling flows	Ροές μονάδων διακίνησης	Tokovi jedinica rukovanja
+Forward-pick replenishment required	Απαιτείται ανατροφοδότηση θέσεων συλλογής	Potrebna dopuna lokacija za komisioniranje
+Route / order waves	Κύματα ανά δρομολόγιο / παραγγελία	Talasi po rutama / porudžbinama
+Peak / promotion variability	Διακυμάνσεις αιχμών / προωθητικών ενεργειών	Promene pri vršnim opterećenjima / promocijama
+Size / colour / style or other SKU variants	Μέγεθος / χρώμα / σχέδιο ή άλλες παραλλαγές είδους	Veličina / boja / model ili druge varijante artikla
+Returns / inspection workflow required	Απαιτείται διαδικασία επιστροφών / ελέγχου	Potreban proces povrata / pregleda
+Packing and branding rules	Κανόνες συσκευασίας και εταιρικής σήμανσης	Pravila pakovanja i brendiranja
+Order-channel peak variability	Διακυμάνσεις αιχμών ανά κανάλι παραγγελιών	Promene vršnog opterećenja po kanalima porudžbina
+Processes across sites	Διαδικασίες μεταξύ εγκαταστάσεων	Procesi u različitim skladištima
+Potential process / configuration reuse	Δυνατότητα επαναχρησιμοποίησης διαδικασιών / ρυθμίσεων	Moguća ponovna upotreba procesa / podešavanja
+Equipment / WCS ownership	Υπεύθυνοι εξοπλισμού / WCS	Odgovorni za opremu / WCS
+Equipment failure / manual fallback scenarios	Σενάρια βλάβης εξοπλισμού / χειροκίνητης εφεδρείας	Scenariji kvara opreme / ručnog rezervnog rada
+Expected exchange pattern	Αναμενόμενος τρόπος ανταλλαγής δεδομένων	Očekivani obrazac razmene podataka
+System / interface ownership	Υπεύθυνοι συστημάτων / διασυνδέσεων	Odgovorni za sisteme / interfejse
+Failed-message recovery and reconciliation	Ανάκτηση αποτυχημένων μηνυμάτων και συμφωνία δεδομένων	Oporavak neuspelih poruka i usaglašavanje podataka
+Pharmaceutical	Φαρμακευτικά	Farmacija
+Retail	Λιανική	Maloprodaja
+E-commerce	Ηλεκτρονικό εμπόριο	Elektronska trgovina
+HoReCa (hotels, restaurants and catering)	HoReCa (ξενοδοχεία, εστιατόρια και τροφοδοσία)	HoReCa (hoteli, restorani i ketering)
+FMCG	Ταχυκίνητα καταναλωτικά αγαθά (FMCG)	Roba široke potrošnje (FMCG)
+Food & Beverage	Τρόφιμα και ποτά	Hrana i piće
+Fashion & Apparel	Μόδα και ένδυση	Moda i odeća
+Electronics	Ηλεκτρονικά	Elektronika
+Automotive & Spare Parts	Αυτοκίνητα και ανταλλακτικά	Automobili i rezervni delovi
+Manufacturing	Μεταποίηση	Proizvodnja
+Healthcare (non-pharma)	Υγειονομική περίθαλψη (εκτός φαρμάκων)	Zdravstvo (bez farmacije)
+General Distribution	Γενική διανομή	Opšta distribucija
+Other	Άλλο	Drugo
+Own Inventory	Ιδιόκτητο απόθεμα	Sopstvene zalihe
+3PL / Contract Logistics	3PL / συμβατική εφοδιαστική	3PL / ugovorna logistika
+Manufacturing Supply	Τροφοδοσία παραγωγής	Snabdevanje proizvodnje
+Finished Goods Distribution	Διανομή έτοιμων προϊόντων	Distribucija gotovih proizvoda
+Retail Distribution Center	Κέντρο διανομής λιανικής	Distributivni centar za maloprodaju
+E-commerce Fulfillment	Εκτέλεση παραγγελιών ηλεκτρονικού εμπορίου	Obrada porudžbina elektronske trgovine
+Cross-docking	Άμεση διαμετακόμιση (cross-docking)	Pretovar bez skladištenja (cross-docking)
+Hybrid / Other	Υβριδικό / άλλο	Hibridno / drugo
+Orders per day	Παραγγελίες ανά ημέρα	Porudžbine dnevno
+Order lines per day	Γραμμές παραγγελιών ανά ημέρα	Stavke porudžbina dnevno
+Quantity only	Μόνο ποσότητα	Samo količina
+Lot / batch	Παρτίδα	Serija / lot
+Serial	Σειριακός αριθμός	Serijski broj
+Expiry / best-before	Ημερομηνία λήξης / ανάλωση κατά προτίμηση πριν από	Rok upotrebe / najbolje upotrebiti do
+One owner	Ένας ιδιοκτήτης	Jedan vlasnik
+Multiple owners / depositors	Πολλοί ιδιοκτήτες / αποθέτες	Više vlasnika / deponenata
+Consignment / supplier-owned	Παρακαταθήκη / κυριότητα προμηθευτή	Konsignacija / vlasništvo dobavljača
+Mixed ownership rules	Μεικτοί κανόνες κυριότητας	Mešovita pravila vlasništva
+Ambient	Θερμοκρασία περιβάλλοντος	Ambijentalna temperatura
+Cool / refrigerated	Ψύξη	Rashlađeno
+Frozen / ultra-cold	Κατάψυξη / υπερψύξη	Zamrznuto / veoma niska temperatura
+Hazardous-goods area	Ζώνη επικίνδυνων εμπορευμάτων	Zona opasne robe
+Other controlled environment	Άλλο ελεγχόμενο περιβάλλον	Drugi kontrolisani uslovi
+B2B	B2B	B2B
+B2C	B2C	B2C
+Mixed B2B / B2C	Μεικτό B2B / B2C	Mešovito B2B / B2C
+A single handling unit	Μία μονάδα διακίνησης	Jedna jedinica rukovanja
+Pallet / case / each conversions	Μετατροπές παλέτας / κιβωτίου / τεμαχίου	Konverzije paleta / kutija / komad
+Paper / spreadsheets / manual processes	Χαρτί / υπολογιστικά φύλλα / χειροκίνητες διαδικασίες	Papir / tabele / ručni procesi
+Existing WMS	Υπάρχον WMS	Postojeći WMS
+Warehouse functions in an ERP	Λειτουργίες αποθήκης μέσα σε ERP	Skladišne funkcije u ERP-u
+A mix of systems and manual processes	Συνδυασμός συστημάτων και χειροκίνητων διαδικασιών	Kombinacija sistema i ručnih procesa
+An ERP is in use	Χρησιμοποιείται ERP	ERP se koristi
+No ERP in use	Δεν χρησιμοποιείται ERP	ERP se ne koristi
+ERP selection or change planned	Σχεδιάζεται επιλογή ή αλλαγή ERP	Planiran izbor ili zamena ERP-a
+ERP	ERP	ERP
+E-commerce / marketplaces	Ηλεκτρονικό εμπόριο / πλατφόρμες αγορών	Elektronska trgovina / tržišne platforme
+Carriers / parcel systems	Μεταφορείς / συστήματα δεμάτων	Prevoznici / kurirski sistemi
+Customer / partner EDI	EDI πελατών / συνεργατών	EDI sa klijentima / partnerima
+Warehouse automation	Αυτοματισμοί αποθήκης	Automatizacija skladišta
+Other external systems	Άλλα εξωτερικά συστήματα	Drugi spoljni sistemi
+No external connections planned	Δεν σχεδιάζονται εξωτερικές συνδέσεις	Spoljne veze nisu planirane
+Used today	Χρησιμοποιείται σήμερα	Trenutno se koristi
+Planned for evaluation	Σχεδιάζεται αξιολόγηση	Planirano za procenu
+Not currently used or planned	Δεν χρησιμοποιείται ούτε σχεδιάζεται	Ne koristi se niti je planirano
+Conveyors / sorters	Μεταφορικές ταινίες / διαλογείς	Transporteri / sorteri
+Automated storage and retrieval (AS/RS)	Αυτόματη αποθήκευση και ανάκτηση (AS/RS)	Automatizovano skladištenje i izuzimanje (AS/RS)
+Mobile robots / guided vehicles (AMR/AGV)	Κινητά ρομπότ / καθοδηγούμενα οχήματα (AMR/AGV)	Mobilni roboti / vođena vozila (AMR/AGV)
+Other automation	Άλλοι αυτοματισμοί	Druga automatizacija
+No automation in scope	Χωρίς αυτοματισμούς στο πεδίο του έργου	Automatizacija nije u obuhvatu
+Receiving	Παραλαβή	Prijem
+Putaway	Τοποθέτηση	Smeštanje
+Picking	Συλλογή	Komisioniranje
+Replenishment	Ανατροφοδότηση	Dopuna
+Packing	Συσκευασία	Pakovanje
+Shipping	Αποστολή	Otprema
+One broadly consistent set of processes	Ένα γενικά ενιαίο σύνολο διαδικασιών	Jedan uglavnom ujednačen skup procesa
+Several process variants	Πολλές παραλλαγές διαδικασιών	Više varijanti procesa
+Site-specific or specialised rules and exceptions	Ειδικοί κανόνες και εξαιρέσεις ανά εγκατάσταση	Posebna pravila i izuzeci po skladištu
+Inventory accuracy	Ακρίβεια αποθέματος	Tačnost zaliha
+Picking errors	Σφάλματα συλλογής	Greške pri komisioniranju
+Warehouse productivity	Παραγωγικότητα αποθήκης	Produktivnost skladišta
+Stock visibility	Ορατότητα αποθέματος	Pregled zaliha
+Order fulfilment delays	Καθυστερήσεις εκτέλεσης παραγγελιών	Kašnjenja u obradi porudžbina
+Too much manual work	Υπερβολική χειροκίνητη εργασία	Previše ručnog rada
+Scalability	Δυνατότητα επέκτασης	Mogućnost rasta
+No specific problem identified yet	Δεν έχει εντοπιστεί συγκεκριμένο πρόβλημα	Još nije utvrđen konkretan problem
+Available, reviewed and consistent	Διαθέσιμα, ελεγμένα και συνεπή	Dostupni, provereni i usaglašeni
+Available but incomplete or inconsistent	Διαθέσιμα αλλά ελλιπή ή ασυνεπή	Dostupni, ali nepotpuni ili neusaglašeni
+Not yet available / need to be assembled	Δεν είναι ακόμη διαθέσιμα / πρέπει να συγκεντρωθούν	Još nisu dostupni / treba ih prikupiti
+Documented and agreed with process owners	Τεκμηριωμένες και συμφωνημένες με τους υπευθύνους διαδικασιών	Dokumentovani i usaglašeni sa odgovornima za procese
+A draft exists but is not agreed	Υπάρχει προσχέδιο αλλά δεν έχει συμφωνηθεί	Postoji nacrt, ali nije usaglašen
+Not documented yet	Δεν έχουν τεκμηριωθεί ακόμη	Još nisu dokumentovani
+An owner is assigned with time allocated	Έχει οριστεί υπεύθυνος με διαθέσιμο χρόνο	Odgovorna osoba je određena i ima dodeljeno vreme
+An owner is identified; capacity is not agreed	Έχει βρεθεί υπεύθυνος αλλά δεν έχει συμφωνηθεί η διαθεσιμότητα	Odgovorna osoba je poznata, ali raspoloživost nije dogovorena
+No internal owner assigned	Δεν έχει οριστεί εσωτερικός υπεύθυνος	Nije određena interna odgovorna osoba
+A planning basis and decision process are agreed	Έχει συμφωνηθεί βάση σχεδιασμού και διαδικασία αποφάσεων	Osnova planiranja i postupak odlučivanja su dogovoreni
+Budget discussions started; assumptions need work	Οι συζητήσεις άρχισαν, αλλά χρειάζονται διευκρινίσεις	Razgovori su počeli; pretpostavke treba razraditi
+Budget preparation has not started	Η προετοιμασία προϋπολογισμού δεν έχει αρχίσει	Priprema budžeta nije počela
+Exploring whether to start a project	Διερευνούμε αν θα ξεκινήσουμε έργο	Razmatramo da li da započnemo projekat
+Would like to begin within 6 months	Θα θέλαμε έναρξη εντός 6 μηνών	Želimo da počnemo u roku od 6 meseci
+Considering a start in 6–12 months	Εξετάζουμε έναρξη σε 6–12 μήνες	Razmatramo početak za 6–12 meseci
+Considering a start more than 12 months away	Εξετάζουμε έναρξη μετά από 12 μήνες	Razmatramo početak za više od 12 meseci
+Agreed and assigned	Συμφωνημένο και ανατεθειμένο	Dogovoreno i dodeljeno
+Partly prepared / not agreed	Μερικώς έτοιμο / μη συμφωνημένο	Delimično pripremljeno / nije dogovoreno
+Not prepared / not assigned	Δεν είναι έτοιμο / δεν έχει ανατεθεί	Nije pripremljeno / nije dodeljeno
+Broadly identical processes	Γενικά ίδιες διαδικασίες	Uglavnom isti procesi
+Some client-specific exceptions	Ορισμένες εξαιρέσεις ανά πελάτη	Pojedini izuzeci po klijentima
+Substantially different processes	Σημαντικά διαφορετικές διαδικασίες	Značajno različiti procesi
+Inventory / access separation	Διαχωρισμός αποθέματος / πρόσβασης	Razdvajanje zaliha / pristupa
+Client billing rules	Κανόνες τιμολόγησης πελατών	Pravila obračuna za klijente
+Client-specific labels	Ετικέτες ανά πελάτη	Etikete po klijentima
+Client-specific reports	Αναφορές ανά πελάτη	Izveštaji po klijentima
+Client-facing interfaces	Διασυνδέσεις προς πελάτες	Interfejsi za klijente
+No client-specific requirement identified	Δεν έχει εντοπιστεί ειδική απαίτηση πελάτη	Nije utvrđen poseban zahtev klijenta
+Some obligations have been identified by our team	Η ομάδα μας έχει εντοπίσει ορισμένες υποχρεώσεις	Naš tim je utvrdio određene obaveze
+No specific obligation identified by our team	Η ομάδα μας δεν έχει εντοπίσει συγκεκριμένη υποχρέωση	Naš tim nije utvrdio konkretnu obavezu
+Yes / required	Ναι / απαιτείται	Da / potrebno
+No / not required	Όχι / δεν απαιτείται	Ne / nije potrebno
+Raw materials	Πρώτες ύλες	Sirovine
+Work in progress	Παραγωγή σε εξέλιξη	Nedovršena proizvodnja
+Finished goods	Έτοιμα προϊόντα	Gotovi proizvodi
+Staging at production lines	Προετοιμασία δίπλα στις γραμμές παραγωγής	Priprema uz proizvodne linije
+Material issue	Χορήγηση υλικών	Izdavanje materijala
+Unused-material returns	Επιστροφές αχρησιμοποίητων υλικών	Povrat neiskorišćenih materijala
+Batch genealogy / traceability	Ιστορικό / ιχνηλασιμότητα παρτίδων	Istorija / sledljivost serija
+No production interaction required	Δεν απαιτείται σύνδεση με παραγωγή	Interakcija sa proizvodnjom nije potrebna
+Pallet	Παλέτα	Paleta
+Case	Κιβώτιο	Kutija
+Each / item	Τεμάχιο / είδος	Komad / artikal
+Broadly consistent dispatch rules	Γενικά ενιαίοι κανόνες αποστολής	Uglavnom ujednačena pravila otpreme
+Route / channel / promotion-specific rules	Κανόνες ανά δρομολόγιο / κανάλι / προώθηση	Pravila po ruti / kanalu / promociji
+Broadly consistent pattern	Γενικά σταθερό μοτίβο	Uglavnom stalan obrazac
+Material peak / promotion variation	Σημαντικές μεταβολές αιχμών / προωθήσεων	Značajne promene vršnog opterećenja / promocija
+Broadly consistent rules	Γενικά ενιαίοι κανόνες	Uglavnom ujednačena pravila
+Channel / customer-specific rules	Κανόνες ανά κανάλι / πελάτη	Pravila po kanalu / klijentu
+Significant peak / channel variation	Σημαντικές μεταβολές αιχμών / καναλιών	Značajne promene vršnog opterećenja / kanala
+Broadly identical	Γενικά ίδιες	Uglavnom isti
+Shared core with local differences	Κοινή βάση με τοπικές διαφορές	Zajednička osnova sa lokalnim razlikama
+Substantially different	Σημαντικά διαφορετικές	Značajno različiti
+A shared process basis is intended	Σχεδιάζεται κοινή βάση διαδικασιών	Planirana je zajednička osnova procesa
+Site-specific preparation is expected	Αναμένεται προετοιμασία ανά εγκατάσταση	Očekuje se posebna priprema po skladištu
+Event / API messages	Συμβάντα / μηνύματα API	Događaji / API poruke
+Scheduled batch / files	Προγραμματισμένα πακέτα / αρχεία	Planirane grupe / datoteke
+Mixed patterns	Μεικτοί τρόποι ανταλλαγής	Mešoviti obrasci
+Business profile	Επιχειρηματικό προφίλ	Poslovni profil
+Operating model	Μοντέλο λειτουργίας	Model poslovanja
+Warehouse operations	Εργασίες αποθήκης	Skladišne operacije
+Inventory characteristics	Χαρακτηριστικά αποθέματος	Karakteristike zaliha
+Current technology	Τρέχουσα τεχνολογία	Trenutna tehnologija
+Operational challenges	Λειτουργικές προκλήσεις	Operativni izazovi
+Implementation preparation	Προετοιμασία υλοποίησης	Priprema uvođenja
+Multi-owner discovery	Διερεύνηση πολλών ιδιοκτητών	Analiza rada sa više vlasnika
+Traceability and obligations	Ιχνηλασιμότητα και υποχρεώσεις	Sledljivost i obaveze
+Production supply	Τροφοδοσία παραγωγής	Snabdevanje proizvodnje
+Controlled environment	Ελεγχόμενο περιβάλλον	Kontrolisani uslovi
+Distribution flow	Ροή διανομής	Tok distribucije
+Consumer fulfilment	Εκτέλεση παραγγελιών καταναλωτών	Obrada porudžbina za potrošače
+Deployment replication	Επαναχρησιμοποίηση μεταξύ εγκαταστάσεων	Ponovna upotreba u više skladišta
+Equipment interaction	Αλληλεπίδραση με εξοπλισμό	Interakcija sa opremom
+Interface characteristics	Χαρακτηριστικά διασυνδέσεων	Karakteristike interfejsa
+Unknown	Άγνωστο	Nepoznato
+Not known yet	Δεν είναι γνωστό ακόμη	Još nije poznato
+Optional short English description; no confidential details	Προαιρετική σύντομη περιγραφή, χωρίς εμπιστευτικά στοιχεία	Neobavezan kratak opis; bez poverljivih podataka
+Additional industries / change selections (optional)	Πρόσθετοι κλάδοι / αλλαγή επιλογών (προαιρετικά)	Dodatne delatnosti / izmena izbora (neobavezno)
+Optional: stakeholders, interface ownership and test preparation	Προαιρετικά: συμμετέχοντες, υπεύθυνοι διασυνδέσεων και δοκιμές	Neobavezno: učesnici, odgovorni za interfejse i priprema testova
+Next	Επόμενο	Dalje
+Back	Πίσω	Nazad
+View my complete brief	Προβολή πλήρους αναφοράς	Prikaži ceo izveštaj
+Why this appears	Γιατί εμφανίζεται	Zašto je ovo prikazano
+No additional preparation action was identified from these answers.	Δεν προέκυψε επιπλέον εργασία προετοιμασίας από αυτές τις απαντήσεις.	Ovi odgovori nisu ukazali na dodatni zadatak pripreme.
+Open questions are included in the priority actions above.	Τα ανοικτά ερωτήματα περιλαμβάνονται στις παραπάνω εργασίες προτεραιότητας.	Otvorena pitanja su uključena u prioritetne zadatke iznad.
+No unknown or conflicting answer was identified.	Δεν εντοπίστηκε άγνωστη ή αντικρουόμενη απάντηση.	Nije utvrđen nepoznat ili protivrečan odgovor.
+Your complete brief is ready. No answers have been transmitted.	Η πλήρης αναφορά είναι έτοιμη. Δεν στάλθηκαν απαντήσεις.	Ceo izveštaj je spreman. Odgovori nisu poslati.
+Assessment restarted. Answers and brief cleared from the page.	Η αξιολόγηση ξεκίνησε ξανά. Οι απαντήσεις και η αναφορά διαγράφηκαν από τη σελίδα.	Procena je ponovo pokrenuta. Odgovori i izveštaj su uklonjeni sa stranice.
+No explicit item identified from the answers. Validate the stated basis with your project owner.	Δεν προέκυψε συγκεκριμένο στοιχείο από τις απαντήσεις. Ελέγξτε τη δηλωμένη βάση με τον υπεύθυνο έργου.	Odgovori nisu ukazali na konkretnu stavku. Proverite navedenu osnovu sa odgovornim za projekat.
+Initial exploration	Αρχική διερεύνηση	Početno istraživanje
+Preparation required	Χρειάζεται προετοιμασία	Potrebna je priprema
+Insufficient information	Ανεπαρκείς πληροφορίες	Nedovoljno informacija
+Ready for detailed evaluation	Έτοιμο για αναλυτική αξιολόγηση	Spremno za detaljnu procenu
+Consent to local processing is required.	Απαιτείται συγκατάθεση για τοπική επεξεργασία.	Potrebna je saglasnost za lokalnu obradu.
+Choose exactly one primary industry among your selected industries.	Επιλέξτε ακριβώς έναν κύριο κλάδο από αυτούς που δηλώσατε.	Izaberite tačno jednu glavnu delatnost među izabranim delatnostima.
+The primary industry must be one of your selected industries.	Ο κύριος κλάδος πρέπει να είναι ένας από τους επιλεγμένους.	Glavna delatnost mora biti među izabranim delatnostima.
+Plan your	Σχεδιάστε τον	Planirajte
+WMS budget	προϋπολογισμό WMS	budžet za WMS
+WMS budget planner	Σχεδιασμός προϋπολογισμού WMS	Planiranje budžeta za WMS
+Inputs stay in this page	Τα δεδομένα μένουν σε αυτή τη σελίδα	Podaci ostaju na ovoj stranici
+Choose your starting point	Επιλέξτε αφετηρία	Izaberite polaznu tačku
+Quick Scope	Αρχικό πεδίο έργου	Početni obuhvat
+I need a planning checklist.	Χρειάζομαι λίστα προετοιμασίας.	Potreban mi je spisak za pripremu.
+Advanced Budget	Αναλυτικός προϋπολογισμός	Detaljan budžet
+I have cost assumptions to enter.	Έχω εκτιμήσεις κόστους για καταχώριση.	Imam procene troškova koje želim da unesem.
+Your warehouse scope	Πεδίο του έργου αποθήκης	Obuhvat skladišnog projekta
+Users	Χρήστες	Korisnici
+Integrations	Διασυνδέσεις	Integracije
+Operational complexity	Λειτουργική πολυπλοκότητα	Operativna složenost
+Standard processes	Τυπικές διαδικασίες	Standardni procesi
+Complex or site-specific processes	Σύνθετες ή ειδικές διαδικασίες ανά εγκατάσταση	Složeni ili posebni procesi po skladištu
+Not sure yet	Δεν έχει οριστεί ακόμη	Još nije utvrđeno
+Used for planning questions only; no price or effort multiplier.	Χρησιμοποιείται μόνο για ερωτήματα προετοιμασίας, χωρίς πολλαπλασιαστή τιμής ή προσπάθειας.	Koristi se samo za pitanja pripreme; ne množi cenu niti obim rada.
+1. Software and licensing	1. Λογισμικό και άδειες	1. Softver i licenciranje
+Currency	Νόμισμα	Valuta
+USD — US dollar	USD — δολάριο ΗΠΑ	USD — američki dolar
+GBP — pound sterling	GBP — λίρα στερλίνα	GBP — britanska funta
+EUR — euro	EUR — ευρώ	EUR — evro
+Use one currency for every amount. Changing this label does not convert existing numbers.	Χρησιμοποιήστε το ίδιο νόμισμα για όλα τα ποσά. Η αλλαγή της ετικέτας δεν μετατρέπει τις υπάρχουσες τιμές.	Za sve iznose koristite istu valutu. Promena oznake ne preračunava postojeće iznose.
+Licensing model	Μοντέλο αδειοδότησης	Model licenciranja
+Subscription	Συνδρομή	Pretplata
+Perpetual licence	Μόνιμη άδεια	Trajna licenca
+Subscription inputs	Στοιχεία συνδρομής	Podaci o pretplati
+Monthly platform fee	Μηνιαία χρέωση πλατφόρμας	Mesečna naknada za platformu
+Monthly fee per user	Μηνιαία χρέωση ανά χρήστη	Mesečna naknada po korisniku
+Perpetual licence inputs	Στοιχεία μόνιμης άδειας	Podaci o trajnoj licenci
+One-off platform licence	Εφάπαξ άδεια πλατφόρμας	Jednokratna licenca za platformu
+One-off licence per user	Εφάπαξ άδεια ανά χρήστη	Jednokratna licenca po korisniku
+Continue to implementation	Συνέχεια στην υλοποίηση	Dalje na uvođenje
+2. Implementation and connections	2. Υλοποίηση και συνδέσεις	2. Uvođenje i veze
+Implementation approach	Προσέγγιση υλοποίησης	Pristup uvođenju
+Internal team and partner	Εσωτερική ομάδα και συνεργάτης	Interni tim i partner
+Internal team	Εσωτερική ομάδα	Interni tim
+Implementation partner	Συνεργάτης υλοποίησης	Partner za uvođenje
+No automatic discount or surcharge.	Χωρίς αυτόματη έκπτωση ή επιβάρυνση.	Nema automatskog popusta ni dodatne naknade.
+Implementation person-days	Ανθρωποημέρες υλοποίησης	Čovek-dani za uvođenje
+Cost per implementation day	Κόστος ανά ημέρα υλοποίησης	Trošak po danu uvođenja
+One-off setup per warehouse	Εφάπαξ ρύθμιση ανά αποθήκη	Jednokratno podešavanje po skladištu
+One-off cost per integration	Εφάπαξ κόστος ανά διασύνδεση	Jednokratni trošak po integraciji
+Continue to transition	Συνέχεια στη μετάβαση	Dalje na prelazak
+3. Migration, training and equipment	3. Μεταφορά δεδομένων, εκπαίδευση και εξοπλισμός	3. Migracija, obuka i oprema
+Total data migration cost	Συνολικό κόστος μεταφοράς δεδομένων	Ukupan trošak migracije podataka
+Total training and transition cost	Συνολικό κόστος εκπαίδευσης και μετάβασης	Ukupan trošak obuke i prelaska
+Devices and infrastructure per warehouse	Συσκευές και υποδομή ανά αποθήκη	Uređaji i infrastruktura po skladištu
+Continue to ongoing costs	Συνέχεια στα επαναλαμβανόμενα κόστη	Dalje na tekuće troškove
+4. Ongoing costs and contingency	4. Επαναλαμβανόμενα κόστη και αποθεματικό	4. Tekući troškovi i rezerva
+Annual support / maintenance total	Συνολική ετήσια υποστήριξη / συντήρηση	Ukupna godišnja podrška / održavanje
+Other annual operating costs	Άλλα ετήσια λειτουργικά κόστη	Drugi godišnji operativni troškovi
+Contingency on all initial costs (%)	Αποθεματικό επί όλων των αρχικών εξόδων (%)	Rezerva na sve početne troškove (%)
+Build planning checklist	Δημιουργία λίστας προετοιμασίας	Napravi spisak za pripremu
+Calculate TCO	Υπολογισμός συνολικού κόστους ιδιοκτησίας	Izračunaj ukupan trošak vlasništva
+Clear inputs	Καθαρισμός τιμών	Obriši unose
+Your budget-planning checklist	Η λίστα προετοιμασίας προϋπολογισμού σας	Vaš spisak za pripremu budžeta
+Download Budget Checklist (PDF)	Εκτύπωση / αποθήκευση ως PDF	Štampaj / sačuvaj kao PDF
+Open Advanced Budget	Άνοιγμα αναλυτικού προϋπολογισμού	Otvori detaljan budžet
+Your input-based budget	Προϋπολογισμός με τις δικές σας τιμές	Budžet prema vašim unosima
+Initial one-off cost	Αρχικό εφάπαξ κόστος	Početni jednokratni trošak
+Annual recurring cost	Ετήσιο επαναλαμβανόμενο κόστος	Godišnji tekući trošak
+Three-year TCO	Συνολικό κόστος τριετίας	Ukupan trošak za tri godine
+Five-year TCO	Συνολικό κόστος πενταετίας	Ukupan trošak za pet godina
+Included categories	Κατηγορίες που περιλαμβάνονται	Uključene kategorije
+Category	Κατηγορία	Kategorija
+Timing	Περίοδος	Period
+Amount	Ποσό	Iznos
+How the calculation works	Πώς γίνεται ο υπολογισμός	Kako se računa
+Software	Λογισμικό	Softver
+Implementation days	Ημέρες υλοποίησης	Dani uvođenja
+Warehouse setup	Ρύθμιση αποθήκης	Podešavanje skladišta
+Migration	Μεταφορά δεδομένων	Migracija
+Training	Εκπαίδευση	Obuka
+Devices and infrastructure	Συσκευές και υποδομή	Uređaji i infrastruktura
+Initial contingency	Αρχικό αποθεματικό	Početna rezerva
+Support / maintenance	Υποστήριξη / συντήρηση	Podrška / održavanje
+Other recurring operations	Άλλες επαναλαμβανόμενες λειτουργίες	Druge tekuće operacije
+One-off	Εφάπαξ	Jednokratno
+Each year	Κάθε έτος	Svake godine
+Budget assumptions changed. Calculate again to update the results.	Οι παραδοχές άλλαξαν. Υπολογίστε ξανά για ενημερωμένα αποτελέσματα.	Pretpostavke su promenjene. Izračunajte ponovo za ažurne rezultate.
+Scope changed. Build your checklist to update the plan.	Το πεδίο έργου άλλαξε. Δημιουργήστε ξανά τη λίστα για ενημέρωση.	Obuhvat je promenjen. Ponovo napravite spisak da biste ažurirali plan.
+Inputs changed. Calculate to update the results.	Οι τιμές άλλαξαν. Υπολογίστε ξανά.	Unosi su promenjeni. Ponovo izračunajte rezultate.
+Your scope is retained. Add your own cost assumptions, starting with software and licensing.	Το πεδίο έργου διατηρήθηκε. Προσθέστε τις εκτιμήσεις σας, ξεκινώντας από λογισμικό και άδειες.	Obuhvat je sačuvan. Dodajte procene troškova, počevši od softvera i licenci.
+A value is missing or invalid. Check the highlighted field; unknown costs cannot be treated as zero.	Λείπει ή δεν είναι έγκυρη μια τιμή. Ελέγξτε το πεδίο. Άγνωστο κόστος δεν σημαίνει μηδέν.	Vrednost nedostaje ili nije ispravna. Proverite označeno polje; nepoznati troškovi nisu nula.
+Choose an operational complexity before calculating a budget. No effort multiplier is applied.	Επιλέξτε λειτουργική πολυπλοκότητα πριν τον υπολογισμό. Δεν εφαρμόζεται πολλαπλασιαστής προσπάθειας.	Izaberite operativnu složenost pre obračuna. Ne primenjuje se množilac obima rada.
+Choose currency and licensing model.	Επιλέξτε νόμισμα και μοντέλο αδειοδότησης.	Izaberite valutu i model licenciranja.
+Choose explicit scope assumptions.	Ορίστε συγκεκριμένες παραδοχές για το πεδίο έργου.	Navedite konkretne pretpostavke o obuhvatu.
+Choose an operational complexity.	Επιλέξτε λειτουργική πολυπλοκότητα.	Izaberite operativnu složenost.
+The total is too large to calculate safely.	Το συνολικό ποσό είναι υπερβολικά μεγάλο για ασφαλή υπολογισμό.	Ukupan iznos je prevelik za pouzdan obračun.
+Privacy	Απόρρητο	Privatnost
+Terms	Όροι	Uslovi
+Resources	Πόροι	Resursi
+Documentation	Τεκμηρίωση	Dokumentacija
+Company	Εταιρεία	Kompanija
+Product	Προϊόν	Proizvod
+Pricing	Τιμές	Cene
+Product Overview	Επισκόπηση προϊόντος	Pregled proizvoda
+WMS Cost Calculator	Υπολογιστής κόστους WMS	Kalkulator troškova WMS-a
+WMS Readiness Assessment	Αξιολόγηση ετοιμότητας για WMS	Procena spremnosti za WMS
+Readiness Assessment	Ετοιμότητα για WMS	Spremnost za WMS
+Legacy RF terminals	Παλαιότερα τερματικά RF	Stariji RF terminali
+Request a Demo	Συζητήστε για την αποθήκη σας	Razgovarajte o svom skladištu
+Menu	Μενού	Meni
+Close	Κλείσιμο	Zatvori
+Dark theme	Σκούρο θέμα	Tamna tema
+Switch colour theme	Αλλαγή θέματος	Promeni temu
+Skip to content	Μετάβαση στο περιεχόμενο	Pređi na sadržaj
+WMS cost	Κόστος WMS	Trošak WMS-a
+Resource · Budget planning	Πόρος · Σχεδιασμός προϋπολογισμού	Resurs · Planiranje budžeta
+A configurable WMS for receiving, inventory and fulfilment.	Παραμετροποιήσιμο WMS για παραλαβές, απόθεμα και εκτέλεση παραγγελιών.	Prilagodljiv WMS za prijem, zalihe i obradu porudžbina.
+Capability map	Δυνατότητες προϊόντος	Mogućnosti proizvoda
+Workflow examples	Παραδείγματα διαδικασιών	Primeri procesa
+Long-term Vision	Μακροπρόθεσμο όραμα	Dugoročna vizija
+Vision	Όραμα	Vizija
+Warehouse management software	Λογισμικό διαχείρισης αποθήκης	Softver za upravljanje skladištem
+© 2026 Quark · EU entity	© 2026 Quark · Οντότητα στην ΕΕ	© 2026 Quark · Organizacija u EU
+Main	Κύριο μενού	Glavni meni
+Mobile	Μενού κινητού	Mobilni meni
+Breadcrumb	Πλοήγηση	Navigacija
+On this page	Σε αυτή τη σελίδα	Na ovoj stranici
+Quark home	Αρχική Quark	Početna stranica Quark-a
+Question progress	Πρόοδος ερωτηματολογίου	Napredak upitnika
+Brief sections	Ενότητες αναφοράς	Odeljci izveštaja
+Generated download files	Αρχεία προς λήψη	Pripremljene datoteke za preuzimanje
+Detailed project preparation brief	Αναλυτική αναφορά προετοιμασίας έργου	Detaljan izveštaj o pripremi projekta

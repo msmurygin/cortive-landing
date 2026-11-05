@@ -1,0 +1,119 @@
+key	el	sr
+clarify	Διευκρινίστε:	Razjasnite:
+prepare	Προετοιμάστε:	Pripremite:
+further	Πρόσθετη διερεύνηση:	Dodatna analiza:
+reported	Ρητά δηλωμένη απάντηση, χωρίς ανεξάρτητη επαλήθευση.	Izričito naveden odgovor; nije nezavisno proveren.
+unknownExplanation	Η απάντηση είναι άγνωστη ή λείπει· δεν αποτελεί αρνητική απάντηση.	Odgovor je nepoznat ili nedostaje; to nije negativan odgovor.
+prepareExplanation	Η δηλωμένη προετοιμασία λείπει ή είναι ελλιπής.	Navedena priprema nedostaje ili nije potpuna.
+hypothesisExplanation	Το θέμα επιλέχθηκε βάσει κλάδου, μοντέλου ή χαρακτηριστικού που δηλώθηκε. Η επιλογή μόνη της δεν καθορίζει απαίτηση.	Tema je izabrana na osnovu navedene delatnosti, modela ili karakteristike. Sam izbor ne utvrđuje zahtev.
+deferredExplanation	Το σχετικό θέμα δεν τέθηκε λόγω του ορίου συμπληρωματικών ερωτήσεων. Δεν υποτίθεται απάντηση ή απαίτηση.	Relevantna tema nije postavljena zbog ograničenog broja dodatnih pitanja. Odgovor ili zahtev se ne pretpostavljaju.
+conflictExplanation	Οι δηλωμένες επιλογές μπορεί να χρειάζονται συμφωνία. Καμία δεν αντικαταστάθηκε αυτόματα.	Navedene opcije možda treba usaglasiti. Nijedan odgovor nije automatski zamenjen.
+conflictAction	Επιβεβαιώστε το πεδίο έργου και σε ποια διαδικασία ή εγκατάσταση ισχύει κάθε δήλωση.	Potvrdite obuhvat i na koji proces ili skladište se odnosi svaka tvrdnja.
+reviewOwner	Εξετάστε το θέμα με τον υπεύθυνο λειτουργίας ή πληροφορικής.	Proverite temu sa odgovornim za operacije ili IT.
+validateOwner	Επιβεβαιώστε με τον υπεύθυνο διαδικασίας ή συστήματος.	Potvrdite sa odgovornim za proces ili sistem.
+pilotAction	Επιλέξτε αντιπροσωπευτικές κανονικές περιπτώσεις και εξαιρέσεις με τον υπεύθυνο διαδικασίας και ελέγξτε τις με τους επιλεγμένους προμηθευτές.	Sa odgovornim za proces izaberite reprezentativne redovne slučajeve i izuzetke i proverite ih sa izabranim dobavljačima.
+pilotExplanation	Πρόταση για συζήτηση και έλεγχο βάσει των δηλωμένων απαντήσεων· δεν επιβεβαιώνει συμβατότητα προϊόντος.	Predlog za razgovor i proveru na osnovu navedenih odgovora; ne potvrđuje kompatibilnost proizvoda.
+unknownAction	Επιβεβαιώστε την περιγραφή με τον αρμόδιο υπεύθυνο.	Potvrdite opis sa nadležnom odgovornom osobom.
+conflict:primary	Ορίστε έναν κύριο από τους επιλεγμένους κλάδους.	Odredite jednu glavnu delatnost među izabranima.
+conflict:tracking	Διευκρινίστε «μόνο ποσότητα» έναντι πρόσθετης ιχνηλασιμότητας.	Razjasnite „samo količina“ u odnosu na dodatno praćenje.
+conflict:ownership	Διευκρινίστε τη μοναδική κυριότητα μέσα στο δηλωμένο μοντέλο 3PL.	Razjasnite jednog vlasnika u navedenom 3PL modelu.
+conflict:owners	Διευκρινίστε τον αριθμό αποθετών έναντι της κυριότητας αποθέματος.	Razjasnite broj deponenata u odnosu na vlasništvo nad zalihama.
+conflict:erp	Διευκρινίστε τη μελλοντική σύνδεση ERP ενώ δεν χρησιμοποιείται ERP σήμερα.	Razjasnite planiranu ERP vezu iako ERP trenutno ne postoji.
+conflict:hybrid	Προσδιορίστε συγκεκριμένα μοντέλα μέσα στο υβριδικό / άλλο.	Utvrdite konkretne modele u okviru hibridnog / drugog modela.
+conflict:otherIndustry	Προσθέστε σύντομη περιγραφή ή αφήστε το θέμα ρητά ανοικτό.	Dodajte kratak opis ili ostavite temu izričito nerazjašnjenom.
+conflict:otherModel	Προσθέστε σύντομη περιγραφή ή αφήστε το θέμα ρητά ανοικτό.	Dodajte kratak opis ili ostavite temu izričito nerazjašnjenom.
+action:interfaces	Ετοιμάστε φύλλο ελέγχου διασυνδέσεων.	Pripremite listu provere interfejsa.
+action:equipment	Ελέγξτε την αλληλεπίδραση με εξοπλισμό.	Proverite interakciju sa opremom.
+action:rf	Ετοιμάστε ελέγχους συσκευών και ασύρματης κάλυψης.	Pripremite provere uređaja i Wi-Fi pokrivenosti.
+action:clients	Ελέγξτε σενάρια αποδοχής ανά πελάτη.	Proverite scenarije prihvatanja po klijentima.
+action:obligations	Ελέγξτε τις δηλωμένες υποχρεώσεις με ειδικό.	Proverite navedene obaveze sa stručnjakom.
+action:qc	Καταγράψτε καταστάσεις αποθέματος και αρμοδιότητα αποδέσμευσης.	Opišite statuse zaliha i ovlašćenje za puštanje.
+action:production	Τεκμηριώστε σενάριο τροφοδοσίας παραγωγής.	Dokumentujte scenario snabdevanja proizvodnje.
+action:returns	Ετοιμάστε σενάριο ελέγχου και διαχείρισης επιστροφής.	Pripremite scenario pregleda i obrade povrata.
+action:variants	Ελέγξτε τις παραλλαγές καταλόγου.	Proverite varijante u katalogu.
+action:replenishment	Ακολουθήστε εξαίρεση ανατροφοδότησης.	Ispratite izuzetak pri dopuni.
+action:cold	Τεκμηριώστε εξαιρέσεις ελεγχόμενου περιβάλλοντος.	Dokumentujte izuzetke u kontrolisanim uslovima.
+actionExplanation:interfaces	Επιλέχθηκαν εξωτερικές συνδέσεις. Κατηγορία και πλήθος δεν προσδιορίζουν από μόνα τους την προσπάθεια.	Izabrane su spoljne veze. Kategorija i broj ne određuju sami obim rada.
+actionExplanation:equipment	Ο εξοπλισμός περιλαμβάνεται ρητά στο έργο· η συμβατότητα δεν έχει επαληθευτεί.	Oprema je izričito u obuhvatu; kompatibilnost nije potvrđena.
+actionExplanation:rf	Χρησιμοποιείται ή σχεδιάζεται εργασία με RF / κινητές συσκευές.	Rad sa RF / mobilnim uređajima se koristi ili je planiran.
+actionExplanation:clients	Δηλώθηκαν ρητά απαιτήσεις πελατών· δεν υποτίθενται έτοιμες λειτουργίες τιμολόγησης ή διαχωρισμού.	Izričito su navedeni zahtevi klijenata; ne pretpostavljaju se gotove funkcije obračuna ili razdvajanja.
+actionExplanation:obligations	Η ομάδα δήλωσε υποχρεώσεις. Η εφαρμογή τους και οι σχετικοί έλεγχοι δεν έχουν επαληθευτεί ανεξάρτητα.	Tim je naveo obaveze. Njihova primenljivost i kontrole nisu nezavisno proverene.
+actionExplanation:qc	Ζητήθηκε ρητά καραντίνα ή ποιοτικός έλεγχος.	Izričito je zatražen karantin ili kontrola kvaliteta.
+actionExplanation:production	Επιλέχθηκαν ρητά αλληλεπιδράσεις με παραγωγή.	Izričito su izabrane interakcije sa proizvodnjom.
+actionExplanation:returns	Ζητήθηκε ρητά διαχείριση επιστροφών.	Izričito je zatražena obrada povrata.
+actionExplanation:variants	Δηλώθηκαν ρητά απαιτήσεις παραλλαγών προϊόντων.	Izričito su navedene varijante proizvoda.
+actionExplanation:replenishment	Ζητήθηκε ρητά ανατροφοδότηση.	Izričito je zatražena dopuna.
+actionExplanation:cold	Επιλέχθηκαν ελεγχόμενες θερμοκρασίες. Δεν υποτίθενται ασφαλή ή νομικά όρια.	Izabrane su kontrolisane temperature. Bezbedne ili zakonske granice se ne pretpostavljaju.
+problemExplanation	Δηλωμένη προτεραιότητα, όχι διαγνωσμένο σφάλμα ή υποσχόμενη βελτίωση.	Navedeni prioritet, a ne utvrđen nedostatak ili obećano poboljšanje.
+investigate	Διερευνήστε:	Istražite:
+pilot:production	Χορήγηση / επιστροφή υλικών και έλεγχος παρτίδας / ποιότητας	Izdavanje / povrat materijala i provera serija / kvaliteta
+pilot:client	Κανόνες πελατών και διαχωρισμός αποθέματος	Pravila klijenata i razdvajanje zaliha
+pilot:returns	Έλεγχος και διαχείριση επιστροφής	Pregled i obrada povrata
+pilot:replenishment	Ανατροφοδότηση παλέτας / κιβωτίου και εξαίρεση έλλειψης	Dopuna paleta / kutija i izuzetak nestašice
+pilot:status	Ελεγχόμενο απόθεμα, εξαιρέσεις και αποδέσμευση	Kontrolisane zalihe, izuzeci i puštanje
+pilot:receive	Παραλαβή και τοποθέτηση	Prijem i smeštanje
+pilot:inventory	Ορατότητα αποθέματος και κυκλική απογραφή	Pregled zaliha i ciklično popisivanje
+pilot:outbound	Συλλογή και αποστολή	Komisioniranje i otprema
+pilot:erp	Έλεγχος διασύνδεσης ERP	Provera ERP integracije
+pilot:define	Επιλέξτε πρώτα μία αντιπροσωπευτική διαδικασία.	Najpre izaberite jedan reprezentativan proces.
+dimension:process	Ποικιλία διαδικασιών	Raznovrsnost procesa
+dimension:inventory	Απόθεμα και ιχνηλασιμότητα	Zalihe i sledljivost
+dimension:integrations	Διασυνδέσεις	Integracije
+dimension:automation	Αυτοματισμοί	Automatizacija
+dimension:compliance	Συμμόρφωση	Usklađenost
+dimension:multi-owner	Λειτουργία με πολλούς ιδιοκτήτες	Rad sa više vlasnika
+dimension:replication	Επαναχρησιμοποίηση μεταξύ εγκαταστάσεων	Ponovna upotreba u više skladišta
+unknownReason	Άγνωστη απάντηση	Nepoznat odgovor
+deferredReason	Αναβλήθηκε λόγω ορίου συμπληρωματικών ερωτήσεων	Odloženo zbog ograničenja broja dodatnih pitanja
+unselectedReason	Δεν επιλέχθηκε σε αυτή τη διαδρομή· η συνάφεια δεν έχει διαπιστωθεί	Nije izabrano u ovom toku; relevantnost nije utvrđena
+section:profile	1. Επιχειρηματικό προφίλ αποθήκης	1. Poslovni profil skladišta
+section:operations	2. Λειτουργικά χαρακτηριστικά	2. Operativne karakteristike
+section:requirements	3. Δηλωμένες απαιτήσεις — χωρίς ανεξάρτητη επαλήθευση	3. Navedeni zahtevi — nisu nezavisno provereni
+section:hypotheses	4. Παραδοχές προς έλεγχο	4. Pretpostavke za proveru
+section:dimensions	5. Παράγοντες πολυπλοκότητας ανά διάσταση	5. Faktori složenosti po oblastima
+section:readiness	6. Προετοιμασία υλοποίησης	6. Priprema uvođenja
+section:risks	7. Βασικοί κίνδυνοι και άγνωστα στοιχεία	7. Glavni rizici i nepoznanice
+section:tasks	8. Συγκεκριμένες εργασίες προετοιμασίας	8. Konkretni zadaci pripreme
+section:pilots	9. Προτεινόμενα σενάρια ελέγχου	9. Predloženi scenariji provere
+section:next	10. Προτεινόμενα επόμενα βήματα	10. Preporučeni naredni koraci
+section:appendix	Παράρτημα: όλες οι απαντήσεις της ενεργής διαδρομής	Dodatak: svi odgovori u aktivnom upitniku
+section:method	Μέθοδος, εκδόσεις και περιορισμοί	Metod, verzije i ograničenja
+Topic	Θέμα	Tema
+Your answer	Η απάντησή σας	Vaš odgovor
+Source	Πηγή	Izvor
+Requirement / decision	Απαίτηση / απόφαση	Zahtev / odluka
+Discovery topic	Θέμα διερεύνησης	Tema analize
+Why it was selected	Γιατί επιλέχθηκε	Zašto je izabrana
+Dimension	Διάσταση	Oblast
+Stated factors	Δηλωμένοι παράγοντες	Navedeni faktori
+Uncertainty	Άγνωστα στοιχεία	Nepoznanice
+Priority / issue	Προτεραιότητα / θέμα	Prioritet / pitanje
+Why it matters	Γιατί έχει σημασία	Zašto je važno
+Task / suggested owner	Εργασία / προτεινόμενος υπεύθυνος	Zadatak / predložena odgovorna osoba
+What to collect, verify or decide	Τι να συλλέξετε, ελέγξετε ή αποφασίσετε	Šta prikupiti, proveriti ili odlučiti
+Proposal for validation	Πρόταση ελέγχου	Predlog za proveru
+Initial validation task	Πρώτη εργασία ελέγχου	Prvi zadatak provere
+Question / source	Ερώτηση / πηγή	Pitanje / izvor
+Your answers	Οι απαντήσεις σας	Vaši odgovori
+owner:quality	Ποιότητα / αρμόδιος ειδικός	Kvalitet / nadležni stručnjak
+owner:it	Πληροφορική / υπεύθυνος εξοπλισμού	IT / odgovorna osoba za opremu
+owner:production	Παραγωγή / προγραμματισμός	Proizvodnja / planiranje
+owner:operations	Λειτουργία / υπεύθυνος έργου	Operacije / odgovorna osoba za projekat
+suggestedOwner	Προτεινόμενος συμμετέχων στη συζήτηση:	Predloženi učesnik u razgovoru:
+requirementsNote	Πρόκειται για δικές σας δηλωμένες απαιτήσεις. Ελέγξτε ειδικούς κανόνες και εξωτερικές συνδέσεις για το συγκεκριμένο έργο· η διαθεσιμότητα βασικών εργασιών WMS είναι χωριστό θέμα.	Ovo su vaši navedeni zahtevi. Posebna pravila i spoljne veze proverite za konkretno uvođenje; dostupnost osnovnih WMS operacija je odvojena tema.
+hypothesesNote	Κλάδος και μοντέλο επιλέγουν ερωτήσεις· δεν καθορίζουν κανονισμούς, υποχρεωτικές λειτουργίες ή διαθέσιμα πρότυπα. Τα άγνωστα μένουν ανοικτά.	Delatnost i model biraju pitanja; ne utvrđuju propise, obavezne funkcije ili dostupne šablone. Nepoznanice ostaju otvorene.
+dimensionsNote	Αυτοί είναι επεξηγημένοι παράγοντες διερεύνησης, όχι αριθμητική βαθμολογία πολυπλοκότητας, εκτίμηση προσπάθειας ή κατάταξη συμβατότητας.	Ovo su objašnjeni faktori analize, a ne brojčana ocena složenosti, procena rada ili rangiranje kompatibilnosti.
+readinessNote	Η ένδειξη περιγράφει την προετοιμασία του έργου, όχι ωριμότητα προϊόντος. Τα άγνωστα είναι ανοικτά ερωτήματα. Πιστοποίηση και παραγωγική έναρξη είναι χωριστές αποφάσεις.	Ocena opisuje pripremu projekta, a ne zrelost proizvoda. Nepoznanice su otvorena pitanja. Sertifikacija i puštanje u produkciju su odvojene odluke.
+moreRisks	Εδώ εμφανίζονται τα πέντε ευρήματα υψηλότερης προτεραιότητας. Τα υπόλοιπα είναι στην πλήρη λίστα προετοιμασίας.	Ovde je pet nalaza najvišeg prioriteta. Ostali su u potpunom spisku zadataka pripreme.
+noRisks	Οι γνωστές απαντήσεις δεν έδειξαν συγκεκριμένο κενό. Ελέγξτε τη δηλωμένη βάση με τον υπεύθυνο έργου.	Poznati odgovori nisu ukazali na konkretan nedostatak. Proverite navedenu osnovu sa odgovornim za projekat.
+ownerNote	Οι ρόλοι είναι προτάσεις συζήτησης, όχι δήλωση ότι έχει οριστεί άτομο. Κρατήστε ορατά όλα τα ανοικτά θέματα.	Uloge su predlozi za razgovor, a ne tvrdnja da je osoba određena. Zadržite sva otvorena pitanja u spisku.
+pilotNote	Χρησιμοποιήστε τα σενάρια για σχεδιασμό αποδοχής πελάτη. Οι βασικές εργασίες έχουν υλοποιηθεί· επιβεβαιώστε ειδικούς κανόνες και διασυνδέσεις στο συμφωνημένο πεδίο έργου.	Scenarije koristite za planiranje prihvatanja od strane klijenta. Osnovne operacije su realizovane; posebna pravila i integracije potvrdite u dogovorenom obuhvatu.
+nextReview	Ελέγξτε εσωτερικά δεδομένα, απαιτήσεις, υπεύθυνο και βάση προϋπολογισμού πριν από αναλυτική αξιολόγηση προμηθευτών. [D07]	Interno proverite podatke, zahteve, odgovornog i osnovu budžeta pre detaljne procene dobavljača. [D07]
+nextMeeting	Χρησιμοποιήστε την αναφορά με λειτουργία, πληροφορική και χορηγό για σχεδιασμό δεδομένων, ρυθμίσεων, συνδέσεων και σεναρίων αποδοχής.	Koristite izveštaj sa operacijama, IT-em i sponzorom za planiranje podataka, podešavanja, integracija i prihvatanja.
+privacyNote	Μην κοινοποιείτε λειτουργικά στοιχεία εκτός οργανισμού χωρίς άδεια. Η επικοινωνία με Quark είναι προαιρετική και δεν επισυνάπτει αυτή την αναφορά.	Ne delite operativne podatke van organizacije bez dozvole. Kontaktiranje Quark-a je neobavezno i ne prilaže ovaj izveštaj.
+methodNote	Επτά κοινές ομάδες και έως έξι σχετικά συμπληρωματικά θέματα με προτεραιότητα, χωρίς διπλοεγγραφές. Οι πηγές δείχνουν κανόνες και απαντήσεις σας. Τα πλήρη δομημένα ευρήματα υπάρχουν στο JSON.	Sedam zajedničkih grupa i najviše šest prioritetnih dodatnih tema, bez ponavljanja. Izvori upućuju na pravila i vaše odgovore. Potpuni strukturisani nalazi su u JSON-u.
+disclaimer	Η αναφορά αξιολογεί την προετοιμασία πελάτη. Το Quark διαθέτει υλοποιημένες βασικές εργασίες αποθήκης. Δηλωμένες απαιτήσεις, ειδικές δυνατότητες και εξωτερικές συνδέσεις χρειάζονται έλεγχο ανά έργο. Δεν πρόκειται για πιστοποίηση, εκτίμηση κόστους, ROI ή προσπάθειας ούτε έγκριση παραγωγικής έναρξης.	Izveštaj procenjuje pripremu klijenta. Quark ima realizovane osnovne skladišne operacije. Navedeni zahtevi, posebne mogućnosti i spoljne veze proveravaju se za konkretan projekat. Ovo nije sertifikacija, procena cene, ROI-ja ili rada, niti odobrenje za produkciju.
+empty	Δεν προέκυψε ρητό στοιχείο από τις απαντήσεις. Ελέγξτε με τον υπεύθυνο έργου.	Odgovori nisu ukazali na konkretnu stavku. Proverite sa odgovornim za projekat.
+noUnknowns	Δεν εντοπίστηκε επιπλέον άγνωστο στοιχείο σε αυτή τη διαδρομή. Το υπόλοιπο πεδίο έργου χρειάζεται χωριστό έλεγχο.	U ovom toku nije utvrđena dodatna nepoznanica. Ostali obuhvat treba proveriti posebno.
+deferredTopics	Πρόσθετα θέματα που δεν τέθηκαν:	Dodatne teme koje nisu postavljene:
+generated	Δημιουργήθηκε:	Napravljeno:

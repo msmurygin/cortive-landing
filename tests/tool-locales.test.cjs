@@ -12,12 +12,12 @@ const scenarios = [
   { industries: ['ecommerce'], primaryIndustry: 'ecommerce', models: ['own'], tracking: ['serial'], returns: 'yes', productVariants: 'yes', processes: ['receiving','putaway','picking'], challenges: ['accuracy','visibility'] },
   { industries: ['manufacturing','fmcg','pharmaceutical'], primaryIndustry: 'manufacturing', models: ['3pl','manufacturing-supply'], sites: 4, ownership: 'multiple', tracking: ['lot','expiry'], environment: ['cool'], integrations: ['erp','automation'], automation: ['conveyor'], rf: 'yes', clientNeeds: ['isolation','billing'], productionFlows: ['issue','returns'], obligations: 'stated', obligationNotes: 'Test описание Ș', qc: 'yes', replenishment: 'yes' },
   { industries: ['retail'], primaryIndustry: 'unknown', models: ['3pl','hybrid'], ownership: 'single', owners: 3, tracking: ['quantity','serial'], erp: 'no', integrations: ['erp'], challenges: ['errors','productivity','delays','manual','scale'] },
-  { industries: ['other'], primaryIndustry: 'other', otherIndustry: 'Other', models: ['hybrid'], otherModel: '<img src=x onerror=alert(1)> Șț склад', requirements: 'missing', owner: 'missing', horizon: 'exploring' },
+  { industries: ['other'], primaryIndustry: 'other', otherIndustry: 'Other', models: ['hybrid'], otherModel: '<img src=x onerror=alert(1)> Șț склад Αθήνα Đorđe', requirements: 'missing', owner: 'missing', horizon: 'exploring' },
   { industries: ['distribution'], primaryIndustry: 'distribution', models: ['own'], integrations: ['none'], masterData: 'ready', requirements: 'ready', owner: 'ready', budget: 'ready', stakeholders: 'ready', uat: 'ready', horizon: 'soon' }
 ];
 
-test('BG/RO presentation covers all questions, conditional fields and option values without changing predicates or model keys', () => {
-  for (const code of ['bg','ro']) {
+test('All four regional presentations covers all questions, conditional fields and option values without changing predicates or model keys', () => {
+  for (const code of ['bg','ro','el','sr']) {
     const locale = createLocale(copy, code, engine);
     for (const q of engine.questions) {
       const view = locale.question(q);
@@ -35,7 +35,7 @@ test('BG/RO presentation covers all questions, conditional fields and option val
 });
 
 test('native reports retain every answer and finding; raw answers, readiness and JSON remain unchanged, including user text and markup', () => {
-  for (const raw of scenarios) for (const code of ['bg','ro']) {
+  for (const raw of scenarios) for (const code of ['bg','ro','el','sr']) {
     const locale = createLocale(copy, code, engine), report = engine.assess(raw, fixed), snapshot = JSON.stringify(report);
     const sections = locale.meetingSections(report);
     assert.equal(sections.length, 12);
@@ -60,7 +60,7 @@ test('native reports retain every answer and finding; raw answers, readiness and
 });
 
 test('budget translations keep unknown counts distinct from zero, seven checklist groups and cent-exact currency formatting', () => {
-  for (const code of ['bg','ro']) {
+  for (const code of ['bg','ro','el','sr']) {
     const locale = createLocale(copy, code, engine);
     for (const integrations of ['', '0', '2']) {
       const inputs = { warehouses:'', users:'12', integrations, complexity:'unknown' }, raw = cost.scopePlan(inputs);
@@ -83,7 +83,7 @@ test('budget translations keep unknown counts distinct from zero, seven checklis
 });
 
 test('English and unsupported locale requests use the original presentation with no automatic browser-language switch', () => {
-  for (const requested of [undefined,'en','el','BG','<script>']) {
+  for (const requested of [undefined,'en','de','BG','<script>']) {
     const locale = createLocale(copy, requested, engine), report = engine.assess({},fixed);
     assert.equal(locale.code,'en'); assert.equal(locale.active,false);
     assert.equal(locale.question(engine.questions[0]),engine.questions[0]);
@@ -100,4 +100,13 @@ test('localization introduces no collection, third-party service or changed deci
   assert.doesNotMatch(source,/fetch\(|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|\.innerHTML\s*=/);
   const before=fs.readFileSync('assets/i18n/tool-copy.js','utf8');cp.execFileSync('node',['scripts/tool-locales.cjs']);
   assert.equal(fs.readFileSync('assets/i18n/tool-copy.js','utf8'),before);
+});
+
+test('published Bulgarian and Romanian copy remains unchanged while Greek and Serbian have complete matching message sets', () => {
+  const vm = require('node:vm'), context = { module: { exports: {} } };
+  vm.runInNewContext(cp.execFileSync('git', ['show', 'a3e039c:assets/i18n/tool-copy.js'], { encoding: 'utf8' }), context);
+  for (const code of ['bg','ro']) assert.equal(JSON.stringify(copy[code]), JSON.stringify(context.module.exports[code]));
+  for (const code of ['el','sr']) for (const section of Object.keys(copy.bg)) {
+    assert.deepEqual(Object.keys(copy[code][section]).sort(),Object.keys(copy.bg[section]).sort(),code+'/'+section);
+  }
 });

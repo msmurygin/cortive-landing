@@ -86,8 +86,8 @@ test('hardware translations form a reciprocal group separate from language homes
 });
 
 
-test('BG/RO budget cards preserve language into both tools, while untranslated destinations are labelled', () => {
-  for (const code of ['bg','ro']) {
+test('All four regional budget cards preserve language into both tools, while untranslated destinations are labelled', () => {
+  for (const code of ['bg','ro','el','sr']) {
     for (const file of [code + '/index.html', 'solutions/legacy-hardware/' + code + '/index.html']) {
       const html = read(file);
       assert.ok(html.includes('href="/wms-cost?lang=' + code + '"'));
