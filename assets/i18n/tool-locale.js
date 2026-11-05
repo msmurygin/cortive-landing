@@ -7,7 +7,7 @@
   }
 })(typeof globalThis === 'object' ? globalThis : this, function createLocale(allCopy, requested, engine) {
   'use strict';
-  const code = ['bg', 'ro'].includes(requested) ? requested : 'en';
+  const code = ['bg', 'ro', 'el', 'sr'].includes(requested) ? requested : 'en';
   const active = code !== 'en', data = allCopy[code];
   const t = value => active && Object.hasOwn(data.terms, value) ? data.terms[value] : value;
   const message = (group, key, values = {}) => {
@@ -131,7 +131,7 @@
   }
   function money(cents, currency) {
     const amount = BigInt(cents);
-    return new Intl.NumberFormat(code === 'bg' ? 'bg-BG' : 'ro-RO', { style: 'currency', currency })
+    return new Intl.NumberFormat({ bg: 'bg-BG', ro: 'ro-RO', el: 'el-GR', sr: 'sr-Latn-RS' }[code], { style: 'currency', currency })
       .formatToParts(amount / 100n).map(part => part.type === 'fraction' ? String(amount % 100n).padStart(2, '0') : part.value).join('');
   }
   function error(text) {
@@ -166,7 +166,7 @@
   }
   function preparePage(doc) {
     if (!active) return;
-    doc.documentElement.lang = code;
+    doc.documentElement.lang = code === 'sr' ? 'sr-Latn' : code;
     doc.body.classList.add('q-localized-tool');
     const calculator = doc.getElementById('calculator');
     doc.title = t(calculator ? 'WMS Cost Calculator' : 'WMS Readiness Assessment') + ' | Quark WMS';
@@ -216,8 +216,8 @@
     const burger = doc.querySelector('.q-burger'); if (burger) burger.dataset.closeLabel = t('Close');
     // Navigation contains locale only; answers and financial inputs are never placed in a URL.
     const switcher = doc.createElement('nav'); switcher.className = 'q-wrap q-tool-languages'; switcher.setAttribute('aria-label', b('language'));
-    for (const lang of ['en', 'bg', 'ro']) {
-      const link = doc.createElement('a'); link.textContent = { en: 'English', bg: 'Български', ro: 'Română' }[lang];
+    for (const lang of ['en', 'bg', 'ro', 'el', 'sr']) {
+      const link = doc.createElement('a'); link.textContent = { en: 'English', bg: 'Български', ro: 'Română', el: 'Ελληνικά', sr: 'Srpski' }[lang];
       link.href = location.pathname + (lang === 'en' ? '' : '?lang=' + lang); link.lang = lang;
       if (lang === code) link.setAttribute('aria-current', 'page'); switcher.append(link);
     }

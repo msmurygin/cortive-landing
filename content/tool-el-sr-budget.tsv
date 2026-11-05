@@ -1,0 +1,45 @@
+key	el	sr
+scopeReady	Η λίστα προετοιμασίας είναι έτοιμη.	Spisak za pripremu je spreman.
+missingScope	Πεδίο έργου προς διευκρίνιση:	Obuhvat koji treba razjasniti:
+noEstimate	Απομένει να οριστούν τιμές λογισμικού, προσπάθεια υλοποίησης και άλλα κόστη. Δεν υπολογίστηκε τιμή ή ROI.	Tek treba utvrditi cenu softvera, obim rada i druge troškove. Cena ili ROI nisu procenjeni.
+calculated	Υπολογίστηκε από τις δικές σας τιμές.	Izračunato prema vašim unosima.
+notQuote	Δεν αποτελεί προσφορά Quark.	Ovo nije ponuda Quark-a.
+softwareTitle	Λογισμικό — λείπουν εκτιμήσεις κόστους	Softver — nedostaju procene troškova
+softwareAction	Ελέγξτε πλήθος χρηστών, ρόλους και τρόπο χρέωσης. Ζητήστε όρους συνδρομής ή μόνιμης άδειας, περιλαμβανόμενες ενότητες και ετήσιες χρεώσεις.	Proverite broj korisnika, uloge i način naplate. Tražite uslove pretplate ili trajne licence, uključene module i godišnje naknade.
+configurationTitle	Ρύθμιση και υλοποίηση — λείπουν εκτιμήσεις κόστους	Podešavanje i uvođenje — nedostaju procene troškova
+configurationAction	Τεκμηριώστε ρυθμίσεις ανά αποθήκη και παραλλαγές διαδικασιών. Ζητήστε ανθρωποημέρες, τιμές και ευθύνες ρύθμισης, δοκιμών και έναρξης. Το πεδίο έργου δεν προσδιορίζει αυτόματα προσπάθεια.	Dokumentujte podešavanja po skladištu i varijante procesa. Tražite čovek-dane, cene rada i odgovornosti za podešavanje, testove i početak rada. Obuhvat ne određuje automatski obim rada.
+connectionsTitle	Συνδέσεις — λείπουν εκτιμήσεις κόστους	Veze — nedostaju procene troškova
+connectionsAction	Καταγράψτε συνδέσεις, υπευθύνους, ροές δεδομένων και αποκατάσταση σφαλμάτων. Ορίστε εφάπαξ κόστος ανάπτυξης και δοκιμών και επαναλαμβανόμενες χρεώσεις, περιλαμβάνοντας πακέτα υπηρεσιών.	Navedite veze, odgovorne, tokove podataka i obradu grešaka. Utvrdite jednokratne troškove izrade i testiranja i tekuće naknade, uključujući usluge u paketima.
+noConnectionsAction	Επιβεβαιώστε ότι δεν χρειάζονται συνδέσεις. Ελέγξτε ERP, μεταφορείς και αυτοματισμούς πριν θεωρήσετε μηδενικό το κόστος διασυνδέσεων.	Potvrdite da veze nisu potrebne. Proverite ERP, prevoznike i automatizaciju pre nego što trošak integracija smatrate nulom.
+migrationTitle	Μεταφορά δεδομένων και μετάβαση — λείπουν εκτιμήσεις κόστους	Migracija i prelazak — nedostaju procene troškova
+migrationAction	Εξετάστε καθαρισμό βασικών δεδομένων, αρχικά αποθέματα, συμφωνία δεδομένων, εκπαίδευση και κάλυψη μετάβασης. Ορίστε υπευθύνους και κόστη.	Procenite sređivanje matičnih podataka, početne zalihe, usaglašavanje, obuku i podršku tokom prelaska. Odredite odgovorne i troškove.
+devicesTitle	Συσκευές και υποδομή — λείπουν εκτιμήσεις κόστους	Uređaji i infrastruktura — nedostaju procene troškova
+devicesAction	Απογράψτε σαρωτές, εκτυπωτές, ετικέτες, ασύρματη κάλυψη και φιλοξενία ανά αποθήκη. Ζητήστε κόστος αγοράς, αντικατάστασης και λειτουργίας.	Popišite skenere, štampače, etikete, Wi-Fi i hosting po skladištu. Pribavite troškove nabavke, zamene i rada.
+ownershipTitle	Μακροχρόνια διαχείριση — λείπουν εκτιμήσεις κόστους	Dugoročno upravljanje — nedostaju procene troškova
+ownershipAction	Επιβεβαιώστε ετήσια υποστήριξη, συντήρηση, δοκιμές αναβαθμίσεων και εσωτερική διαχείριση. Μην μετράτε δύο φορές υπηρεσίες που περιλαμβάνονται σε πακέτο.	Potvrdite godišnju podršku, održavanje, testove nadogradnji i internu administraciju. Ne računajte dvaput usluge uključene u paket.
+contingencyTitle	Αποθεματικό και εξαιρέσεις — λείπουν εκτιμήσεις κόστους	Rezerva i izuzeci — nedostaju procene troškova
+contingencyAction	Καταγράψτε ανοικτό πεδίο έργου και αιτιολόγηση δικού σας αποθεματικού. Αξιολογήστε χωριστά φόρους, ΦΠΑ, πληθωρισμό, ανάπτυξη και χρηματοδότηση. Δεν δίνεται προεπιλεγμένο αποθεματικό ή ROI.	Zabeležite nerazjašnjen obuhvat i obrazloženje sopstvene rezerve. Posebno procenite poreze, PDV, inflaciju, rast i finansiranje. Nema podrazumevane rezerve ni ROI-ja.
+complexityUnknown	Η λειτουργική πολυπλοκότητα δεν έχει οριστεί ακόμη	Operativna složenost još nije određena
+process:standard	Ελέγξτε τις τυπικές ροές παραλαβής, αποθήκευσης και συλλογής και καταγράψτε εξαιρέσεις.	Proverite standardne tokove prijema, skladištenja i komisioniranja i navedite izuzetke.
+process:moderate	Καταγράψτε κάθε παραλλαγή και πώς θα ρυθμιστεί και θα δοκιμαστεί.	Navedite svaku varijantu i kako će biti podešena i testirana.
+process:complex	Καταγράψτε ειδικούς κανόνες και εξαιρέσεις· ρωτήστε τι υποστηρίζεται με ρυθμίσεις και τι χρειάζεται κώδικα.	Opišite posebna pravila i izuzetke; utvrdite šta se podešava, a šta zahteva kod.
+process:unknown	Εξετάστε παραλαβή, αποθήκευση, συλλογή, ανατροφοδότηση και εξαιρέσεις για να ορίσετε το πεδίο έργου.	Prođite kroz prijem, skladištenje, komisioniranje, dopunu i izuzetke da odredite obuhvat.
+printHint	Στο παράθυρο εκτύπωσης επιλέξτε «Αποθήκευση ως PDF». Τα δεδομένα μένουν τοπικά.	U prozoru za štampanje izaberite „Sačuvaj kao PDF“. Podaci ostaju lokalni.
+englishGuide	Πλήρης οδηγός και δημοσιευμένες τιμές προμηθευτών (στα αγγλικά)	Ceo vodič i objavljene cene dobavljača (na engleskom)
+heroTitle	Σχεδιάστε το συνολικό κόστος WMS.	Planirajte ukupan trošak WMS-a.
+heroText	Συνδυάστε λογισμικό, υλοποίηση και επαναλαμβανόμενα έξοδα σε έναν προϋπολογισμό. Ξεκινήστε με λίστα προετοιμασίας ή δώστε δικές σας εκτιμήσεις τριετίας ή πενταετίας.	Objedinite softver, uvođenje i tekuće troškove u jednom budžetu. Počnite spiskom za pripremu ili unesite svoje procene za tri ili pet godina.
+heroNote	Το εργαλείο δεν παρέχει τιμές Quark ούτε προβλέπει εξοικονόμηση. Άγνωστο κόστος δεν είναι μηδέν.	Alat ne daje cene Quark-a niti predviđa uštede. Nepoznat trošak nije nula.
+startBudget	Σχεδιάστε τον προϋπολογισμό	Planirajte budžet
+noPrefilled	Χωρίς προσυμπληρωμένες τιμές	Bez unapred unetih cena
+language	Γλώσσα	Jezik
+english	Στα αγγλικά	Na engleskom
+validationError	Ελέγξτε τις τιμές που καταχωρίσατε.	Proverite unete vrednosti.
+integerError	Δώστε έγκυρο ακέραιο αριθμό:	Unesite ispravan ceo broj:
+numberError	Δώστε μη αρνητικό αριθμό με έως δύο δεκαδικά ψηφία:	Unesite nenegativan broj sa najviše dve decimale:
+textError	Χρησιμοποιήστε περιγραφή έως 120 χαρακτήρες χωρίς χαρακτήρες ελέγχου:	Unesite opis do 120 znakova bez kontrolnih znakova:
+choiceError	Επιλέξτε τιμή από τη λίστα:	Izaberite vrednost sa spiska:
+step	Βήμα {current} από {total}	Korak {current} od {total}
+adaptive	 · οι επόμενες ερωτήσεις προσαρμόζονται στις απαντήσεις	 · naredna pitanja se prilagođavaju odgovorima
+openQuestions	Και τα {count} ανοικτά ερωτήματα διατηρούνται στην αναλυτική αναφορά παρακάτω.	Svih {count} otvorenih pitanja sačuvano je u detaljnom izveštaju ispod.
+jsonReady	Το JSON δημιουργήθηκε τοπικά. Αν δεν αποθηκεύτηκε, επιλέξτε ξανά αποθήκευση. Δεν στάλθηκαν απαντήσεις.	JSON je napravljen lokalno. Ako nije sačuvan, izaberite ponovno čuvanje. Odgovori nisu poslati.
+saveAgain	Αποθήκευση {type} ξανά	Ponovo sačuvaj {type}

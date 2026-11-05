@@ -27,7 +27,7 @@ function cards(items) {
 
 function render(code, t) {
   const url = origin + '/' + code;
-  const localizedTools = ['bg', 'ro'].includes(code);
+  const localizedTools = ['bg', 'ro', 'el', 'sr'].includes(code);
   const toolQuery = localizedTools ? '?lang=' + code : '';
   const toolNote = localizedTools ? '↗' : escape(t.english) + ' ↗';
   const app = {

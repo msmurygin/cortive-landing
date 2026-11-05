@@ -1,0 +1,67 @@
+key	el	sr
+industries	Συμφωνήστε κύριο και πρόσθετους κλάδους με τον χορηγό του έργου.	Usaglasite glavnu i dodatne delatnosti sa sponzorom projekta.
+primaryIndustry	Επιλέξτε έναν κύριο κλάδο από τους δηλωμένους.	Usaglasite jednu glavnu delatnost među izabranima.
+models	Καταγράψτε με τη λειτουργία τα πραγματικά μοντέλα ιδιόκτητου αποθέματος, πελατών, παραγωγής και διανομής.	Sa operacijama opišite stvarne modele sopstvenih zaliha, klijenata, proizvodnje i distribucije.
+sites	Καταγράψτε τρέχουσες και σχεδιαζόμενες εγκαταστάσεις με τον υπεύθυνο λειτουργίας.	Sa odgovornim za operacije popišite postojeća i planirana skladišta.
+users	Επιβεβαιώστε ρόλους χρηστών και περίπου πόσοι χρειάζονται πρόσβαση ανά βάρδια.	Sa rukovodiocima potvrdite uloge korisnika i približan pristup po smenama.
+volume	Εξετάστε αντιπροσωπευτικούς όγκους και αιχμές, χωρίς γενικούς δείκτες αγοράς.	Pregledajte reprezentativne obime i vršna opterećenja, bez opštih tržišnih merila.
+volumeUnit	Ορίστε παραγγελίες ή γραμμές παραγγελιών με τον υπεύθυνο αναφορών.	Sa odgovornim za izveštavanje izaberite porudžbine ili stavke porudžbina.
+tracking	Ελέγξτε δείγματα ειδών και απαιτήσεις ιχνηλασιμότητας πελατών με τον υπεύθυνο αποθέματος.	Sa odgovornim za zalihe proverite uzorke artikala i zahteve klijenata za sledljivost.
+ownership	Επιβεβαιώστε νομικά και λειτουργικά όρια κυριότητας και ανάγκες διαχωρισμού.	Potvrdite pravne i operativne granice vlasništva i potrebe za razdvajanjem.
+environment	Ελέγξτε οδηγίες αποθήκευσης προϊόντων και πραγματικές ελεγχόμενες ζώνες.	Pregledajte uputstva za čuvanje proizvoda i stvarne kontrolisane zone.
+channel	Καταγράψτε ροές B2B/B2C και εξαιρέσεις με την εξυπηρέτηση πελατών.	Sa korisničkom podrškom utvrdite B2B/B2C tokove i izuzetke.
+units	Ελέγξτε μετατροπές μονάδων και ορισμούς μονάδων διακίνησης με δείγματα ειδών.	Proverite konverzije jedinica i definicije jedinica rukovanja na reprezentativnim artiklima.
+currentSystem	Απογράψτε υπολογιστικά φύλλα και εφαρμογές αποθήκης μαζί με την πληροφορική.	Sa IT-em popišite tabele i skladišne aplikacije.
+erp	Προσδιορίστε τρέχον ή μελλοντικό ERP και υπεύθυνο δεδομένων.	Utvrdite postojeći ili planirani ERP i odgovornog za podatke.
+integrations	Καταγράψτε με την πληροφορική συστήματα, συμβάντα, κατευθύνσεις ανταλλαγής και υπευθύνους.	Sa IT-em navedite sisteme, događaje, smerove razmene i odgovorne.
+rf	Απογράψτε σαρωτές, εκτυπωτές και ασύρματη κάλυψη· δοκιμάστε αντιπροσωπευτικές εργασίες.	Popišite skenere, štampače i Wi-Fi pokrivenost; proverite reprezentativne zadatke.
+automation	Με τους μηχανικούς απογράψτε εξοπλισμό, υπευθύνους ελέγχου και χειροκίνητες εφεδρείες.	Sa inženjerima popišite opremu, odgovorne za upravljanje i ručne rezervne postupke.
+processes	Εξετάστε αντιπροσωπευτικές ροές παραλαβής, αποθήκευσης και αποστολής.	Prođite kroz reprezentativne procese prijema, skladištenja i otpreme.
+variants	Καταγράψτε εξαιρέσεις ανά εγκατάσταση, πελάτη και κανάλι με τους υπευθύνους διαδικασιών.	Sa odgovornima za procese navedite izuzetke po skladištu, klijentu i kanalu.
+challenges	Συλλέξτε παραδείγματα και τρέχουσες μετρήσεις για τα δηλωμένα προβλήματα.	Prikupite primere i početna merenja navedenih operativnih problema.
+masterData	Συλλέξτε κωδικούς ειδών και θέσεων, μονάδες, καταστάσεις και αρχικά αποθέματα. Ορίστε υπεύθυνο συνέπειας και συμφωνίας δεδομένων.	Prikupite šifre artikala i lokacija, jedinice, statuse i početne zalihe. Odredite odgovornog za proveru doslednosti i usaglašavanje.
+requirements	Συμφωνήστε βασικές ροές, εξαιρέσεις και κριτήρια αποδοχής με τους υπευθύνους διαδικασιών.	Sa odgovornima za procese usaglasite glavne tokove, izuzetke i kriterijume prihvatanja.
+owner	Ορίστε εσωτερικό υπεύθυνο, αρμοδιότητες αποφάσεων και διαθέσιμο χρόνο με τον χορηγό.	Sa sponzorom odredite internu odgovornu osobu, prava odlučivanja i raspoloživo vreme.
+budget	Ορίστε υπευθύνους για αρχικά και επαναλαμβανόμενα έξοδα, συμφωνήστε διαδικασία αποφάσεων και λάβετε πραγματικές εκτιμήσεις.	Odredite odgovorne za početne i tekuće troškove, dogovorite postupak odlučivanja i pribavite stvarne procene.
+horizon	Συμφωνήστε επιθυμητό χρόνο απόφασης και έναρξης, χωριστά από εκτίμηση παράδοσης προμηθευτή.	Dogovorite željeni rok za odluku i početak, odvojeno od procene isporuke dobavljača.
+stakeholders	Προσδιορίστε αποφασίζοντες από λειτουργία, πληροφορική και χορηγό, μαζί με τη διαθεσιμότητά τους.	Utvrdite donosioce odluka iz operacija, IT-a i sponzora, kao i njihovu raspoloživost.
+integrationOwner	Ορίστε υπεύθυνο για κάθε σύστημα πηγής, προορισμού και ανταλλαγή.	Odredite odgovornog za svaki izvorni sistem, odredišni sistem i razmenu.
+uat	Γράψτε δοκιμές κανονικών περιπτώσεων και εξαιρέσεων και συμφωνήστε ευθύνες αποδοχής.	Pripremite testove redovnih slučajeva i izuzetaka i dogovorite odgovornosti za prihvatanje.
+owners	Καταγράψτε αποθέτες και ομάδες πελατών· διαχωρίστε τον αριθμό τους από διαφορές κανόνων.	Popišite deponente i grupe klijenata; odvojite njihov broj od razlika u pravilima.
+clientVariance	Συγκρίνετε αντιπροσωπευτικούς πελάτες και τεκμηριώστε εξαιρέσεις. Ο αριθμός πελατών δεν αποδεικνύει πολυπλοκότητα.	Uporedite reprezentativne klijente i dokumentujte izuzetke. Broj klijenata sam ne određuje složenost.
+clientNeeds	Ρωτήστε λειτουργικούς και εμπορικούς υπευθύνους ποιες απαιτήσεις διαχωρισμού, τιμολόγησης, ετικετών, αναφορών και συνδέσεων ισχύουν.	Sa operativnim i komercijalnim odgovornima proverite stvarne zahteve za razdvajanje, obračun, etikete, izveštaje i veze.
+jurisdiction	Ζητήστε από τον αρμόδιο ειδικό να προσδιορίσει χώρες, δικαιοδοσίες και ροές προϊόντων προς έλεγχο.	Nadležni stručnjak treba da utvrdi države, jurisdikcije i tokove proizvoda za proveru.
+obligations	Ο αρμόδιος ειδικός να εντοπίσει εφαρμοστέες υποχρεώσεις και τεκμήρια. Το ερωτηματολόγιο δεν είναι νομικός έλεγχος.	Nadležni stručnjak treba da utvrdi primenljive obaveze i dokaze. Upitnik nije pravna revizija.
+obligationNotes	Καταγράψτε όσα έχει ήδη εντοπίσει ο ειδικός ή αφήστε το θέμα ρητά άγνωστο.	Zabeležite obaveze koje je stručnjak već utvrdio ili ostavite temu izričito nepoznatom.
+qc	Επιβεβαιώστε με ποιότητα και λειτουργία καταστάσεις αποθέματος, εξουσία αποδέσμευσης και εξαιρέσεις.	Sa kvalitetom i operacijama potvrdite statuse zaliha, ovlašćenje za puštanje i izuzetke.
+materials	Ορίστε πρώτες ύλες, παραγωγή σε εξέλιξη και έτοιμα προϊόντα με τον προγραμματισμό παραγωγής.	Sa planiranjem proizvodnje utvrdite sirovine, nedovršenu proizvodnju i gotove proizvode.
+productionFlows	Εξετάστε προετοιμασία, χορήγηση και επιστροφή υλικών· καταγράψτε τις απαραίτητες εξαιρέσεις παρτίδας και ποιότητας.	Prođite kroz pripremu, izdavanje i povrat materijala; dokumentujte potrebne izuzetke za serije i kvalitet.
+productionLink	Με την πληροφορική παραγωγής ορίστε συμβάντα εντολών, υπευθύνους δεδομένων και σενάρια ανάκτησης.	Sa IT-em proizvodnje opišite događaje naloga, odgovorne za podatke i scenarije oporavka.
+temperatureZones	Καταγράψτε ζώνες και θερμοκρασιακά όρια ανά προϊόν με υπευθύνους εγκαταστάσεων και ποιότητας.	Sa odgovornima za objekat i kvalitet navedite zone i temperaturne opsege po proizvodima.
+monitoring	Ορίστε υπευθύνους παρακολούθησης και ειδοποιήσεων και εξετάστε ένα αντιπροσωπευτικό αρχείο συναγερμού.	Odredite odgovorne za nadzor i upozorenja i pregledajte reprezentativan zapis upozorenja.
+excursions	Συμφωνήστε με τον αρμόδιο υπεύθυνο ενέργειες για απόκλιση θερμοκρασίας, καραντίνα και αποδέσμευση.	Sa nadležnim odgovornim dogovorite postupke za temperaturna odstupanja, karantin i puštanje.
+segregation	Επιβεβαιώστε κανόνες διαχωρισμού από οδηγίες προϊόντων και υποχρεώσεις με αρμόδιο ειδικό.	Sa nadležnim stručnjakom potvrdite pravila razdvajanja prema uputstvima proizvoda i obavezama.
+handling	Επιλέξτε αντιπροσωπευτικές ροές παλέτας, κιβωτίου και τεμαχίου και ελέγξτε μετατροπές μονάδων.	Izaberite reprezentativne tokove paleta, kutija i komada i proverite konverzije jedinica.
+replenishment	Ακολουθήστε ανατροφοδότηση θέσης συλλογής και εξαίρεση έλλειψης αποθέματος με τη λειτουργία.	Sa operacijama ispratite dopunu lokacije za komisioniranje i izuzetak nestašice.
+dispatch	Τεκμηριώστε κανόνες και εξαιρέσεις αποστολής ανά δρομολόγιο, παραγγελία και προώθηση.	Dokumentujte pravila i izuzetke otpreme po ruti, porudžbini i promociji.
+peaks	Συλλέξτε αντιπροσωπευτικό μείγμα κανονικών και αιχμιακών παραγγελιών και αλλαγές προωθήσεων.	Prikupite reprezentativne redovne i vršne porudžbine i promene tokom promocija.
+productVariants	Ελέγξτε κωδικούς κύριου προϊόντος και παραλλαγών, μεγέθη, χρώματα και σχέδια με τον υπεύθυνο καταλόγου.	Sa odgovornim za katalog proverite šifre osnovnih proizvoda i varijanti, veličine, boje i modele.
+returns	Τεκμηριώστε έλεγχο επιστροφής, κατάσταση, απόφαση διαχείρισης και ευθύνες επανατοποθέτησης στο απόθεμα.	Dokumentujte pregled povrata, stanje, odluku o postupanju i odgovornosti za vraćanje na zalihu.
+packing	Συγκρίνετε συσκευασίες, ετικέτες και εξαιρέσεις ανά κανάλι και πελάτη.	Uporedite pakovanja, etikete i izuzetke po kanalu i klijentu.
+orderPeaks	Τεκμηριώστε αιχμές και αλλαγές καναλιών χωρίς υπόθεση εγγυημένης απόδοσης προϊόντος.	Dokumentujte vršna opterećenja i promene kanala, bez pretpostavke o garantovanom učinku proizvoda.
+siteSimilarity	Συγκρίνετε χάρτες διαδικασιών και εξαιρέσεων μεταξύ εγκαταστάσεων με τοπικούς υπευθύνους.	Sa lokalnim odgovornima uporedite procese i izuzetke u različitim skladištima.
+replication	Ορίστε ποια κοινή βάση μπορεί να επαναχρησιμοποιηθεί και ποιες τοπικές αποφάσεις χρειάζονται έλεγχο.	Utvrdite koja zajednička osnova može ponovo da se koristi i koje lokalne odluke zahtevaju proveru.
+equipmentOwner	Προσδιορίστε προμηθευτές εξοπλισμού και ελεγκτών, ευθύνες διασύνδεσης και επαφές υποστήριξης.	Utvrdite dobavljače opreme i kontrolera, odgovornosti za interfejse i kontakte podrške.
+fallback	Με τους μηχανικούς συμφωνήστε δοκιμές βλάβης, ανάκτησης και ασφαλούς χειροκίνητης εφεδρείας.	Sa inženjerima dogovorite testove kvara, oporavka i bezbednog ručnog rezervnog rada.
+interfacePattern	Καταγράψτε μηνύματα, αρχεία, API, συνθήκες ενεργοποίησης, συχνότητα και υπευθύνους και στις δύο πλευρές.	Navedite poruke, datoteke, API-je, okidače, učestalost i odgovorne na obe strane.
+interfaceOwnership	Ορίστε υπευθύνους συστημάτων και ανταλλαγών και στις δύο πλευρές.	Odredite odgovorne za sisteme i razmenu na obe strane.
+interfaceRecovery	Με την πληροφορική ορίστε δοκιμές επανάληψης, αποφυγής διπλής εκτέλεσης, συμφωνίας δεδομένων και αποδοχής αποτυχημένων μηνυμάτων.	Sa IT-em definišite testove ponovnih pokušaja, idempotentnosti, usaglašavanja i prihvatanja neuspelih poruka.
+problem-accuracy	Συγκρίνετε φυσικό και καταγεγραμμένο απόθεμα και λόγους διορθώσεων με τον υπεύθυνο αποθέματος.	Sa odgovornim za zalihe uporedite fizičko i evidentirano stanje i razloge korekcija.
+problem-errors	Ακολουθήστε ένα σφάλμα συλλογής από τον εντοπισμό ως τη διόρθωση με τον επόπτη.	Sa rukovodiocem ispratite grešku pri komisioniranju od otkrivanja do ispravke.
+problem-productivity	Παρατηρήστε αντιπροσωπευτικές εργασίες και μετρήστε την προσπάθεια πριν συζητήσετε βελτιώσεις.	Posmatrajte reprezentativne zadatke i izmerite rad pre razgovora o poboljšanjima.
+problem-visibility	Συμφωνήστε προβολές αποθέματος, επικαιρότητα και όρια κυριότητας και κατάστασης.	Dogovorite prikaze zaliha, ažurnost i granice po vlasništvu i statusu.
+problem-delays	Ακολουθήστε μια παραγγελία μέσα από παραδόσεις μεταξύ ομάδων και καταγράψτε πραγματικές αναμονές.	Pratite porudžbinu kroz predaje između timova i zabeležite stvarna mesta čekanja.
+problem-manual	Καταγράψτε διπλές καταχωρίσεις και χειροκίνητες αποφάσεις με τους υπευθύνους· κρατήστε τους απαραίτητους ελέγχους.	Sa odgovornima navedite duple unose i ručne odluke; zadržite neophodne kontrole.
+problem-scale	Καταγράψτε αλλαγές εγκαταστάσεων, χρηστών και διαδικασιών χωρίς να υποθέτετε υποστήριξη προμηθευτή.	Opišite planirane promene skladišta, korisnika i procesa bez pretpostavke o podršci dobavljača.
+otherIndustry	Επιβεβαιώστε τη σύντομη περιγραφή με τον υπεύθυνο έργου.	Potvrdite kratak opis sa odgovornim za projekat.
+otherModel	Επιβεβαιώστε τη σύντομη περιγραφή με τον υπεύθυνο έργου.	Potvrdite kratak opis sa odgovornim za projekat.

@@ -17,10 +17,10 @@ function languages(code) {
 }
 function render(code, t) {
   const h = homes[code];
-  const toolNote = ['bg', 'ro'].includes(code) ? '' : '<span class="q-note">' + escape(h.english) + ' ↗</span>';
+  const toolNote = ['bg', 'ro', 'el', 'sr'].includes(code) ? '' : '<span class="q-note">' + escape(h.english) + ' ↗</span>';
   const url = 'https://quark.build' + base + '/' + code;
-  const cost = '/wms-cost' + (['bg', 'ro'].includes(code) ? '?lang=' + code : '');
-  const assessment = '/tools/wms-readiness-assessment' + (['bg', 'ro'].includes(code) ? '?lang=' + code : '');
+  const cost = '/wms-cost' + (['bg', 'ro', 'el', 'sr'].includes(code) ? '?lang=' + code : '');
+  const assessment = '/tools/wms-readiness-assessment' + (['bg', 'ro', 'el', 'sr'].includes(code) ? '?lang=' + code : '');
   return `<!doctype html><html lang="${code}" data-theme="light"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escape(t.title)}</title><meta name="description" content="${escape(t.description)}">
