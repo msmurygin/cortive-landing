@@ -249,5 +249,6 @@
       ]
     }
   ],
-  "buildCommand": "node scripts/balkan-pages.cjs && node scripts/generate-sitemap.cjs"
+  "buildCommand": "node scripts/balkan-pages.cjs && node scripts/generate-sitemap.cjs",
+  "outputDirectory": "."
 }

@@ -22,6 +22,7 @@ module.exports = function withoutBalkanPages(file, text) {
       Object.keys(rule).length === 2 && newPaths.includes(rule.source) && rule.destination === rule.source + '/index.html'
     ));
     if (config.buildCommand === 'node scripts/balkan-pages.cjs && node scripts/generate-sitemap.cjs') delete config.buildCommand;
+    if (config.outputDirectory === '.') delete config.outputDirectory;
     return JSON.stringify(config, null, 2) + '\n';
   }
   if (file === 'sitemap.xml') {

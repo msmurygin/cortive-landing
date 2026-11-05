@@ -50,6 +50,7 @@ test('build output is stable and sitemap includes exactly the indexable, canonic
   cp.execFileSync('node', ['scripts/balkan-pages.cjs'], { cwd: root });
   cp.execFileSync('node', ['scripts/generate-sitemap.cjs'], { cwd: root });
   assert.deepEqual(files.map(read), before);
+  assert.equal(config.outputDirectory, '.');
   const urls = [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
   assert.equal(urls.length, 12);
   assert.equal(new Set(urls).size, 12);
