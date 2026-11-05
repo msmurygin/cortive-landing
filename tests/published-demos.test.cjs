@@ -11,7 +11,9 @@ const icons=h=>h.match(/<link\b[^>]*rel="icon"[^>]*>/g)||[];
 // Permit only the approved social-preview image replacement; retain all other head assertions.
 const socialCover='https://quark.build/assets/social/quark-wms-share-20261027.jpg';
 const coverAlt='Quark WMS. A clearer view of warehouse work. Configurable warehouse management system.';
-const head=h=>h.split('</head>')[0].replace('<link rel="stylesheet" href="/design-assets/product-experiences.css">','')
+const head=h=>require('./balkan-preservation.cjs')('index.html',h).split('</head>')[0].replace('<link rel="stylesheet" href="/design-assets/product-experiences.css">','')
+ .replace('<meta name="seznam-wmt" content="iPQr2gZLvb75LlNhAzK6ut1uiZDstOZ4" />','')
+ .replace('<meta name="yandex-verification" content="3b128ecfdeff22be" />','')
  .replaceAll(socialCover,'https://quark.build/assets/shots/web/balances-by-location.jpg')
  .replace("<meta property='og:image:type' content='image/jpeg'><meta property='og:image:width' content='1200'><meta property='og:image:height' content='630'>",'')
  .replace("<meta property='og:image:alt' content='"+coverAlt+"'>","<meta property='og:image:alt' content='Quark inventory screen showing stock by location and hold reasons'>")
