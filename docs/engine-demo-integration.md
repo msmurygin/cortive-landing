@@ -1,10 +1,44 @@
-# Guided warehouse trial
+# Conversational warehouse trial
 
-`/try` is the direct entry point. Visitors choose receiving, putaway or picking, then describe their product or start a local sample. A plan is optional. Only the active step is available; AI clarification questions appear one at a time and answers stay available when navigating back. Refinement sends the collected answers in one explicit request.
+The current `/try` experience is the guided three-process onboarding demonstration documented in [onboarding-simulation.md](onboarding-simulation.md). The earlier free-form single-task modules below remain available as implementation references and are not loaded on `/try`.
 
-The homepage contains a compact link instead of mounting the full runtime. “Try Quark” is available in desktop and mobile navigation. The default task view shows one WebRF screen. Terminal UI, layout, JSON and events are optional details that share the same runtime state. A completed task does not open a contact popup automatically; the visitor chooses whether to send their setup.
+`/try` is a local-review workspace: setup chat, WebRF/Terminal preview and an activity panel.
+The chat/activity layout comes from the approved workflow mockup. The handheld body, physical
+keyboard, tile menu and indigo/teal screen treatment follow `WebRF Prototype.html` and its `app.jsx`.
+A forklift-size view is available. On phones, Chat / RF / Activity are separate tabs; drafts and RF
+progress survive switching. Device names and shapes are illustrative, not hardware certification.
 
-`engine-try.js` owns the guided presentation. `engine-demo.js` retains the validated process, AI and enquiry orchestration. The original two-panel renderer remains a fallback for existing integration tests. The new `/try` page is initially `noindex,follow` and is excluded from the sitemap while this release is reviewed. Existing landing-page SEO, data engines, enquiry fields and analytics are preserved. No dependencies are added.
+The first greeting and later replies come from the real AI endpoint, `/api/engine-chat`. The
+assistant collects warehouse context in conversation and returns a validated process proposal.
+The visitor explicitly chooses **Try this task** to apply it. Later chat proposals do not mutate
+an active RF task until explicitly started. The logs show requests, validated proposals and
+accepted/rejected RF actions; they do not show model reasoning or simulated backend timings.
+
+The homepage remains a compact entry link. `/try` stays `noindex,follow`, outside the sitemap.
+This iteration is local-only pending owner review; do not push or deploy it automatically.
+Existing contact and Assessment data engines, analytics and legal page bodies are unchanged.
+No runtime dependencies are added.
+
+## Modules and local launch
+
+- `assets/workflow-demo/workspace.js`: DOM, chat controls, plan attachments and responsive panels.
+- `assets/workflow-demo/session.js`: conversation lifecycle, cancellation guards and shared RF state.
+- `assets/workflow-demo/rf-device.js`: two visual renderers over the existing `engine-flow.js` runtime.
+- `assets/workflow-demo/enquiry.js`: explicit consented contact form and a strict payload whitelist.
+- `lib/engine-chat.js`: bounded history, conversational output schema and shared process validation.
+- `api/_chat-system.md`: conversation instructions, alongside the existing Photon process prompt.
+
+Start with Node 24 or later:
+
+```sh
+node scripts/dev-workflow.cjs --credentials-file /absolute/private/quark-ai.env
+```
+
+The default address is `http://127.0.0.1:4173/try`. The private environment file contains
+`ANTHROPIC_API_KEY` and optionally `ANTHROPIC_MODEL`; keep it outside Git and never put values in
+browser code. The server is bound to loopback, serves only allowed assets, blocks dotfiles/source
+folders and returns JSON for API errors. The default port also matches the existing enquiry
+endpoint's development-origin allowlist. `/api/health` reports only whether a key is configured.
 
 ## Shared process runtime
 
@@ -20,9 +54,20 @@ The definition separates operation, product/SKU, packaging, packages, base units
 
 ## AI and clarification
 
-Explicit analysis sends the selected description or JPEG/PNG/PDF to a server endpoint using the configured AI provider. Selecting a file alone does not transmit it. Public UI uses Quark AI branding; credentials remain server-side.
+The greeting sends no warehouse file. Each explicit visitor message sends bounded conversation
+context plus the selected plan, if any. Choosing a file alone does not send it. JPEG/PNG/PDF files
+are limited to 3 MiB and validated by signature. An active plan is shown in the composer; removing
+it stops including its bytes in subsequent requests. Earlier conversation/extracted metadata stays
+in this browser session. No browser persistence or new analytics is used.
 
-Structured output includes layout facts, unknowns, questions and RF process JSON. Unknown vertical levels are not inferred from a floor plan. Questions have individual answer fields inside a scrollable region, plus an optional general reply. Refinement retains the original selected file, description, current process and prior summary. Manually edited fields remain under visitor control. Cancelled or superseded requests cannot overwrite newer input. Provider failures show a retry/manual path, never fabricated success.
+The model must return plain text, suggested replies and the existing strict metadata contract.
+The server validates process semantics before the result reaches either renderer. Unknown pallet
+counts remain unknown, independently of the capacity per pallet. Serial capture stays one per base
+unit. A ready card requires a selected operation, product, UOM, conversion and quantity. Layout
+assumptions are labelled sample values. Cancel/reset guards reject late replies. Cancellation
+stops waiting in the browser; an already started provider request may finish within its server
+bound. There are no automatic paid retries. Provider failures retain conversation and offer retry
+or an explicitly labelled local sample; that sample never pretends to be an AI analysis.
 
 ## Setup enquiries
 

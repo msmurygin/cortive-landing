@@ -5,7 +5,7 @@ module.exports = function withoutTry(file, text) {
     const c = JSON.parse(text);
     c.redirects = c.redirects.filter(r => !(Object.keys(r).length === 3 && r.permanent === true && ['/try/','/try.html'].includes(r.source) && r.destination === '/try'));
     c.rewrites = c.rewrites.filter(r => !(Object.keys(r).length === 2 && r.source === '/try' && r.destination === '/try.html'));
-    for (const [name, expected] of Object.entries({'api/engine-analyze.js':{maxDuration:60,includeFiles:'api/_photon-system.md'},'api/engine-enquiry.js':{maxDuration:20}})) {
+    for (const [name, expected] of Object.entries({'api/engine-analyze.js':{maxDuration:60,includeFiles:'api/_photon-system.md'},'api/engine-enquiry.js':{maxDuration:20},'api/engine-chat.js':{maxDuration:60,includeFiles:'api/*.md'}})) {
       if (JSON.stringify(c.functions?.[name]) === JSON.stringify(expected)) delete c.functions[name];
     }
     if (c.functions && !Object.keys(c.functions).length) delete c.functions;

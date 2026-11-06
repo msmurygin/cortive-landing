@@ -165,6 +165,7 @@
     if (typeof p.serialized !== 'boolean' || typeof p.lot_controlled !== 'boolean')
       throw new Error('Invalid tracking requirements.');
     if (
+      p.pack_quantity !== null && p.pack_units !== null &&
       (p.pack_units || 1) * (p.pack_quantity || (p.serialized ? 3 : 24)) >
       (p.serialized ? 100 : 10000)
     )
@@ -210,7 +211,8 @@
     const p = task.product,
       op = task.operation || 'receiving_and_putaway';
     const item = p.name || 'Sample product',
-      quantity = p.pack_quantity || (p.serialized ? 3 : 24),
+      quantity = p.pack_quantity || Math.max(1, Math.min(p.serialized ? 3 : 24,
+        Math.floor((p.serialized ? 100 : 10000) / (p.pack_units || 1)))),
       units = p.pack_units || 1;
     const result = {
       ...task,
@@ -237,6 +239,7 @@
       steps: task.operation ? task.steps.slice() : defaults(op, p.serialized, p.lot_controlled),
     };
     result.total_units = quantity * units;
+    validateTask(result, layout);
     result.destination = location(result.destination_aisle, layout, false);
     if (!result.destination) throw new Error('No free sample location is available in this aisle.');
     result.source = location('A', layout, true) || 'STAGE';

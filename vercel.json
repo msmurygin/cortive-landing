@@ -328,6 +328,10 @@
     },
     "api/engine-enquiry.js": {
       "maxDuration": 20
+    },
+    "api/engine-chat.js": {
+      "maxDuration": 60,
+      "includeFiles": "api/*.md"
     }
   }
 }
