@@ -127,6 +127,7 @@ test('try page has a canonical route, no homepage AI execution, and direct deskt
  for(const source of ['/try/','/try.html'])a.deepEqual(config.redirects.find(r=>r.source===source),{source,destination:'/try',permanent:true});
  const h=read('try.html');a.match(h,/canonical" href="https:\/\/quark.build\/try/);a.match(h,/name="robots" content="noindex,follow"/);a.doesNotMatch(h.split('</head>')[0],/hreflang=/);a.doesNotMatch(h,/id="lead-form"/);a.ok(h.indexOf('engine-try.js')<h.indexOf('engine-demo.js'));a.equal((h.match(/id="qe-root"/g)||[]).length,1);
  for(const file of ['index.html','product.html','pricing.html','integrations.html','vision.html','wms-cost.html','tools/wms-readiness-assessment/index.html'])a.equal((read(file).match(/data-nav="try"/g)||[]).length,2,file);
+ for(const code of ['bg','ro','el','sr'])for(const file of [code+'/index.html','solutions/legacy-hardware/'+code+'/index.html'])a.match(read(file),/href="\/try" data-nav="try"/);
  a.doesNotMatch(read('index.html'),/engine-demo.js|engine-flow.js|id="qe-root"/);
  a.doesNotMatch(read('assets/engine-demo/engine-try.js'),/fetch\(|sendBeacon|localStorage|sessionStorage|\.innerHTML\s*=/);
 });
