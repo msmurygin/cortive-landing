@@ -3,3 +3,8 @@
 .DS_Store
 docs
 tests
+
+# Server-only local credentials
+.env
+.env.*
+!.env.example

@@ -191,6 +191,16 @@
       "source": "/solutions/legacy-hardware/el/index.html",
       "destination": "/solutions/legacy-hardware/el",
       "permanent": true
+    },
+    {
+      "source": "/try/",
+      "destination": "/try",
+      "permanent": true
+    },
+    {
+      "source": "/try.html",
+      "destination": "/try",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -257,6 +267,10 @@
     {
       "source": "/solutions/legacy-hardware/el",
       "destination": "/solutions/legacy-hardware/el/index.html"
+    },
+    {
+      "source": "/try",
+      "destination": "/try.html"
     }
   ],
   "headers": [
@@ -306,5 +320,18 @@
     }
   ],
   "buildCommand": "node scripts/tool-locales.cjs && node scripts/balkan-pages.cjs && node scripts/legacy-pages.cjs && node scripts/generate-sitemap.cjs",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "functions": {
+    "api/engine-analyze.js": {
+      "maxDuration": 60,
+      "includeFiles": "api/_photon-system.md"
+    },
+    "api/engine-enquiry.js": {
+      "maxDuration": 20
+    },
+    "api/engine-chat.js": {
+      "maxDuration": 60,
+      "includeFiles": "api/*.md"
+    }
+  }
 }

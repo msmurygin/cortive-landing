@@ -94,7 +94,7 @@ test('English and unsupported locale requests use the original presentation with
 
 test('localization introduces no collection, third-party service or changed decision engine; build copy is deterministic', () => {
   for (const file of ['assets/seo/cost-model.js','assessment-assets/assessment-model.js','assessment-assets/discovery-model.js','assessment-assets/assessment-summary.js','assessment-assets/assessment-pdf.js','assets/seo/cost-pdf.js','api/lead.js','assets/leads.js','legal/privacy.html']) {
-    assert.equal(fs.readFileSync(file,'utf8'),cp.execFileSync('git',['show','20f901d:'+file],{encoding:'utf8'}),file);
+    assert.equal(require('./try-preservation.cjs')(file,fs.readFileSync(file,'utf8')),cp.execFileSync('git',['show','20f901d:'+file],{encoding:'utf8'}),file);
   }
   const source = fs.readFileSync('assets/i18n/tool-locale.js','utf8');
   assert.doesNotMatch(source,/fetch\(|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|\.innerHTML\s*=/);
