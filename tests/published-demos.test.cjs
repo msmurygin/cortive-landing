@@ -1,6 +1,6 @@
 const withoutIntegrationCatalogue=require('./integration-release-preservation.cjs');
 const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),cp=require('node:child_process');
-const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),manifest=require('../content/product-demos.json'),demos=require('../scripts/product-demos.cjs');
+const root=path.resolve(__dirname,'..'),read=f=>require('./try-preservation.cjs')(f,fs.readFileSync(path.join(root,f),'utf8')),manifest=require('../content/product-demos.json'),demos=require('../scripts/product-demos.cjs');
 // Current published functional baseline, before isolated UX concepts 01, 02 and 06.
 const old=f=>cp.execFileSync('git',['show','a2be3e6a92b1f0de11739cdcb25d10982639aa87:'+f],{cwd:root,encoding:'utf8'});
 const counts=xs=>xs.reduce((m,x)=>(m.set(x,(m.get(x)||0)+1),m),new Map());

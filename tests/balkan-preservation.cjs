@@ -5,7 +5,7 @@ const aliases = ['/tools/wms-cost-calculator', '/tools/wms-cost-calculator/',
 
 // Keep historical release assertions scoped to the content they originally protected.
 module.exports = function withoutBalkanPages(file, text) {
-  text = require('./tool-preservation.cjs')(file, text);
+  text = require('./tool-preservation.cjs')(file, require('./try-preservation.cjs')(file, text));
   if (file === 'design-assets/qds.js') {
     return text.replace("const menuLabel=burger.querySelector('span').textContent,closeLabel=burger.dataset.closeLabel||'Close';\n", '')
       .replace("burger.querySelector('span').textContent=closeLabel", "burger.querySelector('span').textContent='Close'")

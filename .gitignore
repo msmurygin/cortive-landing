@@ -2,3 +2,8 @@
 
 # raw full-screen captures — they contain the desktop, browser tabs and bookmarks
 assets/shots/_raw/
+
+# Server-only local credentials
+.env
+.env.*
+!.env.example
