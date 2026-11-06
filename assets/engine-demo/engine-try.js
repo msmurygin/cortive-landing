@@ -69,6 +69,7 @@
         (state.setup.plan ? '<p class="qe-note">Selected: ' + esc(state.setup.plan.name) + '</p>' + button('qe-unplan', 'Remove plan', true) : '') + '</div></details>' + error() +
         '<p class="qe-note">Continue sends your description and any selected plan to Quark AI. Only share material you have permission to use. <a href="/legal/privacy.html">Privacy</a></p>' +
         '<div class="qt-actions"><button type="button" id="qt-analyze" class="qe-btn"' + (!state.setup.text.trim() && !state.setup.plan ? ' disabled' : '') + '>Continue with Quark AI <span aria-hidden="true">→</span></button>' + button('qt-example', 'Use an example instead', true) + '</div>' +
+        (state.formErr ? button('qt-manual', 'Configure the example manually', true) + '<p class="qe-note">Start with editable sample values. This does not analyse your description or plan.</p>' : '') +
         '<button type="button" class="qe-link" id="qt-choose">← Change operation</button>';
     }
     function clarifyHTML(questions) {
@@ -114,6 +115,15 @@
       if (id === 'qt-choose') { api.cancelAI(); api.stopTimers(); state.phase = 'setup'; state.modal = false; screen = 'choose'; redraw(); return true; }
       if (id === 'qt-describe' || id === 'qt-cancel') { api.cancelAI(); state.stage = 'drop'; state.formErr = ''; screen = 'describe'; redraw(); return true; }
       if (id === 'qt-example') { useExample(); return true; }
+      if (id === 'qt-manual') {
+        api.cancelAI();
+        state.formErr = '';
+        state.stage = 'params';
+        state.setup.src = 'demo';
+        state.guideSkipQuestions = true;
+        redraw();
+        return true;
+      }
       if (id === 'qt-analyze') {
         if (!state.setup.text.trim() && !state.setup.plan) return true;
         state.guideSkipQuestions = false; questionIndex = 0;

@@ -131,3 +131,10 @@ test('try page has a canonical route, no homepage AI execution, and direct deskt
  a.doesNotMatch(read('index.html'),/engine-demo.js|engine-flow.js|id="qe-root"/);
  a.doesNotMatch(read('assets/engine-demo/engine-try.js'),/fetch\(|sendBeacon|localStorage|sessionStorage|\.innerHTML\s*=/);
 });
+
+test('guided analysis failure offers a working manual review without another AI call or losing the description',async()=>{
+ let calls=0;const p=preview(async()=>{calls++;return {ok:false,json:async()=>({error:'AI could not finish this example.'})}},undefined,true);
+ await p.click({dataset:{qtOperation:'receiving'}});await p.event('input',{id:'qe-desc',value:'Gumichka XXL: 1000 units per pallet, 20 cases, 5 inner packs per case.'});
+ await p.click({id:'qt-analyze',dataset:{}});a.match(p.root.innerHTML,/Configure the example manually/);
+ await p.click({id:'qt-manual',dataset:{}});a.match(p.root.innerHTML,/Your example is ready/);a.match(p.root.innerHTML,/Adjust the example/);a.equal(calls,1);a.equal(p.demo.state.setup.task.operation,'receiving');a.match(p.demo.state.setup.text,/Gumichka/);a.equal(p.demo.state.setup.ai,null);
+});

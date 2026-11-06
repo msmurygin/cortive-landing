@@ -50,6 +50,13 @@ about missing facts that materially affect the selected process. Do not repeat a
 or ask for optional restrictions after the user explicitly chose any free location. If the user
 approves sample data, use it with a qualification instead of asking again for the same field.
 
+Location labels are not necessarily aisle identifiers. For example A-01-0 can mean zone A,
+bay 01, level 0. Do not put a complete location label into destination_aisle; that field accepts
+only an explicitly identified aisle letter A-L, otherwise null. Zone A is not proof of aisle A.
+If a range such as levels 0 through 3 conflicts with a stated total of three levels, ask which
+level labels are used. Never return zero as a level count. The preview uses sample addresses;
+explain in the summary when the customer's naming scheme cannot be represented exactly.
+
 ## Product And Packaging
 
 The product name, SKU, packaging label, number of packages and units per package are separate facts.
@@ -60,6 +67,17 @@ pallet. For any entry above 100 total base units for serialized goods or 10,000 
 goods, or with either packaging field above 1,000, automatically use a representative sample of 24
 Each × 1 and say in the summary that the quantity was scaled for the demo. Do not ask for a smaller
 quantity. Do not assume that the barcode of an LPN is a product serial.
+
+Nested packaging must be reduced to one selected handling UOM and its conversion to base units.
+Example: 1 pallet holds 1,000 units in 20 cases, each case holds 5 inner packs. That is 50 units
+per case and 10 per inner pack, NOT 20 x 5 x 1,000 units. The JSON can represent 1 Pallet x 1,000
+or 20 Case x 50, depending on the selected receiving UOM. Preserve the hierarchy briefly in the
+summary; do not create extra JSON fields. Capacity per pallet does not establish the number of
+pallets actually being received. Ask for that quantity if missing and keep pack_quantity null
+until answered. Do not scale a valid 1,000-unit nonserialized pallet down to 24 units.
+
+Keep the result compact: one short summary and only necessary clarification questions. Missing
+facts should produce null product fields or concise questions, not an expanded explanation.
 
 ## Receiving
 

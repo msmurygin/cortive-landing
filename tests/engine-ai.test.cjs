@@ -23,7 +23,7 @@ test('file signatures and size are checked; remote file URLs cannot be fetched',
 test('Claude receives structured inputs, server credentials and bounded output; only validated JSON is returned',async()=>{
  const calls=[];const result=await infer(input(),{key:'TEST-ONLY-KEY',model:'TEST-MODEL',fetchImpl:async(url,options)=>{calls.push({url,options});return response(url.endsWith('count_tokens')?{input_tokens:300}:{stop_reason:'end_turn',content:[{type:'text',text:JSON.stringify(good)}]})}});
  a.equal(result.levels,4);a.equal(calls.length,2);a.equal(calls[0].url,'https://api.anthropic.com/v1/messages/count_tokens');
- const body=JSON.parse(calls[1].options.body);a.equal(body.output_config.format.type,'json_schema');a.deepEqual(body.output_config.format.schema.properties.type.anyOf,[{type:'string',enum:['E-commerce','Distribution','3PL','Manufacturing']},{type:'null'}]);a.equal(body.max_tokens,2400);a.equal(calls[1].options.headers['x-api-key'],'TEST-ONLY-KEY');a.equal(body.tools,undefined);a.equal(body.model,'TEST-MODEL');
+ const body=JSON.parse(calls[1].options.body);a.equal(body.output_config.format.type,'json_schema');a.deepEqual(body.output_config.format.schema.properties.type.anyOf,[{type:'string',enum:['E-commerce','Distribution','3PL','Manufacturing']},{type:'null'}]);a.equal(body.max_tokens,4000);a.equal(calls[1].options.headers['x-api-key'],'TEST-ONLY-KEY');a.equal(body.tools,undefined);a.equal(body.model,'TEST-MODEL');
 });
 test('oversized token estimates stop before inference; refusals, invalid JSON and truncated responses fail closed',async()=>{
  let calls=0;await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async()=>{calls++;return response({input_tokens:12001})}}),/too detailed/);a.equal(calls,1);
@@ -104,3 +104,12 @@ test('RF button language can differ from the warehouse region', () => {
  a.equal(ukrainian.task.localized_commands.primary_btn, 'ПІДТВЕРДИТИ');
  a.throws(() => validateResult({...good, detected_language: 'unsupported'}, input()));
 });
+
+ test('nested pallet packaging preserves a valid 1000-unit receipt and output exhaustion is diagnosed safely', async()=>{
+ const t=Flow.emptyTask();t.operation='receiving';t.steps=Flow.defaults('receiving',false,false);
+ Object.assign(t.product,{name:'Gumichka XXL',pack_label:'Pallet',pack_units:1000,pack_quantity:1});
+ const r=validateResult({...good,task:t},input());a.equal(r.task.product.pack_units,1000);a.equal(r.task.product.pack_quantity,1);a.doesNotMatch(r.summary,/Demo quantity/);
+ for(const [reply,reason] of [[{stop_reason:'max_tokens',content:[{type:'text',text:'PRIVATE PARTIAL JSON'}]},'output_limit'],[{stop_reason:'refusal',content:[]},'unsupported_input']]){
+ await a.rejects(infer(input(),{key:'test',model:'test',fetchImpl:async url=>response(url.endsWith('count_tokens')?{input_tokens:100}:reply)}),e=>e.reason===reason&&e.status===502&&!e.message.includes('PRIVATE'));
+ }
+ });

@@ -36,7 +36,7 @@ Production analysis and enquiries remain disabled unless `ENGINE_AI_PUBLIC_ENABL
 
 - One JPEG/PNG/PDF up to 3 MiB, with type/signature/base64 validation. Request bound: 4,250,000 bytes, below Vercel's 4.5 MB function-body limit.
 - Initial description: 5,000 UI characters. Clarification request including question context: 12,000 server characters. Rule request: 1,000 characters.
-- Token-count preflight: at most 12,000 input tokens; output at most 2,400 tokens. No automatic paid retries.
+- Token-count preflight: at most 12,000 input tokens; output at most 4,000 tokens. No automatic paid retries. Truncated/refused output never reaches the RF runtime; Preview shows a fixed diagnostic category without logging model output. Failed initial analysis retains the description and offers editable manual sample values.
 - Provider timeout 40 s, browser 45 s, analysis function 60 s. Enquiry provider 10 s, browser 15 s, function 20 s.
 - Best-effort warm-instance throttles: Preview 20 AI calls / 5 min per IP hash; other environments 6. Two concurrent analyses per instance. Enquiries: 3 / 10 min. These are not durable cross-instance spending/abuse controls.
 - Public release still needs an approved privacy/data-processing notice and durable provider/edge cost controls. Existing Vercel authentication stays enabled for Preview.
