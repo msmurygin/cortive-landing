@@ -1,6 +1,10 @@
-# Home engine demo
+# Guided warehouse trial
 
-The supplied widget sits after the existing hero and before the four-question navigation. The homepage copy, branding, SEO, verification tags, existing forms and analytics are preserved. No dependencies are added.
+`/try` is the direct entry point. Visitors choose receiving, putaway or picking, then describe their product or start a local sample. A plan is optional. Only the active step is available; AI clarification questions appear one at a time and answers stay available when navigating back. Refinement sends the collected answers in one explicit request.
+
+The homepage contains a compact link instead of mounting the full runtime. “Try Quark” is available in desktop and mobile navigation. The default task view shows one WebRF screen. Terminal UI, layout, JSON and events are optional details that share the same runtime state. A completed task does not open a contact popup automatically; the visitor chooses whether to send their setup.
+
+`engine-try.js` owns the guided presentation. `engine-demo.js` retains the validated process, AI and enquiry orchestration. The original two-panel renderer remains a fallback for existing integration tests. The new `/try` page is initially `noindex,follow` and is excluded from the sitemap while this release is reviewed. Existing landing-page SEO, data engines, enquiry fields and analytics are preserved. No dependencies are added.
 
 ## Shared process runtime
 

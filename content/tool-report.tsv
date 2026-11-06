@@ -1,0 +1,119 @@
+key	bg	ro
+clarify	Уточнете:	Clarificați:
+prepare	Подгответе:	Pregătiți:
+further	Допълнително проучване:	Analiză suplimentară:
+reported	Изрично посочен отговор; не е независимо проверен.	Răspuns declarat explicit; nu este verificat independent.
+unknownExplanation	Този отговор липсва или е неизвестен; това не е отрицателен отговор.	Acest răspuns lipsește sau este necunoscut; nu este un răspuns negativ.
+prepareExplanation	Посочената подготовка липсва или е непълна.	Pregătirea declarată lipsește sau este incompletă.
+hypothesisExplanation	Темата е избрана според посочения отрасъл, модел или характеристика. Изборът сам по себе си не установява изискване.	Tema a fost aleasă după industria, modelul sau caracteristica declarată. Selecția nu stabilește singură o cerință.
+deferredExplanation	Тази приложима тема не е зададена заради ограничения брой допълнителни въпроси. Не се предполага отговор или изискване.	Această temă relevantă nu a fost întrebată din cauza limitei de întrebări suplimentare. Nu se presupune un răspuns sau o cerință.
+conflictExplanation	Посочените отговори може да изискват съгласуване. Нито един не е заменен автоматично.	Răspunsurile declarate pot necesita reconciliere. Niciunul nu a fost înlocuit automat.
+conflictAction	Уточнете обхвата и за кой процес или склад важи всяко твърдение.	Confirmați domeniul și procesul sau depozitul pentru care se aplică fiecare afirmație.
+reviewOwner	Проверете темата с отговорника от операции или ИТ.	Verificați tema cu responsabilul de operațiuni sau IT.
+validateOwner	Потвърдете с отговорника за процеса или системата.	Confirmați cu responsabilul de proces sau de sistem.
+pilotAction	Изберете нормални случаи и изключения с отговорника за процеса и ги проверете с избраните доставчици.	Alegeți cazuri normale și excepții cu responsabilul de proces și verificați-le cu furnizorii selectați.
+pilotExplanation	Предложение според посочените отговори за обсъждане и проверка; не е потвърдена продуктова съвместимост.	Propunere bazată pe răspunsurile declarate, pentru discuție și verificare; nu confirmă compatibilitatea produsului.
+unknownAction	Потвърдете описанието с отговорния участник.	Confirmați descrierea cu persoana responsabilă.
+conflict:primary	Изберете един основен отрасъл от посочените.	Desemnați o industrie principală dintre cele selectate.
+conflict:tracking	Уточнете „само количество“ спрямо допълнителната проследимост.	Clarificați „doar cantitate“ față de trasabilitatea suplimentară.
+conflict:ownership	Уточнете единствения собственик в посочения 3PL модел.	Clarificați proprietarul unic în modelul 3PL declarat.
+conflict:owners	Уточнете броя вложители спрямо собствеността на стоката.	Clarificați numărul deponenților față de proprietatea stocului.
+conflict:erp	Уточнете планираната ERP връзка при липса на ERP сега.	Clarificați conexiunea ERP planificată, deși acum nu există un ERP.
+conflict:hybrid	Уточнете конкретните дейности в смесения / другия модел.	Identificați modelele concrete din modelul hibrid / altul.
+conflict:otherIndustry	Добавете кратко описание или оставете темата изрично неуточнена.	Adăugați o descriere scurtă sau lăsați tema explicit neclarificată.
+conflict:otherModel	Добавете кратко описание или оставете темата изрично неуточнена.	Adăugați o descriere scurtă sau lăsați tema explicit neclarificată.
+action:interfaces	Подгответе лист за проверка на интерфейсите.	Pregătiți o fișă de verificare a interfețelor.
+action:equipment	Проверете взаимодействието с оборудването.	Verificați interacțiunea cu echipamentele.
+action:rf	Подгответе проверки на устройствата и Wi-Fi.	Pregătiți verificări ale dispozitivelor și Wi-Fi-ului.
+action:clients	Проверете клиентските сценарии за приемане.	Verificați scenariile de acceptare specifice clienților.
+action:obligations	Проверете заявените задължения със специалист.	Verificați obligațiile declarate cu un specialist.
+action:qc	Опишете статусите и правото за освобождаване на стоки.	Descrieți stările stocului și autoritatea de eliberare.
+action:production	Документирайте сценарий за снабдяване на производство.	Documentați un scenariu de aprovizionare a producției.
+action:returns	Подгответе сценарий за обработка на върната стока.	Pregătiți un scenariu de tratare a unui retur.
+action:variants	Проверете вариантите в каталога.	Verificați variantele din catalog.
+action:replenishment	Проследете изключение при попълване.	Urmăriți o excepție de reaprovizionare.
+action:cold	Документирайте изключенията в контролираната среда.	Documentați excepțiile din mediul controlat.
+actionExplanation:interfaces	Избрани са външни връзки. Само видът и броят им не определят труда.	Au fost selectate conexiuni externe. Categoria și numărul lor nu stabilesc efortul.
+actionExplanation:equipment	Оборудването е изрично в обхвата; съвместимостта още не е потвърдена.	Echipamentele sunt explicit în proiect; compatibilitatea nu este încă verificată.
+actionExplanation:rf	Работа с RF / мобилни устройства се използва или планира.	Se utilizează sau se planifică lucrul cu terminale RF / mobile.
+actionExplanation:clients	Изрично са посочени клиентски изисквания; не се предполага готова функция за фактуриране или разделяне.	Au fost declarate cerințe ale clienților; nu se presupune o funcție disponibilă de facturare sau separare.
+actionExplanation:obligations	Екипът е посочил задължения. Приложимостта и контролите не са независимо проверени.	Echipa a declarat obligații. Aplicabilitatea și controalele nu sunt verificate independent.
+actionExplanation:qc	Изрично е заявена карантина или качествен контрол.	S-a solicitat explicit carantină sau control al calității.
+actionExplanation:production	Изрично са избрани взаимодействия с производството.	Au fost selectate explicit interacțiuni cu producția.
+actionExplanation:returns	Изрично е поискан процес за връщания.	S-a solicitat explicit un proces de retur.
+actionExplanation:variants	Изрично са посочени продуктови варианти.	Au fost declarate explicit variante de produs.
+actionExplanation:replenishment	Изрично е поискано попълване.	S-a solicitat explicit reaprovizionare.
+actionExplanation:cold	Избрани са контролирани температури. Не се предполага безопасен или нормативен праг.	Au fost selectate temperaturi controlate. Nu se presupune un prag sigur sau legal.
+problemExplanation	Това е заявен приоритет, а не установен дефект или обещано подобрение.	Aceasta este o prioritate declarată, nu un defect diagnosticat sau o îmbunătățire promisă.
+investigate	Проучете:	Analizați:
+pilot:production	Отпускане / връщане на материали и партидна / качествена проследимост	Eliberare / retur de materiale și trasabilitate de lot / calitate
+pilot:client	Клиентски правила и разделяне на стоките	Reguli ale clienților și separarea stocurilor
+pilot:returns	Проверка и обработка на върната стока	Inspecția și tratarea retururilor
+pilot:replenishment	Попълване с палети / кашони и изключение при недостиг	Reaprovizionare cu paleți / cutii și excepție de lipsă de stoc
+pilot:status	Контролирани наличности, изключения и освобождаване	Stoc controlat, excepții și eliberare
+pilot:receive	Приемане и разполагане	Recepție și plasare în locație
+pilot:inventory	Видимост на наличностите и циклично преброяване	Vizibilitatea stocului și inventariere ciclică
+pilot:outbound	Отбор и експедиция	Picking și expediere
+pilot:erp	Проверка на ERP интеграцията	Verificarea integrării ERP
+pilot:define	Първо изберете представителен процес.	Alegeți mai întâi un proces reprezentativ.
+dimension:process	Разнообразие на процесите	Varietatea proceselor
+dimension:inventory	Наличности и проследимост	Stoc și trasabilitate
+dimension:integrations	Интеграции	Integrări
+dimension:automation	Автоматизация	Automatizare
+dimension:compliance	Съответствие	Conformitate
+dimension:multi-owner	Работа с няколко собственици	Operare cu mai mulți proprietari
+dimension:replication	Повторно използване между складове	Reutilizare între depozite
+unknownReason	Неизвестен отговор	Răspuns necunoscut
+deferredReason	Отложено поради ограничения брой въпроси	Amânat din cauza limitei de întrebări
+unselectedReason	Не е избрано в този път; приложимостта не е установена	Nu a fost selectat în acest parcurs; relevanța nu este stabilită
+section:profile	1. Бизнес профил на склада	1. Profilul de afaceri al depozitului
+section:operations	2. Оперативни характеристики	2. Caracteristici operaționale
+section:requirements	3. Заявени изисквания — не са независимо проверени	3. Cerințe declarate — neverificate independent
+section:hypotheses	4. Допускания за проверка	4. Ipoteze de verificat
+section:dimensions	5. Фактори за сложност по направления	5. Factori de complexitate pe dimensiuni
+section:readiness	6. Подготовка за внедряване	6. Pregătirea implementării
+section:risks	7. Важни рискове и неизвестни	7. Riscuri și necunoscute importante
+section:tasks	8. Конкретни задачи за подготовка	8. Sarcini concrete de pregătire
+section:pilots	9. Предложени сценарии за проверка	9. Scenarii propuse pentru verificare
+section:next	10. Препоръчителни следващи стъпки	10. Pașii următori recomandați
+section:appendix	Приложение: всички отговори в активния въпросник	Anexă: toate răspunsurile din chestionarul activ
+section:method	Метод, версии и ограничения	Metodă, versiuni și limite
+Topic	Тема	Temă
+Your answer	Вашият отговор	Răspunsul dvs.
+Source	Източник	Sursă
+Requirement / decision	Изискване / решение	Cerință / decizie
+Discovery topic	Тема за проучване	Temă de analiză
+Why it was selected	Защо е избрана	De ce a fost selectată
+Dimension	Направление	Dimensiune
+Stated factors	Посочени фактори	Factori declarați
+Uncertainty	Неизвестни	Incertitudini
+Priority / issue	Приоритет / въпрос	Prioritate / temă
+Why it matters	Защо е важно	De ce contează
+Task / suggested owner	Задача / предложен отговорник	Sarcină / responsabil sugerat
+What to collect, verify or decide	Какво да съберете, проверите или решите	Ce să colectați, verificați sau decideți
+Proposal for validation	Предложение за проверка	Propunere de verificat
+Initial validation task	Първа задача за проверка	Prima sarcină de verificare
+Question / source	Въпрос / източник	Întrebare / sursă
+Your answers	Вашите отговори	Răspunsurile dvs.
+owner:quality	Качество / компетентен специалист	Calitate / specialist responsabil
+owner:it	ИТ / отговорник за оборудването	IT / responsabil de echipamente
+owner:production	Производство / планиране	Producție / planificare
+owner:operations	Операции / отговорник за проекта	Operațiuni / responsabil de proiect
+suggestedOwner	Предложен участник за обсъждане:	Responsabil sugerat pentru discuție:
+requirementsNote	Това са посочени от вас изисквания. Проверете специализираните правила и външните връзки за конкретното внедряване; наличието на основните WMS операции е отделен въпрос.	Acestea sunt cerințele declarate de dvs. Verificați regulile speciale și conexiunile externe pentru implementarea concretă; disponibilitatea operațiunilor de bază WMS este o temă separată.
+hypothesesNote	Отрасълът и моделът избират въпросите, но не определят регулации, задължителни функции или готови шаблони. Неизвестните остават отворени.	Industria și modelul aleg întrebările, dar nu stabilesc reglementări, funcții obligatorii sau șabloane disponibile. Necunoscutele rămân deschise.
+dimensionsNote	Това са обяснени фактори за проучване, а не числова оценка за сложност, труд или съвместимост на продукта.	Aceștia sunt factori de analiză explicați, nu un scor numeric de complexitate, o estimare de efort sau o clasificare a compatibilității.
+readinessNote	Оценката описва подготовката на проекта, а не зрелостта на продукта. Неизвестните остават отворени. Сертифицирането и разрешението за старт са отделни решения.	Evaluarea descrie pregătirea proiectului, nu maturitatea produsului. Necunoscutele rămân deschise. Certificarea și aprobarea lansării sunt decizii separate.
+moreRisks	Тук са петте най-приоритетни извода. Останалите са включени в пълния списък със задачи.	Aici sunt cele cinci constatări prioritare. Restul sunt incluse în lista completă de sarcini.
+noRisks	Известните отговори не показват конкретен пропуск. Проверете посочената основа с отговорника за проекта.	Răspunsurile cunoscute nu arată o lipsă concretă. Verificați baza declarată cu responsabilul de proiect.
+ownerNote	Ролите са предложения за обсъждане, а не твърдение, че има назначен човек. Запазете всички отворени теми в списъка.	Rolurile sunt sugestii pentru discuție, nu afirmații că o persoană a fost desemnată. Păstrați toate temele deschise în listă.
+pilotNote	Използвайте сценариите за планиране на приемателни тестове. Основните операции са реализирани; специализираните правила и интеграции се потвърждават за проекта.	Folosiți scenariile pentru planificarea testelor de acceptare. Operațiunile de bază sunt implementate; regulile speciale și integrările se confirmă pentru proiect.
+nextReview	Проверете данните, изискванията, отговорника и бюджета вътрешно преди подробна оценка на доставчик. [D07]	Verificați intern datele, cerințele, responsabilul și baza bugetului înainte de evaluarea detaliată a furnizorilor. [D07]
+nextMeeting	Използвайте отчета с операции, ИТ и спонсора за планиране на данни, настройки, интеграции и сценарии за приемане.	Folosiți raportul cu operațiunile, IT și sponsorul pentru a planifica datele, configurările, integrările și acceptarea.
+privacyNote	Не споделяйте оперативни данни извън организацията без разрешение. Контактът с Quark е по желание и не прилага този отчет.	Nu partajați date operaționale în afara organizației fără permisiune. Contactarea Quark este opțională și nu atașează acest raport.
+methodNote	Седем общи групи с до шест приоритизирани допълнителни теми, без повторения. Източниците посочват правилата и вашите отговори. Пълните структурирани изводи са в JSON.	Șapte grupe comune cu cel mult șase teme suplimentare prioritizate, fără duplicate. Sursele indică regulile și răspunsurile dvs. Constatările structurate complete sunt în JSON.
+disclaimer	Отчетът оценява подготовката на клиента. Quark има реализирани основни складови операции. Заявените изисквания, специализираните възможности и връзките се проверяват за конкретния проект. Това не е сертифициране, оценка за цена, ROI или труд, нито разрешение за старт.	Raportul evaluează pregătirea clientului. Quark are operațiuni de bază implementate. Cerințele declarate, funcțiile speciale și conexiunile se verifică în proiectul concret. Acesta nu este o certificare, o estimare de cost, ROI sau efort și nici o aprobare de lansare.
+empty	Няма изрично посочен елемент в отговорите. Проверете с отговорника за проекта.	Nu există un element declarat explicit în răspunsuri. Verificați cu responsabilul de proiect.
+noUnknowns	Не е установена допълнителна неизвестна по този път. Другият обхват трябва да се провери отделно.	Nu s-a identificat o necunoscută suplimentară în acest parcurs. Restul domeniului trebuie verificat separat.
+deferredTopics	Допълнителни теми, които не бяха зададени:	Teme suplimentare care nu au fost întrebate:
+generated	Създаден:	Generat:

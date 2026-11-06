@@ -9,6 +9,7 @@
       /[&<>"']/g,
       (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c],
     );
+  let guide = null;
   const TYPES = ['E-commerce', 'Distribution', '3PL', 'Manufacturing'];
   const LIM = { aisles: [1, 12], bays: [1, 20], levels: [1, 8] };
   const TASK = {
@@ -159,12 +160,13 @@
       syncProcess();
       synced(from);
       render();
+      if (guide && state.run.completed) guide.focusTitle();
       const scan = $('#' + (from === 'tui' ? 'qe-tuiscan' : 'qe-rfscan'));
       if (scan && state.run.error) {
         scan.focus({ preventScroll: true });
         scan.select();
       }
-      if (state.run.completed && !state.modalShown) {
+      if (state.run.completed && !state.modalShown && !guide) {
         state.modalShown = true;
         leadTimer = setTimeout(() => {
           if (state.phase === 'live' && state.run?.completed) {
@@ -225,6 +227,13 @@
       },
     });
     syncProcess();
+    if (guide) {
+      state.phase = 'live';
+      log('WORKFLOW', 'Local sample ready', 'ok');
+      render();
+      guide.focusTitle();
+      return;
+    }
     const seq = [
       ['INPUT', 'Preview parameters accepted · ' + st.type],
       [
@@ -781,8 +790,8 @@
       state.stage = 'params';
       state.unfold = true;
       render();
-      const f = $('#qe-aisles');
-      f && f.focus({ preventScroll: true });
+      if (guide) guide.focusTitle();
+      else { const f = $('#qe-aisles'); f && f.focus({ preventScroll: true }); }
     } catch (e) {
       if (serial !== aiSerial) return;
       state.stage = options.refine ? 'params' : 'drop';
@@ -1636,7 +1645,7 @@
       sf = state.sync && Date.now() - state.sync.at < 1000 ? state.sync.from : null;
     const region = state.setup.rfLocale?.detected_region;
     const regionTag = region ? '<span class="qe-ai-node">[AI:' + esc(region) + ']</span>' : '';
-    root.innerHTML =
+    root.innerHTML = guide ? guide.html() :
       '<div class="qe-box' +
       (live ? ' is-live' : '') +
       '"' +
@@ -1720,13 +1729,7 @@
     if (k === 'F8' && processView().code === 'close_receipt') return act.submit('tui');
     if (k === 'ESC') return act.back('tui');
   }
-  root.addEventListener('click', (e) => {
-    const t = e.target.closest('button');
-    if (!t) return;
-    if (t.id === 'qe-demo') return analyze(DEMO_PLAN);
-    if (t.id === 'qe-analyze-file') return analyze(state.setup.plan);
-    if (t.id === 'qe-ask-go') return askRule();
-    if (t.id === 'qe-refine') {
+  function refineSetup() {
       const questions = state.setup.ai?.uncertainties || [];
       const replies = questions
         .map((q, i) => ({ question: q, answer: (state.answers?.[i] || '').trim() }))
@@ -1748,7 +1751,15 @@
         text,
         round: { replies, additional_information: answer },
       });
-    }
+  }
+  root.addEventListener('click', (e) => {
+    const t = e.target.closest('button');
+    if (!t) return;
+    if (guide) { const handled = guide.click(t); if (handled !== false) return handled; }
+    if (t.id === 'qe-demo') return analyze(DEMO_PLAN);
+    if (t.id === 'qe-analyze-file') return analyze(state.setup.plan);
+    if (t.id === 'qe-ask-go') return askRule();
+    if (t.id === 'qe-refine') return refineSetup();
     if (t.dataset.rule != null) {
       state.setup.rules.splice(+t.dataset.rule, 1);
       return render();
@@ -1859,6 +1870,8 @@
     if (t.id === 'qe-desc') {
       state.setup.text = t.value;
       state.descriptionChanged = true;
+      const guidedContinue = $('#qt-analyze');
+      if (guidedContinue) guidedContinue.disabled = !t.value.trim() && !state.setup.plan;
       const g = $('#qe-desc-go');
       if (g) g.disabled = !t.value.trim();
       const p = $('#qe-parsed');
@@ -2072,6 +2085,11 @@
     }
     if (e.target.id === 'qe-mform') return sendEnquiry();
   });
+  if (root.dataset?.experience === 'guided' && window.QuarkTry) {
+    guide = window.QuarkTry.create({ root, state, Flow, esc, render, generate, analyze, cancelAI,
+      refine: refineSetup, rfHTML, tuiHTML, faceHTML, logHTML, taskParamsHTML, modalHTML,
+      stopTimers() { clearTimeout(leadTimer); prepT.forEach(clearTimeout); } });
+  }
   render();
   window.QuarkEngineDemo = { state, act, generate };
 })();
