@@ -59,7 +59,16 @@ module.exports = async function handler(req, res) {
     });
     return res.status(200).json({ ok: true, provider: 'Quark AI', result });
   } catch (e) {
-    const detail = process.env.VERCEL_ENV !== 'production' && e.reason ? ' [' + e.reason + ']' : '';
+    // Fixed diagnostic codes only: never expose provider bodies or business input.
+    const reason = e.reason || (
+      ['TimeoutError', 'AbortError'].includes(e.name) ? 'analysis_timeout' :
+      e.message === 'incomplete_model_output' ? 'incomplete_output' :
+      e.message === 'invalid_model_output' ? 'invalid_output' :
+      e instanceof SyntaxError ? 'invalid_json' :
+      /workflow|RF step|requested operation|Destination aisle|product|packaging|quantity|tracking|expiry/i.test(e.message) ? 'invalid_workflow' :
+      'analysis_failed'
+    );
+    const detail = process.env.VERCEL_ENV !== 'production' ? ' [' + reason + ']' : '';
     return res
       .status(e instanceof InputError ? e.status : 502)
       .json({
