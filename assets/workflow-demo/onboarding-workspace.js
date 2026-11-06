@@ -36,6 +36,45 @@
     lastText = "";
   const workspace = $("#workspace");
   function factsHTML() {
+    const profile = [
+      ["Product", s.profile.product_name],
+      [
+        "Lot policy",
+        s.profile.lot_policy?.enabled ? s.profile.lot_policy.code : "",
+      ],
+      [
+        "Lot creation",
+        s.profile.lot_policy?.enabled
+          ? s.profile.lot_policy.lot_creation
+          : "",
+      ],
+      [
+        "Receiving lot attributes",
+        s.profile.lot_policy?.attributes
+          ?.filter((attribute) => attribute.show)
+          .map((attribute) => attribute.label || attribute.code)
+          .join(", "),
+      ],
+      [
+        "Required at receiving",
+        s.profile.lot_policy?.attributes
+          ?.filter((attribute) => attribute.show && attribute.required)
+          .map((attribute) => attribute.label || attribute.code)
+          .join(", "),
+      ],
+      ["LPN entry", s.profile.capture_lpn === true ? "Required" : ""],
+      [
+        "Receiving unit",
+        s.profile.receive_whole_pallets === true ? "Whole pallets" : "",
+      ],
+      ["Receiving location", s.profile.receiving_location],
+      [
+        "Receiving location scan",
+        s.profile.receiving_location_scan === "not_required"
+          ? "Not required"
+          : s.profile.receiving_location_scan,
+      ],
+    ].filter(([, value]) => value !== null && value !== undefined && value !== "");
     return (
       '<div class="on-facts"><strong>Confirmed warehouse facts</strong>' +
       Model.questions
@@ -46,6 +85,16 @@
             esc(q.text) +
             "</span><b>✓ " +
             esc(q.choices.find(([v]) => v === s.facts[q.key])[1]) +
+            "</b></div>",
+        )
+        .join("") +
+      profile
+        .map(
+          ([label, value]) =>
+            "<div><span>" +
+            esc(label) +
+            "</span><b>✓ " +
+            esc(value) +
             "</b></div>",
         )
         .join("") +
@@ -579,6 +628,7 @@
           consent: true,
           stage,
           facts: s.facts,
+          profile: s.profile,
           text,
           preferred_language: uiLanguage,
           ...(file ? { file: { type: file.type, data: file.data } } : {}),
@@ -599,8 +649,10 @@
             "AI is unavailable. Use the guided choices to continue.",
         );
       if (revision !== generation) return;
-      if (stage === "profile" && s.stage === "profile")
+      if (stage === "profile" && s.stage === "profile") {
         machine.setFacts(data.result.answers);
+        machine.setProfile(data.result.profile);
+      }
       machine.say(data.result.assistant_message, "ai");
       s.messages[s.messages.length - 1].lang = uiLanguage;
       suggestedLanguage = Language.suggestion(

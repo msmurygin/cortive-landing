@@ -26,9 +26,9 @@
     },
     {
       key: "barcodes",
-      text: "Do operators scan product and location barcodes?",
+      text: "Do operators scan product barcodes during receiving?",
       choices: [
-        ["required", "Yes, both are required"],
+        ["required", "Yes, product scan is required"],
         ["optional", "Not consistently yet"],
       ],
     },
@@ -124,6 +124,19 @@
     const state = {
       stage: "profile",
       facts: {},
+      profile: {
+        product_name: null,
+        lot_policy: {
+          enabled: null,
+          code: null,
+          lot_creation: null,
+          attributes: [],
+        },
+        capture_lpn: null,
+        receive_whole_pallets: null,
+        receiving_location: null,
+        receiving_location_scan: null,
+      },
       messages: [],
       events: [],
       configIndex: 0,
@@ -139,6 +152,7 @@
       unitsScanned: 0,
       receiptQuantity: 0,
       expiry: "",
+      capturedAttributes: {},
       stock: { dock: 0, stored: 0, picked: 0 },
       faults: {},
       testedErrors: {},
@@ -185,6 +199,32 @@
       }
       return true;
     }
+    function setProfile(values) {
+      if (state.stage !== "profile" || !values) return false;
+      for (const key of [
+        "product_name",
+        "capture_lpn",
+        "receive_whole_pallets",
+        "receiving_location",
+        "receiving_location_scan",
+      ])
+        if (values[key] !== null && values[key] !== undefined)
+          state.profile[key] = values[key];
+      if (values.lot_policy && typeof values.lot_policy === "object")
+        state.profile.lot_policy = {
+          enabled: values.lot_policy.enabled,
+          code: values.lot_policy.code,
+          lot_creation: values.lot_policy.lot_creation,
+          attributes: Array.isArray(values.lot_policy.attributes)
+            ? values.lot_policy.attributes.map((attribute) => ({ ...attribute }))
+            : [],
+        };
+      return true;
+    }
+    function productCode() {
+      if (state.profile.product_name) return "ITEM-DEMO-001";
+      return state.facts.goods === "expiry" ? "MILK-1L" : "SOAP-500";
+    }
     function answer(key, value) {
       if (state.stage !== "profile") return false;
       const q = questions.find((x) => x.key === key);
@@ -201,6 +241,19 @@
     function useSample() {
       if (state.stage !== "profile") return false;
       setFacts(defaults);
+      state.profile = {
+        product_name: null,
+        lot_policy: {
+          enabled: false,
+          code: null,
+          lot_creation: null,
+          attributes: [],
+        },
+        capture_lpn: true,
+        receive_whole_pallets: true,
+        receiving_location: "STAGE",
+        receiving_location_scan: "not_required",
+      };
       say(
         "Use General Distribution: ordinary goods plus one expiry-dated milk line, pallets/cases/units, product and bin scanning, directed putaway, single-order picking and packing checks.",
         "user",
@@ -278,9 +331,20 @@
           {
             key: "product",
             label: "Scan product",
-            expected: state.facts.goods === "expiry" ? "MILK-1L" : "SOAP-500",
+            expected: productCode(),
             kind: "scan",
           },
+          ...(state.profile.lot_policy.enabled
+            ? state.profile.lot_policy.attributes
+                .filter((attribute) => attribute.show)
+                .map((attribute, index) => ({
+                  key: "lot_attribute_" + index,
+                  label: attribute.label || attribute.code,
+                  attribute_code: attribute.code,
+                  required: attribute.required,
+                  kind: "lot_attribute",
+                }))
+            : []),
           {
             key: "quantity",
             label:
@@ -323,7 +387,7 @@
         const lines = [
             {
               source: "A-01-02",
-              sku: state.facts.goods === "expiry" ? "MILK-1L" : "SOAP-500",
+              sku: productCode(),
               quantity: 12,
             },
             { source: "B-03-01", sku: "WATER-500", quantity: 6 },
@@ -399,9 +463,7 @@
       if (v.kind === "scan" || v.kind === "unit") {
         const expected =
           v.kind === "unit"
-            ? state.facts.goods === "expiry"
-              ? "MILK-1L"
-              : "SOAP-500"
+            ? productCode()
             : v.expected;
         if (raw !== expected)
           return fail(
@@ -438,6 +500,11 @@
             false,
           );
         if (op === "receiving") state.receiptQuantity = Number(raw);
+      }
+      if (v.kind === "lot_attribute") {
+        if (!raw && v.required)
+          return fail("Attribute value is required.", op, false);
+        if (raw) state.capturedAttributes[v.attribute_code] = raw;
       }
       if (v.kind === "date") {
         if (
@@ -614,8 +681,18 @@
     }
     function replay() {
       const facts = { ...state.facts };
+      const profile = {
+        ...state.profile,
+        lot_policy: {
+          ...state.profile.lot_policy,
+          attributes: state.profile.lot_policy.attributes.map((attribute) => ({
+            ...attribute,
+          })),
+        },
+      };
       Object.assign(state, create().state);
       state.facts = facts;
+      state.profile = profile;
       state.messages = [];
       say(
         "Replaying the same confirmed sample warehouse. No new answers are needed.",
@@ -626,6 +703,7 @@
       state,
       question,
       setFacts,
+      setProfile,
       answer,
       useSample,
       beginConfiguration,

@@ -8,6 +8,19 @@ const Model = require("../assets/workflow-demo/onboarding-machine");
 const Device = require("../assets/workflow-demo/onboarding-device");
 const RF = require("../assets/workflow-demo/rf-device");
 const AI = require("../lib/onboarding-ai");
+const emptyProfile = () => ({
+  product_name: null,
+  lot_policy: {
+    enabled: null,
+    code: null,
+    lot_creation: null,
+    attributes: [],
+  },
+  capture_lpn: null,
+  receive_whole_pallets: null,
+  receiving_location: null,
+  receiving_location_scan: null,
+});
 const esc = (s) =>
   String(s ?? "").replace(
     /[&<>"']/g,
@@ -109,6 +122,7 @@ test("AI detection fields are strictly validated; the model cannot return a swit
   const valid = {
     assistant_message: "Would you like to use Albanian?",
     answers,
+    profile: emptyProfile(),
     message_language: "sq",
     language_confidence: "high",
   };
@@ -176,6 +190,7 @@ test("model replies use the same localized action names as the UI even when the 
   const raw = {
     assistant_message: "Use Scan, Confirm or Retry.",
     answers,
+    profile: emptyProfile(),
     message_language: "sq",
     language_confidence: "high",
   };

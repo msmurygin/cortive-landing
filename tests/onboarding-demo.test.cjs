@@ -4,6 +4,19 @@ const Model = require("../assets/workflow-demo/onboarding-machine");
 const Device = require("../assets/workflow-demo/onboarding-device");
 const RF = require("../assets/workflow-demo/rf-device");
 const AI = require("../lib/onboarding-ai");
+const emptyProfile = () => ({
+  product_name: null,
+  lot_policy: {
+    enabled: null,
+    code: null,
+    lot_creation: null,
+    attributes: [],
+  },
+  capture_lpn: null,
+  receive_whole_pallets: null,
+  receiving_location: null,
+  receiving_location_scan: null,
+});
 const esc = (x) =>
   String(x ?? "").replace(
     /[&<>"']/g,
@@ -193,6 +206,7 @@ test("AI extraction validates facts and cannot inject execution instructions or 
     body,
   });
   a.match(input.text, /confirmed_facts/);
+  a.match(input.text, /confirmed_process_profile/);
   a.throws(() =>
     AI.parseOnboarding({
       headers: { "content-type": "application/json" },
@@ -207,12 +221,18 @@ test("AI extraction validates facts and cannot inject execution instructions or 
   );
   const answers = Object.fromEntries(Model.questions.map((q) => [q.key, null]));
   a.throws(() =>
-    AI.validate({ assistant_message: "x", answers, execute: "deploy" }),
+    AI.validate({
+      assistant_message: "x",
+      answers,
+      profile: emptyProfile(),
+      execute: "deploy",
+    }),
   );
   a.throws(() =>
     AI.validate({
       assistant_message: "x",
       answers: { ...answers, goods: "arbitrary" },
+      profile: emptyProfile(),
     }),
   );
   let sent;
@@ -235,6 +255,7 @@ test("AI extraction validates facts and cannot inject execution instructions or 
                       text: JSON.stringify({
                         assistant_message: "How are quantities confirmed?",
                         answers,
+                        profile: emptyProfile(),
                         message_language: "en",
                         language_confidence: "high",
                       }),
@@ -250,6 +271,91 @@ test("AI extraction validates facts and cannot inject execution instructions or 
     JSON.stringify(sent.output_config.format.schema),
     /execute|activate/,
   );
+  a.match(JSON.stringify(sent.output_config.format.schema), /lot_policy/);
+  a.doesNotMatch(
+    JSON.stringify(sent.output_config.format.schema),
+    /capture_item_attributes_at_receiving|item_attributes/,
+  );
+});
+
+test("apparel receiving keeps product attributes, whole-pallet LPN capture and automatic STAGE", () => {
+  const answers = Object.fromEntries(Model.questions.map((q) => [q.key, null]));
+  answers.goods = "ordinary";
+  const result = AI.validate({
+    assistant_message:
+      "Принял: женские майки, атрибуты Цвет и Размер, приёмка целыми паллетами с вводом LPN в STAGE. Ячейку STAGE при приёмке сканировать не нужно.",
+    answers,
+    profile: {
+      product_name: "Майки женские",
+      lot_policy: {
+        enabled: true,
+        code: "APPAREL",
+        lot_creation: "Existing",
+        attributes: [
+          {
+            code: "COLOR",
+            label: "Цвет",
+            show: true,
+            required: true,
+            show_on_pick: false,
+            physical_verification: "NotVerifiable",
+            override_allowed: false,
+          },
+          {
+            code: "SIZE",
+            label: "Размер",
+            show: true,
+            required: true,
+            show_on_pick: false,
+            physical_verification: "NotVerifiable",
+            override_allowed: false,
+          },
+        ],
+      },
+      capture_lpn: true,
+      receive_whole_pallets: true,
+      receiving_location: "STAGE",
+      receiving_location_scan: "not_required",
+    },
+    message_language: "ru",
+    language_confidence: "high",
+  });
+  a.equal(result.answers.containers, "pallet_case_each");
+  const m = Model.create();
+  m.setFacts(result.answers);
+  m.setProfile(result.profile);
+  a.equal(m.state.facts.goods, "ordinary");
+  a.equal(m.state.profile.product_name, "Майки женские");
+  a.equal(m.state.profile.lot_policy.enabled, true);
+  a.equal(m.state.profile.lot_policy.code, "APPAREL");
+  a.deepEqual(
+    m.state.profile.lot_policy.attributes.map((attribute) => attribute.code),
+    ["COLOR", "SIZE"],
+  );
+  a.equal(m.state.profile.receiving_location, "STAGE");
+  a.equal(m.state.profile.receiving_location_scan, "not_required");
+  for (const q of Model.questions)
+    if (!m.state.facts[q.key]) m.answer(q.key, q.choices[0][0]);
+  m.beginConfiguration();
+  for (let i = 0; i < 6; i++) m.configureNext();
+  const html = Device.render(m, { esc, shell: RF.shell });
+  a.match(html, /Майки женские/);
+  a.match(html, /Цвет · Размер/);
+  a.match(html, /STAGE/);
+  a.match(html, /Receiving location scan/);
+  a.match(html, /Not required/);
+  a.doesNotMatch(html, /MILK-1L|SOAP-500/);
+  a.equal(m.submit("PLT-000184"), true);
+  m.injectError();
+  m.applyCorrection();
+  a.equal(m.submit("ITEM-DEMO-001"), true);
+  a.equal(m.screen().attribute_code, "COLOR");
+  a.equal(m.screen().label, "Цвет");
+  a.equal(m.submit("Красный"), true);
+  a.equal(m.screen().attribute_code, "SIZE");
+  a.equal(m.screen().label, "Размер");
+  a.equal(m.submit("M"), true);
+  a.deepEqual(m.state.capturedAttributes, { COLOR: "Красный", SIZE: "M" });
 });
 
 test("scan feedback is pinned outside the scrolling content and values appear only after accepted scans", () => {

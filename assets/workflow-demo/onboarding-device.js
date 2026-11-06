@@ -91,7 +91,17 @@
     const s = machine.state,
       v = machine.screen(),
       w = words[s.preferences.language] || words.en,
-      milk = s.facts.goods === "expiry" ? "MILK-1L" : "SOAP-500";
+      productCode = s.profile.product_name
+        ? "ITEM-DEMO-001"
+        : s.facts.goods === "expiry"
+          ? "MILK-1L"
+          : "SOAP-500",
+      productName = s.profile.product_name || productCode,
+      attributes = s.profile.lot_policy?.attributes
+        ?.filter((attribute) => attribute.show)
+        .map((attribute) => attribute.label || attribute.code)
+        .join(" · "),
+      receivingLocation = s.profile.receiving_location || "STAGE";
     const scanned = (key) =>
       s.accepted?.find(
         (a) =>
@@ -115,13 +125,22 @@
         v.operation === "receiving"
           ? [
               ["Pallet", scanned("pallet")],
-              ["Product", scanned("product")],
+              ["Product", productName],
+              ...(attributes ? [["Attributes", attributes]] : []),
+              ["Product barcode", scanned("product")],
+              [
+                "Receiving location",
+                receivingLocation,
+              ],
+              ...(s.profile.receiving_location_scan === "not_required"
+                ? [["Receiving location scan", "Not required"]]
+                : []),
               ["Expected", "48 EA · 2 cases × 24"],
             ]
           : v.operation === "putaway"
             ? [
                 ["Pallet", scanned("pallet")],
-                ["Contents", milk + " · 48 EA"],
+                ["Contents", productName + " · 48 EA"],
                 ["Suggested bin", "A-01-02"],
                 ["Scanned destination", scanned("destination")],
               ]
@@ -148,7 +167,7 @@
       if (s.preferences.image)
         body +=
           '<div class="on-product-image" aria-label="Sample product illustration"><svg viewBox="0 0 100 80" role="img"><title>Sample carton illustration</title><path d="M32 20h36l10 16v37H22V36z" fill="#d8f5ef" stroke="currentColor" stroke-width="2"/><path d="M32 20v16h46M50 36v37" fill="none" stroke="currentColor"/><text x="50" y="57" text-anchor="middle" font-size="9">' +
-          esc(milk) +
+          esc(productName) +
           "</text></svg></div>";
       if (v.operation === "putaway")
         body +=
@@ -165,12 +184,18 @@
               : "Expected: " + v.expected,
           ) +
           "</div>";
-      else
+      else {
+        const inputLabel =
+          v.kind === "date"
+            ? "Expiry date"
+            : v.kind === "lot_attribute"
+              ? v.label
+              : "Quantity (EA)";
         body +=
           '<label class="wd-field wd-active" for="on-input"><span>' +
-          esc(v.kind === "date" ? "Expiry date" : "Quantity (EA)") +
+          esc(inputLabel) +
           '</span><input id="on-input" aria-label="' +
-          esc(v.kind === "date" ? "Expiry date" : "Quantity (EA)") +
+          esc(inputLabel) +
           '" type="' +
           (v.kind === "date" ? "date" : "text") +
           '" ' +
@@ -178,6 +203,7 @@
           ' autocomplete="off" value="' +
           esc(draft) +
           '"></label>';
+      }
       const faultKey = v.operation === "putaway" ? "destination" : "product";
       if (v.key === faultKey && !s.faults[v.operation] && !s.correction)
         body +=
@@ -198,17 +224,24 @@
           "</button>";
       if (view === "terminal") {
         let controls = "";
-        if (["number", "date"].includes(v.kind))
+        if (["number", "date", "lot_attribute"].includes(v.kind)) {
+          const inputLabel =
+            v.kind === "date"
+              ? "Expiry date"
+              : v.kind === "lot_attribute"
+                ? v.label
+                : "Quantity (EA)";
           controls =
             '<label class="on-terminal-input" for="on-input">' +
-            esc(v.kind === "date" ? "Expiry date" : "Quantity (EA)") +
+            esc(inputLabel) +
             ' &gt; <input id="on-input" aria-label="' +
-            esc(v.kind === "date" ? "Expiry date" : "Quantity (EA)") +
+            esc(inputLabel) +
             '" type="' +
             (v.kind === "date" ? "date" : "text") +
             '" value="' +
             esc(draft) +
             '"></label>';
+        }
         if (v.key === faultKey && !s.faults[v.operation] && !s.correction)
           controls +=
             '<div class="on-fault-test"><b>Controlled error test</b><p>The next Scan deliberately tests an incorrect barcode.</p></div>';
@@ -230,7 +263,7 @@
       title = "Handheld layout preview";
       body =
         '<div class="wd-scan-strip"><i></i>Live layout preview</div><div class="wd-fields">' +
-        field("Product", milk, esc) +
+        field("Product", productName, esc) +
         (!s.preferences.simple ? field("Pallet", "PLT-000184", esc) : "") +
         field("Quantity", "12 EA", esc) +
         field(
@@ -243,12 +276,12 @@
           : "") +
         (s.preferences.image
           ? '<div class="on-product-image"><svg viewBox="0 0 100 80"><title>Sample carton</title><path d="M25 18h50v55H25z" fill="#d8f5ef" stroke="currentColor"/><text x="50" y="48" text-anchor="middle" font-size="9">' +
-            esc(milk) +
+            esc(productName) +
             "</text></svg></div>"
           : "") +
         (s.preferences.reasons
           ? '<p class="on-device-help">Wrong product. Scan ' +
-            esc(milk) +
+            esc(productName) +
             ".</p>"
           : "") +
         "</div>";
@@ -307,13 +340,13 @@
         );
       else if (s.stage === "customize")
         lines.push(
-          "Product: " + milk,
+          "Product: " + productName,
           ...(s.preferences.simple ? [] : ["Pallet: PLT-000184"]),
           s.preferences.quantity
             ? "Quantity: 12 EA · confirmation required"
             : "Quantity: 12 EA",
           s.preferences.reasons
-            ? "Wrong product. Scan " + milk + "."
+            ? "Wrong product. Scan " + productCode + "."
             : "Scan blocked",
           s.preferences.codes ? "[1] SCAN · [2] CONFIRM" : "",
           s.preferences.image ? "Product illustration: WebRF view" : "",
