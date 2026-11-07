@@ -25,7 +25,9 @@ test('language homes are static, self-canonical and linked reciprocally without 
       assert.doesNotMatch(html, /<form\b|<iframe\b|fetch\(|sendBeacon\(/);
     }
   }
-  assert.equal(read('index.html').match(/<main\b[\s\S]*?<\/main>/)[0],
+  const currentMain = read('index.html').match(/<main\b[\s\S]*?<\/main>/)[0];
+  const mainWithoutBilling = currentMain.replace(/\n?<section class="q-sec is-tint" id="billing"[\s\S]*?<\/section>\n?/, '\n');
+  assert.equal(mainWithoutBilling,
     cp.execFileSync('git', ['show', '744b8ee:index.html'], { cwd: root, encoding: 'utf8' }).match(/<main\b[\s\S]*?<\/main>/)[0]);
 });
 
@@ -93,5 +95,17 @@ test('BG/RO budget cards preserve language into both tools, while untranslated d
       assert.ok(html.includes('href="/wms-cost?lang=' + code + '"'));
       assert.ok(html.includes('href="/tools/wms-readiness-assessment?lang=' + code + '"'));
     }
+  }
+});
+
+test('3PL billing is described consistently without unsupported scan or export claims', () => {
+  const pages = ['index.html', 'bg/index.html', 'ro/index.html', 'sr/index.html', 'el/index.html'];
+  for (const file of pages) {
+    const html = read(file);
+    const billing = html.match(/<section class="q-sec(?: is-tint)?" id="billing"[\s\S]*?<\/section>/);
+    assert.ok(billing, file + ' must contain the 3PL billing section');
+    assert.match(billing[0], /(?:UTF-8 CSV|CSV UTF-8)/);
+    assert.match(billing[0], /EN 16931 UBL XML/);
+    assert.doesNotMatch(billing[0], /every (?:physical )?scan|millisecond|XLSX|Typst|bare-metal/i);
   }
 });

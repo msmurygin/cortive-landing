@@ -55,6 +55,19 @@
       ]
     ],
     "config": "Складовите политики и метаданните определят правилата и екраните. Вградените дизайнери дават възможност да настройвате интерфейси, отчети и етикети.",
+    "billing": {
+      "label": "3PL билинг",
+      "title": "Превърнете складовата дейност в проследими начисления.",
+      "intro": "При 3PL операциите неотчетената дейност означава пропуснат приход. Quark записва поддържаните складови събития като устойчиви факти за потребление, прилага тарифи с период на валидност за всеки клиент и подготвя проследими отчети за един или повече складове.",
+      "cards": [
+        ["Журнал, подкрепен със събития", "Приети редове и кашони, завършени събирания и опакования, експедиции и дневно палетно съхранение могат да станат начисляеми факти. Уникалните ключове на източника предотвратяват двойното таксуване на една и съща дейност."],
+        ["Тарифи по клиент и склад", "Настройте общи тарифи за клиента или отделни тарифи за конкретен склад, с начална и крайна дата и валута от профила за фактуриране."],
+        ["Фиксирани данни за начислението", "Всяко оценено начисление пази дейността, количеството, тарифата, сумата, валутата и моментна снимка на източника. Затварянето на отчета фиксира финансовия журнал и проверява неговия hash преди експорт."],
+        ["Предаване към счетоводството", "Експортирайте затворен отчет като подробен UTF-8 CSV. Издадените фактури могат да се генерират и като PDF и EN 16931 UBL XML."]
+      ],
+      "note": "Билингът обхваща конфигурираните дейности и тарифи. Той не замества счетоводната система; фискалната настройка и ERP интеграцията се уточняват за всяко внедряване.",
+      "cta": "Обсъдете 3PL билинг"
+    },
     "budgetTitle": "Подгответе бюджет за вашия склад.",
     "budget": "Абонаментът се състои от такса за склад и капацитет за едновременни RF сесии. Стандартните модули, актуализациите и документацията са включени. Обучението, помощта при внедряване и поръчаните разработки се договарят отделно.",
     "costTitle": "Калкулатор за разходите за WMS",
@@ -141,6 +154,19 @@
       ]
     ],
     "config": "Politicile de depozit și metadatele stabilesc regulile și ecranele. Designerii integrați permit configurarea interfețelor, rapoartelor și etichetelor.",
+    "billing": {
+      "label": "Facturare 3PL",
+      "title": "Transformați activitatea din depozit în servicii facturabile și verificabile.",
+      "intro": "Pentru operatorii 3PL, activitatea neînregistrată înseamnă venit pierdut. Quark păstrează evenimentele operaționale acceptate ca fapte de utilizare durabile, aplică tarife cu perioadă de valabilitate pentru fiecare client și pregătește situații trasabile pentru unul sau mai multe depozite.",
+      "cards": [
+        ["Registru bazat pe evenimente", "Liniile și cutiile recepționate, operațiunile de picking și packing finalizate, expedierile și stocarea zilnică pe palet pot deveni fapte facturabile. Cheile unice ale sursei împiedică taxarea de două ori a aceleiași activități."],
+        ["Tarife pe client și depozit", "Configurați tarife generale pentru client sau excepții pentru un anumit depozit, cu perioade de valabilitate și moneda profilului de facturare."],
+        ["Dovezi financiare fixate", "Fiecare taxă evaluată păstrează activitatea, cantitatea, tariful, suma, moneda și imaginea sursei. Închiderea situației fixează registrul financiar și verifică hash-ul înainte de export."],
+        ["Transfer către contabilitate", "Exportați o situație închisă ca fișier CSV UTF-8 detaliat. Facturile emise pot fi generate și ca PDF și EN 16931 UBL XML."]
+      ],
+      "note": "Facturarea acoperă activitățile și tarifele configurate. Nu înlocuiește sistemul contabil; configurarea fiscală și integrarea ERP se stabilesc pentru fiecare implementare.",
+      "cta": "Discută despre facturarea 3PL"
+    },
     "budgetTitle": "Construiește bugetul pentru depozitul tău.",
     "budget": "Abonamentul include o taxă pe depozit și capacitatea pentru sesiuni RF simultane. Modulele standard, actualizările și documentația sunt incluse. Instruirea, asistența la implementare și dezvoltările comandate se estimează separat.",
     "costTitle": "Calculator de costuri WMS",
@@ -227,6 +253,19 @@
       ]
     ],
     "config": "Skladišne politike i metapodaci određuju pravila i ekrane. Ugrađeni dizajneri omogućavaju podešavanje interfejsa, izveštaja i etiketa.",
+    "billing": {
+      "label": "3PL obračun",
+      "title": "Pretvorite skladišne aktivnosti u proverljive obračunske stavke.",
+      "intro": "Za 3PL operatera, neevidentirana aktivnost znači izgubljen prihod. Quark čuva podržane operativne događaje kao trajne podatke o korišćenju, primenjuje tarife sa periodom važenja za svakog klijenta i priprema sledive obračune za jedno ili više skladišta.",
+      "cards": [
+        ["Evidencija zasnovana na događajima", "Primljene stavke i kutije, završeno komisioniranje i pakovanje, otpreme i dnevno paletno skladištenje mogu postati obračunski podaci. Jedinstveni ključevi izvora sprečavaju dvostruku naplatu iste aktivnosti."],
+        ["Tarife po klijentu i skladištu", "Podesite zajedničke tarife za klijenta ili posebne tarife za određeno skladište, sa periodima važenja i valutom profila za obračun."],
+        ["Fiksirani podaci o obračunu", "Svaka obračunata stavka čuva aktivnost, količinu, tarifu, iznos, valutu i snimak izvora. Zatvaranje obračuna zaključava finansijsku evidenciju i proverava njen hash pre izvoza."],
+        ["Predaja računovodstvu", "Izvezite zatvoren obračun kao detaljan UTF-8 CSV. Izdate fakture mogu se generisati i kao PDF i EN 16931 UBL XML."]
+      ],
+      "note": "Obračun pokriva podešene aktivnosti i tarife. Ne zamenjuje računovodstveni sistem; fiskalno podešavanje i ERP integracija dogovaraju se za svako uvođenje.",
+      "cta": "Razgovarajmo o 3PL obračunu"
+    },
     "budgetTitle": "Pripremite budžet za svoje skladište.",
     "budget": "Pretplata se sastoji od naknade po skladištu i kapaciteta za istovremene RF sesije. Standardni moduli, ažuriranja i dokumentacija su uključeni. Obuka, pomoć pri uvođenju i naručene dorade ugovaraju se posebno.",
     "costTitle": "Kalkulator troškova WMS-a",
@@ -313,6 +352,19 @@
       ]
     ],
     "config": "Οι πολιτικές αποθήκης και τα μεταδεδομένα ορίζουν κανόνες και οθόνες. Οι ενσωματωμένοι σχεδιαστές επιτρέπουν τη ρύθμιση διεπαφών, αναφορών και ετικετών.",
+    "billing": {
+      "label": "Χρέωση 3PL",
+      "title": "Μετατρέψτε τη δραστηριότητα της αποθήκης σε τεκμηριωμένες χρεώσεις.",
+      "intro": "Για έναν πάροχο 3PL, η δραστηριότητα που δεν καταγράφεται σημαίνει χαμένο έσοδο. Το Quark διατηρεί τα υποστηριζόμενα λειτουργικά συμβάντα ως ανθεκτικά στοιχεία χρήσης, εφαρμόζει τιμές με ημερομηνίες ισχύος για κάθε πελάτη και προετοιμάζει ανιχνεύσιμες καταστάσεις για μία ή περισσότερες αποθήκες.",
+      "cards": [
+        ["Καθολικό βασισμένο σε συμβάντα", "Γραμμές και κιβώτια παραλαβής, ολοκληρωμένη συλλογή και συσκευασία, αποστολές και ημερήσια αποθήκευση παλετών μπορούν να γίνουν χρεώσιμα στοιχεία. Τα μοναδικά κλειδιά πηγής αποτρέπουν τη διπλή χρέωση της ίδιας δραστηριότητας."],
+        ["Τιμές ανά πελάτη και αποθήκη", "Ορίστε γενικές τιμές για τον πελάτη ή εξαιρέσεις ανά αποθήκη, με ημερομηνίες ισχύος και το νόμισμα του προφίλ χρέωσης."],
+        ["Σταθερά αποδεικτικά χρέωσης", "Κάθε υπολογισμένη χρέωση διατηρεί δραστηριότητα, ποσότητα, τιμή, ποσό, νόμισμα και στιγμιότυπο πηγής. Το κλείσιμο μιας κατάστασης παγώνει το οικονομικό καθολικό και επαληθεύει το hash πριν από την εξαγωγή."],
+        ["Παράδοση στη λογιστική", "Εξαγάγετε μια κλειστή κατάσταση ως αναλυτικό UTF-8 CSV. Τα εκδοθέντα τιμολόγια μπορούν επίσης να παραχθούν ως PDF και EN 16931 UBL XML."]
+      ],
+      "note": "Η χρέωση καλύπτει τις διαμορφωμένες δραστηριότητες και τιμές. Δεν αντικαθιστά το λογιστικό σας σύστημα· η φορολογική ρύθμιση και η διασύνδεση ERP εξετάζονται ανά υλοποίηση.",
+      "cta": "Συζητήστε τη χρέωση 3PL"
+    },
     "budgetTitle": "Προετοιμάστε τον προϋπολογισμό σας.",
     "budget": "Η συνδρομή αποτελείται από χρέωση ανά αποθήκη και χωρητικότητα για ταυτόχρονες συνεδρίες RF. Περιλαμβάνει τις βασικές ενότητες, ενημερώσεις και τεκμηρίωση. Εκπαίδευση, βοήθεια στην υλοποίηση και πρόσθετες αναπτύξεις κοστολογούνται ξεχωριστά.",
     "costTitle": "Υπολογιστής κόστους WMS",
