@@ -35,11 +35,14 @@ function render(code, t) {
   const localizedTools = ['bg', 'ro'].includes(code);
   const toolQuery = localizedTools ? '?lang=' + code : '';
   const toolNote = localizedTools ? '↗' : escape(t.english) + ' ↗';
-  const app = {
-    '@context': 'https://schema.org', '@type': ['SoftwareApplication', 'Product'],
-    '@id': origin + '/#software', name: 'Quark WMS', url: origin + '/',
-    applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: t.description
+  const page = {
+    '@context': 'https://schema.org', '@type': 'WebPage',
+    '@id': url + '#webpage', url, name: t.title,
+    description: t.description, inLanguage: t.region,
+    isPartOf: {
+      '@type': 'WebSite', '@id': origin + '/#website',
+      url: origin + '/', name: 'Quark WMS'
+    }
   };
   const navigation = ['features', 'workflows', 'budget', 'contact'].map((id, index) =>
     `<a href="#${id}">${escape(t.nav[index])}</a>`).join('');
@@ -56,7 +59,7 @@ ${alternatives()}
 <meta property="og:image" content="${origin}/assets/social/quark-wms-share-20261027.jpg">
 <meta property="og:image:alt" content="Quark WMS">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escape(t.title)}"><meta name="twitter:description" content="${escape(t.description)}"><meta name="twitter:image" content="${origin}/assets/social/quark-wms-share-20261027.jpg">
-<script type="application/ld+json">${JSON.stringify(app).replace(/</g, '\\u003c')}</script>
+<script type="application/ld+json">${JSON.stringify(page).replace(/</g, '\\u003c')}</script>
 <link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/design-assets/qds.css"><link rel="stylesheet" href="/design-assets/site-indigo.css"><script src="/design-assets/qds.js"></script>
 </head><body class="q-indigo">
 <a class="q-skip" href="#main">${escape(t.skip)}</a>

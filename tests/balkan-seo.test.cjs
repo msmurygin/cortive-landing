@@ -6,6 +6,7 @@ const cp = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const expected = { en: '/', 'bg-BG': '/bg', 'ro-RO': '/ro', 'sr-RS': '/sr', 'el-GR': '/el', 'x-default': '/' };
+const localesForTest = { bg: 'bg-BG', ro: 'ro-RO', sr: 'sr-RS', el: 'el-GR' };
 const config = JSON.parse(read('vercel.json'));
 
 test('language homes are static, self-canonical and linked reciprocally without routing English visitors away', () => {
@@ -68,6 +69,14 @@ test('build output is stable and sitemap includes exactly the indexable, canonic
       const data = JSON.parse(match[1]);
       assert.ok(data.name);
       assert.doesNotMatch(match[1], /aggregateRating|ratingValue|"offers"|Windows CE|Device Agnostic/);
+      if (files.slice(1, 5).includes(file)) {
+        const code = file.split('/')[0];
+        assert.equal(data['@type'], 'WebPage');
+        assert.equal(data.url, 'https://quark.build/' + code);
+        assert.equal(data.inLanguage, localesForTest[code]);
+        assert.equal(data.isPartOf['@type'], 'WebSite');
+        assert.doesNotMatch(match[1], /SoftwareApplication|Product/);
+      }
     }
   }
 });
