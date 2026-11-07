@@ -26,8 +26,8 @@ function cards(items) {
 }
 
 function billingSection(billing) {
-  const billingCards = billing.cards.map(([heading, text]) => `<article class="q-card"><h3>${escape(heading)}</h3><p>${escape(text)}</p></article>`).join('');
-  return `<section class="q-sec" id="billing"><div class="q-wrap"><header class="q-shead"><div><p class="q-kick">${escape(billing.label)}</p><h2 class="q-h2" style="margin-top:18px">${escape(billing.title)}</h2></div><p>${escape(billing.intro)}</p></header><div class="q-two">${billingCards}</div><div class="q-two" style="margin-top:32px"><p class="q-note">${escape(billing.note)}</p><p style="text-align:right"><a class="q-mlink" href="#contact">${escape(billing.cta)} →</a></p></div></div></section>`;
+  const billingCards = billing.cards.map(([heading, text], index) => `<article class="q-card"><header><span class="q-num">0${index + 1}</span></header><h3>${escape(heading)}</h3><p>${escape(text)}</p></article>`).join('');
+  return `<section class="q-sec" id="billing"><div class="q-wrap"><header class="q-shead"><div><p class="q-kick">${escape(billing.label)}</p><h2 class="q-h2" style="margin-top:18px;max-width:none">${escape(billing.title)}</h2></div><p>${escape(billing.intro)}</p></header><div class="q-two">${billingCards}</div><div class="q-two" style="margin-top:32px"><p class="q-note">${escape(billing.note)}</p><p style="text-align:right"><a class="q-mlink" href="#contact">${escape(billing.cta)} →</a></p></div></div></section>`;
 }
 
 function render(code, t) {
