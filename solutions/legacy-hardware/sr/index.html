@@ -1,24 +1,523 @@
-<!doctype html><html lang="sr" data-theme="light"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WMS softver za Motorola MC9090 i starije RF terminale | Quark</title><meta name="description" content="Koristite postojeće RF terminale uz Quark WMS. Motorola MC9090 putem tekstualne SSH/Telnet sesije. Proverite uređaje i planirajte troškove opreme.">
-<meta name="robots" content="index,follow"><link rel="canonical" href="https://quark.build/solutions/legacy-hardware/sr">
-<link rel="alternate" hreflang="en" href="https://quark.build/solutions/legacy-hardware">
-<link rel="alternate" hreflang="bg-BG" href="https://quark.build/solutions/legacy-hardware/bg">
-<link rel="alternate" hreflang="ro-RO" href="https://quark.build/solutions/legacy-hardware/ro">
-<link rel="alternate" hreflang="el-GR" href="https://quark.build/solutions/legacy-hardware/el">
-<link rel="alternate" hreflang="sr-RS" href="https://quark.build/solutions/legacy-hardware/sr">
-<link rel="alternate" hreflang="x-default" href="https://quark.build/solutions/legacy-hardware">
-<meta property="og:type" content="website"><meta property="og:url" content="https://quark.build/solutions/legacy-hardware/sr"><meta property="og:title" content="WMS softver za Motorola MC9090 i starije RF terminale | Quark"><meta property="og:description" content="Koristite postojeće RF terminale uz Quark WMS. Motorola MC9090 putem tekstualne SSH/Telnet sesije. Proverite uređaje i planirajte troškove opreme."><meta property="og:image" content="https://quark.build/assets/social/quark-wms-share-20261027.jpg"><meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Moderan WMS sistem za legacy RF terminale i Motorola MC9090","url":"https://quark.build/solutions/legacy-hardware/sr","inLanguage":"sr","about":{"@type":"SoftwareApplication","name":"Quark WMS","url":"https://quark.build/","applicationCategory":"BusinessApplication","operatingSystem":"Web"}}</script>
-<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/design-assets/qds.css"><link rel="stylesheet" href="/design-assets/site-indigo.css"><script src="/design-assets/qds.js"></script></head><body class="q-indigo">
-<a class="q-skip" href="#main">Pređi na sadržaj</a><header class="q-hdr"><div class="q-wrap q-hdr-in"><a class="q-logo" href="/sr" aria-label="Quark WMS"><svg class="q-pixel-lockup" viewBox="0 0 112 32" aria-hidden="true" focusable="false"><g transform="translate(0 2) scale(4)"><rect x="2" y="0" width="1" height="1" fill="currentColor"/><rect x="3" y="0" width="1" height="1" fill="currentColor"/><rect x="4" y="0" width="1" height="1" fill="currentColor"/><rect x="1" y="1" width="1" height="1" fill="currentColor"/><rect x="5" y="1" width="1" height="1" fill="currentColor"/><rect x="0" y="2" width="1" height="1" fill="currentColor"/><rect x="6" y="2" width="1" height="1" fill="currentColor"/><rect x="0" y="3" width="1" height="1" fill="currentColor"/><rect x="6" y="3" width="1" height="1" fill="currentColor"/><rect x="0" y="4" width="1" height="1" fill="currentColor"/><rect x="6" y="4" width="1" height="1" fill="currentColor"/><rect x="1" y="5" width="1" height="1" fill="currentColor"/><rect x="5" y="5" width="1" height="1" fill="currentColor"/><rect x="2" y="6" width="1" height="1" fill="currentColor"/><rect x="3" y="6" width="1" height="1" fill="currentColor"/><rect x="4" y="6" width="1" height="1" fill="currentColor"/><rect x="5" y="6" width="1" height="1" fill="currentColor"/><rect x="6" y="6" width="1" height="1" fill="currentColor"/><rect x="6" y="6" width="1" height="1" fill="#00CBAA"/></g><text x="38" y="24" fill="currentColor">quark</text></svg></a><nav class="q-nav" aria-label="Meni"><a href="/sr">Početna</a><a href="#workflow">Skladišni procesi</a><a href="#budget">Budžet</a></nav><div class="q-hdr-act"><button class="q-theme" type="button" data-q-theme aria-label="Promeni temu" aria-pressed="false"><i></i></button><a class="q-btn is-sm" href="/sr#contact">Kontakt ↗</a></div></div></header>
-<main id="main">
-<section class="q-hero q-grid-bg"><div class="q-wrap"><div class="q-meta"><span>Quark WMS · RF</span><nav aria-label="Jezik"><a lang="en" href="/solutions/legacy-hardware">English</a> · <a lang="bg" href="/solutions/legacy-hardware/bg">Български</a> · <a lang="ro" href="/solutions/legacy-hardware/ro">Română</a> · <a lang="el" href="/solutions/legacy-hardware/el">Ελληνικά</a> · <a lang="sr" href="/solutions/legacy-hardware/sr" aria-current="page">Srpski</a></nav></div><div class="q-hero-grid"><h1 class="q-display" style="font-size:clamp(36px,4.8vw,68px)">Moderan WMS sistem za legacy RF terminale i Motorola MC9090</h1><div class="q-stack"><p class="q-lede">Prelazak na novi WMS može obuhvatiti terminale koje već koristite. Quark nudi WebRF za savremene pregledače i tekstualni interfejs za starije RF uređaje, uključujući Motorola MC9090.</p><a class="q-btn is-primary" href="/sr#contact">Razgovarajmo o vašem skladištu ↗</a></div></div></div></section>
-<section class="q-sec"><div class="q-wrap"><header class="q-shead"><h2 class="q-h2">Proverite ispravnu opremu pre zamene.</h2><p>Počnite od tačnog modela, operativnog sistema i instaliranog terminalskog klijenta. Kod uređaja kao što su MC9090 ili MC9190, naziv serije je samo deo procene kompatibilnosti.</p></header><div class="q-two"><article class="q-card"><header><span class="q-num">01</span></header><h3>Lagan tekstualni interfejs (TUI)</h3><p>Operater skenira i potvrđuje zadatak kroz tekstualnu sesiju. Ekran prikazuje podatke i radnje za trenutni korak.</p></article>
-<article class="q-card"><header><span class="q-num">02</span></header><h3>Windows CE i stariji mobilni sistemi</h3><p>Proverite verziju operativnog sistema, terminalski klijent i skener konkretnog uređaja. U procenu uključite potrebne licence i održavanje.</p></article></div></div></section>
-<section class="q-sec is-tint" id="workflow"><div class="q-wrap"><header class="q-shead"><h2 class="q-h2">Kako Quark radi sa terminalskim klijentima</h2><p>Metapodaci određuju skladišni proces. WebRF ga prikazuje u pregledaču, a tekstualni interfejs kroz SSH ili Telnet sesiju, prema uređaju i podešavanjima mreže.</p></header><div class="q-two"><article class="q-card"><header><span class="q-num">01</span></header><h3>Tekstualna sesija povezana sa WMS-om</h3><p>Prijem, premeštanje i komisioniranje koriste skladišna pravila Quark-a. Server je napisan u Rust-u, dok terminalski klijent upravlja vezom i unosom podataka.</p></article>
-<article class="q-card"><header><span class="q-num">02</span></header><h3>Provera manjeg ekrana i tastature</h3><p>Proverite veličinu ekrana, kodiranje znakova, funkcijske tastere i prenos barkoda. Izvršite stvarni zadatak pre svakodnevne upotrebe.</p></article></div></div></section>
-<section class="q-sec"><div class="q-wrap"><header class="q-shead"><h2 class="q-h2">Testirajte smeštanje palete.</h2></header><ol class="q-stack"><li>Izaberite paletu sa LPN oznakom i slobodnu lokaciju.</li><li>Skenirajte LPN, zatim lokaciju i potvrdite smeštanje.</li><li>Proverite pogrešnu lokaciju, ponovljeno skeniranje i barkod sa vodećim nulama.</li><li>Prekinite i ponovo uspostavite Wi-Fi vezu. Proverite stanje zadatka posle ponovnog povezivanja.</li><li>Uporedite upisanu lokaciju sa fizičkim premeštanjem palete.</li></ol><figure style="margin:32px 0"><img src="/assets/product-context/rf-screen-designer.jpg" width="1500" height="940" loading="lazy" decoding="async" alt="Quark RF Screen Designer" style="width:100%;height:auto"><figcaption class="q-note">Quark RF Screen Designer. Prikazan je alat za podešavanje u pregledaču.</figcaption></figure><p><a href="https://techdocs.zebra.com/enterprise-browser/1-5/guide/about/#supported-devices" lang="en">Arhivirana Zebra dokumentacija o modelima i operativnim sistemima (na engleskom) ↗</a></p></div></section>
-<section class="q-sec is-tint" id="budget"><div class="q-wrap"><header class="q-shead"><h2 class="q-h2">Uključite opremu u ukupan WMS budžet.</h2><p>Uporedite pretplatu, uvođenje, terminalske licence, baterije i održavanje za isti period. Zadržite uređaje koji ispunjavaju zahteve zadataka i planirajte rezervne uređaje i zamene.</p></header><div class="q-two"><a class="q-card" href="/wms-cost"><h3>Kalkulator troškova WMS-a</h3><p>Uporedite troškove softvera, uvođenja i rada tokom tri ili pet godina koristeći sopstvene procene.</p><span class="q-note">na engleskom ↗</span></a><a class="q-card" href="/tools/wms-readiness-assessment"><h3>Spremnost za uvođenje WMS-a</h3><p>Proverite podatke, procese i odluke koje vaš tim treba da pripremi.</p><span class="q-note">na engleskom ↗</span></a></div></div></section>
-<section class="q-sec q-cta"><div class="q-wrap q-cta-in"><div><h2 class="q-h2">Planirajte modernizaciju sa postojećom opremom.</h2><p>Pošaljite modele, operativne sisteme i terminalski klijent koji koristite. Izaberite skladišni proces koji ćemo proveriti zajedno.</p></div><a class="q-btn is-primary" href="/sr#contact">Razgovarajmo o vašem skladištu ↗</a></div></section>
-</main><footer class="q-ftr"><div class="q-wrap"><nav aria-label="Jezik"><a lang="en" href="/solutions/legacy-hardware">English</a> · <a lang="bg" href="/solutions/legacy-hardware/bg">Български</a> · <a lang="ro" href="/solutions/legacy-hardware/ro">Română</a> · <a lang="el" href="/solutions/legacy-hardware/el">Ελληνικά</a> · <a lang="sr" href="/solutions/legacy-hardware/sr" aria-current="page">Srpski</a></nav><div class="q-ftr-bot"><span>© 2026 Quark WMS</span><a href="/sr">Početna</a></div></div></footer></body></html>
+<!doctype html>
+<html lang="sr" data-theme="light">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>
+            WMS softver za Motorola MC9090 i starije RF terminale | Quark
+        </title>
+        <meta
+            name="description"
+            content="Koristite postojeće RF terminale uz Quark WMS. Motorola MC9090 putem tekstualne SSH/Telnet sesije. Proverite uređaje i planirajte troškove opreme."
+        />
+        <meta name="robots" content="index,follow" />
+        <link
+            rel="canonical"
+            href="https://quark.build/solutions/legacy-hardware/sr"
+        />
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://quark.build/solutions/legacy-hardware"
+        />
+        <link
+            rel="alternate"
+            hreflang="bg-BG"
+            href="https://quark.build/solutions/legacy-hardware/bg"
+        />
+        <link
+            rel="alternate"
+            hreflang="ro-RO"
+            href="https://quark.build/solutions/legacy-hardware/ro"
+        />
+        <link
+            rel="alternate"
+            hreflang="el-GR"
+            href="https://quark.build/solutions/legacy-hardware/el"
+        />
+        <link
+            rel="alternate"
+            hreflang="sr-RS"
+            href="https://quark.build/solutions/legacy-hardware/sr"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://quark.build/solutions/legacy-hardware"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://quark.build/solutions/legacy-hardware/sr"
+        />
+        <meta
+            property="og:title"
+            content="WMS softver za Motorola MC9090 i starije RF terminale | Quark"
+        />
+        <meta
+            property="og:description"
+            content="Koristite postojeće RF terminale uz Quark WMS. Motorola MC9090 putem tekstualne SSH/Telnet sesije. Proverite uređaje i planirajte troškove opreme."
+        />
+        <meta
+            property="og:image"
+            content="https://quark.build/assets/social/quark-wms-share-20261027.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Moderan WMS sistem za legacy RF terminale i Motorola MC9090",
+                "url": "https://quark.build/solutions/legacy-hardware/sr",
+                "inLanguage": "sr",
+                "about": {
+                    "@type": "SoftwareApplication",
+                    "name": "Quark WMS",
+                    "url": "https://quark.build/",
+                    "applicationCategory": "BusinessApplication",
+                    "operatingSystem": "Web"
+                }
+            }
+        </script>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/design-assets/qds.css" />
+        <link rel="stylesheet" href="/design-assets/site-indigo.css" />
+        <script src="/design-assets/qds.js"></script>
+    </head>
+
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KG82DN24"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      window.dataLayer.push({
+         'page_language': 'sr',
+         'country_code': 'RS'
+      });
+
+    </script>
+
+
+    <body class="q-indigo">
+        <a class="q-skip" href="#main">Pređi na sadržaj</a>
+        <header class="q-hdr">
+            <div class="q-wrap q-hdr-in">
+                <a class="q-logo" href="/sr" aria-label="Quark WMS"
+                    ><svg
+                        class="q-pixel-lockup"
+                        viewBox="0 0 112 32"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <g transform="translate(0 2) scale(4)">
+                            <rect
+                                x="2"
+                                y="0"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="3"
+                                y="0"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="4"
+                                y="0"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="1"
+                                y="1"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="5"
+                                y="1"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="0"
+                                y="2"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="2"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="0"
+                                y="3"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="3"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="0"
+                                y="4"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="4"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="1"
+                                y="5"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="5"
+                                y="5"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="2"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="3"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="4"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="5"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="#00CBAA"
+                            />
+                        </g>
+                        <text x="38" y="24" fill="currentColor">quark</text>
+                    </svg></a
+                >
+                <nav class="q-nav" aria-label="Meni">
+                    <a href="/sr">Početna</a
+                    ><a href="#workflow">Skladišni procesi</a
+                    ><a href="#budget">Budžet</a>
+                </nav>
+                <div class="q-hdr-act">
+                    <button
+                        class="q-theme"
+                        type="button"
+                        data-q-theme
+                        aria-label="Promeni temu"
+                        aria-pressed="false"
+                    >
+                        <i></i></button
+                    ><a class="q-btn is-sm" href="/sr#contact">Kontakt ↗</a>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="q-hero q-grid-bg">
+                <div class="q-wrap">
+                    <div class="q-meta">
+                        <span>Quark WMS · RF</span>
+                        <nav aria-label="Jezik">
+                            <a lang="en" href="/solutions/legacy-hardware"
+                                >English</a
+                            >
+                            ·
+                            <a lang="bg" href="/solutions/legacy-hardware/bg"
+                                >Български</a
+                            >
+                            ·
+                            <a lang="ro" href="/solutions/legacy-hardware/ro"
+                                >Română</a
+                            >
+                            ·
+                            <a lang="el" href="/solutions/legacy-hardware/el"
+                                >Ελληνικά</a
+                            >
+                            ·
+                            <a
+                                lang="sr"
+                                href="/solutions/legacy-hardware/sr"
+                                aria-current="page"
+                                >Srpski</a
+                            >
+                        </nav>
+                    </div>
+                    <div class="q-hero-grid">
+                        <h1
+                            class="q-display"
+                            style="font-size: clamp(36px, 4.8vw, 68px)"
+                        >
+                            Moderan WMS sistem za legacy RF terminale i Motorola
+                            MC9090
+                        </h1>
+                        <div class="q-stack">
+                            <p class="q-lede">
+                                Prelazak na novi WMS može obuhvatiti terminale
+                                koje već koristite. Quark nudi WebRF za
+                                savremene pregledače i tekstualni interfejs za
+                                starije RF uređaje, uključujući Motorola MC9090.
+                            </p>
+                            <a class="q-btn is-primary" href="/sr#contact"
+                                >Razgovarajmo o vašem skladištu ↗</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="q-sec">
+                <div class="q-wrap">
+                    <header class="q-shead">
+                        <h2 class="q-h2">
+                            Proverite ispravnu opremu pre zamene.
+                        </h2>
+                        <p>
+                            Počnite od tačnog modela, operativnog sistema i
+                            instaliranog terminalskog klijenta. Kod uređaja kao
+                            što su MC9090 ili MC9190, naziv serije je samo deo
+                            procene kompatibilnosti.
+                        </p>
+                    </header>
+                    <div class="q-two">
+                        <article class="q-card">
+                            <header><span class="q-num">01</span></header>
+                            <h3>Lagan tekstualni interfejs (TUI)</h3>
+                            <p>
+                                Operater skenira i potvrđuje zadatak kroz
+                                tekstualnu sesiju. Ekran prikazuje podatke i
+                                radnje za trenutni korak.
+                            </p>
+                        </article>
+                        <article class="q-card">
+                            <header><span class="q-num">02</span></header>
+                            <h3>Windows CE i stariji mobilni sistemi</h3>
+                            <p>
+                                Proverite verziju operativnog sistema,
+                                terminalski klijent i skener konkretnog uređaja.
+                                U procenu uključite potrebne licence i
+                                održavanje.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="q-sec is-tint" id="workflow">
+                <div class="q-wrap">
+                    <header class="q-shead">
+                        <h2 class="q-h2">
+                            Kako Quark radi sa terminalskim klijentima
+                        </h2>
+                        <p>
+                            Metapodaci određuju skladišni proces. WebRF ga
+                            prikazuje u pregledaču, a tekstualni interfejs kroz
+                            SSH ili Telnet sesiju, prema uređaju i podešavanjima
+                            mreže.
+                        </p>
+                    </header>
+                    <div class="q-two">
+                        <article class="q-card">
+                            <header><span class="q-num">01</span></header>
+                            <h3>Tekstualna sesija povezana sa WMS-om</h3>
+                            <p>
+                                Prijem, premeštanje i komisioniranje koriste
+                                skladišna pravila Quark-a. Server je napisan u
+                                Rust-u, dok terminalski klijent upravlja vezom i
+                                unosom podataka.
+                            </p>
+                        </article>
+                        <article class="q-card">
+                            <header><span class="q-num">02</span></header>
+                            <h3>Provera manjeg ekrana i tastature</h3>
+                            <p>
+                                Proverite veličinu ekrana, kodiranje znakova,
+                                funkcijske tastere i prenos barkoda. Izvršite
+                                stvarni zadatak pre svakodnevne upotrebe.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="q-sec">
+                <div class="q-wrap">
+                    <header class="q-shead">
+                        <h2 class="q-h2">Testirajte smeštanje palete.</h2>
+                    </header>
+                    <ol class="q-stack">
+                        <li>
+                            Izaberite paletu sa LPN oznakom i slobodnu lokaciju.
+                        </li>
+                        <li>
+                            Skenirajte LPN, zatim lokaciju i potvrdite
+                            smeštanje.
+                        </li>
+                        <li>
+                            Proverite pogrešnu lokaciju, ponovljeno skeniranje i
+                            barkod sa vodećim nulama.
+                        </li>
+                        <li>
+                            Prekinite i ponovo uspostavite Wi-Fi vezu. Proverite
+                            stanje zadatka posle ponovnog povezivanja.
+                        </li>
+                        <li>
+                            Uporedite upisanu lokaciju sa fizičkim premeštanjem
+                            palete.
+                        </li>
+                    </ol>
+                    <figure style="margin: 32px 0">
+                        <img
+                            src="/assets/product-context/rf-screen-designer.jpg"
+                            width="1500"
+                            height="940"
+                            loading="lazy"
+                            decoding="async"
+                            alt="Quark RF Screen Designer"
+                            style="width: 100%; height: auto"
+                        />
+                        <figcaption class="q-note">
+                            Quark RF Screen Designer. Prikazan je alat za
+                            podešavanje u pregledaču.
+                        </figcaption>
+                    </figure>
+                    <p>
+                        <a
+                            href="https://techdocs.zebra.com/enterprise-browser/1-5/guide/about/#supported-devices"
+                            lang="en"
+                            >Arhivirana Zebra dokumentacija o modelima i
+                            operativnim sistemima (na engleskom) ↗</a
+                        >
+                    </p>
+                </div>
+            </section>
+            <section class="q-sec is-tint" id="budget">
+                <div class="q-wrap">
+                    <header class="q-shead">
+                        <h2 class="q-h2">
+                            Uključite opremu u ukupan WMS budžet.
+                        </h2>
+                        <p>
+                            Uporedite pretplatu, uvođenje, terminalske licence,
+                            baterije i održavanje za isti period. Zadržite
+                            uređaje koji ispunjavaju zahteve zadataka i
+                            planirajte rezervne uređaje i zamene.
+                        </p>
+                    </header>
+                    <div class="q-two">
+                        <a class="q-card" href="/wms-cost"
+                            ><h3>Kalkulator troškova WMS-a</h3>
+                            <p>
+                                Uporedite troškove softvera, uvođenja i rada
+                                tokom tri ili pet godina koristeći sopstvene
+                                procene.
+                            </p>
+                            <span class="q-note">na engleskom ↗</span></a
+                        ><a
+                            class="q-card"
+                            href="/tools/wms-readiness-assessment"
+                            ><h3>Spremnost za uvođenje WMS-a</h3>
+                            <p>
+                                Proverite podatke, procese i odluke koje vaš tim
+                                treba da pripremi.
+                            </p>
+                            <span class="q-note">na engleskom ↗</span></a
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="q-sec q-cta">
+                <div class="q-wrap q-cta-in">
+                    <div>
+                        <h2 class="q-h2">
+                            Planirajte modernizaciju sa postojećom opremom.
+                        </h2>
+                        <p>
+                            Pošaljite modele, operativne sisteme i terminalski
+                            klijent koji koristite. Izaberite skladišni proces
+                            koji ćemo proveriti zajedno.
+                        </p>
+                    </div>
+                    <a class="q-btn is-primary" href="/sr#contact"
+                        >Razgovarajmo o vašem skladištu ↗</a
+                    >
+                </div>
+            </section>
+        </main>
+        <footer class="q-ftr">
+            <div class="q-wrap">
+                <nav aria-label="Jezik">
+                    <a lang="en" href="/solutions/legacy-hardware">English</a> ·
+                    <a lang="bg" href="/solutions/legacy-hardware/bg"
+                        >Български</a
+                    >
+                    ·
+                    <a lang="ro" href="/solutions/legacy-hardware/ro">Română</a>
+                    ·
+                    <a lang="el" href="/solutions/legacy-hardware/el"
+                        >Ελληνικά</a
+                    >
+                    ·
+                    <a
+                        lang="sr"
+                        href="/solutions/legacy-hardware/sr"
+                        aria-current="page"
+                        >Srpski</a
+                    >
+                </nav>
+                <div class="q-ftr-bot">
+                    <span>© 2026 Quark WMS</span><a href="/sr">Početna</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
