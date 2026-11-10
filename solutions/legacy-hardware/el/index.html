@@ -1,24 +1,528 @@
-<!doctype html><html lang="el" data-theme="light"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Λογισμικό WMS για Motorola MC9090 και παλαιά τερματικά RF | Quark</title><meta name="description" content="Αξιοποιήστε τα υπάρχοντα RF με Quark WMS. Motorola MC9090 μέσω συνεδρίας κειμένου SSH/Telnet. Ελέγξτε τις συσκευές και προγραμματίστε το κόστος σας.">
-<meta name="robots" content="index,follow"><link rel="canonical" href="https://quark.build/solutions/legacy-hardware/el">
-<link rel="alternate" hreflang="en" href="https://quark.build/solutions/legacy-hardware">
-<link rel="alternate" hreflang="bg-BG" href="https://quark.build/solutions/legacy-hardware/bg">
-<link rel="alternate" hreflang="ro-RO" href="https://quark.build/solutions/legacy-hardware/ro">
-<link rel="alternate" hreflang="el-GR" href="https://quark.build/solutions/legacy-hardware/el">
-<link rel="alternate" hreflang="sr-RS" href="https://quark.build/solutions/legacy-hardware/sr">
-<link rel="alternate" hreflang="x-default" href="https://quark.build/solutions/legacy-hardware">
-<meta property="og:type" content="website"><meta property="og:url" content="https://quark.build/solutions/legacy-hardware/el"><meta property="og:title" content="Λογισμικό WMS για Motorola MC9090 και παλαιά τερματικά RF | Quark"><meta property="og:description" content="Αξιοποιήστε τα υπάρχοντα RF με Quark WMS. Motorola MC9090 μέσω συνεδρίας κειμένου SSH/Telnet. Ελέγξτε τις συσκευές και προγραμματίστε το κόστος σας."><meta property="og:image" content="https://quark.build/assets/social/quark-wms-share-20261027.jpg"><meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Σύγχρονο σύστημα WMS για παλαιότερα τερματικά RF και Motorola MC9090","url":"https://quark.build/solutions/legacy-hardware/el","inLanguage":"el","about":{"@type":"SoftwareApplication","name":"Quark WMS","url":"https://quark.build/","applicationCategory":"BusinessApplication","operatingSystem":"Web"}}</script>
-<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/design-assets/qds.css"><link rel="stylesheet" href="/design-assets/site-indigo.css"><script src="/design-assets/qds.js"></script></head><body class="q-indigo">
-<a class="q-skip" href="#main">Μετάβαση στο περιεχόμενο</a><header class="q-hdr"><div class="q-wrap q-hdr-in"><a class="q-logo" href="/el" aria-label="Quark WMS"><svg class="q-pixel-lockup" viewBox="0 0 112 32" aria-hidden="true" focusable="false"><g transform="translate(0 2) scale(4)"><rect x="2" y="0" width="1" height="1" fill="currentColor"/><rect x="3" y="0" width="1" height="1" fill="currentColor"/><rect x="4" y="0" width="1" height="1" fill="currentColor"/><rect x="1" y="1" width="1" height="1" fill="currentColor"/><rect x="5" y="1" width="1" height="1" fill="currentColor"/><rect x="0" y="2" width="1" height="1" fill="currentColor"/><rect x="6" y="2" width="1" height="1" fill="currentColor"/><rect x="0" y="3" width="1" height="1" fill="currentColor"/><rect x="6" y="3" width="1" height="1" fill="currentColor"/><rect x="0" y="4" width="1" height="1" fill="currentColor"/><rect x="6" y="4" width="1" height="1" fill="currentColor"/><rect x="1" y="5" width="1" height="1" fill="currentColor"/><rect x="5" y="5" width="1" height="1" fill="currentColor"/><rect x="2" y="6" width="1" height="1" fill="currentColor"/><rect x="3" y="6" width="1" height="1" fill="currentColor"/><rect x="4" y="6" width="1" height="1" fill="currentColor"/><rect x="5" y="6" width="1" height="1" fill="currentColor"/><rect x="6" y="6" width="1" height="1" fill="currentColor"/><rect x="6" y="6" width="1" height="1" fill="#00CBAA"/></g><text x="38" y="24" fill="currentColor">quark</text></svg></a><nav class="q-nav" aria-label="Μενού"><a href="/el">Αρχική</a><a href="#workflow">Διαδικασίες</a><a href="#budget">Προϋπολογισμός</a></nav><div class="q-hdr-act"><button class="q-theme" type="button" data-q-theme aria-label="Αλλαγή θέματος" aria-pressed="false"><i></i></button><a class="q-btn is-sm" href="/el#contact">Επικοινωνία ↗</a></div></div></header>
-<main id="main">
-<section class="q-hero q-grid-bg"><div class="q-wrap"><div class="q-meta"><span>Quark WMS · RF</span><nav aria-label="Γλώσσα"><a lang="en" href="/solutions/legacy-hardware">English</a> · <a lang="bg" href="/solutions/legacy-hardware/bg">Български</a> · <a lang="ro" href="/solutions/legacy-hardware/ro">Română</a> · <a lang="el" href="/solutions/legacy-hardware/el" aria-current="page">Ελληνικά</a> · <a lang="sr" href="/solutions/legacy-hardware/sr">Srpski</a></nav></div><div class="q-hero-grid"><h1 class="q-display" style="font-size:clamp(36px,4.8vw,68px)">Σύγχρονο σύστημα WMS για παλαιότερα τερματικά RF και Motorola MC9090</h1><div class="q-stack"><p class="q-lede">Η μετάβαση σε νέο WMS μπορεί να περιλαμβάνει τα τερματικά που ήδη χρησιμοποιείτε. Το Quark προσφέρει WebRF για σύγχρονους browsers και διεπαφή κειμένου για παλαιότερα RF, όπως το Motorola MC9090.</p><a class="q-btn is-primary" href="/el#contact">Μιλήστε μας για την αποθήκη σας ↗</a></div></div></div></section>
-<section class="q-sec"><div class="q-wrap"><header class="q-shead"><h2 class="q-h2">Ελέγξτε τον εξοπλισμό που λειτουργεί πριν τον αντικαταστήσετε.</h2><p>Ξεκινήστε από το ακριβές μοντέλο, το λειτουργικό σύστημα και τον εγκατεστημένο client τερματικού. Για συσκευές όπως MC9090 ή MC9190, η ονομασία της σειράς είναι μέρος της αξιολόγησης συμβατότητας.</p></header><div class="q-two"><article class="q-card"><header><span class="q-num">01</span></header><h3>Ελαφριά διεπαφή κειμένου (TUI)</h3><p>Ο εργαζόμενος σαρώνει και επιβεβαιώνει την εργασία σε συνεδρία κειμένου. Η οθόνη εμφανίζει τα δεδομένα και τις ενέργειες για το τρέχον βήμα.</p></article>
-<article class="q-card"><header><span class="q-num">02</span></header><h3>Windows CE και παλαιότερα λειτουργικά</h3><p>Ελέγξτε την έκδοση λειτουργικού, τον client και τον σαρωτή της συγκεκριμένης συσκευής. Συμπεριλάβετε τις απαιτούμενες άδειες και τη συντήρηση στην αξιολόγηση.</p></article></div></div></section>
-<section class="q-sec is-tint" id="workflow"><div class="q-wrap"><header class="q-shead"><h2 class="q-h2">Πώς λειτουργεί το Quark με τους clients τερματικών</h2><p>Τα μεταδεδομένα ορίζουν τη διαδικασία της αποθήκης. Το WebRF την εμφανίζει στον browser και η διεπαφή κειμένου μέσω συνεδρίας SSH ή Telnet, ανάλογα με τη συσκευή και τη ρύθμιση δικτύου.</p></header><div class="q-two"><article class="q-card"><header><span class="q-num">01</span></header><h3>Συνεδρία κειμένου στο WMS</h3><p>Παραλαβή, μετακίνηση και συλλογή ακολουθούν τους κανόνες αποθήκης του Quark. Ο server είναι γραμμένος σε Rust και ο client διαχειρίζεται σύνδεση και εισαγωγή δεδομένων.</p></article>
-<article class="q-card"><header><span class="q-num">02</span></header><h3>Έλεγχος οθόνης και πλήκτρων</h3><p>Ελέγξτε διαστάσεις οθόνης, κωδικοποίηση χαρακτήρων, πλήκτρα λειτουργιών και μετάδοση barcode. Ολοκληρώστε μια πραγματική εργασία πριν την καθημερινή χρήση.</p></article></div></div></section>
-<section class="q-sec"><div class="q-wrap"><header class="q-shead"><h2 class="q-h2">Δοκιμάστε την τοποθέτηση μιας παλέτας.</h2></header><ol class="q-stack"><li>Επιλέξτε παλέτα με LPN και διαθέσιμη θέση αποθήκευσης.</li><li>Σαρώστε το LPN, μετά τη θέση και επιβεβαιώστε την τοποθέτηση.</li><li>Δοκιμάστε λάθος θέση, επαναλαμβανόμενη σάρωση και barcode με αρχικά μηδενικά.</li><li>Διακόψτε και επαναφέρετε το Wi-Fi. Ελέγξτε την κατάσταση της εργασίας μετά την επανασύνδεση.</li><li>Συγκρίνετε την καταχωρισμένη θέση με τη φυσική μετακίνηση της παλέτας.</li></ol><figure style="margin:32px 0"><img src="/assets/product-context/rf-screen-designer.jpg" width="1500" height="940" loading="lazy" decoding="async" alt="Quark RF Screen Designer" style="width:100%;height:auto"><figcaption class="q-note">Quark RF Screen Designer. Η εικόνα δείχνει το εργαλείο διαμόρφωσης στον browser.</figcaption></figure><p><a href="https://techdocs.zebra.com/enterprise-browser/1-5/guide/about/#supported-devices" lang="en">Αρχειοθετημένη τεκμηρίωση Zebra για μοντέλα και λειτουργικά συστήματα (στα αγγλικά) ↗</a></p></div></section>
-<section class="q-sec is-tint" id="budget"><div class="q-wrap"><header class="q-shead"><h2 class="q-h2">Εντάξτε τον εξοπλισμό στον συνολικό προϋπολογισμό WMS.</h2><p>Συγκρίνετε συνδρομή, υλοποίηση, άδειες τερματικών, μπαταρίες και συντήρηση για την ίδια περίοδο. Κρατήστε τις συσκευές που καλύπτουν τις εργασίες και σχεδιάστε εφεδρείες και αντικαταστάσεις.</p></header><div class="q-two"><a class="q-card" href="/wms-cost"><h3>Υπολογιστής κόστους WMS</h3><p>Συγκρίνετε κόστος λογισμικού, υλοποίησης και λειτουργίας για τρία ή πέντε χρόνια με τις δικές σας εκτιμήσεις.</p><span class="q-note">στα αγγλικά ↗</span></a><a class="q-card" href="/tools/wms-readiness-assessment"><h3>Ετοιμότητα για υλοποίηση WMS</h3><p>Ελέγξτε τα δεδομένα, τις διαδικασίες και τις αποφάσεις που χρειάζεται να προετοιμάσει η ομάδα σας.</p><span class="q-note">στα αγγλικά ↗</span></a></div></div></section>
-<section class="q-sec q-cta"><div class="q-wrap q-cta-in"><div><h2 class="q-h2">Σχεδιάστε την αναβάθμιση με τον υπάρχοντα εξοπλισμό.</h2><p>Στείλτε μοντέλα, λειτουργικά συστήματα και τον client που χρησιμοποιείτε. Επιλέξτε μια διαδικασία αποθήκης για να την αξιολογήσουμε μαζί.</p></div><a class="q-btn is-primary" href="/el#contact">Μιλήστε μας για την αποθήκη σας ↗</a></div></section>
-</main><footer class="q-ftr"><div class="q-wrap"><nav aria-label="Γλώσσα"><a lang="en" href="/solutions/legacy-hardware">English</a> · <a lang="bg" href="/solutions/legacy-hardware/bg">Български</a> · <a lang="ro" href="/solutions/legacy-hardware/ro">Română</a> · <a lang="el" href="/solutions/legacy-hardware/el" aria-current="page">Ελληνικά</a> · <a lang="sr" href="/solutions/legacy-hardware/sr">Srpski</a></nav><div class="q-ftr-bot"><span>© 2026 Quark WMS</span><a href="/el">Αρχική</a></div></div></footer></body></html>
+<!doctype html>
+<html lang="el" data-theme="light">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>
+            Λογισμικό WMS για Motorola MC9090 και παλαιά τερματικά RF | Quark
+        </title>
+        <meta
+            name="description"
+            content="Αξιοποιήστε τα υπάρχοντα RF με Quark WMS. Motorola MC9090 μέσω συνεδρίας κειμένου SSH/Telnet. Ελέγξτε τις συσκευές και προγραμματίστε το κόστος σας."
+        />
+        <meta name="robots" content="index,follow" />
+        <link
+            rel="canonical"
+            href="https://quark.build/solutions/legacy-hardware/el"
+        />
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://quark.build/solutions/legacy-hardware"
+        />
+        <link
+            rel="alternate"
+            hreflang="bg-BG"
+            href="https://quark.build/solutions/legacy-hardware/bg"
+        />
+        <link
+            rel="alternate"
+            hreflang="ro-RO"
+            href="https://quark.build/solutions/legacy-hardware/ro"
+        />
+        <link
+            rel="alternate"
+            hreflang="el-GR"
+            href="https://quark.build/solutions/legacy-hardware/el"
+        />
+        <link
+            rel="alternate"
+            hreflang="sr-RS"
+            href="https://quark.build/solutions/legacy-hardware/sr"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://quark.build/solutions/legacy-hardware"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://quark.build/solutions/legacy-hardware/el"
+        />
+        <meta
+            property="og:title"
+            content="Λογισμικό WMS για Motorola MC9090 και παλαιά τερματικά RF | Quark"
+        />
+        <meta
+            property="og:description"
+            content="Αξιοποιήστε τα υπάρχοντα RF με Quark WMS. Motorola MC9090 μέσω συνεδρίας κειμένου SSH/Telnet. Ελέγξτε τις συσκευές και προγραμματίστε το κόστος σας."
+        />
+        <meta
+            property="og:image"
+            content="https://quark.build/assets/social/quark-wms-share-20261027.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Σύγχρονο σύστημα WMS για παλαιότερα τερματικά RF και Motorola MC9090",
+                "url": "https://quark.build/solutions/legacy-hardware/el",
+                "inLanguage": "el",
+                "about": {
+                    "@type": "SoftwareApplication",
+                    "name": "Quark WMS",
+                    "url": "https://quark.build/",
+                    "applicationCategory": "BusinessApplication",
+                    "operatingSystem": "Web"
+                }
+            }
+        </script>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/design-assets/qds.css" />
+        <link rel="stylesheet" href="/design-assets/site-indigo.css" />
+        <script src="/design-assets/qds.js"></script>
+    </head>
+
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KG82DN24"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      window.dataLayer.push({
+         'page_language': 'el',
+         'country_code': 'GR'
+      });
+
+    </script>
+
+    <body class="q-indigo">
+        <a class="q-skip" href="#main">Μετάβαση στο περιεχόμενο</a>
+        <header class="q-hdr">
+            <div class="q-wrap q-hdr-in">
+                <a class="q-logo" href="/el" aria-label="Quark WMS"
+                    ><svg
+                        class="q-pixel-lockup"
+                        viewBox="0 0 112 32"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <g transform="translate(0 2) scale(4)">
+                            <rect
+                                x="2"
+                                y="0"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="3"
+                                y="0"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="4"
+                                y="0"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="1"
+                                y="1"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="5"
+                                y="1"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="0"
+                                y="2"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="2"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="0"
+                                y="3"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="3"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="0"
+                                y="4"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="4"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="1"
+                                y="5"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="5"
+                                y="5"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="2"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="3"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="4"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="5"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="currentColor"
+                            />
+                            <rect
+                                x="6"
+                                y="6"
+                                width="1"
+                                height="1"
+                                fill="#00CBAA"
+                            />
+                        </g>
+                        <text x="38" y="24" fill="currentColor">quark</text>
+                    </svg></a
+                >
+                <nav class="q-nav" aria-label="Μενού">
+                    <a href="/el">Αρχική</a><a href="#workflow">Διαδικασίες</a
+                    ><a href="#budget">Προϋπολογισμός</a>
+                </nav>
+                <div class="q-hdr-act">
+                    <button
+                        class="q-theme"
+                        type="button"
+                        data-q-theme
+                        aria-label="Αλλαγή θέματος"
+                        aria-pressed="false"
+                    >
+                        <i></i></button
+                    ><a class="q-btn is-sm" href="/el#contact">Επικοινωνία ↗</a>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="q-hero q-grid-bg">
+                <div class="q-wrap">
+                    <div class="q-meta">
+                        <span>Quark WMS · RF</span>
+                        <nav aria-label="Γλώσσα">
+                            <a lang="en" href="/solutions/legacy-hardware"
+                                >English</a
+                            >
+                            ·
+                            <a lang="bg" href="/solutions/legacy-hardware/bg"
+                                >Български</a
+                            >
+                            ·
+                            <a lang="ro" href="/solutions/legacy-hardware/ro"
+                                >Română</a
+                            >
+                            ·
+                            <a
+                                lang="el"
+                                href="/solutions/legacy-hardware/el"
+                                aria-current="page"
+                                >Ελληνικά</a
+                            >
+                            ·
+                            <a lang="sr" href="/solutions/legacy-hardware/sr"
+                                >Srpski</a
+                            >
+                        </nav>
+                    </div>
+                    <div class="q-hero-grid">
+                        <h1
+                            class="q-display"
+                            style="font-size: clamp(36px, 4.8vw, 68px)"
+                        >
+                            Σύγχρονο σύστημα WMS για παλαιότερα τερματικά RF και
+                            Motorola MC9090
+                        </h1>
+                        <div class="q-stack">
+                            <p class="q-lede">
+                                Η μετάβαση σε νέο WMS μπορεί να περιλαμβάνει τα
+                                τερματικά που ήδη χρησιμοποιείτε. Το Quark
+                                προσφέρει WebRF για σύγχρονους browsers και
+                                διεπαφή κειμένου για παλαιότερα RF, όπως το
+                                Motorola MC9090.
+                            </p>
+                            <a class="q-btn is-primary" href="/el#contact"
+                                >Μιλήστε μας για την αποθήκη σας ↗</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="q-sec">
+                <div class="q-wrap">
+                    <header class="q-shead">
+                        <h2 class="q-h2">
+                            Ελέγξτε τον εξοπλισμό που λειτουργεί πριν τον
+                            αντικαταστήσετε.
+                        </h2>
+                        <p>
+                            Ξεκινήστε από το ακριβές μοντέλο, το λειτουργικό
+                            σύστημα και τον εγκατεστημένο client τερματικού. Για
+                            συσκευές όπως MC9090 ή MC9190, η ονομασία της σειράς
+                            είναι μέρος της αξιολόγησης συμβατότητας.
+                        </p>
+                    </header>
+                    <div class="q-two">
+                        <article class="q-card">
+                            <header><span class="q-num">01</span></header>
+                            <h3>Ελαφριά διεπαφή κειμένου (TUI)</h3>
+                            <p>
+                                Ο εργαζόμενος σαρώνει και επιβεβαιώνει την
+                                εργασία σε συνεδρία κειμένου. Η οθόνη εμφανίζει
+                                τα δεδομένα και τις ενέργειες για το τρέχον
+                                βήμα.
+                            </p>
+                        </article>
+                        <article class="q-card">
+                            <header><span class="q-num">02</span></header>
+                            <h3>Windows CE και παλαιότερα λειτουργικά</h3>
+                            <p>
+                                Ελέγξτε την έκδοση λειτουργικού, τον client και
+                                τον σαρωτή της συγκεκριμένης συσκευής.
+                                Συμπεριλάβετε τις απαιτούμενες άδειες και τη
+                                συντήρηση στην αξιολόγηση.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="q-sec is-tint" id="workflow">
+                <div class="q-wrap">
+                    <header class="q-shead">
+                        <h2 class="q-h2">
+                            Πώς λειτουργεί το Quark με τους clients τερματικών
+                        </h2>
+                        <p>
+                            Τα μεταδεδομένα ορίζουν τη διαδικασία της αποθήκης.
+                            Το WebRF την εμφανίζει στον browser και η διεπαφή
+                            κειμένου μέσω συνεδρίας SSH ή Telnet, ανάλογα με τη
+                            συσκευή και τη ρύθμιση δικτύου.
+                        </p>
+                    </header>
+                    <div class="q-two">
+                        <article class="q-card">
+                            <header><span class="q-num">01</span></header>
+                            <h3>Συνεδρία κειμένου στο WMS</h3>
+                            <p>
+                                Παραλαβή, μετακίνηση και συλλογή ακολουθούν τους
+                                κανόνες αποθήκης του Quark. Ο server είναι
+                                γραμμένος σε Rust και ο client διαχειρίζεται
+                                σύνδεση και εισαγωγή δεδομένων.
+                            </p>
+                        </article>
+                        <article class="q-card">
+                            <header><span class="q-num">02</span></header>
+                            <h3>Έλεγχος οθόνης και πλήκτρων</h3>
+                            <p>
+                                Ελέγξτε διαστάσεις οθόνης, κωδικοποίηση
+                                χαρακτήρων, πλήκτρα λειτουργιών και μετάδοση
+                                barcode. Ολοκληρώστε μια πραγματική εργασία πριν
+                                την καθημερινή χρήση.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="q-sec">
+                <div class="q-wrap">
+                    <header class="q-shead">
+                        <h2 class="q-h2">
+                            Δοκιμάστε την τοποθέτηση μιας παλέτας.
+                        </h2>
+                    </header>
+                    <ol class="q-stack">
+                        <li>
+                            Επιλέξτε παλέτα με LPN και διαθέσιμη θέση
+                            αποθήκευσης.
+                        </li>
+                        <li>
+                            Σαρώστε το LPN, μετά τη θέση και επιβεβαιώστε την
+                            τοποθέτηση.
+                        </li>
+                        <li>
+                            Δοκιμάστε λάθος θέση, επαναλαμβανόμενη σάρωση και
+                            barcode με αρχικά μηδενικά.
+                        </li>
+                        <li>
+                            Διακόψτε και επαναφέρετε το Wi-Fi. Ελέγξτε την
+                            κατάσταση της εργασίας μετά την επανασύνδεση.
+                        </li>
+                        <li>
+                            Συγκρίνετε την καταχωρισμένη θέση με τη φυσική
+                            μετακίνηση της παλέτας.
+                        </li>
+                    </ol>
+                    <figure style="margin: 32px 0">
+                        <img
+                            src="/assets/product-context/rf-screen-designer.jpg"
+                            width="1500"
+                            height="940"
+                            loading="lazy"
+                            decoding="async"
+                            alt="Quark RF Screen Designer"
+                            style="width: 100%; height: auto"
+                        />
+                        <figcaption class="q-note">
+                            Quark RF Screen Designer. Η εικόνα δείχνει το
+                            εργαλείο διαμόρφωσης στον browser.
+                        </figcaption>
+                    </figure>
+                    <p>
+                        <a
+                            href="https://techdocs.zebra.com/enterprise-browser/1-5/guide/about/#supported-devices"
+                            lang="en"
+                            >Αρχειοθετημένη τεκμηρίωση Zebra για μοντέλα και
+                            λειτουργικά συστήματα (στα αγγλικά) ↗</a
+                        >
+                    </p>
+                </div>
+            </section>
+            <section class="q-sec is-tint" id="budget">
+                <div class="q-wrap">
+                    <header class="q-shead">
+                        <h2 class="q-h2">
+                            Εντάξτε τον εξοπλισμό στον συνολικό προϋπολογισμό
+                            WMS.
+                        </h2>
+                        <p>
+                            Συγκρίνετε συνδρομή, υλοποίηση, άδειες τερματικών,
+                            μπαταρίες και συντήρηση για την ίδια περίοδο.
+                            Κρατήστε τις συσκευές που καλύπτουν τις εργασίες και
+                            σχεδιάστε εφεδρείες και αντικαταστάσεις.
+                        </p>
+                    </header>
+                    <div class="q-two">
+                        <a class="q-card" href="/wms-cost"
+                            ><h3>Υπολογιστής κόστους WMS</h3>
+                            <p>
+                                Συγκρίνετε κόστος λογισμικού, υλοποίησης και
+                                λειτουργίας για τρία ή πέντε χρόνια με τις δικές
+                                σας εκτιμήσεις.
+                            </p>
+                            <span class="q-note">στα αγγλικά ↗</span></a
+                        ><a
+                            class="q-card"
+                            href="/tools/wms-readiness-assessment"
+                            ><h3>Ετοιμότητα για υλοποίηση WMS</h3>
+                            <p>
+                                Ελέγξτε τα δεδομένα, τις διαδικασίες και τις
+                                αποφάσεις που χρειάζεται να προετοιμάσει η ομάδα
+                                σας.
+                            </p>
+                            <span class="q-note">στα αγγλικά ↗</span></a
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="q-sec q-cta">
+                <div class="q-wrap q-cta-in">
+                    <div>
+                        <h2 class="q-h2">
+                            Σχεδιάστε την αναβάθμιση με τον υπάρχοντα εξοπλισμό.
+                        </h2>
+                        <p>
+                            Στείλτε μοντέλα, λειτουργικά συστήματα και τον
+                            client που χρησιμοποιείτε. Επιλέξτε μια διαδικασία
+                            αποθήκης για να την αξιολογήσουμε μαζί.
+                        </p>
+                    </div>
+                    <a class="q-btn is-primary" href="/el#contact"
+                        >Μιλήστε μας για την αποθήκη σας ↗</a
+                    >
+                </div>
+            </section>
+        </main>
+        <footer class="q-ftr">
+            <div class="q-wrap">
+                <nav aria-label="Γλώσσα">
+                    <a lang="en" href="/solutions/legacy-hardware">English</a> ·
+                    <a lang="bg" href="/solutions/legacy-hardware/bg"
+                        >Български</a
+                    >
+                    ·
+                    <a lang="ro" href="/solutions/legacy-hardware/ro">Română</a>
+                    ·
+                    <a
+                        lang="el"
+                        href="/solutions/legacy-hardware/el"
+                        aria-current="page"
+                        >Ελληνικά</a
+                    >
+                    ·
+                    <a lang="sr" href="/solutions/legacy-hardware/sr">Srpski</a>
+                </nav>
+                <div class="q-ftr-bot">
+                    <span>© 2026 Quark WMS</span><a href="/el">Αρχική</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
