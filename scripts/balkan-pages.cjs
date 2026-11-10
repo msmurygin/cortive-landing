@@ -8,7 +8,10 @@ const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
 })[char]);
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-const logo = home.match(/<svg class="q-pixel-lockup"[\s\S]*?<\/svg>/)[0];
+
+const logoMatch = home.match(/<svg class="q-pixel-lockup"[\s\S]*?<\/svg>/);
+const logo = logoMatch ? logoMatch[0] : '<svg class="q-pixel-lockup"><!-- placeholder --></svg>';
+
 const languages = [{ code: 'en', name: 'English', region: 'en', url: '/' },
   ...Object.entries(locales).map(([code, data]) => ({ code, name: data.name, region: data.region, url: '/' + code }))];
 
