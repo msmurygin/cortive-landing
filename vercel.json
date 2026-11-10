@@ -81,6 +81,116 @@
       "source": "/pricing/",
       "destination": "/pricing",
       "permanent": true
+    },
+    {
+      "source": "/bg/",
+      "destination": "/bg",
+      "permanent": true
+    },
+    {
+      "source": "/bg/index.html",
+      "destination": "/bg",
+      "permanent": true
+    },
+    {
+      "source": "/ro/",
+      "destination": "/ro",
+      "permanent": true
+    },
+    {
+      "source": "/ro/index.html",
+      "destination": "/ro",
+      "permanent": true
+    },
+    {
+      "source": "/sr/",
+      "destination": "/sr",
+      "permanent": true
+    },
+    {
+      "source": "/sr/index.html",
+      "destination": "/sr",
+      "permanent": true
+    },
+    {
+      "source": "/el/",
+      "destination": "/el",
+      "permanent": true
+    },
+    {
+      "source": "/el/index.html",
+      "destination": "/el",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/",
+      "destination": "/solutions/legacy-hardware",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/index.html",
+      "destination": "/solutions/legacy-hardware",
+      "permanent": true
+    },
+    {
+      "source": "/tools/wms-cost-calculator",
+      "destination": "/wms-cost",
+      "permanent": true
+    },
+    {
+      "source": "/tools/wms-cost-calculator/",
+      "destination": "/wms-cost",
+      "permanent": true
+    },
+    {
+      "source": "/tools/wms-cost-calculator.html",
+      "destination": "/wms-cost",
+      "permanent": true
+    },
+    {
+      "source": "/tools/wms-cost-calculator/index.html",
+      "destination": "/wms-cost",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/bg/",
+      "destination": "/solutions/legacy-hardware/bg",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/bg/index.html",
+      "destination": "/solutions/legacy-hardware/bg",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/ro/",
+      "destination": "/solutions/legacy-hardware/ro",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/ro/index.html",
+      "destination": "/solutions/legacy-hardware/ro",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/sr/",
+      "destination": "/solutions/legacy-hardware/sr",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/sr/index.html",
+      "destination": "/solutions/legacy-hardware/sr",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/el/",
+      "destination": "/solutions/legacy-hardware/el",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/legacy-hardware/el/index.html",
+      "destination": "/solutions/legacy-hardware/el",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -111,6 +221,42 @@
     {
       "source": "/pricing",
       "destination": "/pricing.html"
+    },
+    {
+      "source": "/bg",
+      "destination": "/bg/index.html"
+    },
+    {
+      "source": "/ro",
+      "destination": "/ro/index.html"
+    },
+    {
+      "source": "/sr",
+      "destination": "/sr/index.html"
+    },
+    {
+      "source": "/el",
+      "destination": "/el/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware",
+      "destination": "/solutions/legacy-hardware/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware/bg",
+      "destination": "/solutions/legacy-hardware/bg/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware/ro",
+      "destination": "/solutions/legacy-hardware/ro/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware/sr",
+      "destination": "/solutions/legacy-hardware/sr/index.html"
+    },
+    {
+      "source": "/solutions/legacy-hardware/el",
+      "destination": "/solutions/legacy-hardware/el/index.html"
     }
   ],
   "headers": [
@@ -158,5 +304,7 @@
         }
       ]
     }
-  ]
+  ],
+  "buildCommand": "node scripts/tool-locales.cjs && node scripts/balkan-pages.cjs && node scripts/legacy-pages.cjs && node scripts/generate-sitemap.cjs",
+  "outputDirectory": "."
 }

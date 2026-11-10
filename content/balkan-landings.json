@@ -1,0 +1,398 @@
+{
+  "bg": {
+    "name": "Български",
+    "region": "bg-BG",
+    "country": "България",
+    "title": "WMS система за управление на склад | Quark WMS",
+    "description": "Quark WMS за управление на склад: приемане, наличности, комплектоване и експедиция. RF терминали, 3D карта и AI Onboarding. Обсъдете вашия склад.",
+    "skip": "Към съдържанието",
+    "menu": "Меню",
+    "theme": "Смяна на темата",
+    "languages": "Език",
+    "home": "Начало",
+    "nav": [
+      "Възможности",
+      "Складови процеси",
+      "Бюджет",
+      "Контакт"
+    ],
+    "hero": "WMS система за управление на склад.",
+    "heroAccent": "От приемането до експедицията.",
+    "intro": "Quark свързва складовите наличности, адресите и задачите в една конфигурируема система. Служителите работят с RF терминали, а екипът в офиса следи движението на стоките.",
+    "cta": "Обсъдете вашия склад",
+    "secondary": "Вижте възможностите",
+    "english": "на английски",
+    "featuresTitle": "Вижте склада. Настройте работата.",
+    "features": [
+      [
+        "3D карта в браузъра",
+        "Разглеждайте складовите адреси, зоните и стелажите. Проверявайте избрания адрес в контекста на цялата складова структура."
+      ],
+      [
+        "RF и legacy терминали",
+        "WebRF обслужва съвременните браузъри. Текстовият интерфейс позволява работа със стари RF терминали, включително Motorola MC9090, чрез терминална сесия."
+      ],
+      [
+        "AI Onboarding",
+        "Използвайте AI за подготовка на складовата структура от входните ви данни. Прегледайте предложените зони и адреси преди прилагането им."
+      ]
+    ],
+    "imageAlt": "Екран на Quark WMS с 3D структура на склада и данни за избран складов адрес",
+    "imageCaption": "Реален екран на продукта. Демонстрационна складова структура.",
+    "flowTitle": "Една система за ежедневните складови процеси.",
+    "flows": [
+      [
+        "Приемане и разполагане",
+        "Приемайте стоките, регистрирайте палети и ги насочвайте към складов адрес."
+      ],
+      [
+        "Контрол на наличностите",
+        "Следете стоката по адрес, партида и сериен номер. Използвайте циклична инвентаризация за проверка на наличностите."
+      ],
+      [
+        "Комплектоване и експедиция",
+        "Управлявайте попълването, събирането на поръчки, опаковането и товаренето."
+      ]
+    ],
+    "config": "Складовите политики и метаданните определят правилата и екраните. Вградените дизайнери дават възможност да настройвате интерфейси, отчети и етикети.",
+    "billing": {
+      "label": "3PL билинг",
+      "title": "Превърнете складовата дейност в проследими начисления.",
+      "intro": "При 3PL операциите неотчетената дейност означава пропуснат приход. Quark записва поддържаните складови събития като устойчиви факти за потребление, прилага тарифи с период на валидност за всеки клиент и подготвя проследими отчети за един или повече складове.",
+      "cards": [
+        ["Журнал, подкрепен със събития", "Приети редове и кашони, завършени събирания и опакования, експедиции и дневно палетно съхранение могат да станат начисляеми факти. Уникалните ключове на източника предотвратяват двойното таксуване на една и съща дейност."],
+        ["Тарифи по клиент и склад", "Настройте общи тарифи за клиента или отделни тарифи за конкретен склад, с начална и крайна дата и валута от профила за фактуриране."],
+        ["Фиксирани данни за начислението", "Всяко оценено начисление пази дейността, количеството, тарифата, сумата, валутата и моментна снимка на източника. Затварянето на отчета фиксира финансовия журнал и проверява неговия hash преди експорт."],
+        ["Предаване към счетоводството", "Експортирайте затворен отчет като подробен UTF-8 CSV. Издадените фактури могат да се генерират и като PDF и EN 16931 UBL XML."]
+      ],
+      "note": "Билингът обхваща конфигурираните дейности и тарифи. Той не замества счетоводната система; фискалната настройка и ERP интеграцията се уточняват за всяко внедряване.",
+      "cta": "Обсъдете 3PL билинг"
+    },
+    "budgetTitle": "Подгответе бюджет за вашия склад.",
+    "budget": "Абонаментът се състои от такса за склад и капацитет за едновременни RF сесии. Стандартните модули, актуализациите и документацията са включени. Обучението, помощта при внедряване и поръчаните разработки се договарят отделно.",
+    "costTitle": "Калкулатор за разходите за WMS",
+    "costText": "Сравнете софтуера, внедряването и текущите разходи за три или пет години със собствени стойности.",
+    "assessmentTitle": "Готовност за внедряване на WMS",
+    "assessmentText": "Проверете какви данни, процеси и решения трябва да подготви вашият екип.",
+    "pricingLink": "Вижте модела на ценообразуване",
+    "faqTitle": "Преди да изберете WMS",
+    "faq": [
+      [
+        "За какви складове е Quark?",
+        "Разгледайте Quark за електронна търговия, дистрибуция и 3PL. Започнете с вашите процеси, видове стоки, оборудване и връзки с други системи."
+      ],
+      [
+        "Можем ли да използваме сегашните RF терминали?",
+        "Изпратете модела, операционната система и използвания терминален клиент. Проверете сканирането, функционалните клавиши и връзката с реална задача. Вижте ръководството за legacy оборудване на английски."
+      ],
+      [
+        "Как да започнем с AI Onboarding?",
+        "Подгответе наличната схема и данни за адресите, зоните и стелажите. Свържете се с нас, за да уточним входния формат и прегледа на предложената конфигурация."
+      ]
+    ],
+    "contactTitle": "Разкажете ни как работи вашият склад.",
+    "contactText": "Посочете броя складове, едновременните RF потребители и процеса, който искате да подобрите. Ще обсъдим следващите стъпки за Early Access.",
+    "legacyLink": "Ръководство за legacy RF терминали",
+    "footer": "Софтуер за управление на склад",
+    "privacy": "Поверителност",
+    "terms": "Условия",
+    "closeMenu": "Затвори"
+  },
+  "ro": {
+    "name": "Română",
+    "region": "ro-RO",
+    "country": "România",
+    "title": "Sistem WMS pentru gestiunea depozitului | Quark WMS",
+    "description": "Quark WMS pentru gestiunea depozitului: recepție, stocuri, picking și expediere. Terminale RF, hartă 3D și AI Onboarding. Discută despre depozitul tău.",
+    "skip": "Mergi la conținut",
+    "menu": "Meniu",
+    "theme": "Schimbă tema",
+    "languages": "Limbă",
+    "home": "Acasă",
+    "nav": [
+      "Funcționalități",
+      "Fluxuri de lucru",
+      "Buget",
+      "Contact"
+    ],
+    "hero": "Sistem WMS pentru gestiunea depozitului.",
+    "heroAccent": "De la recepție la expediere.",
+    "intro": "Quark leagă stocurile, locațiile și sarcinile într-un singur sistem configurabil. Echipa din depozit lucrează pe terminale RF, iar colegii de la birou urmăresc mișcarea mărfurilor.",
+    "cta": "Discută despre depozitul tău",
+    "secondary": "Vezi funcționalitățile",
+    "english": "în engleză",
+    "featuresTitle": "Vezi depozitul. Configurează modul de lucru.",
+    "features": [
+      [
+        "Hartă 3D în browser",
+        "Explorează locațiile, zonele și rafturile. Consultă datele unei locații în contextul întregii structuri a depozitului."
+      ],
+      [
+        "Terminale RF moderne și legacy",
+        "WebRF deservește browserele moderne. Interfața text permite lucrul pe terminale RF mai vechi, inclusiv Motorola MC9090, printr-o sesiune de terminal."
+      ],
+      [
+        "AI Onboarding",
+        "Folosește AI pentru a pregăti structura depozitului din datele tale. Verifică zonele și locațiile propuse înainte de a aplica configurația."
+      ]
+    ],
+    "imageAlt": "Ecran Quark WMS cu structura 3D a depozitului și detalii despre o locație selectată",
+    "imageCaption": "Ecran real din produs. Structură de depozit demonstrativă.",
+    "flowTitle": "Un singur sistem pentru operațiunile zilnice.",
+    "flows": [
+      [
+        "Recepție și punere pe locație",
+        "Recepționează marfa, înregistrează paleții și direcționează-i către o locație de depozitare."
+      ],
+      [
+        "Controlul stocurilor",
+        "Urmărește stocul pe locație, lot și număr de serie. Verifică diferențele prin inventariere ciclică."
+      ],
+      [
+        "Picking și expediere",
+        "Coordonează reaprovizionarea, pregătirea comenzilor, ambalarea și încărcarea."
+      ]
+    ],
+    "config": "Politicile de depozit și metadatele stabilesc regulile și ecranele. Designerii integrați permit configurarea interfețelor, rapoartelor și etichetelor.",
+    "billing": {
+      "label": "Facturare 3PL",
+      "title": "Transformați activitatea din depozit în servicii facturabile și verificabile.",
+      "intro": "Pentru operatorii 3PL, activitatea neînregistrată înseamnă venit pierdut. Quark păstrează evenimentele operaționale acceptate ca fapte de utilizare durabile, aplică tarife cu perioadă de valabilitate pentru fiecare client și pregătește situații trasabile pentru unul sau mai multe depozite.",
+      "cards": [
+        ["Registru bazat pe evenimente", "Liniile și cutiile recepționate, operațiunile de picking și packing finalizate, expedierile și stocarea zilnică pe palet pot deveni fapte facturabile. Cheile unice ale sursei împiedică taxarea de două ori a aceleiași activități."],
+        ["Tarife pe client și depozit", "Configurați tarife generale pentru client sau excepții pentru un anumit depozit, cu perioade de valabilitate și moneda profilului de facturare."],
+        ["Dovezi financiare fixate", "Fiecare taxă evaluată păstrează activitatea, cantitatea, tariful, suma, moneda și imaginea sursei. Închiderea situației fixează registrul financiar și verifică hash-ul înainte de export."],
+        ["Transfer către contabilitate", "Exportați o situație închisă ca fișier CSV UTF-8 detaliat. Facturile emise pot fi generate și ca PDF și EN 16931 UBL XML."]
+      ],
+      "note": "Facturarea acoperă activitățile și tarifele configurate. Nu înlocuiește sistemul contabil; configurarea fiscală și integrarea ERP se stabilesc pentru fiecare implementare.",
+      "cta": "Discută despre facturarea 3PL"
+    },
+    "budgetTitle": "Construiește bugetul pentru depozitul tău.",
+    "budget": "Abonamentul include o taxă pe depozit și capacitatea pentru sesiuni RF simultane. Modulele standard, actualizările și documentația sunt incluse. Instruirea, asistența la implementare și dezvoltările comandate se estimează separat.",
+    "costTitle": "Calculator de costuri WMS",
+    "costText": "Compară costul software-ului, implementării și operării pe trei sau cinci ani, folosind propriile estimări.",
+    "assessmentTitle": "Pregătirea pentru implementarea WMS",
+    "assessmentText": "Verifică datele, procesele și deciziile pe care echipa trebuie să le pregătească.",
+    "pricingLink": "Vezi modelul de preț",
+    "faqTitle": "Înainte să alegi un WMS",
+    "faq": [
+      [
+        "Pentru ce depozite este Quark?",
+        "Evaluează Quark pentru e-commerce, distribuție și 3PL. Pornește de la fluxurile de lucru, tipurile de marfă, echipamentele și sistemele pe care trebuie să le conectezi."
+      ],
+      [
+        "Putem păstra terminalele RF existente?",
+        "Trimite modelul, sistemul de operare și clientul de terminal folosit. Verifică scanarea, tastele funcționale și conexiunea într-o sarcină reală. Ghidul pentru echipamente legacy este disponibil în engleză."
+      ],
+      [
+        "Cum începem cu AI Onboarding?",
+        "Pregătește planul disponibil și datele despre locații, zone și rafturi. Contactează-ne pentru a stabili formatul de intrare și verificarea configurației propuse."
+      ]
+    ],
+    "contactTitle": "Povestește-ne cum funcționează depozitul tău.",
+    "contactText": "Spune-ne câte depozite ai, câți utilizatori RF lucrează simultan și ce proces vrei să îmbunătățești. Vom discuta pașii următori pentru Early Access.",
+    "legacyLink": "Ghid pentru terminale RF legacy",
+    "footer": "Software pentru gestiunea depozitului",
+    "privacy": "Confidențialitate",
+    "terms": "Termeni",
+    "closeMenu": "Închide"
+  },
+  "sr": {
+    "name": "Srpski",
+    "region": "sr-RS",
+    "country": "Srbija",
+    "title": "WMS sistem za upravljanje skladištem | Quark WMS",
+    "description": "Quark WMS za upravljanje skladištem: prijem robe, zalihe, komisioniranje i otprema. RF terminali, 3D mapa i AI Onboarding. Razgovarajmo o vašem skladištu.",
+    "skip": "Pređi na sadržaj",
+    "menu": "Meni",
+    "theme": "Promeni temu",
+    "languages": "Jezik",
+    "home": "Početna",
+    "nav": [
+      "Mogućnosti",
+      "Skladišni procesi",
+      "Budžet",
+      "Kontakt"
+    ],
+    "hero": "WMS sistem za upravljanje skladištem.",
+    "heroAccent": "Od prijema robe do otpreme.",
+    "intro": "Quark povezuje zalihe, lokacije i zadatke u jednom podesivom sistemu. Zaposleni u skladištu rade na RF terminalima, dok kolege u kancelariji prate kretanje robe.",
+    "cta": "Razgovarajmo o vašem skladištu",
+    "secondary": "Pogledajte mogućnosti",
+    "english": "na engleskom",
+    "featuresTitle": "Pregledajte skladište. Podesite način rada.",
+    "features": [
+      [
+        "3D mapa u pregledaču",
+        "Pregledajte lokacije, zone i regale. Proverite podatke izabrane lokacije u okviru cele strukture skladišta."
+      ],
+      [
+        "Savremeni i legacy RF terminali",
+        "WebRF radi u savremenim pregledačima. Tekstualni interfejs omogućava rad na starijim RF terminalima, uključujući Motorola MC9090, putem terminalske sesije."
+      ],
+      [
+        "AI Onboarding",
+        "Koristite AI za pripremu strukture skladišta iz vaših podataka. Pregledajte predložene zone i lokacije pre primene konfiguracije."
+      ]
+    ],
+    "imageAlt": "Quark WMS ekran sa 3D strukturom skladišta i podacima o izabranoj lokaciji",
+    "imageCaption": "Stvarni ekran proizvoda. Demonstraciona struktura skladišta.",
+    "flowTitle": "Jedan sistem za svakodnevne skladišne poslove.",
+    "flows": [
+      [
+        "Prijem i smeštanje robe",
+        "Primite robu, evidentirajte palete i usmerite ih na skladišnu lokaciju."
+      ],
+      [
+        "Kontrola zaliha",
+        "Pratite robu po lokaciji, seriji i serijskom broju. Koristite ciklični popis za proveru zaliha."
+      ],
+      [
+        "Komisioniranje i otprema",
+        "Upravljajte dopunom lokacija, pripremom porudžbina, pakovanjem i utovarom."
+      ]
+    ],
+    "config": "Skladišne politike i metapodaci određuju pravila i ekrane. Ugrađeni dizajneri omogućavaju podešavanje interfejsa, izveštaja i etiketa.",
+    "billing": {
+      "label": "3PL obračun",
+      "title": "Pretvorite skladišne aktivnosti u proverljive obračunske stavke.",
+      "intro": "Za 3PL operatera, neevidentirana aktivnost znači izgubljen prihod. Quark čuva podržane operativne događaje kao trajne podatke o korišćenju, primenjuje tarife sa periodom važenja za svakog klijenta i priprema sledive obračune za jedno ili više skladišta.",
+      "cards": [
+        ["Evidencija zasnovana na događajima", "Primljene stavke i kutije, završeno komisioniranje i pakovanje, otpreme i dnevno paletno skladištenje mogu postati obračunski podaci. Jedinstveni ključevi izvora sprečavaju dvostruku naplatu iste aktivnosti."],
+        ["Tarife po klijentu i skladištu", "Podesite zajedničke tarife za klijenta ili posebne tarife za određeno skladište, sa periodima važenja i valutom profila za obračun."],
+        ["Fiksirani podaci o obračunu", "Svaka obračunata stavka čuva aktivnost, količinu, tarifu, iznos, valutu i snimak izvora. Zatvaranje obračuna zaključava finansijsku evidenciju i proverava njen hash pre izvoza."],
+        ["Predaja računovodstvu", "Izvezite zatvoren obračun kao detaljan UTF-8 CSV. Izdate fakture mogu se generisati i kao PDF i EN 16931 UBL XML."]
+      ],
+      "note": "Obračun pokriva podešene aktivnosti i tarife. Ne zamenjuje računovodstveni sistem; fiskalno podešavanje i ERP integracija dogovaraju se za svako uvođenje.",
+      "cta": "Razgovarajmo o 3PL obračunu"
+    },
+    "budgetTitle": "Pripremite budžet za svoje skladište.",
+    "budget": "Pretplata se sastoji od naknade po skladištu i kapaciteta za istovremene RF sesije. Standardni moduli, ažuriranja i dokumentacija su uključeni. Obuka, pomoć pri uvođenju i naručene dorade ugovaraju se posebno.",
+    "costTitle": "Kalkulator troškova WMS-a",
+    "costText": "Uporedite troškove softvera, uvođenja i rada tokom tri ili pet godina koristeći sopstvene procene.",
+    "assessmentTitle": "Spremnost za uvođenje WMS-a",
+    "assessmentText": "Proverite podatke, procese i odluke koje vaš tim treba da pripremi.",
+    "pricingLink": "Pogledajte model cena",
+    "faqTitle": "Pre izbora WMS-a",
+    "faq": [
+      [
+        "Za koja skladišta je Quark?",
+        "Razmotrite Quark za e-trgovinu, distribuciju i 3PL. Počnite od svojih procesa, vrsta robe, opreme i sistema koje treba povezati."
+      ],
+      [
+        "Možemo li zadržati postojeće RF terminale?",
+        "Pošaljite model, operativni sistem i terminalski klijent koji koristite. Proverite skeniranje, funkcijske tastere i vezu na stvarnom zadatku. Vodič za stariju opremu dostupan je na engleskom."
+      ],
+      [
+        "Kako da počnemo sa AI Onboarding-om?",
+        "Pripremite raspoloživi plan i podatke o lokacijama, zonama i regalima. Javite nam se da dogovorimo ulazni format i pregled predložene konfiguracije."
+      ]
+    ],
+    "contactTitle": "Opišite kako radi vaše skladište.",
+    "contactText": "Navedite broj skladišta, istovremene RF korisnike i proces koji želite da poboljšate. Razgovaraćemo o narednim koracima za Early Access.",
+    "legacyLink": "Vodič za legacy RF terminale",
+    "footer": "Softver za upravljanje skladištem",
+    "privacy": "Privatnost",
+    "terms": "Uslovi",
+    "closeMenu": "Zatvori"
+  },
+  "el": {
+    "name": "Ελληνικά",
+    "region": "el-GR",
+    "country": "Ελλάδα",
+    "title": "Σύστημα WMS για διαχείριση αποθήκης | Quark WMS",
+    "description": "Quark WMS για διαχείριση αποθήκης: παραλαβές, αποθέματα, συλλογή και αποστολές. Τερματικά RF, χάρτης 3D και AI Onboarding. Συζητήστε τις ανάγκες σας.",
+    "skip": "Μετάβαση στο περιεχόμενο",
+    "menu": "Μενού",
+    "theme": "Αλλαγή θέματος",
+    "languages": "Γλώσσα",
+    "home": "Αρχική",
+    "nav": [
+      "Δυνατότητες",
+      "Διαδικασίες",
+      "Προϋπολογισμός",
+      "Επικοινωνία"
+    ],
+    "hero": "Σύστημα WMS για διαχείριση αποθήκης.",
+    "heroAccent": "Από την παραλαβή έως την αποστολή.",
+    "intro": "Το Quark συνδέει αποθέματα, θέσεις και εργασίες σε ένα παραμετροποιήσιμο σύστημα. Οι εργαζόμενοι χρησιμοποιούν τερματικά RF και η ομάδα γραφείου παρακολουθεί τις κινήσεις των εμπορευμάτων.",
+    "cta": "Μιλήστε μας για την αποθήκη σας",
+    "secondary": "Δείτε τις δυνατότητες",
+    "english": "στα αγγλικά",
+    "featuresTitle": "Δείτε την αποθήκη. Ρυθμίστε τον τρόπο εργασίας.",
+    "features": [
+      [
+        "Χάρτης 3D στον browser",
+        "Εξερευνήστε θέσεις, ζώνες και ράφια. Δείτε τα στοιχεία μιας επιλεγμένης θέσης μέσα στη συνολική δομή της αποθήκης."
+      ],
+      [
+        "Σύγχρονα και παλαιότερα τερματικά RF",
+        "Το WebRF λειτουργεί σε σύγχρονους browsers. Η διεπαφή κειμένου επιτρέπει τη χρήση παλαιότερων τερματικών RF, όπως το Motorola MC9090, μέσω συνεδρίας τερματικού."
+      ],
+      [
+        "AI Onboarding",
+        "Χρησιμοποιήστε AI για να προετοιμάσετε τη δομή της αποθήκης από τα δεδομένα σας. Ελέγξτε τις προτεινόμενες ζώνες και θέσεις πριν εφαρμόσετε τη διαμόρφωση."
+      ]
+    ],
+    "imageAlt": "Οθόνη του Quark WMS με τρισδιάστατη δομή αποθήκης και στοιχεία επιλεγμένης θέσης",
+    "imageCaption": "Πραγματική οθόνη του προϊόντος. Δομή αποθήκης επίδειξης.",
+    "flowTitle": "Ένα σύστημα για τις καθημερινές εργασίες.",
+    "flows": [
+      [
+        "Παραλαβή και τοποθέτηση",
+        "Παραλάβετε εμπορεύματα, καταχωρίστε παλέτες και κατευθύνετέ τες σε θέση αποθήκευσης."
+      ],
+      [
+        "Έλεγχος αποθεμάτων",
+        "Παρακολουθήστε το απόθεμα ανά θέση, παρτίδα και σειριακό αριθμό. Ελέγξτε τις διαφορές με κυκλικές απογραφές."
+      ],
+      [
+        "Συλλογή και αποστολή",
+        "Συντονίστε ανατροφοδότηση θέσεων, συλλογή παραγγελιών, συσκευασία και φόρτωση."
+      ]
+    ],
+    "config": "Οι πολιτικές αποθήκης και τα μεταδεδομένα ορίζουν κανόνες και οθόνες. Οι ενσωματωμένοι σχεδιαστές επιτρέπουν τη ρύθμιση διεπαφών, αναφορών και ετικετών.",
+    "billing": {
+      "label": "Χρέωση 3PL",
+      "title": "Μετατρέψτε τη δραστηριότητα της αποθήκης σε τεκμηριωμένες χρεώσεις.",
+      "intro": "Για έναν πάροχο 3PL, η δραστηριότητα που δεν καταγράφεται σημαίνει χαμένο έσοδο. Το Quark διατηρεί τα υποστηριζόμενα λειτουργικά συμβάντα ως ανθεκτικά στοιχεία χρήσης, εφαρμόζει τιμές με ημερομηνίες ισχύος για κάθε πελάτη και προετοιμάζει ανιχνεύσιμες καταστάσεις για μία ή περισσότερες αποθήκες.",
+      "cards": [
+        ["Καθολικό βασισμένο σε συμβάντα", "Γραμμές και κιβώτια παραλαβής, ολοκληρωμένη συλλογή και συσκευασία, αποστολές και ημερήσια αποθήκευση παλετών μπορούν να γίνουν χρεώσιμα στοιχεία. Τα μοναδικά κλειδιά πηγής αποτρέπουν τη διπλή χρέωση της ίδιας δραστηριότητας."],
+        ["Τιμές ανά πελάτη και αποθήκη", "Ορίστε γενικές τιμές για τον πελάτη ή εξαιρέσεις ανά αποθήκη, με ημερομηνίες ισχύος και το νόμισμα του προφίλ χρέωσης."],
+        ["Σταθερά αποδεικτικά χρέωσης", "Κάθε υπολογισμένη χρέωση διατηρεί δραστηριότητα, ποσότητα, τιμή, ποσό, νόμισμα και στιγμιότυπο πηγής. Το κλείσιμο μιας κατάστασης παγώνει το οικονομικό καθολικό και επαληθεύει το hash πριν από την εξαγωγή."],
+        ["Παράδοση στη λογιστική", "Εξαγάγετε μια κλειστή κατάσταση ως αναλυτικό UTF-8 CSV. Τα εκδοθέντα τιμολόγια μπορούν επίσης να παραχθούν ως PDF και EN 16931 UBL XML."]
+      ],
+      "note": "Η χρέωση καλύπτει τις διαμορφωμένες δραστηριότητες και τιμές. Δεν αντικαθιστά το λογιστικό σας σύστημα· η φορολογική ρύθμιση και η διασύνδεση ERP εξετάζονται ανά υλοποίηση.",
+      "cta": "Συζητήστε τη χρέωση 3PL"
+    },
+    "budgetTitle": "Προετοιμάστε τον προϋπολογισμό σας.",
+    "budget": "Η συνδρομή αποτελείται από χρέωση ανά αποθήκη και χωρητικότητα για ταυτόχρονες συνεδρίες RF. Περιλαμβάνει τις βασικές ενότητες, ενημερώσεις και τεκμηρίωση. Εκπαίδευση, βοήθεια στην υλοποίηση και πρόσθετες αναπτύξεις κοστολογούνται ξεχωριστά.",
+    "costTitle": "Υπολογιστής κόστους WMS",
+    "costText": "Συγκρίνετε κόστος λογισμικού, υλοποίησης και λειτουργίας για τρία ή πέντε χρόνια με τις δικές σας εκτιμήσεις.",
+    "assessmentTitle": "Ετοιμότητα για υλοποίηση WMS",
+    "assessmentText": "Ελέγξτε τα δεδομένα, τις διαδικασίες και τις αποφάσεις που χρειάζεται να προετοιμάσει η ομάδα σας.",
+    "pricingLink": "Δείτε το μοντέλο τιμολόγησης",
+    "faqTitle": "Πριν επιλέξετε WMS",
+    "faq": [
+      [
+        "Για ποιες αποθήκες είναι το Quark;",
+        "Εξετάστε το Quark για ηλεκτρονικό εμπόριο, διανομή και 3PL. Ξεκινήστε από τις ροές εργασίας, τα εμπορεύματα, τον εξοπλισμό και τα συστήματα που χρειάζεται να συνδέσετε."
+      ],
+      [
+        "Μπορούμε να κρατήσουμε τα υπάρχοντα RF;",
+        "Στείλτε το μοντέλο, το λειτουργικό σύστημα και τον client τερματικού που χρησιμοποιείτε. Ελέγξτε σάρωση, πλήκτρα λειτουργιών και σύνδεση σε πραγματική εργασία. Ο οδηγός παλαιότερου εξοπλισμού είναι στα αγγλικά."
+      ],
+      [
+        "Πώς ξεκινάμε με το AI Onboarding;",
+        "Ετοιμάστε το διαθέσιμο σχέδιο και τα δεδομένα θέσεων, ζωνών και ραφιών. Επικοινωνήστε μαζί μας για τη μορφή εισαγωγής και τον έλεγχο της προτεινόμενης διαμόρφωσης."
+      ]
+    ],
+    "contactTitle": "Πείτε μας πώς λειτουργεί η αποθήκη σας.",
+    "contactText": "Αναφέρετε τον αριθμό αποθηκών, τους ταυτόχρονους χρήστες RF και τη διαδικασία που θέλετε να βελτιώσετε. Θα συζητήσουμε τα επόμενα βήματα για Early Access.",
+    "legacyLink": "Οδηγός παλαιότερων τερματικών RF",
+    "footer": "Λογισμικό διαχείρισης αποθήκης",
+    "privacy": "Απόρρητο",
+    "terms": "Όροι",
+    "closeMenu": "Κλείσιμο"
+  }
+}

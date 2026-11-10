@@ -1,7 +1,8 @@
 const withoutPricing=require('./pricing-preservation.cjs');
+const withoutBalkanPages=require('./balkan-preservation.cjs');
 // Permit only the integration catalogue's exact footer, sitemap and route additions.
 module.exports = function withoutIntegrationCatalogue(file, text) {
-  text = withoutPricing(file, text);
+  text = withoutPricing(file, withoutBalkanPages(file, text));
   if (file === 'vercel.json') {
     const config = JSON.parse(text);
     config.redirects = config.redirects.filter(x => !(
