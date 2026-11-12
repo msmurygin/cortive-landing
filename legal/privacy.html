@@ -30,14 +30,8 @@
         <link rel="stylesheet" href="/design-assets/qds.css" />
         <script src="/design-assets/qds.js"></script>
         <link rel="stylesheet" href="/design-assets/site-indigo.css" />
-    </head>
-
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KG82DN24"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    </script>
+    <link rel="stylesheet" href="/assets/analytics.css"><script defer src="/assets/analytics.js"></script>
+</head>
 
     <body class="q-indigo">
         <svg
@@ -342,7 +336,7 @@
                 <div class="q-wrap">
                     <div class="q-legal legal">
                         <div class="meta">
-                            Last updated 21 October 2026 · GDPR (EU) 2016/679
+                            Last updated 12 November 2026 · GDPR (EU) 2016/679
                         </div>
 
                         <p>
@@ -352,7 +346,9 @@
                             checkout. The personal data it collects is what you
                             type into the enquiry form, plus the technical data
                             any website receives when your browser requests a
-                            page. This page explains both, in full.
+                            page. If you accept optional analytics, Google also
+                            processes limited usage information described
+                            below. This page explains all three categories.
                         </p>
 
                         <h2><span class="n">01</span>Who is responsible</h2>
@@ -404,6 +400,22 @@
                                     website , Art. 6(1)(f) GDPR
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    Page path and title, session and acquisition
+                                    information, browser and device category,
+                                    approximate location, and fixed interaction
+                                    event names
+                                </td>
+                                <td>
+                                    Understanding which public pages, planning
+                                    tools and contact routes are useful
+                                </td>
+                                <td>
+                                    Your optional analytics consent, Art.
+                                    6(1)(a) GDPR
+                                </td>
+                            </tr>
                         </table>
                         <p>
                             We record basic enquiry events: contact-link clicks,
@@ -417,9 +429,24 @@
                             full URL or a persistent visitor identifier. These
                             records help us see whether enquiries reach our form
                             provider and diagnose failures. Vercel also
-                            processes connection data in hosting logs. We do not
-                            use advertising cookies or send these events to
+                            processes connection data in hosting logs. These
+                            operational records are separate from optional
                             Google Analytics. We do not sell your enquiry data.
+                        </p>
+
+                        <p>
+                            Google Analytics and Google Tag Manager load only
+                            after you choose “Accept analytics”. Analytics may
+                            receive page views and the fixed event names
+                            <code>demo_request_click</code>,
+                            <code>contact_click</code>,
+                            <code>tool_complete</code>,
+                            <code>tool_export</code> and
+                            <code>generate_lead</code>. We do not send your
+                            email address, industry selection, assessment
+                            answers, calculator inputs or other form contents to
+                            Google Analytics. We do not use Google advertising
+                            features.
                         </p>
 
                         <p>
@@ -430,15 +457,25 @@
                         </p>
                         <h2><span class="n">03</span>Storage on your device</h2>
                         <p>
-                            The Quark site itself sets no cookies. It stores a
-                            single value in your browser's local storage,
-                            <code>quark-theme</code>, which remembers whether
-                            you chose the light or dark version of the page. It
-                            contains no identifier, is never sent to us, and
-                            exists only to honour a preference you expressed.
-                            Because it is strictly necessary to provide the
-                            display you asked for, no consent banner is
-                            required. Clearing your browsing data removes it.
+                            Before analytics consent, the Quark site does not
+                            load Google Tag Manager or Google Analytics. It
+                            stores <code>quark-theme</code>, which remembers
+                            the colour theme, and
+                            <code>quark-analytics-consent</code>, which remembers
+                            your analytics choice. These local-storage values
+                            are not sent to Quark. If you accept analytics,
+                            Google Analytics may set first-party measurement
+                            cookies such as <code>_ga</code>. You can withdraw
+                            or change your choice at any time.
+                        </p>
+                        <p>
+                            <button
+                                type="button"
+                                class="q-btn is-ghost"
+                                data-analytics-consent-reset
+                            >
+                                Change analytics choice
+                            </button>
                         </p>
 
                         <p>
@@ -499,9 +536,9 @@
                             <tr>
                                 <td>Google Ireland Ltd.</td>
                                 <td>
-                                    Serves the web fonts used by this page;
-                                    receives your IP address when your browser
-                                    requests them
+                                    Provides optional Google Analytics and Tag
+                                    Manager after consent, and serves the web
+                                    fonts used by this page
                                 </td>
                                 <td>Ireland / United States</td>
                             </tr>
@@ -522,7 +559,10 @@
                             later than 24 months after you submitted it. Server
                             and security logs held by our providers are retained
                             for their standard periods, typically no more than
-                            30 days.
+                            30 days. Optional Google Analytics data follows the
+                            retention controls configured in the Analytics
+                            property and is deleted when no longer needed for
+                            aggregate website reporting.
                         </p>
 
                         <h2><span class="n">06</span>Your rights</h2>
@@ -533,7 +573,6 @@
                                 about you, and a copy of it (Art. 15)
                             </li>
                             <li>have inaccurate data corrected (Art. 16)</li>
-                            <li>have your data deleted (Art. 17)</li>
                             <li>have processing restricted (Art. 18)</li>
                             <li>
                                 receive your data in a portable,

@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const locales = require('../content/balkan-landings.json');
+const analytics = require('./analytics-snippet.cjs');
 
 const root = path.resolve(__dirname, '..');
 const origin = 'https://quark.build';
@@ -63,7 +64,7 @@ ${alternatives()}
 <meta property="og:image:alt" content="Quark WMS">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escape(t.title)}"><meta name="twitter:description" content="${escape(t.description)}"><meta name="twitter:image" content="${origin}/assets/social/quark-wms-share-20261027.jpg">
 <script type="application/ld+json">${JSON.stringify(page).replace(/</g, '\\u003c')}</script>
-<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/design-assets/qds.css"><link rel="stylesheet" href="/design-assets/site-indigo.css"><script src="/design-assets/qds.js"></script>
+<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/design-assets/qds.css"><link rel="stylesheet" href="/design-assets/site-indigo.css"><script src="/design-assets/qds.js"></script>${analytics}
 </head><body class="q-indigo">
 <a class="q-skip" href="#main">${escape(t.skip)}</a>
 <header class="q-hdr"><div class="q-wrap q-hdr-in"><a class="q-logo" href="/${code}" aria-label="Quark WMS">${logo}</a><nav class="q-nav" aria-label="${escape(t.menu)}">${navigation}</nav><div class="q-hdr-act"><button class="q-theme" type="button" data-q-theme aria-label="${escape(t.theme)}" aria-pressed="false"><i></i></button><button class="q-burger" type="button" data-close-label="${escape(t.closeMenu)}" aria-expanded="false" aria-controls="q-mnav"><i aria-hidden="true"></i><span>${escape(t.menu)}</span></button></div><nav class="q-mnav" id="q-mnav" aria-label="${escape(t.menu)}"><ul>${['features','workflows','budget','contact'].map((id, i) => `<li><a href="#${id}">${escape(t.nav[i])}</a></li>`).join('')}</ul><div class="q-mnav-foot"><a class="q-btn is-primary" href="#contact">${escape(t.cta)}</a><button class="q-btn is-ghost" type="button" data-q-theme aria-pressed="false">${escape(t.theme)}</button></div></nav></div></header>
