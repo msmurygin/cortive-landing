@@ -3,6 +3,7 @@ const path = require('node:path');
 const copy = require('../content/legacy-landings.json');
 const homes = require('../content/balkan-landings.json');
 const { escape, logo, cards } = require('./balkan-pages.cjs');
+const analytics = require('./analytics-snippet.cjs');
 const root = path.resolve(__dirname, '..');
 const base = '/solutions/legacy-hardware';
 const versions = [{ code: 'en', tag: 'en', name: 'English', route: base },
@@ -28,7 +29,7 @@ function render(code, t) {
 ${alternatives()}
 <meta property="og:type" content="website"><meta property="og:url" content="${url}"><meta property="og:title" content="${escape(t.title)}"><meta property="og:description" content="${escape(t.description)}"><meta property="og:image" content="https://quark.build/assets/social/quark-wms-share-20261027.jpg"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'WebPage',name:t.h1,url,inLanguage:code,about:{'@type':'SoftwareApplication',name:'Quark WMS',url:'https://quark.build/',applicationCategory:'BusinessApplication',operatingSystem:'Web'}}).replace(/</g,'\\u003c')}</script>
-<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/design-assets/qds.css"><link rel="stylesheet" href="/design-assets/site-indigo.css"><script src="/design-assets/qds.js"></script></head><body class="q-indigo">
+<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/design-assets/qds.css"><link rel="stylesheet" href="/design-assets/site-indigo.css"><script src="/design-assets/qds.js"></script>${analytics}</head><body class="q-indigo">
 <a class="q-skip" href="#main">${escape(h.skip)}</a><header class="q-hdr"><div class="q-wrap q-hdr-in"><a class="q-logo" href="/${code}" aria-label="Quark WMS">${logo}</a><nav class="q-nav" aria-label="${escape(h.menu)}"><a href="/${code}">${escape(h.home)}</a><a href="#workflow">${escape(h.nav[1])}</a><a href="#budget">${escape(h.nav[2])}</a></nav><div class="q-hdr-act"><button class="q-theme" type="button" data-q-theme aria-label="${escape(h.theme)}" aria-pressed="false"><i></i></button><a class="q-btn is-sm" href="/${code}#contact">${escape(h.nav[3])} ↗</a></div></div></header>
 <main id="main">
 <section class="q-hero q-grid-bg"><div class="q-wrap"><div class="q-meta"><span>Quark WMS · RF</span><nav aria-label="${escape(h.languages)}">${languages(code)}</nav></div><div class="q-hero-grid"><h1 class="q-display" style="font-size:clamp(36px,4.8vw,68px)">${escape(t.h1)}</h1><div class="q-stack"><p class="q-lede">${escape(t.intro)}</p><a class="q-btn is-primary" href="/${code}#contact">${escape(h.cta)} ↗</a></div></div></div></section>
