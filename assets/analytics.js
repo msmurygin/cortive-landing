@@ -5,6 +5,7 @@
   const storageKey = 'quark-analytics-consent';
   const supported = new Set(['en', 'bg', 'ro', 'el', 'sr']);
   const language = supported.has(document.documentElement.lang) ? document.documentElement.lang : 'en';
+  const country = { bg: 'BG', ro: 'RO', el: 'GR', sr: 'RS', en: 'GLOBAL' }[language];
   const copy = {
     en: { title: 'Optional analytics', text: 'Help us understand which Quark pages and tools are useful. Google Analytics loads only if you accept. Form contents are never sent to Analytics.', accept: 'Accept analytics', decline: 'Decline', privacy: 'Privacy policy' },
     bg: { title: 'Незадължителна аналитика', text: 'Помогнете ни да разберем кои страници и инструменти на Quark са полезни. Google Analytics се зарежда само ако приемете. Съдържанието на формите не се изпраща.', accept: 'Приемам аналитиката', decline: 'Отказвам', privacy: 'Поверителност' },
@@ -19,11 +20,13 @@
 
   function layer() { window.dataLayer = window.dataLayer || []; return window.dataLayer; }
   function track(name, parameters = {}) {
-    if (consent === 'granted') layer().push({ event: name, ...parameters });
+    if (consent !== 'granted') return;
+    const context = { page_language: language, country_code: country, ...parameters };
+    window.gtag = window.gtag || function () { layer().push(arguments); };
+    window.gtag('event', name, context);
   }
   function load() {
     if (document.querySelector('script[data-quark-gtm]')) return;
-    const country = { bg: 'BG', ro: 'RO', el: 'GR', sr: 'RS', en: 'GLOBAL' }[language];
     layer().push({ page_language: language, country_code: country });
     layer().push({ 'gtm.start': Date.now(), event: 'gtm.js' });
     const script = document.createElement('script');
@@ -83,15 +86,5 @@
         if (!document.getElementById('resultsPanel')?.hidden) track('tool_complete', { tool_name: 'wms_readiness_assessment' });
       });
     });
-    const leadStatus = document.getElementById('leadStatus');
-    if (leadStatus) {
-      let recorded = false;
-      new MutationObserver(() => {
-        if (!recorded && leadStatus.textContent.includes('enquiry has been received')) {
-          recorded = true;
-          track('generate_lead', { form_name: 'warehouse_enquiry' });
-        }
-      }).observe(leadStatus, { childList: true, subtree: true, characterData: true });
-    }
   });
 })();
