@@ -46,6 +46,10 @@ function render(code, t) {
     isPartOf: {
       '@type': 'WebSite', '@id': origin + '/#website',
       url: origin + '/', name: 'Quark WMS'
+    },
+    publisher: {
+      '@type': 'Organization', name: 'Quark WMS', url: origin + '/',
+      sameAs: ['https://www.linkedin.com/company/quark-wms']
     }
   };
   const navigation = ['features', 'workflows', 'budget', 'contact'].map((id, index) =>

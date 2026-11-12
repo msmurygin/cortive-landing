@@ -33,10 +33,21 @@ test('analytics waits for consent and sends only named interaction metadata', ()
   assert.match(js, /consent === 'granted'/);
   assert.match(js, /navigator\.globalPrivacyControl/);
   assert.match(js, /navigator\.doNotTrack/);
-  assert.match(js, /generate_lead/);
   assert.match(js, /tool_complete/);
   assert.match(js, /demo_request_click/);
+  assert.match(js, /window\.gtag\('event', name, context\)/);
+  assert.match(js, /page_language: language/);
+  assert.match(js, /country_code: country/);
+  assert.doesNotMatch(js, /MutationObserver/);
   assert.doesNotMatch(js, /FormData|\.elements\[[^\]]+\]\.value|email\s*:/i);
+  const leads = read('assets/leads.js');
+  assert.match(leads, /response\.ok/);
+  assert.match(leads, /QuarkAnalytics\?\.track\('generate_lead'/);
+});
+
+test('LinkedIn company profile is declared as an entity reference', () => {
+  assert.match(read('index.html'), /https:\/\/www\.linkedin\.com\/company\/quark-wms/);
+  assert.match(read('scripts/balkan-pages.cjs'), /https:\/\/www\.linkedin\.com\/company\/quark-wms/);
 });
 
 test('privacy copy describes consent, analytics storage and excluded form contents', () => {
@@ -45,6 +56,7 @@ test('privacy copy describes consent, analytics storage and excluded form conten
   assert.match(html, /assessment\s+answers, calculator inputs or other form contents/);
   assert.match(html, /quark-analytics-consent/);
   assert.match(html, /data-analytics-consent-reset/);
+  assert.match(html, /14-month retention period/);
   assert.doesNotMatch(html, /send these events to\s+Google Analytics/);
   assert.doesNotMatch(html, /site itself sets no cookies/);
 });

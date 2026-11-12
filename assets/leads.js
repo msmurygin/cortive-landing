@@ -51,6 +51,7 @@
       form.reset();
       status.textContent = 'Thank you — your enquiry has been received.';
       button.textContent = 'Enquiry sent ✓';
+      window.QuarkAnalytics?.track('generate_lead', { form_name: 'warehouse_enquiry' });
       // Prevent accidental duplicate submissions after confirmed acceptance.
     } catch {
       status.textContent = 'Your enquiry was not sent. Please retry or email hello@quark.build.';
